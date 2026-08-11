@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "publisher",
+    "sourceType"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "publisher": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "sourceType": {
+      "type": "string"
+    },
+    "accessed": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

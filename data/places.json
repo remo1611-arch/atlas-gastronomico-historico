@@ -1,0 +1,90 @@
+[
+  {
+    "id": "fertile_crescent_demo",
+    "name": "Creciente Fértil (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 34.5,
+      "lon": 39.0
+    },
+    "summary": "Punto visual de referencia para un área amplia; no representa un origen único.",
+    "status": "seed"
+  },
+  {
+    "id": "eastern_mediterranean_demo",
+    "name": "Mediterráneo oriental (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 35.0,
+      "lon": 25.0
+    },
+    "summary": "Referencia visual para probar ocurrencias mediterráneas.",
+    "status": "seed"
+  },
+  {
+    "id": "roman_mediterranean_demo",
+    "name": "Mediterráneo romano (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 38.0,
+      "lon": 15.0
+    },
+    "summary": "Referencia visual, no frontera histórica.",
+    "status": "seed"
+  },
+  {
+    "id": "south_asia_demo",
+    "name": "Asia meridional (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 23.0,
+      "lon": 78.0
+    },
+    "summary": "Referencia visual para el prototipo.",
+    "status": "seed"
+  },
+  {
+    "id": "mesoamerica_demo",
+    "name": "Mesoamérica (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 17.0,
+      "lon": -91.0
+    },
+    "summary": "Referencia visual para el prototipo.",
+    "status": "seed"
+  },
+  {
+    "id": "andes_demo",
+    "name": "Andes centrales (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": -13.0,
+      "lon": -72.0
+    },
+    "summary": "Referencia visual para el prototipo.",
+    "status": "seed"
+  },
+  {
+    "id": "western_europe_demo",
+    "name": "Europa occidental (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 47.0,
+      "lon": 2.0
+    },
+    "summary": "Referencia visual para probar introducciones/adopciones.",
+    "status": "seed"
+  },
+  {
+    "id": "red_sea_demo",
+    "name": "Mar Rojo / Arabia (referencia)",
+    "type": "macroregion",
+    "point": {
+      "lat": 18.0,
+      "lon": 42.0
+    },
+    "summary": "Referencia visual para el prototipo del café.",
+    "status": "seed"
+  }
+]

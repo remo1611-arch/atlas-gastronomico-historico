@@ -1,0 +1,88 @@
+{
+  "subjectTypes": [
+    "ingredient",
+    "food_species",
+    "dish",
+    "preparation",
+    "beverage",
+    "processed_product",
+    "culinary_technique",
+    "preservation_method",
+    "food_tool",
+    "foodway",
+    "meal_practice",
+    "culinary_institution",
+    "historical_text",
+    "recipe",
+    "trade_good",
+    "other"
+  ],
+  "occurrenceTypes": [
+    "archaeological_presence",
+    "cultivation",
+    "domestication_evidence",
+    "production",
+    "consumption",
+    "textual_attestation",
+    "recipe_attestation",
+    "trade",
+    "introduction",
+    "adoption",
+    "regulation",
+    "industrial_production",
+    "traditional_attribution",
+    "other"
+  ],
+  "evidenceTypes": [
+    "archaeological",
+    "archaeobotanical",
+    "archaeozoological",
+    "biomolecular",
+    "genetic",
+    "textual",
+    "iconographic",
+    "material_culture",
+    "legal",
+    "economic_record",
+    "ethnographic",
+    "traditional",
+    "unknown"
+  ],
+  "certaintyLevels": [
+    "high",
+    "medium",
+    "low",
+    "disputed",
+    "unknown"
+  ],
+  "placeTypes": [
+    "site",
+    "city",
+    "historical_region",
+    "modern_region",
+    "macroregion",
+    "route_node",
+    "other"
+  ],
+  "relationshipTypes": [
+    "ingredient_of",
+    "uses_technique",
+    "variant_of",
+    "derived_from",
+    "predecessor_of",
+    "substitutes",
+    "paired_with",
+    "preserved_by",
+    "produced_with",
+    "influenced_by",
+    "traded_as",
+    "other"
+  ],
+  "statuses": [
+    "seed",
+    "draft",
+    "reviewed",
+    "verified",
+    "deprecated"
+  ]
+}

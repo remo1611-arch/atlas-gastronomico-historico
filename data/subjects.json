@@ -1,0 +1,123 @@
+[
+  {
+    "id": "wheat_demo",
+    "name": "Trigo",
+    "type": "food_species",
+    "summary": "Registro semilla para probar domesticación, cultivo, molienda y panificación sin atribuir un origen único.",
+    "aliases": [],
+    "tags": [
+      "cereal"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "olive_oil_demo",
+    "name": "Aceite de oliva",
+    "type": "processed_product",
+    "summary": "Registro semilla para probar producción, comercio y usos culinarios en múltiples regiones y periodos.",
+    "aliases": [],
+    "tags": [
+      "grasa",
+      "aceite"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "fermentation_demo",
+    "name": "Fermentación",
+    "type": "culinary_technique",
+    "summary": "Registro semilla de técnica transversal con múltiples sustratos, regiones y cronologías.",
+    "aliases": [],
+    "tags": [
+      "transformación",
+      "conservación"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "wine_demo",
+    "name": "Vino",
+    "type": "beverage",
+    "summary": "Registro semilla para probar bebida, producción, textos y comercio.",
+    "aliases": [],
+    "tags": [
+      "bebida",
+      "fermentación"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "garum_demo",
+    "name": "Garum",
+    "type": "processed_product",
+    "summary": "Registro semilla para probar producto elaborado, producción regional y atestiguación textual.",
+    "aliases": [],
+    "tags": [
+      "pescado",
+      "fermentación"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "sugar_demo",
+    "name": "Azúcar de caña",
+    "type": "processed_product",
+    "summary": "Registro semilla para probar producción, difusión y comercio de un producto de larga historia.",
+    "aliases": [],
+    "tags": [
+      "dulce",
+      "caña"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "maize_demo",
+    "name": "Maíz",
+    "type": "food_species",
+    "summary": "Registro semilla para probar domesticación, difusión y transferencias transoceánicas.",
+    "aliases": [],
+    "tags": [
+      "cereal",
+      "intercambio"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "potato_demo",
+    "name": "Patata",
+    "type": "food_species",
+    "summary": "Registro semilla para probar domesticación andina, introducción y adopción en otras regiones.",
+    "aliases": [
+      "papa"
+    ],
+    "tags": [
+      "tubérculo",
+      "intercambio"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "coffee_demo",
+    "name": "Café",
+    "type": "beverage",
+    "summary": "Registro semilla para probar bebida, comercio, espacios de consumo y difusión.",
+    "aliases": [],
+    "tags": [
+      "bebida",
+      "comercio"
+    ],
+    "status": "seed"
+  },
+  {
+    "id": "nixtamalization_demo",
+    "name": "Nixtamalización",
+    "type": "culinary_technique",
+    "summary": "Registro semilla para probar una técnica asociada al procesamiento del maíz.",
+    "aliases": [],
+    "tags": [
+      "maíz",
+      "técnica"
+    ],
+    "status": "seed"
+  }
+]

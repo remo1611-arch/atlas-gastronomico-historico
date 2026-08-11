@@ -1,0 +1,21 @@
+ATLAS GASTRONÓMICO HISTÓRICO — GITHUB PAGES
+
+Repositorio recomendado:
+atlas-gastronomico-historico
+
+Descripción:
+Atlas histórico interactivo de la alimentación y la gastronomía: ingredientes, técnicas, productos, platos, intercambios y evidencias a través del tiempo y el espacio.
+
+1. Crea un repositorio PÚBLICO.
+2. No añadas README, .gitignore ni licencia desde el asistente de creación si vas a subir este paquete completo.
+3. Extrae el ZIP.
+4. Sube TODO el contenido interior a la raíz del repositorio.
+5. Comprueba que index.html y .nojekyll están en la raíz.
+6. Settings > Pages.
+7. Build and deployment > Source: Deploy from a branch.
+8. Branch: main.
+9. Folder: / (root).
+10. Save.
+11. Abre la URL indicada por GitHub Pages.
+
+Más detalles: docs/GITHUB_PAGES.md

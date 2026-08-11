@@ -1,0 +1,50 @@
+[
+  {
+    "id": "rel_wine_fermentation_demo",
+    "from": "wine_demo",
+    "to": "fermentation_demo",
+    "type": "uses_technique",
+    "period": {
+      "start": -5000,
+      "end": 2026,
+      "precision": "range",
+      "display": "rango funcional de demostración"
+    },
+    "certainty": "unknown",
+    "summary": "Relación semilla, no cronología histórica validada.",
+    "sourceRefs": [],
+    "status": "seed"
+  },
+  {
+    "id": "rel_garum_fermentation_demo",
+    "from": "garum_demo",
+    "to": "fermentation_demo",
+    "type": "uses_technique",
+    "period": {
+      "start": -500,
+      "end": 500,
+      "precision": "range",
+      "display": "rango demostrativo"
+    },
+    "certainty": "unknown",
+    "summary": "Relación semilla.",
+    "sourceRefs": [],
+    "status": "seed"
+  },
+  {
+    "id": "rel_nixtamal_maize_demo",
+    "from": "nixtamalization_demo",
+    "to": "maize_demo",
+    "type": "produced_with",
+    "period": {
+      "start": -2000,
+      "end": 2026,
+      "precision": "range",
+      "display": "rango funcional de demostración"
+    },
+    "certainty": "unknown",
+    "summary": "Relación semilla.",
+    "sourceRefs": [],
+    "status": "seed"
+  }
+]

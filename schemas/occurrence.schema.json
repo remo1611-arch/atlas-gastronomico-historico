@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GastronomicOccurrence",
+  "type": "object",
+  "required": [
+    "id",
+    "subjectRef",
+    "placeRef",
+    "period",
+    "occurrenceType",
+    "evidenceType",
+    "certainty",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "subjectRef": {
+      "type": "string"
+    },
+    "placeRef": {
+      "type": "string"
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "start",
+        "end",
+        "precision"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        },
+        "precision": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        }
+      }
+    },
+    "occurrenceType": {
+      "type": "string"
+    },
+    "evidenceType": {
+      "type": "string"
+    },
+    "certainty": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

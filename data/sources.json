@@ -1,0 +1,11 @@
+[
+  {
+    "id": "src_natural_earth_basemap",
+    "title": "Natural Earth — mapa mundial de baja resolución",
+    "publisher": "Natural Earth / NACIS",
+    "url": "https://www.naturalearthdata.com/",
+    "sourceType": "dataset",
+    "accessed": "2026-08-11",
+    "notes": "Mapa moderno de contexto. No representa fronteras gastronómicas ni históricas."
+  }
+]

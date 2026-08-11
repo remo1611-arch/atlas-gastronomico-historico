@@ -1,0 +1,24 @@
+{
+  "project": {
+    "name": "Atlas Gastronómico Histórico",
+    "version": "0.1.0-alpha.1"
+  },
+  "timeline": {
+    "minYear": -12000,
+    "maxYear": 2026,
+    "initialYear": 1500,
+    "eventWindowYears": 100,
+    "playStep": 50,
+    "playStepOptions": [
+      1,
+      10,
+      50,
+      100,
+      500
+    ]
+  },
+  "display": {
+    "initialTheme": "dark",
+    "initialLabels": "auto"
+  }
+}
