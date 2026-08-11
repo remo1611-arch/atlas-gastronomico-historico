@@ -1,81 +1,101 @@
-# Resultados de validación — 0.1.0-alpha.14
+# Resultados de validación — 0.1.0-alpha.15
 
 Fecha: 2026-08-11
 
-## Estado
+# Resultado
+
+**G2 FINAL GATE: PASS**
+
+## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · maduración final.
+- G2: CERRADO.
+- G3: SIGUIENTE.
 
-## Corpus
-- 21 subjects · 11 reviewed/verified.
-- 32 places · 24 reviewed/verified.
-- 35 occurrences · 24 reviewed/verified.
-- 3 events.
-- 4 relationships.
-- 7 contexts · 7 reviewed/verified.
-- 6 developments · 6 reviewed/verified.
+## Corpus runtime
+- 11 subjects.
+- 24 places.
+- 24 occurrences.
+- 1 event.
+- 1 relationship.
+- 7 contexts.
+- 6 developments.
 - 66 sources.
-- 18 occurrences activas/revisadas sin punto cartográfico canónico.
 
-## Suite completa: PASS
+Todo el runtime histórico está en `reviewed` o `verified`.
 
-### Estructura / schema
-- validate_project.py: PASS.
-- test_schema_validation.py: PASS.
-- 174 objetos / 8 schemas.
+## Archivo demo
+`data/archive/demo_records_pre_g2.json`
 
-### Core / UI
-- node --check core.js: PASS.
-- node --check app.js: PASS.
-- core: 11 aserciones PASS.
-- UI contract: 100 IDs / 88 refs.
-- mobile: PASS.
-- contraste claro: PASS.
-- filtros: PASS.
-- debounce: PASS.
-- cobertura cartográfica: PASS.
+- 34 registros archivados.
+- 5 seeds históricos no canonizados preservados.
+- seed/deprecated fuera del runtime.
+- seedToggle/showSeed ausentes.
 
-### Estados / trazabilidad
-- public state: PASS.
-- verified gate: PASS.
-- 14 registros verified.
-- disputed contract: PASS.
-- traceability UI: PASS.
+## Schema
+- 140 objetos runtime.
+- 8 schemas.
+- PASS.
 
-### G2
-- pilot A: PASS.
-- pilot B: PASS.
-- pilot C maize: PASS.
-- pilot D nixtamalization: PASS.
-- technique history: PASS.
-- second review B/C/D: PASS.
-- pilot promotion compatibility: PASS.
-- thematic coverage: PASS.
+## Verified
+- 14 registros con metadata `verification`.
+- PASS.
 
-### Historias longitudinales
+## Disputed
+- 1 occurrence estructurada.
+- 2 posiciones con fuentes separadas.
+- PASS.
+
+## Historias longitudinales
 1. vino;
 2. maíz;
 3. aceite de oliva.
 
-`test_third_longitudinal_history.py`: PASS.
-No existe JS específico para olive_oil.
+Motor genérico: PASS.
 
-### Cobertura nueva
-- grasa/aceite: olive_oil.
-- especia: black_pepper / Berenike.
+## Técnica
+Nixtamalización canónica y relación verificada con maíz: PASS.
 
-### Temporal UX
-- temporal navigator: PASS.
-- unified timeline: PASS.
-- magnetic timeline: PASS.
-- magnetic algorithm: 8 assertions PASS.
+## Cobertura temática
+- grasa/aceite: PASS;
+- especia: PASS;
+- animal: PASS;
+- bebida: PASS;
+- texto culinario: PASS;
+- conservación: PASS;
+- ciencia/tecnología: PASS;
+- seguridad/regulación: PASS.
 
-### GitHub Pages
+## Temporal UX
+- Temporal Navigator: PASS.
+- Unified Timeline: PASS.
+- Magnetic Timeline: PASS.
+- Magnetic algorithm: 8 assertions PASS.
+- slider antiguo: ausente.
+- ± años: ausentes.
+- playback cronológico: ausente.
+
+## UI / responsive
+- UI contract: 99 IDs / 87 refs JS.
+- Mobile contract: PASS.
+- Light contrast: PASS.
+- Filter state: PASS.
+- Search debounce: PASS.
+- Map coverage: PASS.
+
+## Cartografía
+18 occurrences públicas carecen deliberadamente de punto canónico.
+
+Esto no es un fallo: permanecen visibles en historia/listas y no reciben coordenadas inventadas.
+
+## GitHub Pages
 - 16/16 recursos críticos PASS.
 
-## Pendiente para cerrar G2
-- auditar todos los seeds demostrativos restantes;
-- canonizar o excluir cada seed de la experiencia pública;
-- gate final G2;
-- congelar contrato antes de G3.
+## Política posterior
+El contrato G2 queda congelado.
+
+Cambios estructurales en G3 requieren:
+- caso real;
+- ADR;
+- migración;
+- tests de regresión.

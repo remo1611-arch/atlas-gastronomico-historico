@@ -105,3 +105,9 @@
 82. La segunda revisión puede verificar un subject o relationship sin verificar automáticamente todas sus occurrences.
 83. Un gate de cobertura temática no justifica promociones editoriales: `reviewed` permanece válido cuando falta contraste independiente.
 
+84. Al cerrar G2, el corpus runtime contiene exclusivamente registros `reviewed` o `verified`.
+85. Los seeds y migraciones demo pre-G2 se conservan en `data/archive/` y no se cargan en la experiencia pública.
+86. Un `draft`, `seed` o `deprecated` futuro no puede aparecer públicamente por defecto; `isPublicStatus()` actúa como gate defensivo.
+87. El contrato de G2 queda congelado: cambios estructurales en G3 requieren caso real, ADR, migración y regresión.
+88. Archivar un registro demo no equivale a borrarlo: su procedencia y `supersededBy` permanecen auditables.
+

@@ -10,6 +10,7 @@ O={x["id"]:x for x in load("occurrences.json")}
 E={x["id"]:x for x in load("events.json")}
 C={x["id"]:x for x in load("contexts.json")}
 SRC={x["id"] for x in load("sources.json")}
+archive=json.loads((ROOT/"data"/"archive"/"demo_records_pre_g2.json").read_text(encoding="utf-8"))
 app=(ROOT/"js/app.js").read_text(encoding="utf-8")
 
 errors=[]
@@ -54,7 +55,7 @@ else:
     if event.get("subjectRefs")!=["maize"]:errors.append("evento debe ser específico de maize")
     if len(event.get("sourceRefs",[]))<2:errors.append("evento transatlántico necesita fuentes múltiples")
 
-old=E.get("event_columbian_exchange_demo")
+old={x["id"]:x for x in archive.get("events",[])}.get("event_columbian_exchange_demo")
 if not old or old.get("status")!="deprecated" or old.get("supersededBy")!="event_maize_transatlantic_exchange_1492_1700":
     errors.append("migración del evento demo incorrecta")
 

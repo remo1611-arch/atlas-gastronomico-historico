@@ -1,0 +1,519 @@
+{
+  "archiveVersion": "1",
+  "title": "Registros demo pre-G2 archivados",
+  "archivedOn": "2026-08-11",
+  "reason": "Separación del corpus canónico runtime al cerrar G2. Se conservan seeds y migraciones deprecated para trazabilidad.",
+  "runtimePolicy": "Los archivos data/*.json de producción contienen solo reviewed/verified.",
+  "subjects": [
+    {
+      "id": "wheat_demo",
+      "name": "Trigo",
+      "type": "food_species",
+      "summary": "Registro semilla para probar domesticación, cultivo, molienda y panificación sin atribuir un origen único.",
+      "aliases": [],
+      "tags": [
+        "cereal"
+      ],
+      "status": "seed"
+    },
+    {
+      "id": "olive_oil_demo",
+      "name": "Aceite de oliva",
+      "type": "processed_product",
+      "summary": "Registro semilla para probar producción, comercio y usos culinarios en múltiples regiones y periodos.",
+      "aliases": [],
+      "tags": [
+        "grasa",
+        "aceite"
+      ],
+      "status": "deprecated",
+      "supersededBy": "olive_oil"
+    },
+    {
+      "id": "fermentation_demo",
+      "name": "Fermentación",
+      "type": "culinary_technique",
+      "summary": "Registro semilla de técnica transversal con múltiples sustratos, regiones y cronologías.",
+      "aliases": [],
+      "tags": [
+        "transformación",
+        "conservación"
+      ],
+      "status": "seed"
+    },
+    {
+      "id": "wine_demo",
+      "name": "Vino",
+      "type": "beverage",
+      "summary": "Registro semilla para probar bebida, producción, textos y comercio.",
+      "aliases": [],
+      "tags": [
+        "bebida",
+        "fermentación"
+      ],
+      "status": "deprecated",
+      "supersededBy": "wine"
+    },
+    {
+      "id": "garum_demo",
+      "name": "Garum",
+      "type": "processed_product",
+      "summary": "Registro semilla para probar producto elaborado, producción regional y atestiguación textual.",
+      "aliases": [],
+      "tags": [
+        "pescado",
+        "fermentación"
+      ],
+      "status": "deprecated",
+      "supersededBy": "garum"
+    },
+    {
+      "id": "sugar_demo",
+      "name": "Azúcar de caña",
+      "type": "processed_product",
+      "summary": "Registro semilla para probar producción, difusión y comercio de un producto de larga historia.",
+      "aliases": [],
+      "tags": [
+        "dulce",
+        "caña"
+      ],
+      "status": "seed"
+    },
+    {
+      "id": "maize_demo",
+      "name": "Maíz",
+      "type": "food_species",
+      "summary": "Registro semilla para probar domesticación, difusión y transferencias transoceánicas.",
+      "aliases": [],
+      "tags": [
+        "cereal",
+        "intercambio"
+      ],
+      "status": "deprecated",
+      "supersededBy": "maize"
+    },
+    {
+      "id": "potato_demo",
+      "name": "Patata",
+      "type": "food_species",
+      "summary": "Registro semilla para probar domesticación andina, introducción y adopción en otras regiones.",
+      "aliases": [
+        "papa"
+      ],
+      "tags": [
+        "tubérculo",
+        "intercambio"
+      ],
+      "status": "seed"
+    },
+    {
+      "id": "coffee_demo",
+      "name": "Café",
+      "type": "beverage",
+      "summary": "Registro semilla para probar bebida, comercio, espacios de consumo y difusión.",
+      "aliases": [],
+      "tags": [
+        "bebida",
+        "comercio"
+      ],
+      "status": "seed"
+    },
+    {
+      "id": "nixtamalization_demo",
+      "name": "Nixtamalización",
+      "type": "culinary_technique",
+      "summary": "Registro semilla para probar una técnica asociada al procesamiento del maíz.",
+      "aliases": [],
+      "tags": [
+        "maíz",
+        "técnica"
+      ],
+      "status": "deprecated",
+      "supersededBy": "nixtamalization"
+    }
+  ],
+  "places": [
+    {
+      "id": "fertile_crescent_demo",
+      "name": "Creciente Fértil (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 34.5,
+        "lon": 39.0
+      },
+      "summary": "Punto visual de referencia para un área amplia; no representa un origen único.",
+      "status": "seed"
+    },
+    {
+      "id": "eastern_mediterranean_demo",
+      "name": "Mediterráneo oriental (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 35.0,
+        "lon": 25.0
+      },
+      "summary": "Referencia visual para probar ocurrencias mediterráneas.",
+      "status": "seed"
+    },
+    {
+      "id": "roman_mediterranean_demo",
+      "name": "Mediterráneo romano (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 38.0,
+        "lon": 15.0
+      },
+      "summary": "Referencia visual, no frontera histórica.",
+      "status": "seed"
+    },
+    {
+      "id": "south_asia_demo",
+      "name": "Asia meridional (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 23.0,
+        "lon": 78.0
+      },
+      "summary": "Referencia visual para el prototipo.",
+      "status": "seed"
+    },
+    {
+      "id": "mesoamerica_demo",
+      "name": "Mesoamérica (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 17.0,
+        "lon": -91.0
+      },
+      "summary": "Referencia visual para el prototipo.",
+      "status": "seed"
+    },
+    {
+      "id": "andes_demo",
+      "name": "Andes centrales (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": -13.0,
+        "lon": -72.0
+      },
+      "summary": "Referencia visual para el prototipo.",
+      "status": "seed"
+    },
+    {
+      "id": "western_europe_demo",
+      "name": "Europa occidental (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 47.0,
+        "lon": 2.0
+      },
+      "summary": "Referencia visual para probar introducciones/adopciones.",
+      "status": "seed"
+    },
+    {
+      "id": "red_sea_demo",
+      "name": "Mar Rojo / Arabia (referencia)",
+      "type": "macroregion",
+      "point": {
+        "lat": 18.0,
+        "lon": 42.0
+      },
+      "summary": "Referencia visual para el prototipo del café.",
+      "status": "seed"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "occ_wheat_fc_demo",
+      "subjectRef": "wheat_demo",
+      "placeRef": "fertile_crescent_demo",
+      "period": {
+        "start": -10000,
+        "end": -7000,
+        "precision": "range",
+        "display": "rango demostrativo prehistórico"
+      },
+      "occurrenceType": "domestication_evidence",
+      "evidenceType": "archaeobotanical",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar rangos de domesticación; pendiente de G2.",
+      "sourceRefs": [],
+      "status": "seed"
+    },
+    {
+      "id": "occ_oil_med_demo",
+      "subjectRef": "olive_oil_demo",
+      "placeRef": "eastern_mediterranean_demo",
+      "period": {
+        "start": -4000,
+        "end": -2000,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "production",
+      "evidenceType": "archaeological",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar producción antigua de aceite.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "occ_olive_oil_kfar_samir_6500_bp"
+    },
+    {
+      "id": "occ_wine_med_demo",
+      "subjectRef": "wine_demo",
+      "placeRef": "eastern_mediterranean_demo",
+      "period": {
+        "start": -5000,
+        "end": -2000,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "production",
+      "evidenceType": "biomolecular",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar evidencia de bebidas fermentadas.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "occ_wine_gadachrili_6000_5800_bce"
+    },
+    {
+      "id": "occ_garum_roman_demo",
+      "subjectRef": "garum_demo",
+      "placeRef": "roman_mediterranean_demo",
+      "period": {
+        "start": -200,
+        "end": 400,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "production",
+      "evidenceType": "archaeological",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar un producto elaborado de época antigua.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "occ_garum_pompeii_first_century"
+    },
+    {
+      "id": "occ_sugar_south_asia_demo",
+      "subjectRef": "sugar_demo",
+      "placeRef": "south_asia_demo",
+      "period": {
+        "start": -500,
+        "end": 700,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "production",
+      "evidenceType": "textual",
+      "certainty": "unknown",
+      "summary": "Dato semilla; cronología pendiente de auditoría.",
+      "sourceRefs": [],
+      "status": "seed"
+    },
+    {
+      "id": "occ_maize_meso_demo",
+      "subjectRef": "maize_demo",
+      "placeRef": "mesoamerica_demo",
+      "period": {
+        "start": -7000,
+        "end": -3000,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "domestication_evidence",
+      "evidenceType": "archaeobotanical",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar domesticación y múltiples evidencias.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "occ_maize_xihuatoxtla_early_holocene"
+    },
+    {
+      "id": "occ_nixtamal_demo",
+      "subjectRef": "nixtamalization_demo",
+      "placeRef": "mesoamerica_demo",
+      "period": {
+        "start": -2000,
+        "end": 1500,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "adoption",
+      "evidenceType": "material_culture",
+      "certainty": "unknown",
+      "summary": "Dato semilla, no cronología verificada.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "occ_nixtamal_san_bartolo_600_800"
+    },
+    {
+      "id": "occ_potato_andes_demo",
+      "subjectRef": "potato_demo",
+      "placeRef": "andes_demo",
+      "period": {
+        "start": -6000,
+        "end": -2000,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "domestication_evidence",
+      "evidenceType": "archaeobotanical",
+      "certainty": "unknown",
+      "summary": "Dato semilla para el caso andino.",
+      "sourceRefs": [],
+      "status": "seed"
+    },
+    {
+      "id": "occ_potato_europe_demo",
+      "subjectRef": "potato_demo",
+      "placeRef": "western_europe_demo",
+      "period": {
+        "start": 1550,
+        "end": 1800,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "introduction",
+      "evidenceType": "textual",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar introducción y adopción gradual.",
+      "sourceRefs": [],
+      "status": "seed"
+    },
+    {
+      "id": "occ_coffee_redsea_demo",
+      "subjectRef": "coffee_demo",
+      "placeRef": "red_sea_demo",
+      "period": {
+        "start": 1400,
+        "end": 1700,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "consumption",
+      "evidenceType": "textual",
+      "certainty": "unknown",
+      "summary": "Dato semilla para probar bebida y expansión comercial.",
+      "sourceRefs": [],
+      "status": "seed"
+    },
+    {
+      "id": "occ_fermentation_fc_demo",
+      "subjectRef": "fermentation_demo",
+      "placeRef": "fertile_crescent_demo",
+      "period": {
+        "start": -7000,
+        "end": -3000,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "occurrenceType": "production",
+      "evidenceType": "biomolecular",
+      "certainty": "unknown",
+      "summary": "Dato semilla para técnica de larga duración.",
+      "sourceRefs": [],
+      "status": "seed"
+    }
+  ],
+  "events": [
+    {
+      "id": "event_columbian_exchange_demo",
+      "title": "Intercambios alimentarios transatlánticos",
+      "period": {
+        "start": 1492,
+        "end": 1700,
+        "precision": "range",
+        "display": "desde finales del siglo XV"
+      },
+      "eventType": "diffusion",
+      "subjectRefs": [
+        "maize",
+        "potato_demo"
+      ],
+      "placeRefs": [
+        "mesoamerica_demo",
+        "andes_demo",
+        "western_europe_demo"
+      ],
+      "summary": "Evento semilla para probar difusión transoceánica; G2 deberá subdividir cultivos, rutas y cronologías.",
+      "certainty": "unknown",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "event_maize_transatlantic_exchange_1492_1700"
+    },
+    {
+      "id": "event_sugar_diffusion_demo",
+      "title": "Difusión histórica del azúcar de caña",
+      "period": {
+        "start": 500,
+        "end": 1600,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "eventType": "diffusion",
+      "subjectRefs": [
+        "sugar_demo"
+      ],
+      "placeRefs": [
+        "south_asia_demo",
+        "western_europe_demo"
+      ],
+      "summary": "Evento semilla; pendiente de reconstrucción histórica por etapas.",
+      "certainty": "unknown",
+      "sourceRefs": [],
+      "status": "seed"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel_wine_fermentation_demo",
+      "from": "wine_demo",
+      "to": "fermentation_demo",
+      "type": "uses_technique",
+      "period": {
+        "start": -5000,
+        "end": 2026,
+        "precision": "range",
+        "display": "rango funcional de demostración"
+      },
+      "certainty": "unknown",
+      "summary": "Relación semilla, no cronología histórica validada.",
+      "sourceRefs": [],
+      "status": "deprecated"
+    },
+    {
+      "id": "rel_garum_fermentation_demo",
+      "from": "garum_demo",
+      "to": "fermentation_demo",
+      "type": "uses_technique",
+      "period": {
+        "start": -500,
+        "end": 500,
+        "precision": "range",
+        "display": "rango demostrativo"
+      },
+      "certainty": "unknown",
+      "summary": "Relación semilla.",
+      "sourceRefs": [],
+      "status": "deprecated"
+    },
+    {
+      "id": "rel_nixtamal_maize_demo",
+      "from": "nixtamalization_demo",
+      "to": "maize",
+      "type": "produced_with",
+      "period": {
+        "start": -2000,
+        "end": 2026,
+        "precision": "range",
+        "display": "rango funcional de demostración"
+      },
+      "certainty": "unknown",
+      "summary": "Relación semilla.",
+      "sourceRefs": [],
+      "status": "deprecated",
+      "supersededBy": "rel_maize_uses_nixtamalization_maya_classic"
+    }
+  ]
+}

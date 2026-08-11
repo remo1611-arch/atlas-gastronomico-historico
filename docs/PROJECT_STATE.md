@@ -4,76 +4,59 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.14
+0.1.0-alpha.15
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · maduración final.
-- G3+: no iniciados.
+- **G2: CERRADO.**
+- G3: SIGUIENTE.
+- G4+: no iniciados.
 
-## Corpus
-- 21 subjects.
-- 32 places.
-- 35 occurrences.
-- 3 events.
-- 4 relationships.
+## Corpus runtime
+- 11 subjects.
+- 24 places.
+- 24 occurrences.
+- 1 event.
+- 1 relationship.
 - 7 contexts.
 - 6 developments.
 - 66 sources.
 
-## Verified
-14 registros superan actualmente el gate `verified`.
+Todos los registros históricos runtime están en `reviewed` o `verified`.
 
-Nuevas promociones alpha.14:
-- goat;
-- occ_goat_ganj_dareh_8200_bce;
-- forme_of_cury;
-- occ_forme_of_cury_1390;
-- nixtamalization;
-- rel_maize_uses_nixtamalization_maya_classic.
+## Archivo histórico
+34 registros demo/seed/deprecated se conservan en:
+
+`data/archive/demo_records_pre_g2.json`
+
+No son cargados por la aplicación.
+
+## Verified
+14 registros superan el gate de segunda revisión.
+
+## Disputed
+Existe un caso público estructurado con dos posiciones y fuentes separadas.
 
 ## Historias longitudinales
-1. vino;
-2. maíz;
-3. aceite de oliva.
+- vino;
+- maíz;
+- aceite de oliva.
 
-El tercer recorrido es completamente genérico: no se añade JS específico para aceite.
+## Técnica
+Nixtamalización canónica y relación verificada con maíz.
 
-## Aceite de oliva
-Canonical:
-- `olive_oil`.
+## Temporal UX
+- Unified Timeline;
+- Magnetic Timeline;
+- anterior/siguiente hito;
+- selección exacta de año separada.
 
-Occurrences:
-- Kfar Samir · producción;
-- Ein Zippori · almacenamiento;
-- Monte Testaccio · comercio.
+## Contrato
+Congelado al cierre de G2.
 
-Migración:
-- olive_oil_demo → deprecated → olive_oil;
-- occ_oil_med_demo → deprecated → occ_olive_oil_kfar_samir_6500_bp.
+Cambios estructurales posteriores requieren ADR + caso real + tests + migración.
 
-## Especia
-Canonical:
-- black_pepper.
+## Próxima fase
+G3 — Evidencia y precisión.
 
-Occurrence:
-- Berenike · trade · archaeobotanical.
-
-## Conservadurismo editorial
-Permanecen reviewed:
-- bread_like_flatbread;
-- cheese;
-- chicken/disputed;
-- nuevos registros de aceite;
-- pimienta negra.
-
-## UX
-Se conserva Magnetic Timeline alpha.12 sin cambios.
-
-## Pendiente para cierre G2
-Los seeds demostrativos restantes todavía deben:
-- sustituirse por casos canónicos sustentados, o
-- desaparecer de la experiencia pública.
-
-Después se ejecutará el gate final G2 y se congelará el contrato para iniciar G3.

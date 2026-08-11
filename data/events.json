@@ -1,52 +1,5 @@
 [
   {
-    "id": "event_columbian_exchange_demo",
-    "title": "Intercambios alimentarios transatlánticos",
-    "period": {
-      "start": 1492,
-      "end": 1700,
-      "precision": "range",
-      "display": "desde finales del siglo XV"
-    },
-    "eventType": "diffusion",
-    "subjectRefs": [
-      "maize",
-      "potato_demo"
-    ],
-    "placeRefs": [
-      "mesoamerica_demo",
-      "andes_demo",
-      "western_europe_demo"
-    ],
-    "summary": "Evento semilla para probar difusión transoceánica; G2 deberá subdividir cultivos, rutas y cronologías.",
-    "certainty": "unknown",
-    "sourceRefs": [],
-    "status": "deprecated",
-    "supersededBy": "event_maize_transatlantic_exchange_1492_1700"
-  },
-  {
-    "id": "event_sugar_diffusion_demo",
-    "title": "Difusión histórica del azúcar de caña",
-    "period": {
-      "start": 500,
-      "end": 1600,
-      "precision": "range",
-      "display": "rango demostrativo"
-    },
-    "eventType": "diffusion",
-    "subjectRefs": [
-      "sugar_demo"
-    ],
-    "placeRefs": [
-      "south_asia_demo",
-      "western_europe_demo"
-    ],
-    "summary": "Evento semilla; pendiente de reconstrucción histórica por etapas.",
-    "certainty": "unknown",
-    "sourceRefs": [],
-    "status": "seed"
-  },
-  {
     "id": "event_maize_transatlantic_exchange_1492_1700",
     "title": "Transferencia transatlántica y difusión global del maíz",
     "period": {

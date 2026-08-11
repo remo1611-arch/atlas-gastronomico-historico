@@ -1,7 +1,8 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.14"
+    "version": "0.1.0-alpha.15",
+    "gate": "G2_CLOSED"
   },
   "timeline": {
     "minYear": -12000,

@@ -26,7 +26,7 @@ required={
 "heroYear","heroEra","yearDisplay","yearMagnitude","yearEra","goYearBtn",
 "occurrenceCount","subjectCount","placeCount","eventCount",
 "searchInput","subjectTypeFilter","evidenceFilter","occurrenceTypeFilter","labelMode",
-"seedToggle","resetFiltersBtn","worldMap","basemapLayer","occurrenceLayer","occurrenceList",
+"resetFiltersBtn","worldMap","basemapLayer","occurrenceLayer","occurrenceList",
 "categorySummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus","historyDrawer","historyTitle","historySubtitle","historySummary","historyTimeline","temporalNavigator","temporalRail","temporalDensity","temporalVerified","temporalEvents","temporalDevelopments","temporalCursor","temporalFocus","prevTemporalHitBtn","nextTemporalHitBtn","temporalMinLabel","temporalNavigatorHint","temporalMaxLabel"
 }
 mr=sorted(required-set(p.ids))

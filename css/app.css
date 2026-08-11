@@ -337,8 +337,6 @@ html[data-theme="light"] .country{fill:#d7ddd8;stroke:#aeb9b3}
 }
 .drawer-body{padding:18px;display:grid;gap:14px;overflow:auto}
 .field{display:grid;gap:6px;color:var(--muted);font-size:.78rem}
-.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:13px;border:1px solid var(--line);border-radius:15px;background:var(--surface-2)}
-.toggle-row strong,.toggle-row small{display:block}.toggle-row small{color:var(--muted);font-size:.69rem;margin-top:3px}
 .detail-panel{padding-bottom:env(safe-area-inset-bottom)}
 .detail-close{position:absolute;right:14px;top:14px;z-index:2}
 .detail-hero{padding:28px 64px 18px 20px;background:linear-gradient(145deg,color-mix(in srgb,var(--accent) 16%,var(--surface-solid)),var(--surface-solid));border-bottom:1px solid var(--line)}

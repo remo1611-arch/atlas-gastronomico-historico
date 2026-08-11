@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.1.0-alpha.15 — 2026-08-11
+
+### Gate
+- **G2 CLOSED**.
+
+### Runtime
+- solo reviewed/verified;
+- 11 subjects;
+- 24 places;
+- 24 occurrences;
+- 1 event;
+- 1 relationship;
+- 7 contexts;
+- 6 developments.
+
+### Archivo demo
+- 34 registros seed/deprecated trasladados a `data/archive/demo_records_pre_g2.json`;
+- cinco seeds no canonizados preservados;
+- migraciones supersededBy conservadas.
+
+### UI
+- eliminado toggle público de datos seed;
+- eliminado estado `showSeed`;
+- estado del corpus muestra reviewed vs verified.
+
+### Contrato
+- `isPublicStatus()` centraliza el gate público;
+- G2 congelado antes de G3.
+
 ## 0.1.0-alpha.14 — 2026-08-11
 
 ### Segunda revisión B/C/D

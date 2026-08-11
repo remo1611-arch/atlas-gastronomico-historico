@@ -134,3 +134,13 @@ Una hipótesis etnobotánica, experimental o historiográfica puede ser una fuen
 
 La occurrence exige anclaje temporal/espacial suficientemente defendible para el tipo de afirmación que se pretende mostrar.
 
+## Política de publicación desde G2 CLOSED
+
+El runtime público solo admite:
+- `reviewed`;
+- `verified`.
+
+`seed`, `draft` y `deprecated` se consideran no publicables.
+
+Los fixtures históricos archivados no son fuentes y no deben citarse como evidencia histórica.
+

@@ -83,3 +83,10 @@ Continuación alpha.14:
 - decidir por cada seed: canonizar con fuentes o excluir de experiencia pública;
 - no cargar corpus masivo antes de cerrar ese gate;
 - conservar tres historias genéricas: vino, maíz, aceite de oliva.
+
+Estado de continuación:
+- G2 CLOSED.
+- No añadir seeds al runtime.
+- No reabrir arquitectura G2 salvo defecto verificable.
+- Iniciar G3: evidencia y precisión.
+- Leer docs/G2_FINAL_GATE.md y docs/SEED_ARCHIVE.md.

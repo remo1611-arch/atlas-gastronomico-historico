@@ -176,10 +176,10 @@ required=[
     "data/config.json","data/taxonomy.json","data/subjects.json","data/places.json",
     "data/occurrences.json","data/events.json","data/relationships.json",
     "data/contexts.json","data/developments.json","data/sources.json",
-    "data/basemap/world_110m.geojson",
+    "data/basemap/world_110m.geojson","data/archive/demo_records_pre_g2.json",
     "schemas/context.schema.json","schemas/development.schema.json",
     "docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md",
-    "docs/ROADMAP.md","docs/G2_PILOT.md"
+    "docs/ROADMAP.md","docs/G2_PILOT.md","docs/G2_FINAL_GATE.md","docs/SEED_ARCHIVE.md"
 ]
 for x in required:
     if not(ROOT/x).exists():errors.append("Falta: "+x)

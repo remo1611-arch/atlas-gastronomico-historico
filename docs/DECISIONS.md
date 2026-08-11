@@ -197,3 +197,15 @@ Berenike documenta comercio/presencia arqueobotánica de pimienta negra. No se p
 **Aceptada.**
 G2 no se cerrará formalmente mientras los seeds demostrativos restantes puedan confundirse con corpus histórico público.
 
+## ADR-053 — Runtime exclusivamente reviewed/verified
+**Aceptada.**
+Al cierre de G2, los JSON cargados por la app contienen únicamente corpus público reviewed/verified. Esto previene fugas accidentales de seed/draft.
+
+## ADR-054 — Archivo demo separado
+**Aceptada.**
+Los registros seed/deprecated del prototipo se trasladan a `data/archive/demo_records_pre_g2.json`. Se preservan para trazabilidad pero no se cargan en runtime.
+
+## ADR-055 — Cierre y congelación de G2
+**Aceptada.**
+G2 queda cerrado en alpha.15. Durante G3, cualquier cambio estructural requiere caso real, ADR, migración y tests; aumentar el corpus no reabre G2.
+

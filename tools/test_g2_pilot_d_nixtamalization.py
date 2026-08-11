@@ -3,6 +3,7 @@ import json,sys
 ROOT=Path(__file__).resolve().parents[1]
 def load(n):return json.loads((ROOT/'data'/n).read_text(encoding='utf-8'))
 S={x['id']:x for x in load('subjects.json')}; O={x['id']:x for x in load('occurrences.json')}; R={x['id']:x for x in load('relationships.json')}; T=load('taxonomy.json'); SRC={x['id'] for x in load('sources.json')}
+archive=json.loads((ROOT/"data"/"archive"/"demo_records_pre_g2.json").read_text(encoding="utf-8"))
 errors=[]
 if 'technique_attestation' not in T['occurrenceTypes']: errors.append('taxonomy sin technique_attestation')
 tech=S.get('nixtamalization')
@@ -18,12 +19,15 @@ for oid in ['occ_nixtamal_san_bartolo_600_800','occ_nixtamal_la_corona_600_800']
     if 'origen de la técnica fue' in text or 'se inventó en' in text: errors.append(oid+' claim de origen simplista')
 r=R.get('rel_maize_uses_nixtamalization_maya_classic')
 if not r or r.get('from')!='maize' or r.get('to')!='nixtamalization' or r.get('type')!='uses_technique' or r.get('status') not in {'reviewed','verified'}: errors.append('relación canónica incorrecta')
+archived_subjects={x['id']:x for x in archive.get('subjects',[])}
+archived_occ={x['id']:x for x in archive.get('occurrences',[])}
+archived_rel={x['id']:x for x in archive.get('relationships',[])}
 for old,new in [('nixtamalization_demo','nixtamalization')]:
-    x=S.get(old)
+    x=archived_subjects.get(old)
     if not x or x.get('status')!='deprecated' or x.get('supersededBy')!=new: errors.append('migración subject demo incorrecta')
-o=O.get('occ_nixtamal_demo')
+o=archived_occ.get('occ_nixtamal_demo')
 if not o or o.get('status')!='deprecated' or o.get('supersededBy')!='occ_nixtamal_san_bartolo_600_800': errors.append('migración occurrence demo incorrecta')
-r0=R.get('rel_nixtamal_maize_demo')
+r0=archived_rel.get('rel_nixtamal_maize_demo')
 if not r0 or r0.get('status')!='deprecated' or r0.get('supersededBy')!='rel_maize_uses_nixtamalization_maya_classic': errors.append('migración relationship demo incorrecta')
 if errors:
  print('G2 PILOT D NIXTAMALIZATION: FAIL'); [print('ERROR:',e) for e in errors]; sys.exit(1)

@@ -5,6 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 def load(n):return json.loads((ROOT/"data"/n).read_text(encoding="utf-8"))
 
 subjects=load("subjects.json")
+archive=json.loads((ROOT/"data"/"archive"/"demo_records_pre_g2.json").read_text(encoding="utf-8"))
 places=load("places.json")
 occ=load("occurrences.json")
 contexts=load("contexts.json")
@@ -49,10 +50,11 @@ for collection,label in [(subjects,"subject"),(places,"place"),(occ,"occ"),(cont
             for r in refs:
                 if r not in SRC:errors.append(f"{label}:{x['id']}: fuente rota {r}")
 
+archived_subjects={x["id"]:x for x in archive.get("subjects",[])}
 for old,new in [("wine_demo","wine"),("maize_demo","maize"),("garum_demo","garum")]:
-    item=S.get(old)
+    item=archived_subjects.get(old)
     if not item or item.get("status")!="deprecated" or item.get("supersededBy")!=new:
-        errors.append(f"migración subject incorrecta: {old}")
+        errors.append(f"migración subject archivada incorrecta: {old}")
 
 # No G2 reviewed occurrence may claim 'origin' as occurrence type.
 for oid in required_occ:

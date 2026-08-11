@@ -64,7 +64,7 @@ Debe cerrar:
 ---
 
 ## G2 — Corpus piloto verificado
-**Estado: EN CURSO · tandas A y B**
+**Estado: CERRADO · alpha.15**
 
 ### Segunda revisión A
 Promovidos a `verified`:
@@ -223,6 +223,25 @@ Cobertura nueva:
 - eliminar de la experiencia pública los seeds demostrativos restantes o sustituirlos por casos canónicos;
 - auditoría final de G2;
 - congelar contrato antes de G3.
+
+---
+
+## G2-I — Gate final
+**Estado: CERRADO · alpha.15**
+
+- runtime reviewed/verified only;
+- 34 registros demo archivados fuera de runtime;
+- seed toggle eliminado;
+- cinco seeds no canonizados preservados en archivo;
+- tres historias longitudinales;
+- disputed;
+- técnica canónica;
+- aceite/grasa;
+- especia;
+- timeline magnética;
+- suite final G2 PASS.
+
+Contrato G2 congelado.
 
 ---
 

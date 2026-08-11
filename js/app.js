@@ -1,22 +1,22 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.14';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.15';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.14',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.14',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.14',
-  places:'./data/places.json?v=0.1.0-alpha.14',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.14',
-  events:'./data/events.json?v=0.1.0-alpha.14',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.14',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.14',
-  developments:'./data/developments.json?v=0.1.0-alpha.14',
-  sources:'./data/sources.json?v=0.1.0-alpha.14',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.14'
+  config:'./data/config.json?v=0.1.0-alpha.15',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.15',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.15',
+  places:'./data/places.json?v=0.1.0-alpha.15',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.15',
+  events:'./data/events.json?v=0.1.0-alpha.15',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.15',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.15',
+  developments:'./data/developments.json?v=0.1.0-alpha.15',
+  sources:'./data/sources.json?v=0.1.0-alpha.15',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.15'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
-  year:1500,search:'',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
+  year:1500,search:'',evidence:'all',occurrenceType:'all',labelMode:'auto',
   selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
@@ -161,6 +161,10 @@ function subj(id){return s.subjects.find(x=>x.id===id)}
 function place(id){return s.places.find(x=>x.id===id)}
 function sourceById(id){return s.sources.find(x=>x.id===id)}
 
+function isPublicStatus(status){
+  return status==='reviewed'||status==='verified';
+}
+
 function statusMeta(status){
   const map={
     verified:{label:'Verificado',className:'verified'},
@@ -230,15 +234,14 @@ function occVisible(){
   const q=norm(s.search.trim());
 
   return s.occurrences.filter(o=>{
-    if(o.status==='deprecated') return false;
+    if(!isPublicStatus(o.status)) return false;
     if(!active(o.period,s.year)) return false;
-    if(!s.showSeed && o.status==='seed') return false;
     if(s.evidence!=='all' && o.evidenceType!==s.evidence) return false;
     if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) return false;
 
     const subject=subj(o.subjectRef);
     const pl=place(o.placeRef);
-    if(!subject || !pl || subject.status==='deprecated' || pl.status==='deprecated') return false;
+    if(!subject || !pl || !isPublicStatus(subject.status) || !isPublicStatus(pl.status)) return false;
 
     if(s.category!=='all' && subject.type!==s.category) return false;
 
@@ -904,7 +907,7 @@ function renderMetrics(list){
   $('#occurrenceCount').textContent=list.length;
   $('#subjectCount').textContent=new Set(list.map(x=>x.subjectRef)).size;
   $('#placeCount').textContent=new Set(list.map(x=>x.placeRef)).size;
-  $('#eventCount').textContent=s.events.filter(e=>e.status!=='deprecated'&&(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow).length;
+  $('#eventCount').textContent=s.events.filter(e=>isPublicStatus(e.status)&&distance(e.period,s.year)<=s.eventWindow).length;
   $('#visibleBadge').textContent=list.length;
   $('#evidenceContext').textContent=list.length
     ? `${list.length} ${list.length===1?'registro visible':'registros visibles'} en ${formatYear(s.year)}.`
@@ -1063,7 +1066,7 @@ function renderContextLayer(){
   if(!s.layers.contexts) return;
 
   s.contexts
-    .filter(c=>c.status!=='deprecated'&&(s.showSeed||c.status!=='seed')&&active(c.period,s.year))
+    .filter(c=>isPublicStatus(c.status)&&active(c.period,s.year))
     .forEach(c=>{
       const firstPlace=(c.placeRefs||[]).map(place).find(Boolean);
       if(!firstPlace?.point) return;
@@ -1081,7 +1084,7 @@ function renderDevelopmentLayer(){
   if(!s.layers.developments && !s.layers.safety) return;
 
   s.developments
-    .filter(d=>d.status!=='deprecated'&&(s.showSeed||d.status!=='seed')&&active(d.period,s.year))
+    .filter(d=>isPublicStatus(d.status)&&active(d.period,s.year))
     .filter(d=>{
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'];
       return safety.includes(d.type) ? s.layers.safety : s.layers.developments;
@@ -1132,7 +1135,7 @@ function renderTransformationPreview(){
   if(!box) return;
 
   const candidates=s.developments
-    .filter(d=>d.status!=='deprecated'&&(s.showSeed||d.status!=='seed'))
+    .filter(d=>isPublicStatus(d.status))
     .filter(d=>{
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
       return safety ? s.layers.safety : s.layers.developments;
@@ -1186,8 +1189,8 @@ function renderContext(list){
   const subjects=[...new Set(list.map(x=>subj(x.subjectRef)?.name).filter(Boolean))];
   const places=[...new Set(list.map(x=>place(x.placeRef)?.name).filter(Boolean))];
   const evidence=[...new Set(list.map(x=>EVIDENCE_LABELS[x.evidenceType]||x.evidenceType))];
-  const reviewed=list.filter(x=>x.status==='reviewed'||x.status==='verified').length;
-  const seed=list.filter(x=>x.status==='seed').length;
+  const reviewed=list.filter(x=>x.status==='reviewed').length;
+  const verified=list.filter(x=>x.status==='verified').length;
 
   title.textContent=`${formatYear(s.year)} · una instantánea del mundo alimentario`;
   text.textContent=`El Atlas muestra ${list.length} ${list.length===1?'registro':'registros'} asociados a ${subjects.length} ${subjects.length===1?'elemento gastronómico':'elementos gastronómicos'} y ${places.length} ${places.length===1?'lugar':'lugares'}.`;
@@ -1196,7 +1199,7 @@ function renderContext(list){
     ['Elementos visibles',subjects.slice(0,4).join(' · ')||'—'],
     ['Lugares representados',places.slice(0,4).join(' · ')||'—'],
     ['Tipos de evidencia',evidence.slice(0,4).join(' · ')||'—'],
-    ['Estado del corpus',`${reviewed} revisados/verificados · ${seed} provisionales`]
+    ['Estado del corpus',`${reviewed} revisados · ${verified} verificados`]
   ];
 
   box.innerHTML=cards.map(([a,b])=>`<article class="context-card"><strong>${esc(a)}</strong><span>${esc(b)}</span></article>`).join('');
@@ -1208,7 +1211,7 @@ function renderHistorySpotlight(){
   if(!box) return;
 
   const available=s.subjects
-    .filter(subject=>subject.status!=='deprecated')
+    .filter(subject=>isPublicStatus(subject.status))
     .map(subject=>{
       const items=subjectHistoryItems(subject.id);
       const occurrences=items.filter(x=>x.kind==='occurrence');
@@ -1250,7 +1253,7 @@ function renderEvents(){
   box.innerHTML='';
 
   const ev=s.events
-    .filter(e=>e.status!=='deprecated'&&(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow)
+    .filter(e=>isPublicStatus(e.status)&&distance(e.period,s.year)<=s.eventWindow)
     .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year));
 
   if(!ev.length){
@@ -1288,22 +1291,22 @@ function selectOccurrence(id,openDrawer=false){
 
 function subjectHistoryItems(subjectId){
   const occurrences=s.occurrences
-    .filter(o=>o.subjectRef===subjectId&&o.status!=='deprecated'&&(o.status==='reviewed'||o.status==='verified'))
+    .filter(o=>o.subjectRef===subjectId&&isPublicStatus(o.status))
     .map(o=>({kind:'occurrence',period:o.period,item:o}));
 
   const events=s.events
-    .filter(e=>e.status!=='deprecated'&&(e.status==='reviewed'||e.status==='verified')&&(e.subjectRefs||[]).includes(subjectId))
+    .filter(e=>isPublicStatus(e.status)&&(e.subjectRefs||[]).includes(subjectId))
     .map(e=>({kind:'event',period:e.period,item:e}));
 
   const developments=s.developments
-    .filter(d=>d.status!=='deprecated'&&(d.status==='reviewed'||d.status==='verified')&&(d.impactSubjectRefs||[]).includes(subjectId))
+    .filter(d=>isPublicStatus(d.status)&&(d.impactSubjectRefs||[]).includes(subjectId))
     .map(d=>({kind:'development',period:d.period,item:d}));
 
   const techniqueRelations=s.relationships
-    .filter(r=>r.status!=='deprecated'&&(r.status==='reviewed'||r.status==='verified')&&r.type==='uses_technique'&&r.from===subjectId);
+    .filter(r=>isPublicStatus(r.status)&&r.type==='uses_technique'&&r.from===subjectId);
   const techniqueRefs=new Set(techniqueRelations.map(r=>r.to));
   const techniques=s.occurrences
-    .filter(o=>techniqueRefs.has(o.subjectRef)&&o.status!=='deprecated'&&(o.status==='reviewed'||o.status==='verified'))
+    .filter(o=>techniqueRefs.has(o.subjectRef)&&isPublicStatus(o.status))
     .map(o=>({
       kind:'technique',
       period:o.period,
@@ -1321,7 +1324,7 @@ function subjectHistoryItems(subjectId){
 function historyContextNames(o){
   return (o.contextRefs||[])
     .map(contextById)
-    .filter(c=>c&&c.status!=='deprecated')
+    .filter(c=>c&&isPublicStatus(c.status))
     .map(c=>c.name);
 }
 
@@ -1602,8 +1605,8 @@ function renderDetails(o){
     </div>
   `;
 
-  const relatedContexts=(o.contextRefs||[]).map(contextById).filter(c=>c&&c.status!=='deprecated');
-  const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(d=>d&&d.status!=='deprecated');
+  const relatedContexts=(o.contextRefs||[]).map(contextById).filter(c=>c&&isPublicStatus(c.status));
+  const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(d=>d&&isPublicStatus(d.status));
 
   const contextSection=$('#historicalContextSection');
   const developmentSection=$('#developmentContextSection');
@@ -1737,14 +1740,12 @@ function resetFilters(){
   s.occurrenceType='all';
   s.category='all';
   s.labelMode='auto';
-  s.showSeed=true;
 
   $('#searchInput').value='';
   $('#subjectTypeFilter').value='all';
   $('#evidenceFilter').value='all';
   $('#occurrenceTypeFilter').value='all';
   $('#labelMode').value='auto';
-  $('#seedToggle').checked=true;
 
   syncTypeControls();
   render();
@@ -1797,7 +1798,6 @@ function bind(){
   $('#evidenceFilter').addEventListener('change',e=>{s.evidence=e.target.value;render()});
   $('#occurrenceTypeFilter').addEventListener('change',e=>{s.occurrenceType=e.target.value;render()});
   $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occVisible())});
-  $('#seedToggle').addEventListener('change',e=>{s.showSeed=e.target.checked;render()});
   $('#eventWindowSelect').addEventListener('change',e=>{s.eventWindow=Number(e.target.value)||100;renderMetrics(occVisible());renderEvents()});
 
   $('#resetFiltersBtn').addEventListener('click',()=>{debouncedSearch.cancel();resetFilters()});

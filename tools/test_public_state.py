@@ -3,26 +3,45 @@ import json,sys,re
 
 ROOT=Path(__file__).resolve().parents[1]
 app=(ROOT/"js/app.js").read_text(encoding="utf-8")
-subjects=json.loads((ROOT/"data/subjects.json").read_text(encoding="utf-8"))
-occ=json.loads((ROOT/"data/occurrences.json").read_text(encoding="utf-8"))
-events=json.loads((ROOT/"data"/"events.json").read_text(encoding="utf-8"))
-relationships=json.loads((ROOT/"data"/"relationships.json").read_text(encoding="utf-8"))
+html=(ROOT/"index.html").read_text(encoding="utf-8")
+
+def load(n):return json.loads((ROOT/"data"/(n+".json")).read_text(encoding="utf-8"))
+
+runtime={
+    "subjects":load("subjects"),
+    "places":load("places"),
+    "occurrences":load("occurrences"),
+    "events":load("events"),
+    "relationships":load("relationships"),
+    "contexts":load("contexts"),
+    "developments":load("developments"),
+}
+archive=json.loads((ROOT/"data"/"archive"/"demo_records_pre_g2.json").read_text(encoding="utf-8"))
 
 errors=[]
+allowed={"reviewed","verified"}
 
-if "if(o.status==='deprecated') return false;" not in app:
-    errors.append("occVisible no excluye occurrences deprecated")
-if "subject.status==='deprecated'" not in app:
-    errors.append("occVisible no excluye subjects deprecated")
+for name,items in runtime.items():
+    bad=[x.get("id") for x in items if x.get("status") not in allowed]
+    if bad:
+        errors.append(f"{name}: runtime contiene estados no públicos {bad}")
 
-deprecated_subjects=[x for x in subjects if x.get("status")=="deprecated"]
-deprecated_occ=[x for x in occ if x.get("status")=="deprecated"]
-deprecated_events=[x for x in events if x.get("status")=="deprecated"]
-deprecated_relationships=[x for x in relationships if x.get("status")=="deprecated"]
+if "showSeed" in app or "seedToggle" in app or 'id="seedToggle"' in html:
+    errors.append("la experiencia pública conserva control/estado seed")
 
-for item in deprecated_subjects+deprecated_occ+deprecated_events:
-    if not item.get("supersededBy"):
-        errors.append(f"{item.get('id')}: deprecated sin supersededBy")
+if "function isPublicStatus(status)" not in app:
+    errors.append("falta gate central isPublicStatus")
+if "if(!isPublicStatus(o.status)) return false;" not in app:
+    errors.append("occVisible no aplica gate público")
+
+archived=sum(len(archive.get(name,[])) for name in ("subjects","places","occurrences","events","relationships"))
+if archived<1:
+    errors.append("archivo demo vacío")
+
+for name in ("subjects","places","occurrences","events","relationships"):
+    for item in archive.get(name,[]):
+        if item.get("status") not in {"seed","deprecated"}:
+            errors.append(f"archive {name}:{item.get('id')} con estado inesperado")
 
 if errors:
     print("PUBLIC STATE: FAIL")
@@ -30,7 +49,6 @@ if errors:
     sys.exit(1)
 
 print("PUBLIC STATE: PASS")
-print("Deprecated subjects preserved/hidden:",len(deprecated_subjects))
-print("Deprecated occurrences preserved/hidden:",len(deprecated_occ))
-print("Deprecated events preserved/hidden:",len(deprecated_events))
-print("Deprecated relationships preserved/hidden:",len(deprecated_relationships))
+print("Runtime records: reviewed/verified only.")
+print("Archived demo records:",archived)
+print("Public seed toggle/state: absent.")

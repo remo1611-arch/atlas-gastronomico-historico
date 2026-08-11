@@ -196,3 +196,20 @@ Antes de validar datos históricos:
 - [ ] black_pepper reviewed;
 - [ ] pimienta de Berenike = trade + archaeobotanical;
 - [ ] no convertir hallazgo antiguo en origen absoluto.
+
+python tools/test_demo_archive.py
+python tools/test_g2_final_gate.py
+
+## Gate final G2
+- [ ] runtime solo reviewed/verified;
+- [ ] seedToggle/showSeed ausentes;
+- [ ] archive demo presente y no cargado;
+- [ ] cinco seeds históricos preservados;
+- [ ] sourceRefs completos;
+- [ ] verified con verification;
+- [ ] disputed estructurado;
+- [ ] tres historias longitudinales;
+- [ ] técnica, aceite y especia cubiertos;
+- [ ] Magnetic Timeline PASS;
+- [ ] GITHUB PAGES PASS;
+- [ ] config.project.gate = G2_CLOSED.

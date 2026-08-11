@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.14
+**Versión:** 0.1.0-alpha.15
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -212,3 +212,13 @@ También incorpora el primer registro `certainty: disputed`, basado en el debate
 - seeds de aceite migrados mediante deprecated + supersededBy.
 
 G2 todavía no se declara cerrado: queda retirar o canonizar los seeds demostrativos restantes.
+
+## G2 cerrado
+
+Desde alpha.15:
+- el runtime contiene exclusivamente registros reviewed/verified;
+- seeds y demos antiguos están archivados en `data/archive/demo_records_pre_g2.json`;
+- la UI ya no ofrece ningún control para mostrar seeds;
+- el contrato del corpus piloto queda congelado.
+
+Siguiente fase: G3 — Evidencia y precisión.

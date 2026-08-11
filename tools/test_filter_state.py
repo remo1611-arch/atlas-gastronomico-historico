@@ -27,8 +27,6 @@ for needle in [
     "s.evidence='all'",
     "s.occurrenceType='all'",
     "s.labelMode='auto'",
-    "s.showSeed=true",
-    "$('#seedToggle').checked=true",
 ]:
     if needle not in app:
         errors.append("reset incompleto: "+needle)
