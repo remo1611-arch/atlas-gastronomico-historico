@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.24';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.24.1';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.24',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.24',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.24',
-  places:'./data/places.json?v=0.1.0-alpha.24',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.24',
-  events:'./data/events.json?v=0.1.0-alpha.24',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.24',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.24',
-  developments:'./data/developments.json?v=0.1.0-alpha.24',
-  sources:'./data/sources.json?v=0.1.0-alpha.24',
-  stories:'./data/stories.json?v=0.1.0-alpha.24',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.24',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.24'
+  config:'./data/config.json?v=0.1.0-alpha.24.1',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.24.1',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.24.1',
+  places:'./data/places.json?v=0.1.0-alpha.24.1',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.24.1',
+  events:'./data/events.json?v=0.1.0-alpha.24.1',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.24.1',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.24.1',
+  developments:'./data/developments.json?v=0.1.0-alpha.24.1',
+  sources:'./data/sources.json?v=0.1.0-alpha.24.1',
+  stories:'./data/stories.json?v=0.1.0-alpha.24.1',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.24.1',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.24.1'
 };
 
 const s={

@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.24",
+  "version": "0.1.0-alpha.24.1",
   "gate": "G3_CLOSED",
   "phase": "PRODUCT_CONSOLIDATION",
   "generated": "2026-08-11",
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 16989,
-      "sha256": "8786fd2b8f0ab94b92e0737acf410466f1d30e67c7e5afea0e3adb9dc4c39802"
+      "bytes": 17327,
+      "sha256": "e4713706feb16ed19876be36abc4fcd0de35f2027ca000291e4b977a92d66bd0"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10271,
-      "sha256": "bf8a4d5382c72eb6c3078e319747e66c290e6b7c4aa58fe3d80a59c3565f6e60"
+      "bytes": 10273,
+      "sha256": "aeeaf53f780859b0f9ab08b987215d9b0658bda0264def3018c265ae20c6165a"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -53,8 +53,8 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 499,
-      "sha256": "f11517dec1d6a5c4db2d5587e7a943ceca1e7a3214f48a28bc51ee5db80bc9e8"
+      "bytes": 501,
+      "sha256": "59263d6fe38e81368e0d27234297587612d5cad23938f787cdd2a7e539b7d8d7"
     },
     {
       "path": "data/contexts.json",
@@ -248,8 +248,8 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1947,
-      "sha256": "f6ce41e96b506ab077ab59b5451531328428039f76c0762348c84b9a9ad423f4"
+      "bytes": 1949,
+      "sha256": "39a5b1a0b2cdccd09a7368e2ae270bffd269027a1739bf510287131a9f794392"
     },
     {
       "path": "docs/QA.md",
@@ -273,8 +273,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1228,
-      "sha256": "437701d73bee34a688a7989fcd90861a63c8b76e91a21832cf0b02a4f5d09ad1"
+      "bytes": 1230,
+      "sha256": "e231d0e88f89f97059a79258bd1673ed3e4280bfcd6f72a638a1c9c5410f96ac"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -283,13 +283,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 23294,
-      "sha256": "ce4031f81ec7480649b6189f6fe004a7f4d4c25172966dfe43c33152497f8776"
+      "bytes": 23302,
+      "sha256": "a4ee8700d1e739612b0dd74a2dd7d2322baf86afe272b6d4447b34c296a6643e"
     },
     {
       "path": "js/app.js",
-      "bytes": 114780,
-      "sha256": "1e8c971a74b7539f60f11ca193e28dadf56b818a9c1d3065f2c64067bf99419b"
+      "bytes": 114808,
+      "sha256": "37e92bb5000ced8b6630532a7ba1e05fab6e0ea150a5368c3020c8356fcd5408"
     },
     {
       "path": "js/core.js",
@@ -538,8 +538,8 @@
     },
     {
       "path": "tools/test_narrative_museum_contract.py",
-      "bytes": 3512,
-      "sha256": "b6109a3a5e7145beb8852591a359e46a7398fb62905a4d85810295c6045f4a4e"
+      "bytes": 3516,
+      "sha256": "c3f95c842006fdb17e63d6593139dbc6f42ad461315c3f2697a0863124939c82"
     },
     {
       "path": "tools/test_navigation_algorithms.mjs",

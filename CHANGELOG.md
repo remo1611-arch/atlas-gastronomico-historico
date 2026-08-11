@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0-alpha.24.1 — 2026-08-11
+
+- Hotfix de identificación de build: la etiqueta HTML inicial ya muestra `alpha.24.1` y coincide con `config.json`.
+- Se actualizan los query strings de recursos a `0.1.0-alpha.24.1` para evitar reutilización de caché de alpha.24.
+- Sin cambios de corpus, arquitectura ni comportamiento funcional.
+
 ## 0.1.0-alpha.24 — 2026-08-11
 
 ### Cobertura cartográfica multicapas

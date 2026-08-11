@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.24
+**Versión:** 0.1.0-alpha.24.1
 **Estado:** Narrative Museum + Atlas · consolidación de producto · gate móvil pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español

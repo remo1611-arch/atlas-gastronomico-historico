@@ -1,7 +1,7 @@
 # Estado actual
 
 ## Versión
-0.1.0-alpha.24
+0.1.0-alpha.24.1
 
 ## Producto
 - **Historias = comprender.**

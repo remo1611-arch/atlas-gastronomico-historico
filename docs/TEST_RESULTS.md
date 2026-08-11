@@ -1,4 +1,4 @@
-# Resultados de validación — 0.1.0-alpha.24
+# Resultados de validación — 0.1.0-alpha.24.1
 
 Fecha: 2026-08-11
 

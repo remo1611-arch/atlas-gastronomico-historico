@@ -31,8 +31,8 @@ for sid,n in [('story_wine',6),('story_bread',7)]:
             if target is None or ir.get('ref') not in target: errors.append(scene['id']+': itemRef roto '+str(ir))
 
 for needle in [
-    "stories:'./data/stories.json?v=0.1.0-alpha.24'",
-    "glossary:'./data/glossary.json?v=0.1.0-alpha.24'",
+    "stories:'./data/stories.json?v=0.1.0-alpha.24.1'",
+    "glossary:'./data/glossary.json?v=0.1.0-alpha.24.1'",
     'function openNarrativeStory(storyId,sceneIndex=0)',
     'function renderNarrativeStory()',
     'function stepNarrativeScene(direction)',

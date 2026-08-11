@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.24",
+    "version": "0.1.0-alpha.24.1",
     "gate": "G3_CLOSED",
     "experience": "NARRATIVE_MUSEUM_GEOGRAPHIC_EXPLORER"
   },
