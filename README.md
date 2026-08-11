@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.7
+**Versión:** 0.1.0-alpha.8
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -155,3 +155,9 @@ Alpha.7 añade:
 - Codex Alimentarius.
 
 Además estrena el gate auditado `verified` con metadatos de segunda revisión.
+
+## Historia del elemento
+
+Alpha.8 incorpora el primer recorrido longitudinal real. La aplicación detecta automáticamente subjects con varias evidencias revisadas y combina sus occurrences con developments relacionados.
+
+Primer recorrido: **Historia del vino**, desde las evidencias neolíticas del Cáucaso hasta la pasteurización.

@@ -217,5 +217,59 @@
       "src_forme_cury_bl"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "areni_1_cave",
+    "name": "Cueva Areni-1",
+    "type": "site",
+    "point": null,
+    "summary": "Complejo cavernario de Vayots Dzor, Armenia, con una instalación calcolítica asociada a producción de vino.",
+    "sourceRefs": [
+      "src_areni_wine_2011"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "abydos_umm_el_qaab",
+    "name": "Abydos · Umm el-Qaab",
+    "type": "site",
+    "point": {
+      "lat": 26.1833,
+      "lon": 31.9167,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_unesco_abydos_point"
+      ],
+      "note": "Punto general de Abydos procedente de UNESCO; no pretende localizar con precisión la tumba U-j."
+    },
+    "summary": "Área funeraria de Abydos vinculada a los primeros gobernantes egipcios; la tumba U-j proporcionó recipientes con residuos vínicos.",
+    "sourceRefs": [
+      "src_abydos_wine_2009",
+      "src_unesco_abydos_point"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "tel_kabri",
+    "name": "Tel Kabri",
+    "type": "site",
+    "point": null,
+    "summary": "Centro palacial cananeo del Bronce Medio en Galilea occidental, con un complejo de almacenamiento de vino excavado arqueológicamente.",
+    "sourceRefs": [
+      "src_tel_kabri_wine_2014",
+      "src_tel_kabri_archaeobotany_2023"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "jerusalem_city_of_david_ridge",
+    "name": "Jerusalén · cresta de la Ciudad de David",
+    "type": "site",
+    "point": null,
+    "summary": "Área de excavación de Jerusalén con recipientes de almacenamiento destruidos en 586 a.C. y analizados mediante química de residuos.",
+    "sourceRefs": [
+      "src_jerusalem_vanilla_wine_2022"
+    ],
+    "status": "reviewed"
   }
 ]

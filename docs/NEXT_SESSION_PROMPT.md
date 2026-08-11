@@ -37,3 +37,9 @@ Continuación alpha.7:
 - leer G2_SECOND_REVIEW_A.md y G2_PILOT_B.md.
 - no promover B a verified sin segunda revisión.
 - no asignar coordenadas a regiones solo para rellenar el mapa.
+
+Continuación alpha.8:
+- leer docs/G2_PILOT_C_HISTORY.md;
+- “Historia del elemento” es derivada, no duplicar hitos;
+- el próximo recorrido debe demostrar reutilización genérica;
+- no interpretar huecos como ausencia histórica.

@@ -1,23 +1,23 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.7';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.8';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.7',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.7',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.7',
-  places:'./data/places.json?v=0.1.0-alpha.7',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.7',
-  events:'./data/events.json?v=0.1.0-alpha.7',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.7',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.7',
-  developments:'./data/developments.json?v=0.1.0-alpha.7',
-  sources:'./data/sources.json?v=0.1.0-alpha.7',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.7'
+  config:'./data/config.json?v=0.1.0-alpha.8',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.8',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.8',
+  places:'./data/places.json?v=0.1.0-alpha.8',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.8',
+  events:'./data/events.json?v=0.1.0-alpha.8',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.8',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.8',
+  developments:'./data/developments.json?v=0.1.0-alpha.8',
+  sources:'./data/sources.json?v=0.1.0-alpha.8',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.8'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
   year:1500,search:'',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
-  selectedOccurrence:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  selectedOccurrence:null,historySubject:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -66,6 +66,7 @@ const OCC_LABELS={
   cultivation:'Cultivo',
   domestication_evidence:'Evidencia de domesticación',
   production:'Producción',
+  storage:'Almacenamiento',
   consumption:'Consumo',
   textual_attestation:'Atestiguación textual',
   recipe_attestation:'Receta documentada',
@@ -275,6 +276,7 @@ function render(){
   renderDevelopmentLayer();
   renderTransformationPreview();
   renderContext(list);
+  renderHistorySpotlight();
   renderEvents();
 
   if(s.selectedOccurrence && !list.some(x=>x.id===s.selectedOccurrence)){
@@ -585,6 +587,47 @@ function renderContext(list){
   box.innerHTML=cards.map(([a,b])=>`<article class="context-card"><strong>${esc(a)}</strong><span>${esc(b)}</span></article>`).join('');
 }
 
+
+function renderHistorySpotlight(){
+  const box=$('#historySpotlightList');
+  if(!box) return;
+
+  const available=s.subjects
+    .filter(subject=>subject.status!=='deprecated')
+    .map(subject=>{
+      const items=subjectHistoryItems(subject.id);
+      const occurrences=items.filter(x=>x.kind==='occurrence');
+      const developments=items.filter(x=>x.kind==='development');
+      return {subject,items,occurrences,developments};
+    })
+    .filter(x=>x.occurrences.length>=2)
+    .sort((a,b)=>{
+      if(b.occurrences.length!==a.occurrences.length) return b.occurrences.length-a.occurrences.length;
+      return a.subject.name.localeCompare(b.subject.name,'es');
+    });
+
+  if(!available.length){
+    box.innerHTML='<p class="map-foot">Todavía no hay elementos con suficientes hitos revisados para construir un recorrido.</p>';
+    return;
+  }
+
+  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,developments})=>{
+    const first=items[0]?.period?.start;
+    const last=items[items.length-1]?.period?.end;
+    return `<button class="history-spotlight-card" type="button" data-history-subject="${esc(subject.id)}">
+      <span class="history-spotlight-kicker">${esc(TYPE_LABELS[subject.type]||subject.type)}</span>
+      <strong>Historia de ${esc(subject.name)}</strong>
+      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
+      <small>${first!==undefined&&last!==undefined?`${esc(formatYear(first))} → ${esc(formatYear(last))}`:'Recorrido disponible'}</small>
+      <em>Explorar recorrido →</em>
+    </button>`;
+  }).join('');
+
+  $$('[data-history-subject]').forEach(button=>{
+    button.addEventListener('click',()=>openHistory(button.dataset.historySubject));
+  });
+}
+
 function renderEvents(){
   const box=$('#eventList');
   box.innerHTML='';
@@ -619,6 +662,157 @@ function selectOccurrence(id,openDrawer=false){
   if(openDrawer) openDetail();
 }
 
+
+function subjectHistoryItems(subjectId){
+  const occurrences=s.occurrences
+    .filter(o=>o.subjectRef===subjectId&&o.status!=='deprecated'&&(o.status==='reviewed'||o.status==='verified'))
+    .map(o=>({kind:'occurrence',period:o.period,item:o}));
+
+  const developments=s.developments
+    .filter(d=>d.status!=='deprecated'&&(d.status==='reviewed'||d.status==='verified')&&(d.impactSubjectRefs||[]).includes(subjectId))
+    .map(d=>({kind:'development',period:d.period,item:d}));
+
+  return [...occurrences,...developments].sort((a,b)=>{
+    if(a.period.start!==b.period.start) return a.period.start-b.period.start;
+    return a.period.end-b.period.end;
+  });
+}
+
+function historyContextNames(o){
+  return (o.contextRefs||[])
+    .map(contextById)
+    .filter(c=>c&&c.status!=='deprecated')
+    .map(c=>c.name);
+}
+
+function renderSubjectHistory(subjectId){
+  const subject=subj(subjectId);
+  if(!subject) return;
+
+  const items=subjectHistoryItems(subjectId);
+  const occurrenceCount=items.filter(x=>x.kind==='occurrence').length;
+  const developmentCount=items.filter(x=>x.kind==='development').length;
+
+  s.historySubject=subjectId;
+  $('#historyTitle').textContent=`Historia de ${subject.name}`;
+  $('#historySubtitle').textContent='Evidencias y transformaciones documentadas actualmente en el Atlas.';
+
+  if(items.length){
+    const first=items[0].period.start;
+    const last=items[items.length-1].period.end;
+    $('#historySummary').innerHTML=`
+      <span><strong>${occurrenceCount}</strong> ${occurrenceCount===1?'evidencia':'evidencias'}</span>
+      <i></i>
+      <span><strong>${developmentCount}</strong> ${developmentCount===1?'transformación':'transformaciones'}</span>
+      <i></i>
+      <span><strong>${esc(formatYear(first))}</strong> → <strong>${esc(formatYear(last))}</strong></span>
+    `;
+  }else{
+    $('#historySummary').innerHTML='<span>Sin hitos suficientes.</span>';
+  }
+
+  const timeline=$('#historyTimeline');
+  timeline.innerHTML='';
+
+  items.forEach((entry,index)=>{
+    if(entry.kind==='occurrence'){
+      const o=entry.item;
+      const pl=place(o.placeRef);
+      const sm=statusMeta(o.status);
+      const contexts=historyContextNames(o);
+      const article=document.createElement('article');
+      article.className='history-item history-occurrence';
+      article.innerHTML=`
+        <div class="history-axis">
+          <span class="history-index">${String(index+1).padStart(2,'0')}</span>
+          <i></i>
+        </div>
+        <div class="history-card">
+          <div class="history-card-head">
+            <span class="history-kind">EVIDENCIA</span>
+            <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          </div>
+          <time>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</time>
+          <h3>${esc(pl?.name||'Lugar no resuelto')}</h3>
+          <p>${esc(o.summary)}</p>
+          <div class="history-meta">
+            <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
+            <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+            ${contexts.map(c=>`<span>${esc(c)}</span>`).join('')}
+            <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
+          </div>
+          <button type="button" class="history-open-record" data-history-occurrence="${esc(o.id)}">Abrir evidencia</button>
+        </div>
+      `;
+      timeline.appendChild(article);
+    }else{
+      const d=entry.item;
+      const sm=statusMeta(d.status);
+      const article=document.createElement('article');
+      article.className='history-item history-development';
+      article.innerHTML=`
+        <div class="history-axis">
+          <span class="history-index">${String(index+1).padStart(2,'0')}</span>
+          <i></i>
+        </div>
+        <div class="history-card">
+          <div class="history-card-head">
+            <span class="history-kind development">TRANSFORMACIÓN</span>
+            <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          </div>
+          <time>${esc(d.period.display||`${formatYear(d.period.start)}–${formatYear(d.period.end)}`)}</time>
+          <h3>${esc(d.name)}</h3>
+          <p>${esc(d.summary)}</p>
+          <div class="history-meta">
+            <span>${esc(developmentTypeLabel(d.type))}</span>
+            <span>${(d.sourceRefs||[]).length} ${(d.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
+          </div>
+          ${verificationHTML(d)}
+          <button type="button" class="history-open-development" data-history-development="${esc(d.id)}">Ir a este momento</button>
+        </div>
+      `;
+      timeline.appendChild(article);
+    }
+  });
+
+  $$('[data-history-occurrence]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const id=button.dataset.historyOccurrence;
+      const o=s.occurrences.find(x=>x.id===id);
+      if(!o) return;
+      closeHistory();
+      setYear(o.period.start);
+      selectOccurrence(id,true);
+      setTimeout(()=>$('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
+    });
+  });
+
+  $$('[data-history-development]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const d=s.developments.find(x=>x.id===button.dataset.historyDevelopment);
+      if(!d) return;
+      closeHistory();
+      closeDetail();
+      setYear(d.period.start);
+      setTimeout(()=>$('#transformTitle')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
+      showToast(d.name);
+    });
+  });
+}
+
+function openHistory(subjectId){
+  renderSubjectHistory(subjectId);
+  $('#historyDrawer').classList.add('open');
+  $('#historyDrawer').setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+
+function closeHistory(){
+  $('#historyDrawer').classList.remove('open');
+  $('#historyDrawer').setAttribute('aria-hidden','true');
+  document.body.style.overflow=$('#detailDrawer').classList.contains('open')?'hidden':'';
+}
+
 function renderDetails(o){
   if(!o){
     $('#detailTitle').textContent='Selecciona una evidencia';
@@ -629,6 +823,7 @@ function renderDetails(o){
     $('#historicalContextSection')?.classList.add('hidden');
     $('#developmentContextSection')?.classList.add('hidden');
     $('#subjectHistoryBtn').disabled=true;
+    $('#subjectHistoryBtn').textContent='Ver historia del elemento';
     return;
   }
 
@@ -720,11 +915,16 @@ function renderDetails(o){
     $('#developmentContextDetail').innerHTML='';
   }
 
-  const historyCount=s.occurrences.filter(x=>x.status!=='deprecated'&&x.subjectRef===subject.id&&(x.status==='reviewed'||x.status==='verified')).length;
+  const historyItems=subjectHistoryItems(subject.id);
+  const historyCount=historyItems.filter(x=>x.kind==='occurrence').length;
+  const transformationCount=historyItems.filter(x=>x.kind==='development').length;
   $('#subjectHistoryBtn').disabled=historyCount<2;
+  $('#subjectHistoryBtn').textContent=historyCount<2
+    ? 'Historia todavía insuficiente'
+    : `Ver historia · ${historyCount} hitos${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
   $('#subjectHistoryBtn').title=historyCount<2
     ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
-    : 'Abrir historia del elemento.';
+    : 'Abrir recorrido histórico documentado.';
 }
 
 function debounce(fn,wait=160){
@@ -896,6 +1096,11 @@ function bind(){
 
   $$('[data-close-detail]').forEach(x=>x.addEventListener('click',closeDetail));
   $('#closeDetailBtn').addEventListener('click',closeDetail);
+  $$('[data-close-history]').forEach(x=>x.addEventListener('click',closeHistory));
+  $('#subjectHistoryBtn').addEventListener('click',()=>{
+    const o=s.occurrences.find(x=>x.id===s.selectedOccurrence);
+    if(o) openHistory(o.subjectRef);
+  });
 
   $('#jumpMapBtn').addEventListener('click',()=>$('#mapSection').scrollIntoView({behavior:'smooth',block:'start'}));
 
@@ -925,6 +1130,7 @@ function bind(){
 
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
+      closeHistory();
       closeDrawer();
       closeLayers();
       closeDetail();

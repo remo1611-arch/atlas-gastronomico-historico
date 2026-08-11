@@ -135,7 +135,11 @@
       "uva"
     ],
     "sourceRefs": [
-      "src_mcgovern_2017_neolithic_wine"
+      "src_mcgovern_2017_neolithic_wine",
+      "src_areni_wine_2011",
+      "src_abydos_wine_2009",
+      "src_tel_kabri_wine_2014",
+      "src_jerusalem_vanilla_wine_2022"
     ],
     "status": "reviewed"
   },

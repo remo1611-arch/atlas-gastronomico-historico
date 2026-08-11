@@ -113,3 +113,19 @@ El caso de Ganj Dareh confirma que manejo, diferenciación genética y morfolog�
 **Aceptada.**
 Un recetario cortesano demuestra tradición textual/culinaria en ese contexto, no consumo generalizado de toda la sociedad.
 
+## ADR-030 — Historia del elemento como vista derivada
+**Aceptada.**
+El recorrido de un subject se construye en tiempo de ejecución a partir de occurrences y developments relacionados. No se crea un fichero duplicado de hitos.
+
+## ADR-031 — Historia no exhaustiva
+**Aceptada.**
+La UI debe advertir que el recorrido representa el corpus disponible y que un vacío temporal no significa ausencia histórica.
+
+## ADR-032 — `storage` como occurrenceType
+**Aceptada.**
+Tel Kabri demuestra que almacenamiento puede ser la afirmación histórica principal y merece un tipo distinto de producción, consumo o comercio.
+
+## ADR-033 — Descubrimiento automático de recorridos
+**Aceptada.**
+“Historias disponibles” se genera desde subjects con al menos dos occurrences reviewed/verified. No contiene IDs hardcodeados.
+

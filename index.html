@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.7">
+  <meta name="atlas-build" content="0.1.0-alpha.8">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.7">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.8">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.7</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.8</span></small>
     </span>
   </a>
 
@@ -228,10 +228,22 @@
     <div id="contextHighlights" class="context-highlights"></div>
   </section>
 
+
+  <section class="history-spotlight museum-card" aria-labelledby="historySpotlightTitle">
+    <div class="history-spotlight-head">
+      <div>
+        <span class="section-label">06 · Recorridos</span>
+        <h2 id="historySpotlightTitle">Historias disponibles</h2>
+        <p>Recorridos construidos automáticamente a partir de evidencias y transformaciones revisadas.</p>
+      </div>
+    </div>
+    <div id="historySpotlightList" class="history-spotlight-list"></div>
+  </section>
+
   <section class="events-section museum-card">
     <div class="events-heading">
       <div>
-        <span class="section-label">06 · Procesos y cambios</span>
+        <span class="section-label">07 · Procesos y cambios</span>
         <h2>Qué está ocurriendo alrededor de esta fecha</h2>
       </div>
       <label class="mini-select">Ventana temporal
@@ -367,6 +379,28 @@
   </div>
 </aside>
 
+
+<aside id="historyDrawer" class="history-drawer" aria-hidden="true" aria-labelledby="historyTitle">
+  <div class="drawer-backdrop" data-close-history></div>
+  <div class="history-panel">
+    <button class="history-close" type="button" data-close-history aria-label="Cerrar historia">×</button>
+
+    <div class="history-hero">
+      <span class="section-label">Historia del elemento</span>
+      <h2 id="historyTitle">Recorrido histórico</h2>
+      <p id="historySubtitle">Hitos documentados en el corpus.</p>
+      <div id="historySummary" class="history-summary"></div>
+    </div>
+
+    <div class="history-disclaimer">
+      <strong>Cómo leer este recorrido</strong>
+      <p>Es una selección de evidencias incorporadas al Atlas, no una historia continua ni exhaustiva. Los vacíos temporales no significan ausencia histórica.</p>
+    </div>
+
+    <div id="historyTimeline" class="history-timeline"></div>
+  </div>
+</aside>
+
 <dialog id="aboutDialog">
   <div class="dialog-shell">
     <button class="dialog-close" id="aboutCloseBtn" type="button" aria-label="Cerrar">×</button>
@@ -379,6 +413,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.7"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.8"></script>
 </body>
 </html>

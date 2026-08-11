@@ -373,5 +373,98 @@
       "src_forme_cury_loc"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_wine_areni_4000_bce",
+    "subjectRef": "wine",
+    "placeRef": "areni_1_cave",
+    "period": {
+      "start": -4100,
+      "end": -4000,
+      "precision": "range",
+      "display": "ca. 4100–4000 a. C.",
+      "note": "El estudio sitúa la instalación y los residuos de producción en torno a 4000 cal a.C.; se conserva un intervalo prudente."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Instalaciones, restos botánicos y análisis químicos de cerámica de Areni-1 aportan evidencia de producción de vino en un contexto calcolítico.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_areni_wine_2011"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_wine_abydos_3150_bce",
+    "subjectRef": "wine",
+    "placeRef": "abydos_umm_el_qaab",
+    "period": {
+      "start": -3200,
+      "end": -3100,
+      "precision": "circa",
+      "display": "ca. 3150 a. C.",
+      "note": "La datación corresponde al contexto Naqada IIIa2 de la tumba U-j; no representa una fecha de introducción del vino en Egipto."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Residuos de recipientes de la tumba U-j de Abydos contienen biomarcadores compatibles con vino de uva y aditivos vegetales/resinosos.",
+    "contextRefs": [
+      "naqada_iiia2_dynasty_0"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_abydos_wine_2009"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_wine_tel_kabri_middle_bronze",
+    "subjectRef": "wine",
+    "placeRef": "tel_kabri",
+    "period": {
+      "start": -1900,
+      "end": -1600,
+      "precision": "range",
+      "display": "Bronce Medio · ca. 1900–1600 a. C.",
+      "note": "El intervalo corresponde al marco del palacio; no todas las vasijas se interpretan como depósitos independientes en todo el rango."
+    },
+    "occurrenceType": "storage",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Un complejo palacial con unas 40 grandes vasijas fue identificado como bodega de vino mediante análisis de residuos orgánicos, con indicios de vinos resinados y aditivos.",
+    "contextRefs": [
+      "tel_kabri_middle_bronze_palace"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_tel_kabri_wine_2014",
+      "src_tel_kabri_archaeobotany_2023"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_wine_jerusalem_586_bce",
+    "subjectRef": "wine",
+    "placeRef": "jerusalem_city_of_david_ridge",
+    "period": {
+      "start": -600,
+      "end": -586,
+      "precision": "range",
+      "display": "finales del s. VII–586 a. C.",
+      "note": "Los recipientes pertenecen a edificios destruidos en 586 a.C.; el intervalo evita convertir la destrucción en fecha exacta de consumo."
+    },
+    "occurrenceType": "consumption",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Análisis de residuos de recipientes de almacenamiento documentan vino en Jerusalén antes de la destrucción babilónica de 586 a.C., incluido un conjunto con compuestos asociados a vainilla.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_jerusalem_vanilla_wine_2022"
+    ],
+    "status": "reviewed"
   }
 ]

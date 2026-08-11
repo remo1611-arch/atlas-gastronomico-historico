@@ -78,5 +78,44 @@
       "src_forme_cury_bl"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "naqada_iiia2_dynasty_0",
+    "name": "Naqada IIIa2 / Dinastía 0",
+    "type": "archaeological_culture",
+    "period": {
+      "start": -3250,
+      "end": -3100,
+      "precision": "range",
+      "display": "ca. 3250–3100 a. C."
+    },
+    "placeRefs": [
+      "abydos_umm_el_qaab"
+    ],
+    "summary": "Marco protodinástico de la tumba U-j de Abydos; se usa solo como contexto del registro funerario y no como una afirmación de origen del vino.",
+    "sourceRefs": [
+      "src_abydos_wine_2009"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "tel_kabri_middle_bronze_palace",
+    "name": "Polidad palacial cananea de Tel Kabri",
+    "type": "polity",
+    "period": {
+      "start": -1900,
+      "end": -1600,
+      "precision": "range",
+      "display": "ca. 1900–1600 a. C."
+    },
+    "placeRefs": [
+      "tel_kabri"
+    ],
+    "summary": "Contexto palacial cananeo del Bronce Medio asociado al gran complejo de almacenamiento de Tel Kabri.",
+    "sourceRefs": [
+      "src_tel_kabri_wine_2014",
+      "src_tel_kabri_archaeobotany_2023"
+    ],
+    "status": "reviewed"
   }
 ]

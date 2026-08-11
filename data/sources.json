@@ -304,5 +304,59 @@
     "sourceType": "official_institution",
     "accessed": "2026-08-11",
     "notes": "Fuente institucional conjunta sobre el establecimiento y finalidad del Codex."
+  },
+  {
+    "id": "src_areni_wine_2011",
+    "title": "Chemical evidence for wine production around 4000 BCE in the Late Chalcolithic Near Eastern highlands",
+    "publisher": "Journal of Archaeological Science",
+    "url": "https://doi.org/10.1016/j.jas.2010.11.012",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Evidencia química y arqueológica de una instalación de producción de vino en Areni-1, Armenia, alrededor de 4000 cal a.C."
+  },
+  {
+    "id": "src_abydos_wine_2009",
+    "title": "Ancient Egyptian herbal wines",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2678600/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Reanálisis químico de residuos vínicos de la tumba U-j de Abydos, ca. 3150 a.C."
+  },
+  {
+    "id": "src_unesco_abydos_point",
+    "title": "Abydos, city of pilgrimage of the Pharaohs",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/tentativelists/1823/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Fuente utilizada para el punto cartográfico general de Abydos; no sustenta por sí sola la interpretación del vino."
+  },
+  {
+    "id": "src_tel_kabri_wine_2014",
+    "title": "Characterizing a Middle Bronze Palatial Wine Cellar from Tel Kabri, Israel",
+    "publisher": "PLOS ONE",
+    "url": "https://doi.org/10.1371/journal.pone.0106406",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis de residuos orgánicos de un complejo palacial con unas 40 grandes vasijas; identifica una bodega de vino del Bronce Medio."
+  },
+  {
+    "id": "src_tel_kabri_archaeobotany_2023",
+    "title": "From Early Bronze Age domestic plant production to Middle Bronze Age regional exchange economy: the archaeobotanical assemblages from Tel Kabri",
+    "publisher": "Archaeological and Anthropological Sciences",
+    "url": "https://doi.org/10.1007/s12520-023-01823-3",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Estudio arqueobotánico posterior del yacimiento que contextualiza la economía palacial y el complejo de almacenamiento de vino."
+  },
+  {
+    "id": "src_jerusalem_vanilla_wine_2022",
+    "title": "Residue analysis evidence for wine enriched with vanilla consumed in Jerusalem on the eve of the Babylonian destruction in 586 BCE",
+    "publisher": "PLOS ONE",
+    "url": "https://doi.org/10.1371/journal.pone.0266085",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis de residuos de recipientes de Jerusalén destruidos en 586 a.C.; documenta vino y compuestos asociados a vainilla."
   }
 ]

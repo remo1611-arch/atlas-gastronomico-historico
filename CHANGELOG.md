@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.1.0-alpha.8 — 2026-08-11
+
+### G2-C · Historia longitudinal
+- 4 nuevas occurrences de wine;
+- Areni-1;
+- Abydos;
+- Tel Kabri;
+- Jerusalén 586 a.C.;
+- wine alcanza 5 occurrences reviewed;
+- pasteurización se integra como transformación relacionada.
+
+### UX
+- drawer Historia del elemento;
+- cronología vertical museográfica;
+- navegación a cada evidencia;
+- salto a developments;
+- aviso explícito de no exhaustividad;
+- sección Historias disponibles generada automáticamente.
+
+### Contrato
+- nuevo occurrenceType `storage`;
+- historia derivada sin nuevo dataset narrativo.
+
 ## 0.1.0-alpha.7 — 2026-08-11
 
 ### Segunda revisión G2-A

@@ -58,3 +58,8 @@
 52. Un texto culinario documenta un texto/receta, no la dieta general de toda la población.
 53. La domesticación animal se modela como proceso: manejo, afinidad genética doméstica y cambio morfológico pueden ocurrir en momentos distintos.
 
+54. “Historia del elemento” se deriva de occurrences y developments canónicos; no duplica hitos en otro dataset.
+55. Un recorrido longitudinal no es exhaustivo: los vacíos entre hitos no implican ausencia histórica.
+56. Solo `reviewed` y `verified` entran en recorridos públicos; `seed`, `draft` y `deprecated` quedan excluidos.
+57. `storage` se usa cuando la evidencia documenta almacenamiento y no debe deformarse como producción o consumo.
+

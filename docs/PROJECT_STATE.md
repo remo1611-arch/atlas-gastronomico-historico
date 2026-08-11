@@ -4,70 +4,45 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.7
+0.1.0-alpha.8
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · tandas A y B.
+- G2: EN CURSO · tandas A, B y C.
 - G3+: no iniciados.
 
-## Segunda revisión tanda A
+## G2-A
+Segunda revisión completada parcialmente: 8 registros `verified` con metadata de verificación.
 
-Promovidos a `verified`:
-- maize;
-- occ_maize_xihuatoxtla_early_holocene;
-- garum;
-- occ_garum_pompeii_first_century;
-- pasteurization_wine_1863_1865;
-- perkins_mechanical_refrigeration_1834;
-- monitor_top_refrigerator_1927;
-- haccp_development_1960s.
+## G2-B
+Casos reviewed de domesticación animal, pan preagrícola, procesado lácteo, texto culinario, appertización y Codex.
 
-Cada uno incluye `verification`.
+## G2-C
+Primera historia longitudinal implementada.
 
-Permanecen `reviewed`:
-- wine y su occurrence neolítica;
-- Shulaveri-Shomutepe;
-- marco imperial romano occidental.
+### Wine
+5 occurrences reviewed:
+- Gadachrili Gora, ca. 6000–5800 a.C.;
+- Areni-1, ca. 4100–4000 a.C.;
+- Abydos, ca. 3150 a.C.;
+- Tel Kabri, Bronce Medio;
+- Jerusalén, finales s. VII–586 a.C.
 
-## Tanda B reviewed
+1 development relacionado:
+- pasteurización del vino, 1863–1865 · verified.
 
-### Subjects
-- goat;
-- bread_like_flatbread;
-- cheese;
-- forme_of_cury.
+### Función Historia del elemento
+Genérica. Se activa con >=2 occurrences reviewed/verified y añade developments relacionados por `impactSubjectRefs`.
 
-### Occurrences
-- cabra gestionada/domesticación en Ganj Dareh;
-- producto tipo pan en Shubayqa 1;
-- procesado lácteo/quesero en Kuyavia;
-- atestiguación textual de The Forme of Cury.
+### Descubrimiento
+“Historias disponibles” se genera automáticamente. Actualmente wine es el primer subject que cumple el gate.
 
-### Contexts
-- Natufiense;
-- casa real de Ricardo II.
-
-### Developments
-- appertización 1809–1810;
-- Comisión del Codex Alimentarius 1963.
-
-## Cartografía
-
-Se prueba deliberadamente el caso de registros reviewed sin punto:
-- Ganj Dareh;
-- Kuyavia;
-- Inglaterra de Ricardo II.
-
-No se inventan coordenadas. El Atlas mantiene esos registros y avisa de la cobertura incompleta.
-
-Shubayqa 1 sí usa coordenadas publicadas en un artículo académico.
+### Cartografía
+6 occurrences activas/no-deprecated carecen deliberadamente de punto fiable y siguen disponibles en lista/historia.
 
 ## Próxima acción
-
-1. publicar/probar alpha.7;
-2. segunda revisión de tanda B;
-3. introducir primer subject con múltiples occurrences históricas revisadas para activar “Historia del elemento”;
-4. iniciar casos con evidencia discutida/conflictiva.
-
+1. publicar/probar alpha.8;
+2. segunda revisión de G2-B;
+3. crear un segundo recorrido longitudinal (preferentemente maíz o pan) para comprobar que la función es realmente genérica con otro patrón histórico;
+4. iniciar casos con evidencia disputada.

@@ -88,6 +88,13 @@ Permanecen `reviewed`:
 - appertización;
 - Codex Alimentarius.
 
+### Tanda C · historia longitudinal
+- historia del vino con 5 occurrences reviewed/verified; ✅
+- pasteurización vinculada como development; ✅
+- drawer “Historia del elemento”; ✅
+- descubrimiento automático “Historias disponibles”; ✅
+- nuevo occurrenceType `storage`; ✅
+
 Pendiente:
 - segunda revisión de la tanda B;
 - ampliar grasas/aceites, especias, congelación, envases, inspección y regulación comparada;

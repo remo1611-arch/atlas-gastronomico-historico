@@ -12,6 +12,7 @@ python tools/test_extended_contract.py
 python tools/test_g2_traceability_ui.py
 python tools/test_g2_pilot.py
 python tools/test_g2_pilot_b.py
+python tools/test_subject_history.py
 python tools/test_verified_gate.py
 python tools/test_public_state.py
 python tools/test_schema_validation.py
@@ -101,3 +102,13 @@ Antes de validar datos históricos:
 - [ ] Shubayqa conserva coordenadas publicadas;
 - [ ] texto culinario contextualizado;
 - [ ] domesticación animal no reducida a año de invención.
+
+## Historia del elemento
+- [ ] al menos 2 occurrences reviewed/verified para activar;
+- [ ] seed/deprecated excluidos;
+- [ ] developments vinculados por impactSubjectRefs;
+- [ ] orden cronológico;
+- [ ] aviso de no exhaustividad;
+- [ ] abrir evidencia vuelve al mapa/ficha;
+- [ ] abrir development salta al momento histórico;
+- [ ] función genérica, sin código específico por subject.

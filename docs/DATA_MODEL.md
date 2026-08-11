@@ -411,3 +411,23 @@ Un lugar puede carecer de coordenadas cuando:
 
 La ausencia de punto no elimina el registro de la interfaz.
 
+---
+
+## 16. Vista derivada: historia de un subject
+
+No es una entidad persistida.
+
+Algoritmo conceptual:
+
+1. recuperar occurrences del subject con estado `reviewed` o `verified`;
+2. recuperar developments `reviewed` o `verified` que lo incluyan en `impactSubjectRefs`;
+3. ordenar por período;
+4. mostrar cada dato con su estado, fuentes, lugar/contexto y tipo;
+5. declarar explícitamente que la serie es incompleta.
+
+Condición mínima de publicación del recorrido: dos occurrences históricas revisadas/verificadas.
+
+### `storage`
+
+Nuevo `occurrenceType` introducido por Tel Kabri para evidencias cuyo contenido histórico principal es almacenamiento.
+

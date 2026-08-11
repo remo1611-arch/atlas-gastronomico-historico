@@ -9,6 +9,8 @@ for needle in [
     "function statusMeta(status)",
     "function sourceListHTML",
     "function verificationHTML",
+    "function subjectHistoryItems",
+    "function renderSubjectHistory",
     "Fuentes del elemento",
     "Fuentes del registro",
     "renderTransformationPreview()",
