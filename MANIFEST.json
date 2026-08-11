@@ -1,8 +1,8 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.18",
-  "gate": "G3_IN_PROGRESS",
-  "phase": "G3-C_FOCUSED_EXPLORATION",
+  "version": "0.1.0-alpha.19",
+  "gate": "G3_CLOSED",
+  "phase": "G3-D_SPATIAL_AUDIT",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 11138,
-      "sha256": "16399503d4e3a05964131672294eb7085950076ef12342326c5a4a6f65002715"
+      "bytes": 12020,
+      "sha256": "6c313dbd398f6b40c00a5f8b5abc2b5a456f8771ecc233e5f231f5e8c4e2ed26"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7465,
-      "sha256": "e37ff94c959e4a18a42b5da829ef1dc9056173f8b0df8640a3f54c31319b1055"
+      "bytes": 7880,
+      "sha256": "baf908505b441ab8ae5c9a7e4cd0245df60b4595bf32b6501f83506245920272"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -53,8 +53,8 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 446,
-      "sha256": "12d9bf58da3e66cd325230be0eba37f9efee223f1b845822265d760ef6532640"
+      "bytes": 441,
+      "sha256": "1205b879d2cb8f2f98467bb54aa36313bce3bf26676c24ae6ffacc5d7c0a93f0"
     },
     {
       "path": "data/contexts.json",
@@ -78,8 +78,8 @@
     },
     {
       "path": "data/places.json",
-      "bytes": 10610,
-      "sha256": "0b6ac42c77dc8262c29e710e605198552292dfa22c3434da29e2ebabf8b60f25"
+      "bytes": 13261,
+      "sha256": "d32771a36b46d9fa9ebeeaeb43aad7c119b48ec449dece5b51923552b8595018"
     },
     {
       "path": "data/relationships.json",
@@ -88,8 +88,8 @@
     },
     {
       "path": "data/sources.json",
-      "bytes": 30205,
-      "sha256": "bfb5cde8a8b71942334a2d8f7b14d4d842cc08942bb9914f4eb0d6037dfef7be"
+      "bytes": 34470,
+      "sha256": "4089e9084631bec21d6374e05074ffaebf9dc1d7a9d52e5a2b5443aa974d8ea7"
     },
     {
       "path": "data/subjects.json",
@@ -103,8 +103,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 12695,
-      "sha256": "8ecc34d6b8ccff51814d2eff1a9ce666a843b10df1b27a263f35bb926e4f22cf"
+      "bytes": 13916,
+      "sha256": "ff1579cfbd969d643cad8686284ee75f661d52fefcf05f2c109dddcc6f4c08c8"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -118,8 +118,8 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 13436,
-      "sha256": "49401b4b44ac7ed3d8d52cbffe5994030ca6200cdbc723c5dc2b94f6cd4f2dbf"
+      "bytes": 13435,
+      "sha256": "6511f6ee7c7b583320075b4ab3a0c0477e01ef8d4e9f1fa37883a060548bf0ae"
     },
     {
       "path": "docs/FOCUSED_EXPLORATION.md",
@@ -187,14 +187,29 @@
       "sha256": "66eb536d98b1ce2f990ccd4b17bca17642279afc06153fb96833212c1d56c36e"
     },
     {
+      "path": "docs/G3_FINAL_GATE.md",
+      "bytes": 3236,
+      "sha256": "ddd1bec2c6ed29cb5a1f1425a07645588f0df1d7bc1fc8e0f6dda6e9d3b987f4"
+    },
+    {
+      "path": "docs/G3_SPATIAL_AUDIT.json",
+      "bytes": 5980,
+      "sha256": "4b025018d3bf7654c06e5aff4a8d93ddc5991d85330bb91e3bc1813adba5a1f4"
+    },
+    {
+      "path": "docs/G3_SPATIAL_AUDIT.md",
+      "bytes": 5389,
+      "sha256": "4d5dffad1b7207b0c22861bcab7ef3b0c20b6e2aad4be539f660283ca9d62d5f"
+    },
+    {
       "path": "docs/GITHUB_PAGES.md",
       "bytes": 922,
       "sha256": "96e78a72803feeb9a7ad64e19198e16fa95254b0c76772c2cdd8040aa244b882"
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 4304,
-      "sha256": "89158efcabf3ef42d0f3ba2234c4f0b4149a706b0d49b876c58fd910a4537c84"
+      "bytes": 4726,
+      "sha256": "aa8526176dab2b2aad018f5c760f07eeeacfcda5662d87aff347701a21cb31b6"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -203,18 +218,18 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1487,
-      "sha256": "57564cf3e3b5674d4133c39e5efa5825d7608f8919f7f62c7312cd7d5516e83f"
+      "bytes": 1316,
+      "sha256": "ea7e2463972f58be052c6c829ec56a4687038fba6a4e9a11d68a18c6489c6660"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 9308,
-      "sha256": "f933015ed2855e475959a5bd3eaa20c1ffe0d8bf30cdee65a1f2a6f29dcf450e"
+      "bytes": 9824,
+      "sha256": "921032a05ad51e4ea9ae1ebb50f4e1bd0bb6f8773f9140b19b1cf459ab36c083"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 9098,
-      "sha256": "417d1a71c027315026789fde9058d3c40a0970cb704e5ca23bd2786efd9b35e2"
+      "bytes": 9410,
+      "sha256": "d1c7fa82e1bb83126caecbba81add2fdadd67fcd3ba7fc9be0f58936d2edb0e4"
     },
     {
       "path": "docs/SEED_ARCHIVE.md",
@@ -228,8 +243,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 2611,
-      "sha256": "071547f2fdf0d1d6a0d0fd2251eaf1954f43bd926c7c882eb1e4c885d356744b"
+      "bytes": 2918,
+      "sha256": "59d0f84b2469fe403db98faecfdbfd4a559dce1838606cb8264c5f025a5bfabe"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -239,12 +254,12 @@
     {
       "path": "index.html",
       "bytes": 18724,
-      "sha256": "4760fe4937bacdb195798452b6102ed2e407cf4ea090e2dc65396422f6e9b83f"
+      "sha256": "e3d37bc0a0be1e48f38dd0a3d375af71d1c857208916dfe5639bed1baddf4a22"
     },
     {
       "path": "js/app.js",
-      "bytes": 88234,
-      "sha256": "4bc7e161f58f89f74da8c688089162a9bf5aa292a97a46d2eff01774e603f19e"
+      "bytes": 88280,
+      "sha256": "640b423142811d624d60f2cd6791e7ca3ace2c04208314e055349f10349e1902"
     },
     {
       "path": "js/core.js",
@@ -294,7 +309,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 627,
-      "sha256": "e085911d4d32f1d6308e3edbde1378e36cae4670e0d2c00db8d7a9d11b417071"
+      "sha256": "f16c3ef57b7d64ab0adfd9393bec41f3dad79a4df4e1b123c578e4723fd2c18f"
     },
     {
       "path": "tools/serve.py",
@@ -333,8 +348,8 @@
     },
     {
       "path": "tools/test_g2_final_gate.py",
-      "bytes": 3592,
-      "sha256": "05b7168c2089530059e015e29ad14f5e934edae473de4979d42c2f9598c4d5b2"
+      "bytes": 3604,
+      "sha256": "24d88b7b269b5861fb9312b441b94dc21f20681ae873e319b1e050b798cf2175"
     },
     {
       "path": "tools/test_g2_pilot.py",
@@ -343,8 +358,8 @@
     },
     {
       "path": "tools/test_g2_pilot_b.py",
-      "bytes": 2665,
-      "sha256": "ece3e2889fb5c6edc3a0ed1133a8518166ade1f3f4b89d7d3194e780e4f730cb"
+      "bytes": 3167,
+      "sha256": "555a539f53a7fe982983be04f13597dfff4cadd55c5c3f9d309c84505f808b6b"
     },
     {
       "path": "tools/test_g2_pilot_c_maize.py",
@@ -393,8 +408,13 @@
     },
     {
       "path": "tools/test_g3_evidence_precision.py",
-      "bytes": 2318,
-      "sha256": "e31c6592c6e2021a39e1a8baf7d99ccacb3934e0d3cf6304ae4aac85c87c1677"
+      "bytes": 2331,
+      "sha256": "783eed97841e6295d83fb519daf4e2b6c59a73119e2e735fae746968bf76683f"
+    },
+    {
+      "path": "tools/test_g3_final_gate.py",
+      "bytes": 3784,
+      "sha256": "5b583f748b9524d6cf2703d0da04af967923a8f5ebdfaf804491b5291aa2bc75"
     },
     {
       "path": "tools/test_g3_source_comparison.py",
@@ -402,9 +422,14 @@
       "sha256": "9f8a86f62946813980d7ad8a4d5281301edfd863328b13826b5eeb3b410a0d5c"
     },
     {
+      "path": "tools/test_g3_spatial_audit.py",
+      "bytes": 3680,
+      "sha256": "eb20584f07ab4e82ec50723a88945f02b77c1a09da7a2dbdc7d8f53c0ed119ee"
+    },
+    {
       "path": "tools/test_g3_unmapped_access.py",
-      "bytes": 1322,
-      "sha256": "6a0c5c15c2527b0b383936d17eb677a1570e571860290481b8692d5d2e3a58e1"
+      "bytes": 1548,
+      "sha256": "e177058f6d97a45f52913e4fe83b25a4801e33cbbf27d6820d4457ae21d6316d"
     },
     {
       "path": "tools/test_light_contrast.py",

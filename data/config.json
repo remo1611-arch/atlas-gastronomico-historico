@@ -1,8 +1,8 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.18",
-    "gate": "G3_IN_PROGRESS"
+    "version": "0.1.0-alpha.19",
+    "gate": "G3_CLOSED"
   },
   "timeline": {
     "minYear": -12000,

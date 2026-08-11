@@ -81,7 +81,15 @@
     "id": "ganj_dareh",
     "name": "Ganj Dareh",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 34.25,
+      "lon": 47.5,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_ganj_dareh_ppnd"
+      ],
+      "note": "PPND publica 34°15′ N, 47°30′ E. Resolución espacial gruesa; sirve para ubicar el yacimiento en el mapa, no como coordenada de excavación submétrica."
+    },
     "summary": "Yacimiento del Neolítico acerámico en los Zagros centrales, cerca de Harsin, Irán occidental.",
     "sourceRefs": [
       "src_goat_zagros_pnas_2021"
@@ -134,7 +142,15 @@
     "id": "areni_1_cave",
     "name": "Cueva Areni-1",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 39.7315,
+      "lon": 45.2037222222,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_areni_unesco_2026"
+      ],
+      "note": "Coordenadas publicadas por la ficha UNESCO de Areni-1 presentada por Armenia."
+    },
     "summary": "Complejo cavernario de Vayots Dzor, Armenia, con una instalación calcolítica asociada a producción de vino.",
     "sourceRefs": [
       "src_areni_wine_2011"
@@ -165,7 +181,15 @@
     "id": "tel_kabri",
     "name": "Tel Kabri",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 33.0091379698,
+      "lon": 35.140732644,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_tel_kabri_lcp"
+      ],
+      "note": "Coordenadas del registro arqueológico académico Levantine Ceramics Project."
+    },
     "summary": "Centro palacial cananeo del Bronce Medio en Galilea occidental, con un complejo de almacenamiento de vino excavado arqueológicamente.",
     "sourceRefs": [
       "src_tel_kabri_wine_2014",
@@ -177,7 +201,15 @@
     "id": "jerusalem_city_of_david_ridge",
     "name": "Jerusalén · cresta de la Ciudad de David",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 31.772695758,
+      "lon": 35.2355992035,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_jerusalem_lcp"
+      ],
+      "note": "Punto de referencia de la Ciudad de David/Ophel/Silwan. La occurrence reúne recipientes de más de un área de excavación de la cresta y no debe interpretarse como una única coordenada de hallazgo."
+    },
     "summary": "Área de excavación de Jerusalén con recipientes de almacenamiento destruidos en 586 a.C. y analizados mediante química de residuos.",
     "sourceRefs": [
       "src_jerusalem_vanilla_wine_2022"
@@ -244,7 +276,15 @@
     "id": "san_bartolo_guatemala",
     "name": "San Bartolo (Petén, Guatemala)",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 17.5483333333,
+      "lon": -89.4038888889,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_san_bartolo_unesco"
+      ],
+      "note": "Coordenadas publicadas por la Lista Indicativa UNESCO de Guatemala."
+    },
     "summary": "Sitio maya de Petén donde residuos microbotánicos de dos chultunes proporcionan evidencia directa de nixtamalización en los siglos VII–VIII d.C.",
     "sourceRefs": [
       "src_santini_2022_san_bartolo_nixtamal"
@@ -255,7 +295,15 @@
     "id": "la_corona_guatemala",
     "name": "La Corona (Petén, Guatemala)",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 17.5205611111,
+      "lon": -90.3806222222,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_la_corona_symposium_2013"
+      ],
+      "note": "Banco de marca de la Plaza Central publicado por el Proyecto Regional Arqueológico La Corona en las actas del Simposio."
+    },
     "summary": "Centro maya de las Tierras Bajas donde cerámicas y piedras de molienda del Clásico Tardío conservan esferulitos asociados a maíz tratado con cal.",
     "sourceRefs": [
       "src_cagnato_2024_la_corona_nixtamal"
@@ -286,7 +334,15 @@
     "id": "kfar_samir_submerged_site",
     "name": "Kfar Samir · costa del Carmelo",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 32.7852,
+      "lon": 34.9524027778,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_kfar_samir_2018"
+      ],
+      "note": "Punto de sector publicado para Kfar Samir. El asentamiento es extenso y sumergido; la coordenada no representa todo su perímetro."
+    },
     "summary": "Asentamiento prehistórico sumergido frente a la costa del Carmelo, con evidencias de procesado de aceituna asociadas a producción de aceite.",
     "sourceRefs": [
       "src_galili_1997_kfar_samir_olive_oil"
@@ -308,7 +364,15 @@
     "id": "monte_testaccio_rome",
     "name": "Monte Testaccio · Roma",
     "type": "site",
-    "point": null,
+    "point": {
+      "lat": 41.87711,
+      "lon": 12.476164,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_monte_testaccio_roma"
+      ],
+      "note": "Ubicación oficial de Roma Capitale para Monte dei Cocci; se usa como punto de referencia del monumento."
+    },
     "summary": "Depósito artificial romano compuesto mayoritariamente por ánforas de transporte; constituye una fuente excepcional para estudiar el abastecimiento de aceite bético a Roma.",
     "sourceRefs": [
       "src_remesal_baetican_oil_2009",
@@ -320,7 +384,15 @@
     "id": "berenike_red_sea_port",
     "name": "Berenike · puerto del mar Rojo",
     "type": "city",
-    "point": null,
+    "point": {
+      "lat": 23.9103333333,
+      "lon": 35.4736666667,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_berenike_archaeology"
+      ],
+      "note": "Coordenadas publicadas en la síntesis arqueológica de Berenike."
+    },
     "summary": "Puerto egipcio del mar Rojo que conectó el Mediterráneo romano con redes comerciales del océano Índico.",
     "sourceRefs": [
       "src_cappers_2006_berenike_foodprints",

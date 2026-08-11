@@ -268,4 +268,3 @@ La tarjeta principal no repite reviewed/verified, precisión y cartografía comp
 ## ADR-070 — Límite editorial de resultados
 **Aceptada.**
 `En esta fecha` muestra cuatro resultados prioritarios y revela el resto bajo demanda, evitando que el crecimiento del corpus convierta la home en una lista infinita.
-

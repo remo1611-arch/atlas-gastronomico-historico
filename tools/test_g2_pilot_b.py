@@ -44,10 +44,19 @@ for group,lookup in [
             if r not in SRC:errors.append(f"{id_}: fuente rota {r}")
 
 # Real model stress cases.
-if P.get("ganj_dareh",{}).get("point") is not None:
-    errors.append("Ganj Dareh se esperaba sin punto hasta disponer de procedencia cartográfica auditada")
+# Ganj Dareh originally entered G2 without a point. G3-D may map it only after
+# explicit spatial provenance has been audited.
+ganj_point=P.get("ganj_dareh",{}).get("point")
+if ganj_point is not None:
+    if ganj_point.get("precision")!="reference":
+        errors.append("Ganj Dareh: punto posterior debe conservar precision=reference")
+    if not ganj_point.get("sourceRefs"):
+        errors.append("Ganj Dareh: punto posterior sin procedencia espacial")
+    if not ganj_point.get("note"):
+        errors.append("Ganj Dareh: punto posterior sin limitación interpretativa")
+
 if P.get("kuyavia_poland",{}).get("point") is not None:
-    errors.append("Kuyavia se esperaba sin punto para evitar falsa precisión")
+    errors.append("Kuyavia debe seguir sin punto para evitar falsa precisión regional")
 point=P.get("shubayqa_1",{}).get("point") or {}
 if point.get("precision")!="exact_from_publication":
     errors.append("Shubayqa 1 debe conservar coordenadas publicadas")
@@ -66,4 +75,5 @@ print("Subjects:",len(required_subjects))
 print("Occurrences:",len(required_occ))
 print("Contexts:",len(required_contexts))
 print("Developments:",len(required_dev))
-print("Intentional unmapped places: ganj_dareh, kuyavia_poland, england_richard_ii_reference")
+print("Spatial regression: Ganj Dareh mapped only with audited reference provenance.")
+print("Intentional unmapped places: kuyavia_poland, england_richard_ii_reference")

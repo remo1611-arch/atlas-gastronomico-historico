@@ -112,3 +112,13 @@ Estado:
 - No reintroducir museum rail, category dashboard, context dashboard ni secciones standalone de transformaciones/eventos.
 - Próximo bloque: G3-D auditoría espacial de 18 unmapped.
 - Antes, validar alpha.18 visual/táctilmente en Xiaomi 15.
+
+Estado de continuación:
+- G2 CLOSED.
+- G3 CLOSED.
+- Spatial audit: 15 mapped / 9 unmapped.
+- No perseguir 100 % de pines.
+- No añadir más UI técnica salvo defecto verificable.
+- Próxima fase: expansión editorial controlada del corpus antes de G4.
+- Priorizar historias coherentes, buena procedencia espacial y densidad temporal.
+- Objetivo orientativo antes de redes complejas: 50–70 occurrences de alta calidad.

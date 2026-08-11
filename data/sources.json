@@ -592,5 +592,86 @@
     "sourceType": "official_institution",
     "accessed": "2026-08-11",
     "notes": "Segundo manuscrito catalogado de The Forme of Cury; confirma su contexto en la casa de Ricardo II y la tradición manuscrita múltiple."
+  },
+  {
+    "id": "src_spatial_ganj_dareh_ppnd",
+    "title": "Ganj Dareh — Platform for Neolithic Radiocarbon Dates (PPND)",
+    "publisher": "ex oriente e.V.",
+    "url": "https://www.exoriente.org/associated_projects/ppnd_site.php?s=21",
+    "sourceType": "dataset",
+    "accessed": "2026-08-11",
+    "notes": "Registro científico de dataciones neolíticas. Sitúa Ganj Dareh en 34°15′ N, 47°30′ E; se usa como punto cartográfico de referencia de resolución gruesa."
+  },
+  {
+    "id": "src_spatial_areni_unesco_2026",
+    "title": "Areni-1 (Birds’) Cave: Prehistoric Life and Winemaking in the Arpa River Gorge",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/tentativelists/6967/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Ficha de Lista Indicativa presentada por Armenia; publica coordenadas N39°43′53.4″ E45°12′13.4″."
+  },
+  {
+    "id": "src_spatial_tel_kabri_lcp",
+    "title": "Tel Kabri — site record",
+    "publisher": "Levantine Ceramics Project",
+    "url": "https://www.levantineceramics.org/sites/1228-tel-kabri",
+    "sourceType": "dataset",
+    "accessed": "2026-08-11",
+    "notes": "Gazetteer arqueológico académico; publica coordenadas 33.0091379698 N, 35.140732644 E."
+  },
+  {
+    "id": "src_spatial_jerusalem_lcp",
+    "title": "Jerusalem, City of David/Ophel/Silwan — site record",
+    "publisher": "Levantine Ceramics Project",
+    "url": "https://www.levantineceramics.org/sites/2709-jerusalem-city-of-david-ophel-silwan",
+    "sourceType": "dataset",
+    "accessed": "2026-08-11",
+    "notes": "Gazetteer arqueológico académico; publica un punto de referencia para la cresta de la Ciudad de David: 31.772695758 N, 35.2355992035 E."
+  },
+  {
+    "id": "src_spatial_san_bartolo_unesco",
+    "title": "The Painted Murals of San Bartolo",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/tentativelists/5738/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Ficha de Lista Indicativa presentada por Guatemala; publica coordenadas N17°32′54″ W89°24′14″."
+  },
+  {
+    "id": "src_spatial_la_corona_symposium_2013",
+    "title": "El asentamiento de La Corona y sus alrededores",
+    "publisher": "XXVI Simposio de Investigaciones Arqueológicas en Guatemala / Asociación Tikal",
+    "url": "https://www.asociaciontikal.com/simposio-26-ano-2012-2/083-el-asentamiento-de-la-corona-y-sus-alrededores-melvin-rodrigo-guzman-piedrasanta-simposio-26-2012/",
+    "sourceType": "conference_proceedings",
+    "accessed": "2026-08-11",
+    "notes": "Publica las coordenadas del banco de marca de la Plaza Central de La Corona: 17°31′14.02″ N, 90°22′50.24″ W."
+  },
+  {
+    "id": "src_spatial_kfar_samir_2018",
+    "title": "The archaeology and paleoenvironment of the submerged Pottery Neolithic settlement of Kfar Samir (Israel)",
+    "publisher": "Paléorient / CNRS Éditions",
+    "url": "https://cris.haifa.ac.il/en/publications/the-archaeology-and-paleoenvironment-of-the-submerged-pottery-neo/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Artículo revisado por pares. Publica coordenadas de sectores del asentamiento sumergido; el punto usado corresponde al sector central/sur documentado en la publicación."
+  },
+  {
+    "id": "src_spatial_monte_testaccio_roma",
+    "title": "Monte dei Cocci",
+    "publisher": "Roma Capitale · Turismo Roma",
+    "url": "https://www.turismoroma.it/en/places/monte-dei-cocci",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Ficha oficial del monumento con ubicación cartográfica 41.877110 N, 12.476164 E. Se usa como punto de referencia del complejo, no como centro geométrico exacto del depósito."
+  },
+  {
+    "id": "src_spatial_berenike_archaeology",
+    "title": "Berenike, Archaeology of",
+    "publisher": "Encyclopedia of Global Archaeology · Springer",
+    "url": "https://doi.org/10.1007/978-1-4419-0465-2_1333",
+    "sourceType": "scholarly_monograph",
+    "accessed": "2026-08-11",
+    "notes": "Entrada arqueológica de Steven E. Sidebotham; publica Berenike en 23°54.62′ N, 35°28.42′ E."
   }
 ]

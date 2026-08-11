@@ -1,0 +1,162 @@
+{
+  "version": "1",
+  "release": "0.1.0-alpha.19",
+  "auditedOn": "2026-08-11",
+  "policy": "No se añade un punto salvo que exista una procedencia espacial explícita y defendible. Las regiones amplias permanecen sin punto; los sitios concretos sin coordenadas suficientemente resueltas permanecen pendientes.",
+  "baselineUnmappedOccurrences": 18,
+  "decisions": [
+    {
+      "occurrenceRef": "occ_goat_ganj_dareh_8200_bce",
+      "placeRef": "ganj_dareh",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_ganj_dareh_ppnd"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_cheese_kuyavia_sixth_millennium_bce",
+      "placeRef": "kuyavia_poland",
+      "class": "broad_region",
+      "decision": "remain_unmapped",
+      "reason": "Kuyavia es una región; un punto central fingiría una localización arqueológica única."
+    },
+    {
+      "occurrenceRef": "occ_forme_of_cury_1390",
+      "placeRef": "england_richard_ii_reference",
+      "class": "broad_region",
+      "decision": "remain_unmapped",
+      "reason": "Inglaterra de Ricardo II funciona como marco histórico, no como lugar puntual del manuscrito."
+    },
+    {
+      "occurrenceRef": "occ_wine_areni_4000_bce",
+      "placeRef": "areni_1_cave",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_areni_unesco_2026"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_wine_tel_kabri_middle_bronze",
+      "placeRef": "tel_kabri",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_tel_kabri_lcp"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_wine_jerusalem_586_bce",
+      "placeRef": "jerusalem_city_of_david_ridge",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_jerusalem_lcp"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_maize_san_andres_7300_calbp",
+      "placeRef": "san_andres_tabasco",
+      "class": "specific_site_unresolved",
+      "decision": "remain_unmapped",
+      "reason": "La bibliografía histórica identifica el sitio, pero las búsquedas cartográficas devuelven localidades homónimas y coberturas regionales; no se adopta un centroide ni una coincidencia dudosa."
+    },
+    {
+      "occurrenceRef": "occ_maize_paredones_6775_6504_calbp",
+      "placeRef": "paredones_peru",
+      "class": "specific_site_unresolved",
+      "decision": "remain_unmapped",
+      "reason": "La publicación sitúa Paredones aproximadamente 1 km al norte de Huaca Prieta, pero no se ha localizado una coordenada puntual publicada inequívoca del mound precerámico."
+    },
+    {
+      "occurrenceRef": "occ_maize_paredones_consumption_6500_6000_calbp",
+      "placeRef": "paredones_peru",
+      "class": "specific_site_unresolved",
+      "decision": "remain_unmapped",
+      "reason": "Comparte el mismo problema espacial que la occurrence arqueobotánica de Paredones."
+    },
+    {
+      "occurrenceRef": "occ_maize_lower_great_lakes_540_1030",
+      "placeRef": "lower_great_lakes_region",
+      "class": "broad_region",
+      "decision": "remain_unmapped",
+      "reason": "El registro resume una región arqueológica multisitio; no existe un punto único históricamente honesto."
+    },
+    {
+      "occurrenceRef": "occ_maize_cantabrian_adoption_late_16c",
+      "placeRef": "cantabrian_region",
+      "class": "broad_region",
+      "decision": "remain_unmapped",
+      "reason": "La adopción documentada es regional; un centroide moderno distorsionaría el fenómeno."
+    },
+    {
+      "occurrenceRef": "occ_maize_atlantic_africa_16c",
+      "placeRef": "tropical_atlantic_africa_coasts",
+      "class": "broad_region",
+      "decision": "remain_unmapped",
+      "reason": "La evidencia textual cubre múltiples costas y posibles introducciones; no existe un único punto de entrada defendible."
+    },
+    {
+      "occurrenceRef": "occ_nixtamal_san_bartolo_600_800",
+      "placeRef": "san_bartolo_guatemala",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_san_bartolo_unesco"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_nixtamal_la_corona_600_800",
+      "placeRef": "la_corona_guatemala",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_la_corona_symposium_2013"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_olive_oil_kfar_samir_6500_bp",
+      "placeRef": "kfar_samir_submerged_site",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_kfar_samir_2018"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_olive_oil_ein_zippori_6th_5th_millennia",
+      "placeRef": "ein_zippori",
+      "class": "specific_site_unresolved",
+      "decision": "remain_unmapped",
+      "reason": "Israel Antiquities Authority publica referencias de cuadrícula para las áreas excavadas, pero G3 no introduce una conversión derivada a WGS84 sin documentar y validar primero ese procedimiento como procedencia espacial."
+    },
+    {
+      "occurrenceRef": "occ_olive_oil_monte_testaccio_1_3c",
+      "placeRef": "monte_testaccio_rome",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spatial_monte_testaccio_roma"
+      ]
+    },
+    {
+      "occurrenceRef": "occ_black_pepper_berenike_roman",
+      "placeRef": "berenike_red_sea_port",
+      "class": "point_documented",
+      "decision": "mapped",
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_spatial_berenike_archaeology"
+      ]
+    }
+  ]
+}

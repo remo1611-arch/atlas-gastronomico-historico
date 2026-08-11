@@ -4,17 +4,16 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.18
+0.1.0-alpha.19
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- **G3: EN CURSO · A/B/C implementados.**
-- G4+: no iniciados.
+- **G3: CERRADO.**
+- G4: pendiente, no iniciar todavía a gran escala.
 
-## Corpus
-Sin cambios respecto a alpha.15:
+## Corpus histórico
 - 11 subjects;
 - 24 places;
 - 24 occurrences;
@@ -22,56 +21,57 @@ Sin cambios respecto a alpha.15:
 - 1 relationship;
 - 7 contexts;
 - 6 developments;
-- 66 sources.
+- 75 sources.
+
+## Cobertura espacial
+Alpha.18:
+- 6 occurrences con punto;
+- 18 sin punto.
+
+Alpha.19:
+- **15 occurrences con punto**;
+- **9 sin punto**.
+
+Auditoría de los 18 casos:
+- 9 point_documented;
+- 5 broad_region;
+- 4 specific_site_unresolved.
+
+Los 9 registros sin punto restantes son intencionales y auditados.
 
 ## Contrato
 Schemas y taxonomy siguen idénticos a G2 CLOSED.
 
 Fingerprint G2:
-9/9.
+**9/9**.
 
-## G3-A
-Evidencia y precisión:
-- filters;
-- Evidence Lens;
-- source comparison;
-- unmapped access.
+## G3
+### A
+Evidencia y precisión.
 
-## G3-B
-Cronología y disputed:
-- intervalos;
-- gaps;
-- comparison;
-- neutralidad editorial.
+### B
+Cronología y disputed.
 
-## G3-C
-Focused Exploration:
-- `Explorar`;
-- `Historias`;
-- Tiempo → Mapa → En esta fecha;
-- Evidence Lens bajo demanda;
-- hasta 4 registros en overview;
-- Procesos y cambios bajo disclosure;
-- metodología en Acerca del Atlas;
-- eliminación de bloques legacy.
+### C
+Focused Exploration.
 
-## Próximo objetivo
-G3-D — cobertura espacial rigurosa.
+### D
+Auditoría espacial y cierre.
 
-Auditar los 18 registros públicos sin punto:
-A. lugar concreto localizable;
-B. región que requiere geometría;
-C. evidencia que debe permanecer deliberadamente sin geometría.
+## UX
+La experiencia principal permanece:
 
-Después, evaluar cierre de G3.
+**Tiempo → Mapa → En esta fecha**
 
-## QA visual alpha.18
-Chromium real:
-- escritorio 1440×1000: PASS;
-- móvil 393×852: PASS;
-- overflow horizontal: 0;
-- errores de consola: 0;
-- reducción de altura frente a alpha.17: -50,8 % escritorio / -63,6 % móvil.
+Los detalles técnicos se muestran bajo demanda.
 
-## Pendiente visual
-Validación táctil real en Xiaomi 15 de alpha.18.
+## Decisión de siguiente fase
+No añadir más UI técnica.
+
+Antes de redes/difusión complejas:
+- ampliar corpus de forma editorial;
+- priorizar historias coherentes;
+- aumentar densidad espacial y temporal;
+- objetivo orientativo: 50–70 occurrences de alta calidad.
+
+Después se reevaluará G4.

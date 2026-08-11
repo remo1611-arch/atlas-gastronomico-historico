@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.1.0-alpha.19 — 2026-08-11
+
+### Gate
+- **G3 CLOSED**.
+
+### Auditoría espacial
+- 18 occurrences originalmente sin punto auditadas;
+- 9 pasan a tener punto documentado;
+- 5 regiones amplias permanecen sin punto;
+- 4 occurrences de tres sitios concretos permanecen sin punto por resolución insuficiente;
+- cobertura: 6/24 → 15/24 occurrences con punto.
+
+### Procedencia espacial
+Nuevas referencias para:
+- Ganj Dareh;
+- Areni-1;
+- Tel Kabri;
+- Jerusalem / City of David;
+- San Bartolo;
+- La Corona;
+- Kfar Samir;
+- Monte Testaccio;
+- Berenike.
+
+### Política
+- no centroides de regiones;
+- `reference` separado de `exact_from_publication`;
+- no conversión ad hoc de cuadrículas arqueológicas;
+- unmapped puede ser resultado correcto.
+
+### Contrato
+- schemas sin cambios;
+- taxonomy sin cambios;
+- fingerprint G2 9/9.
+
+### Dirección
+Tras G3: contenido antes que más UI.
+
 ## 0.1.0-alpha.18 — 2026-08-11
 
 ### Focused Exploration

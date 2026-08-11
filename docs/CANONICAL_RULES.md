@@ -138,3 +138,13 @@
 111. La metodología permanente se concentra en Acerca del Atlas o ayudas contextuales, no en bloques repetidos de la home.
 112. Procesos, eventos y transformaciones pueden compartir un disclosure contextual cuando su separación permanente genere ruido sin aportar una decisión distinta.
 
+104. La cobertura cartográfica no es un objetivo porcentual: un registro puede permanecer sin punto si esa es la representación más rigurosa.
+105. Toda auditoría espacial debe clasificar la decisión como punto documentado, región amplia o sitio concreto todavía no resuelto.
+106. Una región amplia no recibe un centroide únicamente para aumentar el número de pines.
+107. `reference` identifica un punto defendible de orientación y no debe comunicarse como coordenada exacta del hallazgo.
+108. `exact_from_publication` significa que la coordenada fue publicada y reproducida; no implica precisión submétrica ni exactitud de cada evidencia asociada.
+109. La procedencia de `place.point` se documenta separadamente de la procedencia histórica de la occurrence.
+110. Una transformación de coordenadas entre CRS requiere método documentado, conservación de la referencia original y validación reproducible antes de incorporarse al corpus.
+111. G3 puede cerrarse con registros sin geometría cuando cada ausencia ha sido auditada y justificada explícitamente.
+112. Tras G3, no se añadirá UI técnica por defecto: el esfuerzo principal pasa a contenido y exploración, manteniendo divulgación progresiva.
+

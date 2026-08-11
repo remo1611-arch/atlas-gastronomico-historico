@@ -9,8 +9,8 @@ fingerprint=json.loads((ROOT/"docs"/"G2_CONTRACT_FINGERPRINT.json").read_text(en
 
 errors=[]
 
-if cfg.get("project",{}).get("gate")!="G3_IN_PROGRESS":
-    errors.append("config.project.gate no está en G3_IN_PROGRESS")
+if cfg.get("project",{}).get("gate") not in {"G3_IN_PROGRESS","G3_CLOSED"}:
+    errors.append("config.project.gate incompatible con G3")
 
 # G2 contract must remain byte-identical for schemas/taxonomy.
 for rel,expected in fingerprint["files"].items():

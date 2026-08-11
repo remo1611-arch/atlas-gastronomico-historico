@@ -277,3 +277,20 @@ python tools/test_progressive_disclosure.py
 - [ ] modo claro en Xiaomi 15.
 
 Ver `docs/VISUAL_QA_ALPHA18.md`.
+
+python tools/test_g3_spatial_audit.py
+python tools/test_g3_final_gate.py
+
+## G3-D / cierre
+- [ ] 18 decisiones espaciales únicas;
+- [ ] 9 point_documented;
+- [ ] 5 broad_region;
+- [ ] 4 specific_site_unresolved;
+- [ ] puntos mapped con precision/sourceRefs/note;
+- [ ] broad_region sin punto;
+- [ ] unresolved sin punto;
+- [ ] runtime = 15 mapped / 9 unmapped occurrences;
+- [ ] sources espaciales resuelven;
+- [ ] schemas/taxonomy fingerprint 9/9;
+- [ ] config.project.gate = G3_CLOSED;
+- [ ] G3 final gate PASS.

@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.18';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.19';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.18',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.18',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.18',
-  places:'./data/places.json?v=0.1.0-alpha.18',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.18',
-  events:'./data/events.json?v=0.1.0-alpha.18',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.18',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.18',
-  developments:'./data/developments.json?v=0.1.0-alpha.18',
-  sources:'./data/sources.json?v=0.1.0-alpha.18',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.18'
+  config:'./data/config.json?v=0.1.0-alpha.19',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.19',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.19',
+  places:'./data/places.json?v=0.1.0-alpha.19',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.19',
+  events:'./data/events.json?v=0.1.0-alpha.19',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.19',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.19',
+  developments:'./data/developments.json?v=0.1.0-alpha.19',
+  sources:'./data/sources.json?v=0.1.0-alpha.19',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.19'
 };
 
 const s={
@@ -133,6 +133,7 @@ const STATUS_HELP={
 const SOURCE_TYPE_LABELS={
   peer_reviewed_article:'Artículo revisado por pares',
   peer_reviewed_letter:'Carta científica revisada por pares',
+  conference_proceedings:'Actas académicas',
   official_institution:'Institución oficial',
   scholarly_monograph:'Monografía académica',
   monograph:'Monografía',

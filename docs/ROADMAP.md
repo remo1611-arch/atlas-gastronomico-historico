@@ -246,6 +246,8 @@ Contrato G2 congelado.
 ---
 
 ## G3 — Evidencia y precisión
+**Estado: CERRADO · alpha.19**
+
 
 
 ### G3-A — Evidencia y precisión
@@ -285,23 +287,28 @@ Contrato G2 congelado.
 - overview limitado a 4 registros + `Ver más`;
 - legacy HTML/JS/CSS eliminado.
 
-### Pendiente G3
-- rationale específico por registro, solo si un caso real justifica cambio de contrato;
-- tratamiento visual avanzado de intervalos y precisión en más vistas;
-- comparación de posiciones disputed más profunda;
-- geometrías regionales verificadas;
-- auditoría de accesibilidad/UX con corpus mayor.
+### G3-D — Auditoría espacial
+**Estado: CERRADO · alpha.19**
 
-**No iniciado**
+- 18 occurrences sin punto auditadas;
+- 9 point_documented → mapped;
+- 5 broad_region → permanecen sin punto;
+- 4 specific_site_unresolved → permanecen sin punto;
+- 15/24 occurrences públicas con punto;
+- 9/24 sin punto, todas justificadas;
+- cero centroides inventados;
+- procedencia espacial separada de la evidencia histórica.
 
-- panel de fuentes por ocurrencia;
-- precisión cronológica;
-- certeza;
-- evidencia conflictiva;
-- primera evidencia vs tradición;
-- hipótesis alternativas.
+### Cierre G3
 
----
+G3 queda congelado en alpha.19.
+
+No se añade `certaintyRationale` ni otro campo nuevo porque el corpus actual no demuestra una necesidad suficiente para romper el contrato G2.
+
+Las geometrías regionales se aplazan hasta disponer de casos que justifiquen áreas documentadas.
+
+La siguiente prioridad es expansión editorial controlada antes de redes complejas.
+
 
 ## G4 — Difusión y redes
 **No iniciado**

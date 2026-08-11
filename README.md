@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.18
-**Estado:** nueva base canónica / prototipo funcional  
+**Versión:** 0.1.0-alpha.19
+**Estado:** G3 cerrado · corpus canónico en expansión
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -99,23 +99,13 @@ o:
 python tools/serve.py
 ```
 
-## Importante sobre los datos iniciales
+## Estado del corpus público
 
-Los registros incluidos en esta alpha están marcados `seed`.
+Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`.
 
-Sirven únicamente para demostrar que el motor puede manejar:
-- ingredientes;
-- técnicas;
-- bebidas;
-- productos;
-- lugares;
-- ocurrencias;
-- eventos.
+Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-**No constituyen todavía un corpus histórico verificado.**
-
-El gate G2 revisará cada dato con fuentes antes de elevarlo a `reviewed` o `verified`.
-
+Desde alpha.19, la cobertura espacial también está auditada: 15 de 24 occurrences públicas tienen punto y las 9 restantes permanecen sin punto por una decisión explícita, no por olvido.
 
 ## Capas históricas
 
@@ -263,3 +253,17 @@ La profundidad técnica no desaparece:
 - Historias tiene una vista propia.
 
 No hay cambios de corpus ni de contrato.
+
+## G3 cerrado
+
+Alpha.19 cierra la fase de evidencia, precisión y cobertura espacial.
+
+- certeza y precisión separadas;
+- disputed sin arbitraje automático;
+- Focused Exploration;
+- 18 casos sin punto auditados;
+- 9 nuevos puntos con procedencia;
+- regiones amplias sin centroides ficticios;
+- G2 fingerprint 9/9 intacto.
+
+La siguiente prioridad es contenido histórico y densidad de exploración, no más UI técnica.

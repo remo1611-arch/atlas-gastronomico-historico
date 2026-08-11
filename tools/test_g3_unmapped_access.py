@@ -6,14 +6,17 @@ html=(ROOT/"index.html").read_text(encoding="utf-8")
 app=(ROOT/"js/app.js").read_text(encoding="utf-8")
 places={x["id"]:x for x in json.loads((ROOT/"data"/"places.json").read_text(encoding="utf-8"))}
 occ=json.loads((ROOT/"data"/"occurrences.json").read_text(encoding="utf-8"))
+audit=json.loads((ROOT/"docs"/"G3_SPATIAL_AUDIT.json").read_text(encoding="utf-8"))
 
 errors=[]
 unmapped=[
     o for o in occ
     if not places.get(o.get("placeRef"),{}).get("point")
 ]
-if len(unmapped)!=18:
-    errors.append(f"baseline de registros sin punto cambió: {len(unmapped)} != 18")
+expected=sum(1 for d in audit.get("decisions",[]) if d.get("decision")=="remain_unmapped")
+
+if len(unmapped)!=expected:
+    errors.append(f"registros sin punto: {len(unmapped)} != auditoría {expected}")
 
 for needle in [
     'id="unmappedRecordsPanel"',
@@ -37,4 +40,5 @@ if errors:
 
 print("G3 UNMAPPED ACCESS: PASS")
 print("Unmapped public occurrences:",len(unmapped))
+print("Expected by spatial audit:",expected)
 print("All remain accessible without invented coordinates.")

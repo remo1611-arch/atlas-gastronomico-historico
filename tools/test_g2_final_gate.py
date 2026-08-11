@@ -18,7 +18,7 @@ app=(ROOT/"js/app.js").read_text(encoding="utf-8")
 errors=[]
 public={"reviewed","verified"}
 
-if config.get("project",{}).get("gate") not in {"G2_CLOSED","G3_IN_PROGRESS"}:
+if config.get("project",{}).get("gate") not in {"G2_CLOSED","G3_IN_PROGRESS","G3_CLOSED"}:
     errors.append("estado de proyecto incompatible con G2 ya cerrado")
 
 # Runtime corpus must be production-clean.
