@@ -18,7 +18,7 @@ if len(bread_dev)!=1:
 
 for needle in [
     "function subjectHistoryItems(subjectId)",
-    ".filter(x=>x.occurrences.length>=2)",
+    "function openHistory(subjectId)",
 ]:
     if needle not in app:
         errors.append("motor genérico de historias incompleto: "+needle)

@@ -1,13 +1,13 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.20
-**Estado:** G3 cerrado · expansión editorial controlada E1
+**Versión:** 0.1.0-alpha.21
+**Estado:** Narrative Museum integrado · validación móvil pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
 ## Propósito
 
-Construir un atlas histórico interactivo de la alimentación y la gastronomía cuya dimensión principal sea **el tiempo** y cuya segunda dimensión sea **el espacio**.
+Construir un museo digital interactivo en el que cualquier persona pueda **comprender** cómo cambian los alimentos y prácticas culinarias, **explorar** libremente esas evidencias en tiempo y espacio y **comprobar** qué fuentes sostienen cada afirmación.
 
 El Atlas permitirá estudiar, entre otros:
 
@@ -51,14 +51,13 @@ La razón principal es que un ingrediente, una técnica o un plato no puede mode
 
 ## Experiencia pública
 
-Desde alpha.2 la aplicación se diseña como **museo digital interactivo**, no como dashboard técnico:
+Desde alpha.21 la jerarquía de producto es:
 
-- mapa y tiempo son protagonistas;
-- las categorías gastronómicas tienen identidad cromática;
-- los filtros técnicos permanecen disponibles pero se ocultan en un cajón;
-- la ficha seleccionada funciona como panel de exposición;
-- los conceptos internos `subject` y `occurrence` no dominan la terminología visible;
-- la interfaz conserva advertencias de provisionalidad y trazabilidad.
+1. **Historias** — recorridos museísticos curados y redactados para visitantes sin conocimientos previos;
+2. **Atlas** — exploración libre por tiempo, mapa, búsqueda y filtros;
+3. **Evidencia** — ficha técnica con certeza, precisión, metodología y fuentes.
+
+Las historias se cargan desde `data/stories.json` y referencian el corpus existente. No existe un renderer específico por alimento.
 
 
 ## Forma principal de uso
@@ -283,3 +282,13 @@ Primer dossier:
 - sin lógica específica por subject.
 
 El objetivo no es cargar registros aislados, sino construir historias coherentes hasta aproximarnos a 50–70 occurrences de alta calidad.
+
+## Narrative Museum alpha.21
+
+Historias iniciales:
+- Vino · 6 escenas;
+- Pan · 7 escenas.
+
+La app abre en Historias. El Atlas permanece completo como modo secundario.
+
+La timeline corrige además el binding táctil de `Anterior / Siguiente` y utiliza títulos que describen la afirmación histórica en vez de repetir únicamente el nombre del alimento.

@@ -1,23 +1,25 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.20';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.21';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.20',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.20',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.20',
-  places:'./data/places.json?v=0.1.0-alpha.20',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.20',
-  events:'./data/events.json?v=0.1.0-alpha.20',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.20',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.20',
-  developments:'./data/developments.json?v=0.1.0-alpha.20',
-  sources:'./data/sources.json?v=0.1.0-alpha.20',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.20'
+  config:'./data/config.json?v=0.1.0-alpha.21',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.21',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.21',
+  places:'./data/places.json?v=0.1.0-alpha.21',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.21',
+  events:'./data/events.json?v=0.1.0-alpha.21',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.21',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.21',
+  developments:'./data/developments.json?v=0.1.0-alpha.21',
+  sources:'./data/sources.json?v=0.1.0-alpha.21',
+  stories:'./data/stories.json?v=0.1.0-alpha.21',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.21',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.21'
 };
 
 const s={
-  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
-  year:1500,view:'explore',search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
-  selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],stories:[],glossary:[],basemap:null,
+  year:1500,view:'histories',search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
+  selectedOccurrence:null,historySubject:null,activeStory:null,storyScene:0,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -176,8 +178,8 @@ async function j(url){
 
 async function load(){
   try{
-    const [config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap]=await Promise.all(Object.values(P).map(j));
-    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap});
+    const [config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,stories,glossary,basemap]=await Promise.all(Object.values(P).map(j));
+    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,stories,glossary,basemap});
     s.year=config.timeline.initialYear;
     s.eventWindow=config.timeline.eventWindowYears;
 
@@ -186,6 +188,7 @@ async function load(){
     bind();
     applyTheme(getStore('agh_theme')==='light'?'light':'dark');
     setYear(s.year);
+    setExperienceView('histories',{scroll:false});
 
     $('#versionLabel').textContent=config.project.version.replace('0.1.0-','');
     showToast('Atlas cargado');
@@ -236,9 +239,38 @@ function fillControls(){
 function subj(id){return s.subjects.find(x=>x.id===id)}
 function place(id){return s.places.find(x=>x.id===id)}
 function sourceById(id){return s.sources.find(x=>x.id===id)}
+function storyById(id){return s.stories.find(x=>x.id===id)}
+function storyForSubject(subjectId){return s.stories.find(x=>x.subjectRef===subjectId&&isPublicStatus(x.status))||null}
+function glossaryById(id){return s.glossary.find(x=>x.id===id&&isPublicStatus(x.status))||null}
 
 function isPublicStatus(status){
   return status==='reviewed'||status==='verified';
+}
+
+function occurrenceHeadline(o){
+  const subject=subj(o.subjectRef);
+  const pl=place(o.placeRef);
+  const subjectName=subject?.name||o.subjectRef;
+  const placeName=pl?.name||'Lugar sin resolver';
+  const action={
+    archaeological_presence:'Evidencia de',
+    cultivation:'Cultivo de',
+    domestication_evidence:'Domesticación de',
+    production:'Producción de',
+    storage:'Almacenamiento de',
+    consumption:'Consumo de',
+    textual_attestation:'Mención de',
+    recipe_attestation:'Receta de',
+    technique_attestation:'Técnica vinculada a',
+    trade:'Comercio de',
+    introduction:'Introducción de',
+    adoption:'Adopción de',
+    regulation:'Regulación de',
+    industrial_production:'Producción industrial de',
+    traditional_attribution:'Tradición sobre',
+    other:'Evidencia de'
+  }[o.occurrenceType]||'Evidencia de';
+  return `${action} ${subjectName} · ${placeName}`;
 }
 
 function statusMeta(status){
@@ -692,8 +724,8 @@ function temporalCorpusItems(){
         period:o.period,
         status:o.status,
         certainty:o.certainty,
-        title:subject.name,
-        subtitle:`${OCC_LABELS[o.occurrenceType]||o.occurrenceType} · ${place(o.placeRef)?.name||'Lugar sin resolver'}`,
+        title:occurrenceHeadline(o),
+        subtitle:`${OCC_LABELS[o.occurrenceType]||o.occurrenceType} · ${subject.name}`,
         item:o
       });
     }
@@ -1641,42 +1673,170 @@ function renderHistorySpotlight(){
   const box=$('#historySpotlightList');
   if(!box) return;
 
-  const available=s.subjects
-    .filter(subject=>isPublicStatus(subject.status))
-    .map(subject=>{
-      const items=subjectHistoryItems(subject.id);
-      const occurrences=items.filter(x=>x.kind==='occurrence');
-      const events=items.filter(x=>x.kind==='event');
-      const techniques=items.filter(x=>x.kind==='technique');
-      const developments=items.filter(x=>x.kind==='development');
-      return {subject,items,occurrences,events,techniques,developments};
-    })
-    .filter(x=>x.occurrences.length>=2)
-    .sort((a,b)=>{
-      if(b.occurrences.length!==a.occurrences.length) return b.occurrences.length-a.occurrences.length;
-      return a.subject.name.localeCompare(b.subject.name,'es');
-    });
+  const available=s.stories
+    .filter(story=>isPublicStatus(story.status))
+    .sort((a,b)=>a.title.localeCompare(b.title,'es'));
 
   if(!available.length){
-    box.innerHTML='<p class="map-foot">Todavía no hay elementos con suficientes hitos revisados para construir un recorrido.</p>';
+    box.innerHTML='<p class="map-foot">Todavía no hay historias museísticas publicadas.</p>';
     return;
   }
 
-  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,events,techniques,developments})=>{
-    const first=items[0]?.period?.start;
-    const last=items[items.length-1]?.period?.end;
-    return `<button class="history-spotlight-card" type="button" data-history-subject="${esc(subject.id)}">
-      <span class="history-spotlight-kicker">${esc(TYPE_LABELS[subject.type]||subject.type)}</span>
-      <strong>Historia de ${esc(subject.name)}</strong>
-      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${events.length?` · ${events.length} ${events.length===1?'evento':'eventos'}`:''}${techniques.length?` · ${techniques.length} ${techniques.length===1?'técnica':'técnicas'}`:''}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
-      <small>${first!==undefined&&last!==undefined?`${esc(formatYear(first))} → ${esc(formatYear(last))}`:'Recorrido disponible'}</small>
-      <em>Explorar recorrido →</em>
-    </button>`;
-  }).join('');
+  box.innerHTML=available.map((story,index)=>`
+    <button class="history-spotlight-card narrative-story-card" type="button" data-narrative-story="${esc(story.id)}">
+      <span class="history-spotlight-kicker">${esc(story.eyebrow)}</span>
+      <strong>${esc(story.title)}</strong>
+      <blockquote>${esc(story.question)}</blockquote>
+      <p>${esc(story.teaser)}</p>
+      <small>${story.scenes.length} escenas · ~${story.estimatedMinutes} min</small>
+      <em>Comenzar visita →</em>
+    </button>`).join('');
 
-  $$('[data-history-subject]').forEach(button=>{
-    button.addEventListener('click',()=>openHistory(button.dataset.historySubject));
+  $$('[data-narrative-story]').forEach(button=>{
+    button.addEventListener('click',()=>openNarrativeStory(button.dataset.narrativeStory));
   });
+}
+
+function resolveStoryItem(itemRef){
+  if(itemRef.kind==='occurrence') return s.occurrences.find(x=>x.id===itemRef.ref)||null;
+  if(itemRef.kind==='event') return s.events.find(x=>x.id===itemRef.ref)||null;
+  if(itemRef.kind==='development') return s.developments.find(x=>x.id===itemRef.ref)||null;
+  return null;
+}
+
+function storyItemPresentation(itemRef){
+  const item=resolveStoryItem(itemRef);
+  if(!item) return null;
+  if(itemRef.kind==='occurrence'){
+    const pl=place(item.placeRef);
+    return {
+      kind:'Evidencia',title:occurrenceHeadline(item),
+      when:item.period.display||`${formatYear(item.period.start)}–${formatYear(item.period.end)}`,
+      place:pl?.name||'Lugar sin resolver',summary:item.summary,
+      meta:`${OCC_LABELS[item.occurrenceType]||item.occurrenceType} · ${EVIDENCE_LABELS[item.evidenceType]||item.evidenceType} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,
+      point:pl?.point||null,item
+    };
+  }
+  if(itemRef.kind==='event'){
+    const pl=(item.placeRefs||[]).map(place).find(Boolean);
+    return {kind:'Proceso',title:item.title,when:item.period.display||formatYear(item.period.start),place:pl?.name||'Proceso multiterritorial',summary:item.summary,meta:`${EVENT_LABELS[item.eventType]||item.eventType} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:pl?.point||null,item};
+  }
+  const pl=(item.placeRefs||[]).map(place).find(Boolean);
+  return {kind:'Transformación',title:item.name,when:item.period.display||formatYear(item.period.start),place:pl?.name||'Transformación científica/tecnológica',summary:item.summary,meta:`${developmentTypeLabel(item.type)} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:pl?.point||null,item};
+}
+
+function openNarrativeStory(storyId,sceneIndex=0){
+  const story=storyById(storyId);
+  if(!story||!isPublicStatus(story.status)) return;
+  s.activeStory=storyId;
+  s.storyScene=Math.max(0,Math.min(story.scenes.length-1,Number(sceneIndex)||0));
+  setExperienceView('histories',{scroll:false});
+  $('#narrativeLanding')?.classList.add('hidden');
+  $('#narrativeStoryPlayer')?.classList.remove('hidden');
+  renderNarrativeStory();
+  $('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function closeNarrativeStory({scroll=true}={}){
+  s.activeStory=null;
+  s.storyScene=0;
+  $('#narrativeStoryPlayer')?.classList.add('hidden');
+  $('#narrativeLanding')?.classList.remove('hidden');
+  if(scroll) $('#narrativeLanding')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderStoryMap(scene){
+  const base=$('#storyBasemapLayer');
+  const markers=$('#storyMarkerLayer');
+  const notice=$('#storyMapNotice');
+  const caption=$('#storyMapCaption');
+  if(!base||!markers||!notice||!caption) return;
+  base.innerHTML='';markers.innerHTML='';
+  for(const feature of s.basemap.features){
+    const d=geom(feature.geometry);if(d) base.appendChild(svg('path',{d,class:'country'}));
+  }
+  const points=[];
+  for(const ref of scene.itemRefs){
+    const presented=storyItemPresentation(ref);
+    if(presented?.point&&Number.isFinite(Number(presented.point.lat))&&Number.isFinite(Number(presented.point.lon))){
+      const key=`${presented.point.lat}:${presented.point.lon}`;
+      if(!points.some(x=>x.key===key)) points.push({key,...presented});
+    }
+  }
+  if(!points.length){
+    notice.classList.remove('hidden');
+    notice.textContent='El lugar está identificado, pero esta escena no dispone de un punto cartográfico canónico. El Atlas no inventa un centroide para rellenar el mapa.';
+  }else{
+    notice.classList.add('hidden');notice.textContent='';
+    for(const p of points){
+      const [x,y]=project(p.point.lon,p.point.lat);
+      markers.appendChild(svg('circle',{cx:x,cy:y,r:12,class:'story-map-pulse'}));
+      markers.appendChild(svg('circle',{cx:x,cy:y,r:5,class:'story-map-pin'}));
+    }
+  }
+  caption.innerHTML=`<strong>${esc(scene.geography.today)}</strong><span>${esc(scene.geography.orientation)}</span>`;
+}
+
+function openGlossaryEntry(id){
+  const entry=glossaryById(id);if(!entry) return;
+  $('#glossaryTitle').textContent=entry.term;
+  $('#glossaryDefinition').textContent=entry.definition;
+  $('#glossaryDialog').showModal();
+}
+
+function openStoryItemInAtlas(itemRef){
+  const item=resolveStoryItem(itemRef);if(!item) return;
+  setExperienceView('explore',{scroll:false});
+  if(itemRef.kind==='occurrence'){
+    setYear(item.period.start);
+    selectOccurrence(item.id,true);
+  }else{
+    setYear(item.period.start);
+    $('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function renderNarrativeStory(){
+  const story=storyById(s.activeStory);if(!story) return;
+  const index=Math.max(0,Math.min(story.scenes.length-1,s.storyScene));
+  s.storyScene=index;
+  const scene=story.scenes[index];
+
+  $('#narrativeStoryHeader').innerHTML=`<span class="section-label">${esc(story.eyebrow)}</span><h1>${esc(story.title)}</h1><p>${esc(story.subtitle)}</p><div class="narrative-reading-rule"><strong>${index+1} / ${story.scenes.length}</strong><span>Lee primero la historia. Método, límites y fuentes quedan disponibles cuando quieras profundizar.</span></div>`;
+  $('#storyProgress').innerHTML=story.scenes.map((_,i)=>`<button type="button" aria-label="Ir a la escena ${i+1}" data-story-scene="${i}" class="${i<index?'done':''} ${i===index?'active':''}"></button>`).join('');
+  $('#storySceneHeader').innerHTML=`<span class="narrative-scene-label">${esc(scene.label)}</span><h2>${esc(scene.title)}</h2><p class="narrative-lead">${esc(scene.lead)}</p><div class="narrative-orientation"><article><span>Dónde estás</span><strong>${esc(scene.geography.today)}</strong></article><article><span>Región histórica/geográfica</span><strong>${esc(scene.geography.region)}</strong></article><article><span>Quién vive aquí</span><strong>${esc(scene.geography.society)}</strong></article></div>`;
+  $('#storyNarrativeContent').innerHTML=scene.narrative.map(p=>`<p>${esc(p)}</p>`).join('');
+  $('#storyWhy').innerHTML=`<strong>Por qué importa</strong><span>${esc(scene.whyItMatters)}</span>`;
+  $('#storyMethodTitle').textContent=scene.method.title;
+  $('#storyMethodBody').textContent=scene.method.body;
+  $('#storyLimits').innerHTML=`<strong>Qué no podemos afirmar.</strong> ${esc(scene.limits)}`;
+  $('#storyGlossary').innerHTML=scene.glossaryRefs.map(ref=>{const g=glossaryById(ref);return g?`<button type="button" data-glossary-ref="${esc(g.id)}">${esc(g.term)} ⓘ</button>`:''}).join('');
+  $('#storyNextQuestion').innerHTML=`<strong>Siguiente pregunta.</strong> ${esc(scene.nextQuestion)}`;
+  $('#storyContext').innerHTML=`<strong>${esc(scene.geography.region)}</strong><p>${esc(scene.geography.orientation)} ${esc(scene.geography.society)}</p>`;
+
+  const presented=scene.itemRefs.map(ref=>({ref,p:storyItemPresentation(ref)})).filter(x=>x.p);
+  $('#storyEvidenceList').innerHTML=presented.map(({ref,p})=>`<article class="narrative-evidence-item"><span>${esc(p.when)}</span><strong>${esc(p.title)}</strong><small>${esc(p.place)} · ${esc(p.meta)}</small><button type="button" data-story-atlas-kind="${esc(ref.kind)}" data-story-atlas-ref="${esc(ref.ref)}">Ver en el Atlas →</button></article>`).join('');
+  $('#storySources').innerHTML=sourceListHTML(scene.sourceRefs);
+  renderStoryMap(scene);
+
+  $('#storyPrevBtn').disabled=index===0;
+  $('#storyNextBtn').textContent=index===story.scenes.length-1?'Terminar visita':'Siguiente →';
+  const end=$('#storyEndCard');
+  if(index===story.scenes.length-1){end.classList.remove('hidden');end.innerHTML=`<h3>${esc(story.endTitle)}</h3><p>${esc(story.endText)}</p>`;}else{end.classList.add('hidden');end.innerHTML='';}
+
+  $$('[data-story-scene]').forEach(button=>button.addEventListener('click',()=>{s.storyScene=Number(button.dataset.storyScene);renderNarrativeStory();$('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});}));
+  $$('[data-glossary-ref]').forEach(button=>button.addEventListener('click',()=>openGlossaryEntry(button.dataset.glossaryRef)));
+  $$('[data-story-atlas-ref]').forEach(button=>button.addEventListener('click',()=>openStoryItemInAtlas({kind:button.dataset.storyAtlasKind,ref:button.dataset.storyAtlasRef})));
+}
+
+function stepNarrativeScene(direction){
+  const story=storyById(s.activeStory);if(!story) return;
+  const next=s.storyScene+direction;
+  if(next<0) return;
+  if(next>=story.scenes.length){closeNarrativeStory();return;}
+  s.storyScene=next;
+  renderNarrativeStory();
+  $('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function renderEvents(){
@@ -2110,13 +2270,20 @@ function renderDetails(o){
   const eventCount=historyItems.filter(x=>x.kind==='event').length;
   const techniqueCount=historyItems.filter(x=>x.kind==='technique').length;
   const transformationCount=historyItems.filter(x=>x.kind==='development').length;
-  $('#subjectHistoryBtn').disabled=historyCount<2;
-  $('#subjectHistoryBtn').textContent=historyCount<2
-    ? 'Historia todavía insuficiente'
-    : `Ver historia · ${historyCount} evidencias${eventCount?` + ${eventCount} evento${eventCount===1?'':'s'}`:''}${techniqueCount?` + ${techniqueCount} técnica${techniqueCount===1?'':'s'}`:''}${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
-  $('#subjectHistoryBtn').title=historyCount<2
-    ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
-    : 'Abrir recorrido histórico documentado.';
+  const curatedStory=storyForSubject(subject.id);
+  if(curatedStory){
+    $('#subjectHistoryBtn').disabled=false;
+    $('#subjectHistoryBtn').textContent=`Abrir ${curatedStory.title} · ${curatedStory.scenes.length} escenas`;
+    $('#subjectHistoryBtn').title='Abrir la visita museística redactada para este elemento.';
+  }else{
+    $('#subjectHistoryBtn').disabled=historyCount<2;
+    $('#subjectHistoryBtn').textContent=historyCount<2
+      ? 'Historia todavía insuficiente'
+      : `Ver secuencia del corpus · ${historyCount} evidencias${eventCount?` + ${eventCount} evento${eventCount===1?'':'s'}`:''}${techniqueCount?` + ${techniqueCount} técnica${techniqueCount===1?'':'s'}`:''}${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
+    $('#subjectHistoryBtn').title=historyCount<2
+      ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
+      : 'Abrir secuencia técnica construida desde el corpus.';
+  }
 }
 
 function debounce(fn,wait=160){
@@ -2285,13 +2452,24 @@ function bind(){
   $$('[data-close-history]').forEach(x=>x.addEventListener('click',closeHistory));
   $('#subjectHistoryBtn').addEventListener('click',()=>{
     const o=s.occurrences.find(x=>x.id===s.selectedOccurrence);
-    if(o) openHistory(o.subjectRef);
+    if(!o) return;
+    const curated=storyForSubject(o.subjectRef);
+    if(curated){closeDetail();openNarrativeStory(curated.id);}
+    else openHistory(o.subjectRef);
   });
 
+  $('#prevTemporalHitBtn').addEventListener('click',()=>stepTemporalHit(-1));
+  $('#nextTemporalHitBtn').addEventListener('click',()=>stepTemporalHit(1));
+  $('#storyBackBtn').addEventListener('click',()=>closeNarrativeStory());
+  $('#storyPrevBtn').addEventListener('click',()=>stepNarrativeScene(-1));
+  $('#storyNextBtn').addEventListener('click',()=>stepNarrativeScene(1));
+  $('#glossaryCloseBtn').addEventListener('click',()=>$('#glossaryDialog').close());
+  $('#openAtlasFromStoriesBtn').addEventListener('click',()=>setExperienceView('explore'));
+
   $('#exploreNavBtn').addEventListener('click',()=>setExperienceView('explore'));
-  $('#historiesNavBtn').addEventListener('click',()=>setExperienceView('histories'));
-  $('#openHistoriesHeroBtn').addEventListener('click',()=>setExperienceView('histories'));
-  $('.brand')?.addEventListener('click',()=>setExperienceView('explore',{scroll:false}));
+  $('#historiesNavBtn').addEventListener('click',()=>{closeNarrativeStory({scroll:false});setExperienceView('histories')});
+  $('#openHistoriesHeroBtn').addEventListener('click',()=>{closeNarrativeStory({scroll:false});setExperienceView('histories')});
+  $('.brand')?.addEventListener('click',event=>{event.preventDefault();closeNarrativeStory({scroll:false});setExperienceView('histories',{scroll:false})});
 
   $('#jumpMapBtn').addEventListener('click',()=>{
     setExperienceView('explore',{scroll:false});
@@ -2314,6 +2492,12 @@ function bind(){
       closeDrawer();
       closeLayers();
       closeDetail();
+      if($('#glossaryDialog')?.open) $('#glossaryDialog').close();
+    }
+    if(s.view==='histories'&&s.activeStory&&event.key==='ArrowLeft'){
+      event.preventDefault();stepNarrativeScene(-1);
+    }else if(s.view==='histories'&&s.activeStory&&event.key==='ArrowRight'){
+      event.preventDefault();stepNarrativeScene(1);
     }
   });
 }

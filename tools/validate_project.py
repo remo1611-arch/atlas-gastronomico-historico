@@ -18,6 +18,8 @@ rels=load("relationships.json")
 contexts=load("contexts.json")
 developments=load("developments.json")
 sources=load("sources.json")
+stories=load("stories.json")
+glossary=load("glossary.json")
 tax=load("taxonomy.json")
 config=load("config.json")
 
@@ -35,6 +37,8 @@ R=ids(rels,"relationships")
 C=ids(contexts,"contexts")
 D=ids(developments,"developments")
 SRC=ids(sources,"sources")
+STORY=ids(stories,"stories")
+GLOSS=ids(glossary,"glossary")
 
 def period(o,label):
     p=o.get("period",{})
@@ -165,6 +169,35 @@ for d in developments:
     for ref in d.get("impactSubjectRefs",[]):
         if ref not in S:errors.append(f"{label}: impactSubjectRef roto {ref}")
 
+for story in stories:
+    label=f"story:{story.get('id')}"
+    source_refs(story,label,required_for_review=True)
+    if story.get("subjectRef") not in S:
+        errors.append(f"{label}: subjectRef roto {story.get('subjectRef')}")
+    scene_ids=[]
+    for scene in story.get("scenes",[]):
+        sid=scene.get("id")
+        if sid in scene_ids: errors.append(f"{label}: scene id duplicado {sid}")
+        scene_ids.append(sid)
+        slabel=f"{label}/scene:{sid}"
+        for ref in scene.get("sourceRefs",[]):
+            if ref not in SRC: errors.append(f"{slabel}: sourceRef roto {ref}")
+            if ref not in story.get("sourceRefs",[]): errors.append(f"{slabel}: fuente no incluida en story.sourceRefs {ref}")
+        for ref in scene.get("glossaryRefs",[]):
+            if ref not in GLOSS: errors.append(f"{slabel}: glossaryRef roto {ref}")
+        for item in scene.get("itemRefs",[]):
+            kind=item.get("kind");ref=item.get("ref")
+            target={"occurrence":O,"event":E,"development":D}.get(kind)
+            if target is None: errors.append(f"{slabel}: item kind desconocido {kind}")
+            elif ref not in target: errors.append(f"{slabel}: itemRef roto {kind}:{ref}")
+    if story.get("status") in {"reviewed","verified"} and len(story.get("scenes",[]))<2:
+        errors.append(f"{label}: historia pública necesita >=2 escenas")
+
+for g in glossary:
+    label=f"glossary:{g.get('id')}"
+    if not g.get("term") or not g.get("definition"):
+        errors.append(f"{label}: término/definición incompletos")
+
 for src in sources:
     if not src.get("title") or not src.get("publisher"):
         errors.append(f"source:{src.get('id')}: metadatos mínimos incompletos")
@@ -175,11 +208,11 @@ required=[
     "index.html",".nojekyll","css/app.css","js/core.js","js/app.js",
     "data/config.json","data/taxonomy.json","data/subjects.json","data/places.json",
     "data/occurrences.json","data/events.json","data/relationships.json",
-    "data/contexts.json","data/developments.json","data/sources.json",
+    "data/contexts.json","data/developments.json","data/sources.json","data/stories.json","data/glossary.json",
     "data/basemap/world_110m.geojson","data/archive/demo_records_pre_g2.json",
-    "schemas/context.schema.json","schemas/development.schema.json",
+    "schemas/context.schema.json","schemas/development.schema.json","schemas/story.schema.json","schemas/glossary.schema.json",
     "docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md",
-    "docs/ROADMAP.md","docs/G2_PILOT.md","docs/G2_FINAL_GATE.md","docs/SEED_ARCHIVE.md"
+    "docs/ROADMAP.md","docs/G2_PILOT.md","docs/G2_FINAL_GATE.md","docs/SEED_ARCHIVE.md","docs/NARRATIVE_MUSEUM_INTEGRATION.md"
 ]
 for x in required:
     if not(ROOT/x).exists():errors.append("Falta: "+x)
@@ -193,7 +226,7 @@ if version:
     if f"core.js?v={version}" not in app:errors.append("app: core.js sin cache busting de versión")
     for asset in [
         "config.json","taxonomy.json","subjects.json","places.json","occurrences.json",
-        "events.json","relationships.json","contexts.json","developments.json","sources.json",
+        "events.json","relationships.json","contexts.json","developments.json","sources.json","stories.json","glossary.json",
         "world_110m.geojson"
     ]:
         if f"{asset}?v={version}" not in app:
@@ -229,4 +262,6 @@ print("Relationships:",len(rels))
 print("Contexts:",len(contexts),"· reviewed/verified:",reviewed_counts["contexts"])
 print("Developments:",len(developments),"· reviewed/verified:",reviewed_counts["developments"])
 print("Sources:",len(sources))
+print("Stories:",len(stories),"· scenes:",sum(len(x.get("scenes",[])) for x in stories))
+print("Glossary:",len(glossary))
 print("Unmapped active/nondeprecated occurrences:",unmapped)

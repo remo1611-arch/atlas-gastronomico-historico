@@ -4,74 +4,72 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.20
+0.1.0-alpha.21
 
-## Gates
+## Producto
+**Narrative Museum integrado.**
+
+Jerarquía:
+1. Historias — entender;
+2. Atlas — explorar;
+3. Evidencia — comprobar.
+
+## Gates históricos
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
 - G3: CERRADO.
 - G4: NO INICIADO.
-- **E1 · expansión editorial: EN CURSO.**
 
-## Corpus
+## Expansión editorial
+E1 queda **PAUSADO** hasta validar alpha.21 en móvil.
+
+No se añadieron records históricos en esta release.
+
+## Corpus histórico
 - 11 subjects;
 - 30 places;
-- **30 occurrences**;
+- 30 occurrences;
 - 1 event;
 - 1 relationship;
 - 7 contexts;
-- **7 developments**;
-- **86 sources**.
+- 7 developments;
+- 86 sources.
 
-## Cobertura espacial
-- 16 occurrences con punto;
-- 14 sin punto.
+## Capa narrativa
+- 2 stories revisadas;
+- 13 scenes;
+- 16 glossary entries;
+- 2 schemas narrativos nuevos.
 
-G3-D permanece intacto:
-- 18 decisiones originales;
-- 9 mapped;
-- 9 unmapped dentro del subconjunto auditado.
-
-Los 5 unmapped adicionales proceden del nuevo dossier del pan.
-
-## Historias longitudinales principales
-- vino;
-- maíz;
-- aceite de oliva;
-- **pan**.
-
-## Historia del pan
-Subject estable:
-`bread_like_flatbread`
-
-Etiqueta:
-`Pan`
-
-Contenido:
-- 7 occurrences;
-- 1 development;
-- ca. 12.450 a.C. → 1961.
-
-No existe lógica JS específica para pan.
+Historias publicadas:
+- Historia del vino — 6 escenas;
+- Historia del pan — 7 escenas.
 
 ## Contrato
-G2 fingerprint:
-**9/9**.
+- G2 fingerprint: 9/9 intacto.
+- schemas históricos: sin cambios.
+- schemas totales runtime/editorial: 10.
 
-G3 sigue cerrado.
+## Atlas
+Corrección alpha.21:
+- `prevTemporalHitBtn` → `stepTemporalHit(-1)`;
+- `nextTemporalHitBtn` → `stepTemporalHit(1)`.
 
-Los gates de G3 ahora son growth-safe:
-protegen el baseline sin impedir crecimiento editorial.
+Las occurrences de la timeline usan headlines semánticos y dejan de titularse solo por el nombre del subject.
 
-## Próxima prioridad
-Seguir E1 hasta aproximarse a 50–70 occurrences.
+## QA de producto
+Nuevos gates:
+- narrative museum contract;
+- editorial depth;
+- primary navigation bindings;
+- Atlas semantic headlines.
 
-No iniciar G4 todavía.
-
-Elegir el siguiente dossier por:
-- calidad documental;
-- densidad espacial;
-- densidad temporal;
-- utilidad narrativa;
-- futuras conexiones de difusión/comercio.
+## Pendiente inmediato
+1. desplegar alpha.21 en GitHub Pages;
+2. probar Vino/Pan en Xiaomi;
+3. revisar ritmo y longitud;
+4. probar glosario;
+5. probar Historia → Atlas → Evidencia;
+6. probar anterior/siguiente táctil;
+7. decidir alpha.22 solo a partir de defectos/aceptación reales.

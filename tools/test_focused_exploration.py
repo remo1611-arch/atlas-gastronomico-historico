@@ -102,6 +102,6 @@ if errors:
     sys.exit(1)
 
 print("FOCUSED EXPLORATION: PASS")
-print("Primary experiences: Explorar / Historias")
+print("Primary experiences: Historias / Atlas")
 print("Explore hierarchy: Tiempo -> Mapa -> En esta fecha")
 print("Legacy dashboard sections removed.")

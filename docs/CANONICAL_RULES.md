@@ -156,3 +156,13 @@
 118. “Pan” puede funcionar como categoría editorial longitudinal, pero cada occurrence debe mantener la terminología arqueológica prudente cuando la identificación sea `bread-like`.
 119. Una historia gastronómica puede combinar evidencia directa del alimento, tecnología de producción, regulación y transformaciones industriales siempre que cada tipo conserve su naturaleza semántica.
 
+120. La experiencia pública principal se organiza como `Historias → Atlas → Evidencia`: entender, explorar y comprobar son responsabilidades distintas.
+121. Una historia museística es una capa editorial que referencia registros canónicos mediante IDs; no duplica occurrences, events o developments.
+122. Los schemas narrativos (`story`, `glossary`) se añaden sin modificar el contrato histórico congelado de G2.
+123. Toda escena narrativa pública debe aportar orientación geográfica, contexto humano, explicación de método, límites de interpretación, relevancia histórica y transición hacia la siguiente pregunta.
+124. El motor de historias debe ser genérico; no se permite lógica de render específica para Vino, Pan u otro subject.
+125. En el Atlas, una occurrence se titula por la afirmación histórica que representa y no únicamente por el nombre repetido del subject.
+126. Una navegación primaria necesita QA de binding entre control visible y acción; botón y algoritmo aislados no constituyen un gate funcional completo.
+127. Cuando existe historia curada, la ficha del subject la prioriza; la secuencia técnica automática del corpus permanece como fallback para subjects sin historia editorial.
+128. La integración de una nueva capa de producto no justifica ampliar simultáneamente el corpus: cambios de experiencia y expansión editorial se validan por separado.
+

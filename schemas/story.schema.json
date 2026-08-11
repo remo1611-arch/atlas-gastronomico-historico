@@ -1,0 +1,246 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NarrativeMuseumStory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "subjectRef",
+    "title",
+    "question",
+    "teaser",
+    "eyebrow",
+    "subtitle",
+    "estimatedMinutes",
+    "endTitle",
+    "endText",
+    "sourceRefs",
+    "status",
+    "scenes"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "subjectRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "teaser": {
+      "type": "string",
+      "minLength": 1
+    },
+    "eyebrow": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30
+    },
+    "endTitle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "endText": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "verified",
+        "deprecated"
+      ]
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/scene"
+      }
+    }
+  },
+  "$defs": {
+    "itemRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "occurrence",
+            "event",
+            "development"
+          ]
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "geography": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "today",
+        "region",
+        "orientation",
+        "society"
+      ],
+      "properties": {
+        "today": {
+          "type": "string",
+          "minLength": 1
+        },
+        "region": {
+          "type": "string",
+          "minLength": 1
+        },
+        "orientation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "society": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "body"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scene": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "sceneType",
+        "label",
+        "title",
+        "lead",
+        "geography",
+        "narrative",
+        "itemRefs",
+        "sourceRefs",
+        "method",
+        "limits",
+        "whyItMatters",
+        "nextQuestion",
+        "glossaryRefs"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "sceneType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lead": {
+          "type": "string",
+          "minLength": 1
+        },
+        "geography": {
+          "$ref": "#/$defs/geography"
+        },
+        "narrative": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "string",
+            "minLength": 40
+          }
+        },
+        "itemRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/itemRef"
+          }
+        },
+        "sourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "method": {
+          "$ref": "#/$defs/method"
+        },
+        "limits": {
+          "type": "string",
+          "minLength": 1
+        },
+        "whyItMatters": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nextQuestion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "glossaryRefs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

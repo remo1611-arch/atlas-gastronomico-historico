@@ -310,8 +310,22 @@ Las geometrías regionales se aplazan hasta disponer de casos que justifiquen á
 La siguiente prioridad es expansión editorial controlada antes de redes complejas.
 
 
+## P1 — Narrative Museum
+**Estado: INTEGRADO · alpha.21 · pendiente aceptación móvil**
+
+Objetivo:
+- convertir Historias en la entrada principal;
+- separar museo, exploración y evidencia;
+- integrar Vino y Pan con redacción narrativa completa;
+- añadir stories/glossary como datos, no hardcode;
+- corregir bindings táctiles de timeline;
+- validar producto antes de seguir ampliando corpus.
+
+### Gate de aceptación
+No continuar E1 ni iniciar G4 hasta probar alpha.21 en dispositivo real.
+
 ## E1 — Expansión editorial controlada
-**Estado: EN CURSO · alpha.20**
+**Estado: PAUSADO tras alpha.20 · esperando validación de P1**
 
 Objetivo:
 - pasar progresivamente de 24 a unas 50–70 occurrences de alta calidad;

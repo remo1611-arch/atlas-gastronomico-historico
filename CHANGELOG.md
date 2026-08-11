@@ -1,5 +1,40 @@
 # Changelog
 
+## 0.1.0-alpha.21 — 2026-08-11
+
+### Product Reset integrado
+- Historias pasa a ser la entrada principal.
+- Atlas pasa a exploración libre secundaria.
+- Evidencia conserva profundidad académica bajo demanda.
+
+### Narrative Museum
+- `data/stories.json`;
+- `data/glossary.json`;
+- `story.schema.json`;
+- `glossary.schema.json`;
+- motor genérico de escenas;
+- Historia del vino: 6 escenas;
+- Historia del pan: 7 escenas;
+- 16 términos de glosario.
+
+### Atlas
+- headlines semánticos de occurrences;
+- deja de repetirse el subject como único título de hito.
+
+### Bugfix
+- `Hito anterior` y `Hito siguiente` reciben binding táctil real.
+
+### QA
+- narrative museum contract;
+- narrative editorial depth;
+- primary navigation bindings;
+- Atlas semantic headlines;
+- schema validation ampliada a 10 schemas.
+
+### Corpus histórico
+- sin cambios respecto a alpha.20.
+- G2 fingerprint 9/9 intacto.
+
 ## 0.1.0-alpha.20 — 2026-08-11
 
 ### Expansión editorial E1-A

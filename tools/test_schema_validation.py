@@ -13,6 +13,8 @@ pairs=[
     ("contexts.json","context.schema.json"),
     ("developments.json","development.schema.json"),
     ("sources.json","source.schema.json"),
+    ("stories.json","story.schema.json"),
+    ("glossary.json","glossary.schema.json"),
 ]
 
 errors=[]

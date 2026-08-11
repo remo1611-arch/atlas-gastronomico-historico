@@ -132,3 +132,11 @@ Estado de continuación:
 - No iniciar G4 todavía.
 - Elegir próximo dossier por rendimiento histórico: periodos nuevos + territorios nuevos + fuentes fuertes + conexiones futuras.
 - Mantener Focused Exploration: no añadir UI técnica.
+
+Estado de continuación:
+- alpha.21 integra Narrative Museum en la app canónica.
+- Historias es la entrada principal; Atlas, secundaria.
+- 2 stories / 13 scenes / 16 glossary entries.
+- E1 pausado; no añadir contenido hasta aceptación móvil.
+- Probar en Xiaomi: lectura, glosario, escena anterior/siguiente, Historia→Atlas→Evidencia y timeline anterior/siguiente.
+- No iniciar G4.

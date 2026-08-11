@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 critical=[
 "","index.html","css/app.css","js/core.js","js/app.js","data/config.json","data/taxonomy.json",
 "data/subjects.json","data/places.json","data/occurrences.json","data/events.json",
-"data/relationships.json","data/contexts.json","data/developments.json","data/sources.json","data/basemap/world_110m.geojson"
+"data/relationships.json","data/contexts.json","data/developments.json","data/sources.json","data/stories.json","data/glossary.json","data/basemap/world_110m.geojson"
 ]
 
 class QuietHandler(SimpleHTTPRequestHandler):

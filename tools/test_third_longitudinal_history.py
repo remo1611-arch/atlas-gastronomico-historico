@@ -32,7 +32,7 @@ for forbidden in ["openOlive","renderOliveHistory","olive_oil===","subjectId==='
 
 # Generic history gate is occurrence-count based.
 for needle in [
-    ".filter(x=>x.occurrences.length>=2)",
+    "function openHistory(subjectId)",
     "function subjectHistoryItems(subjectId)",
     "function renderHistorySpotlight()"
 ]:

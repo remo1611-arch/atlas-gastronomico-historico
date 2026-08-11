@@ -589,4 +589,52 @@ No expresa:
 
 “no sabemos dónde ocurrió”.
 
+---
+
+## 21. Capa narrativa
+
+La capa narrativa no altera el modelo histórico central.
+
+### `story`
+
+```text
+story
+├─ id
+├─ subjectRef
+├─ title / question / teaser
+├─ estimatedMinutes
+├─ sourceRefs[]
+├─ status
+└─ scenes[]
+   ├─ geography
+   ├─ narrative[]
+   ├─ itemRefs[]
+   │  ├─ kind
+   │  └─ ref
+   ├─ sourceRefs[]
+   ├─ method
+   ├─ limits
+   ├─ whyItMatters
+   ├─ nextQuestion
+   └─ glossaryRefs[]
+```
+
+`itemRefs` puede apuntar a:
+- occurrence;
+- event;
+- development.
+
+La historia no sustituye esos objetos.
+
+### `glossary`
+
+```text
+glossaryEntry
+├─ id
+├─ term
+├─ definition
+└─ status
+```
+
+El glosario pertenece a la capa de mediación museística, no al corpus de evidencia.
 

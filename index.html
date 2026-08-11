@@ -6,10 +6,10 @@
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="dark light" name="color-scheme"/>
 <meta content="#10121a" name="theme-color"/>
-<meta content="0.1.0-alpha.20" name="atlas-build"/>
+<meta content="0.1.0-alpha.21" name="atlas-build"/>
 <title>Atlas Gastronómico Histórico</title>
 <meta content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio." name="description"/>
-<link href="./css/app.css?v=0.1.0-alpha.20" rel="stylesheet"/>
+<link href="./css/app.css?v=0.1.0-alpha.21" rel="stylesheet"/>
 </head>
 <body>
 <div aria-hidden="true" class="ambient ambient-a"></div>
@@ -21,10 +21,10 @@
 </span>
 <span class="brand-copy">
 <strong>Atlas Gastronómico Histórico</strong>
-<small>Museo digital · <span id="versionLabel">alpha.20</span></small>
+<small>Museo digital · <span id="versionLabel">alpha.21</span></small>
 </span>
 </a>
-<nav aria-label="Secciones del atlas" class="experience-nav"><button aria-pressed="true" class="experience-nav-btn active" id="exploreNavBtn" type="button">Explorar</button><button aria-pressed="false" class="experience-nav-btn" id="historiesNavBtn" type="button">Historias</button></nav><nav aria-label="Controles principales" class="top-actions">
+<nav aria-label="Experiencias del museo" class="experience-nav"><button aria-pressed="true" class="experience-nav-btn active" id="historiesNavBtn" type="button">Historias</button><button aria-pressed="false" class="experience-nav-btn" id="exploreNavBtn" type="button">Atlas</button></nav><nav aria-label="Controles principales" class="top-actions">
 <button aria-controls="aboutDialog" class="round-btn text-btn" id="aboutBtn" type="button">Acerca del atlas</button>
 <button aria-label="Cambiar tema" class="round-btn" id="themeBtn" type="button">☀</button>
 <button aria-label="Pantalla completa" class="round-btn" id="fullscreenBtn" type="button">⛶</button>
@@ -40,14 +40,14 @@
 
 
 
-<section aria-label="Explorar el atlas" class="experience-view active" id="exploreView"><section class="hero">
+<section aria-label="Explorar libremente el atlas" class="experience-view hidden" id="exploreView"><section class="hero">
 <div class="hero-copy">
-<span class="kicker">Historia · alimentación · territorio</span>
-<h1>Viaja por la historia de <em>lo que comemos</em></h1>
-<p>Explora ingredientes, técnicas, bebidas, productos, evidencias y transformaciones gastronómicas en su tiempo y lugar.</p>
+<span class="kicker">Atlas · exploración libre</span>
+<h1>Explora las <em>evidencias</em> por tiempo y lugar</h1>
+<p>El Atlas es la herramienta de consulta del museo: navega libremente por fechas, lugares, evidencias, procesos y fuentes cuando quieras ir más allá del recorrido narrativo.</p>
 <div class="hero-actions">
-<button class="primary-cta" id="jumpMapBtn" type="button">Explorar el mapa</button>
-<button class="ghost-cta" id="openHistoriesHeroBtn" type="button">Explorar historias</button>
+<button class="primary-cta" id="jumpMapBtn" type="button">Ir al mapa</button>
+<button class="ghost-cta" id="openHistoriesHeroBtn" type="button">Volver a Historias</button>
 </div>
 </div>
 <div aria-hidden="true" class="hero-orbit">
@@ -182,16 +182,76 @@
 <article class="transform-tile safety"><span>SEGURIDAD</span><strong>Higiene, control, trazabilidad, sistemas de calidad…</strong><small>Capa preparada · contenido verificado pendiente</small></article>
 </div><div class="context-event-controls"><label>Ventana <select id="eventWindowSelect"></select></label></div><div class="event-grid" id="eventList"></div></div></details>
 </aside>
-</section></section><section aria-label="Historias del atlas" class="experience-view hidden" id="historiesView"><div class="view-intro"><span class="section-label">Historias</span><h1>Sigue la historia de un alimento</h1><p>Recorridos construidos a partir de evidencias, eventos, técnicas y transformaciones revisadas.</p></div><section aria-labelledby="historySpotlightTitle" class="history-spotlight museum-card">
-<div class="history-spotlight-head">
-<div>
-<span class="section-label">Historias</span>
-<h2 id="historySpotlightTitle">Recorridos históricos</h2>
-<p>Explora un alimento o una técnica a través de sus evidencias documentadas.</p>
-</div>
-</div>
-<div class="history-spotlight-list" id="historySpotlightList"></div>
-</section></section></main>
+</section></section><section aria-label="Historias del museo" class="experience-view active" id="historiesView">
+<section class="narrative-landing" id="narrativeLanding">
+  <section class="narrative-hero museum-card" aria-labelledby="narrativeLandingTitle">
+    <div>
+      <span class="section-label">Museo digital · Historias</span>
+      <h1 id="narrativeLandingTitle">Entender cómo cambió <em>lo que comemos</em></h1>
+      <p>Empieza por una historia comprensible. Cuando quieras profundizar, cada escena te lleva hasta el lugar, la evidencia y las fuentes que sostienen lo que estás leyendo.</p>
+    </div>
+    <div class="narrative-hero-actions">
+      <button class="ghost-cta" id="openAtlasFromStoriesBtn" type="button">Abrir el Atlas</button>
+    </div>
+  </section>
+  <section aria-labelledby="historySpotlightTitle" class="history-spotlight narrative-spotlight museum-card">
+    <div class="history-spotlight-head">
+      <div>
+        <span class="section-label">Visitas curadas</span>
+        <h2 id="historySpotlightTitle">Historias para empezar</h2>
+        <p>No son listas automáticas de registros. Cada recorrido está redactado para explicar dónde estás, qué se encontró, cómo lo sabemos, qué significa y qué no podemos afirmar.</p>
+      </div>
+    </div>
+    <div class="history-spotlight-list narrative-story-list" id="historySpotlightList"></div>
+  </section>
+</section>
+<section class="narrative-story-player hidden" id="narrativeStoryPlayer" aria-live="polite">
+  <button class="ghost-cta narrative-back" id="storyBackBtn" type="button">← Todas las historias</button>
+  <div class="narrative-story-header" id="narrativeStoryHeader"></div>
+  <div class="narrative-progress" id="storyProgress" aria-label="Progreso de la historia"></div>
+  <article class="narrative-scene-header museum-card" id="storySceneHeader"></article>
+  <div class="narrative-scene-grid">
+    <section class="narrative-reading museum-card">
+      <div class="narrative-copy" id="storyNarrativeContent"></div>
+      <div class="narrative-why" id="storyWhy"></div>
+      <details class="narrative-method" id="storyMethodDetails">
+        <summary id="storyMethodTitle">Cómo lo sabemos</summary>
+        <p id="storyMethodBody"></p>
+        <div class="narrative-limits" id="storyLimits"></div>
+      </details>
+      <div class="narrative-glossary" id="storyGlossary"></div>
+      <div class="narrative-next" id="storyNextQuestion"></div>
+    </section>
+    <aside class="narrative-side">
+      <section class="story-map-card museum-card">
+        <div class="story-map-frame">
+          <svg id="storyWorldMap" viewBox="0 0 1000 500" role="img" aria-label="Mapa de situación de la escena">
+            <rect class="ocean" height="500" width="1000"></rect>
+            <g id="storyBasemapLayer"></g>
+            <g id="storyMarkerLayer"></g>
+          </svg>
+          <div class="story-map-notice hidden" id="storyMapNotice"></div>
+        </div>
+        <div class="story-map-caption" id="storyMapCaption"></div>
+      </section>
+      <section class="narrative-context museum-card">
+        <span class="detail-label">Contexto en 30 segundos</span>
+        <div id="storyContext"></div>
+      </section>
+      <section class="narrative-evidence museum-card">
+        <span class="detail-label">Qué sostiene esta escena</span>
+        <div class="narrative-evidence-list" id="storyEvidenceList"></div>
+        <details class="story-sources"><summary>Fuentes y trazabilidad</summary><div id="storySources"></div></details>
+      </section>
+    </aside>
+  </div>
+  <nav class="narrative-scene-nav" aria-label="Navegación entre escenas">
+    <button class="ghost-cta" id="storyPrevBtn" type="button">← Anterior</button>
+    <button class="primary-cta" id="storyNextBtn" type="button">Siguiente →</button>
+  </nav>
+  <section class="narrative-end museum-card hidden" id="storyEndCard"></section>
+</section>
+</section></main>
 <aside aria-hidden="true" aria-labelledby="layersTitle" class="drawer" id="layersDrawer">
 <div class="drawer-backdrop" data-close-layers=""></div>
 <div class="drawer-panel">
@@ -335,16 +395,24 @@
 <div class="history-timeline" id="historyTimeline"></div>
 </div>
 </aside>
+<dialog id="glossaryDialog">
+<div class="dialog-shell glossary-dialog-shell">
+<button aria-label="Cerrar glosario" class="dialog-close" id="glossaryCloseBtn" type="button">×</button>
+<span class="section-label">Glosario</span>
+<h2 id="glossaryTitle">Término</h2>
+<p id="glossaryDefinition"></p>
+</div>
+</dialog>
 <dialog id="aboutDialog">
 <div class="dialog-shell">
 <button aria-label="Cerrar" class="dialog-close" id="aboutCloseBtn" type="button">×</button>
 <span class="section-label">Sobre el proyecto</span>
 <h2>Atlas Gastronómico Histórico</h2>
-<p>Un museo digital para estudiar cómo cambian los alimentos, técnicas, productos, intercambios y prácticas culinarias a través del tiempo y el espacio.</p>
+<p>Un museo digital para comprender cómo cambian los alimentos, técnicas y formas de comer. Las Historias explican; el Atlas permite explorar libremente; la ficha de evidencia permite comprobar cada afirmación.</p>
 <p>El proyecto prioriza evidencia trazable y separa estado editorial, certeza histórica, precisión cronológica y cobertura cartográfica para evitar presentar inferencias como hechos más precisos de lo que permiten las fuentes.</p>
 <details class="about-method"><summary>Criterio histórico y editorial</summary><p>El corpus público muestra únicamente registros revisados o verificados. Estado editorial, certeza histórica y precisión cronológica se mantienen separados.</p><p>Cada punto del mapa representa una evidencia u ocurrencia vinculada a un lugar; no equivale automáticamente al origen de un alimento.</p><p>Cuando no existen coordenadas suficientemente fiables, el registro permanece accesible sin inventar un centroide cartográfico.</p></details></div>
 </dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
-<script src="./js/app.js?v=0.1.0-alpha.20" type="module"></script>
+<script src="./js/app.js?v=0.1.0-alpha.21" type="module"></script>
 </body>
 </html>

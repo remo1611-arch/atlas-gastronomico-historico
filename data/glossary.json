@@ -1,0 +1,98 @@
+[
+  {
+    "id": "neolitico",
+    "term": "Neolítico",
+    "definition": "Periodo en el que distintas comunidades comenzaron a depender de la agricultura y la ganadería, a vivir de forma más estable y a transformar profundamente su relación con plantas, animales y territorio. No ocurrió al mismo tiempo en todas las regiones.",
+    "status": "reviewed"
+  },
+  {
+    "id": "calcolitico",
+    "term": "Calcolítico",
+    "definition": "Etapa de transición en la que empiezan a utilizarse objetos de cobre mientras las herramientas de piedra siguen siendo habituales. Sus fechas cambian según la región.",
+    "status": "reviewed"
+  },
+  {
+    "id": "natufiense",
+    "term": "Natufiense",
+    "definition": "Conjunto de comunidades de cazadores-recolectores del Levante, aproximadamente entre 12.500 y 9.500 a. C., algunas de ellas con asentamientos relativamente estables antes de la agricultura plenamente desarrollada.",
+    "status": "reviewed"
+  },
+  {
+    "id": "arqueobotanica",
+    "term": "arqueobotánica",
+    "definition": "Estudio de restos vegetales recuperados en contextos arqueológicos: semillas, frutos, tejidos, madera, polen, almidones o alimentos carbonizados.",
+    "status": "reviewed"
+  },
+  {
+    "id": "biomarcador",
+    "term": "biomarcador",
+    "definition": "Molécula o combinación de moléculas que ayuda a identificar una sustancia antigua. Un biomarcador rara vez debe interpretarse aislado del contexto arqueológico.",
+    "status": "reviewed"
+  },
+  {
+    "id": "gc_ms",
+    "term": "GC-MS",
+    "definition": "Cromatografía de gases acoplada a espectrometría de masas. Separa una mezcla química y ayuda a identificar sus componentes por su firma molecular.",
+    "status": "reviewed"
+  },
+  {
+    "id": "lc_ms_ms",
+    "term": "LC-MS/MS",
+    "definition": "Cromatografía líquida acoplada a espectrometría de masas en tándem. Permite buscar compuestos concretos en cantidades muy pequeñas.",
+    "status": "reviewed"
+  },
+  {
+    "id": "sem",
+    "term": "SEM",
+    "definition": "Microscopía electrónica de barrido. Produce imágenes de gran aumento de la superficie y microestructura de un material, útil para estudiar tejidos vegetales y poros en restos alimentarios carbonizados.",
+    "status": "reviewed"
+  },
+  {
+    "id": "dendrocronologia",
+    "term": "dendrocronología",
+    "definition": "Datación mediante los anillos de crecimiento de la madera. Cuando las secuencias están bien conservadas y existe una cronología de referencia, puede alcanzar una resolución extraordinariamente precisa.",
+    "status": "reviewed"
+  },
+  {
+    "id": "tell",
+    "term": "tell",
+    "definition": "Montículo arqueológico formado por la acumulación de sucesivas ocupaciones humanas, construcciones, derrumbes y rellenos durante largos periodos.",
+    "status": "reviewed"
+  },
+  {
+    "id": "chaine_operatoire",
+    "term": "chaîne opératoire",
+    "definition": "Expresión arqueológica para describir la secuencia completa de acciones técnicas: selección de materias primas, preparación, transformación, uso y descarte.",
+    "status": "reviewed"
+  },
+  {
+    "id": "assize",
+    "term": "assize",
+    "definition": "Sistema medieval de reglas y controles sobre productos y mercados. En el caso del pan inglés, regulaba aspectos como peso, precio y venta.",
+    "status": "reviewed"
+  },
+  {
+    "id": "fermentacion_en_masa",
+    "term": "fermentación en masa",
+    "definition": "Periodo de reposo de toda la masa antes de dividirla y darle forma. En panificación tradicional puede durar horas y contribuye al desarrollo de la masa.",
+    "status": "reviewed"
+  },
+  {
+    "id": "pasteurizacion",
+    "term": "pasteurización",
+    "definition": "Tratamiento térmico destinado a reducir microorganismos y mejorar la conservación. El nombre deriva de Pasteur, aunque el uso del calor para conservar alimentos es anterior.",
+    "status": "reviewed"
+  },
+  {
+    "id": "fermentacion",
+    "term": "fermentación",
+    "definition": "Transformación causada por microorganismos como levaduras y bacterias. En el vino, las levaduras convierten principalmente los azúcares de la uva en alcohol y dióxido de carbono.",
+    "status": "reviewed"
+  },
+  {
+    "id": "edad_del_bronce",
+    "term": "Edad del Bronce",
+    "definition": "Periodo histórico definido por el uso generalizado de aleaciones de cobre, especialmente bronce, junto con cambios sociales y económicos que varían mucho según la región. No tiene las mismas fechas en todo el mundo.",
+    "status": "reviewed"
+  }
+]

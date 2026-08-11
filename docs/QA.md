@@ -311,3 +311,23 @@ python tools/test_bread_longitudinal_history.py
 - [ ] G2 fingerprint 9/9;
 - [ ] G3-D baseline intacto;
 - [ ] G3 gates permiten crecimiento sin rebajar controles.
+
+python tools/test_narrative_museum_contract.py
+python tools/test_narrative_editorial_depth.py
+python tools/test_primary_navigation_bindings.py
+python tools/test_atlas_semantic_headlines.py
+
+## Alpha.21 · Narrative Museum
+- [ ] app abre en Historias;
+- [ ] Vino = 6 escenas;
+- [ ] Pan = 7 escenas;
+- [ ] stories/glossary validados por schema;
+- [ ] cada escena tiene geografía/contexto/método/límites/relevancia/transición;
+- [ ] no renderer específico de Vino/Pan;
+- [ ] Historia → Atlas → Evidencia;
+- [ ] glosario bajo demanda;
+- [ ] prev/next timeline con binding click;
+- [ ] prev/next escenas con binding click;
+- [ ] timeline usa headline semántico;
+- [ ] G2 fingerprint 9/9;
+- [ ] aceptación visual/táctil real antes de alpha.22.

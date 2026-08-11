@@ -289,3 +289,27 @@ La Assisa Panis se representa mediante un intervalo 1248–1266 que conserva la 
 **Aceptada.**
 El proceso Chorleywood es una transformación industrial que impacta al subject pan; no se fuerza a occurrence ni se le asigna un lugar histórico único.
 
+## ADR-076 — Historias como entrada principal
+**Aceptada.**
+La app abre en Historias. El Atlas pasa a ser una experiencia secundaria de exploración libre, no la carga inicial de significado del producto.
+
+## ADR-077 — Stories como capa editorial referencial
+**Aceptada.**
+`stories.json` contiene narrativa y referencias a registros canónicos. No copia el contenido estructurado de occurrences/developments.
+
+## ADR-078 — Schemas narrativos independientes
+**Aceptada.**
+Se añaden `story.schema.json` y `glossary.schema.json`. Los 8 schemas históricos y taxonomy del fingerprint G2 permanecen byte-identical.
+
+## ADR-079 — Headline semántico en Atlas
+**Aceptada.**
+La timeline ya no usa `subject.name` como título de una occurrence. El headline expresa acción/tipo histórico + subject + lugar.
+
+## ADR-080 — Binding real como gate de navegación
+**Aceptada.**
+La ausencia de listener táctil de anterior/siguiente en alpha.20 se considera fallo de QA. Las navegaciones primarias deben verificar binding explícito además del algoritmo.
+
+## ADR-081 — Historia curada sobre secuencia automática
+**Aceptada.**
+Cuando un subject dispone de historia curada, la ficha abre esa visita. `openHistory()` se conserva para subjects sin narrativa editorial.
+

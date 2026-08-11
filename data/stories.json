@@ -1,0 +1,594 @@
+[
+  {
+    "id": "story_wine",
+    "subjectRef": "wine",
+    "title": "Historia del vino",
+    "question": "¿Cómo sabemos que una vasija de hace 8.000 años contenía vino?",
+    "teaser": "De una aldea neolítica del Cáucaso a Pasteur: una misma bebida permite estudiar química, producción, ritual, poder, comercio y microbiología.",
+    "eyebrow": "6 escenas · unos 8.000 años",
+    "subtitle": "No buscamos dónde «nació» el vino. Seguimos cómo cambian las preguntas y las pruebas: residuos, producción, ritual, economía palacial, comercio y microbiología.",
+    "estimatedMinutes": 5,
+    "endTitle": "Una palabra, seis preguntas diferentes",
+    "endText": "Si el recorrido funciona, «Vino» deja de ser un marcador repetido. Gadachrili habla de evidencia temprana; Areni de producción; Abydos de ritual y élite; Tel Kabri de almacenamiento palacial; Jerusalén de comercio y prestigio; Pasteur de microorganismos y conservación.",
+    "sourceRefs": [
+      "src_mcgovern_2017_neolithic_wine",
+      "src_cnrs_gadachrili",
+      "src_gadachrili_coords_secondary",
+      "src_areni_wine_2011",
+      "src_spatial_areni_unesco_2026",
+      "src_abydos_wine_2009",
+      "src_unesco_abydos_point",
+      "src_tel_kabri_wine_2014",
+      "src_tel_kabri_archaeobotany_2023",
+      "src_spatial_tel_kabri_lcp",
+      "src_jerusalem_vanilla_wine_2022",
+      "src_spatial_jerusalem_lcp",
+      "src_pasteur_legacy",
+      "src_pasteur_middle_years",
+      "src_science_history_pasteur",
+      "src_pasteur_letter_1866"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "wine_1",
+        "sceneType": "orientation",
+        "label": "01 · Cáucaso meridional · ca. 6000–5800 a. C.",
+        "title": "Una aldea neolítica, unas vasijas rotas y una pregunta: ¿contenían vino?",
+        "lead": "Antes de buscar una «primera bodega», conviene empezar por algo mucho más modesto: fragmentos de cerámica hallados dentro de una pequeña aldea.",
+        "geography": {
+          "today": "Kvemo Kartli · actual Georgia",
+          "region": "Cáucaso meridional · cuenca media del Kura",
+          "orientation": "Gadachrili Gora se encuentra en una meseta del sur de Georgia, unos 50 km al sur de Tiflis. El paisaje conecta las montañas caucásicas con las llanuras de la cuenca del Kura.",
+          "society": "Pequeñas aldeas de agricultores del primer Neolítico cerámico regional; casas circulares de adobe, patios y fosas de almacenamiento."
+        },
+        "narrative": [
+          "Hace unos ocho mil años, el Cáucaso meridional no era un margen vacío entre Europa y Asia. En la actual Georgia, pequeñas comunidades agrícolas ocupaban aldeas de alrededor de una hectárea formadas por construcciones circulares de adobe. Gadachrili Gora y la cercana Shulaveris Gora pertenecen al horizonte arqueológico conocido como Shulaveri-Shomutepe. Sus habitantes cultivaban plantas, almacenaban productos y utilizaban cerámica en una región de colinas y cursos de agua conectados con el sistema del río Kura.",
+          "En Gadachrili, algunos fragmentos de grandes recipientes conservaban algo que el ojo ya no podía ver: moléculas absorbidas en la propia cerámica. Los investigadores buscaron ácido tartárico y tartratos —marcadores especialmente útiles para productos de la uva en este contexto— y los combinaron con microrestos vegetales, polen y otros indicios. Las muestras se fecharon mediante radiocarbono y análisis estadístico de la cronología del asentamiento.",
+          "La conclusión no es que un arqueólogo encontrase «vino» líquido dentro de una vasija. Es una inferencia construida a partir de varias líneas de evidencia: recipientes adecuados para líquidos, compuestos vinculados a la uva, restos microbotánicos y un entorno donde la vid podía crecer. El estudio considera probable que algunas de aquellas vasijas contuvieran vino.",
+          "Lo más importante es también lo que no podemos afirmar. Gadachrili Gora no demuestra que una persona concreta «inventara» el vino, ni que toda la población bebiese lo mismo, ni que no existieran fermentaciones de uva anteriores en lugares todavía no excavados. Lo que sí podemos decir es que, hacia 6000–5800 a. C., comunidades neolíticas del sur del Cáucaso ya transformaban la uva de una manera compatible con la producción de vino."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_gadachrili_6000_5800_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_mcgovern_2017_neolithic_wine",
+          "src_cnrs_gadachrili",
+          "src_gadachrili_coords_secondary"
+        ],
+        "method": {
+          "title": "Cómo puede sobrevivir un vino durante 8.000 años sin que quede vino",
+          "body": "La cerámica es porosa. Parte de los compuestos de un líquido puede penetrar en sus paredes y permanecer en cantidades diminutas. La química analítica separa y detecta esas señales; la arqueobotánica aporta restos de plantas; la datación sitúa el contexto. La identificación no depende de una sola molécula."
+        },
+        "limits": "Evidencia temprana ≠ lugar de invención. «Probable vino» es una interpretación contextual, no una botella intacta ni una receta recuperada.",
+        "whyItMatters": "Esta escena enseña la primera regla del Atlas: la historia gastronómica no empieza con una fecha milagrosa, sino con preguntas que pueden responderse con distintos grados de evidencia.",
+        "nextQuestion": "En Areni-1, unos dos milenios después y algo más al sur, la evidencia cambia de escala: aparecen instalaciones que permiten hablar directamente de producción.",
+        "glossaryRefs": [
+          "neolitico",
+          "arqueobotanica",
+          "biomarcador"
+        ]
+      },
+      {
+        "id": "wine_2",
+        "sceneType": "evidence",
+        "label": "02 · Vayots Dzor · ca. 4100–4000 a. C.",
+        "title": "Areni-1: cuando la evidencia ya permite reconstruir producción",
+        "lead": "Gadachrili nos daba residuos en vasijas. Areni-1 nos permite observar un espacio donde distintas piezas del proceso aparecen juntas.",
+        "geography": {
+          "today": "Vayots Dzor · actual Armenia",
+          "region": "Cañón del río Arpa · Cáucaso meridional",
+          "orientation": "Areni-1 es una cueva situada en un corredor montañoso del sureste de Armenia. Su ambiente seco y estable favoreció una conservación orgánica excepcional.",
+          "society": "Comunidades del Calcolítico tardío que utilizaron la cueva para actividades domésticas, almacenamiento, ganado y prácticas rituales."
+        },
+        "narrative": [
+          "Al entrar en Areni-1 cambiamos de paisaje y también de tipo de evidencia. Estamos en una cueva del cañón del Arpa, en el actual sureste de Armenia, alrededor de 4000 a. C. El periodo se denomina Calcolítico: el cobre empieza a formar parte de la cultura material, pero la piedra sigue siendo fundamental y las formas de vida no pueden resumirse como una simple marcha hacia la «civilización».",
+          "Las excavaciones localizaron una instalación con superficies enlucidas que podían servir para prensar uvas y conducir el líquido, junto con grandes recipientes parcialmente enterrados. Se recuperaron pepitas, madera de vid y otros restos vegetales. En fragmentos cerámicos, el análisis químico buscó derivados de la malvidina, pigmento característico de uvas oscuras y otras frutas rojas, utilizando LC-MS/MS.",
+          "Aquí el argumento es más fuerte que en una vasija aislada porque el contexto une varias piezas: materia prima, instalación, recipientes y señales químicas. Por eso los investigadores hablan de producción de vino. Aun así, la palabra «bodega» puede engañar si imaginamos una explotación moderna. Se trata de una instalación prehistórica dentro de una cueva, integrada en un lugar que también tuvo usos domésticos y rituales.",
+          "Areni-1 muestra algo esencial para entender la aplicación: el mismo alimento reaparece porque cambia la pregunta. Gadachrili respondía «¿hay evidencia temprana de un producto de uva fermentado?». Areni responde «¿podemos reconocer una secuencia de producción?». Son dos hitos del vino, pero no son el mismo dato repetido."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_areni_4000_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_areni_wine_2011",
+          "src_spatial_areni_unesco_2026"
+        ],
+        "method": {
+          "title": "Cómo se reconoce una instalación sin tener su manual de instrucciones",
+          "body": "Los arqueólogos relacionan forma, posición y asociación de los elementos: superficies de prensado, canales, recipientes, restos botánicos y residuos químicos. La hipótesis es más robusta cuando señales independientes convergen en una misma función."
+        },
+        "limits": "«Producción» no equivale a industria ni demuestra cuánto vino se elaboraba, quién podía beberlo o si el procedimiento era idéntico cada año.",
+        "whyItMatters": "La arqueología gana poder explicativo cuando el residuo químico deja de estar aislado y puede leerse dentro de una organización técnica del espacio.",
+        "nextQuestion": "El siguiente viaje nos lleva muy lejos del Cáucaso, al valle del Nilo. Allí el vino aparece dentro de una tumba de élite y cambia de significado.",
+        "glossaryRefs": [
+          "calcolitico",
+          "lc_ms_ms",
+          "biomarcador",
+          "chaine_operatoire"
+        ]
+      },
+      {
+        "id": "wine_3",
+        "sceneType": "context",
+        "label": "03 · Alto Egipto · ca. 3150 a. C.",
+        "title": "Abydos: el vino dentro de una tumba en los comienzos del Estado egipcio",
+        "lead": "Una vasija de vino en una tumba no cuenta la misma historia que una vasija en una casa o en una bodega.",
+        "geography": {
+          "today": "Abydos · actual Egipto",
+          "region": "Alto Egipto · valle del Nilo",
+          "orientation": "Abydos se sitúa junto al borde desértico del valle del Nilo. Umm el-Qaab fue un importante cementerio de las élites y primeros gobernantes egipcios.",
+          "society": "Final del periodo predinástico y formación del Estado egipcio; jerarquías políticas y redes de intercambio cada vez más complejas."
+        },
+        "narrative": [
+          "Hacia 3150 a. C., Egipto estaba atravesando uno de los procesos políticos más profundos de su historia: la consolidación de poderes territoriales que desembocaría en el Estado faraónico. En el cementerio de Umm el-Qaab, en Abydos, la tumba U-j perteneció a uno de esos gobernantes tempranos, conocido convencionalmente como Escorpión I.",
+          "El conjunto funerario era extraordinariamente rico. En varias cámaras aparecieron centenares de recipientes, muchos de tipo foráneo. En uno de ellos se conservaba una costra amarillenta: el líquido había desaparecido, pero parte de sus componentes había quedado adherida a la pared. Los análisis mediante espectroscopia, cromatografía y pruebas específicas detectaron tartrato, junto con compuestos interpretados como resinas y otros aditivos vegetales.",
+          "Eso permite identificar vino de uva en un contexto funerario de élite. La presencia de recipientes de procedencia o estilo foráneo abre además preguntas sobre circulación de productos y contactos entre Egipto y el Levante. Pero conviene resistir una tentación: una tumba excepcional no es una encuesta de consumo. No sabemos por este hallazgo cuánto vino bebía una familia campesina ni con qué frecuencia.",
+          "La escena importa porque introduce una nueva dimensión. El vino ya no es solo una técnica de transformación de fruta; también puede ser un producto cargado de valor social, ritual y político. El contexto arqueológico modifica el significado de exactamente la misma palabra."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_abydos_3150_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_abydos_wine_2009",
+          "src_unesco_abydos_point"
+        ],
+        "method": {
+          "title": "Por qué una costra seca puede identificar el contenido de una vasija",
+          "body": "Los investigadores compararon la señal química del residuo con compuestos de referencia y con otros restos antiguos de vino. El tartrato es especialmente útil en el Próximo Oriente, pero se interpreta junto con el contexto, la forma del recipiente y otros compuestos."
+        },
+        "limits": "Una tumba de élite no representa la dieta de toda la sociedad. Los aditivos detectados tampoco permiten reconstruir una receta completa ni su sabor exacto.",
+        "whyItMatters": "La gastronomía también es jerarquía, ritual e intercambio. El lugar donde aparece un alimento puede ser tan informativo como el alimento mismo.",
+        "nextQuestion": "En Tel Kabri veremos algo diferente: no una tumba ni una instalación de prensado, sino una habitación palacial llena de grandes recipientes.",
+        "glossaryRefs": [
+          "biomarcador",
+          "gc_ms"
+        ]
+      },
+      {
+        "id": "wine_4",
+        "sceneType": "system",
+        "label": "04 · Galilea occidental · ca. 1700 a. C.",
+        "title": "Tel Kabri: cuarenta vasijas y la escala de una economía palacial",
+        "lead": "Un solo recipiente puede decirnos qué contenía. Cuarenta recipientes dentro de una habitación pueden empezar a revelar cómo funcionaba una institución.",
+        "geography": {
+          "today": "Galilea occidental · actual Israel",
+          "region": "Mediterráneo oriental · Levante meridional",
+          "orientation": "Tel Kabri está unos 5 km al este de la actual Nahariya. En la Edad del Bronce Medio fue el centro de una entidad política cananea con un gran complejo palacial.",
+          "society": "Sociedad palacial del Bronce Medio, con almacenamiento centralizado, redes regionales y consumo de élite."
+        },
+        "narrative": [
+          "Tel Kabri ocupaba unas 34 hectáreas en la Galilea occidental. Durante la Edad del Bronce Medio, aproximadamente entre 1900 y 1600 a. C., fue el centro de una importante entidad política cananea. Su palacio alcanzaba al menos 6.000 metros cuadrados: estamos ya ante una escala de organización muy distinta de las aldeas neolíticas del inicio del recorrido.",
+          "En 2013 se excavó una habitación sellada por el derrumbe de muros de adobe. Sobre el suelo aparecieron unas cuarenta grandes vasijas de almacenamiento, muchas de alrededor de 50 litros. Treinta y dos fueron analizadas. Todas las muestras estudiadas ofrecieron señales compatibles con vino, y muchas contenían además compuestos relacionados con resinas, miel y plantas aromáticas.",
+          "Lo excepcional no es únicamente que hubiera vino, algo ya bien conocido documentalmente para las economías palaciales de la Edad del Bronce. El valor está en encontrar un conjunto completo, cerrado y bien documentado. El equipo registró la posición de las vasijas con LiDAR y realizó análisis de residuos orgánicos por GC-MS. Eso permitió comparar recipientes entre sí y plantear hipótesis sobre tratamiento, almacenamiento y posibles diferencias dentro de una misma partida.",
+          "Algunas identificaciones de aditivos son más seguras que otras; los propios autores mantienen alternativas. Esa cautela es importante. El hallazgo no convierte cada pico químico en un ingrediente indiscutible. Pero el conjunto sí permite ver el vino como parte de una economía palacial organizada, vinculada al almacenamiento y probablemente al consumo social de élite."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_tel_kabri_middle_bronze"
+          }
+        ],
+        "sourceRefs": [
+          "src_tel_kabri_wine_2014",
+          "src_tel_kabri_archaeobotany_2023",
+          "src_spatial_tel_kabri_lcp"
+        ],
+        "method": {
+          "title": "Qué cambia cuando tenemos una habitación completa y no una muestra aislada",
+          "body": "El contexto cerrado permite comparar decenas de recipientes de una misma instalación. La posición espacial, la capacidad, la cerámica y la química de residuos se analizan conjuntamente. Esa repetición controlada hace más fuerte la interpretación."
+        },
+        "limits": "No todos los posibles aditivos pueden identificarse con la misma seguridad. La función exacta de cada zona de la habitación sigue siendo interpretativa.",
+        "whyItMatters": "La escala modifica la historia: del producto pasamos al sistema de almacenamiento, gestión y consumo de una institución palacial.",
+        "nextQuestion": "Jerusalén añadirá otra capa: el vino como producto prestigioso conectado con administración real y comercio a larga distancia.",
+        "glossaryRefs": [
+          "edad_del_bronce",
+          "gc_ms",
+          "biomarcador"
+        ]
+      },
+      {
+        "id": "wine_5",
+        "sceneType": "trade",
+        "label": "05 · Jerusalén · 586 a. C.",
+        "title": "Un vino aromatizado en una ciudad a punto de ser destruida",
+        "lead": "Aquí sabemos incluso por qué las vasijas quedaron enterradas: los edificios fueron destruidos en 586 a. C.",
+        "geography": {
+          "today": "Jerusalén · actual Israel/Palestina",
+          "region": "Reino de Judá · Levante meridional",
+          "orientation": "Los recipientes proceden de dos edificios de la cresta de la Ciudad de David, al sur del recinto del Templo.",
+          "society": "Jerusalén del siglo VII–VI a. C., capital de Judá, integrada en redes políticas y comerciales de los imperios asirio y egipcio antes de la conquista babilónica."
+        },
+        "narrative": [
+          "Durante el siglo VII a. C., Jerusalén creció en población, tamaño y riqueza. El pequeño reino de Judá estaba inserto en un mundo dominado sucesivamente por grandes poderes regionales y conectado con rutas comerciales que atravesaban el Néguev y enlazaban el Levante con Arabia y regiones más lejanas.",
+          "En dos edificios públicos de la cresta de la Ciudad de David, los arqueólogos encontraron jarras aplastadas dentro de la capa de destrucción asociada a la conquista de Nabucodonosor II en 586 a. C. Algunas llevaban sellos en forma de roseta vinculados al sistema administrativo real de Judá. Trece recipientes fueron sometidos a análisis por GC-MS.",
+          "Las jarras habían contenido alternativamente aceite de oliva y vino. En varias muestras de vino aparecieron compuestos interpretados como vainilla. La hipótesis es especialmente interesante porque las plantas productoras de vainilla no crecían en Judá: implican productos procedentes de regiones tropicales y, por tanto, redes comerciales de larga distancia. El propio contexto —edificios públicos, sellos administrativos y proximidad a los centros de poder— apunta hacia círculos de élite.",
+          "Pero aquí también es fácil exagerar. No podemos convertir cinco jarras en «el vino típico de Jerusalén» ni reconstruir una ruta comercial concreta desde una molécula. El estudio habla de hábitos de consumo de élite y de participación en redes de intercambio transregionales. Esa escala es mucho más precisa y, por eso mismo, más valiosa."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_jerusalem_586_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_jerusalem_vanilla_wine_2022",
+          "src_spatial_jerusalem_lcp"
+        ],
+        "method": {
+          "title": "Cómo una destrucción puede convertirse en una fotografía arqueológica",
+          "body": "Cuando un edificio se destruye rápidamente y sus objetos quedan bajo escombros, muchos materiales permanecen asociados a un momento concreto. La fecha histórica de 586 a. C. y la química de los recipientes permiten relacionar contenido, administración y contexto urbano."
+        },
+        "limits": "El vino aromatizado documenta consumo de élite, no una costumbre universal. La presencia de vainilla indica circulación a larga distancia, pero no una ruta individual demostrada.",
+        "whyItMatters": "La misma bebida permite estudiar comercio, administración, prestigio y una coyuntura histórica fechada casi al año.",
+        "nextQuestion": "El último salto nos lleva a la Francia del siglo XIX, donde la pregunta deja de ser «qué contenía la vasija» y pasa a ser «por qué se estropea el vino y cómo evitarlo».",
+        "glossaryRefs": [
+          "gc_ms",
+          "biomarcador"
+        ]
+      },
+      {
+        "id": "wine_6",
+        "sceneType": "science",
+        "label": "06 · Francia · 1863–1866",
+        "title": "Pasteur: cuando conservar vino ayuda a cambiar nuestra idea de los microorganismos",
+        "lead": "Después de miles de años de recipientes y restos arqueológicos, la última escena tiene cartas, patentes, microscopios y un problema comercial.",
+        "geography": {
+          "today": "Francia · trabajo iniciado en Arbois y laboratorios de Pasteur",
+          "region": "Europa industrial del siglo XIX",
+          "orientation": "El problema nace en una economía vinícola que exporta grandes cantidades a Gran Bretaña. Los vinos podían llegar alterados después del transporte.",
+          "society": "Francia del Segundo Imperio, con creciente conexión entre investigación científica, industria y comercio."
+        },
+        "narrative": [
+          "En 1863, Napoleón III encargó a Louis Pasteur estudiar las llamadas «enfermedades del vino». El problema era económico y práctico: vinos franceses exportados a Gran Bretaña podían agriarse o deteriorarse durante el transporte. Pasteur ya trabajaba sobre fermentaciones y llevó esa mirada al vino.",
+          "Sus investigaciones relacionaron alteraciones concretas con microorganismos. En vez de entender la fermentación y el deterioro como transformaciones químicas espontáneas sin agentes vivos, Pasteur mostró el papel de microbios específicos. Propuso controlar el problema mediante un calentamiento moderado del vino después de la fermentación y en condiciones que limitaran el contacto con el aire.",
+          "En 1865 presentó una patente para la conservación y mejora del vino; en 1866 publicó sus Études sur le vin. El procedimiento acabaría recibiendo el nombre de pasteurización. Es importante no convertir esto en una leyenda del «genio que inventó calentar alimentos»: el uso del calor para conservar era anterior. La aportación de Pasteur fue convertirlo en un proceso sustentado por una explicación microbiológica y susceptible de control técnico.",
+          "Hoy la pasteurización rara vez se aplica al vino porque puede alterar sus cualidades sensoriales, pero la idea se extendió a cerveza, leche y muchos otros alimentos. El recorrido termina así muy lejos de Gadachrili Gora: no con otro «vino antiguo», sino con una nueva manera de entender fermentación, deterioro y seguridad alimentaria."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "pasteurization_wine_1863_1865"
+          }
+        ],
+        "sourceRefs": [
+          "src_pasteur_legacy",
+          "src_pasteur_middle_years",
+          "src_science_history_pasteur",
+          "src_pasteur_letter_1866"
+        ],
+        "method": {
+          "title": "Por qué esta escena ya no es arqueología",
+          "body": "Aquí las fuentes son patentes, correspondencia, publicaciones científicas y documentación institucional. La historia gastronómica necesita cambiar de método cuando cambia el periodo: no se estudia 1865 como se estudia 6000 a. C."
+        },
+        "limits": "Pasteur no inventó el calentamiento de alimentos ni resolvió toda la microbiología de una vez. La relevancia histórica está en la explicación experimental y su conversión en procedimiento científico.",
+        "whyItMatters": "La historia del vino conecta una práctica alimentaria milenaria con el nacimiento de herramientas conceptuales que todavía estructuran la microbiología de alimentos.",
+        "nextQuestion": "Fin del recorrido. Si ahora «Vino» aparece varias veces en el Atlas, debería entenderse como una cadena de preguntas diferentes, no como datos duplicados.",
+        "glossaryRefs": [
+          "pasteurizacion",
+          "fermentacion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story_bread",
+    "subjectRef": "bread_like_flatbread",
+    "title": "Historia del pan",
+    "question": "¿Puede existir pan antes de la agricultura plenamente desarrollada?",
+    "teaser": "De cazadores-recolectores a la panificación industrial: el pan revela cocina, tecnología, ritual, regulación y organización del trabajo.",
+    "eyebrow": "7 escenas · más de 14.000 años",
+    "subtitle": "No existe un único «pan» que avance en línea recta. Seguimos capacidades, rutinas, diversidad técnica, herramientas, ritual, regulación y producción industrial.",
+    "estimatedMinutes": 6,
+    "endTitle": "El pan no tiene una sola historia",
+    "endText": "Shubayqa muestra capacidad culinaria antes de la agricultura estable; Çatalhöyük, rutina doméstica; Küllüoba y Zúrich, diversidad; Ain Sukhna, tecnología; Saint-Memmie, contexto funerario; el assize, regulación; Chorleywood, organización industrial.",
+    "sourceRefs": [
+      "src_shubayqa_bread_pnas_2018",
+      "src_shubayqa_dates_2017",
+      "src_catalhoyuk_cereal_meals_2017",
+      "src_catalhoyuk_unesco_coordinates",
+      "src_kulluoba_bread_2026",
+      "src_kulluoba_excavation_official",
+      "src_parkhaus_opera_bread_2017",
+      "src_parkhaus_opera_zurich_city",
+      "src_ain_sukhna_bread_moulds_2020",
+      "src_saint_memmie_flatbread_2015",
+      "src_assize_bread_legal_history_2013",
+      "src_assize_bread_bl_manuscript",
+      "src_chorleywood_bread_process_1966"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "bread_1",
+        "sceneType": "orientation",
+        "label": "01 · Desierto Negro de Jordania · ca. 12.450 a. C.",
+        "title": "Shubayqa 1: hacer algo parecido al pan antes de vivir de la agricultura",
+        "lead": "La historia del pan no empieza necesariamente cuando alguien domestica trigo.",
+        "geography": {
+          "today": "Noreste de la actual Jordania",
+          "region": "Desierto Negro · Levante",
+          "orientation": "Shubayqa 1 se sitúa en un paisaje basáltico del noreste jordano, lejos de los grandes centros urbanos actuales.",
+          "society": "Comunidades natufienses de cazadores-recolectores, algunas con asentamientos relativamente estables antes de la agricultura plenamente consolidada."
+        },
+        "narrative": [
+          "Shubayqa 1 obliga a desmontar una secuencia que parece intuitiva: primero agricultura, después harina, después pan. El yacimiento pertenece al Natufiense, un periodo en el que comunidades de cazadores-recolectores del Levante podían ocupar asentamientos relativamente estables, recolectar una gran diversidad de plantas y utilizar intensamente herramientas de piedra para moler y procesar alimentos.",
+          "En una estructura semisubterránea pavimentada con losas de basalto se recuperaron restos carbonizados de alimentos. Veinticuatro fragmentos fueron estudiados con métodos arqueobotánicos y microscópicos. Algunos presentaban una matriz de cereal molido y rasgos compatibles con productos planos tipo pan. Entre los ingredientes se identificaron cereales silvestres —como el antepasado silvestre de la escaña— y tubérculos de plantas de humedal.",
+          "El hallazgo se fecha alrededor de 14.400 años antes del presente y demuestra que elaborar productos tipo pan precedió en miles de años a la agricultura neolítica plenamente desarrollada. Pero eso no significa que el pan fuera un alimento cotidiano. Los propios investigadores señalan que la explotación de cereales no era necesariamente dominante entre los natufienses y que estas preparaciones pudieron ser costosas o especiales.",
+          "La escena importa porque sustituye una historia de «invención» por una historia de capacidades: recolectar, descascarillar, moler, mezclar, formar y cocinar. La tecnología culinaria puede preceder a la domesticación de las plantas que más tarde la harán mucho más frecuente."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_shubayqa_14400_bp"
+          }
+        ],
+        "sourceRefs": [
+          "src_shubayqa_bread_pnas_2018",
+          "src_shubayqa_dates_2017"
+        ],
+        "method": {
+          "title": "Cómo distinguir un alimento de un trozo de carbón",
+          "body": "La arqueobotánica estudia tejidos vegetales y microestructuras conservadas tras la carbonización. El tamaño de partículas, la mezcla de ingredientes y la forma de la matriz se comparan con materiales experimentales y con otros restos procesados."
+        },
+        "limits": "Los autores utilizan «bread-like» porque las categorías modernas no encajan perfectamente. Tampoco sabemos si era un alimento cotidiano, ceremonial o excepcional.",
+        "whyItMatters": "La preparación culinaria puede ser anterior a la agricultura que luego la convierte en un alimento básico.",
+        "nextQuestion": "En Çatalhöyük veremos un mundo muy distinto: una gran comunidad agrícola donde cocinar cereales ya forma parte de la rutina doméstica.",
+        "glossaryRefs": [
+          "natufiense",
+          "arqueobotanica"
+        ]
+      },
+      {
+        "id": "bread_2",
+        "sceneType": "household",
+        "label": "02 · Anatolia central · 7100–6000 a. C.",
+        "title": "Çatalhöyük: del hallazgo excepcional a la cocina cotidiana",
+        "lead": "Aquí el objetivo ya no es demostrar que alguien podía hacer pan, sino entender qué formas adoptaban los cereales dentro de una cocina doméstica.",
+        "geography": {
+          "today": "Llanura de Konya · actual Turquía",
+          "region": "Anatolia central",
+          "orientation": "Çatalhöyük es un gran tell formado por siglos de construcción y reconstrucción de viviendas muy próximas entre sí.",
+          "society": "Comunidad neolítica agrícola con cereales, legumbres, frutos, hornos domésticos y una larga ocupación que permite observar cambios culinarios."
+        },
+        "narrative": [
+          "Çatalhöyük fue ocupado durante más de un milenio en la llanura de Konya. Las viviendas estaban densamente agrupadas y las actividades domésticas dejaron una enorme cantidad de residuos: semillas, restos de plantas, hogares, hornos y fragmentos carbonizados de alimentos. Esa continuidad convierte al yacimiento en un laboratorio excepcional para estudiar la vida cotidiana del Neolítico.",
+          "Durante años, muchos pequeños fragmentos amorfos recuperados por flotación eran difíciles de interpretar: podían parecer simples masas carbonizadas. Un equipo desarrolló una metodología específica para estudiar su composición y microestructura. Utilizó microscopía óptica, SEM y alimentos experimentales preparados con trigo y cebada que luego se carbonizaron deliberadamente para crear una colección de comparación.",
+          "Las formas observadas permiten distinguir, con cautela, preparaciones compatibles con masa, pan o gachas. También se estudian partículas de cereal, tejidos vegetales y poros internos. No estamos recuperando una receta escrita ni podemos llamar «hogaza» a cualquier fragmento. Precisamente por eso los investigadores insisten en una terminología prudente.",
+          "La diferencia con Shubayqa es fundamental. Allí el producto tipo pan demuestra una capacidad culinaria anterior a la agricultura estable. En Çatalhöyük, los cereales cultivados forman parte de una economía doméstica sostenida y pueden seguirse durante generaciones. El pan deja de ser únicamente una sorpresa arqueológica y entra en el estudio de las rutinas."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_catalhoyuk_7100_6400_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_catalhoyuk_cereal_meals_2017",
+          "src_catalhoyuk_unesco_coordinates"
+        ],
+        "method": {
+          "title": "Arqueología experimental: fabricar alimentos modernos para entender restos antiguos",
+          "body": "Los investigadores muelen cereal, preparan masas, panes planos y gachas bajo condiciones controladas, los carbonizan y observan cómo cambian sus tejidos y poros. Después comparan esas señales con los fragmentos arqueológicos."
+        },
+        "limits": "Una semejanza microscópica no recupera sabores, proporciones exactas ni nombres antiguos. «Pan», «masa» y «gachas» son categorías analíticas aproximadas.",
+        "whyItMatters": "La arqueología alimentaria puede estudiar procesos de cocina cotidiana, no solo objetos espectaculares.",
+        "nextQuestion": "Tres milenios después compararemos dos productos casi contemporáneos a miles de kilómetros de distancia: Anatolia interior y las orillas del lago de Zúrich.",
+        "glossaryRefs": [
+          "neolitico",
+          "tell",
+          "sem"
+        ]
+      },
+      {
+        "id": "bread_3",
+        "sceneType": "comparison",
+        "label": "03 · ca. 3200–3150 a. C. · Anatolia y Europa central",
+        "title": "Dos panes casi contemporáneos, dos historias completamente distintas",
+        "lead": "Una línea temporal puede hacer que dos fechas cercanas parezcan equivalentes. Compararlas revela justo lo contrario.",
+        "geography": {
+          "today": "Küllüoba, Turquía · Zürich, Suiza",
+          "region": "Anatolia occidental interior ↔ región alpina",
+          "orientation": "Küllüoba es un tell de la cuenca alta del Sakarya; Parkhaus Opéra era un asentamiento lacustre en la orilla noreste del lago de Zúrich.",
+          "society": "Dos comunidades separadas por miles de kilómetros, ambas alrededor del tránsito al III milenio a. C., con economías y tradiciones culinarias diferentes."
+        },
+        "narrative": [
+          "En Küllüoba Höyük, al este de Eskişehir, un pan carbonizado apareció en una estructura de la Edad del Bronce temprana. Medía unos doce centímetros de diámetro. Los análisis identificaron emmer —un trigo vestido— y una pequeña cantidad de lenteja. La presencia de poros sugiere una masa amasada y posiblemente levada. El contexto es igualmente llamativo: el objeto parece haber sido depositado intencionadamente y quedó sellado bajo una gruesa capa de tierra estéril, quizá como parte del abandono ritual del edificio.",
+          "Casi en las mismas décadas, muy lejos de allí, Parkhaus Opéra ocupaba la orilla noreste del lago de Zúrich. La excelente conservación de un asentamiento lacustre permitió fechar su capa 13 mediante dendrocronología en una ventana extraordinariamente estrecha: 3176–3153 a. C. Dos objetos carbonizados contenían cebada y trigo; uno conservaba incluso un fruto de apio, interpretado como posible condimento. Los análisis indican productos planos no levados.",
+          "La comparación es más instructiva que una carrera por encontrar «el pan más antiguo». En Küllüoba tenemos un objeto posiblemente vinculado a un acto ritual y una masa que quizá desarrolló gas. En Zúrich tenemos dos productos domésticos, una cronología casi de escala generacional y una combinación distinta de cereales y condimentos.",
+          "La palabra «pan» agrupa prácticas heterogéneas. La función del museo digital debería ser precisamente abrir esa palabra y mostrar la diversidad que una etiqueta única oculta."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_kulluoba_3200_3000_bce"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_parkhaus_opera_3176_3153_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_kulluoba_bread_2026",
+          "src_kulluoba_excavation_official",
+          "src_parkhaus_opera_bread_2017",
+          "src_parkhaus_opera_zurich_city"
+        ],
+        "method": {
+          "title": "Dos laboratorios diferentes para dos preguntas diferentes",
+          "body": "Küllüoba combina microscopía, espectroscopía y análisis térmico. Parkhaus Opéra estudia tejidos vegetales, tamaño de partículas, almidón y burbujas de gas, además de una datación dendrocronológica excepcionalmente precisa."
+        },
+        "limits": "«Posiblemente levado» en Küllüoba sigue siendo una inferencia. El apio de Zúrich es un indicio de condimentación, no una receta completa.",
+        "whyItMatters": "La comparación evita transformar la historia en una escalera lineal de mejoras. En la misma época pueden coexistir técnicas y significados distintos.",
+        "nextQuestion": "La siguiente escena no conserva un pan tan espectacular. Conserva algo igual de informativo: las herramientas para producirlo.",
+        "glossaryRefs": [
+          "edad_del_bronce",
+          "dendrocronologia",
+          "sem"
+        ]
+      },
+      {
+        "id": "bread_4",
+        "sceneType": "technology",
+        "label": "04 · Egipto · ca. 2050–1900 a. C.",
+        "title": "Ain Sukhna: reconstruir pan a partir de moldes y experimentos",
+        "lead": "No siempre se conserva el alimento. A veces la tecnología aparece con más claridad que la comida.",
+        "geography": {
+          "today": "Ain Sukhna · golfo de Suez · actual Egipto",
+          "region": "Extremo norte del mar Rojo",
+          "orientation": "Ain Sukhna funcionó como puerto y nodo logístico para expediciones egipcias hacia el Sinaí meridional.",
+          "society": "Comienzos del Reino Medio egipcio; administración estatal, expediciones y producción alimentaria organizada."
+        },
+        "narrative": [
+          "En Ain Sukhna, en la costa occidental del golfo de Suez, se han excavado grandes cantidades de recipientes cónicos tradicionalmente interpretados como moldes para pan. El yacimiento funcionó como puerto y base logística para expediciones hacia el Sinaí. Alimentar a trabajadores y tripulaciones era parte de esa infraestructura.",
+          "La forma exacta de utilizar aquellos moldes llevaba décadas siendo discutida. Las imágenes egipcias muestran operaciones de panificación, pero una imagen no explica automáticamente temperaturas, consistencia de la masa o modo de desmoldado. Por eso la investigadora Adeline Bats combinó el estudio de los recipientes y la iconografía con arqueología experimental.",
+          "Se fabricaron moldes y se trabajó con emmer y otros cereales de bajo contenido en gluten, colaborando incluso con un panadero que utilizaba variedades antiguas. Tras probar varias secuencias, el equipo propuso una chaîne opératoire capaz de producir panes correctamente cocidos sin necesidad de romper el recipiente. La geometría cónica y los revestimientos internos pasaban así de ser detalles formales a elementos de una tecnología de cocción.",
+          "El resultado no es «la receta exacta de un pan egipcio de 2000 a. C.». Es una reconstrucción experimental de un proceso técnicamente plausible que explica mejor el material arqueológico. Esa diferencia entre demostrar y reproducir debe permanecer visible."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_ain_sukhna_moulds_2050_1900_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_ain_sukhna_bread_moulds_2020"
+        ],
+        "method": {
+          "title": "Qué puede demostrar un experimento arqueológico",
+          "body": "Un experimento no viaja al pasado. Sirve para probar si una hipótesis técnica funciona bajo condiciones controladas y si explica rasgos observados en objetos antiguos. Varias soluciones pueden ser posibles."
+        },
+        "limits": "El protocolo experimental es una reconstrucción moderna informada por la evidencia; no una transcripción de instrucciones egipcias conservadas.",
+        "whyItMatters": "La historia de la comida también puede reconstruirse a través de herramientas, energía, materias primas y gestos técnicos.",
+        "nextQuestion": "En Saint-Memmie volveremos a encontrar el alimento mismo, pero dentro de un contexto que obliga a ser especialmente prudentes: una necrópolis.",
+        "glossaryRefs": [
+          "chaine_operatoire"
+        ]
+      },
+      {
+        "id": "bread_5",
+        "sceneType": "context",
+        "label": "05 · Galia romana · ca. 50–69 d. C.",
+        "title": "Saint-Memmie: una galette que sobrevivió porque acabó en un contexto funerario",
+        "lead": "Un alimento conservado excepcionalmente puede seducirnos, pero su contexto determina qué preguntas tenemos derecho a hacer.",
+        "geography": {
+          "today": "Marne · noreste de Francia",
+          "region": "Galia bajo dominio romano",
+          "orientation": "Saint-Memmie se encuentra en la región de Champaña, en el noreste francés.",
+          "society": "Comunidades galorromanas del siglo I d. C.; el hallazgo procede de una necrópolis y de un depósito secundario de objetos quemados."
+        },
+        "narrative": [
+          "Durante una excavación preventiva realizada en 2006 en la necrópolis galorromana de Saint-Memmie apareció una galette carbonizada excepcionalmente bien conservada. No estaba sobre la mesa de una vivienda ni dentro de una panadería: procedía de una fosa con un depósito secundario de objetos quemados relacionado con prácticas funerarias.",
+          "El contexto se fecha entre mediados del siglo I d. C. y el inicio del periodo flavio, en 69 d. C. El análisis microscópico de los tejidos vegetales mostró harina relativamente fina de cebada mezclada con escaña o escanda. La estructura interna indica que el producto no estaba levado o solo lo estaba de manera muy limitada.",
+          "A partir de partículas y tejidos se pueden discutir molienda, tamizado y preparación de la masa. Es un nivel de detalle sorprendente para un alimento de casi dos mil años. Pero el hecho de que se conserve dentro de un contexto funerario es precisamente la razón para no generalizarlo. Puede reflejar una práctica ritual, una selección especial o simplemente las condiciones que permitieron su carbonización y conservación.",
+          "La pregunta correcta no es «¿así era el pan romano?». Es: «¿qué nos permite conocer esta galette concreta sobre ingredientes y técnicas, y qué nos impide inferir sobre el consumo cotidiano?». Esa disciplina transforma una curiosidad arqueológica en una evidencia útil."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_saint_memmie_mid_1c"
+          }
+        ],
+        "sourceRefs": [
+          "src_saint_memmie_flatbread_2015"
+        ],
+        "method": {
+          "title": "Por qué el contexto funerario cambia la interpretación",
+          "body": "La composición puede estudiarse directamente, pero la frecuencia social de esa preparación no. Un alimento depositado o quemado en un rito funerario ha pasado por un filtro cultural y de conservación muy distinto al de la basura doméstica."
+        },
+        "limits": "No representa automáticamente la dieta galorromana, ni siquiera la de Saint-Memmie. Es una preparación concreta dentro de un contexto excepcional.",
+        "whyItMatters": "Aprender a no generalizar es parte del conocimiento histórico, no una limitación que haya que esconder.",
+        "nextQuestion": "En la Edad Media cambiaremos de fuente por completo: ya no restos carbonizados, sino normas, manuscritos y autoridades intentando controlar el pan.",
+        "glossaryRefs": [
+          "arqueobotanica"
+        ]
+      },
+      {
+        "id": "bread_6",
+        "sceneType": "institution",
+        "label": "06 · Inglaterra · siglo XIII",
+        "title": "Cuando el pan se vuelve demasiado importante para dejar su precio y peso al azar",
+        "lead": "Después de milenios estudiando alimentos y herramientas, una nueva fuente responde a otra pregunta: ¿qué ocurre cuando el pan es un bien socialmente crítico?",
+        "geography": {
+          "today": "Inglaterra medieval · con especial documentación de Londres, Nottingham y Chester",
+          "region": "Mercados urbanos del reino inglés",
+          "orientation": "La evidencia no corresponde a un único horno ni a una única ciudad: es un sistema normativo con variantes y aplicaciones locales.",
+          "society": "Economía urbana medieval en expansión, autoridades municipales y reales regulando mercados, calidad, precios y oficios."
+        },
+        "narrative": [
+          "En una ciudad medieval, el precio del grano podía cambiar, pero el pan debía seguir llegando a miles de consumidores. Las autoridades inglesas desarrollaron sistemas de assize para relacionar el precio del cereal con el peso y precio del pan y para controlar a los vendedores. No era una simple tabla económica: formaba parte de una política de mercado, abastecimiento y protección del «bien común» según los criterios de la época.",
+          "Durante mucho tiempo se repitió que la Assisa Panis et Cervisie nació en 1266. La documentación es más incómoda y más interesante. Copias impresas posteriores asignaron esa fecha, pero un mandato de 1254 ya habla de suspender el assize del pan en Hereford, lo que implica que existía antes. Un manuscrito conservado por la British Library incluye una assize de Nottingham hacia 1248–49 y materiales de Chester de 1260–61.",
+          "Por eso el Atlas no debería ofrecer «1266: se inventa la regulación del pan». La mejor representación es un intervalo documental y una explicación de cómo conocemos el fenómeno. Las reglas se aplicaron y adaptaron localmente; en Londres, estudios de los registros muestran esfuerzos reales de vigilancia y sanción.",
+          "La escena cambia la escala de la historia del pan. Ya no preguntamos qué cereal contiene una masa, sino qué ocurre cuando un alimento es tan esencial que su precio, peso y calidad se convierten en asuntos políticos."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_bread_assize_england_mid_13c"
+          }
+        ],
+        "sourceRefs": [
+          "src_assize_bread_legal_history_2013",
+          "src_assize_bread_bl_manuscript"
+        ],
+        "method": {
+          "title": "Cómo se fecha una institución que no nació en un solo día",
+          "body": "Los historiadores comparan manuscritos, copias legales, mandatos y registros de aplicación. La fecha de una compilación no es necesariamente la fecha de creación de la práctica."
+        },
+        "limits": "El intervalo no representa una «invención» puntual y las reglas no funcionaron de forma idéntica en todas las ciudades ni durante todo el periodo medieval.",
+        "whyItMatters": "La alimentación también es derecho, mercado y poder. Un museo gastronómico que solo enseñe ingredientes se deja fuera una parte decisiva de la historia.",
+        "nextQuestion": "La última escena salta al siglo XX: el problema ya no será fijar el peso de una hogaza, sino producir enormes cantidades de pan con mucha más rapidez.",
+        "glossaryRefs": [
+          "assize"
+        ]
+      },
+      {
+        "id": "bread_7",
+        "sceneType": "industry",
+        "label": "07 · Gran Bretaña · desde 1961",
+        "title": "Chorleywood: reducir horas de fermentación a minutos de trabajo mecánico",
+        "lead": "La última transformación no introduce un cereal nuevo. Cambia algo menos visible y quizá más decisivo: el tiempo de producción.",
+        "geography": {
+          "today": "Chorleywood · Hertfordshire · Reino Unido",
+          "region": "Industria alimentaria británica de posguerra",
+          "orientation": "El proceso fue desarrollado por la British Baking Industries Research Association en Chorleywood y después adoptado ampliamente por grandes panificadoras.",
+          "society": "Producción alimentaria a gran escala, automatización, supermercados y demanda creciente de pan de molde uniforme y barato."
+        },
+        "narrative": [
+          "En la panificación convencional con fermentación en masa, la masa puede permanecer varias horas desarrollándose antes de dividirse y formarse. Para una gran panificadora, ese tiempo ocupa espacio, inmoviliza producto y dificulta producir miles de panes por hora. En 1961, investigadores de la British Baking Industries Research Association desarrollaron en Chorleywood un proceso basado en mezcla de alta intensidad.",
+          "La idea central era aplicar una cantidad controlada de energía mecánica a la masa en mezcladoras rápidas. Un estudio publicado en 1966 describía el cambio con claridad: las dos a cuatro horas habituales de fermentación en masa podían sustituirse por pocos minutos de agitación mecánica intensa. El proceso utiliza además ajustes de formulación y control de la masa para obtener una estructura adecuada.",
+          "La transformación tuvo consecuencias industriales: mayor velocidad, consistencia y automatización, y adopción por grandes panificadoras. Pero un museo serio tampoco debería convertirlo en una caricatura de «pan bueno tradicional frente a pan malo industrial». El artículo de 1966 que comparó composición nutricional no encontró diferencias drásticas en varios nutrientes básicos entre panes elaborados por ambos sistemas.",
+          "El verdadero cambio histórico es organizativo y tecnológico. Después de más de catorce mil años de recorrido, el pan sigue siendo harina, agua, microorganismos, calor y trabajo; lo que cambia radicalmente es cómo una sociedad organiza ese trabajo y cuánto tiempo decide dedicarle."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "chorleywood_bread_process_1961"
+          }
+        ],
+        "sourceRefs": [
+          "src_chorleywood_bread_process_1966"
+        ],
+        "method": {
+          "title": "Cómo se estudia una transformación industrial reciente",
+          "body": "Aquí podemos combinar artículos técnicos contemporáneos, documentación de la institución que desarrolló el proceso y estudios posteriores de su adopción. La evidencia es documental y experimental, no arqueológica."
+        },
+        "limits": "Chorleywood no representa todo el pan industrial ni todo el pan británico. Rapidez y escala no permiten inferir automáticamente calidad nutricional o sensorial.",
+        "whyItMatters": "La historia del pan termina mostrando que una innovación puede transformar una práctica sin cambiar su nombre: seguimos llamándolo pan, pero el sistema de producción es otro.",
+        "nextQuestion": "Fin del recorrido. Si el visitante entiende ahora que «Pan» engloba prácticas, contextos y sistemas muy diferentes, la historia está haciendo un trabajo que una lista de datos no podía hacer.",
+        "glossaryRefs": [
+          "fermentacion_en_masa"
+        ]
+      }
+    ]
+  }
+]
