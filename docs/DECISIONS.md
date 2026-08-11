@@ -37,3 +37,19 @@ Rutas relativas y `.nojekyll`.
 **Aceptada.**
 Los ejemplos iniciales tensionan el modelo pero no se consideran verificados.
 
+## ADR-011 — Civilizaciones como capa contextual
+**Aceptada.**
+Las civilizaciones, culturas, pueblos y entidades políticas se almacenan en `contexts.json` y se vinculan a evidencias gastronómicas mediante `contextRefs`. No se reintroduce el modelo de “civilización” como núcleo del Atlas.
+
+## ADR-012 — Transformaciones científicas y tecnológicas
+**Aceptada.**
+Se crea `developments.json` para descubrimientos científicos, tecnologías alimentarias, aparatos, frío, energía, industria, envases y logística.
+
+## ADR-013 — Seguridad e higiene como capa temática
+**Aceptada.**
+Higiene, seguridad alimentaria, salud pública, regulación y sistemas de calidad son developments con una capa visual propia.
+
+## ADR-014 — Cache busting obligatorio
+**Aceptada.**
+CSS, JS y todos los datos cargados dinámicamente deben llevar identificador de versión en cada release de GitHub Pages. `app.js` debe versionar también su importación de `core.js`.
+

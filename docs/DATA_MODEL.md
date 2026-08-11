@@ -231,3 +231,119 @@ Valores de `precision`:
 
 La certeza pertenece a la afirmación concreta, no a todo el subject.
 
+
+
+---
+
+## 10. context — civilizaciones, culturas y marcos históricos
+
+`context` aporta contexto histórico sin convertir el Atlas en un atlas político general.
+
+Ejemplos de tipos admitidos:
+- cultura arqueológica;
+- civilización;
+- cultura;
+- pueblo;
+- ciudad-estado;
+- reino;
+- imperio;
+- república;
+- entidad política;
+- tradición religiosa;
+- institución;
+- grupo social.
+
+Un `context` se vincula a `occurrence` mediante `contextRefs`.
+
+Regla crítica:
+> la relación de un alimento con una civilización/cultura no implica que esa sociedad lo inventase, lo poseyese en exclusiva o fuese su origen.
+
+Campos principales:
+
+```json
+{
+  "id": "context_x",
+  "name": "...",
+  "type": "empire",
+  "period": {
+    "start": 1,
+    "end": 100,
+    "precision": "range",
+    "display": "..."
+  },
+  "placeRefs": [],
+  "summary": "...",
+  "sourceRefs": [],
+  "status": "draft"
+}
+```
+
+---
+
+## 11. development — ciencia, tecnología, higiene y seguridad
+
+`development` modela transformaciones que repercuten sobre la alimentación y la gastronomía.
+
+Tipos iniciales:
+- descubrimiento científico;
+- tecnología alimentaria;
+- tecnología de conservación;
+- aparato de cocina;
+- refrigeración;
+- infraestructura energética;
+- proceso industrial;
+- higiene;
+- seguridad alimentaria;
+- salud pública;
+- regulación;
+- sistema de calidad;
+- método analítico;
+- envase;
+- transporte/logística.
+
+Puede vincular:
+- lugares;
+- contextos históricos;
+- subjects afectados;
+- tipos de impacto.
+
+Ejemplo conceptual:
+
+```json
+{
+  "id": "development_x",
+  "name": "...",
+  "type": "food_safety",
+  "period": {
+    "start": 1900,
+    "end": 1950,
+    "precision": "range",
+    "display": "..."
+  },
+  "placeRefs": [],
+  "contextRefs": [],
+  "impactSubjectRefs": [],
+  "impactTypes": ["improves_safety"],
+  "summary": "...",
+  "certainty": "high",
+  "sourceRefs": [],
+  "status": "draft"
+}
+```
+
+Regla:
+un avance científico o tecnológico no debe presentarse como un hito aislado si su adopción fue gradual, regional o discutida. El campo temporal describe el dato concreto documentado, no una supuesta adopción universal.
+
+---
+
+## 12. Capas de lectura
+
+La interfaz admite cuatro capas lógicas:
+
+1. `gastronomy`
+2. `contexts`
+3. `developments`
+4. `safety`
+
+La capa `safety` es una vista temática sobre developments de higiene, seguridad, salud pública, regulación y calidad.
+

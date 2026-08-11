@@ -33,3 +33,12 @@
 31. La exportación offline futura será derivada, nunca fuente canónica.
 32. Nunca declarar “completo” el atlas: el corpus histórico es necesariamente abierto.
 
+33. Las civilizaciones/culturas son **contexto**, no sujetos gastronómicos.
+34. Asociar una evidencia a una civilización no implica atribuirle invención u origen.
+35. Ciencia, tecnología, higiene y regulación se modelan como `development`.
+36. La adopción de una tecnología puede ser gradual y regional: no asumir universalidad.
+37. Un aparato o proceso tecnológico requiere separar invención, comercialización, adopción y generalización cuando las fuentes lo exijan.
+38. Seguridad alimentaria debe distinguir descubrimiento científico, norma, sistema de control y práctica real.
+39. Las capas visuales no alteran el significado de los datos.
+40. Toda release debe versionar las URLs de CSS, JavaScript, JSON y GeoJSON para evitar mezclar recursos en caché.
+

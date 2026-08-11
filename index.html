@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#10121a">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.2">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.3">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -20,7 +20,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.2</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.3</span></small>
     </span>
   </a>
 
@@ -113,23 +113,14 @@
     </div>
   </section>
 
-  <section class="snapshot" aria-label="Resumen de la fecha">
-    <article class="snapshot-tile tile-evidence">
-      <span class="tile-icon">◉</span>
-      <div><strong id="occurrenceCount">0</strong><span>evidencias activas</span></div>
-    </article>
-    <article class="snapshot-tile tile-food">
-      <span class="tile-icon">✦</span>
-      <div><strong id="subjectCount">0</strong><span>elementos gastronómicos</span></div>
-    </article>
-    <article class="snapshot-tile tile-place">
-      <span class="tile-icon">⌖</span>
-      <div><strong id="placeCount">0</strong><span>lugares representados</span></div>
-    </article>
-    <article class="snapshot-tile tile-event">
-      <span class="tile-icon">↝</span>
-      <div><strong id="eventCount">0</strong><span>procesos próximos</span></div>
-    </article>
+  <section class="museum-rail" aria-label="Resumen de la fecha">
+    <span><strong id="occurrenceCount">0</strong> registros</span>
+    <i></i>
+    <span><strong id="subjectCount">0</strong> elementos</span>
+    <i></i>
+    <span><strong id="placeCount">0</strong> lugares</span>
+    <i></i>
+    <span><strong id="eventCount">0</strong> procesos</span>
   </section>
 
   <section id="mapSection" class="explorer-grid">
@@ -141,6 +132,7 @@
         </div>
         <div class="map-actions">
           <button id="searchToggleBtn" class="toolbar-btn" type="button" aria-controls="quickSearch">⌕ Buscar</button>
+          <button id="layersBtn" class="toolbar-btn" type="button" aria-controls="layersDrawer">◫ Capas</button>
           <button id="filterBtn" class="toolbar-btn accent" type="button" aria-controls="filterDrawer">☷ Filtros</button>
         </div>
       </div>
@@ -169,6 +161,8 @@
           <rect width="1000" height="500" class="ocean"/>
           <rect width="1000" height="500" fill="url(#seaGlow)"/>
           <g id="basemapLayer"></g>
+          <g id="contextLayer"></g>
+          <g id="developmentLayer"></g>
           <g id="occurrenceLayer"></g>
         </svg>
 
@@ -206,9 +200,26 @@
     </aside>
   </section>
 
+
+  <section class="transformation-band museum-card" aria-labelledby="transformTitle">
+    <div class="transform-head">
+      <div>
+        <span class="section-label">04 · Transformaciones</span>
+        <h2 id="transformTitle">Ciencia, tecnología y seguridad alimentaria</h2>
+        <p>Esta capa conectará los cambios gastronómicos con descubrimientos científicos, nuevas tecnologías, equipamiento, higiene, regulación, frío, energía e industria.</p>
+      </div>
+      <button id="openLayersTransformBtn" class="ghost-cta" type="button">Explorar capas</button>
+    </div>
+    <div id="transformationPreview" class="transformation-preview">
+      <article class="transform-tile science"><span>CIENCIA</span><strong>Microbiología, química, análisis…</strong><small>Capa preparada · contenido verificado pendiente</small></article>
+      <article class="transform-tile technology"><span>TECNOLOGÍA</span><strong>Conservación, cocción, frío, electricidad…</strong><small>Capa preparada · contenido verificado pendiente</small></article>
+      <article class="transform-tile safety"><span>SEGURIDAD</span><strong>Higiene, control, trazabilidad, sistemas de calidad…</strong><small>Capa preparada · contenido verificado pendiente</small></article>
+    </div>
+  </section>
+
   <section class="museum-story museum-card">
     <div class="story-intro">
-      <span class="section-label">04 · Lectura de contexto</span>
+      <span class="section-label">05 · Lectura de contexto</span>
       <h2 id="contextTitle">Un instante de la historia alimentaria</h2>
       <p id="contextText">El atlas construye esta vista a partir de las evidencias visibles en la fecha seleccionada.</p>
     </div>
@@ -218,7 +229,7 @@
   <section class="events-section museum-card">
     <div class="events-heading">
       <div>
-        <span class="section-label">05 · Procesos y cambios</span>
+        <span class="section-label">06 · Procesos y cambios</span>
         <h2>Qué está ocurriendo alrededor de esta fecha</h2>
       </div>
       <label class="mini-select">Ventana temporal
@@ -236,6 +247,43 @@
     </div>
   </section>
 </main>
+
+
+<aside id="layersDrawer" class="drawer" aria-hidden="true" aria-labelledby="layersTitle">
+  <div class="drawer-backdrop" data-close-layers></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div><span class="section-label">Lectura del atlas</span><h2 id="layersTitle">Capas históricas</h2></div>
+      <button class="drawer-close" type="button" data-close-layers aria-label="Cerrar capas">×</button>
+    </div>
+    <div class="drawer-body layer-options">
+      <label class="layer-option">
+        <input id="layerGastronomy" type="checkbox" checked>
+        <span class="layer-swatch gastronomy"></span>
+        <span><strong>Gastronomía</strong><small>Alimentos, técnicas, productos y evidencias.</small></span>
+      </label>
+      <label class="layer-option">
+        <input id="layerContexts" type="checkbox" checked>
+        <span class="layer-swatch contexts"></span>
+        <span><strong>Civilizaciones y culturas</strong><small>Contexto histórico relacionado con los registros.</small></span>
+      </label>
+      <label class="layer-option">
+        <input id="layerDevelopments" type="checkbox" checked>
+        <span class="layer-swatch developments"></span>
+        <span><strong>Ciencia y tecnología</strong><small>Descubrimientos, técnicas, equipamiento, energía e industria.</small></span>
+      </label>
+      <label class="layer-option">
+        <input id="layerSafety" type="checkbox" checked>
+        <span class="layer-swatch safety"></span>
+        <span><strong>Seguridad e higiene</strong><small>Control sanitario, regulación, calidad, trazabilidad y salud pública.</small></span>
+      </label>
+      <div class="layer-note">Las capas nuevas ya forman parte del contrato, pero no se rellenarán con datos históricos hasta que sus fuentes sean auditadas en G2.</div>
+    </div>
+    <div class="drawer-footer">
+      <button id="closeLayersBtn" class="primary-cta" type="button">Aplicar capas</button>
+    </div>
+  </div>
+</aside>
 
 <aside id="filterDrawer" class="drawer" aria-hidden="true" aria-labelledby="filterTitle">
   <div class="drawer-backdrop" data-close-drawer></div>
@@ -300,6 +348,16 @@
       <div id="occurrenceDetail"></div>
     </div>
 
+    <div id="historicalContextSection" class="detail-section hidden">
+      <span class="detail-label">Civilizaciones y culturas relacionadas</span>
+      <div id="historicalContextDetail"></div>
+    </div>
+
+    <div id="developmentContextSection" class="detail-section hidden">
+      <span class="detail-label">Transformaciones relacionadas</span>
+      <div id="developmentContextDetail"></div>
+    </div>
+
     <div class="detail-actions">
       <button id="subjectHistoryBtn" class="primary-cta" type="button" disabled>Ver historia del elemento</button>
       <button id="closeDetailBtn" class="ghost-cta" type="button">Cerrar</button>
@@ -319,6 +377,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.2"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.3"></script>
 </body>
 </html>

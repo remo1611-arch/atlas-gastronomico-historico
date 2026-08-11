@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.1.0-alpha.3 — 2026-08-11
+
+### Museum polish
+- métricas KPI sustituidas por franja editorial;
+- mapa con mayor peso visual;
+- tarjetas y radios simplificados;
+- jerarquía móvil refinada;
+- panel museográfico de transformaciones.
+
+### Arquitectura histórica
+- nuevo `contexts.json`;
+- nuevo `developments.json`;
+- schemas de contexto y desarrollo;
+- `contextRefs` y `developmentRefs` en ocurrencias/eventos;
+- capas Civilizaciones y culturas / Ciencia y tecnología / Seguridad e higiene;
+- validador preparado para referencias cruzadas.
+
+### Distribución
+- cache busting obligatorio en CSS y JS;
+- index usa `?v=0.1.0-alpha.3`.
+
+### Datos
+- no se añaden datos históricos nuevos;
+- contexts y developments quedan vacíos hasta G2.
+
 ## 0.1.0-alpha.2 — 2026-08-11
 
 ### Museo digital / G1.1

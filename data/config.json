@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.2"
+    "version": "0.1.0-alpha.3"
   },
   "timeline": {
     "minYear": -12000,
@@ -19,6 +19,12 @@
   },
   "display": {
     "initialTheme": "dark",
-    "initialLabels": "auto"
+    "initialLabels": "auto",
+    "layers": {
+      "gastronomy": true,
+      "contexts": true,
+      "developments": true,
+      "safety": true
+    }
   }
 }

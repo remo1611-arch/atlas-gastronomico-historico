@@ -84,5 +84,53 @@
     "reviewed",
     "verified",
     "deprecated"
+  ],
+  "contextTypes": [
+    "archaeological_culture",
+    "civilization",
+    "culture",
+    "people",
+    "city_state",
+    "kingdom",
+    "empire",
+    "republic",
+    "polity",
+    "religious_tradition",
+    "institution",
+    "social_group",
+    "other"
+  ],
+  "developmentTypes": [
+    "scientific_discovery",
+    "food_technology",
+    "preservation_technology",
+    "cooking_appliance",
+    "refrigeration",
+    "energy_infrastructure",
+    "industrial_process",
+    "hygiene",
+    "food_safety",
+    "public_health",
+    "regulation",
+    "quality_system",
+    "analytical_method",
+    "packaging",
+    "transport_logistics",
+    "other"
+  ],
+  "impactTypes": [
+    "enables",
+    "improves_safety",
+    "extends_shelf_life",
+    "changes_preparation",
+    "changes_texture",
+    "reduces_pathogens",
+    "industrializes",
+    "standardizes",
+    "changes_distribution",
+    "changes_domestic_cooking",
+    "supports_cold_chain",
+    "improves_traceability",
+    "other"
   ]
 }

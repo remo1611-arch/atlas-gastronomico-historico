@@ -1,21 +1,23 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.3';
 
 const P={
-  config:'./data/config.json',
-  taxonomy:'./data/taxonomy.json',
-  subjects:'./data/subjects.json',
-  places:'./data/places.json',
-  occurrences:'./data/occurrences.json',
-  events:'./data/events.json',
-  relationships:'./data/relationships.json',
-  sources:'./data/sources.json',
-  basemap:'./data/basemap/world_110m.geojson'
+  config:'./data/config.json?v=0.1.0-alpha.3',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.3',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.3',
+  places:'./data/places.json?v=0.1.0-alpha.3',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.3',
+  events:'./data/events.json?v=0.1.0-alpha.3',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.3',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.3',
+  developments:'./data/developments.json?v=0.1.0-alpha.3',
+  sources:'./data/sources.json?v=0.1.0-alpha.3',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.3'
 };
 
 const s={
-  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],sources:[],basemap:null,
+  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
   year:1500,search:'',subjectType:'all',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
-  selectedOccurrence:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all'
+  selectedOccurrence:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -93,8 +95,8 @@ async function j(url){
 
 async function load(){
   try{
-    const [config,taxonomy,subjects,places,occurrences,events,relationships,sources,basemap]=await Promise.all(Object.values(P).map(j));
-    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,sources,basemap});
+    const [config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap]=await Promise.all(Object.values(P).map(j));
+    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap});
     s.year=config.timeline.initialYear;
     s.playStep=config.timeline.playStep;
     s.eventWindow=config.timeline.eventWindowYears;
@@ -140,6 +142,7 @@ function subj(id){return s.subjects.find(x=>x.id===id)}
 function place(id){return s.places.find(x=>x.id===id)}
 
 function occVisible(){
+  if(!s.layers.gastronomy) return [];
   const q=norm(s.search.trim());
 
   return s.occurrences.filter(o=>{
@@ -188,6 +191,8 @@ function render(){
   renderCategorySummary(list);
   renderList(list);
   renderMarkers(list);
+  renderContextLayer();
+  renderDevelopmentLayer();
   renderContext(list);
   renderEvents();
 
@@ -347,6 +352,51 @@ function renderMarkers(list){
   });
 }
 
+
+function contextById(id){return s.contexts.find(x=>x.id===id)}
+function developmentById(id){return s.developments.find(x=>x.id===id)}
+
+function renderContextLayer(){
+  const layer=$('#contextLayer');
+  if(!layer) return;
+  layer.innerHTML='';
+  if(!s.layers.contexts) return;
+
+  s.contexts
+    .filter(c=>(s.showSeed||c.status!=='seed')&&active(c.period,s.year))
+    .forEach(c=>{
+      const firstPlace=(c.placeRefs||[]).map(place).find(Boolean);
+      if(!firstPlace?.point) return;
+      const [x,y]=project(firstPlace.point.lon,firstPlace.point.lat);
+      const g=svg('g',{class:'context-marker',transform:`translate(${x} ${y})`});
+      g.appendChild(svg('circle',{r:'4'}));
+      layer.appendChild(g);
+    });
+}
+
+function renderDevelopmentLayer(){
+  const layer=$('#developmentLayer');
+  if(!layer) return;
+  layer.innerHTML='';
+  if(!s.layers.developments && !s.layers.safety) return;
+
+  s.developments
+    .filter(d=>(s.showSeed||d.status!=='seed')&&active(d.period,s.year))
+    .filter(d=>{
+      const safety=['hygiene','food_safety','public_health','regulation','quality_system'];
+      return safety.includes(d.type) ? s.layers.safety : s.layers.developments;
+    })
+    .forEach(d=>{
+      const firstPlace=(d.placeRefs||[]).map(place).find(Boolean);
+      if(!firstPlace?.point) return;
+      const [x,y]=project(firstPlace.point.lon,firstPlace.point.lat);
+      const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
+      const g=svg('g',{class:safety?'safety-marker':'development-marker',transform:`translate(${x} ${y})`});
+      g.appendChild(svg('circle',{r:'4.5'}));
+      layer.appendChild(g);
+    });
+}
+
 function renderContext(list){
   const title=$('#contextTitle');
   const text=$('#contextText');
@@ -417,6 +467,8 @@ function renderDetails(o){
     $('#detailCategory').textContent='Elemento gastronómico';
     $('#subjectDetail').innerHTML='<p>Selecciona un punto del mapa o un registro de la lista.</p>';
     $('#occurrenceDetail').innerHTML='<p>Aquí se separarán lugar, intervalo, tipo de evidencia, certeza y fuentes.</p>';
+    $('#historicalContextSection')?.classList.add('hidden');
+    $('#developmentContextSection')?.classList.add('hidden');
     $('#subjectHistoryBtn').disabled=true;
     return;
   }
@@ -452,8 +504,45 @@ function renderDetails(o){
     </div>
   `;
 
+  const relatedContexts=(o.contextRefs||[]).map(contextById).filter(Boolean);
+  const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(Boolean);
+
+  const contextSection=$('#historicalContextSection');
+  const developmentSection=$('#developmentContextSection');
+
+  if(relatedContexts.length){
+    contextSection.classList.remove('hidden');
+    $('#historicalContextDetail').innerHTML=relatedContexts.map(c=>`
+      <div class="detail-meta"><div><b>${esc(c.name)}</b><span>${esc(c.summary)}</span></div></div>
+    `).join('');
+  }else{
+    contextSection.classList.add('hidden');
+    $('#historicalContextDetail').innerHTML='';
+  }
+
+  if(relatedDevelopments.length){
+    developmentSection.classList.remove('hidden');
+    $('#developmentContextDetail').innerHTML=relatedDevelopments.map(d=>`
+      <div class="detail-meta"><div><b>${esc(d.name)}</b><span>${esc(d.summary)}</span></div></div>
+    `).join('');
+  }else{
+    developmentSection.classList.add('hidden');
+    $('#developmentContextDetail').innerHTML='';
+  }
+
   $('#subjectHistoryBtn').disabled=true;
   $('#subjectHistoryBtn').title='Se activará cuando un elemento tenga varias ocurrencias históricas verificadas.';
+}
+
+function openLayers(){
+  $('#layersDrawer').classList.add('open');
+  $('#layersDrawer').setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeLayers(){
+  $('#layersDrawer').classList.remove('open');
+  $('#layersDrawer').setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
 }
 
 function openDrawer(){
@@ -556,6 +645,16 @@ function bind(){
   $('#resetFiltersBtn').addEventListener('click',resetFilters);
   $('#applyFiltersBtn').addEventListener('click',closeDrawer);
 
+  $('#layersBtn').addEventListener('click',openLayers);
+  $('#openLayersTransformBtn').addEventListener('click',openLayers);
+  $('#closeLayersBtn').addEventListener('click',closeLayers);
+  $$('[data-close-layers]').forEach(x=>x.addEventListener('click',closeLayers));
+
+  $('#layerGastronomy').addEventListener('change',e=>{s.layers.gastronomy=e.target.checked;render()});
+  $('#layerContexts').addEventListener('change',e=>{s.layers.contexts=e.target.checked;render()});
+  $('#layerDevelopments').addEventListener('change',e=>{s.layers.developments=e.target.checked;render()});
+  $('#layerSafety').addEventListener('change',e=>{s.layers.safety=e.target.checked;render()});
+
   $('#filterBtn').addEventListener('click',openDrawer);
   $('#openFiltersHeroBtn').addEventListener('click',openDrawer);
   $$('[data-close-drawer]').forEach(x=>x.addEventListener('click',closeDrawer));
@@ -593,6 +692,7 @@ function bind(){
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
       closeDrawer();
+      closeLayers();
       closeDetail();
     }
   });

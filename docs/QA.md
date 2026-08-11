@@ -8,6 +8,7 @@ node --check js/core.js
 node --check js/app.js
 node tools/test_core.mjs
 python tools/test_project_pages.py
+python tools/test_extended_contract.py
 python tools/build_manifest.py
 ```
 
@@ -36,3 +37,13 @@ Antes de validar datos históricos:
 - interpretación separada de evidencia;
 - origen no simplificado.
 
+
+## Capas contextuales alpha.3
+- [ ] `contexts.json` válido;
+- [ ] `developments.json` válido;
+- [ ] contextRefs válidos;
+- [ ] developmentRefs válidos;
+- [ ] impactSubjectRefs válidos;
+- [ ] civilización/cultura no tratada como origen automático;
+- [ ] seguridad/higiene diferenciada de gastronomía;
+- [ ] assets dinámicos con cache busting de release.

@@ -16,7 +16,7 @@
 ---
 
 ## G1 — Motor temporal gastronómico
-**Estado: PROTOTIPO FUNCIONAL**
+**Estado: MUSEUM POLISH + CAPAS CONTEXTUALES IMPLEMENTADAS / pendiente validación real**
 
 Debe cerrar:
 
@@ -26,6 +26,9 @@ Debe cerrar:
 - filtro por tipo de evidencia;
 - filtro por región;
 - mapa de ocurrencias;
+- capa de civilizaciones/culturas; ✅ contrato alpha.3
+- capa de ciencia/tecnología; ✅ contrato alpha.3
+- capa de seguridad/higiene; ✅ contrato alpha.3;
 - selección de ocurrencia;
 - panel de subject;
 - eventos próximos;
@@ -33,6 +36,18 @@ Debe cerrar:
 - responsive;
 - tema claro/oscuro;
 - GitHub Pages.
+
+---
+
+## G1.2 — Integración de contexto e innovación
+**Estado: CONTRATO CERRADO / contenido pendiente**
+
+- `contexts.json`;
+- `developments.json`;
+- referencias desde occurrences/events;
+- capas visuales;
+- validación cruzada;
+- sin contenido histórico inventado.
 
 ---
 

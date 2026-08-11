@@ -65,6 +65,18 @@
     },
     "status": {
       "type": "string"
+    },
+    "contextRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "developmentRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

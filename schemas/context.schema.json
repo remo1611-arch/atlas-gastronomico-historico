@@ -1,13 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "GastronomicEvent",
+  "title": "HistoricalContext",
   "type": "object",
   "required": [
     "id",
-    "title",
+    "name",
+    "type",
     "period",
-    "eventType",
-    "certainty",
+    "summary",
     "status"
   ],
   "properties": {
@@ -15,7 +15,11 @@
       "type": "string",
       "pattern": "^[a-z0-9_]+$"
     },
-    "title": {
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
       "type": "string"
     },
     "period": {
@@ -40,15 +44,6 @@
         }
       }
     },
-    "eventType": {
-      "type": "string"
-    },
-    "subjectRefs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
     "placeRefs": {
       "type": "array",
       "items": {
@@ -56,9 +51,6 @@
       }
     },
     "summary": {
-      "type": "string"
-    },
-    "certainty": {
       "type": "string"
     },
     "sourceRefs": {
@@ -69,18 +61,6 @@
     },
     "status": {
       "type": "string"
-    },
-    "contextRefs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "developmentRefs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   }
 }

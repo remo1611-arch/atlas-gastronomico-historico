@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.2
+**Versión:** 0.1.0-alpha.3
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -116,3 +116,13 @@ Sirven únicamente para demostrar que el motor puede manejar:
 
 El gate G2 revisará cada dato con fuentes antes de elevarlo a `reviewed` o `verified`.
 
+
+## Capas históricas
+
+La arquitectura alpha.3 añade, sin descentrar la gastronomía:
+
+- **Civilizaciones y culturas** (`contexts.json`);
+- **Ciencia y tecnología** (`developments.json`);
+- **Seguridad e higiene** como vista temática de developments.
+
+Estas capas están preparadas pero permanecen vacías hasta la auditoría histórica G2.
