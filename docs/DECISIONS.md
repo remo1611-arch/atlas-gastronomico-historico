@@ -128,3 +128,24 @@ Tel Kabri demuestra que almacenamiento puede ser la afirmación histórica princ
 ## ADR-033 — Descubrimiento automático de recorridos
 **Aceptada.**
 “Historias disponibles” se genera desde subjects con al menos dos occurrences reviewed/verified. No contiene IDs hardcodeados.
+
+## ADR-034 — Navegador temporal semántico
+**Aceptada.**
+La línea temporal incorpora un mapa de actividad con capas diferenciadas para evidencias, events y developments. No se añaden etiquetas permanentes a cada hito.
+
+## ADR-035 — Densidad adaptativa
+**Aceptada.**
+Las occurrences reviewed/verified se agregan en bins adaptativos (móvil/tablet/escritorio) para que el sistema escale a corpus grandes. Las occurrences `verified` pueden sobresalir individualmente.
+
+## ADR-036 — Events como intervalos
+**Aceptada.**
+Un event de varios años se visualiza como banda temporal. El ancho mínimo visual no modifica el dato histórico; solo garantiza seleccionabilidad.
+
+## ADR-037 — Navegador temporal filtrado
+**Aceptada.**
+El mapa temporal refleja búsqueda y filtros activos. Se evita que la línea sugiera hitos que la vista principal ha excluido.
+
+## ADR-038 — Navegación anterior/siguiente
+**Aceptada.**
+Se incorporan acciones discretas de hito anterior/siguiente para resolver selección precisa en móvil sin ampliar artificialmente los marcadores.
+

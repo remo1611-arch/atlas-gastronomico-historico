@@ -14,6 +14,7 @@ python tools/test_g2_pilot.py
 python tools/test_g2_pilot_b.py
 python tools/test_g2_pilot_c_maize.py
 python tools/test_subject_history.py
+python tools/test_temporal_navigator.py
 python tools/test_verified_gate.py
 python tools/test_public_state.py
 python tools/test_schema_validation.py
@@ -122,3 +123,16 @@ Antes de validar datos históricos:
 - [ ] certeza medium visible;
 - [ ] introducción/adopción no tratadas como origen;
 - [ ] sin rutas cartográficas inventadas.
+
+## Navegador temporal
+- [ ] evidencias reviewed/verified agregadas por densidad;
+- [ ] seed/deprecated excluidos;
+- [ ] occurrences verified destacadas sin saturar;
+- [ ] events visibles como periodos;
+- [ ] developments visibles como periodos;
+- [ ] cursor sincronizado con año;
+- [ ] hito anterior/siguiente;
+- [ ] búsqueda/filtros repercuten en la banda;
+- [ ] targets táctiles ampliados en móvil;
+- [ ] reduced motion respetado;
+- [ ] uncertainty conserva señal propia.

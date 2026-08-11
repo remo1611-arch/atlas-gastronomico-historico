@@ -4,72 +4,76 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.9
+0.1.0-alpha.10
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · A + B + C.
+- G2: EN CURSO.
 - G3+: no iniciados.
 
-## Historias longitudinales activas
+## Corpus
+Se conserva íntegramente alpha.9:
+- 17 subjects;
+- 25 places;
+- 28 occurrences;
+- 3 events;
+- 3 relationships;
+- 7 contexts;
+- 6 developments;
+- 48 sources.
 
-### Vino
-- 5 occurrences reviewed/verified;
-- 1 development relacionado;
-- recorrido ca. 6000 a.C. → 1863.
+## Historias longitudinales
+- vino;
+- maíz.
 
-### Maíz
-- 7 occurrences reviewed/verified;
-- 1 event histórico canónico;
-- recorrido ca. 7040 a.C. → siglos XVI–XVII.
+## Alpha.10 — navegador temporal
 
-## G2-C · Maíz
+Se añade un mapa temporal alineado con el slider.
 
-Nuevos registros:
-- cultivo en San Andrés;
-- presencia precerámica en Paredones;
-- consumo regular en Paredones;
-- presencia en Grandes Lagos inferiores;
-- adopción en África atlántica tropical;
-- adopción en región cantábrica.
+### Evidencias
+- solo reviewed/verified;
+- densidad adaptativa;
+- verified con marcador individual;
+- uncertainty conservada.
 
-Nuevo context:
-- Princess Point Complex.
+### Events
+- capa independiente;
+- rangos representados como bandas;
+- seleccionables.
 
-Nuevo event:
-- transferencia transatlántica y difusión global del maíz.
+### Developments
+- capa independiente;
+- rangos representados como bandas;
+- seleccionables.
 
-Migración:
-- `event_columbian_exchange_demo`
-  → deprecated
-  → `event_maize_transatlantic_exchange_1492_1700`.
+### Navegación
+- cursor sincronizado con el año;
+- hito anterior;
+- hito siguiente;
+- preview compacto del hito más próximo/seleccionado.
 
-## Motor Historia del elemento
+### Escalabilidad
+Bins de densidad:
+- 38 móvil;
+- 68 tablet;
+- 120 escritorio.
 
-Tipos integrados:
-- EVIDENCIA;
-- EVENTO;
-- TRANSFORMACIÓN.
+Esto evita convertir el timeline en una acumulación de puntos cuando el corpus crezca.
 
-El motor sigue siendo genérico y derivado de datos.
+### Accesibilidad
+- botones reales;
+- aria-label descriptivo;
+- targets táctiles mayores que el marcador visual;
+- reduced-motion.
 
-## Incertidumbre
+## Decisión de secuencia
+G2-D (nixtamalización + disputed) se aplaza una iteración para resolver primero la navegación temporal, antes de añadir más contenido.
 
-El caso africano conserva:
-`certainty: medium`
-
-La UI muestra esta incertidumbre aunque el registro tenga `status: reviewed`.
-
-## Cartografía
-
-12 occurrences activas/revisadas carecen actualmente de punto canónico.
-Esto es deliberado y no bloquea su visualización en lista/historia.
-
-## Próximo trabajo
-
-1. segunda revisión G2-B/C;
-2. incorporar una técnica culinaria canónica relacionada (candidato: nixtamalización);
-3. probar `certainty: disputed`;
-4. preparar G3 sin iniciar carga masiva.
+## Próxima acción
+G2-D:
+1. nixtamalización canónica;
+2. relación explícita técnica ↔ maíz;
+3. primer caso disputed;
+4. validar cómo aparecen técnica/disputa en Historia del elemento y navegador temporal.
 

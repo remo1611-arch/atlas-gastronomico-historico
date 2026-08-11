@@ -475,3 +475,37 @@ La interfaz debe diferenciar:
 
 Un registro puede estar bien revisado y seguir teniendo incertidumbre histórica real.
 
+---
+
+## 18. Proyección en el navegador temporal
+
+El navegador temporal no crea una nueva entidad de datos.
+
+Deriva sus señales de:
+- `occurrences`;
+- `events`;
+- `developments`.
+
+### Evidencias
+Las occurrences `reviewed/verified` se proyectan en una banda de densidad.
+
+Las `verified` pueden recibir además un marcador individual.
+
+### Events
+Se proyectan usando:
+- `period.start`;
+- `period.end`.
+
+Los rangos se muestran como bandas.
+
+### Developments
+Se proyectan como una capa temporal separada.
+
+### Escala
+La posición usa el mismo motor ordinal que el slider principal y conserva la regla de no año 0.
+
+### Agregación
+La densidad es una representación visual derivada, no un dato histórico persistente.
+
+La interfaz puede variar el número de bins según el ancho del dispositivo sin cambiar el corpus.
+

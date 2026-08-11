@@ -70,3 +70,11 @@
 58. Introducción, cultivo, adopción y conversión en alimento básico son fases distintas.
 59. Un evento demo sustituido se conserva como `deprecated + supersededBy`.
 
+60. La línea temporal pública no debe convertirse en una nube de marcadores: las occurrences se agregan visualmente por densidad cuando sea necesario.
+61. `seed` y `deprecated` no participan en el navegador temporal museográfico.
+62. Los events con duración se representan como intervalos, no como puntos que inventen una fecha única.
+63. Los developments se distinguen visualmente de events y occurrences.
+64. El estado editorial y la certeza histórica deben conservarse también en las señales temporales.
+65. El navegador temporal respeta los filtros activos y la búsqueda para evitar discrepancias entre lo que el usuario filtra y lo que la cronología sugiere.
+66. Las marcas pequeñas pueden tener un área táctil mayor que su representación visual; accesibilidad y precisión de selección prevalecen sobre el tamaño aparente.
+

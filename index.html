@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.9">
+  <meta name="atlas-build" content="0.1.0-alpha.10">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.9">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.10">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.9</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.10</span></small>
     </span>
   </a>
 
@@ -98,6 +98,38 @@
         <div class="range-glow" aria-hidden="true"></div>
         <input id="yearRange" type="range" aria-label="Línea temporal">
       </div>
+
+
+      <section id="temporalNavigator" class="temporal-navigator" aria-labelledby="temporalNavigatorTitle">
+        <div class="temporal-nav-head">
+          <div>
+            <span class="temporal-nav-eyebrow">Actividad histórica del corpus</span>
+            <strong id="temporalNavigatorTitle">Dónde hay algo que explorar</strong>
+          </div>
+          <div class="temporal-legend" aria-label="Leyenda temporal">
+            <span><i class="legend-evidence"></i>Evidencias</span>
+            <span><i class="legend-event"></i>Eventos</span>
+            <span><i class="legend-development"></i>Transformaciones</span>
+          </div>
+        </div>
+
+        <div id="temporalRail" class="temporal-rail" role="group" aria-label="Mapa temporal interactivo">
+          <div class="temporal-density" id="temporalDensity" aria-hidden="true"></div>
+          <div class="temporal-verified" id="temporalVerified"></div>
+          <div class="temporal-events" id="temporalEvents"></div>
+          <div class="temporal-developments" id="temporalDevelopments"></div>
+          <div id="temporalCursor" class="temporal-cursor" aria-hidden="true"><i></i></div>
+        </div>
+
+        <div class="temporal-nav-foot">
+          <button id="prevTemporalHitBtn" class="temporal-step" type="button" aria-label="Ir al hito histórico anterior">← <span>Hito anterior</span></button>
+          <div id="temporalFocus" class="temporal-focus" role="status" aria-live="polite">
+            <span>Explora la línea</span>
+            <strong>Los hitos aparecerán aquí</strong>
+          </div>
+          <button id="nextTemporalHitBtn" class="temporal-step" type="button" aria-label="Ir al hito histórico siguiente"><span>Hito siguiente</span> →</button>
+        </div>
+      </section>
 
       <div class="time-tools">
         <div class="go-year">
@@ -413,6 +445,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.9"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.10"></script>
 </body>
 </html>

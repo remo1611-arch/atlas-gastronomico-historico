@@ -130,6 +130,33 @@ Pendiente en G2:
 
 ---
 
+## G2-E — Navegador temporal museográfico
+**Estado: IMPLEMENTADO · alpha.10**
+
+- densidad de evidencias;
+- occurrences verified destacadas;
+- events como intervalos;
+- developments como intervalos;
+- cursor sincronizado;
+- hito anterior/siguiente;
+- preview del hito enfocado;
+- filtros/búsqueda aplicados;
+- mobile targets ampliados;
+- reduced-motion.
+
+Esta fase se adelanta antes de G2-D porque la usabilidad temporal debía quedar resuelta antes de aumentar el corpus.
+
+## G2-D — Técnica canónica + primer disputed
+**Estado: PENDIENTE**
+
+Objetivos:
+- nixtamalización vinculada al maíz;
+- primera técnica culinaria canónica conectada longitudinalmente;
+- primer caso `certainty: disputed`;
+- validar presentación de desacuerdo historiográfico.
+
+---
+
 ## G3 — Evidencia y precisión
 **No iniciado**
 

@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.9
+**Versión:** 0.1.0-alpha.10
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -167,3 +167,14 @@ Alpha.9 activa el segundo recorrido longitudinal automático:
 - adopciones africana y cantábrica.
 
 El motor de recorridos admite ahora occurrences, events y developments.
+
+## Navegador temporal
+
+Alpha.10 añade una lectura visual del corpus sobre la línea temporal:
+- densidad de evidencias;
+- hitos verificados;
+- events;
+- transformaciones;
+- hito anterior/siguiente.
+
+El objetivo es que el usuario pueda descubrir dónde existe contenido histórico sin llenar el timeline de etiquetas o puntos.

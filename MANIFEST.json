@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.9",
+  "version": "0.1.0-alpha.10",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5626,
-      "sha256": "9fc0f4b88e5e895cf42911d7116d343a598019662fcb035924224e2869b89a32"
+      "bytes": 6338,
+      "sha256": "f64ed440bbd32073d78ca381a9c976b14ddf20ef687dce1cf91dfbdb2f31e0d3"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4343,
-      "sha256": "8f48b82399fc8e5ba02ff483d7a2a820fa856eb74cc8541a831332b4962f90e6"
+      "bytes": 4672,
+      "sha256": "16c5e39d00833a6d947c75c95718b6742b71b594b4964d80550b527fd3585836"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -36,8 +36,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 50816,
-      "sha256": "dcebec76b298b96023c68fcbc4c27c7d2f4944431ffa1f59407e575d108d815e"
+      "bytes": 60491,
+      "sha256": "3ff53a9eed872bb0bb835b1dde29f7598bdf507e491d78881a45680b3164d249"
     },
     {
       "path": "data/basemap/world_110m.geojson",
@@ -46,8 +46,8 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 517,
-      "sha256": "4a88ca4eef1f6b43cf58098784341531aa971b9f0f3a4f0ed5022bd89e89ee2e"
+      "bytes": 518,
+      "sha256": "ab119bacd5dcbed9a6edbdb076551543192a83bc993014671e96e0ba6903ae7a"
     },
     {
       "path": "data/contexts.json",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 5448,
-      "sha256": "2ecf368641f11102df6ad8224f453561ffdc9f4409dbd5d784b1becdb88526ce"
+      "bytes": 6294,
+      "sha256": "9cf8c891c74d66fd80817c321ac31cdfa7ef5483512ec5bb2451c5769f118e16"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -106,13 +106,13 @@
     },
     {
       "path": "docs/DATA_MODEL.md",
-      "bytes": 9265,
-      "sha256": "3e2fe27b643070334fdb404b2a78d888ada0ca3b1f82f896a63b338392c286ec"
+      "bytes": 10082,
+      "sha256": "3b14e38f5e1e042441dcb4572764f23ae6c0ad443f58ad88fa6e58fc4697c841"
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 6380,
-      "sha256": "d27dd2e82123e73bdcfe55f69ea4d7efd8e452f36dec24ecad784f3a8c8a9143"
+      "bytes": 7448,
+      "sha256": "3f6d3b062674e5a6ee83e6a152f448e061e13a3a13d32da8b2257d440edaaec5"
     },
     {
       "path": "docs/G2_PILOT.md",
@@ -146,8 +146,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 1838,
-      "sha256": "892d922ebaf6cbc19e79aa3e0d6033797c0b4b8aa662a407f3f53021bb12dbea"
+      "bytes": 2130,
+      "sha256": "bf4a359ccb079f957fad90ad968572bb1d424e049f4030d0866bfb097c37d281"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -156,18 +156,18 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1610,
-      "sha256": "19d974f163917cd19a5cd4fc932b2ec23640d6f908dc8921821c82b49be4a950"
+      "bytes": 1608,
+      "sha256": "2060e4fd2356e03aba43dbe83af288a8a96cdabcfc1b4d60f2804ad30fedc7b1"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 3933,
-      "sha256": "2df99fd4e24b588139d11ffec387bf5319001a9d62c3c77efbe6011b0f90976a"
+      "bytes": 4453,
+      "sha256": "90395e408373aee28b7d4bf36783f8333cf08129048cfec9907656007e183f13"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 4457,
-      "sha256": "0cca1e4a768962dd803e60b3900f7fb3de28afcbfd7c5702dd6c81df9d1ef5c3"
+      "bytes": 5224,
+      "sha256": "e3765bb418e5606d8aff60294ab8706408cbaaec397195316f1875fc14dcc1b4"
     },
     {
       "path": "docs/SOURCE_POLICY.md",
@@ -176,18 +176,18 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1697,
-      "sha256": "d6487a86c6c58603c84f71052ddb0397d99b869c4d58091a5b30066a9b9214aa"
+      "bytes": 1175,
+      "sha256": "919ed93bd3637e35b6bb1db5dcfb5e613bc48454b2745656d5cfdc3e0c54e522"
     },
     {
       "path": "index.html",
-      "bytes": 19125,
-      "sha256": "4330980421ee6fd9f2316dd8a2ceeee30ad0915ff82519b6067d94ecdcf66913"
+      "bytes": 20911,
+      "sha256": "00709ce503f8dcc67f53c90dfb6b64183ef30dc04ee0f53c406b02c3cc4cd011"
     },
     {
       "path": "js/app.js",
-      "bytes": 47344,
-      "sha256": "9a3f007d09a33a2301df50cd7743cab906c9aa0a27d41fc2bb8503af803b0aa5"
+      "bytes": 58726,
+      "sha256": "f2a04f54d91898013b5da738b31057dfb21afce6a819bdf2d01a6a7c5e7fa5e2"
     },
     {
       "path": "js/core.js",
@@ -236,8 +236,8 @@
     },
     {
       "path": "tools/build_manifest.py",
-      "bytes": 626,
-      "sha256": "a5680e9bd3b67b6de9fd0194f8ba872579c07acce0021e13db942d5a06ec1178"
+      "bytes": 627,
+      "sha256": "33627a2a77e2e97d29a830c16a281521580851f86642cad92797a98d9289f7e1"
     },
     {
       "path": "tools/serve.py",
@@ -320,9 +320,14 @@
       "sha256": "fc026fcc5f5bb7502c4daaeb75f283e8595e8acc84a9ebc235172b8107476e0c"
     },
     {
+      "path": "tools/test_temporal_navigator.py",
+      "bytes": 2307,
+      "sha256": "edfcd16586aea2e24b369ea6322da88d089d890eecc77c94a9363fcaacadd900"
+    },
+    {
       "path": "tools/test_ui_contract.py",
-      "bytes": 1644,
-      "sha256": "b6164fc5ee108a0371ab6dea64841f572bba040d87a1628b3c166633ca0f466f"
+      "bytes": 1831,
+      "sha256": "1222467cf34e41fe535fc17fdec00c451456c6ffb88d82ce3a4266121f6ef946"
     },
     {
       "path": "tools/test_verified_gate.py",

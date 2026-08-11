@@ -50,3 +50,9 @@ Continuación alpha.9:
 - subjectHistoryItems combina occurrence/event/development;
 - siguiente candidato de contrato: nixtamalización canónica + relación con maíz;
 - antes de G3 probar al menos un caso disputed.
+
+Continuación alpha.10:
+- navegador temporal museográfico implementado;
+- no sustituirlo por una fila de puntos/labels;
+- siguiente fase: G2-D nixtamalización + primer disputed;
+- comprobar en dispositivo real densidad, bandas de events y anterior/siguiente antes de cambiar su estética.

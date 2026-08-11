@@ -1,23 +1,23 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.9';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.10';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.9',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.9',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.9',
-  places:'./data/places.json?v=0.1.0-alpha.9',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.9',
-  events:'./data/events.json?v=0.1.0-alpha.9',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.9',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.9',
-  developments:'./data/developments.json?v=0.1.0-alpha.9',
-  sources:'./data/sources.json?v=0.1.0-alpha.9',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.9'
+  config:'./data/config.json?v=0.1.0-alpha.10',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.10',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.10',
+  places:'./data/places.json?v=0.1.0-alpha.10',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.10',
+  events:'./data/events.json?v=0.1.0-alpha.10',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.10',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.10',
+  developments:'./data/developments.json?v=0.1.0-alpha.10',
+  sources:'./data/sources.json?v=0.1.0-alpha.10',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.10'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
   year:1500,search:'',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
-  selectedOccurrence:null,historySubject:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -258,6 +258,350 @@ function renderMapCoverage(list){
 
 const warnedUnmapped=new Set();
 
+
+function subjectMatchesTemporalFilters(subject){
+  if(!subject||subject.status==='deprecated') return false;
+  if(s.category!=='all' && subject.type!==s.category) return false;
+
+  const q=norm(s.search.trim());
+  if(q){
+    const haystack=norm([
+      subject.name,
+      subject.summary,
+      ...(subject.aliases||[]),
+      ...(subject.tags||[])
+    ].join(' '));
+    if(!haystack.includes(q)) return false;
+  }
+  return true;
+}
+
+function temporalCorpusItems(){
+  const out=[];
+
+  if(s.layers.gastronomy){
+    for(const o of s.occurrences){
+      if(o.status!=='reviewed'&&o.status!=='verified') continue;
+      const subject=subj(o.subjectRef);
+      if(!subjectMatchesTemporalFilters(subject)) continue;
+      if(s.evidence!=='all' && o.evidenceType!==s.evidence) continue;
+      if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) continue;
+
+      out.push({
+        key:`occurrence:${o.id}`,
+        kind:'occurrence',
+        period:o.period,
+        status:o.status,
+        certainty:o.certainty,
+        title:subject.name,
+        subtitle:`${OCC_LABELS[o.occurrenceType]||o.occurrenceType} · ${place(o.placeRef)?.name||'Lugar sin resolver'}`,
+        item:o
+      });
+    }
+  }
+
+  for(const e of s.events){
+    if(e.status!=='reviewed'&&e.status!=='verified') continue;
+    const related=(e.subjectRefs||[]).map(subj).filter(Boolean);
+    if(s.category!=='all' && !related.some(subject=>subject.type===s.category)) continue;
+
+    const q=norm(s.search.trim());
+    if(q){
+      const haystack=norm([
+        e.title,e.summary,
+        ...related.map(x=>x.name),
+        ...related.flatMap(x=>x.tags||[])
+      ].join(' '));
+      if(!haystack.includes(q)) continue;
+    }
+
+    out.push({
+      key:`event:${e.id}`,
+      kind:'event',
+      period:e.period,
+      status:e.status,
+      certainty:e.certainty,
+      title:e.title,
+      subtitle:EVENT_LABELS[e.eventType]||e.eventType||'Proceso histórico',
+      item:e
+    });
+  }
+
+  for(const d of s.developments){
+    if(d.status!=='reviewed'&&d.status!=='verified') continue;
+    const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
+    if(safety ? !s.layers.safety : !s.layers.developments) continue;
+
+    const related=(d.impactSubjectRefs||[]).map(subj).filter(Boolean);
+    if(s.category!=='all' && related.length && !related.some(subject=>subject.type===s.category)) continue;
+
+    const q=norm(s.search.trim());
+    if(q){
+      const haystack=norm([
+        d.name,d.summary,
+        ...related.map(x=>x.name),
+        ...related.flatMap(x=>x.tags||[])
+      ].join(' '));
+      if(!haystack.includes(q)) continue;
+    }
+
+    out.push({
+      key:`development:${d.id}`,
+      kind:'development',
+      period:d.period,
+      status:d.status,
+      certainty:d.certainty,
+      title:d.name,
+      subtitle:developmentTypeLabel(d.type),
+      item:d
+    });
+  }
+
+  return out.sort((a,b)=>{
+    if(a.period.start!==b.period.start) return a.period.start-b.period.start;
+    if(a.period.end!==b.period.end) return a.period.end-b.period.end;
+    return a.kind.localeCompare(b.kind);
+  });
+}
+
+function temporalOrdinalBounds(){
+  return {
+    min:toOrdinal(s.config.timeline.minYear),
+    max:toOrdinal(s.config.timeline.maxYear)
+  };
+}
+
+function temporalPercent(year){
+  const {min,max}=temporalOrdinalBounds();
+  const value=Math.max(min,Math.min(max,toOrdinal(year)));
+  return ((value-min)/(max-min))*100;
+}
+
+function temporalRepresentativeYear(entry){
+  return entry.period.start;
+}
+
+function temporalDistanceToYear(entry,year=s.year){
+  return distance(entry.period,year);
+}
+
+function temporalBins(items){
+  const occurrences=items.filter(x=>x.kind==='occurrence');
+  const width=$('#temporalRail')?.clientWidth||window.innerWidth||800;
+  const count=width<430?38:width<800?68:120;
+  const bins=Array.from({length:count},()=>({count:0,verified:0,uncertain:0,items:[]}));
+
+  for(const entry of occurrences){
+    const pct=temporalPercent(temporalRepresentativeYear(entry));
+    const index=Math.max(0,Math.min(count-1,Math.floor((pct/100)*count)));
+    const bin=bins[index];
+    bin.count++;
+    if(entry.status==='verified') bin.verified++;
+    if(entry.certainty&&entry.certainty!=='high') bin.uncertain++;
+    bin.items.push(entry);
+  }
+  return bins;
+}
+
+function temporalItemAria(entry){
+  const when=entry.period.display||`${formatYear(entry.period.start)}–${formatYear(entry.period.end)}`;
+  const state=statusMeta(entry.status).label;
+  return `${entry.title}. ${entry.subtitle}. ${when}. ${state}.`;
+}
+
+function renderTemporalDensity(items){
+  const box=$('#temporalDensity');
+  if(!box) return;
+  const bins=temporalBins(items);
+  const maxCount=Math.max(1,...bins.map(x=>x.count));
+
+  box.innerHTML=bins.map((bin,index)=>{
+    if(!bin.count) return `<i class="density-bin empty" style="--bin:${index};--bins:${bins.length}"></i>`;
+    const strength=Math.max(.18,bin.count/maxCount);
+    const className=[
+      'density-bin',
+      bin.verified?'has-verified':'',
+      bin.uncertain?'has-uncertain':''
+    ].filter(Boolean).join(' ');
+    return `<button class="${className}" type="button"
+      data-temporal-bin="${index}"
+      aria-label="${bin.count} ${bin.count===1?'evidencia':'evidencias'} en este tramo"
+      style="--bin:${index};--bins:${bins.length};--density:${strength.toFixed(3)}">
+      <i></i>
+    </button>`;
+  }).join('');
+
+  $$('[data-temporal-bin]').forEach(button=>{
+    const bin=bins[Number(button.dataset.temporalBin)];
+    button.addEventListener('click',()=>{
+      if(!bin?.items?.length) return;
+      const nearest=bin.items
+        .slice()
+        .sort((a,b)=>temporalDistanceToYear(a)-temporalDistanceToYear(b))[0];
+      focusTemporalItem(nearest,true);
+    });
+  });
+}
+
+function renderTemporalVerified(items){
+  const box=$('#temporalVerified');
+  if(!box) return;
+  const verified=items.filter(x=>x.kind==='occurrence'&&x.status==='verified');
+
+  box.innerHTML=verified.map(entry=>{
+    const left=temporalPercent(temporalRepresentativeYear(entry));
+    const uncertain=entry.certainty&&entry.certainty!=='high';
+    return `<button type="button"
+      class="temporal-mark verified-mark ${uncertain?'uncertain':''}"
+      data-temporal-key="${esc(entry.key)}"
+      style="--left:${left.toFixed(4)}%"
+      aria-label="${esc(temporalItemAria(entry))}">
+      <i></i>
+    </button>`;
+  }).join('');
+}
+
+function renderTemporalRanges(items,kind,containerId){
+  const box=$(containerId);
+  if(!box) return;
+  const entries=items.filter(x=>x.kind===kind);
+
+  box.innerHTML=entries.map(entry=>{
+    const start=temporalPercent(entry.period.start);
+    const end=temporalPercent(entry.period.end);
+    const left=Math.min(start,end);
+    const rawWidth=Math.abs(end-start);
+    const width=Math.max(.55,rawWidth);
+    const sm=statusMeta(entry.status);
+    const uncertain=entry.certainty&&entry.certainty!=='high';
+
+    return `<button type="button"
+      class="temporal-range ${kind}-range ${entry.status==='verified'?'verified':''} ${uncertain?'uncertain':''}"
+      data-temporal-key="${esc(entry.key)}"
+      style="--left:${left.toFixed(4)}%;--width:${width.toFixed(4)}%"
+      aria-label="${esc(temporalItemAria(entry))}">
+      <i></i>
+      <span>${esc(entry.title)}</span>
+    </button>`;
+  }).join('');
+}
+
+function bindTemporalMarks(items){
+  const lookup=new Map(items.map(x=>[x.key,x]));
+  $$('[data-temporal-key]').forEach(button=>{
+    const entry=lookup.get(button.dataset.temporalKey);
+    if(!entry) return;
+
+    button.addEventListener('click',()=>focusTemporalItem(entry,true));
+    button.addEventListener('mouseenter',()=>previewTemporalItem(entry));
+    button.addEventListener('focus',()=>previewTemporalItem(entry));
+  });
+}
+
+function currentTemporalCandidate(items){
+  const activeNow=items.filter(entry=>active(entry.period,s.year));
+  if(activeNow.length){
+    return activeNow.slice().sort((a,b)=>{
+      const rank=x=>x.kind==='event'?0:x.kind==='development'?1:2;
+      const status=x=>x.status==='verified'?0:1;
+      return rank(a)-rank(b)||status(a)-status(b);
+    })[0];
+  }
+
+  return items
+    .slice()
+    .sort((a,b)=>{
+      const da=temporalDistanceToYear(a);
+      const db=temporalDistanceToYear(b);
+      if(da!==db) return da-db;
+      return (a.status==='verified'?0:1)-(b.status==='verified'?0:1);
+    })[0]||null;
+}
+
+function previewTemporalItem(entry){
+  const box=$('#temporalFocus');
+  if(!box||!entry) return;
+  const sm=statusMeta(entry.status);
+  const when=entry.period.display||`${formatYear(entry.period.start)}–${formatYear(entry.period.end)}`;
+  const kind=entry.kind==='occurrence'?'Evidencia':entry.kind==='event'?'Evento':'Transformación';
+
+  box.innerHTML=`
+    <span>${kind} · ${esc(when)} · <em class="${esc(sm.className)}">${esc(sm.label)}</em></span>
+    <strong>${esc(entry.title)}</strong>
+    <small>${esc(entry.subtitle)}</small>
+  `;
+}
+
+function focusTemporalItem(entry,jump=false){
+  if(!entry) return;
+  s.temporalSelection=entry.key;
+  previewTemporalItem(entry);
+
+  if(jump){
+    setYear(temporalRepresentativeYear(entry));
+    showToast(`${entry.title} · ${entry.period.display||formatYear(entry.period.start)}`);
+  }
+}
+
+function renderTemporalCursor(){
+  const cursor=$('#temporalCursor');
+  if(!cursor) return;
+  cursor.style.setProperty('--left',`${temporalPercent(s.year).toFixed(4)}%`);
+}
+
+function renderTemporalNavigator(){
+  const items=temporalCorpusItems();
+  renderTemporalDensity(items);
+  renderTemporalVerified(items);
+  renderTemporalRanges(items,'event','#temporalEvents');
+  renderTemporalRanges(items,'development','#temporalDevelopments');
+  bindTemporalMarks(items);
+  renderTemporalCursor();
+
+  const selected=s.temporalSelection
+    ? items.find(x=>x.key===s.temporalSelection)
+    : null;
+  previewTemporalItem(selected||currentTemporalCandidate(items));
+
+  const currentOrdinal=toOrdinal(s.year);
+  const before=items
+    .filter(x=>toOrdinal(temporalRepresentativeYear(x))<currentOrdinal)
+    .sort((a,b)=>toOrdinal(temporalRepresentativeYear(b))-toOrdinal(temporalRepresentativeYear(a)))[0];
+  const after=items
+    .filter(x=>toOrdinal(temporalRepresentativeYear(x))>currentOrdinal)
+    .sort((a,b)=>toOrdinal(temporalRepresentativeYear(a))-toOrdinal(temporalRepresentativeYear(b)))[0];
+
+  const prev=$('#prevTemporalHitBtn');
+  const next=$('#nextTemporalHitBtn');
+  if(prev){
+    prev.disabled=!before;
+    prev.dataset.temporalTarget=before?.key||'';
+    prev.title=before?`${before.title} · ${before.period.display||formatYear(before.period.start)}`:'No hay hitos anteriores';
+  }
+  if(next){
+    next.disabled=!after;
+    next.dataset.temporalTarget=after?.key||'';
+    next.title=after?`${after.title} · ${after.period.display||formatYear(after.period.start)}`:'No hay hitos posteriores';
+  }
+}
+
+function stepTemporalHit(direction){
+  const items=temporalCorpusItems();
+  const current=toOrdinal(s.year);
+  const candidates=items
+    .filter(entry=>{
+      const ord=toOrdinal(temporalRepresentativeYear(entry));
+      return direction<0?ord<current:ord>current;
+    })
+    .sort((a,b)=>{
+      const oa=toOrdinal(temporalRepresentativeYear(a));
+      const ob=toOrdinal(temporalRepresentativeYear(b));
+      return direction<0?ob-oa:oa-ob;
+    });
+
+  if(candidates[0]) focusTemporalItem(candidates[0],true);
+}
+
 function setYear(year){
   s.year=Math.max(s.config.timeline.minYear,Math.min(s.config.timeline.maxYear,year===0?1:year));
 
@@ -276,6 +620,7 @@ function setYear(year){
 
 function render(){
   const list=occVisible();
+  renderTemporalNavigator();
   renderMetrics(list);
   renderCategorySummary(list);
   renderList(list);

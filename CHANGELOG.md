@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.10 — 2026-08-11
+
+### Navegador temporal
+- nueva banda museográfica alineada con el slider;
+- densidad adaptativa de evidencias;
+- occurrences verified destacadas;
+- events como rangos;
+- developments como rangos;
+- cursor de año sincronizado;
+- hito anterior/siguiente;
+- preview contextual.
+
+### Escalabilidad
+- 38 bins móvil;
+- 68 bins tablet;
+- 120 bins escritorio;
+- seed/deprecated excluidos.
+
+### UX móvil
+- target táctil ampliado sin agrandar visualmente los hitos;
+- labels persistentes evitados;
+- reduced-motion.
+
+### Filtros
+- timeline respeta búsqueda, categoría, evidencia, tipo de occurrence y capas.
+
+### Datos
+- sin nuevos datos históricos;
+- corpus alpha.9 preservado.
+
 ## 0.1.0-alpha.9 — 2026-08-11
 
 ### Historia del maíz
