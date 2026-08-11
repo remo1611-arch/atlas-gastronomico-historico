@@ -122,3 +122,13 @@ Estado de continuación:
 - Próxima fase: expansión editorial controlada del corpus antes de G4.
 - Priorizar historias coherentes, buena procedencia espacial y densidad temporal.
 - Objetivo orientativo antes de redes complejas: 50–70 occurrences de alta calidad.
+
+Estado de continuación:
+- G2 CLOSED.
+- G3 CLOSED.
+- E1 editorial expansion IN PROGRESS.
+- Corpus: 30 occurrences / 86 sources.
+- Historia del pan: 7 occurrences + Chorleywood.
+- No iniciar G4 todavía.
+- Elegir próximo dossier por rendimiento histórico: periodos nuevos + territorios nuevos + fuentes fuertes + conexiones futuras.
+- Mantener Focused Exploration: no añadir UI técnica.

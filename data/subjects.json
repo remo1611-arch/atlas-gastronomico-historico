@@ -113,19 +113,35 @@
   },
   {
     "id": "bread_like_flatbread",
-    "name": "Producto tipo pan plano",
+    "name": "Pan",
     "type": "preparation",
-    "summary": "Preparación cereal/tubérculo procesada y cocinada; el registro de Shubayqa 1 documenta productos semejantes a panes planos antes del establecimiento de la agricultura.",
+    "summary": "Familia histórica de preparaciones de masas cerealistas cocidas. El Atlas conserva el término prudente «producto tipo pan» cuando la evidencia arqueológica no permite equiparar directamente un resto prehistórico con categorías modernas de pan.",
     "aliases": [
+      "pan",
+      "bread",
+      "pan plano",
+      "flatbread",
+      "producto tipo pan",
       "pan plano prehistórico"
     ],
     "tags": [
       "cereal",
       "pan",
-      "procesado"
+      "procesado",
+      "panificación",
+      "masa",
+      "horneado",
+      "molienda"
     ],
     "sourceRefs": [
-      "src_shubayqa_bread_pnas_2018"
+      "src_shubayqa_bread_pnas_2018",
+      "src_catalhoyuk_cereal_meals_2017",
+      "src_parkhaus_opera_bread_2017",
+      "src_kulluoba_bread_2026",
+      "src_ain_sukhna_bread_moulds_2020",
+      "src_saint_memmie_flatbread_2015",
+      "src_assize_bread_legal_history_2013",
+      "src_chorleywood_bread_process_1966"
     ],
     "status": "reviewed"
   },

@@ -4,74 +4,74 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.19
+0.1.0-alpha.20
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- **G3: CERRADO.**
-- G4: pendiente, no iniciar todavía a gran escala.
+- G3: CERRADO.
+- G4: NO INICIADO.
+- **E1 · expansión editorial: EN CURSO.**
 
-## Corpus histórico
+## Corpus
 - 11 subjects;
-- 24 places;
-- 24 occurrences;
+- 30 places;
+- **30 occurrences**;
 - 1 event;
 - 1 relationship;
 - 7 contexts;
-- 6 developments;
-- 75 sources.
+- **7 developments**;
+- **86 sources**.
 
 ## Cobertura espacial
-Alpha.18:
-- 6 occurrences con punto;
-- 18 sin punto.
+- 16 occurrences con punto;
+- 14 sin punto.
 
-Alpha.19:
-- **15 occurrences con punto**;
-- **9 sin punto**.
+G3-D permanece intacto:
+- 18 decisiones originales;
+- 9 mapped;
+- 9 unmapped dentro del subconjunto auditado.
 
-Auditoría de los 18 casos:
-- 9 point_documented;
-- 5 broad_region;
-- 4 specific_site_unresolved.
+Los 5 unmapped adicionales proceden del nuevo dossier del pan.
 
-Los 9 registros sin punto restantes son intencionales y auditados.
+## Historias longitudinales principales
+- vino;
+- maíz;
+- aceite de oliva;
+- **pan**.
+
+## Historia del pan
+Subject estable:
+`bread_like_flatbread`
+
+Etiqueta:
+`Pan`
+
+Contenido:
+- 7 occurrences;
+- 1 development;
+- ca. 12.450 a.C. → 1961.
+
+No existe lógica JS específica para pan.
 
 ## Contrato
-Schemas y taxonomy siguen idénticos a G2 CLOSED.
-
-Fingerprint G2:
+G2 fingerprint:
 **9/9**.
 
-## G3
-### A
-Evidencia y precisión.
+G3 sigue cerrado.
 
-### B
-Cronología y disputed.
+Los gates de G3 ahora son growth-safe:
+protegen el baseline sin impedir crecimiento editorial.
 
-### C
-Focused Exploration.
+## Próxima prioridad
+Seguir E1 hasta aproximarse a 50–70 occurrences.
 
-### D
-Auditoría espacial y cierre.
+No iniciar G4 todavía.
 
-## UX
-La experiencia principal permanece:
-
-**Tiempo → Mapa → En esta fecha**
-
-Los detalles técnicos se muestran bajo demanda.
-
-## Decisión de siguiente fase
-No añadir más UI técnica.
-
-Antes de redes/difusión complejas:
-- ampliar corpus de forma editorial;
-- priorizar historias coherentes;
-- aumentar densidad espacial y temporal;
-- objetivo orientativo: 50–70 occurrences de alta calidad.
-
-Después se reevaluará G4.
+Elegir el siguiente dossier por:
+- calidad documental;
+- densidad espacial;
+- densidad temporal;
+- utilidad narrativa;
+- futuras conexiones de difusión/comercio.

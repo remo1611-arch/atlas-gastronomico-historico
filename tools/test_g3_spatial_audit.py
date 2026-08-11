@@ -70,10 +70,17 @@ for d in decisions:
     if d.get("class")=="broad_region" and places[d["placeRef"]].get("point"):
         errors.append(f"centroide indebido en región: {d['placeRef']}")
 
+# The original G3-D audit is immutable, but the corpus may grow afterwards.
+audited_refs={d["occurrenceRef"] for d in decisions}
+audited_mapped=sum(1 for oid in audited_refs if places[occ[oid]["placeRef"]].get("point"))
+audited_unmapped=len(audited_refs)-audited_mapped
+if (audited_mapped,audited_unmapped)!=(9,9):
+    errors.append(f"resultado del subconjunto auditado {(audited_mapped,audited_unmapped)} != (9,9)")
+
 runtime_mapped=sum(1 for o in occ.values() if places[o["placeRef"]].get("point"))
 runtime_unmapped=len(occ)-runtime_mapped
-if (runtime_mapped,runtime_unmapped)!=(15,9):
-    errors.append(f"cobertura runtime {(runtime_mapped,runtime_unmapped)} != (15,9)")
+if runtime_mapped<15:
+    errors.append("la expansión posterior ha reducido la cobertura cartográfica lograda en G3")
 
 # G2 schemas/taxonomy remain frozen.
 for rel,expected_hash in fingerprint["files"].items():
@@ -89,5 +96,6 @@ if errors:
 print("G3 SPATIAL AUDIT: PASS")
 print("Decisions: 18")
 print("point_documented: 9 · broad_region: 5 · specific_site_unresolved: 4")
-print("Runtime coverage: 15 mapped · 9 unmapped")
+print(f"Audited baseline: {audited_mapped} mapped · {audited_unmapped} unmapped")
+print(f"Current runtime: {runtime_mapped} mapped · {runtime_unmapped} unmapped")
 print("G2 fingerprint: 9/9")

@@ -310,6 +310,48 @@ Las geometrías regionales se aplazan hasta disponer de casos que justifiquen á
 La siguiente prioridad es expansión editorial controlada antes de redes complejas.
 
 
+## E1 — Expansión editorial controlada
+**Estado: EN CURSO · alpha.20**
+
+Objetivo:
+- pasar progresivamente de 24 a unas 50–70 occurrences de alta calidad;
+- aumentar densidad temporal y espacial;
+- construir historias que funcionen editorialmente;
+- no iniciar redes complejas antes de tener corpus suficiente.
+
+### E1-A — Pan
+**IMPLEMENTADO · alpha.20**
+
+- label pública `Pan` con ID estable;
+- 7 occurrences;
+- 1 development;
+- Shubayqa;
+- Çatalhöyük;
+- Küllüoba;
+- Parkhaus Opéra;
+- Ain Sukhna;
+- Saint-Memmie;
+- regulación medieval inglesa;
+- Chorleywood.
+
+### Siguiente dossier
+Elegir por rendimiento histórico/editorial, no por facilidad de carga.
+
+Candidatos prioritarios:
+- fermentación;
+- azúcar;
+- café;
+- cacao/chocolate;
+- patata.
+
+Se priorizará el dossier que aporte simultáneamente:
+- nuevos periodos;
+- nuevos territorios;
+- conexiones futuras útiles para G4;
+- fuentes primarias académicas/institucionales fuertes.
+
+---
+
 ## G4 — Difusión y redes
 **No iniciado**
 

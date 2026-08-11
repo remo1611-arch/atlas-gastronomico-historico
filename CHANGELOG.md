@@ -1,5 +1,44 @@
 # Changelog
 
+## 0.1.0-alpha.20 — 2026-08-11
+
+### Expansión editorial E1-A
+- primer dossier post-G3: Pan;
+- `bread_like_flatbread` conserva ID y pasa a label pública `Pan`;
+- 6 nuevas occurrences;
+- 1 nuevo development;
+- 6 nuevos places;
+- 11 nuevas sources.
+
+### Historia del pan
+- Shubayqa;
+- Çatalhöyük;
+- Küllüoba;
+- Parkhaus Opéra;
+- Ain Sukhna;
+- Saint-Memmie;
+- regulación inglesa medieval;
+- Chorleywood 1961.
+
+Total:
+- 7 occurrences;
+- 1 transformation;
+- ca. 12.450 a.C. → 1961.
+
+### Cartografía
+- Çatalhöyük incorpora coordenadas UNESCO;
+- no se inventan puntos para los otros nuevos sitios;
+- runtime: 16 mapped / 14 unmapped.
+
+### QA
+- nuevos gates editoriales de pan;
+- G3 spatial/final gates convertidos en baselines compatibles con crecimiento;
+- G2 fingerprint intacto.
+
+### Dirección
+- G4 sigue sin iniciarse;
+- expansión editorial continuará antes de redes complejas.
+
 ## 0.1.0-alpha.19 — 2026-08-11
 
 ### Gate

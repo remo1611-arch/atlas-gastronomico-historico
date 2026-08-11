@@ -399,5 +399,83 @@
       "src_sidebotham_2011_berenike_trade"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "catalhoyuk_east",
+    "name": "Çatalhöyük East",
+    "type": "site",
+    "point": {
+      "lat": 37.6666666667,
+      "lon": 32.8280555556,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_catalhoyuk_unesco_coordinates"
+      ],
+      "note": "Coordenadas publicadas por UNESCO para el bien arqueológico de Çatalhöyük; sirven para situar el yacimiento, no cada fragmento alimentario analizado."
+    },
+    "summary": "Tell neolítico de Anatolia central con ocupación prolongada; los restos cerealistas analizados proceden del montículo oriental.",
+    "sourceRefs": [
+      "src_catalhoyuk_cereal_meals_2017",
+      "src_catalhoyuk_unesco_coordinates"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "zurich_parkhaus_opera",
+    "name": "Zürich · Parkhaus Opéra",
+    "type": "site",
+    "point": null,
+    "summary": "Yacimiento lacustre neolítico excavado bajo el actual Sechseläutenplatz de Zúrich. La capa 13 está fechada dendrocronológicamente entre 3176 y 3153 a.C.",
+    "sourceRefs": [
+      "src_parkhaus_opera_bread_2017",
+      "src_parkhaus_opera_zurich_city"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "kulluoba_hoyuk",
+    "name": "Küllüoba Höyük",
+    "type": "site",
+    "point": null,
+    "summary": "Tell de Anatolia occidental interior, al sureste de Eskişehir, con ocupaciones calcolíticas y de la Edad del Bronce.",
+    "sourceRefs": [
+      "src_kulluoba_bread_2026",
+      "src_kulluoba_excavation_official"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "ain_sukhna_egypt",
+    "name": "Ain Sukhna · Egipto",
+    "type": "site",
+    "point": null,
+    "summary": "Puerto y nodo logístico egipcio del golfo de Suez; el material del Reino Medio permite estudiar tecnología de panificación en moldes.",
+    "sourceRefs": [
+      "src_ain_sukhna_bread_moulds_2020"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "saint_memmie_roman_cemetery",
+    "name": "Saint-Memmie · necrópolis galorromana",
+    "type": "site",
+    "point": null,
+    "summary": "Necrópolis galorromana del noreste de Francia donde se recuperó una galette carbonizada asociada a un depósito funerario.",
+    "sourceRefs": [
+      "src_saint_memmie_flatbread_2015"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "england_bread_assize_reference",
+    "name": "Inglaterra · regulación del pan (referencia)",
+    "type": "region",
+    "point": null,
+    "summary": "Marco territorial para la regulación inglesa medieval del peso, precio y calidad del pan; no representa un único tribunal o mercado.",
+    "sourceRefs": [
+      "src_assize_bread_legal_history_2013",
+      "src_assize_bread_bl_manuscript"
+    ],
+    "status": "reviewed"
   }
 ]

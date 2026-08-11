@@ -268,3 +268,24 @@ La tarjeta principal no repite reviewed/verified, precisión y cartografía comp
 ## ADR-070 — Límite editorial de resultados
 **Aceptada.**
 `En esta fecha` muestra cuatro resultados prioritarios y revela el resto bajo demanda, evitando que el crecimiento del corpus convierta la home en una lista infinita.
+
+## ADR-071 — Pan como etiqueta pública con ID estable
+**Aceptada.**
+`bread_like_flatbread` conserva su ID para no romper referencias, pero su etiqueta pública pasa a `Pan`. La descripción mantiene explícitamente la distinción entre categoría editorial y restos arqueológicos `bread-like`.
+
+## ADR-072 — Dossiers antes que carga masiva
+**Aceptada.**
+La expansión post-G3 se organiza por historias longitudinales coherentes. Alpha.20 prueba el patrón con pan antes de avanzar hacia 50–70 occurrences.
+
+## ADR-073 — Gates cerrados compatibles con crecimiento
+**Aceptada.**
+Los tests de G3 dejan de exigir conteos globales exactos. Protegen sus decisiones y mínimos de cierre, permitiendo crecimiento posterior del corpus.
+
+## ADR-074 — Regulación medieval sin falsa fecha única
+**Aceptada.**
+La Assisa Panis se representa mediante un intervalo 1248–1266 que conserva la evidencia de prácticas anteriores a la fecha impresa convencional de 1266.
+
+## ADR-075 — Chorleywood como development
+**Aceptada.**
+El proceso Chorleywood es una transformación industrial que impacta al subject pan; no se fuerza a occurrence ni se le asigna un lugar histórico único.
+

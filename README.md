@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.19
-**Estado:** G3 cerrado · corpus canónico en expansión
+**Versión:** 0.1.0-alpha.20
+**Estado:** G3 cerrado · expansión editorial controlada E1
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -267,3 +267,19 @@ Alpha.19 cierra la fase de evidencia, precisión y cobertura espacial.
 - G2 fingerprint 9/9 intacto.
 
 La siguiente prioridad es contenido histórico y densidad de exploración, no más UI técnica.
+
+## Expansión editorial E1
+
+Alpha.20 inicia la fase de crecimiento de contenido sin abrir todavía G4.
+
+Primer dossier:
+**Historia del pan**
+
+- 7 evidencias históricas;
+- 1 transformación industrial;
+- ca. 12.450 a.C. → 1961;
+- arqueobotánica, arqueología, cultura material y regulación;
+- Çatalhöyük cartografiado mediante coordenadas UNESCO;
+- sin lógica específica por subject.
+
+El objetivo no es cargar registros aislados, sino construir historias coherentes hasta aproximarnos a 50–70 occurrences de alta calidad.

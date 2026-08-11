@@ -618,5 +618,139 @@
       "src_sidebotham_2011_berenike_trade"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_catalhoyuk_7100_6400_bce",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "catalhoyuk_east",
+    "period": {
+      "start": -7100,
+      "end": -6400,
+      "precision": "range",
+      "display": "ca. 7100–6400 a. C.",
+      "note": "El estudio identifica restos compatibles con pan y masa a lo largo de la ocupación; estas formas predominan en fases tempranas de Çatalhöyük."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "El análisis microestructural de preparaciones cerealistas carbonizadas identifica restos compatibles con pan y masa, mostrando que la panificación formaba parte del repertorio culinario neolítico de Çatalhöyük.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_catalhoyuk_cereal_meals_2017"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_parkhaus_opera_3176_3153_bce",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "zurich_parkhaus_opera",
+    "period": {
+      "start": -3176,
+      "end": -3153,
+      "precision": "range",
+      "display": "3176–3153 a. C.",
+      "note": "La capa 13 está acotada dendrocronológicamente a unos 20–25 años."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Dos objetos carbonizados tipo pan documentan productos planos sin levado elaborados con cebada y trigo; uno contiene además apio, interpretado como posible condimento.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_parkhaus_opera_bread_2017",
+      "src_parkhaus_opera_zurich_city"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_kulluoba_3200_3000_bce",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "kulluoba_hoyuk",
+    "period": {
+      "start": -3200,
+      "end": -3000,
+      "precision": "range",
+      "display": "3200–3000 a. C.",
+      "note": "Datación del pan carbonizado según el estudio arqueométrico de 2026."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeological",
+    "certainty": "high",
+    "summary": "Un pan carbonizado de la Edad del Bronce contiene emmer/escanda y una pequeña cantidad de lenteja. Su microestructura indica masa amasada y deja abierta la posibilidad de levado.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_kulluoba_bread_2026"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_ain_sukhna_moulds_2050_1900_bce",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "ain_sukhna_egypt",
+    "period": {
+      "start": -2050,
+      "end": -1900,
+      "precision": "range",
+      "display": "ca. 2050–1900 a. C.",
+      "note": "Cronología de los moldes cónicos del Reino Medio temprano estudiados en Ain Sukhna."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "material_culture",
+    "certainty": "high",
+    "summary": "Los moldes cónicos de pan de Ain Sukhna permiten reconstruir una tecnología específica de cocción. La arqueología experimental demuestra una chaîne opératoire viable con cereales de bajo gluten y masa fermentada.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_ain_sukhna_bread_moulds_2020"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_saint_memmie_mid_1c",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "saint_memmie_roman_cemetery",
+    "period": {
+      "start": 50,
+      "end": 69,
+      "precision": "range",
+      "display": "mediados del siglo I–69 d. C.",
+      "note": "La estructura funeraria se fecha entre mediados del siglo I y el comienzo del periodo flavio."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Una galette carbonizada de contexto funerario fue elaborada con harina fina de cebada y einkorn o emmer. El análisis indica que aparentemente no fue levada.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_saint_memmie_flatbread_2015"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_assize_england_mid_13c",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "england_bread_assize_reference",
+    "period": {
+      "start": 1248,
+      "end": 1266,
+      "precision": "range",
+      "display": "mediados del siglo XIII; compilación tradicionalmente fechada en 1266",
+      "note": "La fecha 1266 procede de la tradición impresa del estatuto; manuscritos y documentos muestran prácticas de assize anteriores, incluidas referencias de 1248–49 y antes de 1254."
+    },
+    "occurrenceType": "regulation",
+    "evidenceType": "legal",
+    "certainty": "high",
+    "summary": "La regulación inglesa del pan vinculó precio y peso del producto al precio del cereal y estableció categorías y controles sobre la venta. El Atlas conserva la incertidumbre sobre una fecha única de origen del assize.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_assize_bread_legal_history_2013",
+      "src_assize_bread_bl_manuscript"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -673,5 +673,104 @@
     "sourceType": "scholarly_monograph",
     "accessed": "2026-08-11",
     "notes": "Entrada arqueológica de Steven E. Sidebotham; publica Berenike en 23°54.62′ N, 35°28.42′ E."
+  },
+  {
+    "id": "src_catalhoyuk_cereal_meals_2017",
+    "title": "A methodological approach to the study of archaeological cereal meals: a case study at Çatalhöyük East (Turkey)",
+    "publisher": "Vegetation History and Archaeobotany / Springer",
+    "url": "https://doi.org/10.1007/s00334-017-0602-6",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis microestructural de preparaciones cerealistas carbonizadas de Çatalhöyük; identifica materiales compatibles con pan, masa y gachas, con pan/masa predominantes en fases tempranas."
+  },
+  {
+    "id": "src_catalhoyuk_unesco_coordinates",
+    "title": "Neolithic Site of Çatalhöyük",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1405/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Ficha oficial del bien UNESCO; publica N37°40′0″ E32°49′41″ y cronología general del asentamiento."
+  },
+  {
+    "id": "src_parkhaus_opera_bread_2017",
+    "title": "State of the (t)art. Analytical approaches in the investigation of components and production traits of archaeological bread-like objects, applied to two finds from the Neolithic lakeshore settlement Parkhaus Opéra (Zürich, Switzerland)",
+    "publisher": "PLOS ONE",
+    "url": "https://doi.org/10.1371/journal.pone.0182401",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Analiza dos objetos carbonizados tipo pan de la capa 13, fechada dendrocronológicamente entre 3176 y 3153 a.C.; documenta trigo/cebada y un posible condimento de apio."
+  },
+  {
+    "id": "src_parkhaus_opera_zurich_city",
+    "title": "Pfahlbau Parkhaus Opéra",
+    "publisher": "Stadt Zürich",
+    "url": "https://www.stadt-zuerich.ch/de/stadtleben/stadtportraet/zuerichs-geschichte/archaeologie/uwad/unterwasser/parkhaus-opera.html",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Contexto arqueológico institucional del yacimiento Parkhaus Opéra y de la capa 13, datada alrededor de 3165 a.C."
+  },
+  {
+    "id": "src_kulluoba_bread_2026",
+    "title": "Archaeometric analysis of Early Bronze Age bread from Küllüoba Höyük",
+    "publisher": "PLOS ONE",
+    "url": "https://doi.org/10.1371/journal.pone.0344705",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis arqueométrico de un pan carbonizado de Küllüoba datado 3200–3000 a.C.; identifica escanda/emmer y una pequeña cantidad de lenteja, con indicios de masa amasada y posible levado."
+  },
+  {
+    "id": "src_kulluoba_excavation_official",
+    "title": "Küllüoba Kazısı",
+    "publisher": "Küllüoba Excavation Project",
+    "url": "https://www.kulluoba.org/",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-11",
+    "notes": "Sitio oficial de la excavación; describe la localización relativa, dimensiones y secuencia cronológica del tell."
+  },
+  {
+    "id": "src_ain_sukhna_bread_moulds_2020",
+    "title": "The production of bread in conical moulds at the beginning of the Egyptian Middle Kingdom. The contribution of experimental archaeology",
+    "publisher": "Journal of Archaeological Science: Reports",
+    "url": "https://doi.org/10.1016/j.jasrep.2020.102631",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Reexamina material de Ain Sukhna y experimenta una chaîne opératoire para panes en moldes cónicos del Reino Medio temprano, ca. 2050–1900 a.C."
+  },
+  {
+    "id": "src_saint_memmie_flatbread_2015",
+    "title": "Tissue-based analysis of a charred flat bread (galette) from a Roman cemetery at Saint-Memmie (Dép. Marne, Champagne-Ardenne, north-eastern France)",
+    "publisher": "Journal of Archaeological Science",
+    "url": "https://doi.org/10.1016/j.jas.2014.12.014",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Analiza una galette carbonizada de una necrópolis galorromana, fechada entre mediados del siglo I d.C. y el inicio del periodo flavio (69 d.C.)."
+  },
+  {
+    "id": "src_assize_bread_legal_history_2013",
+    "title": "Behind the Ordinance of Labourers: Economic Regulation and Market Control in London before the Black Death",
+    "publisher": "The Journal of Legal History",
+    "url": "https://doi.org/10.1080/01440365.2012.730244",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Discute la cronología de la Assisa Panis et Cervisie: la tradición impresa la fecha en 1266, pero hay evidencia de aplicación del assize antes de 1254."
+  },
+  {
+    "id": "src_assize_bread_bl_manuscript",
+    "title": "Add MS 35179 — Assisa Panis et Ceruisiae and related assizes",
+    "publisher": "British Library Archives and Manuscripts Catalogue",
+    "url": "https://searcharchives.bl.uk/catalog/032-002088580",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Catálogo de manuscrito ca. 1300 que conserva materiales de assize del pan, incluyendo Chester 1260–61 y Nottingham ca. 1248–49."
+  },
+  {
+    "id": "src_chorleywood_bread_process_1966",
+    "title": "Studies on the composition of food: 2. Comparison of the nutrient content of bread made conventionally and by the Chorleywood Bread Process",
+    "publisher": "British Journal of Nutrition / Cambridge University Press",
+    "url": "https://doi.org/10.1079/BJN19660076",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Artículo de 1966 que describe el Chorleywood Bread Process como nuevo método: sustituye 2–4 horas de fermentación en masa por minutos de intensa agitación mecánica en mezcladoras de alta velocidad."
   }
 ]

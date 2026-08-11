@@ -294,3 +294,20 @@ python tools/test_g3_final_gate.py
 - [ ] schemas/taxonomy fingerprint 9/9;
 - [ ] config.project.gate = G3_CLOSED;
 - [ ] G3 final gate PASS.
+
+python tools/test_editorial_expansion_bread.py
+python tools/test_bread_longitudinal_history.py
+
+## E1-A · Pan
+- [ ] subject ID estable;
+- [ ] label pública Pan;
+- [ ] 7 occurrences;
+- [ ] 1 development Chorleywood;
+- [ ] evidence heterogénea;
+- [ ] regulación medieval conserva ambigüedad cronológica;
+- [ ] Çatalhöyük point UNESCO;
+- [ ] ningún lenguaje de origen absoluto;
+- [ ] no JS específico de pan;
+- [ ] G2 fingerprint 9/9;
+- [ ] G3-D baseline intacto;
+- [ ] G3 gates permiten crecimiento sin rebajar controles.

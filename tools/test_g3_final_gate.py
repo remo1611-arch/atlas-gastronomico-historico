@@ -23,8 +23,8 @@ errors=[]
 if cfg.get("project",{}).get("gate")!="G3_CLOSED":
     errors.append("config.project.gate != G3_CLOSED")
 
-# Historical corpus stays stable; only sources and place points grew in G3-D.
-expected_counts={
+# G3 closure is a regression baseline, not a permanent ceiling on corpus growth.
+baseline_min={
     "subjects":11,"places":24,"occurrences":24,"events":1,
     "relationships":1,"contexts":7,"developments":6,"sources":75
 }
@@ -32,8 +32,9 @@ actual_counts={
     "subjects":len(S),"places":len(P),"occurrences":len(O),"events":len(E),
     "relationships":len(R),"contexts":len(C),"developments":len(D),"sources":len(SRC)
 }
-if actual_counts!=expected_counts:
-    errors.append(f"conteos de cierre G3 {actual_counts} != {expected_counts}")
+for key,minimum in baseline_min.items():
+    if actual_counts[key]<minimum:
+        errors.append(f"{key}: regresión por debajo del baseline G3 {actual_counts[key]} < {minimum}")
 
 for rel,expected_hash in fingerprint["files"].items():
     actual=hashlib.sha256((ROOT/rel).read_bytes()).hexdigest()
@@ -80,9 +81,14 @@ for forbidden in [
 if len(audit.get("decisions",[]))!=18:
     errors.append("G3-D spatial audit incompleta")
 pby={x["id"]:x for x in P}
+oby={x["id"]:x for x in O}
+audit_refs={d["occurrenceRef"] for d in audit.get("decisions",[])}
+audit_mapped=sum(1 for oid in audit_refs if pby[oby[oid]["placeRef"]].get("point"))
+if audit_mapped!=9:
+    errors.append(f"G3-D audited mapped occurrences {audit_mapped} != 9")
 mapped=sum(1 for o in O if pby[o["placeRef"]].get("point"))
-if mapped!=15:
-    errors.append(f"G3-D mapped occurrences {mapped} != 15")
+if mapped<15:
+    errors.append(f"cobertura total posterior a G3 retrocedió: {mapped} < 15")
 
 # Anti-regressions.
 for forbidden in [
@@ -112,6 +118,6 @@ if errors:
 
 print("G3 FINAL GATE: PASS")
 print("G3-A/B/C/D complete.")
-print("Corpus: 24 occurrences · 15 mapped · 9 unmapped.")
+print(f"Corpus actual: {len(O)} occurrences · {mapped} mapped · {len(O)-mapped} unmapped.")
 print("Sources:",len(SRC))
 print("G2 frozen contract: 9/9.")

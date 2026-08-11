@@ -13,10 +13,18 @@ unmapped=[
     o for o in occ
     if not places.get(o.get("placeRef"),{}).get("point")
 ]
-expected=sum(1 for d in audit.get("decisions",[]) if d.get("decision")=="remain_unmapped")
+audit_unmapped={
+    d["occurrenceRef"] for d in audit.get("decisions",[])
+    if d.get("decision")=="remain_unmapped"
+}
+runtime_unmapped_ids={o["id"] for o in unmapped}
 
-if len(unmapped)!=expected:
-    errors.append(f"registros sin punto: {len(unmapped)} != auditoría {expected}")
+# The nine G3-D cases must remain unmapped unless a future explicit re-audit
+# supersedes that decision. New editorial records may legitimately add more.
+missing_baseline=sorted(audit_unmapped-runtime_unmapped_ids)
+if missing_baseline:
+    errors.append("casos G3-D dejaron de estar unmapped sin re-auditoría: "+", ".join(missing_baseline))
+expected=len(audit_unmapped)
 
 for needle in [
     'id="unmappedRecordsPanel"',
@@ -40,5 +48,6 @@ if errors:
 
 print("G3 UNMAPPED ACCESS: PASS")
 print("Unmapped public occurrences:",len(unmapped))
-print("Expected by spatial audit:",expected)
+print("G3-D baseline still unmapped:",expected)
+print("Additional post-G3 unmapped:",len(unmapped)-expected)
 print("All remain accessible without invented coordinates.")

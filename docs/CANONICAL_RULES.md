@@ -148,3 +148,11 @@
 111. G3 puede cerrarse con registros sin geometría cuando cada ausencia ha sido auditada y justificada explícitamente.
 112. Tras G3, no se añadirá UI técnica por defecto: el esfuerzo principal pasa a contenido y exploración, manteniendo divulgación progresiva.
 
+113. Tras G3, el crecimiento del corpus se organiza prioritariamente por dossiers históricos coherentes, no por carga masiva de registros aislados.
+114. Un gate cerrado es un baseline de regresión y no un techo numérico permanente para subjects, places, occurrences, developments o sources.
+115. Los registros nuevos sin punto no invalidan la auditoría espacial G3-D; las decisiones de aquella auditoría se protegen sobre su subconjunto original.
+116. Los huecos temporales de una historia se conservan cuando no existe evidencia suficiente; no se añaden hitos débiles para producir continuidad visual.
+117. Un ID estable puede conservar una denominación histórica interna más estrecha que su etiqueta pública si cambiarlo rompería referencias; la ampliación semántica debe documentarse mediante ADR y no ocultar cautelas históricas.
+118. “Pan” puede funcionar como categoría editorial longitudinal, pero cada occurrence debe mantener la terminología arqueológica prudente cuando la identificación sea `bread-like`.
+119. Una historia gastronómica puede combinar evidencia directa del alimento, tecnología de producción, regulación y transformaciones industriales siempre que cada tipo conserve su naturaleza semántica.
+
