@@ -4,38 +4,48 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.1
+0.1.0-alpha.2
 
 ## Decisión
-Reescritura canónica desde cero respecto al Atlas Histórico Mundial anterior.
+Base gastronómica canónica conservada. Alpha.2 rediseña la experiencia pública como museo digital interactivo sin cambiar los contratos `subject`, `occurrence`, `place`, `event`, `relationship` y `source`.
 
 ## Distribución principal
 GitHub Pages.
 
 ## Gate
 - G0: CERRADO.
-- G1: prototipo funcional.
+- G1.1: rediseño editorial/museográfico implementado.
+- G1: pendiente de validación visual real en GitHub Pages y dispositivos.
 - G2+: no iniciados.
 
-## Datos semilla
-- subjects: demostración;
-- places: demostración;
-- occurrences: demostración;
-- events: demostración;
-- relationships: demostración;
-- fuentes históricas: pendientes de G2.
+## Cambios G1.1
+- hero museográfico;
+- línea temporal protagonista;
+- saltos temporales rápidos;
+- mapa mundial de gran formato;
+- color por categorías gastronómicas;
+- filtros en cajón;
+- buscador compacto;
+- resumen “En esta fecha”;
+- ficha lateral tipo exposición;
+- terminología pública no técnica;
+- dark/light;
+- responsive;
+- navegación táctil/teclado;
+- estado provisional visible sin dominar la interfaz.
 
-Todo registro histórico inicial está marcado `seed`.
+## Modelo de datos
+Sin cambios incompatibles respecto a alpha.1.
+
+## Datos
+Los registros históricos siguen en estado `seed` y no se consideran verificados.
 
 ## Próxima acción correcta
-Auditar G1 con el nuevo modelo gastronómico y verificar que:
-- un subject puede tener muchas ocurrencias;
-- los filtros trabajan sobre ocurrencias;
-- el mapa no confunde punto con origen;
-- la interfaz muestra precisión y certeza;
-- GitHub Pages funciona bajo subdirectorio.
+1. validar alpha.2 en GitHub Pages real;
+2. revisar móvil Xiaomi 15;
+3. corregir defectos visuales;
+4. cerrar G1;
+5. iniciar G2 con corpus piloto verificado.
 
 ## Prohibición
-No migrar automáticamente las 12 “civilizaciones” del proyecto anterior.
-No cargar un corpus masivo antes de G2.
-
+No cargar corpus masivo antes de cerrar G1 y validar el contrato con casos reales en G2.

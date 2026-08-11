@@ -38,7 +38,7 @@ for r in rels:
 for p in places:
  pt=p.get("point")
  if pt and not(-90<=pt.get("lat",999)<=90 and -180<=pt.get("lon",999)<=180):errors.append(f"place:{p.get('id')}: coordenadas inválidas")
-required=["index.html","css/app.css","js/core.js","js/app.js","data/config.json","data/taxonomy.json","data/subjects.json","data/places.json","data/occurrences.json","data/events.json","data/relationships.json","data/sources.json","data/basemap/world_110m.geojson",".nojekyll","docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md","docs/ROADMAP.md","docs/GITHUB_PAGES.md"]
+required=["tools/test_ui_contract.py","tools/test_project_pages.py","index.html","css/app.css","js/core.js","js/app.js","data/config.json","data/taxonomy.json","data/subjects.json","data/places.json","data/occurrences.json","data/events.json","data/relationships.json","data/sources.json","data/basemap/world_110m.geojson",".nojekyll","docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md","docs/ROADMAP.md","docs/GITHUB_PAGES.md"]
 for x in required:
  if not(ROOT/x).exists():errors.append("Falta: "+x)
 if errors:

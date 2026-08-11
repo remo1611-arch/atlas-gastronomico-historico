@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.1  
+**Versión:** 0.1.0-alpha.2
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -47,6 +47,19 @@ La razón principal es que un ingrediente, una técnica o un plato no puede mode
 4. `place` — dónde;
 5. `relationship` — cómo se relacionan sujetos;
 6. `source` — qué sustenta la afirmación.
+
+
+## Experiencia pública
+
+Desde alpha.2 la aplicación se diseña como **museo digital interactivo**, no como dashboard técnico:
+
+- mapa y tiempo son protagonistas;
+- las categorías gastronómicas tienen identidad cromática;
+- los filtros técnicos permanecen disponibles pero se ocultan en un cajón;
+- la ficha seleccionada funciona como panel de exposición;
+- los conceptos internos `subject` y `occurrence` no dominan la terminología visible;
+- la interfaz conserva advertencias de provisionalidad y trazabilidad.
+
 
 ## Forma principal de uso
 

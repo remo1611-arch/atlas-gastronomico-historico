@@ -2,119 +2,322 @@
 <html lang="es" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#10121a">
   <title>Atlas Gastronómico Histórico</title>
-  <meta name="description" content="Atlas histórico interactivo de la alimentación y la gastronomía a través del tiempo y el espacio.">
+  <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
   <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
+<div class="ambient ambient-a" aria-hidden="true"></div>
+<div class="ambient ambient-b" aria-hidden="true"></div>
+
 <header class="topbar">
-  <div class="brand">
-    <span class="logo" aria-hidden="true">◉</span>
-    <div><strong>Atlas Gastronómico Histórico</strong><small>0.1.0-alpha.1 · corpus semilla</small></div>
-  </div>
-  <div class="top-actions">
-    <button id="themeBtn" type="button" aria-label="Cambiar tema">☀</button>
-    <button id="fullscreenBtn" type="button" aria-label="Pantalla completa">⛶</button>
-  </div>
+  <a class="brand" href="#inicio" aria-label="Atlas Gastronómico Histórico">
+    <span class="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 48 48"><path d="M24 5c8 8 14 14 14 23a14 14 0 0 1-28 0C10 19 16 13 24 5Z"/><path d="M24 15v22M17 24c5 0 9 4 9 9M31 20c-5 0-9 4-9 9"/></svg>
+    </span>
+    <span class="brand-copy">
+      <strong>Atlas Gastronómico Histórico</strong>
+      <small>Museo digital · <span id="versionLabel">alpha.2</span></small>
+    </span>
+  </a>
+
+  <nav class="top-actions" aria-label="Controles principales">
+    <button id="aboutBtn" class="round-btn text-btn" type="button" aria-controls="aboutDialog">Acerca del atlas</button>
+    <button id="themeBtn" class="round-btn" type="button" aria-label="Cambiar tema">☀</button>
+    <button id="fullscreenBtn" class="round-btn" type="button" aria-label="Pantalla completa">⛶</button>
+  </nav>
 </header>
 
-<main class="shell">
-<section class="timeline panel">
-  <div class="heading">
-    <div><span class="eyebrow">Tiempo</span><h1>¿Qué estaba ocurriendo en la alimentación?</h1></div>
-    <div id="yearDisplay" class="year">1500 d. C.</div>
-  </div>
-
-  <div class="time-buttons">
-    <button data-step="-500">−500</button><button data-step="-100">−100</button>
-    <button data-step="-10">−10</button><button data-step="-1">−1</button>
-    <button id="playBtn" class="play">▶</button>
-    <button data-step="1">+1</button><button data-step="10">+10</button>
-    <button data-step="100">+100</button><button data-step="500">+500</button>
-  </div>
-
-  <input id="yearRange" type="range" aria-label="Línea temporal">
-
-  <div class="go-year">
-    <label for="yearMagnitude">Ir al año</label>
-    <input id="yearMagnitude" type="number" min="1" value="1500">
-    <select id="yearEra" aria-label="Era"><option value="CE">d. C.</option><option value="BCE">a. C.</option></select>
-    <button id="goYearBtn" type="button">Ir</button>
-    <label class="play-step">Reproducción
-      <select id="playStepSelect"></select>
-    </label>
-  </div>
-</section>
-
-<section class="metrics">
-  <article class="metric"><span>Ocurrencias activas</span><strong id="occurrenceCount">0</strong></article>
-  <article class="metric"><span>Sujetos visibles</span><strong id="subjectCount">0</strong></article>
-  <article class="metric"><span>Lugares</span><strong id="placeCount">0</strong></article>
-  <article class="metric"><span>Eventos próximos</span><strong id="eventCount">0</strong></article>
-</section>
-
-<section class="filters panel">
-  <label>Buscar
-    <input id="searchInput" type="search" placeholder="trigo, fermentación, café…">
-  </label>
-  <label>Tipo
-    <select id="subjectTypeFilter"><option value="all">Todos</option></select>
-  </label>
-  <label>Evidencia
-    <select id="evidenceFilter"><option value="all">Todas</option></select>
-  </label>
-  <label>Ocurrencia
-    <select id="occurrenceTypeFilter"><option value="all">Todas</option></select>
-  </label>
-  <label>Etiquetas
-    <select id="labelMode"><option value="auto">Auto</option><option value="all">Todas</option><option value="selected">Seleccionada</option></select>
-  </label>
-  <label class="check"><input id="seedToggle" type="checkbox" checked> Mostrar datos semilla</label>
-  <button id="resetFiltersBtn" type="button">Restablecer</button>
-  <span id="dataStatus" class="status">Cargando…</span>
-</section>
-
-<section class="workspace">
-  <div class="map-panel panel">
-    <div class="heading compact"><div><span class="eyebrow">Espacio</span><h2>Mapa de evidencias</h2></div></div>
-    <div class="map-frame">
-      <svg id="worldMap" viewBox="0 0 1000 500" role="img" aria-label="Mapa mundial con ocurrencias gastronómicas históricas">
-        <g id="basemapLayer"></g><g id="occurrenceLayer"></g>
-      </svg>
-      <div id="mapMessage" class="map-message hidden"></div>
+<main id="inicio" class="museum-shell">
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="kicker">Historia · alimentación · territorio</span>
+      <h1>Viaja por la historia de <em>lo que comemos</em></h1>
+      <p>Explora ingredientes, técnicas, bebidas, productos, evidencias y transformaciones gastronómicas en su tiempo y lugar.</p>
+      <div class="hero-actions">
+        <button id="jumpMapBtn" class="primary-cta" type="button">Explorar el mapa</button>
+        <button id="openFiltersHeroBtn" class="ghost-cta" type="button">Filtrar la historia</button>
+      </div>
     </div>
-    <p class="disclaimer">Los puntos representan <strong>evidencias/ocurrencias</strong> vinculadas a un lugar de referencia. No representan por sí solos el origen de un alimento ni una frontera culinaria.</p>
-  </div>
 
-  <aside class="list-panel panel">
-    <div class="heading compact"><div><span class="eyebrow">En esta fecha</span><h2>Evidencias visibles</h2></div><span id="visibleBadge" class="badge">0</span></div>
-    <div id="occurrenceList" class="occurrence-list"></div>
-  </aside>
-</section>
+    <div class="hero-orbit" aria-hidden="true">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+      <div class="orbit-core">
+        <span>TIEMPO</span>
+        <strong id="heroYear">1500</strong>
+        <small id="heroEra">d. C.</small>
+      </div>
+      <span class="orbit-chip chip-crop">cultivos</span>
+      <span class="orbit-chip chip-drink">bebidas</span>
+      <span class="orbit-chip chip-technique">técnicas</span>
+      <span class="orbit-chip chip-product">productos</span>
+    </div>
+  </section>
 
-<section class="lower">
-  <article class="detail panel">
-    <span class="eyebrow">Subject</span>
-    <div id="subjectDetail"><h2>Selecciona una evidencia</h2><p>Verás aquí el alimento, técnica, bebida, producto o práctica asociada.</p></div>
-  </article>
-  <article class="detail panel">
-    <span class="eyebrow">Evidencia seleccionada</span>
-    <div id="occurrenceDetail"><h2>Sin selección</h2><p>El Atlas distinguirá lugar, intervalo, tipo de evidencia, certeza y fuentes.</p></div>
-  </article>
-</section>
+  <section class="time-gallery museum-card" aria-labelledby="timeTitle">
+    <div class="time-heading">
+      <div>
+        <span class="section-label">01 · Línea temporal</span>
+        <h2 id="timeTitle">¿Qué estaba ocurriendo en la alimentación?</h2>
+      </div>
+      <div class="current-date">
+        <span>Estás en</span>
+        <strong id="yearDisplay">1500 d. C.</strong>
+      </div>
+    </div>
 
-<section class="events panel">
-  <div class="heading compact"><div><span class="eyebrow">Contexto</span><h2>Eventos gastronómicos próximos</h2></div>
-  <label>Ventana <select id="eventWindowSelect"></select></label></div>
-  <div id="eventList" class="event-list"></div>
-</section>
+    <div class="era-shortcuts" aria-label="Saltos temporales">
+      <button type="button" data-jump-year="-9000">Primeras agriculturas</button>
+      <button type="button" data-jump-year="-3000">Mundos antiguos</button>
+      <button type="button" data-jump-year="1">Cambio de era</button>
+      <button type="button" data-jump-year="1000">Año 1000</button>
+      <button type="button" data-jump-year="1492">1492</button>
+      <button type="button" data-jump-year="1800">Industrialización</button>
+      <button type="button" data-jump-year="2026">Actualidad</button>
+    </div>
 
-<section class="governance">
-  <strong>Importante:</strong> los datos históricos de esta alpha están marcados <code>seed</code>. Sirven para probar el contrato gastronómico y no deben interpretarse como cronologías históricas verificadas.
-</section>
+    <div class="timeline-stage">
+      <div class="timeline-controls" aria-label="Desplazamiento temporal">
+        <button type="button" data-step="-500">−500</button>
+        <button type="button" data-step="-100">−100</button>
+        <button type="button" data-step="-10">−10</button>
+        <button type="button" data-step="-1">−1</button>
+        <button id="playBtn" class="play-btn" type="button" aria-label="Reproducir tiempo">▶</button>
+        <button type="button" data-step="1">+1</button>
+        <button type="button" data-step="10">+10</button>
+        <button type="button" data-step="100">+100</button>
+        <button type="button" data-step="500">+500</button>
+      </div>
+
+      <div class="range-shell">
+        <div class="range-glow" aria-hidden="true"></div>
+        <input id="yearRange" type="range" aria-label="Línea temporal">
+      </div>
+
+      <div class="time-tools">
+        <div class="go-year">
+          <label for="yearMagnitude">Ir al año</label>
+          <input id="yearMagnitude" inputmode="numeric" type="number" min="1" value="1500">
+          <select id="yearEra" aria-label="Era"><option value="CE">d. C.</option><option value="BCE">a. C.</option></select>
+          <button id="goYearBtn" type="button">Ir</button>
+        </div>
+
+        <label class="mini-select">Reproducción
+          <select id="playStepSelect"></select>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section class="snapshot" aria-label="Resumen de la fecha">
+    <article class="snapshot-tile tile-evidence">
+      <span class="tile-icon">◉</span>
+      <div><strong id="occurrenceCount">0</strong><span>evidencias activas</span></div>
+    </article>
+    <article class="snapshot-tile tile-food">
+      <span class="tile-icon">✦</span>
+      <div><strong id="subjectCount">0</strong><span>elementos gastronómicos</span></div>
+    </article>
+    <article class="snapshot-tile tile-place">
+      <span class="tile-icon">⌖</span>
+      <div><strong id="placeCount">0</strong><span>lugares representados</span></div>
+    </article>
+    <article class="snapshot-tile tile-event">
+      <span class="tile-icon">↝</span>
+      <div><strong id="eventCount">0</strong><span>procesos próximos</span></div>
+    </article>
+  </section>
+
+  <section id="mapSection" class="explorer-grid">
+    <div class="map-museum museum-card">
+      <div class="map-toolbar">
+        <div>
+          <span class="section-label">02 · Atlas mundial</span>
+          <h2>Mapa de evidencias gastronómicas</h2>
+        </div>
+        <div class="map-actions">
+          <button id="searchToggleBtn" class="toolbar-btn" type="button" aria-controls="quickSearch">⌕ Buscar</button>
+          <button id="filterBtn" class="toolbar-btn accent" type="button" aria-controls="filterDrawer">☷ Filtros</button>
+        </div>
+      </div>
+
+      <div id="quickSearch" class="quick-search hidden">
+        <input id="searchInput" type="search" placeholder="Buscar trigo, vino, café, fermentación…" autocomplete="off">
+        <button id="clearSearchBtn" type="button" aria-label="Borrar búsqueda">×</button>
+      </div>
+
+      <div class="category-legend" id="categoryLegend" aria-label="Categorías gastronómicas">
+        <button type="button" data-category="all" class="legend-pill active"><i></i>Todo</button>
+        <button type="button" data-category="food_species" class="legend-pill cat-crop"><i></i>Especies y cultivos</button>
+        <button type="button" data-category="beverage" class="legend-pill cat-drink"><i></i>Bebidas</button>
+        <button type="button" data-category="culinary_technique" class="legend-pill cat-technique"><i></i>Técnicas</button>
+        <button type="button" data-category="processed_product" class="legend-pill cat-product"><i></i>Productos</button>
+      </div>
+
+      <div class="map-frame">
+        <svg id="worldMap" viewBox="0 0 1000 500" role="img" aria-label="Mapa mundial con evidencias gastronómicas históricas">
+          <defs>
+            <radialGradient id="seaGlow" cx="48%" cy="45%" r="70%">
+              <stop offset="0%" stop-color="rgba(89,127,255,.10)"/>
+              <stop offset="100%" stop-color="rgba(89,127,255,0)"/>
+            </radialGradient>
+          </defs>
+          <rect width="1000" height="500" class="ocean"/>
+          <rect width="1000" height="500" fill="url(#seaGlow)"/>
+          <g id="basemapLayer"></g>
+          <g id="occurrenceLayer"></g>
+        </svg>
+
+        <div class="map-year-badge">
+          <span>Explorando</span>
+          <strong id="mapYearDisplay">1500 d. C.</strong>
+        </div>
+
+        <div class="map-message hidden" id="mapMessage"></div>
+      </div>
+
+      <div class="map-foot">
+        <p><strong>Cómo leer el mapa:</strong> cada punto es una evidencia histórica o una ocurrencia vinculada a un lugar de referencia. No equivale automáticamente al origen del alimento.</p>
+        <button id="methodBtn" type="button">Ver criterio histórico</button>
+      </div>
+    </div>
+
+    <aside class="now-panel museum-card">
+      <div class="now-heading">
+        <div>
+          <span class="section-label">03 · En esta fecha</span>
+          <h2>El mundo alimentario visible</h2>
+        </div>
+        <span id="visibleBadge" class="count-badge">0</span>
+      </div>
+
+      <div id="categorySummary" class="category-summary"></div>
+
+      <div class="evidence-heading">
+        <h3>Registros visibles</h3>
+        <span id="evidenceContext">Selecciona uno para abrir su ficha.</span>
+      </div>
+
+      <div id="occurrenceList" class="evidence-list"></div>
+    </aside>
+  </section>
+
+  <section class="museum-story museum-card">
+    <div class="story-intro">
+      <span class="section-label">04 · Lectura de contexto</span>
+      <h2 id="contextTitle">Un instante de la historia alimentaria</h2>
+      <p id="contextText">El atlas construye esta vista a partir de las evidencias visibles en la fecha seleccionada.</p>
+    </div>
+    <div id="contextHighlights" class="context-highlights"></div>
+  </section>
+
+  <section class="events-section museum-card">
+    <div class="events-heading">
+      <div>
+        <span class="section-label">05 · Procesos y cambios</span>
+        <h2>Qué está ocurriendo alrededor de esta fecha</h2>
+      </div>
+      <label class="mini-select">Ventana temporal
+        <select id="eventWindowSelect"></select>
+      </label>
+    </div>
+    <div id="eventList" class="event-grid"></div>
+  </section>
+
+  <section class="method-note">
+    <div class="method-icon">⚗</div>
+    <div>
+      <strong>Atlas en construcción rigurosa</strong>
+      <p>Los datos de esta alpha son provisionales. El diseño ya distingue evidencia, intervalo, lugar, certeza y fuentes para evitar presentar tradiciones o hipótesis como hechos.</p>
+    </div>
+  </section>
 </main>
+
+<aside id="filterDrawer" class="drawer" aria-hidden="true" aria-labelledby="filterTitle">
+  <div class="drawer-backdrop" data-close-drawer></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div><span class="section-label">Explorar</span><h2 id="filterTitle">Filtros históricos</h2></div>
+      <button class="drawer-close" type="button" data-close-drawer aria-label="Cerrar filtros">×</button>
+    </div>
+
+    <div class="drawer-body">
+      <label class="field">Tipo de elemento
+        <select id="subjectTypeFilter"><option value="all">Todos</option></select>
+      </label>
+
+      <label class="field">Tipo de evidencia
+        <select id="evidenceFilter"><option value="all">Todas</option></select>
+      </label>
+
+      <label class="field">Qué documenta
+        <select id="occurrenceTypeFilter"><option value="all">Todas</option></select>
+      </label>
+
+      <label class="field">Etiquetas del mapa
+        <select id="labelMode">
+          <option value="auto">Automáticas</option>
+          <option value="all">Todas</option>
+          <option value="selected">Solo seleccionada</option>
+        </select>
+      </label>
+
+      <label class="toggle-row">
+        <span><strong>Datos provisionales</strong><small>Mostrar registros seed de demostración.</small></span>
+        <input id="seedToggle" type="checkbox" checked>
+      </label>
+    </div>
+
+    <div class="drawer-footer">
+      <button id="resetFiltersBtn" class="ghost-cta" type="button">Restablecer</button>
+      <button id="applyFiltersBtn" class="primary-cta" type="button">Ver resultados</button>
+    </div>
+  </div>
+</aside>
+
+<aside id="detailDrawer" class="detail-drawer" aria-hidden="true" aria-labelledby="detailTitle">
+  <div class="drawer-backdrop" data-close-detail></div>
+  <div class="detail-panel">
+    <button class="detail-close" type="button" data-close-detail aria-label="Cerrar ficha">×</button>
+
+    <div class="detail-hero">
+      <span id="detailCategory" class="detail-category">Elemento gastronómico</span>
+      <h2 id="detailTitle">Selecciona una evidencia</h2>
+      <p id="detailSubtitle">La ficha mostrará contexto, evidencia, cronología y fuentes.</p>
+    </div>
+
+    <div class="detail-section">
+      <span class="detail-label">Elemento gastronómico</span>
+      <div id="subjectDetail"></div>
+    </div>
+
+    <div class="detail-section evidence-section">
+      <span class="detail-label">Registro histórico seleccionado</span>
+      <div id="occurrenceDetail"></div>
+    </div>
+
+    <div class="detail-actions">
+      <button id="subjectHistoryBtn" class="primary-cta" type="button" disabled>Ver historia del elemento</button>
+      <button id="closeDetailBtn" class="ghost-cta" type="button">Cerrar</button>
+    </div>
+  </div>
+</aside>
+
+<dialog id="aboutDialog">
+  <div class="dialog-shell">
+    <button class="dialog-close" id="aboutCloseBtn" type="button" aria-label="Cerrar">×</button>
+    <span class="section-label">Sobre el proyecto</span>
+    <h2>Atlas Gastronómico Histórico</h2>
+    <p>Un museo digital para estudiar cómo cambian los alimentos, técnicas, productos, intercambios y prácticas culinarias a través del tiempo y el espacio.</p>
+    <p>El proyecto prioriza evidencia trazable y evita simplificaciones como asignar un “origen” único a fenómenos complejos cuando las fuentes no lo permiten.</p>
+  </div>
+</dialog>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
 
 <script type="module" src="./js/app.js"></script>
 </body>
