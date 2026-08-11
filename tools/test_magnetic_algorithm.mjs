@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {toOrdinal,fromOrdinal} from '../js/core.js';
+const app=fs.readFileSync(new URL('../js/app.js',import.meta.url),'utf8');
+function extractFunction(name){const token=`function ${name}(`;const start=app.indexOf(token);assert.notEqual(start,-1,`No se encontró ${name}`);const brace=app.indexOf('{',start);let depth=0;for(let i=brace;i<app.length;i++){if(app[i]==='{')depth++;else if(app[i]==='}'){depth--;if(depth===0)return app.slice(start,i+1)}}throw new Error(`Función sin cierre: ${name}`)}
+const names=['temporalRepresentativeYear','temporalSnapCandidate','temporalMagneticRank','compareTemporalCandidates','nearestTemporalHit'];
+const source=names.map(extractFunction).join('\n');
+const make=new Function('toOrdinal','fromOrdinal','temporalCorpusItems',`${source}; return {${names.join(',')}};`);
+const api=make(toOrdinal,fromOrdinal,()=>[]);
+const occ=(id,start,end=start,status='reviewed')=>({key:`occurrence:${id}`,kind:'occurrence',status,period:{start,end}});
+const event=(id,start,end,status='reviewed')=>({key:`event:${id}`,kind:'event',status,period:{start,end}});
+const dev=(id,start,end,status='reviewed')=>({key:`development:${id}`,kind:'development',status,period:{start,end}});
+let c=api.temporalSnapCandidate(occ('a',1000,1100),1050);assert.equal(c.snapYear,1000);assert.equal(c.distanceOrdinal,50);
+c=api.temporalSnapCandidate(event('exchange',1492,1700),1600);assert.equal(c.snapYear,1600);assert.equal(c.distanceOrdinal,0);assert.equal(c.contains,true);
+c=api.temporalSnapCandidate(event('exchange',1492,1700),1750);assert.equal(c.snapYear,1700);assert.equal(c.distanceOrdinal,50);
+c=api.nearestTemporalHit(1600,[occ('local',1580),event('exchange',1492,1700)]);assert.equal(c.entry.key,'event:exchange');assert.equal(c.snapYear,1600);
+c=api.nearestTemporalHit(1800,[occ('local',1790),event('exchange',1492,1700)]);assert.equal(c.entry.key,'occurrence:local');assert.equal(c.snapYear,1790);
+c=api.nearestTemporalHit(1600,[dev('technology',1500,1700,'verified'),event('exchange',1500,1700,'reviewed')]);assert.equal(c.entry.key,'event:exchange');
+c=api.nearestTemporalHit(1000,[occ('reviewed',900,900,'reviewed'),occ('verified',1100,1100,'verified')]);assert.equal(c.entry.key,'occurrence:verified');
+assert.equal(api.nearestTemporalHit(1000,[]),null);
+console.log('MAGNETIC ALGORITHM: PASS · 8 assertions');

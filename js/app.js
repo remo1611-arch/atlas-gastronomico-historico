@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.11';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.12';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.11',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.11',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.11',
-  places:'./data/places.json?v=0.1.0-alpha.11',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.11',
-  events:'./data/events.json?v=0.1.0-alpha.11',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.11',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.11',
-  developments:'./data/developments.json?v=0.1.0-alpha.11',
-  sources:'./data/sources.json?v=0.1.0-alpha.11',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.11'
+  config:'./data/config.json?v=0.1.0-alpha.12',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.12',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.12',
+  places:'./data/places.json?v=0.1.0-alpha.12',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.12',
+  events:'./data/events.json?v=0.1.0-alpha.12',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.12',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.12',
+  developments:'./data/developments.json?v=0.1.0-alpha.12',
+  sources:'./data/sources.json?v=0.1.0-alpha.12',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.12'
 };
 
 const s={
@@ -384,6 +384,82 @@ function temporalDistanceToYear(entry,year=s.year){
   return distance(entry.period,year);
 }
 
+function temporalSnapCandidate(entry,targetYear){
+  if(!entry) return null;
+  const targetOrdinal=toOrdinal(targetYear);
+  if(entry.kind==='occurrence'){
+    const snapYear=temporalRepresentativeYear(entry);
+    return {entry,snapYear,distanceOrdinal:Math.abs(toOrdinal(snapYear)-targetOrdinal),contains:false};
+  }
+  const startOrdinal=toOrdinal(entry.period.start);
+  const endOrdinal=toOrdinal(entry.period.end);
+  const low=Math.min(startOrdinal,endOrdinal);
+  const high=Math.max(startOrdinal,endOrdinal);
+  if(targetOrdinal>=low && targetOrdinal<=high){
+    return {entry,snapYear:targetYear,distanceOrdinal:0,contains:true};
+  }
+  const boundaryOrdinal=Math.abs(targetOrdinal-low)<=Math.abs(targetOrdinal-high)?low:high;
+  return {entry,snapYear:fromOrdinal(boundaryOrdinal),distanceOrdinal:Math.abs(targetOrdinal-boundaryOrdinal),contains:false};
+}
+
+function temporalMagneticRank(candidate){
+  const entry=candidate.entry;
+  const kindRank=entry.kind==='event'?0:entry.kind==='development'?1:2;
+  const statusRank=entry.status==='verified'?0:1;
+  const span=Math.abs(toOrdinal(entry.period.end)-toOrdinal(entry.period.start));
+  return [candidate.distanceOrdinal,candidate.contains?0:1,kindRank,statusRank,span];
+}
+
+function compareTemporalCandidates(a,b){
+  const ra=temporalMagneticRank(a), rb=temporalMagneticRank(b);
+  for(let i=0;i<ra.length;i++) if(ra[i]!==rb[i]) return ra[i]-rb[i];
+  return a.entry.key.localeCompare(b.entry.key);
+}
+
+function nearestTemporalHit(targetYear,items=temporalCorpusItems()){
+  if(!items.length) return null;
+  return items.map(entry=>temporalSnapCandidate(entry,targetYear)).filter(Boolean).sort(compareTemporalCandidates)[0]||null;
+}
+
+function clearMagneticCandidate(){
+  $$('.magnetic-candidate').forEach(node=>node.classList.remove('magnetic-candidate'));
+  $('#temporalRail')?.classList.remove('has-magnetic-candidate');
+}
+
+function temporalBinIndexForEntry(entry,items){
+  const bins=temporalBins(items);
+  return bins.findIndex(bin=>bin.items.some(x=>x.key===entry.key));
+}
+
+function markMagneticCandidate(candidate,items){
+  clearMagneticCandidate();
+  if(!candidate) return;
+  $('#temporalRail')?.classList.add('has-magnetic-candidate');
+  let direct=null;
+  $$('[data-temporal-key]').some(node=>{
+    if(node.dataset.temporalKey===candidate.entry.key){direct=node;return true;}
+    return false;
+  });
+  if(direct){direct.classList.add('magnetic-candidate');return;}
+  if(candidate.entry.kind==='occurrence'){
+    const index=temporalBinIndexForEntry(candidate.entry,items);
+    if(index>=0) $(`[data-temporal-bin="${index}"]`)?.classList.add('magnetic-candidate');
+  }
+}
+
+function previewMagneticCandidate(targetYear,items=temporalCorpusItems()){
+  const candidate=nearestTemporalHit(targetYear,items);
+  markMagneticCandidate(candidate,items);
+  if(candidate) previewTemporalItem(candidate.entry,true);
+  return candidate;
+}
+
+function setExactYear(year){
+  s.temporalSelection=null;
+  clearMagneticCandidate();
+  setYear(year);
+}
+
 function temporalBins(items){
   const occurrences=items.filter(x=>x.kind==='occurrence');
   const width=$('#temporalRail')?.clientWidth||window.innerWidth||800;
@@ -432,12 +508,11 @@ function renderTemporalDensity(items){
 
   $$('[data-temporal-bin]').forEach(button=>{
     const bin=bins[Number(button.dataset.temporalBin)];
-    button.addEventListener('click',()=>{
+    button.addEventListener('click',event=>{
       if(!bin?.items?.length) return;
-      const nearest=bin.items
-        .slice()
-        .sort((a,b)=>temporalDistanceToYear(a)-temporalDistanceToYear(b))[0];
-      focusTemporalItem(nearest,true);
+      const targetYear=temporalYearFromClientX(event.clientX);
+      const candidate=nearestTemporalHit(targetYear,bin.items);
+      if(candidate) focusTemporalItem(candidate.entry,true,candidate.snapYear);
     });
   });
 }
@@ -491,7 +566,14 @@ function bindTemporalMarks(items){
     const entry=lookup.get(button.dataset.temporalKey);
     if(!entry) return;
 
-    button.addEventListener('click',()=>focusTemporalItem(entry,true));
+    button.addEventListener('click',event=>{
+      let snapYear=temporalRepresentativeYear(entry);
+      if(entry.kind==='event'||entry.kind==='development'){
+        const targetYear=temporalYearFromClientX(event.clientX);
+        snapYear=temporalSnapCandidate(entry,targetYear)?.snapYear??snapYear;
+      }
+      focusTemporalItem(entry,true,snapYear);
+    });
     button.addEventListener('mouseenter',()=>previewTemporalItem(entry));
     button.addEventListener('focus',()=>previewTemporalItem(entry));
   });
@@ -517,28 +599,29 @@ function currentTemporalCandidate(items){
     })[0]||null;
 }
 
-function previewTemporalItem(entry){
+function previewTemporalItem(entry,magnetic=false){
   const box=$('#temporalFocus');
   if(!box||!entry) return;
   const sm=statusMeta(entry.status);
   const when=entry.period.display||`${formatYear(entry.period.start)}–${formatYear(entry.period.end)}`;
   const kind=entry.kind==='occurrence'?'Evidencia':entry.kind==='event'?'Evento':'Transformación';
-
+  box.classList.toggle('magnetic-preview',Boolean(magnetic));
   box.innerHTML=`
-    <span>${kind} · ${esc(when)} · <em class="${esc(sm.className)}">${esc(sm.label)}</em></span>
+    <span>${magnetic?'Destino cercano · ':''}${kind} · ${esc(when)} · <em class="${esc(sm.className)}">${esc(sm.label)}</em></span>
     <strong>${esc(entry.title)}</strong>
     <small>${esc(entry.subtitle)}</small>
   `;
 }
 
-function focusTemporalItem(entry,jump=false){
+function focusTemporalItem(entry,jump=false,snapYear=null){
   if(!entry) return;
   s.temporalSelection=entry.key;
+  clearMagneticCandidate();
   previewTemporalItem(entry);
-
   if(jump){
-    setYear(temporalRepresentativeYear(entry));
-    showToast(`${entry.title} · ${entry.period.display||formatYear(entry.period.start)}`);
+    const year=snapYear??temporalRepresentativeYear(entry);
+    setYear(year);
+    showToast(`${entry.title} · ${entry.period.display||formatYear(year)}`);
   }
 }
 
@@ -608,6 +691,8 @@ const temporalDrag={
   startYear:null,
   grabOffsetPx:0,
   pendingYear:null,
+  items:null,
+  candidate:null,
   raf:null
 };
 
@@ -651,18 +736,12 @@ function previewTemporalYear(year){
 
   temporalDrag.raf=requestAnimationFrame(()=>{
     temporalDrag.raf=null;
-    updateYearChrome(temporalDrag.pendingYear);
+    const year=temporalDrag.pendingYear;
+    updateYearChrome(year);
+    temporalDrag.candidate=previewMagneticCandidate(year,temporalDrag.items||temporalCorpusItems());
   });
 }
 
-function commitTemporalYear(year){
-  if(temporalDrag.raf!==null){
-    cancelAnimationFrame(temporalDrag.raf);
-    temporalDrag.raf=null;
-  }
-  temporalDrag.pendingYear=null;
-  setYear(year);
-}
 
 function temporalPointerIgnored(target){
   return Boolean(target.closest(
@@ -678,6 +757,8 @@ function beginTemporalDrag(event){
   temporalDrag.active=true;
   temporalDrag.pointerId=event.pointerId;
   temporalDrag.startYear=s.year;
+  temporalDrag.items=temporalCorpusItems();
+  temporalDrag.candidate=null;
 
   const cursor=event.target.closest('#temporalCursor');
   if(cursor){
@@ -704,18 +785,20 @@ function moveTemporalDrag(event){
 
 function endTemporalDrag(event){
   if(!temporalDrag.active || event.pointerId!==temporalDrag.pointerId) return;
-
   const rail=$('#temporalRail');
-  const year=temporalYearFromClientX(event.clientX,temporalDrag.grabOffsetPx);
-
+  const targetYear=temporalYearFromClientX(event.clientX,temporalDrag.grabOffsetPx);
+  const items=temporalDrag.items||temporalCorpusItems();
+  const candidate=nearestTemporalHit(targetYear,items);
   temporalDrag.active=false;
   temporalDrag.pointerId=null;
   temporalDrag.startYear=null;
   temporalDrag.grabOffsetPx=0;
+  temporalDrag.items=null;
+  temporalDrag.candidate=null;
   rail?.classList.remove('dragging');
   try{rail?.releasePointerCapture?.(event.pointerId)}catch{}
-
-  commitTemporalYear(year);
+  if(candidate) focusTemporalItem(candidate.entry,true,candidate.snapYear);
+  else setExactYear(targetYear);
   event.preventDefault();
 }
 
@@ -732,6 +815,10 @@ function cancelTemporalDrag(event){
     temporalDrag.raf=null;
   }
   temporalDrag.pendingYear=null;
+  temporalDrag.items=null;
+  temporalDrag.candidate=null;
+  clearMagneticCandidate();
+  $('#temporalFocus')?.classList.remove('magnetic-preview');
   if(temporalDrag.startYear!==null){
     updateYearChrome(temporalDrag.startYear);
   }
@@ -748,10 +835,10 @@ function handleTemporalCursorKey(event){
     stepTemporalHit(1);
   }else if(event.key==='Home'){
     event.preventDefault();
-    setYear(s.config.timeline.minYear);
+    setExactYear(s.config.timeline.minYear);
   }else if(event.key==='End'){
     event.preventDefault();
-    setYear(s.config.timeline.maxYear);
+    setExactYear(s.config.timeline.maxYear);
   }
 }
 
@@ -1575,10 +1662,10 @@ function bind(){
   const max=s.config.timeline.maxYear;
 
   $$('[data-jump-year]').forEach(button=>{
-    button.addEventListener('click',()=>setYear(Number(button.dataset.jumpYear)));
+    button.addEventListener('click',()=>setExactYear(Number(button.dataset.jumpYear)));
   });
 
-  $('#goYearBtn').addEventListener('click',()=>setYear(fromParts($('#yearMagnitude').value,$('#yearEra').value,min,max)));
+  $('#goYearBtn').addEventListener('click',()=>setExactYear(fromParts($('#yearMagnitude').value,$('#yearEra').value,min,max)));
   $('#yearMagnitude').addEventListener('keydown',e=>{if(e.key==='Enter') $('#goYearBtn').click()});
 
   const temporalRail=$('#temporalRail');

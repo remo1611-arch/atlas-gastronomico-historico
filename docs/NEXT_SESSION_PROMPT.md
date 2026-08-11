@@ -62,3 +62,10 @@ Continuación alpha.11:
 - no reintroducir slider paralelo, ± años ni playback cronológico;
 - validar drag/tap/hitos en Xiaomi 15;
 - después continuar G2-D nixtamalización + primer disputed.
+
+Continuación alpha.12:
+- timeline magnética activa;
+- tap no selecciona años vacíos salvo que no exista ningún hito visible bajo filtros;
+- Ir al año es exacto;
+- validar sensación de snap en Xiaomi 15;
+- después G2-D nixtamalización + primer disputed.

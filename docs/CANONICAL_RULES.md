@@ -84,3 +84,9 @@
 70. Durante un arrastre se actualizan cursor y fecha sin reconstruir el corpus en cada movimiento; el render completo se confirma al soltar.
 71. La reproducción automática por incrementos de años queda fuera del contrato público. Un futuro modo narrado deberá avanzar por hitos/escenas, no por pasos cronológicos ciegos.
 
+72. La pulsación sobre la cronología pública selecciona el hito visible más próximo, no un año vacío arbitrario.
+73. Durante drag el cursor puede explorar libremente, pero al soltar se ajusta al candidato histórico más próximo.
+74. Si la pulsación cae dentro del intervalo real de un event/development, se conserva esa fecha dentro del intervalo; no se fuerza su inicio.
+75. La entrada “Ir al año” y los atajos editoriales son los mecanismos explícitos para seleccionar fechas exactas sin contenido.
+76. La distancia magnética se calcula en la misma escala ordinal temporal del Atlas y respeta la ausencia de año 0.
+

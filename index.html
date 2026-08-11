@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.11">
+  <meta name="atlas-build" content="0.1.0-alpha.12">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.11">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.12">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.11</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.12</span></small>
     </span>
   </a>
 
@@ -95,7 +95,7 @@
           </div>
         </div>
 
-        <div id="temporalRail" class="temporal-rail unified" aria-label="Línea temporal interactiva; toca o arrastra para seleccionar una fecha">
+        <div id="temporalRail" class="temporal-rail unified" aria-label="Línea temporal interactiva; toca para ir al hito histórico más cercano o arrastra para explorar">
           <div class="temporal-density" id="temporalDensity" aria-hidden="true"></div>
           <div class="temporal-verified" id="temporalVerified"></div>
           <div class="temporal-events" id="temporalEvents"></div>
@@ -108,7 +108,7 @@
         </div>
         <div class="temporal-scale">
           <span id="temporalMinLabel" aria-hidden="true">12.000 a. C.</span>
-          <span id="temporalNavigatorHint">Toca o arrastra sobre la línea</span>
+          <span id="temporalNavigatorHint">Toca para ir al hito más cercano · arrastra para explorar</span>
           <span id="temporalMaxLabel" aria-hidden="true">2026 d. C.</span>
         </div>
 
@@ -432,6 +432,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.11"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.12"></script>
 </body>
 </html>

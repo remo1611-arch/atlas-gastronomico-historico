@@ -1,4 +1,4 @@
-# Resultados de validación — 0.1.0-alpha.11
+# Resultados de validación — 0.1.0-alpha.12
 
 Fecha: 2026-08-11
 
@@ -8,7 +8,7 @@ Fecha: 2026-08-11
 - G2: EN CURSO.
 
 ## Corpus
-Sin cambios históricos respecto a alpha.10:
+Sin cambios históricos respecto a alpha.11:
 - 17 subjects;
 - 25 places;
 - 28 occurrences;
@@ -21,68 +21,48 @@ Sin cambios históricos respecto a alpha.10:
 
 ## Suite completa: PASS
 
-### Datos / schemas
-- validate_project.py: PASS.
-- test_schema_validation.py: PASS.
-- 137 objetos / 8 schemas.
-
-### Core / JS
-- node --check core.js: PASS.
-- node --check app.js: PASS.
-- core temporal: 11 aserciones PASS.
-- `shiftYear` eliminado al desaparecer la navegación aritmética.
-
-### UI
-- UI contract: 100 IDs / 88 referencias JS.
-- mobile contract: PASS.
-- light contrast: PASS.
-- filtros: PASS.
-- map coverage: PASS.
-- debounce: PASS.
-
-### G2
-- public state: PASS.
-- verified gate: PASS.
-- G2-C maize: PASS.
-- traceability UI: PASS.
-- subject history: PASS.
-
-### Temporal Navigator
-- densidad: PASS.
-- occurrences verified: PASS.
-- events: PASS.
-- developments: PASS.
-- 38 / 68 / 120 bins.
-- seed/deprecated excluidos.
+### Base
+- validate_project.py: PASS;
+- schema validation: 137 objetos / 8 schemas;
+- JS core/app: sintaxis válida;
+- core temporal: 11 aserciones PASS;
+- UI contract: 100 IDs / 88 referencias;
+- mobile contract: PASS;
+- light contrast: PASS;
+- filtros / debounce / map coverage: PASS;
+- public state / verified gate / G2 / histories: PASS;
+- GitHub Pages: 16/16 PASS.
 
 ### Unified Timeline
-PASS:
-- `yearRange` eliminado;
-- ±1/10/100/500 eliminados;
-- playback eliminado;
-- playStep/playStepOptions eliminados;
-- timers/listeners playback eliminados;
-- CSS legacy eliminado;
-- tap/click sobre rail;
-- drag Pointer Events;
-- grab-offset del cursor;
-- preview mediante requestAnimationFrame;
-- render completo al soltar;
-- cursor role=slider;
-- ArrowLeft/ArrowRight = hito anterior/siguiente;
-- Home/End = extremos;
-- atajos históricos conservados;
-- Ir al año conservado.
+- slider antiguo ausente;
+- ± años ausentes;
+- playback ausente;
+- tap/drag y navegación por hitos conservados.
 
-### GitHub Pages
-- 16/16 recursos críticos PASS.
+### Magnetic Timeline
+- test_magnetic_timeline.py: PASS;
+- test_magnetic_algorithm.mjs: PASS · 8 aserciones.
+
+Comportamiento validado:
+1. occurrence → snap al anclaje temporal usado por la marca visual;
+2. event/development → si la pulsación cae dentro del rango real, conserva esa fecha;
+3. fuera del rango → snap al límite histórico más próximo;
+4. candidato más cercano calculado sobre escala ordinal sin año 0;
+5. un rango que contiene la pulsación gana a un punto más lejano;
+6. el tipo de hito y `verified` solo desempatan después de la distancia;
+7. sin candidatos visibles no se inventa un snap;
+8. Ir al año y atajos editoriales permanecen exactos.
+
+### UX magnética
+Durante drag:
+- cursor libre;
+- preview del año;
+- hito candidato resaltado;
+- ficha central indica “Destino cercano”.
+
+Al soltar:
+- snap al candidato visible más próximo;
+- los filtros y capas determinan el conjunto de candidatos.
 
 ## Pendiente real
-Prueba visual/táctil en Xiaomi 15 de:
-- tap sobre zona libre;
-- drag del cursor;
-- selección de marcas;
-- hito anterior/siguiente;
-- modo oscuro/claro.
-
-El entorno de validación automática no permitió abrir Chromium contra localhost/file por política del contenedor, por lo que no se declara prueba visual automatizada.
+Validación táctil/visual en Xiaomi 15 de la sensación de magnetismo. No se declara prueba visual automatizada del navegador.

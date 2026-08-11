@@ -16,6 +16,8 @@ python tools/test_g2_pilot_c_maize.py
 python tools/test_subject_history.py
 python tools/test_temporal_navigator.py
 python tools/test_unified_timeline.py
+python tools/test_magnetic_timeline.py
+node tools/test_magnetic_algorithm.mjs
 python tools/test_verified_gate.py
 python tools/test_public_state.py
 python tools/test_schema_validation.py
@@ -151,3 +153,15 @@ Antes de validar datos históricos:
 - [ ] Home/End van a extremos del atlas;
 - [ ] atajos históricos conservados;
 - [ ] entrada directa de año conservada.
+
+## Magnetic Timeline alpha.12
+- [ ] tap/release sobre rail → hito visible más próximo;
+- [ ] drag libre durante movimiento;
+- [ ] candidato magnético resaltado;
+- [ ] release → snap;
+- [ ] event/development conserva posición interna si se pulsa dentro del rango;
+- [ ] occurrence usa el mismo anclaje temporal que su marca visual;
+- [ ] Ir al año permanece exacto;
+- [ ] atajos editoriales permanecen exactos;
+- [ ] filtros/capas limitan candidatos;
+- [ ] sin commitTemporalYear legacy.

@@ -162,6 +162,14 @@ Esta fase se adelanta antes de G2-D porque la usabilidad temporal debía quedar 
 
 La numeración G2-F refleja una intervención UX adelantada; no altera la secuencia de corpus pendiente.
 
+## G2-G — Timeline magnética
+**Estado: IMPLEMENTADO · alpha.12**
+
+- snap al hito visible más próximo;
+- preview magnético durante drag;
+- eventos/rangos preservan posición interna;
+- fecha exacta separada de exploración histórica.
+
 ## G2-D — Técnica canónica + primer disputed
 **Estado: PENDIENTE**
 

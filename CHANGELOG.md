@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.12 — 2026-08-11
+
+### Magnetic Timeline
+- tap/release hace snap al hito visible más próximo;
+- drag mantiene preview libre;
+- candidato magnético con realce discreto;
+- event/development conserva fecha interna al pulsar dentro del rango;
+- bins eligen evidencia por proximidad real a la pulsación.
+
+### Exactitud
+- Ir al año permanece exacto;
+- atajos históricos permanecen exactos;
+- Home/End permanecen exactos.
+
+### QA
+- nuevo test de contrato magnético;
+- nuevo test ejecutable del algoritmo con 8 aserciones.
+
 ## 0.1.0-alpha.11 — 2026-08-11
 
 ### Unified Timeline

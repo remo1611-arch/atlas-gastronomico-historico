@@ -169,3 +169,15 @@ Durante pointer drag se actualiza únicamente la capa visual de fecha/cursor; el
 **Aceptada.**
 El cursor temporal expone `role=slider`; teclado izquierda/derecha navega por hitos y Home/End por extremos temporales.
 
+## ADR-044 — Timeline magnética
+**Aceptada.**
+La cronología se interpreta como navegador del corpus. Tap/release selecciona el hito visible más próximo.
+
+## ADR-045 — Rango preservado
+**Aceptada.**
+Una pulsación dentro de un event/development conserva la posición temporal pulsada dentro de su intervalo real. El inicio se usa solo como punto convencional cuando se navega por “hito siguiente/anterior”.
+
+## ADR-046 — Año exacto como acción explícita
+**Aceptada.**
+“Ir al año”, Home/End y atajos editoriales no aplican magnetismo. Así se separa consultar una fecha exacta de explorar historia documentada.
+

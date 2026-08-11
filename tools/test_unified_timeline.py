@@ -47,7 +47,6 @@ for needle in [
     "function beginTemporalDrag(event)",
     "function moveTemporalDrag(event)",
     "function endTemporalDrag(event)",
-    "function commitTemporalYear(year)",
     "function handleTemporalCursorKey(event)",
     "setPointerCapture",
     "requestAnimationFrame",

@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.11
+**Versión:** 0.1.0-alpha.12
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -191,3 +191,7 @@ La banda museográfica es ahora el control temporal principal:
 - o introduce un año exacto.
 
 No existe reproducción cronológica automática.
+
+## Timeline magnética
+
+Alpha.12 convierte la cronología en un navegador histórico magnético: tocar la línea selecciona el hito visible más cercano; “Ir al año” queda como consulta exacta.
