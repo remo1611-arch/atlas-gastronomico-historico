@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.12';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.13';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.12',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.12',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.12',
-  places:'./data/places.json?v=0.1.0-alpha.12',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.12',
-  events:'./data/events.json?v=0.1.0-alpha.12',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.12',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.12',
-  developments:'./data/developments.json?v=0.1.0-alpha.12',
-  sources:'./data/sources.json?v=0.1.0-alpha.12',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.12'
+  config:'./data/config.json?v=0.1.0-alpha.13',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.13',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.13',
+  places:'./data/places.json?v=0.1.0-alpha.13',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.13',
+  events:'./data/events.json?v=0.1.0-alpha.13',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.13',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.13',
+  developments:'./data/developments.json?v=0.1.0-alpha.13',
+  sources:'./data/sources.json?v=0.1.0-alpha.13',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.13'
 };
 
 const s={
@@ -70,6 +70,7 @@ const OCC_LABELS={
   consumption:'Consumo',
   textual_attestation:'Atestiguación textual',
   recipe_attestation:'Receta documentada',
+  technique_attestation:'Técnica documentada',
   trade:'Comercio',
   introduction:'Introducción',
   adoption:'Adopción',
@@ -77,6 +78,14 @@ const OCC_LABELS={
   industrial_production:'Producción industrial',
   traditional_attribution:'Atribución tradicional',
   other:'Otro'
+};
+
+const CERTAINTY_LABELS={
+  high:'Alta',
+  medium:'Media',
+  low:'Baja',
+  disputed:'Discutida',
+  unknown:'Desconocida'
 };
 
 const EVENT_LABELS={
@@ -173,6 +182,29 @@ function sourceListHTML(refs=[]){
       <strong>${esc(src.title)}</strong>
     </a>
   `).join('')}</div>`;
+}
+
+function disputeHTML(item){
+  if(item?.certainty!=='disputed'||!item.dispute) return '';
+  const positions=(item.dispute.positions||[]).map((position,index)=>`
+    <article class="dispute-position">
+      <span>${String(index+1).padStart(2,'0')}</span>
+      <div>
+        <strong>${esc(position.label)}</strong>
+        <p>${esc(position.summary)}</p>
+        ${sourceListHTML(position.sourceRefs||[])}
+      </div>
+    </article>
+  `).join('');
+
+  return `<section class="dispute-box" aria-label="Debate historiográfico">
+    <div class="dispute-head">
+      <span>DEBATE ABIERTO</span>
+      <strong>${esc(item.dispute.question)}</strong>
+    </div>
+    <div class="dispute-positions">${positions}</div>
+    ${item.dispute.editorialNote?`<p class="dispute-editorial">${esc(item.dispute.editorialNote)}</p>`:''}
+  </section>`;
 }
 
 function pointPrecisionLabel(pl){
@@ -932,7 +964,7 @@ function renderList(list){
           <strong>${esc(subject.name)}</strong>
           <em class="mini-status ${esc(sm.className)}">${esc(sm.label)}</em>
         </span>
-        <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+        <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}${o.certainty==='disputed'?` · <b class="certainty-inline disputed">Discutida</b>`:''}</span>
         <small>${esc(pl.name)} · ${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
       `;
       button.addEventListener('click',()=>selectOccurrence(o.id,true));
@@ -1181,8 +1213,9 @@ function renderHistorySpotlight(){
       const items=subjectHistoryItems(subject.id);
       const occurrences=items.filter(x=>x.kind==='occurrence');
       const events=items.filter(x=>x.kind==='event');
+      const techniques=items.filter(x=>x.kind==='technique');
       const developments=items.filter(x=>x.kind==='development');
-      return {subject,items,occurrences,events,developments};
+      return {subject,items,occurrences,events,techniques,developments};
     })
     .filter(x=>x.occurrences.length>=2)
     .sort((a,b)=>{
@@ -1195,13 +1228,13 @@ function renderHistorySpotlight(){
     return;
   }
 
-  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,events,developments})=>{
+  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,events,techniques,developments})=>{
     const first=items[0]?.period?.start;
     const last=items[items.length-1]?.period?.end;
     return `<button class="history-spotlight-card" type="button" data-history-subject="${esc(subject.id)}">
       <span class="history-spotlight-kicker">${esc(TYPE_LABELS[subject.type]||subject.type)}</span>
       <strong>Historia de ${esc(subject.name)}</strong>
-      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${events.length?` · ${events.length} ${events.length===1?'evento':'eventos'}`:''}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
+      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${events.length?` · ${events.length} ${events.length===1?'evento':'eventos'}`:''}${techniques.length?` · ${techniques.length} ${techniques.length===1?'técnica':'técnicas'}`:''}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
       <small>${first!==undefined&&last!==undefined?`${esc(formatYear(first))} → ${esc(formatYear(last))}`:'Recorrido disponible'}</small>
       <em>Explorar recorrido →</em>
     </button>`;
@@ -1266,7 +1299,20 @@ function subjectHistoryItems(subjectId){
     .filter(d=>d.status!=='deprecated'&&(d.status==='reviewed'||d.status==='verified')&&(d.impactSubjectRefs||[]).includes(subjectId))
     .map(d=>({kind:'development',period:d.period,item:d}));
 
-  return [...occurrences,...events,...developments].sort((a,b)=>{
+  const techniqueRelations=s.relationships
+    .filter(r=>r.status!=='deprecated'&&(r.status==='reviewed'||r.status==='verified')&&r.type==='uses_technique'&&r.from===subjectId);
+  const techniqueRefs=new Set(techniqueRelations.map(r=>r.to));
+  const techniques=s.occurrences
+    .filter(o=>techniqueRefs.has(o.subjectRef)&&o.status!=='deprecated'&&(o.status==='reviewed'||o.status==='verified'))
+    .map(o=>({
+      kind:'technique',
+      period:o.period,
+      item:o,
+      technique:subj(o.subjectRef),
+      relationship:techniqueRelations.find(r=>r.to===o.subjectRef)||null
+    }));
+
+  return [...occurrences,...events,...techniques,...developments].sort((a,b)=>{
     if(a.period.start!==b.period.start) return a.period.start-b.period.start;
     return a.period.end-b.period.end;
   });
@@ -1286,11 +1332,12 @@ function renderSubjectHistory(subjectId){
   const items=subjectHistoryItems(subjectId);
   const occurrenceCount=items.filter(x=>x.kind==='occurrence').length;
   const eventCount=items.filter(x=>x.kind==='event').length;
+  const techniqueCount=items.filter(x=>x.kind==='technique').length;
   const developmentCount=items.filter(x=>x.kind==='development').length;
 
   s.historySubject=subjectId;
   $('#historyTitle').textContent=`Historia de ${subject.name}`;
-  $('#historySubtitle').textContent='Evidencias, procesos históricos y transformaciones documentados actualmente en el Atlas.';
+  $('#historySubtitle').textContent='Evidencias, técnicas relacionadas, procesos históricos y transformaciones documentados actualmente en el Atlas.';
 
   if(items.length){
     const first=items[0].period.start;
@@ -1299,6 +1346,8 @@ function renderSubjectHistory(subjectId){
       <span><strong>${occurrenceCount}</strong> ${occurrenceCount===1?'evidencia':'evidencias'}</span>
       <i></i>
       <span><strong>${eventCount}</strong> ${eventCount===1?'evento':'eventos'}</span>
+      <i></i>
+      <span><strong>${techniqueCount}</strong> ${techniqueCount===1?'técnica':'técnicas'}</span>
       <i></i>
       <span><strong>${developmentCount}</strong> ${developmentCount===1?'transformación':'transformaciones'}</span>
       <i></i>
@@ -1335,11 +1384,11 @@ function renderSubjectHistory(subjectId){
           <div class="history-meta">
             <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
             <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
-            ${o.certainty&&o.certainty!=='high'?`<span class="history-uncertainty">Certeza: ${esc(o.certainty)}</span>`:''}
+            ${o.certainty&&o.certainty!=='high'?`<span class="history-uncertainty ${esc(o.certainty)}">Certeza: ${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</span>`:''}
             ${contexts.map(c=>`<span>${esc(c)}</span>`).join('')}
             <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
-          ${o.certainty==='medium'?'<div class="history-caution">La evidencia o interpretación de este hito conserva incertidumbre explícita.</div>':''}
+          ${o.certainty==='medium'?'<div class="history-caution">La evidencia o interpretación de este hito conserva incertidumbre explícita.</div>':''}${o.certainty==='disputed'?'<div class="history-caution disputed">Este hito contiene interpretaciones historiográficas contrapuestas. Abre la evidencia para compararlas.</div>':''}
           <button type="button" class="history-open-record" data-history-occurrence="${esc(o.id)}">Abrir evidencia</button>
         </div>
       `;
@@ -1369,6 +1418,36 @@ function renderSubjectHistory(subjectId){
           </div>
           ${verificationHTML(e)}
           <button type="button" class="history-open-event" data-history-event="${esc(e.id)}">Ir al proceso histórico</button>
+        </div>
+      `;
+      timeline.appendChild(article);
+    }else if(entry.kind==='technique'){
+      const o=entry.item;
+      const technique=entry.technique||subj(o.subjectRef);
+      const pl=place(o.placeRef);
+      const sm=statusMeta(o.status);
+      const article=document.createElement('article');
+      article.className='history-item history-technique';
+      article.innerHTML=`
+        <div class="history-axis">
+          <span class="history-index">${String(index+1).padStart(2,'0')}</span>
+          <i></i>
+        </div>
+        <div class="history-card">
+          <div class="history-card-head">
+            <span class="history-kind technique">TÉCNICA</span>
+            <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          </div>
+          <time>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</time>
+          <h3>${esc(technique?.name||'Técnica culinaria')} · ${esc(pl?.name||'Lugar no resuelto')}</h3>
+          <p>${esc(o.summary)}</p>
+          <div class="history-meta">
+            <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
+            <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+            <span>Relación: usa técnica</span>
+            <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
+          </div>
+          <button type="button" class="history-open-technique" data-history-technique-occurrence="${esc(o.id)}">Abrir técnica</button>
         </div>
       `;
       timeline.appendChild(article);
@@ -1405,6 +1484,18 @@ function renderSubjectHistory(subjectId){
   $$('[data-history-occurrence]').forEach(button=>{
     button.addEventListener('click',()=>{
       const id=button.dataset.historyOccurrence;
+      const o=s.occurrences.find(x=>x.id===id);
+      if(!o) return;
+      closeHistory();
+      setYear(o.period.start);
+      selectOccurrence(id,true);
+      setTimeout(()=>$('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
+    });
+  });
+
+  $$('[data-history-technique-occurrence]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const id=button.dataset.historyTechniqueOccurrence;
       const o=s.occurrences.find(x=>x.id===id);
       if(!o) return;
       closeHistory();
@@ -1499,11 +1590,12 @@ function renderDetails(o){
       <div><b>Precisión</b><span>${esc(o.period.precision)}</span></div>
       <div><b>Qué documenta</b><span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span></div>
       <div><b>Evidencia</b><span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span></div>
-      <div><b>Certeza</b><span>${esc(o.certainty)}</span></div>
+      <div><b>Certeza</b><span class="certainty-value ${esc(o.certainty)}">${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</span></div>
       <div><b>Cartografía</b><span>${esc(pointPrecisionLabel(pl))}</span></div>
     </div>
     ${o.period.note?`<p class="evidence-note">${esc(o.period.note)}</p>`:''}
     ${verificationHTML(o)}
+    ${disputeHTML(o)}
     <div class="detail-sources">
       <b>Fuentes del registro</b>
       ${sourceListHTML(o.sourceRefs||[])}
@@ -1557,11 +1649,12 @@ function renderDetails(o){
   const historyItems=subjectHistoryItems(subject.id);
   const historyCount=historyItems.filter(x=>x.kind==='occurrence').length;
   const eventCount=historyItems.filter(x=>x.kind==='event').length;
+  const techniqueCount=historyItems.filter(x=>x.kind==='technique').length;
   const transformationCount=historyItems.filter(x=>x.kind==='development').length;
   $('#subjectHistoryBtn').disabled=historyCount<2;
   $('#subjectHistoryBtn').textContent=historyCount<2
     ? 'Historia todavía insuficiente'
-    : `Ver historia · ${historyCount} evidencias${eventCount?` + ${eventCount} evento${eventCount===1?'':'s'}`:''}${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
+    : `Ver historia · ${historyCount} evidencias${eventCount?` + ${eventCount} evento${eventCount===1?'':'s'}`:''}${techniqueCount?` + ${techniqueCount} técnica${techniqueCount===1?'':'s'}`:''}${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
   $('#subjectHistoryBtn').title=historyCount<2
     ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
     : 'Abrir recorrido histórico documentado.';

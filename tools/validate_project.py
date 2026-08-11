@@ -103,6 +103,27 @@ for o in occ:
         errors.append(f"{label}: deprecated sin supersededBy")
     if o.get("supersededBy") and o.get("supersededBy") not in O:
         errors.append(f"{label}: supersededBy roto")
+    dispute=o.get("dispute")
+    if o.get("certainty")=="disputed":
+        if not dispute:
+            errors.append(f"{label}: certainty disputed sin dispute")
+        else:
+            if not dispute.get("question"):
+                errors.append(f"{label}: dispute sin question")
+            positions=dispute.get("positions",[])
+            if len(positions)<2:
+                errors.append(f"{label}: dispute necesita >=2 posiciones")
+            for pos in positions:
+                refs=pos.get("sourceRefs",[])
+                if not refs:
+                    errors.append(f"{label}: posición {pos.get('id')} sin fuentes")
+                for ref in refs:
+                    if ref not in SRC:
+                        errors.append(f"{label}: dispute sourceRef roto {ref}")
+                    if ref not in o.get("sourceRefs",[]):
+                        errors.append(f"{label}: dispute sourceRef no incluido en sourceRefs {ref}")
+    elif dispute:
+        errors.append(f"{label}: dispute presente sin certainty disputed")
 
 for e in events:
     label=f"event:{e.get('id')}"
@@ -125,6 +146,8 @@ for r in rels:
     period(r,label);source_refs(r,label)
     if r.get("from") not in S or r.get("to") not in S:
         errors.append(f"{label}: subject roto")
+    if r.get("supersededBy") and r.get("supersededBy") not in R:
+        errors.append(f"{label}: supersededBy roto")
 
 for c in contexts:
     label=f"context:{c.get('id')}"

@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.12",
+  "version": "0.1.0-alpha.13",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7632,
-      "sha256": "e7e08b525a86147b1ae29a82a71c349ac705c2b8eca87c2aa63dc3f22538762c"
+      "bytes": 7684,
+      "sha256": "9466475797fbe8398cb632172c6dbc402a1f80640d7dc68b43775a12af616f05"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5218,
-      "sha256": "bec8a3977221636f45338be987515b399e95eac073cc0fee07af85566c7a7a4d"
+      "bytes": 5402,
+      "sha256": "0512dd0691879f776c8a18b1bb555d4d3a755487b85d1f7b027e6e0ddc733f95"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -36,8 +36,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 64003,
-      "sha256": "9682c2e1ef0639dbd3728229023d2dded973203e498681ceb9024035c2818bd8"
+      "bytes": 66983,
+      "sha256": "ca9f2d4e48ba30d194d6ff2ec9990d11897f4bcaef04ef6c0e63ff21856d0050"
     },
     {
       "path": "data/basemap/world_110m.geojson",
@@ -47,7 +47,7 @@
     {
       "path": "data/config.json",
       "bytes": 416,
-      "sha256": "aa096a66094fec8510699bfd9f89c94b2ade6bf68140a6b992ec108ee047b4cb"
+      "sha256": "59430a772d910649c662e26d705bfed2ef58103660d4f098a268b9671547e5b5"
     },
     {
       "path": "data/contexts.json",
@@ -66,38 +66,38 @@
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 20202,
-      "sha256": "d17b13eeec155dae2db369fd071c3f6f3a26e54f291c11951a13d96615756823"
+      "bytes": 24528,
+      "sha256": "3c88c18acbf5fabf80aa09b252a92fc9012bb124526535ec9549e4ca5d067d9e"
     },
     {
       "path": "data/places.json",
-      "bytes": 9664,
-      "sha256": "66bdaa4f78b04e2dd2a9bb4a9ac816fb953e75cc367d548249f2160d0739d754"
+      "bytes": 11111,
+      "sha256": "5776c6bafc4028fb8c6856be2a3cb802ab7d9fb719393a8c4f2eaf18ac754885"
     },
     {
       "path": "data/relationships.json",
-      "bytes": 1192,
-      "sha256": "3c15230b9644f3d1d9889f12dd53edbfd68c9940f680c17c08ec41c0c76953a4"
+      "bytes": 2038,
+      "sha256": "4b4079e5a355a98730384b70e3c88af73044208d943a11d93014617226c4c9e5"
     },
     {
       "path": "data/sources.json",
-      "bytes": 21249,
-      "sha256": "fe422a1fbf196d31553ad4d7843c3283ae8d8f7e643011d61480646bc4f5ec94"
+      "bytes": 25922,
+      "sha256": "643030f552c4aad6a4556b004dfcf3f358414897e06922ed35b62eb1451f0efe"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 7877,
-      "sha256": "3e5c6539a2848900d6a29ac8e382c4dc501b463531995faa0cb533e234d8ab70"
+      "bytes": 9418,
+      "sha256": "6978c1ad9c574e76f6c864129222f5b2a3ff5d4daa8b674ce0da34b0815a16da"
     },
     {
       "path": "data/taxonomy.json",
-      "bytes": 2574,
-      "sha256": "0bdb4d5ed0f939f57f879d681c5c78f52f6387d9d7d54a52514d85b111921667"
+      "bytes": 2603,
+      "sha256": "2f8b88887965c21835f4c475941f02a77a3e1af5d54dab6ed584fb74d03cbe5d"
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 7615,
-      "sha256": "d8c7d7e6adc81565236bcb1e9f189befbf5b476a46585a916c8211d2609d2b70"
+      "bytes": 8725,
+      "sha256": "62cd188460a77d1841ec95ed0671de4b8cf6c2731b2515c03793eb82fc052055"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -111,8 +111,13 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 9032,
-      "sha256": "828561d5c5ba82066e1651149fc3f84793294bbdfa3654b50c5c08ff61e21854"
+      "bytes": 9031,
+      "sha256": "5515091ee1033e07d86db3cd7631e818a4bac7a6a78a7a3290399d8be7f59ea9"
+    },
+    {
+      "path": "docs/G2_DISPUTED_EL_ARENAL.md",
+      "bytes": 2647,
+      "sha256": "bf71c4ae95780c6f02bda951d9921953c38b13a49338253d1b670a25ce587982"
     },
     {
       "path": "docs/G2_PILOT.md",
@@ -135,6 +140,11 @@
       "sha256": "fb23436d7d9182c36308846e090016678816dff66f57dca8dded2b7f779c601d"
     },
     {
+      "path": "docs/G2_PILOT_D_NIXTAMALIZATION.md",
+      "bytes": 2651,
+      "sha256": "980f9f76be2effbe03282c893c30b814f900e4d4b1c77f3eaa19abbe5b65adc0"
+    },
+    {
       "path": "docs/G2_SECOND_REVIEW_A.md",
       "bytes": 2088,
       "sha256": "7a701c991b9f3f8340fef67cc7e65f3ca95f2ff8088981e25ef112dd3b397044"
@@ -146,8 +156,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 2611,
-      "sha256": "63fea50f3f27e137e53522f01620261f589435df9787392103f0097418985811"
+      "bytes": 2898,
+      "sha256": "79ab8bcbe4c5624d1f0238403b2587ba63874fc8732db475d1cf3048f422843a"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -156,38 +166,38 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1005,
-      "sha256": "84b2011f52f21c61778256d40007f1270c20454e5fabbd99eb21dbd478c670ed"
+      "bytes": 1607,
+      "sha256": "f7c99e6009efd20c4252063bd249048b19ab865d9d1c09a064ccf131ea267a08"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 5603,
-      "sha256": "2e1f658864a7532cd73e78dceff88c43fa939d178d95d11931d9e91397e2685a"
+      "bytes": 6301,
+      "sha256": "dc7d0aef032b0608c3a9b295c457940d3c33a845872893ffd046071edfa967a9"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 5966,
-      "sha256": "95fadb14a567634dc464cbaa4776920956bd9e16edf54b4f12ada808b0143617"
+      "bytes": 6493,
+      "sha256": "4dcf4f8ea6ed2597a956a65db0171dc53297e0e35f11916af742aca2743733e0"
     },
     {
       "path": "docs/SOURCE_POLICY.md",
-      "bytes": 3348,
-      "sha256": "e238f83275078f64e6578ef67741742d4d26d50fc60d83722c6aaab132850da0"
+      "bytes": 4093,
+      "sha256": "72a1dee5dd316f4dce4d44b734b668041b0bdf2661d174e44526ac166a81fade"
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1962,
-      "sha256": "d0dd3390c4befadfcd43586539513a66f719d0f820e0e8a24752b1d626abf4e1"
+      "bytes": 1827,
+      "sha256": "2da23a9af5eab6a15fa1610e4c27663b342f77c5f794aa76d1fea167e32aeaf9"
     },
     {
       "path": "index.html",
       "bytes": 20568,
-      "sha256": "84dd4ae17610de5a54eaa171f7e6e488ac3e1f8a8840b3d23083664be13bda15"
+      "sha256": "8dbed0938c21b120eb3cc3c437bb6f5dcc81f957011388ddff7036837876bbe6"
     },
     {
       "path": "js/app.js",
-      "bytes": 65605,
-      "sha256": "966ddef2e09d15d4f70c1c8bc05dfd999c074e4bafdb79a76cc01fc3c33c053d"
+      "bytes": 70147,
+      "sha256": "35f0ce3500aa8f5967af75759912a12ea19961dc41811f4615581476b60093f1"
     },
     {
       "path": "js/core.js",
@@ -211,8 +221,8 @@
     },
     {
       "path": "schemas/occurrence.schema.json",
-      "bytes": 2057,
-      "sha256": "fa8f06ddb7e0c1a075d325c9691940df59ded7832448079807e6db5da1180e59"
+      "bytes": 3202,
+      "sha256": "ba712ad51ba580800c2ead885b244f3c2283a56348cdb458ed2866a0a614a1a7"
     },
     {
       "path": "schemas/place.schema.json",
@@ -221,8 +231,8 @@
     },
     {
       "path": "schemas/relationship.schema.json",
-      "bytes": 1651,
-      "sha256": "addb5c8e73b0ef7604603663ecd8ae7b2820446545088288ba1f40f7408eb8d3"
+      "bytes": 1737,
+      "sha256": "9b1233f91df0cec4a4ff44878b8c9caa8f0243f05b7a08e026c77361420c0159"
     },
     {
       "path": "schemas/source.schema.json",
@@ -237,7 +247,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 627,
-      "sha256": "496804924f3331d2624348e30108df4195dcac7fcea535556af3c3258c693614"
+      "sha256": "f7241532cfa0709f10095c285a145c3b6a91d23288d7be012c4d89f7ec4d2d8e"
     },
     {
       "path": "tools/serve.py",
@@ -248,6 +258,11 @@
       "path": "tools/test_core.mjs",
       "bytes": 603,
       "sha256": "a5a3a055ced5756b16f6340058abb256d95b72e7c69abb3960b89681f02ef317"
+    },
+    {
+      "path": "tools/test_disputed_contract.py",
+      "bytes": 1641,
+      "sha256": "8081221da46dfc1a1f1520112f8ecd4f0051336816e65efa3bb4a102935969ca"
     },
     {
       "path": "tools/test_extended_contract.py",
@@ -275,9 +290,14 @@
       "sha256": "886b5f60911e5fdf95194a11abe2440cf093098755925abf0a43aade9867e151"
     },
     {
+      "path": "tools/test_g2_pilot_d_nixtamalization.py",
+      "bytes": 2461,
+      "sha256": "48b39ad25ffd14bbedbaae546b4865bade611866d5958ed4c42c165e4320dacd"
+    },
+    {
       "path": "tools/test_g2_traceability_ui.py",
-      "bytes": 910,
-      "sha256": "3b4e481c671bdfcdb16fedefa52497744ae22fe84833c94982728908e7c11dc8"
+      "bytes": 1015,
+      "sha256": "d40f7e63afa005b0924bf73192ea531b937d078ff58033b347f1ba9d25012d37"
     },
     {
       "path": "tools/test_light_contrast.py",
@@ -311,8 +331,8 @@
     },
     {
       "path": "tools/test_public_state.py",
-      "bytes": 1336,
-      "sha256": "9397884181a3ad3d204f33f61f57b04c6a344537b3dd65da67592982f1e6de44"
+      "bytes": 1592,
+      "sha256": "8c9fa8b7515e8e1807501a1f1a8da4fb839594d1cf56a984d5cda5ad616ff5a3"
     },
     {
       "path": "tools/test_schema_validation.py",
@@ -328,6 +348,11 @@
       "path": "tools/test_subject_history.py",
       "bytes": 3385,
       "sha256": "fc026fcc5f5bb7502c4daaeb75f283e8595e8acc84a9ebc235172b8107476e0c"
+    },
+    {
+      "path": "tools/test_technique_history.py",
+      "bytes": 1406,
+      "sha256": "97643a3d6ab6b806f4519cc2c4936bbe0609185670fae615d3cbdf3226c8b918"
     },
     {
       "path": "tools/test_temporal_navigator.py",
@@ -351,8 +376,8 @@
     },
     {
       "path": "tools/validate_project.py",
-      "bytes": 8980,
-      "sha256": "18a0f932488cca218cf8815aa875b63b1849836bc9507c33ff303830607e9320"
+      "bytes": 10138,
+      "sha256": "e86475d3613dcf6fac3c424dfb18f7e8c9e47ac5f16857f5170ea19d00085428"
     }
   ]
 }

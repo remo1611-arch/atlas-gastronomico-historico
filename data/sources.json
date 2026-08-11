@@ -430,5 +430,86 @@
     "sourceType": "official_institution",
     "accessed": "2026-08-11",
     "notes": "Contexto institucional del intercambio transatlántico de plantas, animales, personas, enfermedades, ideas y tecnologías tras los contactos europeos con América."
+  },
+  {
+    "id": "src_johnson_marston_2020_nixtamal_spherulites",
+    "title": "The experimental identification of nixtamalized maize through starch spherulites",
+    "publisher": "Journal of Archaeological Science",
+    "url": "https://doi.org/10.1016/j.jas.2019.105056",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Estudio experimental que propone los esferulitos de almidón como proxy directo de nixtamalización arqueológica."
+  },
+  {
+    "id": "src_santini_2022_san_bartolo_nixtamal",
+    "title": "First archaeological identification of nixtamalized maize, from two pit latrines at the ancient Maya site of San Bartolo, Guatemala",
+    "publisher": "Journal of Archaeological Science",
+    "url": "https://doi.org/10.1016/j.jas.2022.105581",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Primera identificación arqueológica directa publicada de maíz nixtamalizado mediante esferulitos en San Bartolo; siglos VII–VIII d.C."
+  },
+  {
+    "id": "src_cagnato_2024_la_corona_nixtamal",
+    "title": "Nixtamalization at La Corona: Microbotanical analysis of ceramic vessels indicates Late Classic Maya cooking techniques",
+    "publisher": "Quaternary International",
+    "url": "https://doi.org/10.1016/j.quaint.2024.09.007",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Esferulitos en cerámicas y piedras de molienda de La Corona; evidencia directa de tratamiento alcalino de maíz en siglos VII–VIII d.C."
+  },
+  {
+    "id": "src_zizumbo_colunga_2016_ash_precursor",
+    "title": "El uso de las cenizas como posible precursor de la nixtamalización en el oeste de Mesoamérica",
+    "publisher": "Revista de Geografía Agrícola · Universidad Autónoma Chapingo",
+    "url": "https://doi.org/10.5154/r.rga.2016.57.006",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Hipótesis etnobotánica sobre tratamientos termo-alcalinos con ceniza como posibles precursores; no constituye datación arqueológica directa del origen de la nixtamalización."
+  },
+  {
+    "id": "src_storey_2007_chicken_chile",
+    "title": "Radiocarbon and DNA evidence for a pre-Columbian introduction of Polynesian chickens to Chile",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.0703993104",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Propone introducción polinesia precolombina a partir de un hueso de El Arenal-1 datado cal AD 1304–1424 y ADN antiguo."
+  },
+  {
+    "id": "src_gongora_2008_chicken_chile",
+    "title": "Indo-European and Asian origins for Chilean and Pacific chickens revealed by mtDNA",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.0801991105",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Cuestiona la inferencia polinesia y señala posible efecto de carbono marino; concluye que la evidencia genética disponible no apoya esa introducción."
+  },
+  {
+    "id": "src_storey_2008_chicken_reply",
+    "title": "Pre-Columbian chickens, dates, isotopes, and mtDNA",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2596261/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Respuesta con dos huesos adicionales directamente datados y datos isotópicos; defiende cronología precolombina y origen polinesio."
+  },
+  {
+    "id": "src_thomson_2014_polynesian_chickens",
+    "title": "Using ancient DNA to study the origins and dispersal of ancestral Polynesian chickens across the Pacific",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.1320412111",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Reevalúa ADN antiguo, advierte contaminación moderna y concluye que no hay muestra sudamericana temprana con firma mitocondrial polinesia diagnóstica."
+  },
+  {
+    "id": "src_storey_matisoo_2014_reply",
+    "title": "No evidence against Polynesian dispersal of chickens to pre-Columbian South America",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.1410780111",
+    "sourceType": "peer_reviewed_letter",
+    "accessed": "2026-08-11",
+    "notes": "Réplica que discute el diseño e interpretación de Thomson et al. y mantiene que la evidencia previa no queda refutada."
   }
 ]

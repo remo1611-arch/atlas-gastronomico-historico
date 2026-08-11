@@ -13,6 +13,9 @@ python tools/test_g2_traceability_ui.py
 python tools/test_g2_pilot.py
 python tools/test_g2_pilot_b.py
 python tools/test_g2_pilot_c_maize.py
+python tools/test_technique_history.py
+python tools/test_disputed_contract.py
+python tools/test_g2_pilot_d_nixtamalization.py
 python tools/test_subject_history.py
 python tools/test_temporal_navigator.py
 python tools/test_unified_timeline.py
@@ -165,3 +168,20 @@ Antes de validar datos históricos:
 - [ ] atajos editoriales permanecen exactos;
 - [ ] filtros/capas limitan candidatos;
 - [ ] sin commitTemporalYear legacy.
+
+## Gate G2-D
+- [ ] nixtamalization demo deprecated + supersededBy;
+- [ ] 2 evidencias directas reviewed;
+- [ ] technique_attestation presente;
+- [ ] relación maize→uses_technique→nixtamalization;
+- [ ] historia del maíz muestra TÉCNICA;
+- [ ] hipótesis de origen sin occurrence artificial.
+
+## Gate disputed
+- [ ] certainty disputed;
+- [ ] dispute.question;
+- [ ] >=2 positions;
+- [ ] cada posición con sourceRefs;
+- [ ] position sourceRefs incluidos en occurrence sourceRefs;
+- [ ] debate visible en ficha;
+- [ ] ninguna posición declarada ganadora por la UI.

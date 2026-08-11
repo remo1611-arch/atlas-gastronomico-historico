@@ -1,68 +1,74 @@
-# Resultados de validación — 0.1.0-alpha.12
+# Resultados de validación — 0.1.0-alpha.13
 
 Fecha: 2026-08-11
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO.
+- G2: EN CURSO · G2-D implementado.
 
 ## Corpus
-Sin cambios históricos respecto a alpha.11:
-- 17 subjects;
-- 25 places;
-- 28 occurrences;
-- 3 events;
-- 3 relationships;
-- 7 contexts;
-- 6 developments;
-- 48 sources;
-- 12 occurrences activas sin punto canónico.
+- 19 subjects · 9 reviewed/verified.
+- 28 places · 20 reviewed/verified.
+- 31 occurrences · 20 reviewed/verified.
+- 3 events.
+- 4 relationships.
+- 7 contexts · 7 reviewed/verified.
+- 6 developments · 6 reviewed/verified.
+- 57 sources.
+- 14 occurrences activas sin punto cartográfico canónico.
 
 ## Suite completa: PASS
 
-### Base
-- validate_project.py: PASS;
-- schema validation: 137 objetos / 8 schemas;
-- JS core/app: sintaxis válida;
-- core temporal: 11 aserciones PASS;
-- UI contract: 100 IDs / 88 referencias;
-- mobile contract: PASS;
-- light contrast: PASS;
-- filtros / debounce / map coverage: PASS;
-- public state / verified gate / G2 / histories: PASS;
+### Datos / schemas
+- validate_project.py: PASS.
+- test_schema_validation.py: PASS.
+- 155 objetos / 8 schemas.
+
+### Core / UI
+- node --check core.js: PASS.
+- node --check app.js: PASS.
+- core temporal: 11 aserciones PASS.
+- UI contract: PASS.
+- mobile: PASS.
+- light contrast: PASS.
+- filtros: PASS.
+- map coverage: PASS.
+- debounce: PASS.
+
+### G2-D Nixtamalización
+- test_g2_pilot_d_nixtamalization.py: PASS.
+- subject canónico reviewed.
+- 2 occurrences directas reviewed.
+- technique_attestation.
+- relación maize -> uses_technique -> nixtamalization.
+- migración demo auditable.
+
+### Primer disputed
+- test_disputed_contract.py: PASS.
+- 1 occurrence disputed.
+- 2 posiciones documentadas.
+- fuentes por posición.
+- UI de debate abierto.
+
+### Historia técnica
+- test_technique_history.py: PASS.
+- nixtamalización: 2 occurrences.
+- Historia del maíz integra técnica relacionada.
+
+### Estado previo preservado
+- verified gate: PASS.
+- G2-A/B/C: PASS.
+- traceability: PASS.
+- subject history: PASS.
+- temporal navigator: PASS.
+- unified timeline: PASS.
+- magnetic timeline: PASS.
+- magnetic algorithm: 8 assertions PASS.
 - GitHub Pages: 16/16 PASS.
 
-### Unified Timeline
-- slider antiguo ausente;
-- ± años ausentes;
-- playback ausente;
-- tap/drag y navegación por hitos conservados.
-
-### Magnetic Timeline
-- test_magnetic_timeline.py: PASS;
-- test_magnetic_algorithm.mjs: PASS · 8 aserciones.
-
-Comportamiento validado:
-1. occurrence → snap al anclaje temporal usado por la marca visual;
-2. event/development → si la pulsación cae dentro del rango real, conserva esa fecha;
-3. fuera del rango → snap al límite histórico más próximo;
-4. candidato más cercano calculado sobre escala ordinal sin año 0;
-5. un rango que contiene la pulsación gana a un punto más lejano;
-6. el tipo de hito y `verified` solo desempatan después de la distancia;
-7. sin candidatos visibles no se inventa un snap;
-8. Ir al año y atajos editoriales permanecen exactos.
-
-### UX magnética
-Durante drag:
-- cursor libre;
-- preview del año;
-- hito candidato resaltado;
-- ficha central indica “Destino cercano”.
-
-Al soltar:
-- snap al candidato visible más próximo;
-- los filtros y capas determinan el conjunto de candidatos.
-
 ## Pendiente real
-Validación táctil/visual en Xiaomi 15 de la sensación de magnetismo. No se declara prueba visual automatizada del navegador.
+Validación visual en dispositivo de:
+- tarjeta TÉCNICA dentro de Historia del maíz;
+- ficha DEBATE ABIERTO en El Arenal-1;
+- legibilidad en modo oscuro/claro y móvil.

@@ -90,3 +90,12 @@
 75. La entrada “Ir al año” y los atajos editoriales son los mecanismos explícitos para seleccionar fechas exactas sin contenido.
 76. La distancia magnética se calcula en la misma escala ordinal temporal del Atlas y respeta la ausencia de año 0.
 
+72. Una técnica culinaria documentada puede usar `technique_attestation`; no se fuerza dentro de producción/adopción si esas categorías cambian el significado.
+73. Las relaciones `uses_technique` conectan subjects, pero la cronología del vínculo debe reflejar solo la evidencia incorporada, no una supuesta continuidad universal.
+74. Una hipótesis sobre el origen de una técnica no genera una occurrence fechada si la fuente no aporta datación arqueológica suficiente.
+75. `certainty: disputed` exige un objeto `dispute` con pregunta y al menos dos posiciones documentadas.
+76. Las fuentes de cada posición disputed deben existir y formar parte de los `sourceRefs` del registro.
+77. `status: reviewed` y `certainty: disputed` son compatibles: la revisión editorial certifica la calidad de representación del desacuerdo, no resuelve el desacuerdo.
+78. La interfaz debe presentar las posiciones disputed de forma paralela, sin convertir la redacción editorial en árbitro del debate.
+79. Evidencia, datación e inferencia causal/origen deben poder discutirse por separado dentro de un mismo caso.
+

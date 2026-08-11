@@ -69,3 +69,10 @@ Continuación alpha.12:
 - Ir al año es exacto;
 - validar sensación de snap en Xiaomi 15;
 - después G2-D nixtamalización + primer disputed.
+
+Continuación alpha.13:
+- G2-D implementado;
+- nixtamalización es técnica canónica relacionada con maíz;
+- primer disputed = gallinas de El Arenal-1;
+- no convertir hipótesis de origen en fechas;
+- siguiente paso: segunda revisión B/C/D + tercer recorrido + aceite/grasa/especia.

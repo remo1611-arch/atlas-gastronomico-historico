@@ -1,22 +1,28 @@
 # Changelog
 
-## 0.1.0-alpha.12 — 2026-08-11
+## 0.1.0-alpha.13 — 2026-08-11
 
-### Magnetic Timeline
-- tap/release hace snap al hito visible más próximo;
-- drag mantiene preview libre;
-- candidato magnético con realce discreto;
-- event/development conserva fecha interna al pulsar dentro del rango;
-- bins eligen evidencia por proximidad real a la pulsación.
+### G2-D · nixtamalización
+- subject canónico `nixtamalization`;
+- 2 occurrences reviewed;
+- `technique_attestation`;
+- relación canónica con maíz;
+- Historia del maíz incorpora `TÉCNICA`.
 
-### Exactitud
-- Ir al año permanece exacto;
-- atajos históricos permanecen exactos;
-- Home/End permanecen exactos.
+### Primer disputed
+- subject `chicken`;
+- occurrence El Arenal-1;
+- certainty disputed;
+- contrato `dispute.question + positions[]`;
+- fuentes por posición;
+- UI `DEBATE ABIERTO`.
 
-### QA
-- nuevo test de contrato magnético;
-- nuevo test ejecutable del algoritmo con 8 aserciones.
+### Rigor
+- no se fecha la hipótesis ceniza→cal como origen;
+- reviewed y disputed permanecen dimensiones independientes.
+
+### UX
+- Magnetic Timeline alpha.12 preservada.
 
 ## 0.1.0-alpha.11 — 2026-08-11
 

@@ -11,6 +11,8 @@ for needle in [
     "function verificationHTML",
     "function subjectHistoryItems",
     "function renderSubjectHistory",
+    "data-history-technique-occurrence",
+    "function disputeHTML",
     "data-history-event",
     "EVENT_LABELS",
     "Fuentes del elemento",
@@ -20,7 +22,7 @@ for needle in [
 ]:
     if needle not in app:errors.append("app falta: "+needle)
 
-for needle in [".status-badge.reviewed",".source-list",".development-card",".verification-box"]:
+for needle in [".status-badge.reviewed",".source-list",".development-card",".dispute-box",".history-technique",".verification-box"]:
     if needle not in css:errors.append("css falta: "+needle)
 
 if errors:

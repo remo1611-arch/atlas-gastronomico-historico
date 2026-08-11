@@ -327,5 +327,47 @@
       "src_miracle_africa_maize_1965"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "san_bartolo_guatemala",
+    "name": "San Bartolo (Petén, Guatemala)",
+    "type": "site",
+    "point": null,
+    "summary": "Sitio maya de Petén donde residuos microbotánicos de dos chultunes proporcionan evidencia directa de nixtamalización en los siglos VII–VIII d.C.",
+    "sourceRefs": [
+      "src_santini_2022_san_bartolo_nixtamal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "la_corona_guatemala",
+    "name": "La Corona (Petén, Guatemala)",
+    "type": "site",
+    "point": null,
+    "summary": "Centro maya de las Tierras Bajas donde cerámicas y piedras de molienda del Clásico Tardío conservan esferulitos asociados a maíz tratado con cal.",
+    "sourceRefs": [
+      "src_cagnato_2024_la_corona_nixtamal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "el_arenal_1_chile",
+    "name": "El Arenal-1 (península de Arauco, Chile)",
+    "type": "site",
+    "point": {
+      "lat": -37.370833,
+      "lon": -73.6125,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_storey_2007_chicken_chile"
+      ],
+      "note": "Coordenadas publicadas: 37°22′15″S, 73°36′45″W."
+    },
+    "summary": "Yacimiento del complejo El Vergel con restos de gallina que originaron un debate sobre una posible introducción polinesia precolombina.",
+    "sourceRefs": [
+      "src_storey_2007_chicken_chile",
+      "src_storey_2008_chicken_reply"
+    ],
+    "status": "reviewed"
   }
 ]

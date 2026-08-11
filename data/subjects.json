@@ -121,7 +121,8 @@
       "maíz",
       "técnica"
     ],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "nixtamalization"
   },
   {
     "id": "wine",
@@ -278,6 +279,54 @@
     "sourceRefs": [
       "src_forme_cury_bl",
       "src_forme_cury_loc"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "nixtamalization",
+    "name": "Nixtamalización",
+    "type": "culinary_technique",
+    "summary": "Tratamiento termo-alcalino del maíz mediante cocción o remojo en una solución alcalina, por ejemplo con cal o ceniza. El Atlas separa su evidencia arqueológica directa de las hipótesis sobre precursores y origen.",
+    "aliases": [
+      "nixtamalización",
+      "nixtamal"
+    ],
+    "tags": [
+      "maíz",
+      "técnica",
+      "procesado alcalino",
+      "masa"
+    ],
+    "sourceRefs": [
+      "src_johnson_marston_2020_nixtamal_spherulites",
+      "src_santini_2022_san_bartolo_nixtamal",
+      "src_cagnato_2024_la_corona_nixtamal",
+      "src_zizumbo_colunga_2016_ash_precursor"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "chicken",
+    "name": "Gallina doméstica",
+    "type": "food_species",
+    "summary": "Gallus gallus domesticus. El Atlas incorpora el debate de El Arenal-1 para mostrar cómo una misma evidencia arqueológica/genética puede sostener interpretaciones históricas contrapuestas.",
+    "aliases": [
+      "pollo",
+      "gallina",
+      "Gallus gallus domesticus"
+    ],
+    "tags": [
+      "animal doméstico",
+      "intercambio",
+      "Pacífico",
+      "debate"
+    ],
+    "sourceRefs": [
+      "src_storey_2007_chicken_chile",
+      "src_gongora_2008_chicken_chile",
+      "src_storey_2008_chicken_reply",
+      "src_thomson_2014_polynesian_chickens",
+      "src_storey_matisoo_2014_reply"
     ],
     "status": "reviewed"
   }

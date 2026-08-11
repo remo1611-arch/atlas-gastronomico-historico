@@ -2395,3 +2395,135 @@ html[data-theme="light"] .temporal-mark>i{
 .time-tools-unified{opacity:.88}
 @media(max-width:600px){.density-bin.magnetic-candidate>i{height:29px}.temporal-mark.magnetic-candidate>i{transform:translate(-50%,-50%) scale(1.42)}.temporal-range.magnetic-candidate>i{height:7px}}
 @media(prefers-reduced-motion:reduce){.density-bin.magnetic-candidate>i,.temporal-mark.magnetic-candidate>i,.temporal-range.magnetic-candidate>i{transition:none!important}}
+
+/* ===== alpha.13 · techniques + historiographical dispute ===== */
+.certainty-inline{
+  font-size:.66em;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  font-weight:900;
+}
+.certainty-inline.disputed,
+.certainty-value.disputed{
+  color:var(--gold);
+}
+
+.history-technique .history-index{
+  color:var(--product);
+  border-color:color-mix(in srgb,var(--product) 38%,var(--line));
+}
+.history-kind.technique{color:var(--product)}
+.history-open-technique{
+  margin-top:13px;
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--text);
+  font-size:.73rem;
+  font-weight:800;
+}
+.history-open-technique:hover{
+  border-color:var(--product);
+  color:var(--product);
+}
+.history-uncertainty.disputed{
+  color:var(--gold)!important;
+  border-color:color-mix(in srgb,var(--gold) 55%,var(--line))!important;
+  background:color-mix(in srgb,var(--gold) 7%,transparent)!important;
+}
+.history-caution.disputed{
+  border-left-color:var(--gold);
+  background:
+    linear-gradient(90deg,color-mix(in srgb,var(--gold) 9%,transparent),transparent),
+    var(--surface-2);
+}
+
+.dispute-box{
+  margin-top:16px;
+  border:1px solid color-mix(in srgb,var(--gold) 34%,var(--line));
+  border-radius:14px;
+  overflow:hidden;
+  background:color-mix(in srgb,var(--gold) 4%,var(--surface-2));
+}
+.dispute-head{
+  padding:13px 14px;
+  border-bottom:1px solid var(--line);
+}
+.dispute-head>span{
+  display:block;
+  color:var(--gold);
+  font-size:.62rem;
+  font-weight:900;
+  letter-spacing:.13em;
+}
+.dispute-head>strong{
+  display:block;
+  margin-top:5px;
+  font-family:Georgia,serif;
+  font-size:1rem;
+  line-height:1.28;
+}
+.dispute-positions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.dispute-position{
+  display:grid;
+  grid-template-columns:28px minmax(0,1fr);
+  gap:9px;
+  padding:14px;
+  min-width:0;
+}
+.dispute-position+.dispute-position{
+  border-left:1px solid var(--line);
+}
+.dispute-position>span{
+  width:26px;
+  height:26px;
+  display:grid;
+  place-items:center;
+  border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line));
+  border-radius:50%;
+  color:var(--gold);
+  font-size:.6rem;
+  font-weight:900;
+}
+.dispute-position strong{
+  display:block;
+  color:var(--text-strong);
+  font-size:.78rem;
+}
+.dispute-position p{
+  margin:5px 0 10px!important;
+  color:var(--muted);
+  font-size:.73rem;
+  line-height:1.48;
+}
+.dispute-position .source-link{
+  padding:7px 8px;
+}
+.dispute-position .source-link strong{
+  font-size:.68rem;
+}
+.dispute-editorial{
+  margin:0!important;
+  padding:10px 14px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:.71rem!important;
+  line-height:1.45!important;
+  background:color-mix(in srgb,var(--surface-solid) 55%,transparent);
+}
+
+html[data-theme="light"] .dispute-box{
+  background:#f5eee2;
+}
+
+@media(max-width:600px){
+  .dispute-positions{grid-template-columns:1fr}
+  .dispute-position+.dispute-position{
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+}

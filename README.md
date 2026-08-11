@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.12
+**Versión:** 0.1.0-alpha.13
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -192,6 +192,12 @@ La banda museográfica es ahora el control temporal principal:
 
 No existe reproducción cronológica automática.
 
-## Timeline magnética
+## Nixtamalización y debate histórico
 
-Alpha.12 convierte la cronología en un navegador histórico magnético: tocar la línea selecciona el hito visible más cercano; “Ir al año” queda como consulta exacta.
+Alpha.13 añade la primera técnica culinaria canónica vinculada longitudinalmente a un alimento:
+- nixtamalización;
+- San Bartolo;
+- La Corona;
+- relación `maize → uses_technique → nixtamalization`.
+
+También incorpora el primer registro `certainty: disputed`, basado en el debate académico sobre las gallinas de El Arenal-1, Chile.

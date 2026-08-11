@@ -45,6 +45,27 @@
     "certainty": "unknown",
     "summary": "Relación semilla.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "rel_maize_uses_nixtamalization_maya_classic"
+  },
+  {
+    "id": "rel_maize_uses_nixtamalization_maya_classic",
+    "from": "maize",
+    "to": "nixtamalization",
+    "type": "uses_technique",
+    "period": {
+      "start": 600,
+      "end": 800,
+      "precision": "range",
+      "display": "siglos VII–VIII d. C. · vínculo documentado directamente"
+    },
+    "certainty": "high",
+    "summary": "La relación entre maíz y nixtamalización está documentada directamente en contextos mayas de San Bartolo y La Corona. Este intervalo no pretende fechar el origen ni limitar la duración histórica de la técnica.",
+    "sourceRefs": [
+      "src_santini_2022_san_bartolo_nixtamal",
+      "src_cagnato_2024_la_corona_nixtamal",
+      "src_johnson_marston_2020_nixtamal_spherulites"
+    ],
+    "status": "reviewed"
   }
 ]

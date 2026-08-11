@@ -119,7 +119,8 @@
     "certainty": "unknown",
     "summary": "Dato semilla, no cronología verificada.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "occ_nixtamal_san_bartolo_600_800"
   },
   {
     "id": "occ_potato_andes_demo",
@@ -597,5 +598,102 @@
       "src_miracle_africa_maize_1965"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_nixtamal_san_bartolo_600_800",
+    "subjectRef": "nixtamalization",
+    "placeRef": "san_bartolo_guatemala",
+    "period": {
+      "start": 600,
+      "end": 800,
+      "precision": "range",
+      "display": "siglos VII–VIII d. C.",
+      "note": "El estudio identifica la evidencia directa en contextos de los siglos VII–VIII d.C.; no se interpreta como fecha de invención de la técnica."
+    },
+    "occurrenceType": "technique_attestation",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Esferulitos de almidón recuperados en dos chultunes constituyen evidencia arqueológica directa de maíz nixtamalizado y probable eliminación de nejayote en San Bartolo.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_johnson_marston_2020_nixtamal_spherulites",
+      "src_santini_2022_san_bartolo_nixtamal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_nixtamal_la_corona_600_800",
+    "subjectRef": "nixtamalization",
+    "placeRef": "la_corona_guatemala",
+    "period": {
+      "start": 600,
+      "end": 800,
+      "precision": "range",
+      "display": "siglos VII–VIII d. C.",
+      "note": "Los residuos proceden de contextos del Clásico Tardío y documentan uso de la técnica, no su origen."
+    },
+    "occurrenceType": "technique_attestation",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Esferulitos en recipientes cerámicos y piedras de molienda de La Corona indican tratamiento alcalino del maíz en contextos de preparación, consumo ceremonial y enterramiento.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_johnson_marston_2020_nixtamal_spherulites",
+      "src_cagnato_2024_la_corona_nixtamal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_chicken_el_arenal_polynesian_debate",
+    "subjectRef": "chicken",
+    "placeRef": "el_arenal_1_chile",
+    "period": {
+      "start": 1304,
+      "end": 1459,
+      "precision": "range",
+      "display": "cal d. C. 1304–1459",
+      "note": "El rango reúne las dataciones directamente publicadas para varios huesos de El Arenal-1; la interpretación como introducción polinesia precolombina permanece debatida."
+    },
+    "occurrenceType": "introduction",
+    "evidenceType": "genetic",
+    "certainty": "disputed",
+    "summary": "Restos de gallina de El Arenal-1 han sido utilizados para proponer una introducción polinesia anterior a la llegada española, pero la interpretación genética y la robustez de esa conclusión han sido cuestionadas en trabajos posteriores.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_storey_2007_chicken_chile",
+      "src_gongora_2008_chicken_chile",
+      "src_storey_2008_chicken_reply",
+      "src_thomson_2014_polynesian_chickens",
+      "src_storey_matisoo_2014_reply"
+    ],
+    "status": "reviewed",
+    "dispute": {
+      "question": "¿Los restos de El Arenal-1 demuestran una introducción polinesia precolombina de gallinas en Sudamérica?",
+      "positions": [
+        {
+          "id": "supports_precolumbian_polynesian",
+          "label": "Interpretación favorable",
+          "summary": "Las dataciones radiocarbónicas, los isótopos y las secuencias publicadas se interpretan como compatibles con gallinas precolombinas introducidas por navegantes polinesios.",
+          "sourceRefs": [
+            "src_storey_2007_chicken_chile",
+            "src_storey_2008_chicken_reply",
+            "src_storey_matisoo_2014_reply"
+          ]
+        },
+        {
+          "id": "challenges_polynesian_inference",
+          "label": "Interpretación crítica",
+          "summary": "La señal mitocondrial no sería diagnóstica de una dispersión polinesia y algunos análisis plantean contaminación o posibles desplazamientos de la datación; por ello no consideran demostrada la introducción.",
+          "sourceRefs": [
+            "src_gongora_2008_chicken_chile",
+            "src_thomson_2014_polynesian_chickens"
+          ]
+        }
+      ],
+      "editorialNote": "El Atlas no resuelve el desacuerdo. Separa la existencia de restos arqueológicos, su datación y la inferencia sobre el origen de las aves."
+    }
   }
 ]

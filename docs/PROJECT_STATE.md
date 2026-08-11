@@ -4,36 +4,71 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.12
+0.1.0-alpha.13
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO.
+- G2: EN CURSO · G2-D implementado.
+- G3+: no iniciados.
 
 ## Corpus
-Sin cambios históricos respecto a alpha.11.
+- 19 subjects.
+- 28 places.
+- 31 occurrences.
+- 3 events.
+- 4 relationships.
+- 7 contexts.
+- 6 developments.
+- 57 sources.
 
-## Alpha.12 — Magnetic Timeline
+## Nixtamalización
 
-La cronología unificada deja de interpretar un tap como un año matemático vacío.
+Subject canónico:
+- `nixtamalization` · reviewed.
 
-### Línea temporal
-- tap/release → hito visible más próximo;
-- drag → preview libre;
-- durante drag → candidato magnético;
-- release → snap al candidato;
-- marcas/bandas directas tienen prioridad;
-- bins eligen la evidencia del bin más cercana a la pulsación.
+Evidencias directas:
+- San Bartolo, siglos VII–VIII d.C.;
+- La Corona, siglos VII–VIII d.C.
 
-### Rangos
-Events/developments conservan el año pulsado cuando cae dentro de su intervalo real. Fuera del intervalo, el snap usa el límite real más próximo.
+Nueva taxonomía:
+- `technique_attestation`.
 
-### Fechas exactas
-Siguen disponibles explícitamente mediante:
-- Ir al año;
-- atajos editoriales;
-- Home/End.
+Relación:
+- `maize → uses_technique → nixtamalization`.
 
-## Próxima acción
-Prueba táctil real de alpha.12. Si el snap resulta natural, continuar G2-D: nixtamalización + primer disputed.
+Historia del maíz incorpora las dos evidencias como `TÉCNICA`.
+
+La hipótesis de tratamientos con ceniza como precursor permanece bibliográfica y no se fecha artificialmente.
+
+## Primer disputed
+
+Subject:
+- `chicken` · reviewed.
+
+Occurrence:
+- `occ_chicken_el_arenal_polynesian_debate`.
+
+Estado:
+- reviewed;
+- certainty: disputed.
+
+La occurrence contiene dos posiciones documentadas:
+- favorable a introducción polinesia precolombina;
+- crítica con esa interpretación.
+
+La ficha muestra `DEBATE ABIERTO` y las fuentes de cada posición.
+
+## Migraciones
+- nixtamalization_demo → deprecated → nixtamalization;
+- occ_nixtamal_demo → deprecated → occ_nixtamal_san_bartolo_600_800;
+- rel_nixtamal_maize_demo → deprecated → rel_maize_uses_nixtamalization_maya_classic.
+
+## UX temporal
+Se conserva alpha.12 Magnetic Timeline sin cambios de interacción.
+
+## Próximo trabajo
+1. segunda revisión B/C/D;
+2. tercer recorrido longitudinal;
+3. aceite/grasa y especia;
+4. preparar gate de cierre G2.

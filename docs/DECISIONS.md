@@ -180,4 +180,3 @@ Una pulsación dentro de un event/development conserva la posición temporal pul
 ## ADR-046 — Año exacto como acción explícita
 **Aceptada.**
 “Ir al año”, Home/End y atajos editoriales no aplican magnetismo. Así se separa consultar una fecha exacta de explorar historia documentada.
-

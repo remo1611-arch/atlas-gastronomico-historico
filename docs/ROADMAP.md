@@ -171,14 +171,32 @@ La numeración G2-F refleja una intervención UX adelantada; no altera la secuen
 - fecha exacta separada de exploración histórica.
 
 ## G2-D — Técnica canónica + primer disputed
-**Estado: PENDIENTE**
+**Estado: IMPLEMENTADO · alpha.13**
 
-Objetivos:
-- nixtamalización vinculada al maíz;
-- primera técnica culinaria canónica conectada longitudinalmente;
-- primer caso `certainty: disputed`;
-- validar presentación de desacuerdo historiográfico.
+### Nixtamalización
+- subject canónico reviewed;
+- San Bartolo reviewed;
+- La Corona reviewed;
+- `technique_attestation`;
+- relación `maize → uses_technique → nixtamalization`;
+- técnica integrada en Historia del maíz;
+- hipótesis ceniza→cal conservada sin fecha inventada.
 
+### Primer disputed
+- Gallina doméstica / El Arenal-1;
+- `certainty: disputed`;
+- posiciones favorables y críticas;
+- fuentes separadas por interpretación;
+- UI de debate abierto.
+
+### Pendiente para cerrar G2
+- segunda revisión de B/C/D;
+- tercer recorrido longitudinal suficientemente distinto;
+- aceite/grasa y especia;
+- valorar al menos un caso disputed adicional de naturaleza no genética;
+- gate final de corpus piloto.
+
+---
 ---
 
 ## G3 — Evidencia y precisión

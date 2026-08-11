@@ -119,3 +119,18 @@ no se infiere automáticamente el vector de traslado entre puntos.
 
 La ausencia de consenso sobre el mecanismo debe representarse mediante `certainty` y texto explícito.
 
+## Casos disputed
+
+Para `certainty: disputed`:
+- se priorizan publicaciones académicas que sostengan posiciones realmente diferentes;
+- no se crea una falsa controversia a partir de matices menores;
+- cada posición conserva sus `sourceRefs`;
+- el texto editorial describe la estructura del desacuerdo, no resuelve la cuestión;
+- una réplica o carta académica puede incorporarse si forma parte sustantiva del debate.
+
+## Hipótesis frente a evidencia directa
+
+Una hipótesis etnobotánica, experimental o historiográfica puede ser una fuente legítima del subject sin convertirse automáticamente en occurrence.
+
+La occurrence exige anclaje temporal/espacial suficientemente defendible para el tipo de afirmación que se pretende mostrar.
+
