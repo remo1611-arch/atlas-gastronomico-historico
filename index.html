@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.10">
+  <meta name="atlas-build" content="0.1.0-alpha.11">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.10">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.11">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.10</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.11</span></small>
     </span>
   </a>
 
@@ -82,24 +82,6 @@
     </div>
 
     <div class="timeline-stage">
-      <div class="timeline-controls" aria-label="Desplazamiento temporal">
-        <button type="button" data-step="-500">−500</button>
-        <button type="button" data-step="-100">−100</button>
-        <button type="button" data-step="-10">−10</button>
-        <button type="button" data-step="-1">−1</button>
-        <button id="playBtn" class="play-btn" type="button" aria-label="Reproducir tiempo">▶</button>
-        <button type="button" data-step="1">+1</button>
-        <button type="button" data-step="10">+10</button>
-        <button type="button" data-step="100">+100</button>
-        <button type="button" data-step="500">+500</button>
-      </div>
-
-      <div class="range-shell">
-        <div class="range-glow" aria-hidden="true"></div>
-        <input id="yearRange" type="range" aria-label="Línea temporal">
-      </div>
-
-
       <section id="temporalNavigator" class="temporal-navigator" aria-labelledby="temporalNavigatorTitle">
         <div class="temporal-nav-head">
           <div>
@@ -113,12 +95,21 @@
           </div>
         </div>
 
-        <div id="temporalRail" class="temporal-rail" role="group" aria-label="Mapa temporal interactivo">
+        <div id="temporalRail" class="temporal-rail unified" aria-label="Línea temporal interactiva; toca o arrastra para seleccionar una fecha">
           <div class="temporal-density" id="temporalDensity" aria-hidden="true"></div>
           <div class="temporal-verified" id="temporalVerified"></div>
           <div class="temporal-events" id="temporalEvents"></div>
           <div class="temporal-developments" id="temporalDevelopments"></div>
-          <div id="temporalCursor" class="temporal-cursor" aria-hidden="true"><i></i></div>
+          <div id="temporalCursor" class="temporal-cursor" role="slider" tabindex="0"
+            aria-label="Fecha seleccionada"
+            aria-valuemin="-12000" aria-valuemax="2026"
+            aria-valuenow="1500" aria-valuetext="1500 d. C."
+            aria-describedby="temporalNavigatorHint"><i></i></div>
+        </div>
+        <div class="temporal-scale">
+          <span id="temporalMinLabel" aria-hidden="true">12.000 a. C.</span>
+          <span id="temporalNavigatorHint">Toca o arrastra sobre la línea</span>
+          <span id="temporalMaxLabel" aria-hidden="true">2026 d. C.</span>
         </div>
 
         <div class="temporal-nav-foot">
@@ -131,17 +122,13 @@
         </div>
       </section>
 
-      <div class="time-tools">
+      <div class="time-tools time-tools-unified">
         <div class="go-year">
           <label for="yearMagnitude">Ir al año</label>
           <input id="yearMagnitude" inputmode="numeric" type="number" min="1" value="1500">
           <select id="yearEra" aria-label="Era"><option value="CE">d. C.</option><option value="BCE">a. C.</option></select>
           <button id="goYearBtn" type="button">Ir</button>
         </div>
-
-        <label class="mini-select">Reproducción
-          <select id="playStepSelect"></select>
-        </label>
       </div>
     </div>
   </section>
@@ -445,6 +432,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.10"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.11"></script>
 </body>
 </html>

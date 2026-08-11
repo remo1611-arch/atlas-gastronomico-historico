@@ -56,3 +56,9 @@ Continuación alpha.10:
 - no sustituirlo por una fila de puntos/labels;
 - siguiente fase: G2-D nixtamalización + primer disputed;
 - comprobar en dispositivo real densidad, bandas de events y anterior/siguiente antes de cambiar su estética.
+
+Continuación alpha.11:
+- cronología única;
+- no reintroducir slider paralelo, ± años ni playback cronológico;
+- validar drag/tap/hitos en Xiaomi 15;
+- después continuar G2-D nixtamalización + primer disputed.

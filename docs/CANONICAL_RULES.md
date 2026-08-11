@@ -78,3 +78,9 @@
 65. El navegador temporal respeta los filtros activos y la búsqueda para evitar discrepancias entre lo que el usuario filtra y lo que la cronología sugiere.
 66. Las marcas pequeñas pueden tener un área táctil mayor que su representación visual; accesibilidad y precisión de selección prevalecen sobre el tamaño aparente.
 
+67. La interfaz pública tendrá una sola línea temporal principal; no se mantendrán selectores temporales paralelos.
+68. El desplazamiento principal es histórico, no aritmético: anterior/siguiente navega por hitos, no por incrementos de años.
+69. El usuario puede seleccionar una fecha arbitraria tocando o arrastrando sobre la cronología unificada.
+70. Durante un arrastre se actualizan cursor y fecha sin reconstruir el corpus en cada movimiento; el render completo se confirma al soltar.
+71. La reproducción automática por incrementos de años queda fuera del contrato público. Un futuro modo narrado deberá avanzar por hitos/escenas, no por pasos cronológicos ciegos.
+

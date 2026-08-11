@@ -4,7 +4,7 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.10
+0.1.0-alpha.11
 
 ## Gates
 - G0: CERRADO.
@@ -13,7 +13,7 @@ Atlas Gastronómico Histórico
 - G3+: no iniciados.
 
 ## Corpus
-Se conserva íntegramente alpha.9:
+Sin cambios históricos respecto a alpha.10:
 - 17 subjects;
 - 25 places;
 - 28 occurrences;
@@ -23,57 +23,47 @@ Se conserva íntegramente alpha.9:
 - 6 developments;
 - 48 sources.
 
-## Historias longitudinales
-- vino;
-- maíz.
+## Alpha.11 — Unified Timeline
 
-## Alpha.10 — navegador temporal
+La cronología semántica es ahora la única línea temporal de la aplicación.
 
-Se añade un mapa temporal alineado con el slider.
+### Eliminado
+- slider `yearRange`;
+- botones ±1/10/100/500;
+- botón Play;
+- selector de velocidad;
+- `playStep`;
+- `playStepOptions`;
+- estado `playing`;
+- timer de reproducción;
+- CSS y listeners asociados.
 
-### Evidencias
-- solo reviewed/verified;
-- densidad adaptativa;
-- verified con marcador individual;
-- uncertainty conservada.
+### Conservado
+- fecha actual grande;
+- atajos de periodos;
+- Ir al año;
+- hito anterior/siguiente;
+- densidad de evidencias;
+- marcas verified;
+- bands de events;
+- bands de developments.
 
-### Events
-- capa independiente;
-- rangos representados como bandas;
-- seleccionables.
+### Selección
+- tap/click en cualquier zona libre;
+- drag con Pointer Events;
+- selección de marcas;
+- teclado en cursor:
+  - ← hito anterior;
+  - → hito siguiente;
+  - Home mínimo;
+  - End máximo.
 
-### Developments
-- capa independiente;
-- rangos representados como bandas;
-- seleccionables.
+### Rendimiento
+El drag no ejecuta un render completo en cada movimiento.
+La fecha y cursor se previsualizan mediante requestAnimationFrame y el corpus se actualiza al soltar.
 
-### Navegación
-- cursor sincronizado con el año;
-- hito anterior;
-- hito siguiente;
-- preview compacto del hito más próximo/seleccionado.
+## Pendiente
+Validación visual/táctil real en Xiaomi 15.
 
-### Escalabilidad
-Bins de densidad:
-- 38 móvil;
-- 68 tablet;
-- 120 escritorio.
-
-Esto evita convertir el timeline en una acumulación de puntos cuando el corpus crezca.
-
-### Accesibilidad
-- botones reales;
-- aria-label descriptivo;
-- targets táctiles mayores que el marcador visual;
-- reduced-motion.
-
-## Decisión de secuencia
-G2-D (nixtamalización + disputed) se aplaza una iteración para resolver primero la navegación temporal, antes de añadir más contenido.
-
-## Próxima acción
-G2-D:
-1. nixtamalización canónica;
-2. relación explícita técnica ↔ maíz;
-3. primer caso disputed;
-4. validar cómo aparecen técnica/disputa en Historia del elemento y navegador temporal.
-
+Después:
+G2-D · nixtamalización + primer caso disputed.

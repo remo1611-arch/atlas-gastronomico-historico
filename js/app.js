@@ -1,23 +1,23 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.10';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.11';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.10',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.10',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.10',
-  places:'./data/places.json?v=0.1.0-alpha.10',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.10',
-  events:'./data/events.json?v=0.1.0-alpha.10',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.10',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.10',
-  developments:'./data/developments.json?v=0.1.0-alpha.10',
-  sources:'./data/sources.json?v=0.1.0-alpha.10',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.10'
+  config:'./data/config.json?v=0.1.0-alpha.11',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.11',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.11',
+  places:'./data/places.json?v=0.1.0-alpha.11',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.11',
+  events:'./data/events.json?v=0.1.0-alpha.11',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.11',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.11',
+  developments:'./data/developments.json?v=0.1.0-alpha.11',
+  sources:'./data/sources.json?v=0.1.0-alpha.11',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.11'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
   year:1500,search:'',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
-  selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -108,7 +108,6 @@ async function load(){
     const [config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap]=await Promise.all(Object.values(P).map(j));
     Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,basemap});
     s.year=config.timeline.initialYear;
-    s.playStep=config.timeline.playStep;
     s.eventWindow=config.timeline.eventWindowYears;
 
     fillControls();
@@ -136,16 +135,16 @@ function fillControls(){
   const of=$('#occurrenceTypeFilter');
   s.taxonomy.occurrenceTypes.forEach(x=>of.add(new Option(OCC_LABELS[x]||x,x)));
 
-  const ps=$('#playStepSelect');
-  s.config.timeline.playStepOptions.forEach(x=>ps.add(new Option(`${x} ${x===1?'año':'años'}/paso`,x)));
-  ps.value=s.playStep;
 
   const ew=$('#eventWindowSelect');
   [25,50,100,250,500].forEach(x=>ew.add(new Option(`±${x} años`,x)));
   ew.value=s.eventWindow;
 
-  $('#yearRange').min=toOrdinal(s.config.timeline.minYear);
-  $('#yearRange').max=toOrdinal(s.config.timeline.maxYear);
+  $('#temporalMinLabel').textContent=formatYear(s.config.timeline.minYear);
+  $('#temporalMaxLabel').textContent=formatYear(s.config.timeline.maxYear);
+  $('#temporalCursor').setAttribute('aria-valuemin',String(s.config.timeline.minYear));
+  $('#temporalCursor').setAttribute('aria-valuemax',String(s.config.timeline.maxYear));
+
   syncTypeControls();
 }
 
@@ -602,10 +601,33 @@ function stepTemporalHit(direction){
   if(candidates[0]) focusTemporalItem(candidates[0],true);
 }
 
-function setYear(year){
-  s.year=Math.max(s.config.timeline.minYear,Math.min(s.config.timeline.maxYear,year===0?1:year));
 
-  $('#yearRange').value=toOrdinal(s.year);
+const temporalDrag={
+  active:false,
+  pointerId:null,
+  startYear:null,
+  grabOffsetPx:0,
+  pendingYear:null,
+  raf:null
+};
+
+function temporalYearFromClientX(clientX,offsetPx=0){
+  const rail=$('#temporalRail');
+  if(!rail) return s.year;
+
+  const rect=rail.getBoundingClientRect();
+  if(!rect.width) return s.year;
+
+  const ratio=Math.max(0,Math.min(1,(clientX-offsetPx-rect.left)/rect.width));
+  const {min,max}=temporalOrdinalBounds();
+  const ordinal=Math.round(min+ratio*(max-min));
+  return fromOrdinal(ordinal);
+}
+
+function updateYearChrome(year){
+  const safe=Math.max(s.config.timeline.minYear,Math.min(s.config.timeline.maxYear,year===0?1:year));
+  s.year=safe;
+
   $('#yearDisplay').textContent=formatYear(s.year);
   $('#mapYearDisplay').textContent=formatYear(s.year);
 
@@ -615,6 +637,126 @@ function setYear(year){
   $('#heroYear').textContent=p.magnitude;
   $('#heroEra').textContent=p.era==='BCE'?'a. C.':'d. C.';
 
+  const cursor=$('#temporalCursor');
+  if(cursor){
+    cursor.style.setProperty('--left',`${temporalPercent(s.year).toFixed(4)}%`);
+    cursor.setAttribute('aria-valuenow',String(s.year));
+    cursor.setAttribute('aria-valuetext',formatYear(s.year));
+  }
+}
+
+function previewTemporalYear(year){
+  temporalDrag.pendingYear=year;
+  if(temporalDrag.raf!==null) return;
+
+  temporalDrag.raf=requestAnimationFrame(()=>{
+    temporalDrag.raf=null;
+    updateYearChrome(temporalDrag.pendingYear);
+  });
+}
+
+function commitTemporalYear(year){
+  if(temporalDrag.raf!==null){
+    cancelAnimationFrame(temporalDrag.raf);
+    temporalDrag.raf=null;
+  }
+  temporalDrag.pendingYear=null;
+  setYear(year);
+}
+
+function temporalPointerIgnored(target){
+  return Boolean(target.closest(
+    '[data-temporal-key],[data-temporal-bin],button,a,input,select,label'
+  ));
+}
+
+function beginTemporalDrag(event){
+  const rail=$('#temporalRail');
+  if(!rail || temporalPointerIgnored(event.target)) return;
+  if(event.button!==undefined && event.button!==0) return;
+
+  temporalDrag.active=true;
+  temporalDrag.pointerId=event.pointerId;
+  temporalDrag.startYear=s.year;
+
+  const cursor=event.target.closest('#temporalCursor');
+  if(cursor){
+    const rect=rail.getBoundingClientRect();
+    const cursorX=rect.left+(temporalPercent(s.year)/100)*rect.width;
+    temporalDrag.grabOffsetPx=event.clientX-cursorX;
+  }else{
+    temporalDrag.grabOffsetPx=0;
+  }
+
+  rail.classList.add('dragging');
+  rail.setPointerCapture?.(event.pointerId);
+
+  previewTemporalYear(temporalYearFromClientX(event.clientX,temporalDrag.grabOffsetPx));
+  event.preventDefault();
+}
+
+function moveTemporalDrag(event){
+  if(!temporalDrag.active || event.pointerId!==temporalDrag.pointerId) return;
+
+  previewTemporalYear(temporalYearFromClientX(event.clientX,temporalDrag.grabOffsetPx));
+  event.preventDefault();
+}
+
+function endTemporalDrag(event){
+  if(!temporalDrag.active || event.pointerId!==temporalDrag.pointerId) return;
+
+  const rail=$('#temporalRail');
+  const year=temporalYearFromClientX(event.clientX,temporalDrag.grabOffsetPx);
+
+  temporalDrag.active=false;
+  temporalDrag.pointerId=null;
+  temporalDrag.startYear=null;
+  temporalDrag.grabOffsetPx=0;
+  rail?.classList.remove('dragging');
+  try{rail?.releasePointerCapture?.(event.pointerId)}catch{}
+
+  commitTemporalYear(year);
+  event.preventDefault();
+}
+
+function cancelTemporalDrag(event){
+  if(!temporalDrag.active) return;
+
+  const rail=$('#temporalRail');
+  temporalDrag.active=false;
+  temporalDrag.pointerId=null;
+  rail?.classList.remove('dragging');
+
+  if(temporalDrag.raf!==null){
+    cancelAnimationFrame(temporalDrag.raf);
+    temporalDrag.raf=null;
+  }
+  temporalDrag.pendingYear=null;
+  if(temporalDrag.startYear!==null){
+    updateYearChrome(temporalDrag.startYear);
+  }
+  temporalDrag.startYear=null;
+  temporalDrag.grabOffsetPx=0;
+}
+
+function handleTemporalCursorKey(event){
+  if(event.key==='ArrowLeft'){
+    event.preventDefault();
+    stepTemporalHit(-1);
+  }else if(event.key==='ArrowRight'){
+    event.preventDefault();
+    stepTemporalHit(1);
+  }else if(event.key==='Home'){
+    event.preventDefault();
+    setYear(s.config.timeline.minYear);
+  }else if(event.key==='End'){
+    event.preventDefault();
+    setYear(s.config.timeline.maxYear);
+  }
+}
+
+function setYear(year){
+  updateYearChrome(year);
   render();
 }
 
@@ -1432,12 +1574,6 @@ function bind(){
   const min=s.config.timeline.minYear;
   const max=s.config.timeline.maxYear;
 
-  $('#yearRange').addEventListener('input',e=>setYear(fromOrdinal(Number(e.target.value))));
-
-  $$('[data-step]').forEach(button=>{
-    button.addEventListener('click',()=>setYear(shiftYear(s.year,Number(button.dataset.step),min,max)));
-  });
-
   $$('[data-jump-year]').forEach(button=>{
     button.addEventListener('click',()=>setYear(Number(button.dataset.jumpYear)));
   });
@@ -1445,17 +1581,13 @@ function bind(){
   $('#goYearBtn').addEventListener('click',()=>setYear(fromParts($('#yearMagnitude').value,$('#yearEra').value,min,max)));
   $('#yearMagnitude').addEventListener('keydown',e=>{if(e.key==='Enter') $('#goYearBtn').click()});
 
-  $('#playStepSelect').addEventListener('change',e=>{
-    s.playStep=Number(e.target.value)||50;
-    if(s.playing) startTimer();
-  });
+  const temporalRail=$('#temporalRail');
+  temporalRail.addEventListener('pointerdown',beginTemporalDrag);
+  temporalRail.addEventListener('pointermove',moveTemporalDrag);
+  temporalRail.addEventListener('pointerup',endTemporalDrag);
+  temporalRail.addEventListener('pointercancel',cancelTemporalDrag);
+  $('#temporalCursor').addEventListener('keydown',handleTemporalCursorKey);
 
-  $('#playBtn').addEventListener('click',()=>{
-    s.playing=!s.playing;
-    $('#playBtn').textContent=s.playing?'❚❚':'▶';
-    $('#playBtn').setAttribute('aria-label',s.playing?'Pausar tiempo':'Reproducir tiempo');
-    if(s.playing) startTimer(); else stopTimer();
-  });
 
   $('#searchToggleBtn').addEventListener('click',()=>{
     $('#quickSearch').classList.toggle('hidden');
@@ -1531,13 +1663,6 @@ function bind(){
 
   window.addEventListener('resize',()=>renderMarkers(occVisible()));
 
-  document.addEventListener('visibilitychange',()=>{
-    if(document.hidden&&s.playing){
-      s.playing=false;
-      stopTimer();
-      $('#playBtn').textContent='▶';
-    }
-  });
 
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
@@ -1549,25 +1674,6 @@ function bind(){
   });
 }
 
-function startTimer(){
-  stopTimer();
-  s.timer=setInterval(()=>{
-    if(s.year>=s.config.timeline.maxYear){
-      s.playing=false;
-      stopTimer();
-      $('#playBtn').textContent='▶';
-      return;
-    }
-    setYear(shiftYear(s.year,s.playStep,s.config.timeline.minYear,s.config.timeline.maxYear));
-  },650);
-}
-
-function stopTimer(){
-  if(s.timer){
-    clearInterval(s.timer);
-    s.timer=null;
-  }
-}
 
 function getStore(key){
   try{return localStorage.getItem(key)}catch{return null}

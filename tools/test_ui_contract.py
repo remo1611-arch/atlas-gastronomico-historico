@@ -23,11 +23,11 @@ missing=sorted(refs-set(p.ids))
 if missing:errors.append("IDs usadas por JS inexistentes: "+", ".join(missing))
 
 required={
-"heroYear","heroEra","yearDisplay","yearRange","yearMagnitude","yearEra","goYearBtn",
-"playBtn","playStepSelect","occurrenceCount","subjectCount","placeCount","eventCount",
+"heroYear","heroEra","yearDisplay","yearMagnitude","yearEra","goYearBtn",
+"occurrenceCount","subjectCount","placeCount","eventCount",
 "searchInput","subjectTypeFilter","evidenceFilter","occurrenceTypeFilter","labelMode",
 "seedToggle","resetFiltersBtn","worldMap","basemapLayer","occurrenceLayer","occurrenceList",
-"categorySummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus","historyDrawer","historyTitle","historySubtitle","historySummary","historyTimeline","temporalNavigator","temporalRail","temporalDensity","temporalVerified","temporalEvents","temporalDevelopments","temporalCursor","temporalFocus","prevTemporalHitBtn","nextTemporalHitBtn"
+"categorySummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus","historyDrawer","historyTitle","historySubtitle","historySummary","historyTimeline","temporalNavigator","temporalRail","temporalDensity","temporalVerified","temporalEvents","temporalDevelopments","temporalCursor","temporalFocus","prevTemporalHitBtn","nextTemporalHitBtn","temporalMinLabel","temporalNavigatorHint","temporalMaxLabel"
 }
 mr=sorted(required-set(p.ids))
 if mr:errors.append("Faltan IDs requeridas: "+", ".join(mr))

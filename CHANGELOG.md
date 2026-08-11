@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.11 — 2026-08-11
+
+### Unified Timeline
+- el navegador temporal semántico pasa a ser la única línea temporal;
+- tap/click para seleccionar fecha;
+- drag táctil con Pointer Events;
+- cursor accesible role=slider;
+- izquierda/derecha = hito anterior/siguiente.
+
+### Eliminado
+- yearRange;
+- ±1/10/100/500;
+- reproducción automática;
+- selector de velocidad;
+- playStep/playStepOptions;
+- timers/listeners/CSS legacy asociados.
+
+### Conservado
+- atajos históricos;
+- entrada directa de año;
+- hito anterior/siguiente;
+- densidad/evidencias/events/developments.
+
+### Rendimiento
+- preview de fecha/cursor con requestAnimationFrame durante drag;
+- render completo en pointerup.
+
+### Datos
+- sin cambios históricos respecto a alpha.10.
+
 ## 0.1.0-alpha.10 — 2026-08-11
 
 ### Navegador temporal

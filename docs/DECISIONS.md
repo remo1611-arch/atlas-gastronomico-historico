@@ -149,3 +149,23 @@ El mapa temporal refleja búsqueda y filtros activos. Se evita que la línea sug
 **Aceptada.**
 Se incorporan acciones discretas de hito anterior/siguiente para resolver selección precisa en móvil sin ampliar artificialmente los marcadores.
 
+## ADR-039 — Cronología única
+**Aceptada.**
+El navegador semántico de alpha.10 sustituye al slider HTML anterior. No conviven dos líneas temporales.
+
+## ADR-040 — Eliminación del step-by-year
+**Aceptada.**
+Se eliminan ±1/10/100/500 años. La navegación discreta se realiza por hitos históricos anterior/siguiente.
+
+## ADR-041 — Eliminación del playback cronológico
+**Aceptada.**
+Se elimina el play automático y `playStep`. Si existe un futuro modo autoplay será un recorrido museográfico por hitos, no una iteración matemática de años.
+
+## ADR-042 — Arrastre diferido
+**Aceptada.**
+Durante pointer drag se actualiza únicamente la capa visual de fecha/cursor; el render completo se ejecuta al confirmar el pointerup para mantener fluidez al escalar el corpus.
+
+## ADR-043 — Cursor accesible
+**Aceptada.**
+El cursor temporal expone `role=slider`; teclado izquierda/derecha navega por hitos y Home/End por extremos temporales.
+

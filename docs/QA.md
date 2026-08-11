@@ -15,6 +15,7 @@ python tools/test_g2_pilot_b.py
 python tools/test_g2_pilot_c_maize.py
 python tools/test_subject_history.py
 python tools/test_temporal_navigator.py
+python tools/test_unified_timeline.py
 python tools/test_verified_gate.py
 python tools/test_public_state.py
 python tools/test_schema_validation.py
@@ -136,3 +137,17 @@ Antes de validar datos históricos:
 - [ ] targets táctiles ampliados en móvil;
 - [ ] reduced motion respetado;
 - [ ] uncertainty conserva señal propia.
+
+## Unified Timeline alpha.11
+- [ ] no existe yearRange;
+- [ ] no existen botones ± años;
+- [ ] no existe playback/reproducción;
+- [ ] no existe estado/timer de reproducción;
+- [ ] config no contiene playStep/playStepOptions;
+- [ ] tocar zona libre selecciona fecha;
+- [ ] arrastrar mueve cursor sin rerender pesado hasta soltar;
+- [ ] cursor accesible como slider;
+- [ ] ArrowLeft/ArrowRight navegan por hitos;
+- [ ] Home/End van a extremos del atlas;
+- [ ] atajos históricos conservados;
+- [ ] entrada directa de año conservada.

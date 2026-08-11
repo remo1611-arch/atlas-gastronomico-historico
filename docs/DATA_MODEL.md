@@ -509,3 +509,39 @@ La densidad es una representación visual derivada, no un dato histórico persis
 
 La interfaz puede variar el número de bins según el ancho del dispositivo sin cambiar el corpus.
 
+---
+
+## 19. Cronología unificada
+
+La cronología pública usa una sola proyección ordinal.
+
+Entradas:
+- `config.timeline.minYear`;
+- `config.timeline.maxYear`;
+- occurrences;
+- events;
+- developments.
+
+No existe un segundo `yearRange` ni un estado temporal paralelo.
+
+### Selección libre
+La coordenada X del puntero se transforma a ordinal:
+
+```text
+x → proporción del rail → ordinal → fromOrdinal() → año
+```
+
+Esto conserva la ausencia de año 0.
+
+### Selección por hito
+`stepTemporalHit()` busca el elemento temporal anterior/posterior del corpus visible.
+
+### Rendimiento
+Durante drag:
+- se actualiza `s.year`, textos y cursor;
+- no se reconstruyen mapa/listas/bins en cada `pointermove`.
+
+En `pointerup`:
+- se ejecuta `setYear()`;
+- se aplica el render completo.
+

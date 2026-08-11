@@ -146,6 +146,22 @@ Pendiente en G2:
 
 Esta fase se adelanta antes de G2-D porque la usabilidad temporal debía quedar resuelta antes de aumentar el corpus.
 
+## G2-F — Cronología unificada
+**Estado: IMPLEMENTADO · alpha.11**
+
+- eliminado slider temporal anterior;
+- eliminados ± años;
+- eliminado playback cronológico;
+- navegador semántico convertido en selector temporal real;
+- tap/click en fecha;
+- drag táctil;
+- cursor accesible;
+- hito anterior/siguiente;
+- atajos históricos e Ir al año conservados;
+- render diferido durante drag.
+
+La numeración G2-F refleja una intervención UX adelantada; no altera la secuencia de corpus pendiente.
+
 ## G2-D — Técnica canónica + primer disputed
 **Estado: PENDIENTE**
 

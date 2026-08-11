@@ -1,9 +1,14 @@
-# Resultados de validación — 0.1.0-alpha.10
+# Resultados de validación — 0.1.0-alpha.11
 
 Fecha: 2026-08-11
 
-## Datos
-Sin cambios respecto a alpha.9:
+## Gates
+- G0: CERRADO.
+- G1: CERRADO.
+- G2: EN CURSO.
+
+## Corpus
+Sin cambios históricos respecto a alpha.10:
 - 17 subjects;
 - 25 places;
 - 28 occurrences;
@@ -11,44 +16,73 @@ Sin cambios respecto a alpha.9:
 - 3 relationships;
 - 7 contexts;
 - 6 developments;
-- 48 sources.
+- 48 sources;
+- 12 occurrences activas sin punto canónico.
 
-## Focused suite: PASS
-- validate_project.py;
-- test_schema_validation.py;
-- node --check js/app.js;
-- test_temporal_navigator.py;
-- test_ui_contract.py;
-- test_mobile_contract.py;
-- test_subject_history.py;
-- test_g2_pilot_c_maize.py;
-- test_map_coverage.py.
+## Suite completa: PASS
 
-## Temporal Navigator
+### Datos / schemas
+- validate_project.py: PASS.
+- test_schema_validation.py: PASS.
+- 137 objetos / 8 schemas.
+
+### Core / JS
+- node --check core.js: PASS.
+- node --check app.js: PASS.
+- core temporal: 11 aserciones PASS.
+- `shiftYear` eliminado al desaparecer la navegación aritmética.
+
+### UI
+- UI contract: 100 IDs / 88 referencias JS.
+- mobile contract: PASS.
+- light contrast: PASS.
+- filtros: PASS.
+- map coverage: PASS.
+- debounce: PASS.
+
+### G2
+- public state: PASS.
+- verified gate: PASS.
+- G2-C maize: PASS.
+- traceability UI: PASS.
+- subject history: PASS.
+
+### Temporal Navigator
+- densidad: PASS.
+- occurrences verified: PASS.
+- events: PASS.
+- developments: PASS.
+- 38 / 68 / 120 bins.
+- seed/deprecated excluidos.
+
+### Unified Timeline
 PASS:
-- 10 IDs críticos;
-- densidad adaptativa 38/68/120;
-- evidencias reviewed/verified;
-- seed/deprecated excluidos;
-- occurrences verified destacadas;
-- events como intervalos;
-- developments como intervalos;
-- cursor sincronizado;
-- anterior/siguiente;
-- filtros/búsqueda;
-- target móvil ampliado;
-- reduced-motion.
+- `yearRange` eliminado;
+- ±1/10/100/500 eliminados;
+- playback eliminado;
+- playStep/playStepOptions eliminados;
+- timers/listeners playback eliminados;
+- CSS legacy eliminado;
+- tap/click sobre rail;
+- drag Pointer Events;
+- grab-offset del cursor;
+- preview mediante requestAnimationFrame;
+- render completo al soltar;
+- cursor role=slider;
+- ArrowLeft/ArrowRight = hito anterior/siguiente;
+- Home/End = extremos;
+- atajos históricos conservados;
+- Ir al año conservado.
 
-## UI Contract
-- 100 IDs;
-- 89 referencias JS.
-
-## Corpus longitudinal
-- vino: 5 evidencias + 1 development;
-- maíz: 7 evidencias + 1 event.
-
-## Cartografía
-12 occurrences sin punto canónico; comportamiento esperado.
+### GitHub Pages
+- 16/16 recursos críticos PASS.
 
 ## Pendiente real
-Validación visual/táctil del navegador en Xiaomi 15 antes de considerarlo cerrado visualmente.
+Prueba visual/táctil en Xiaomi 15 de:
+- tap sobre zona libre;
+- drag del cursor;
+- selección de marcas;
+- hito anterior/siguiente;
+- modo oscuro/claro.
+
+El entorno de validación automática no permitió abrir Chromium contra localhost/file por política del contenedor, por lo que no se declara prueba visual automatizada.

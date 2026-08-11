@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.10
+**Versión:** 0.1.0-alpha.11
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -178,3 +178,16 @@ Alpha.10 añade una lectura visual del corpus sobre la línea temporal:
 - hito anterior/siguiente.
 
 El objetivo es que el usuario pueda descubrir dónde existe contenido histórico sin llenar el timeline de etiquetas o puntos.
+
+## Cronología unificada
+
+Alpha.11 elimina la línea temporal antigua y los controles de avance por años.
+
+La banda museográfica es ahora el control temporal principal:
+- toca una fecha;
+- arrastra el cursor;
+- selecciona un hito;
+- usa anterior/siguiente hito;
+- o introduce un año exacto.
+
+No existe reproducción cronológica automática.

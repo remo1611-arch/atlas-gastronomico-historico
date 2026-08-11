@@ -9,10 +9,6 @@ export function fromOrdinal(o){
  return n>=0?n+1:n;
 }
 export function formatYear(y){return y<0?`${Math.abs(y)} a. C.`:`${y} d. C.`}
-export function shiftYear(year,delta,minYear,maxYear){
- const min=toOrdinal(minYear),max=toOrdinal(maxYear);
- return fromOrdinal(Math.max(min,Math.min(max,toOrdinal(year)+Math.trunc(Number(delta)||0))));
-}
 export function active(period,year){const y=toOrdinal(year);return toOrdinal(period.start)<=y&&toOrdinal(period.end)>=y}
 export function distance(period,year){
  const y=toOrdinal(year),s=toOrdinal(period.start),e=toOrdinal(period.end);
