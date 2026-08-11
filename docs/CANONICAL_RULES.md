@@ -174,3 +174,14 @@
 152. La semántica de intervalo de `period` se aplica por igual a occurrences, events y developments: dentro del intervalo se conserva el año apuntado y fuera se ajusta al límite más cercano.
 153. Anterior/Siguiente temporal navega respecto al hito seleccionado cuando existe, no solo respecto al año numérico, permitiendo recorrer hitos distintos con el mismo año inicial.
 154. `CANONICAL_RULES.md` mantiene numeración única, estrictamente creciente y sin reutilizar números históricos.
+
+155. El mapa público es un explorador geográfico del corpus y no una duplicación de la instantánea temporal: por defecto muestra las occurrences geolocalizadas que cumplen búsqueda/filtros aunque no estén activas en el año seleccionado.
+156. La fecha seleccionada actúa como énfasis visual sobre el mapa; la semántica temporal estricta pertenece al panel `En esta fecha` y a la timeline.
+157. La búsqueda del mapa es global respecto al corpus filtrado y no queda anulada por el año seleccionado.
+158. Una búsqueda cartográfica debe mostrar resultados textuales o un estado cero explícito; modificar silenciosamente pines sin respuesta visible no es suficiente.
+159. Las consultas cortas se resuelven por palabra o prefijo para evitar falsos positivos por subcadena, como `pan` dentro de `España`.
+160. Seleccionar una occurrence desde el mapa sincroniza geografía, fecha y ficha de evidencia.
+161. El autoencuadre del mapa sobre resultados o una selección es una ayuda de navegación visual y no constituye una ruta histórica, difusión ni conexión causal.
+162. Los registros sin punto permanecen descubribles mediante búsqueda, cobertura y fichas; la ausencia de geometría no equivale a ausencia del corpus.
+163. El mapa no dibuja líneas entre lugares únicamente por compartir subject, historia o secuencia cronológica; una ruta futura requerirá evidencia específica y su propia semántica.
+

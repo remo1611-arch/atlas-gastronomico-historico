@@ -6,10 +6,10 @@
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <meta content="dark light" name="color-scheme"/>
 <meta content="#10121a" name="theme-color"/>
-<meta content="0.1.0-alpha.22" name="atlas-build"/>
+<meta content="0.1.0-alpha.23" name="atlas-build"/>
 <title>Atlas Gastronómico Histórico</title>
 <meta content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio." name="description"/>
-<link href="./css/app.css?v=0.1.0-alpha.22" rel="stylesheet"/>
+<link href="./css/app.css?v=0.1.0-alpha.23" rel="stylesheet"/>
 </head>
 <body>
 <div aria-hidden="true" class="ambient ambient-a"></div>
@@ -21,7 +21,7 @@
 </span>
 <span class="brand-copy">
 <strong>Atlas Gastronómico Histórico</strong>
-<small>Museo digital · <span id="versionLabel">alpha.22</span></small>
+<small>Museo digital · <span id="versionLabel">alpha.23</span></small>
 </span>
 </a>
 <nav aria-label="Experiencias del museo" class="experience-nav"><button aria-pressed="true" class="experience-nav-btn active" id="historiesNavBtn" type="button">Historias</button><button aria-pressed="false" class="experience-nav-btn" id="exploreNavBtn" type="button">Atlas</button></nav><nav aria-label="Controles principales" class="top-actions">
@@ -124,7 +124,8 @@
 <div class="map-toolbar">
 <div>
 <span class="section-label">02 · Mapa</span>
-<h2>Mapa de evidencias gastronómicas</h2>
+<h2>Dónde ocurre la historia</h2>
+<p class="map-subtitle">El mapa muestra el corpus geolocalizado completo. La fecha seleccionada destaca qué evidencias pertenecen a ese momento.</p>
 </div>
 <div class="map-actions">
 <button aria-controls="quickSearch" class="toolbar-btn" id="searchToggleBtn" type="button">⌕ Buscar</button>
@@ -133,10 +134,14 @@
 </div>
 </div>
 <div class="quick-search hidden" id="quickSearch">
-<input autocomplete="off" id="searchInput" placeholder="Buscar trigo, vino, café, fermentación…" type="search"/>
+<div class="quick-search-field">
+<input autocomplete="off" id="searchInput" placeholder="Buscar vino, pan, maíz, lugar…" type="search"/>
 <button aria-label="Borrar búsqueda" id="clearSearchBtn" type="button">×</button>
 </div>
+<div class="map-search-results hidden" id="mapSearchResults" aria-live="polite"></div>
+</div>
 
+<div class="map-overview" id="mapOverview" aria-live="polite"></div>
 <div aria-live="polite" class="map-coverage hidden" id="mapCoverageStatus" role="status"></div>
 <div class="unmapped-records hidden" id="unmappedRecordsPanel"></div>
 <div class="map-frame">
@@ -154,13 +159,17 @@
 <g id="developmentLayer"></g>
 <g id="occurrenceLayer"></g>
 </svg>
+<button class="map-reset-view hidden" id="mapResetViewBtn" type="button">Mundo</button>
 <div class="map-year-badge">
-<span>Explorando</span>
+<span>Fecha destacada</span>
 <strong id="mapYearDisplay">1500 d. C.</strong>
 </div>
 <div class="map-message hidden" id="mapMessage"></div>
 </div>
-<div class="map-foot"><button aria-label="Cómo leer el mapa" class="map-help" id="methodBtn" type="button">ⓘ Cómo leer el mapa</button></div>
+<div class="map-foot">
+<span class="map-scope-hint">Puntos intensos: esta fecha · puntos tenues: otras fechas.</span>
+<button aria-label="Cómo leer el mapa" class="map-help" id="methodBtn" type="button">ⓘ Cómo leer el mapa</button>
+</div>
 </div>
 <aside class="now-panel museum-card">
 <div class="now-heading">
@@ -410,9 +419,13 @@
 <h2>Atlas Gastronómico Histórico</h2>
 <p>Un museo digital para comprender cómo cambian los alimentos, técnicas y formas de comer. Las Historias explican; el Atlas permite explorar libremente; la ficha de evidencia permite comprobar cada afirmación.</p>
 <p>El proyecto prioriza evidencia trazable y separa estado editorial, certeza histórica, precisión cronológica y cobertura cartográfica para evitar presentar inferencias como hechos más precisos de lo que permiten las fuentes.</p>
-<details class="about-method"><summary>Criterio histórico y editorial</summary><p>El corpus público muestra únicamente registros revisados o verificados. Estado editorial, certeza histórica y precisión cronológica se mantienen separados.</p><p>Cada punto del mapa representa una evidencia u ocurrencia vinculada a un lugar; no equivale automáticamente al origen de un alimento.</p><p>Cuando no existen coordenadas suficientemente fiables, el registro permanece accesible sin inventar un centroide cartográfico.</p></details></div>
+<details class="about-method"><summary>Criterio histórico y editorial</summary>
+<p>El corpus público muestra únicamente registros revisados o verificados. Estado editorial, certeza histórica y precisión cronológica se mantienen separados.</p>
+<p>El mapa muestra todas las evidencias geolocalizadas que cumplen la búsqueda y los filtros. La fecha seleccionada no oculta el resto del corpus: destaca los puntos que pertenecen a ese momento. El panel «En esta fecha» mantiene la lectura temporal estricta.</p>
+<p>Cada punto representa una evidencia u ocurrencia vinculada a un lugar; no equivale automáticamente al origen de un alimento. Un acercamiento automático agrupa resultados para orientarse y tampoco representa una ruta histórica.</p>
+<p>Cuando no existen coordenadas suficientemente fiables, el registro permanece accesible en búsqueda y fichas sin inventar un centroide cartográfico.</p></details></div>
 </dialog>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
-<script src="./js/app.js?v=0.1.0-alpha.22" type="module"></script>
+<script src="./js/app.js?v=0.1.0-alpha.23" type="module"></script>
 </body>
 </html>

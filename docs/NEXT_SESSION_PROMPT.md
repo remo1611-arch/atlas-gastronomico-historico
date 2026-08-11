@@ -151,3 +151,15 @@ Estado de continuación alpha.22:
 - Probar Pasteur: debe enfocar transformación, no solo cambiar de año.
 - Probar anterior/siguiente con hitos de rango y misma fecha.
 - E1 y G4 siguen pausados hasta aceptación.
+
+Estado de continuación:
+- Narrative Museum integrado.
+- Navigation Hardening integrado.
+- Geographic Explorer integrado.
+- El mapa muestra todo el corpus geolocalizado compatible con filtros; la fecha solo destaca.
+- `En esta fecha` sigue siendo temporalmente estricto.
+- Buscar `vino` debe mostrar 5 occurrences y autoencuadrar sus puntos aunque el año sea 1500.
+- Buscar `pan` debe devolver 7 occurrences y no coincidir con `España`.
+- Pin → sincroniza fecha + ficha + zoom regional.
+- `Mundo` restablece viewBox global.
+- No añadir historias/corpus hasta validación táctil de alpha.23.

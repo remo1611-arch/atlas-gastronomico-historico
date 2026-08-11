@@ -39,15 +39,18 @@ for needle in [
     if needle not in app:
         errors.append("JS G3 falta "+needle)
 
-# Filters must be enforced in occurrence visibility.
-occ_block=re.search(r"function occVisible\(\).*?\n\}",app,re.S)
-if not occ_block:
-    errors.append("no se pudo localizar occVisible")
+# Filters must be enforced in occurrence visibility, directly or through the shared explorer predicate.
+if "function occurrenceMatchesExplorerFilters(o)" not in app:
+    errors.append("falta predicate compartido de filtros de occurrence")
 else:
-    text=occ_block.group(0)
+    start=app.find("function occurrenceMatchesExplorerFilters(o)")
+    end=app.find("function occMapVisible()",start)
+    block=app[start:end]
     for needle in ["matchesEvidenceQualityFilters(o)","matchesSpatialFilter(o)"]:
-        if needle not in text:
-            errors.append("occVisible no aplica "+needle)
+        if needle not in block:
+            errors.append("predicate compartido no aplica "+needle)
+if "return occMapVisible().filter(o=>active(o.period,s.year));" not in app:
+    errors.append("occVisible no conserva el filtro temporal estricto")
 
 # No opaque score system.
 for forbidden in ["evidenceScore","qualityScore","certaintyScore","starRating"]:

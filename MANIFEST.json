@@ -1,8 +1,8 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.22",
+  "version": "0.1.0-alpha.23",
   "gate": "G3_CLOSED",
-  "phase": "NARRATIVE_MUSEUM_NAVIGATION_HARDENING",
+  "phase": "GEOGRAPHIC_EXPLORER",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 14966,
-      "sha256": "158777764bec6bf3217de3fad2e225a739d3fce07b9f93da0b9a65dfdb0fa5fc"
+      "bytes": 16092,
+      "sha256": "83e6f2be47c61a184f7feca5c43f02bc6450afce3dc5f8954e27ad9abe6f3e6a"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9504,
-      "sha256": "54e5b2cd03d2ac4494f4b8d034e4336557c6278d4f9369a0a137ec2ba6842314"
+      "bytes": 10122,
+      "sha256": "2ef995d0caeb73386c73f730dd0db16d8e362d81893e34f9cbfa4596cf76c748"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -38,8 +38,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 94525,
-      "sha256": "32504c9382c413ff3f49719f8cca18f0b54dfe4a4a96d9da0714c7d462842748"
+      "bytes": 97429,
+      "sha256": "503a4e5c3544de823204bb18beeef20a72c6d10387164bae8101d1ae1389deab"
     },
     {
       "path": "data/archive/demo_records_pre_g2.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 492,
-      "sha256": "42290896a1b3638a3990096ce8ed65f6d600a2ea39714cc83b368bbb3adc6cda"
+      "bytes": 499,
+      "sha256": "43bbd4ac84a1d71a4344c548241ec7e41763d30f4f73d69524ac211af02ba0f3"
     },
     {
       "path": "data/contexts.json",
@@ -113,8 +113,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 17706,
-      "sha256": "5d3fe678fd03b48ff4738b5f580cfad0770685d2acaed6d59777e17b07bca30c"
+      "bytes": 19127,
+      "sha256": "0209c362793f3f5a4033c3119b83406dc0843cb3c9b5c3b3991e670884abe756"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -128,8 +128,8 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 17446,
-      "sha256": "a373c42724d1610ead5141ad84cad19b86f5c0e1f6322edf6557e5abd0919342"
+      "bytes": 18939,
+      "sha256": "6b877fb41d0c21ce16566ccdf97eaed7d3e825c73e02a53c7038cc0adba212fb"
     },
     {
       "path": "docs/EDITORIAL_EXPANSION_BREAD.md",
@@ -233,8 +233,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 6048,
-      "sha256": "38637afdc1be81b7ce9a8f963be3cc9266ba2c4fb0ed5106d0036230b14862f9"
+      "bytes": 6646,
+      "sha256": "2543fa910ee7641d2f1c2883ec29cc1414ae5c63511c0de2687a4a9cbd713190"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -243,18 +243,18 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1579,
-      "sha256": "c396f43ca6aeab3592aeae2bd27702030e917494b5c2029f0b65bfa42c44ddf0"
+      "bytes": 2117,
+      "sha256": "c11c67fd5b9b0be74dcc623d4e939e687ca62292ed168e79f4e00bdbf5b79554"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 11765,
-      "sha256": "5572e1f776e324f4ff332896b8c4d8de4e23e2b7ffd5bf17203ce474d02ef8f3"
+      "bytes": 12458,
+      "sha256": "03cf8e0e389ac60e5e531a053a5b7adc852deb716cc8ba9cf61664bd8ab07923"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 11258,
-      "sha256": "bdb314c4d54e62f7ffd13503b1b4fc9f7ae8306810cc1b94560eae7cacf3c69c"
+      "bytes": 12157,
+      "sha256": "c928795ea57c4a0640f074903102aaf454a0b03e0af1935e324ac2785047d2f2"
     },
     {
       "path": "docs/SEED_ARCHIVE.md",
@@ -268,8 +268,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1854,
-      "sha256": "acf95e4ff374ef19965fc1e9b03d2dadd83346efd7d4816fce841e751c0c55fa"
+      "bytes": 2251,
+      "sha256": "4564fdbb4103b8e217de3c95d0e57521b88b837004464bca9d935324ba38a5fb"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -278,13 +278,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 22325,
-      "sha256": "0623ca1f0ab20d4b1fd960214aafedf32d7023e58698c52ce5f6074ae15a4350"
+      "bytes": 23231,
+      "sha256": "24be078aa8e3995fcdcacbf6bb3801c8c9823e676248ef129b841ec17c25826a"
     },
     {
       "path": "js/app.js",
-      "bytes": 104663,
-      "sha256": "521c6a76bfb9c3e29984aa17959f450a93113957a5ad5bbd0b06665ea5dc4c5b"
+      "bytes": 111046,
+      "sha256": "f09e5368beea7205b95a606012206a3fa344f5258b26f5262187a40db2fa550a"
     },
     {
       "path": "js/core.js",
@@ -344,7 +344,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 627,
-      "sha256": "f9c927c7aec561b29c3043cc33ac27fe8f89783f5d73b01693bb3f8381b7e8cf"
+      "sha256": "d686271898c3bf6117d6d97f6ad0010cc87aab6d52ea3085403cc1d2f252670f"
     },
     {
       "path": "tools/serve.py",
@@ -364,7 +364,7 @@
     {
       "path": "tools/test_canonical_rule_numbering.py",
       "bytes": 726,
-      "sha256": "16a235b7df7d33ca0f2b5bd3709b9ea9779e9430fc2197d2aa34ee9f30b35102"
+      "sha256": "ff4f0a1fcaa8a857087dbf7b27e6d03d6677969897e1ad7620d7aca52b455a99"
     },
     {
       "path": "tools/test_core.mjs",
@@ -463,8 +463,8 @@
     },
     {
       "path": "tools/test_g3_evidence_precision.py",
-      "bytes": 2331,
-      "sha256": "783eed97841e6295d83fb519daf4e2b6c59a73119e2e735fae746968bf76683f"
+      "bytes": 2656,
+      "sha256": "9065a4f0890a7920952c1e2cff61a080a2238928302889ab07a68aaf2b53340b"
     },
     {
       "path": "tools/test_g3_final_gate.py",
@@ -485,6 +485,16 @@
       "path": "tools/test_g3_unmapped_access.py",
       "bytes": 1950,
       "sha256": "3018810555b73cfc840a0daece6f3296d73c4a7f1e7aec285d1588ba46ed727f"
+    },
+    {
+      "path": "tools/test_geographic_explorer.py",
+      "bytes": 4012,
+      "sha256": "f608638a876d77e7d3e643ce53d4d3341fde23ee802a966c281f4625f83c767c"
+    },
+    {
+      "path": "tools/test_global_map_search_data.py",
+      "bytes": 2090,
+      "sha256": "3f9e2ebb23df45bb9b8e0df5ae188b9296a2336f1904bab1e0e4f9a994b995a2"
     },
     {
       "path": "tools/test_light_contrast.py",
@@ -519,7 +529,7 @@
     {
       "path": "tools/test_narrative_museum_contract.py",
       "bytes": 3512,
-      "sha256": "05402de8747e1b9a8619b08f04c44840cd1a6dad1e2e8ceb5a477cc3921f2585"
+      "sha256": "4c3a5b86d6092ecb104153bc0fde6a1ca6ad2d624efc13c0fd3ff0efa0a05114"
     },
     {
       "path": "tools/test_navigation_algorithms.mjs",

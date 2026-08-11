@@ -1,5 +1,39 @@
 # Changelog
 
+## 0.1.0-alpha.23 — 2026-08-11
+
+### Geographic Explorer
+- el mapa deja de filtrar por año exacto;
+- todas las occurrences geolocalizadas compatibles con búsqueda/filtros permanecen visibles;
+- la fecha seleccionada se representa mediante énfasis visual;
+- `En esta fecha` mantiene la semántica temporal estricta.
+
+### Búsqueda
+- búsqueda global independiente del año;
+- resultados textuales con fecha, headline y lugar;
+- estado cero explícito;
+- click sincroniza fecha + mapa + ficha;
+- consultas cortas usan palabra/prefijo;
+- `pan` deja de coincidir con `España`.
+
+### Navegación cartográfica
+- autoencuadre de resultados;
+- enfoque regional al seleccionar evidencia;
+- botón `Mundo` para recuperar vista global;
+- no se dibujan rutas o líneas inferidas.
+
+### Baseline que motivó el cambio
+- 30 occurrences públicas;
+- 16 con punto;
+- en 1500: 1 occurrence activa y 0 con punto;
+- la semántica anterior producía un mapa vacío pese a existir 16 lugares cartografiados.
+
+### Contrato
+- corpus histórico sin cambios;
+- stories/glossary sin cambios;
+- G2 fingerprint intacto;
+- reglas canónicas 1–163.
+
 ## 0.1.0-alpha.22 — 2026-08-11
 
 ### Navegación y continuidad

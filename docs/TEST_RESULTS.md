@@ -1,72 +1,87 @@
-# Resultados de validación — 0.1.0-alpha.22
+# Resultados de validación — 0.1.0-alpha.23
 
 Fecha: 2026-08-11
 
-## Estado
-- G0: CERRADO.
-- G1: CERRADO.
-- G2: CERRADO.
-- G3: CERRADO.
-- Narrative Museum: integrado.
-- E1: PAUSADO.
-- G4: NO INICIADO.
+## Resultado
+**GEOGRAPHIC EXPLORER: PASS**
 
 ## Corpus
-Sin cambios respecto a alpha.21:
-- 11 subjects;
-- 30 places;
-- 30 occurrences;
-- 1 event;
-- 1 relationship;
-- 7 contexts;
-- 7 developments;
-- 86 sources;
-- 2 stories;
-- 13 scenes;
+- 11 subjects.
+- 30 places.
+- 30 occurrences.
+- 1 event.
+- 1 relationship.
+- 7 contexts.
+- 7 developments.
+- 86 sources.
+- 2 stories.
+- 13 narrative scenes.
 - 16 glossary entries.
 
-## Contrato
-- G2 fingerprint: **9/9 PASS**.
-- 8 schemas históricos sin cambios.
-- 2 schemas narrativos sin cambios.
-- schema validation: PASS.
+## Diagnóstico que motivó alpha.23
+Semántica anterior:
+`map = occVisible() = filtro por año exacto`.
 
-## Alpha.22 · navegación
+Baseline a 1500:
+- 1 occurrence activa;
+- 0 occurrences activas con punto.
+
+Por tanto el mapa quedaba visualmente vacío aunque el corpus tuviese:
+- 16 occurrences geolocalizadas.
+
+## Semántica alpha.23
+- `occMapVisible()` = mapa global filtrado por búsqueda/filtros, sin año exacto.
+- `occVisible()` = occurrences activas en la fecha.
+- mapa = `occMapVisible()`.
+- `En esta fecha` = `occVisible()`.
+- fecha seleccionada = énfasis visual sobre los pines.
+
+## Búsqueda
 PASS:
-- browser history / popstate;
-- deep links de Historias y Atlas;
-- Story ↔ Atlas round-trip;
-- direct evidence reveal;
-- focus real de developments/events;
-- interval occurrence snap;
-- selection-aware previous/next;
-- primary navigation bindings.
+- global, independiente del año;
+- resultados textuales visibles;
+- zero-state explícito;
+- autoencuadre;
+- click sincroniza fecha y ficha;
+- consultas cortas por palabra/prefijo.
 
-## Algoritmos
-- Navigation algorithms: PASS · 12 assertions.
-- Magnetic algorithm: PASS · occurrence ranges conservan target dentro del intervalo.
-- Core chronology: PASS.
+Baselines:
+- `vino`: 5 occurrences globales · 5 mapped · 0 activas en 1500;
+- `pan`: 7 occurrences · sin falso positivo por `España`.
 
-## Higiene documental
-- `CANONICAL_RULES.md`: **154 reglas únicas y consecutivas**.
-- duplicaciones históricas de numeración eliminadas.
+## Navegación cartográfica
+PASS:
+- vista mundial inicial;
+- fit regional para resultados;
+- fit a una occurrence seleccionada;
+- botón `Mundo`;
+- marker click → periodo + detalle;
+- story/deep-link → región de la evidence cuando existe point;
+- unmapped sigue accesible.
 
-## Suite completa del proyecto
-- Python gates: **48/48 PASS**.
+## Regresión
+- Python gates: **50/50 PASS**.
 - Node gates/checks: **6/6 PASS**.
-- GitHub Pages: **18/18 PASS**.
 - G3 FINAL GATE: PASS.
-- Narrative Museum Contract: PASS.
-- Narrative Editorial Depth: PASS.
+- Focused Exploration: PASS.
+- Progressive Disclosure: PASS.
+- Narrative Museum: PASS.
+- Navigation Hardening: PASS.
+- GitHub Pages: **18/18 PASS**.
+- G2 frozen fingerprint: **9/9 PASS**.
+- canonical rules: **163/163**.
 
-## QA visual/táctil
-No se declara validación visual nueva de alpha.22.
+## QA visual
+No se declara una nueva validación visual/táctil automatizada de alpha.23.
 
-El entorno no dispone actualmente de un navegador Playwright ejecutable utilizable para una prueba visual fiable.
+El gate pendiente es comprobar en el dispositivo real:
+1. mapa mundial con pines visibles;
+2. diferencia visual entre fecha actual y otras fechas;
+3. búsqueda `vino`;
+4. búsqueda `pan`;
+5. encuadre regional;
+6. tap de pin → fecha/ficha;
+7. reset `Mundo`;
+8. legibilidad y densidad de pines en móvil.
 
-La aceptación decisiva sigue siendo en GitHub Pages/Xiaomi, especialmente:
-- Atrás/Adelante entre escenas;
-- Historia → Atlas → Atrás;
-- filtro previo + `Ver en el Atlas`;
-- Pasteur como development enfocado;
-- anterior/siguiente temporal en ranges y fechas coincidentes.
+Hasta ese gate no se amplía el corpus.

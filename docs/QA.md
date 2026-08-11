@@ -347,3 +347,19 @@ node tools/test_navigation_algorithms.mjs
 - [ ] range occurrence conserva target dentro del intervalo;
 - [ ] anterior/siguiente recorre hitos con misma fecha;
 - [ ] canonical rules 1..154 sin duplicados.
+
+python tools/test_geographic_explorer.py
+python tools/test_global_map_search_data.py
+
+## Geographic Explorer
+- [ ] mapa global no depende de `active(period, year)`;
+- [ ] `En esta fecha` sí conserva `active(period, year)`;
+- [ ] baseline 1500 = 1 active / 0 mapped;
+- [ ] mapa global = 16 mapped;
+- [ ] búsqueda `vino` devuelve 5 occurrences aunque el año sea 1500;
+- [ ] búsqueda `pan` devuelve 7 y no coincide con `España`;
+- [ ] búsqueda tiene resultados visibles y estado cero;
+- [ ] seleccionar pin sincroniza año y detalle;
+- [ ] autoencuadre dispone de reset `Mundo`;
+- [ ] los pines de otras fechas permanecen visualmente secundarios;
+- [ ] sin líneas de difusión inferidas.

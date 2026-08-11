@@ -337,3 +337,27 @@ Cuando existe un hito seleccionado, anterior/siguiente recorre el orden del corp
 **Aceptada.**
 Los conflictos históricos de numeración de `CANONICAL_RULES.md` se corrigen renumerando todas las reglas según su orden documental. Ningún dato, schema o comportamiento histórico cambia por esta normalización.
 
+## ADR-088 — Mapa global, fecha como énfasis
+**Aceptada.**
+El mapa deja de filtrar por el año exacto. Muestra el corpus geolocalizado que cumple búsqueda/filtros y utiliza la fecha seleccionada para resaltar puntos actuales. `En esta fecha` conserva el filtro temporal estricto.
+
+## ADR-089 — Búsqueda cartográfica global y visible
+**Aceptada.**
+Buscar en el mapa consulta el corpus independientemente del año seleccionado y muestra una lista textual de resultados con fecha, headline y lugar, incluido un estado explícito cuando no hay coincidencias.
+
+## ADR-090 — Consultas cortas por palabra/prefijo
+**Aceptada.**
+Términos breves como `pan` no usan subcadena indiscriminada. Se comparan con tokens/prefijos para evitar coincidencias espurias como `España`.
+
+## ADR-091 — Selección geográfica sincroniza el tiempo
+**Aceptada.**
+Pulsar una occurrence del mapa mueve la fecha al periodo correspondiente cuando sea necesario, selecciona la evidencia y abre su ficha.
+
+## ADR-092 — Autoencuadre sin semántica de ruta
+**Aceptada.**
+La búsqueda o selección puede ajustar el `viewBox` del mapa para encuadrar resultados. Ese encuadre es navegación visual y no comunica difusión, comercio ni trayectoria histórica.
+
+## ADR-093 — Registros sin punto siguen siendo descubribles
+**Aceptada.**
+Las occurrences sin coordenadas continúan apareciendo en resultados textuales y en la cobertura cartográfica. No se ocultan para mejorar artificialmente la apariencia del mapa.
+

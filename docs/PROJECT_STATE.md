@@ -4,67 +4,92 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.22
+0.1.0-alpha.23
 
 ## Producto
-**Narrative Museum integrado y navegación endurecida.**
+- Historias = entender.
+- Atlas = explorar.
+- Evidencia = comprobar.
 
-Jerarquía:
-1. Historias — entender;
-2. Atlas — explorar;
-3. Evidencia — comprobar.
-
-## Gates históricos
+## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
 - G3: CERRADO.
+- Narrative Museum: integrado.
+- Navigation Hardening: integrado.
+- **Geographic Explorer: integrado.**
+- E1 editorial: PAUSADO.
 - G4: NO INICIADO.
 
-## Expansión editorial
-E1 permanece **PAUSADO**.
-
-Alpha.22 no añade records, stories ni glossary entries.
-
 ## Corpus
-- 11 subjects;
-- 30 places;
-- 30 occurrences;
-- 1 event;
-- 1 relationship;
-- 7 contexts;
-- 7 developments;
-- 86 sources;
-- 2 stories;
-- 13 scenes;
+- 11 subjects.
+- 30 places.
+- 30 occurrences.
+- 1 event.
+- 1 relationship.
+- 7 contexts.
+- 7 developments.
+- 86 sources.
+- 2 stories.
+- 13 narrative scenes.
 - 16 glossary entries.
 
-## Contrato
-- G2 fingerprint: 9/9.
-- 8 schemas históricos: sin cambios.
-- 2 schemas narrativos: sin cambios.
-- 10 schemas totales.
+## Cobertura espacial
+- 16 occurrences con punto.
+- 14 sin punto.
 
-## Alpha.22
-- historial de navegador;
-- deep links de Historias/Atlas;
-- round-trip Historia ↔ Atlas;
-- filtros incompatibles se ajustan para revelar enlaces directos;
-- developments/events quedan enfocados;
-- semántica temporal de ranges uniforme;
-- stepping selection-aware;
-- reglas canónicas: 154 números únicos y consecutivos.
+## Cambio cartográfico alpha.23
+
+Antes:
+`occVisible()` filtraba por `active(period, year)` antes de renderizar el mapa.
+
+Consecuencia verificable:
+- año inicial 1500;
+- 1 occurrence activa;
+- esa occurrence no tiene punto;
+- mapa = 0 pines.
+
+Ahora:
+- `occMapVisible()` aplica búsqueda/filtros sin exigir coincidencia temporal;
+- `occVisible()` conserva el filtro temporal estricto para `En esta fecha`;
+- mapa inicial = hasta 16 occurrences geolocalizadas;
+- las occurrences activas en la fecha seleccionada se resaltan;
+- las demás permanecen visibles en segundo plano.
+
+## Búsqueda
+- global respecto al corpus filtrado;
+- resultados textuales visibles;
+- fecha + headline + lugar;
+- estado cero explícito;
+- selección sincroniza mapa + tiempo + detalle;
+- términos cortos por palabra/prefijo.
+
+Ejemplo baseline:
+- `vino`: 5 occurrences, 5 con punto, aunque en 1500 no haya vino activo;
+- `pan`: 7 occurrences, sin falsos positivos por `España`.
+
+## Mapa
+El autoencuadre de resultados modifica únicamente el `viewBox`.
+
+No representa:
+- difusión;
+- comercio;
+- influencia;
+- trayectorias.
+
+No se dibujan líneas automáticas entre puntos.
+
+## Contrato histórico
+G2 fingerprint permanece protegido 9/9.
 
 ## Próximo gate
-**Aceptación real en Xiaomi.**
+Validación táctil/visual real de:
+1. mapa inicial no vacío;
+2. búsqueda Vino/Pan;
+3. autoencuadre;
+4. selección mapa → fecha → ficha;
+5. botón Mundo;
+6. legibilidad en móvil.
 
-Probar:
-1. Historia del vino, varias escenas;
-2. botón Atrás del sistema entre escenas;
-3. `Ver en el Atlas` desde Areni/Tel Kabri/Pasteur;
-4. Atrás para volver a la escena exacta;
-5. activar filtros antes de entrar en una historia y comprobar que la evidencia enlazada aparece;
-6. anterior/siguiente en timeline, incluidos ranges;
-7. navegación móvil y fullscreen.
-
-No ampliar contenido hasta esa aceptación.
+No ampliar corpus hasta validar esta experiencia.

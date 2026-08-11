@@ -1,25 +1,27 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.22';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.23';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.22',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.22',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.22',
-  places:'./data/places.json?v=0.1.0-alpha.22',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.22',
-  events:'./data/events.json?v=0.1.0-alpha.22',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.22',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.22',
-  developments:'./data/developments.json?v=0.1.0-alpha.22',
-  sources:'./data/sources.json?v=0.1.0-alpha.22',
-  stories:'./data/stories.json?v=0.1.0-alpha.22',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.22',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.22'
+  config:'./data/config.json?v=0.1.0-alpha.23',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.23',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.23',
+  places:'./data/places.json?v=0.1.0-alpha.23',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.23',
+  events:'./data/events.json?v=0.1.0-alpha.23',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.23',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.23',
+  developments:'./data/developments.json?v=0.1.0-alpha.23',
+  sources:'./data/sources.json?v=0.1.0-alpha.23',
+  stories:'./data/stories.json?v=0.1.0-alpha.23',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.23',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.23'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],stories:[],glossary:[],basemap:null,
   year:1500,view:'histories',search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
-  selectedOccurrence:null,historySubject:null,activeStory:null,storyScene:0,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  selectedOccurrence:null,historySubject:null,activeStory:null,storyScene:0,temporalSelection:null,eventWindow:100,category:'all',
+  mapView:{x:0,y:0,w:1000,h:500},mapViewMode:'world',
+  layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -27,6 +29,16 @@ const $$=q=>[...document.querySelectorAll(q)];
 
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm=v=>String(v??'').normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
+const queryMatches=(haystack,query)=>{
+  const text=norm(haystack);
+  const q=norm(query).trim();
+  if(!q) return true;
+  const words=text.split(/[^a-z0-9]+/).filter(Boolean);
+  return q.split(/\s+/).filter(Boolean).every(token=>{
+    if(token.length<=3) return words.some(word=>word===token||word.startsWith(token));
+    return text.includes(token);
+  });
+};
 
 const TYPE_LABELS={
   ingredient:'Ingrediente',
@@ -185,6 +197,7 @@ async function load(){
 
     fillControls();
     renderBasemap();
+    resetMapView({silent:true});
     bind();
     applyTheme(getStore('agh_theme')==='light'?'light':'dark');
     setYear(s.year);
@@ -338,6 +351,7 @@ function applyExperienceRoute(route,{initial=false}={}){
         revealOccurrenceForDirectAccess(o);
         setYear(o.period.start);
         selectOccurrence(o.id,true);
+        setTimeout(()=>fitMapToOccurrences([o],{mode:'selection'}),0);
         return;
       }
     }
@@ -718,34 +732,38 @@ function verificationHTML(item){
   </div>`;
 }
 
-function occVisible(){
-  if(!s.layers.gastronomy) return [];
+function occurrenceMatchesExplorerFilters(o){
+  if(!isPublicStatus(o.status)) return false;
+  if(s.evidence!=='all' && o.evidenceType!==s.evidence) return false;
+  if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) return false;
+  if(!matchesEvidenceQualityFilters(o)) return false;
+  if(!matchesSpatialFilter(o)) return false;
+
+  const subject=subj(o.subjectRef);
+  const pl=place(o.placeRef);
+  if(!subject || !pl || !isPublicStatus(subject.status) || !isPublicStatus(pl.status)) return false;
+  if(s.category!=='all' && subject.type!==s.category) return false;
+
   const q=norm(s.search.trim());
+  if(q){
+    const haystack=norm([
+      subject.name,subject.summary,(subject.aliases||[]).join(' '),(subject.tags||[]).join(' '),
+      pl.name,pl.summary,o.summary,occurrenceHeadline(o),
+      TYPE_LABELS[subject.type],EVIDENCE_LABELS[o.evidenceType],OCC_LABELS[o.occurrenceType],
+      CERTAINTY_LABELS[o.certainty],PRECISION_LABELS[o.period?.precision],pointPrecisionLabel(pl)
+    ].join(' '));
+    if(!queryMatches(haystack,q)) return false;
+  }
+  return true;
+}
 
-  return s.occurrences.filter(o=>{
-    if(!isPublicStatus(o.status)) return false;
-    if(!active(o.period,s.year)) return false;
-    if(s.evidence!=='all' && o.evidenceType!==s.evidence) return false;
-    if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) return false;
-    if(!matchesEvidenceQualityFilters(o)) return false;
-    if(!matchesSpatialFilter(o)) return false;
+function occMapVisible(){
+  if(!s.layers.gastronomy) return [];
+  return s.occurrences.filter(occurrenceMatchesExplorerFilters);
+}
 
-    const subject=subj(o.subjectRef);
-    const pl=place(o.placeRef);
-    if(!subject || !pl || !isPublicStatus(subject.status) || !isPublicStatus(pl.status)) return false;
-
-    if(s.category!=='all' && subject.type!==s.category) return false;
-
-    if(q){
-      const haystack=norm([
-        subject.name,subject.summary,(subject.aliases||[]).join(' '),
-        pl.name,o.summary,TYPE_LABELS[subject.type],EVIDENCE_LABELS[o.evidenceType],OCC_LABELS[o.occurrenceType],
-        CERTAINTY_LABELS[o.certainty],PRECISION_LABELS[o.period?.precision],pointPrecisionLabel(pl)
-      ].join(' '));
-      if(!haystack.includes(q)) return false;
-    }
-    return true;
-  });
+function occVisible(){
+  return occMapVisible().filter(o=>active(o.period,s.year));
 }
 
 
@@ -753,6 +771,158 @@ function occurrencesWithoutMapPoint(list){
   return list.filter(o=>{
     const pl=place(o.placeRef);
     return !pl?.point || !Number.isFinite(Number(pl.point.lat)) || !Number.isFinite(Number(pl.point.lon));
+  });
+}
+
+function setMapViewBox(view,{mode='custom'}={}){
+  const map=$('#worldMap');
+  if(!map) return;
+  const x=Math.max(0,Math.min(1000-Number(view.w),Number(view.x)));
+  const y=Math.max(0,Math.min(500-Number(view.h),Number(view.y)));
+  const w=Math.max(120,Math.min(1000,Number(view.w)));
+  const h=Math.max(80,Math.min(500,Number(view.h)));
+  s.mapView={x,y,w,h};
+  s.mapViewMode=mode;
+  map.setAttribute('viewBox',`${x.toFixed(2)} ${y.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)}`);
+  $('#mapResetViewBtn')?.classList.toggle('hidden',mode==='world');
+}
+
+function resetMapView({silent=false}={}){
+  setMapViewBox({x:0,y:0,w:1000,h:500},{mode:'world'});
+  if(!silent) showToast('Vista mundial');
+}
+
+function mappedOccurrences(list){
+  return list.filter(o=>{
+    const pl=place(o.placeRef);
+    return pl?.point && Number.isFinite(Number(pl.point.lat)) && Number.isFinite(Number(pl.point.lon));
+  });
+}
+
+function mapBoundsForOccurrences(list){
+  const pts=mappedOccurrences(list).map(o=>{
+    const pl=place(o.placeRef);
+    const [x,y]=project(pl.point.lon,pl.point.lat);
+    return {x,y};
+  });
+  if(!pts.length) return null;
+
+  if(pts.length===1){
+    const {x,y}=pts[0];
+    const w=260,h=150;
+    return {x:x-w/2,y:y-h/2,w,h};
+  }
+
+  const xs=pts.map(p=>p.x), ys=pts.map(p=>p.y);
+  const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys);
+  const spanX=Math.max(70,maxX-minX);
+  const spanY=Math.max(45,maxY-minY);
+  const aspect=2;
+  let w=Math.min(920,spanX*1.55);
+  let h=Math.min(460,spanY*1.8);
+
+  if(w/h<aspect) w=h*aspect;
+  else h=w/aspect;
+
+  const cx=(minX+maxX)/2,cy=(minY+maxY)/2;
+  return {x:cx-w/2,y:cy-h/2,w,h};
+}
+
+function fitMapToOccurrences(list,{mode='results'}={}){
+  const bounds=mapBoundsForOccurrences(list);
+  if(!bounds){
+    if(mode==='results') resetMapView({silent:true});
+    return false;
+  }
+  setMapViewBox(bounds,{mode});
+  return true;
+}
+
+function focusMapOccurrence(o){
+  if(!o) return;
+  const targetYear=active(o.period,s.year)?s.year:o.period.start;
+  setYear(targetYear);
+  selectOccurrence(o.id,true);
+  fitMapToOccurrences([o],{mode:'selection'});
+}
+
+function renderMapOverview(mapList,dateList){
+  const box=$('#mapOverview');
+  if(!box) return;
+  const mapped=mappedOccurrences(mapList);
+  const dateMapped=mappedOccurrences(dateList);
+  const query=s.search.trim();
+
+  if(!s.layers.gastronomy){
+    box.innerHTML='<span>La capa gastronómica está oculta.</span>';
+    return;
+  }
+
+  if(query){
+    box.innerHTML=`<strong>${mapList.length}</strong> ${mapList.length===1?'resultado':'resultados'} para “${esc(query)}” · <b>${mapped.length}</b> con punto${mapList.length-mapped.length?` · <b>${mapList.length-mapped.length}</b> sin punto`:''}`;
+    return;
+  }
+
+  box.innerHTML=`<strong>${mapped.length}</strong> evidencias localizadas en el mapa · <b>${dateList.length}</b> ${dateList.length===1?'evidencia pertenece':'evidencias pertenecen'} a ${esc(formatYear(s.year))}${dateList.length?` · <b>${dateMapped.length}</b> con punto`:''}`;
+}
+
+function mapSearchEntries(){
+  const q=s.search.trim();
+  if(!q) return [];
+  return temporalCorpusItems().slice(0,10);
+}
+
+function renderMapSearchResults(){
+  const box=$('#mapSearchResults');
+  if(!box) return;
+  const q=s.search.trim();
+  if(!q){
+    box.classList.add('hidden');
+    box.innerHTML='';
+    return;
+  }
+
+  const entries=mapSearchEntries();
+  box.classList.remove('hidden');
+
+  if(!entries.length){
+    box.innerHTML=`<div class="map-search-empty">No hay resultados en el corpus para “${esc(q)}”.</div>`;
+    return;
+  }
+
+  box.innerHTML=entries.map(entry=>{
+    let placeLabel='';
+    let mapped=false;
+    if(entry.kind==='occurrence'){
+      const pl=place(entry.item.placeRef);
+      placeLabel=pl?.name||'Lugar sin resolver';
+      mapped=Boolean(pl?.point);
+    }else{
+      placeLabel=entry.kind==='development'?'Transformación':'Proceso histórico';
+    }
+    return `<button type="button" class="map-search-result" data-map-result-kind="${esc(entry.kind)}" data-map-result-id="${esc(entry.item.id)}">
+      <span>${esc(entry.period.display||formatYear(entry.period.start))}</span>
+      <strong>${esc(entry.title)}</strong>
+      <small>${esc(placeLabel)}${entry.kind==='occurrence'?(mapped?' · con punto':' · sin punto'):''}</small>
+    </button>`;
+  }).join('');
+
+  $$('[data-map-result-id]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const kind=button.dataset.mapResultKind;
+      const id=button.dataset.mapResultId;
+      if(kind==='occurrence'){
+        const o=s.occurrences.find(x=>x.id===id);
+        if(o) focusMapOccurrence(o);
+        return;
+      }
+      const entry=temporalEntryForRoute(kind,id);
+      if(entry){
+        focusTemporalItem(entry,true);
+        routeToAtlas({kind,ref:id});
+        $('#temporalNavigator')?.scrollIntoView({behavior:'smooth',block:'center'});
+      }
+    });
   });
 }
 
@@ -820,7 +990,7 @@ function subjectMatchesTemporalFilters(subject){
       ...(subject.aliases||[]),
       ...(subject.tags||[])
     ].join(' '));
-    if(!haystack.includes(q)) return false;
+    if(!queryMatches(haystack,q)) return false;
   }
   return true;
 }
@@ -864,7 +1034,7 @@ function temporalCorpusItems(){
         ...related.map(x=>x.name),
         ...related.flatMap(x=>x.tags||[])
       ].join(' '));
-      if(!haystack.includes(q)) continue;
+      if(!queryMatches(haystack,q)) continue;
     }
 
     out.push({
@@ -895,7 +1065,7 @@ function temporalCorpusItems(){
         ...related.map(x=>x.name),
         ...related.flatMap(x=>x.tags||[])
       ].join(' '));
-      if(!haystack.includes(q)) continue;
+      if(!queryMatches(haystack,q)) continue;
     }
 
     out.push({
@@ -1453,20 +1623,26 @@ function setExperienceView(view,{scroll=true}={}){
 }
 
 function render(){
-  const list=occVisible();
+  const dateList=occVisible();
+  const mapList=occMapVisible();
+
   renderTemporalNavigator();
-  renderMetrics(list);
-  renderEvidenceLens(list);
-  renderList(list);
-  renderMapCoverage(list);
-  renderMarkers(list);
+  renderMetrics(dateList);
+  renderEvidenceLens(dateList);
+  renderList(dateList);
+
+  renderMapOverview(mapList,dateList);
+  renderMapSearchResults();
+  renderMapCoverage(mapList);
+  renderMarkers(mapList);
+
   renderContextLayer();
   renderDevelopmentLayer();
   renderTransformationPreview();
   renderEvents();
   if(s.view==='histories') renderHistorySpotlight();
 
-  if(s.selectedOccurrence && !list.some(x=>x.id===s.selectedOccurrence)){
+  if(s.selectedOccurrence && !mapList.some(x=>x.id===s.selectedOccurrence)){
     s.selectedOccurrence=null;
     renderDetails(null);
   }
@@ -1655,36 +1831,45 @@ function renderMarkers(list){
   layer.innerHTML='';
 
   const map=$('#worldMap');
-  map.classList.toggle('compact-labels',s.labelMode==='auto'&&(innerWidth<760||list.length>8));
+  const mapped=mappedOccurrences(list);
+  map.classList.toggle('compact-labels',s.labelMode==='auto'&&(innerWidth<760||mapped.length>8));
   map.classList.toggle('selected-labels',s.labelMode==='selected');
 
-  list.forEach(o=>{
+  mapped.forEach(o=>{
     const subject=subj(o.subjectRef);
     const pl=place(o.placeRef);
-    if(!pl?.point) return;
-
+    const current=active(o.period,s.year);
+    const selected=o.id===s.selectedOccurrence;
     const [x,y]=project(pl.point.lon,pl.point.lat);
+
+    const classes=['occ-marker',current?'temporal-current':'temporal-context'];
+    if(selected) classes.push('active');
+
     const group=svg('g',{
-      class:'occ-marker'+(o.id===s.selectedOccurrence?' active':''),
+      class:classes.join(' '),
       transform:`translate(${x} ${y})`,
       tabindex:'0',
       role:'button',
-      'aria-label':`${subject.name}: ${pl.name}`,
-      'data-kind':subject.type
+      'aria-label':`${occurrenceHeadline(o)} · ${o.period.display}`,
+      'data-kind':subject.type,
+      'data-occurrence-id':o.id
     });
 
-    group.appendChild(svg('circle',{r:'14',class:'marker-halo'}));
-    group.appendChild(svg('circle',{r:'6',class:'marker-core'}));
+    const title=svg('title');
+    title.textContent=`${occurrenceHeadline(o)} · ${o.period.display}`;
+    group.appendChild(title);
+    group.appendChild(svg('circle',{r:current?'17':'13',class:'marker-halo'}));
+    group.appendChild(svg('circle',{r:current?'6.8':'5.3',class:'marker-core'}));
 
     const text=svg('text',{x:'10',y:'-9'});
     text.textContent=subject.name;
     group.appendChild(text);
 
-    group.addEventListener('click',()=>selectOccurrence(o.id,true));
+    group.addEventListener('click',()=>focusMapOccurrence(o));
     group.addEventListener('keydown',event=>{
       if(event.key==='Enter'||event.key===' '){
         event.preventDefault();
-        selectOccurrence(o.id,true);
+        focusMapOccurrence(o);
       }
     });
 
@@ -1927,6 +2112,7 @@ function openStoryItemInAtlas(itemRef){
     const filtersChanged=revealOccurrenceForDirectAccess(item);
     setYear(item.period.start);
     selectOccurrence(item.id,true);
+    fitMapToOccurrences([item],{mode:'selection'});
     if(filtersChanged) showToast('Filtros ajustados para mostrar esta evidencia');
     return;
   }
@@ -2571,6 +2757,8 @@ function bind(){
   const debouncedSearch=debounce(value=>{
     s.search=value;
     render();
+    if(value.trim()) fitMapToOccurrences(occMapVisible(),{mode:'results'});
+    else resetMapView({silent:true});
   },160);
 
   $('#clearSearchBtn').addEventListener('click',()=>{
@@ -2578,11 +2766,14 @@ function bind(){
     s.search='';
     $('#searchInput').value='';
     render();
+    resetMapView({silent:true});
   });
 
   $('#searchInput').addEventListener('input',e=>{
     debouncedSearch(e.target.value);
   });
+
+  $('#mapResetViewBtn').addEventListener('click',()=>resetMapView());
 
   $('#subjectTypeFilter').addEventListener('change',e=>{
     setCategoryFilter(e.target.value);
@@ -2593,7 +2784,7 @@ function bind(){
   $('#certaintyFilter').addEventListener('change',e=>{s.certainty=e.target.value;render()});
   $('#precisionFilter').addEventListener('change',e=>{s.precision=e.target.value;render()});
   $('#spatialFilter').addEventListener('change',e=>{s.spatial=e.target.value;render()});
-  $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occVisible())});
+  $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occMapVisible())});
   $('#eventWindowSelect').addEventListener('change',e=>{
     s.eventWindow=Number(e.target.value)||100;
     renderMetrics(occVisible());
@@ -2652,7 +2843,7 @@ function bind(){
   $('#aboutCloseBtn').addEventListener('click',()=>$('#aboutDialog').close());
   $('#methodBtn').addEventListener('click',()=>$('#aboutDialog').showModal());
 
-  window.addEventListener('resize',()=>renderMarkers(occVisible()));
+  window.addEventListener('resize',()=>renderMarkers(occMapVisible()));
 
   window.addEventListener('popstate',()=>restoreRouteFromLocation());
 

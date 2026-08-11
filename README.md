@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.22
-**Estado:** Narrative Museum integrado · validación móvil pendiente
+**Versión:** 0.1.0-alpha.23
+**Estado:** Narrative Museum + Geographic Explorer · validación de producto
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -306,3 +306,15 @@ Alpha.22 no añade contenido histórico. Endurece la continuidad entre Historias
 - `CANONICAL_RULES.md` normalizado a numeración única.
 
 El corpus, stories, glossary, schemas históricos y fingerprint G2 no cambian.
+
+## Geographic Explorer
+
+Alpha.23 corrige la semántica del mapa.
+
+El mapa ya no se vacía al seleccionar un año con pocas evidencias. Muestra el corpus geolocalizado completo que cumple búsqueda y filtros, y utiliza la fecha para resaltar las occurrences pertenecientes a ese momento.
+
+`En esta fecha` sigue siendo la lectura temporal estricta.
+
+La búsqueda del mapa es global y devuelve resultados visibles. Seleccionar una evidencia sincroniza mapa, fecha y ficha. Los resultados pueden autoencuadrarse, pero ese zoom no representa una ruta histórica.
+
+No se inventan centroides ni líneas de difusión.

@@ -381,6 +381,36 @@ No añade corpus ni nueva historia.
 
 ---
 
+## Geographic Explorer
+**Estado: IMPLEMENTADO · alpha.23 · pendiente validación táctil**
+
+Problema resuelto:
+- el mapa filtraba por año exacto;
+- con corpus todavía disperso podía quedar completamente vacío;
+- buscar un alimento en una fecha no coincidente no devolvía geografía visible.
+
+Contrato alpha.23:
+- mapa = corpus geolocalizado compatible con búsqueda/filtros;
+- fecha = énfasis visual;
+- `En esta fecha` = filtro temporal estricto;
+- búsqueda global con resultados textuales;
+- autoencuadre de resultados;
+- selección sincroniza mapa + tiempo + ficha;
+- ausencia de punto sigue visible;
+- sin rutas/difusión inferidas.
+
+Baseline:
+- 30 occurrences;
+- 16 mapped;
+- año 1500: 1 active / 0 mapped;
+- búsqueda `vino`: 5 / 5 mapped;
+- búsqueda `pan`: 7, sin falso positivo por `España`.
+
+Siguiente gate:
+validación real en Xiaomi antes de ampliar corpus o iniciar G4.
+
+---
+
 ## G4 — Difusión y redes
 **No iniciado**
 
