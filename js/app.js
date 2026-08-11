@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.24.1';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.25';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.24.1',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.24.1',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.24.1',
-  places:'./data/places.json?v=0.1.0-alpha.24.1',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.24.1',
-  events:'./data/events.json?v=0.1.0-alpha.24.1',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.24.1',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.24.1',
-  developments:'./data/developments.json?v=0.1.0-alpha.24.1',
-  sources:'./data/sources.json?v=0.1.0-alpha.24.1',
-  stories:'./data/stories.json?v=0.1.0-alpha.24.1',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.24.1',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.24.1'
+  config:'./data/config.json?v=0.1.0-alpha.25',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.25',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.25',
+  places:'./data/places.json?v=0.1.0-alpha.25',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.25',
+  events:'./data/events.json?v=0.1.0-alpha.25',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.25',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.25',
+  developments:'./data/developments.json?v=0.1.0-alpha.25',
+  sources:'./data/sources.json?v=0.1.0-alpha.25',
+  stories:'./data/stories.json?v=0.1.0-alpha.25',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.25',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.25'
 };
 
 const s={
@@ -146,9 +146,11 @@ const STATUS_HELP={
 
 const SOURCE_TYPE_LABELS={
   peer_reviewed_article:'Artículo revisado por pares',
+  peer_reviewed_commentary:'Comentario académico revisado por pares',
   peer_reviewed_letter:'Carta científica revisada por pares',
   conference_proceedings:'Actas académicas',
   official_institution:'Institución oficial',
+  official_document:'Documento oficial',
   scholarly_monograph:'Monografía académica',
   monograph:'Monografía',
   primary_text:'Texto primario',
@@ -254,7 +256,7 @@ function subj(id){return s.subjects.find(x=>x.id===id)}
 function place(id){return s.places.find(x=>x.id===id)}
 function sourceById(id){return s.sources.find(x=>x.id===id)}
 function storyById(id){return s.stories.find(x=>x.id===id)}
-function storyForSubject(subjectId){return s.stories.find(x=>x.subjectRef===subjectId&&isPublicStatus(x.status))||null}
+function preferredStoryForSubject(subjectId){return selectPreferredStoryForSubject(s.stories.filter(x=>isPublicStatus(x.status)),subjectId)}
 function glossaryById(id){return s.glossary.find(x=>x.id===id&&isPublicStatus(x.status))||null}
 
 let routeSyncLocked=false;
@@ -2618,7 +2620,7 @@ function renderDetails(o){
   const eventCount=historyItems.filter(x=>x.kind==='event').length;
   const techniqueCount=historyItems.filter(x=>x.kind==='technique').length;
   const transformationCount=historyItems.filter(x=>x.kind==='development').length;
-  const curatedStory=storyForSubject(subject.id);
+  const curatedStory=preferredStoryForSubject(subject.id);
   if(curatedStory){
     $('#subjectHistoryBtn').disabled=false;
     $('#subjectHistoryBtn').textContent=`Abrir ${curatedStory.title} · ${curatedStory.scenes.length} escenas`;
@@ -2806,7 +2808,7 @@ function bind(){
   $('#subjectHistoryBtn').addEventListener('click',()=>{
     const o=s.occurrences.find(x=>x.id===s.selectedOccurrence);
     if(!o) return;
-    const curated=storyForSubject(o.subjectRef);
+    const curated=preferredStoryForSubject(o.subjectRef);
     if(curated){closeDetail();openNarrativeStory(curated.id);}
     else openHistory(o.subjectRef);
   });

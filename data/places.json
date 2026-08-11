@@ -477,5 +477,17 @@
       "src_assize_bread_bl_manuscript"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "shulaveris_gora",
+    "name": "Shulaveris Gora",
+    "type": "site",
+    "point": null,
+    "summary": "Yacimiento neolítico de Kvemo Kartli, Georgia, situado aproximadamente 2 km al oeste-noroeste de Gadachrili Gora. Se incorpora sin coordenada puntual hasta disponer de una referencia cartográfica suficientemente sólida.",
+    "sourceRefs": [
+      "src_common_wheat_georgia_pnas_2026",
+      "src_mcgovern_2017_neolithic_wine"
+    ],
+    "status": "reviewed"
   }
 ]

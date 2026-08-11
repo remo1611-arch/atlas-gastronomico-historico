@@ -16,7 +16,10 @@ for sid,n in [('story_wine',6),('story_bread',7)]:
     st=by.get(sid)
     if not st: errors.append('falta '+sid); continue
     if len(st.get('scenes',[]))!=n: errors.append(f'{sid}: {len(st.get("scenes",[]))} escenas != {n}')
-    if st.get('subjectRef') not in subjects: errors.append(sid+': subjectRef roto')
+    if st.get('storyType')!='subject': errors.append(sid+': storyType debe ser subject')
+    if st.get('primarySubjectRef') not in subjects: errors.append(sid+': primarySubjectRef roto')
+    if st.get('primarySubjectRef') not in st.get('relatedSubjectRefs',[]): errors.append(sid+': primarySubjectRef fuera de relatedSubjectRefs')
+    if 'subjectRef' in st: errors.append(sid+': conserva subjectRef legacy')
     if st.get('status') not in {'reviewed','verified'}: errors.append(sid+': no publicable')
     for ref in st.get('sourceRefs',[]):
         if ref not in sources: errors.append(sid+': sourceRef roto '+ref)
@@ -31,20 +34,21 @@ for sid,n in [('story_wine',6),('story_bread',7)]:
             if target is None or ir.get('ref') not in target: errors.append(scene['id']+': itemRef roto '+str(ir))
 
 for needle in [
-    "stories:'./data/stories.json?v=0.1.0-alpha.24.1'",
-    "glossary:'./data/glossary.json?v=0.1.0-alpha.24.1'",
+    "stories:'./data/stories.json?v=0.1.0-alpha.25'",
+    "glossary:'./data/glossary.json?v=0.1.0-alpha.25'",
     'function openNarrativeStory(storyId,sceneIndex=0)',
     'function renderNarrativeStory()',
     'function stepNarrativeScene(direction)',
     'function renderStoryMap(scene)',
     'function openGlossaryEntry(id)',
+    'function preferredStoryForSubject(subjectId)',
 ]:
     if needle not in app: errors.append('motor narrativo falta: '+needle)
 for id_ in ['narrativeLanding','narrativeStoryPlayer','storyProgress','storyPrevBtn','storyNextBtn','storyWorldMap','storyNarrativeContent','storySources','glossaryDialog']:
     if f'id="{id_}"' not in html: errors.append('UI narrativa falta '+id_)
 
 # Narrative UI must be generic: no per-story render functions or branches.
-for forbidden in ['renderWineStory','renderBreadStory','openWineStory','openBreadStory',"storyId==='story_wine'",'storyId==="story_wine"']:
+for forbidden in ['renderWineStory','renderBreadStory','openWineStory','openBreadStory',"storyId==='story_wine'",'storyId==="story_wine"','x.subjectRef===subjectId','function storyForSubject(subjectId)']:
     if forbidden in app: errors.append('lógica específica de historia: '+forbidden)
 
 # Frozen historical contract remains untouched by the new editorial schemas.

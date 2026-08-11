@@ -1,35 +1,23 @@
-# Resultados de validación — 0.1.0-alpha.24.1
+# Resultados de validación — 0.1.0-alpha.25
 
-Fecha: 2026-08-11
+## Alcance
+Alpha.25 modifica exclusivamente el contrato narrativo y su navegación asociada. No amplía el corpus histórico.
 
-## Estado
-**PASS técnico. Gate físico Xiaomi pendiente.**
+## Resultado reproducible
+- `tools/validate_project.py`: PASS.
+- `node --check js/app.js`: PASS.
+- `node --check js/core.js`: PASS.
+- Python `tools/test_*.py`: **52/52 PASS**.
+- Node `tools/test_*.mjs`: **5/5 PASS**.
+- JSON Schema: PASS.
+- Story Types: contrato real + historia transversal sintética: PASS.
+- Contrato legacy `story.subjectRef`: rechazado por schema/test.
+- Navegación/deep links: PASS.
+- Story ↔ Atlas round-trip: PASS.
+- G2 fingerprint: preservado.
 
 ## Corpus
-11 subjects · 30 places · 30 occurrences · 1 event · 1 relationship · 7 contexts · 7 developments · 86 sources · 2 stories · 13 escenas · 16 términos.
+12 subjects · 31 places · 32 occurrences · 1 event · 1 relationship · 7 contexts · 7 developments · 90 sources · 2 stories · 13 escenas · 16 términos de glosario.
 
-## Cobertura
-- occurrences: 16/30 con punto; 14 sin punto;
-- contexts: 5/7 cartografiables; 2 sin punto;
-- developments: 1/7 cartografiable; 6 sin punto.
-
-## Validación reproducible
-- `tools/validate_project.py`: **PASS**;
-- `node --check js/app.js`: **PASS**;
-- scripts Python `test_*.py`: **50/50 PASS**;
-- scripts Node `test_*.mjs`: **4/4 PASS**;
-- cobertura multicapas: **PASS**;
-- estabilidad de metadatos MANIFEST: **PASS**.
-
-## Correcciones protegidas
-- cobertura visible en occurrences + contexts + developments;
-- `firstMappablePlace()`;
-- no centroides inventados;
-- `renderMapCoverage()` defensivo;
-- MANIFEST conserva `gate` y `phase`.
-
-## Navegador
-Se intentó smoke test automatizado con Chromium/viewport móvil, pero el entorno bloqueó `localhost` y `file://` con `ERR_BLOCKED_BY_ADMINISTRATOR`. No se declara PASS de navegador a partir de ese intento.
-
-## Gate pendiente
-`docs/MOBILE_ACCEPTANCE_ALPHA24.md`.
+## Pendiente no automatizable
+Gate táctil/visual en Xiaomi según `docs/MOBILE_ACCEPTANCE_ALPHA25.md`.

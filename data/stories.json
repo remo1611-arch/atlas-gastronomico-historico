@@ -1,7 +1,11 @@
 [
   {
     "id": "story_wine",
-    "subjectRef": "wine",
+    "storyType": "subject",
+    "primarySubjectRef": "wine",
+    "relatedSubjectRefs": [
+      "wine"
+    ],
     "title": "Historia del vino",
     "question": "¿Cómo sabemos que una vasija de hace 8.000 años contenía vino?",
     "teaser": "De una aldea neolítica del Cáucaso a Pasteur: una misma bebida permite estudiar química, producción, ritual, poder, comercio y microbiología.",
@@ -282,7 +286,11 @@
   },
   {
     "id": "story_bread",
-    "subjectRef": "bread_like_flatbread",
+    "storyType": "subject",
+    "primarySubjectRef": "bread_like_flatbread",
+    "relatedSubjectRefs": [
+      "bread_like_flatbread"
+    ],
     "title": "Historia del pan",
     "question": "¿Puede existir pan antes de la agricultura plenamente desarrollada?",
     "teaser": "De cazadores-recolectores a la panificación industrial: el pan revela cocina, tecnología, ritual, regulación y organización del trabajo.",

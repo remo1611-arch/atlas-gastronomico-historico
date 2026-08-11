@@ -294,7 +294,7 @@
     "url": "https://www.fao.org/food-safety/food-control-systems/codex-alimentarius/en",
     "sourceType": "official_institution",
     "accessed": "2026-08-11",
-    "notes": "FAO documenta que la Comisión del Codex fue establecida por FAO y OMS en 1963."
+    "notes": "Portal institucional general de FAO sobre Codex. Para la secuencia constitutiva 1961–1963 se emplean además la historia oficial y el informe de la primera sesión."
   },
   {
     "id": "src_codex_fao_who_home",
@@ -772,5 +772,41 @@
     "sourceType": "peer_reviewed_article",
     "accessed": "2026-08-11",
     "notes": "Artículo de 1966 que describe el Chorleywood Bread Process como nuevo método: sustituye 2–4 horas de fermentación en masa por minutos de intensa agitación mecánica en mezcladoras de alta velocidad."
+  },
+  {
+    "id": "src_codex_history_1961_1963",
+    "title": "Understanding the Joint FAO/WHO Codex Alimentarius Commission",
+    "publisher": "Food and Agriculture Organization of the United Nations (FAO)",
+    "url": "https://www.fao.org/4/y8705e/y8705e0a.htm",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Historia institucional: la Conferencia de FAO de 1961 y la 16.ª Asamblea Mundial de la Salud de 1963 aprobaron resoluciones para establecer la Comisión."
+  },
+  {
+    "id": "src_codex_first_session_1963",
+    "title": "Report of the First Session of the Joint FAO/WHO Codex Alimentarius Commission",
+    "publisher": "FAO/WHO Codex Alimentarius Commission",
+    "url": "https://www.fao.org/4/66479E/66479E01.htm",
+    "sourceType": "official_document",
+    "accessed": "2026-08-11",
+    "notes": "Informe de la primera sesión, celebrada en la sede de FAO en Roma del 25 de junio al 3 de julio de 1963."
+  },
+  {
+    "id": "src_common_wheat_georgia_pnas_2026",
+    "title": "An independent center for the origin of bread wheat in the Neolithic period of Georgia in the South Caucasus",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.2537697123",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Fuente primaria para T. aestivum en Shulaveris Gora (5922–5832 a. C.) y Gadachrili Gora (5808–5747 a. C.). La evidencia es de trigo común, no de pan elaborado."
+  },
+  {
+    "id": "src_common_wheat_georgia_pnas_commentary_2026",
+    "title": "A loaf of bread and a jug of wine: The origins of the ultimate food pairing",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.2612819123",
+    "sourceType": "peer_reviewed_commentary",
+    "accessed": "2026-08-11",
+    "notes": "Comentario académico independiente utilizado como contraste editorial del artículo arqueobotánico de 2026."
   }
 ]

@@ -10,12 +10,14 @@
       "display": "ca. 5900–5000 a. C."
     },
     "placeRefs": [
-      "gadachrili_gora"
+      "gadachrili_gora",
+      "shulaveris_gora"
     ],
     "summary": "Cultura del Neolítico cerámico del Cáucaso meridional; PNAS sitúa en este marco los yacimientos de Gadachrili Gora y Shulaveris Gora estudiados para la evidencia temprana de vino.",
     "sourceRefs": [
       "src_mcgovern_2017_neolithic_wine",
-      "src_cnrs_gadachrili"
+      "src_cnrs_gadachrili",
+      "src_common_wheat_georgia_pnas_2026"
     ],
     "status": "reviewed"
   },

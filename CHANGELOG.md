@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.25 — 2026-08-12
+
+- Generaliza el contrato de Historias para soportar visitas monográficas (`subject`) y transversales (`transversal`).
+- Elimina `story.subjectRef` sin conservar compatibilidad legacy.
+- Migra Vino y Pan a `storyType`, `primarySubjectRef` y `relatedSubjectRefs`.
+- Añade helpers genéricos para cobertura/prioridad de historias relacionadas con un subject.
+- Actualiza schema y validador: una transversal exige `primarySubjectRef: null` y al menos dos subjects relacionados.
+- Añade pruebas sintéticas que aceptan una historia transversal válida y rechazan contratos legacy o incompletos.
+- No añade historias, occurrences ni fuentes: Fermentación permanece fuera hasta superar el gate móvil.
+
+## 0.1.0-alpha.24.2 — 2026-08-11
+
+- K1 de alineación de conocimiento con el temario: Codex pasa de una creación puntual en 1963 a la secuencia constitutiva 1961–1963.
+- Se incorporan dos evidencias arqueobotánicas PNAS 2026 de *Triticum aestivum* en Shulaveris Gora y Gadachrili Gora, como subject independiente de Pan.
+- Shulaveris Gora permanece deliberadamente sin punto cartográfico; no se infieren coordenadas.
+- Nuevo test `test_k1_knowledge_alignment.py` y actualización de baselines de cobertura.
+- Sin nuevas historias y sin cambios de arquitectura.
+
 ## 0.1.0-alpha.24.1 — 2026-08-11
 
 - Hotfix de identificación de build: la etiqueta HTML inicial ya muestra `alpha.24.1` y coincide con `config.json`.

@@ -77,10 +77,10 @@ mapped=[o for o in public if places[o["placeRef"]].get("point")]
 at_1500=[o for o in public if o["period"]["start"]<=1500<=o["period"]["end"]]
 mapped_1500=[o for o in at_1500 if places[o["placeRef"]].get("point")]
 
-if len(public)!=30:
-    errors.append(f"baseline occurrences {len(public)} != 30")
-if len(mapped)!=16:
-    errors.append(f"baseline mapped {len(mapped)} != 16")
+if len(public)!=32:
+    errors.append(f"baseline occurrences {len(public)} != 32")
+if len(mapped)!=17:
+    errors.append(f"baseline mapped {len(mapped)} != 17")
 if len(at_1500)!=1 or len(mapped_1500)!=0:
     errors.append(f"diagnóstico 1500 inesperado: active={len(at_1500)} mapped={len(mapped_1500)}")
 
@@ -98,7 +98,7 @@ if errors:
     sys.exit(1)
 
 print("GEOGRAPHIC EXPLORER: PASS")
-print("Corpus: 30 occurrences · 16 mapped globally.")
+print("Corpus: 32 occurrences · 17 mapped globally.")
 print("At 1500: 1 active occurrence · 0 mapped.")
 print("Wine search baseline: 5 occurrences · 5 mapped.")
 print("Map is global; current date remains a visual highlight and side-panel filter.")

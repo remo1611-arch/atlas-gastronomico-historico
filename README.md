@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.24.1
+**Versión:** 0.1.0-alpha.25
 **Estado:** Narrative Museum + Atlas · consolidación de producto · gate móvil pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -104,7 +104,7 @@ Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed`
 
 Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-El corpus actual contiene 30 occurrences públicas: 16 tienen punto y 14 permanecen sin punto por decisión explícita. Alpha.24 extiende el diagnóstico a `contexts` y `developments` sin inventar centroides.
+El corpus actual contiene 32 occurrences públicas: 17 tienen punto y 15 permanecen sin punto por decisión explícita. Alpha.24 extiende el diagnóstico a `contexts` y `developments` sin inventar centroides.
 
 ## Capas históricas
 
@@ -318,3 +318,6 @@ El mapa ya no se vacía al seleccionar un año con pocas evidencias. Muestra el 
 La búsqueda del mapa es global y devuelve resultados visibles. Seleccionar una evidencia sincroniza mapa, fecha y ficha. Los resultados pueden autoencuadrarse, pero ese zoom no representa una ruta histórica.
 
 No se inventan centroides ni líneas de difusión.
+
+## Alpha.25 · Story Types
+Esta versión no añade contenido. Migra el contrato narrativo para distinguir historias monográficas (`subject`) y transversales (`transversal`) sin crear subjects ficticios. Vino y Pan usan ya el contrato nuevo; Fermentación se integrará solo después de superar el gate móvil.

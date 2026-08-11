@@ -16,7 +16,7 @@ for needle in ['function placeHasMapPoint(pl)','function firstResolvedPlace(plac
  if needle not in app:errors.append('app falta '+needle)
 for legacy in ['const firstPlace=(c.placeRefs||[]).map(place).find(Boolean)','const firstPlace=(d.placeRefs||[]).map(place).find(Boolean)']:
  if legacy in app:errors.append('legacy '+legacy)
-if len(uo)!=14:errors.append(f'occ {len(uo)} != 14')
+if len(uo)!=15:errors.append(f'occ {len(uo)} != 15')
 if len(uc)!=2:errors.append(f'contexts {len(uc)} != 2')
 if len(ud)!=6:errors.append(f'dev {len(ud)} != 6')
 if errors:

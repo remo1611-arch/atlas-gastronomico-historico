@@ -752,5 +752,71 @@
       "src_assize_bread_bl_manuscript"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_common_wheat_shulaveris_gora_5922_5832_bce",
+    "subjectRef": "common_wheat",
+    "placeRef": "shulaveris_gora",
+    "period": {
+      "start": -5922,
+      "end": -5832,
+      "precision": "range",
+      "display": "5922–5832 a. C.",
+      "note": "Intervalo calibrado publicado para la muestra RTD-9641 de Shulaveris Gora."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Restos arqueobotánicos identificados como Triticum aestivum aportan evidencia física directa de trigo común en el Neolítico de Shulaveris Gora. El registro no implica por sí mismo una preparación alimentaria concreta.",
+    "contextRefs": [
+      "shulaveri_shomutepe"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_common_wheat_georgia_pnas_2026",
+      "src_common_wheat_georgia_pnas_commentary_2026"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "direct_radiocarbon_archaeobotanical_evidence_plus_commentary",
+      "independentSourceRefs": [
+        "src_common_wheat_georgia_pnas_commentary_2026"
+      ],
+      "note": "La datación directa y la identificación morfológica se toman de PNAS 2026. Se mantiene explícita la separación entre presencia de T. aestivum y evidencia de productos elaborados."
+    }
+  },
+  {
+    "id": "occ_common_wheat_gadachrili_gora_5808_5747_bce",
+    "subjectRef": "common_wheat",
+    "placeRef": "gadachrili_gora",
+    "period": {
+      "start": -5808,
+      "end": -5747,
+      "precision": "range",
+      "display": "5808–5747 a. C.",
+      "note": "Intervalo calibrado publicado para la muestra RTD-9642 de Gadachrili Gora."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Restos arqueobotánicos identificados como Triticum aestivum aportan evidencia física directa de trigo común en Gadachrili Gora. La coincidencia territorial con otras evidencias alimentarias es una conexión museográfica; no demuestra por sí misma una relación causal.",
+    "contextRefs": [
+      "shulaveri_shomutepe"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_common_wheat_georgia_pnas_2026",
+      "src_common_wheat_georgia_pnas_commentary_2026"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "direct_radiocarbon_archaeobotanical_evidence_plus_commentary",
+      "independentSourceRefs": [
+        "src_common_wheat_georgia_pnas_commentary_2026"
+      ],
+      "note": "La datación directa y la identificación morfológica se toman de PNAS 2026. La relación espacial con la historia del vino se presenta como coexistencia territorial documentada, no como causalidad."
+    }
   }
 ]

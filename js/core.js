@@ -23,3 +23,31 @@ export function fromParts(magnitude,era,minYear,maxYear){
 }
 export function parts(year){return {magnitude:Math.abs(year),era:year<0?'BCE':'CE'}}
 export function project(lon,lat,w=1000,h=500){return[(Number(lon)+180)/360*w,(90-Number(lat))/180*h]}
+
+export function storySubjectRefs(story){
+ const refs=[];
+ const primary=story?.primarySubjectRef;
+ if(primary) refs.push(primary);
+ for(const ref of story?.relatedSubjectRefs||[]){
+  if(ref&&!refs.includes(ref)) refs.push(ref);
+ }
+ return refs;
+}
+export function storyCoversSubject(story,subjectId){
+ return Boolean(subjectId)&&storySubjectRefs(story).includes(subjectId);
+}
+export function rankStoriesForSubject(stories,subjectId){
+ return (stories||[]).filter(story=>storyCoversSubject(story,subjectId)).slice().sort((a,b)=>{
+  const rank=story=>story?.storyType==='subject'&&story?.primarySubjectRef===subjectId?0:story?.primarySubjectRef===subjectId?1:2;
+  const diff=rank(a)-rank(b);
+  if(diff) return diff;
+  return String(a?.title||a?.id||'').localeCompare(String(b?.title||b?.id||''),'es');
+ });
+}
+export function selectPreferredStoryForSubject(stories,subjectId){
+ const ranked=rankStoriesForSubject(stories,subjectId);
+ const monographic=ranked.find(story=>story?.storyType==='subject'&&story?.primarySubjectRef===subjectId);
+ if(monographic) return monographic;
+ const transversal=ranked.filter(story=>story?.storyType==='transversal');
+ return transversal.length===1?transversal[0]:null;
+}

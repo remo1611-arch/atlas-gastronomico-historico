@@ -291,5 +291,35 @@
       "src_sidebotham_2011_berenike_trade"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "common_wheat",
+    "name": "Trigo común (Triticum aestivum)",
+    "type": "food_species",
+    "summary": "Triticum aestivum, trigo hexaploide de trilla libre. El Atlas registra evidencias arqueobotánicas de la especie sin convertirlas en evidencia de una preparación alimentaria concreta.",
+    "aliases": [
+      "trigo común",
+      "common wheat",
+      "Triticum aestivum"
+    ],
+    "tags": [
+      "cereal",
+      "trigo",
+      "agricultura",
+      "Neolítico"
+    ],
+    "sourceRefs": [
+      "src_common_wheat_georgia_pnas_2026",
+      "src_common_wheat_georgia_pnas_commentary_2026"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "peer_reviewed_primary_plus_independent_commentary",
+      "independentSourceRefs": [
+        "src_common_wheat_georgia_pnas_commentary_2026"
+      ],
+      "note": "La identidad taxonómica y las dataciones proceden del artículo arqueobotánico PNAS 2026; un comentario académico PNAS independiente se usa como contraste editorial. No se infiere pan elaborado."
+    }
   }
 ]

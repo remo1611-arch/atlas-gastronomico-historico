@@ -1,8 +1,8 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.24.1",
+  "version": "0.1.0-alpha.25",
   "gate": "G3_CLOSED",
-  "phase": "PRODUCT_CONSOLIDATION",
+  "phase": "STORY_TYPES_CONSOLIDATION",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 17327,
-      "sha256": "e4713706feb16ed19876be36abc4fcd0de35f2027ca000291e4b977a92d66bd0"
+      "bytes": 18631,
+      "sha256": "8f1984117bea7a244a314fec500d750107eb6d644c6585439a10fd3a0947afdf"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 10273,
-      "sha256": "aeeaf53f780859b0f9ab08b987215d9b0658bda0264def3018c265ae20c6165a"
+      "bytes": 10583,
+      "sha256": "55950e23e9bba94a197e189ad6172d86652a88efe4524847add1a26a2a8e56d7"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -53,18 +53,18 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 501,
-      "sha256": "59263d6fe38e81368e0d27234297587612d5cad23938f787cdd2a7e539b7d8d7"
+      "bytes": 492,
+      "sha256": "0bf26c7635703ae78f383ce7882361f00f545e324812cc1fe096c910002d3e0b"
     },
     {
       "path": "data/contexts.json",
-      "bytes": 4123,
-      "sha256": "cf12f576a5787ca262c22dabd98bfa3ea3abd50c75d1cc7839ca8367dd0cbc05"
+      "bytes": 4193,
+      "sha256": "c6a5e6b1f641bd7e2fcfd7612a4ef1c9518d8071db05487dc82a0afb3eadffff"
     },
     {
       "path": "data/developments.json",
-      "bytes": 6805,
-      "sha256": "ec797f429ab782b9a172af7c3a934d8803db5e649d87af4752d2802fbe94d1a4"
+      "bytes": 7478,
+      "sha256": "f0e16ff26bbd6c5c106bdc79da5cc824cede347c1d311671bb3f56154f7cc273"
     },
     {
       "path": "data/events.json",
@@ -78,13 +78,13 @@
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 29001,
-      "sha256": "0a62f51ba55a3719f2e524986c8eda9163448c6fe638d43ebf5412f73956827f"
+      "bytes": 31848,
+      "sha256": "8f0346039a6c9bb99707f112a7218655ed5b6caa66829a42487ae727216c6172"
     },
     {
       "path": "data/places.json",
-      "bytes": 15996,
-      "sha256": "0d10d46f463769d21822fc44b2b1265980b28bfaa5dbc1ba88bf27bf47913d5b"
+      "bytes": 16483,
+      "sha256": "14af7d75d2ff10f42970ed8ad910b226e62b19414831ee0f249f5497e06236c3"
     },
     {
       "path": "data/relationships.json",
@@ -93,18 +93,18 @@
     },
     {
       "path": "data/sources.json",
-      "bytes": 40256,
-      "sha256": "beb6a8aa14b91ed24c863d228f6bd3597cc311618096e0d4a51fd71cfb1f3f85"
+      "bytes": 42356,
+      "sha256": "75e4663ee94c8298e3a30683d00e9b2a411db18201d7c58777199aa5427ce58f"
     },
     {
       "path": "data/stories.json",
-      "bytes": 51876,
-      "sha256": "4a44732cf68846a599118758ba4d032578dba3b1bc860d7d94d74e55db0bc715"
+      "bytes": 52059,
+      "sha256": "d5c582fd545bc92c807ae449c1d07921449193ea7c317a854c722e876bf4c381"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 9466,
-      "sha256": "ca45b2cca70a95765bd39a34c702d1418aaa7ee9568dafc6e278234c467555ff"
+      "bytes": 10561,
+      "sha256": "b53446650e719511d19d16dd5b982f27c5494f140898a9af7261a2e27667a428"
     },
     {
       "path": "data/taxonomy.json",
@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/DATA_MODEL.md",
-      "bytes": 12390,
-      "sha256": "a1f58827b9d570eefa0bc8fbaf07afcc19562a7109329f562c3e4c5e65744e0f"
+      "bytes": 13155,
+      "sha256": "da8fb667ee75cb3188220da02293d95a6ba5ae91b27ae85834230c5a699f8e63"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -222,9 +222,19 @@
       "sha256": "96e78a72803feeb9a7ad64e19198e16fa95254b0c76772c2cdd8040aa244b882"
     },
     {
+      "path": "docs/K1_KNOWLEDGE_ALIGNMENT.md",
+      "bytes": 1406,
+      "sha256": "29562bb7bf905c8d555c8f134d2b179932cfecccbf5e2ac67b7582a2d4fd08c8"
+    },
+    {
       "path": "docs/MOBILE_ACCEPTANCE_ALPHA24.md",
       "bytes": 1247,
       "sha256": "776e420a30fb0a8ee1cf47158a69925b8e4a62e1ecaa978ce92338964e7f56c3"
+    },
+    {
+      "path": "docs/MOBILE_ACCEPTANCE_ALPHA25.md",
+      "bytes": 1753,
+      "sha256": "41a5f33bb8715fe506d53b193bd0daafd2ae74f400cf8eb182de41816435129c"
     },
     {
       "path": "docs/NARRATIVE_MUSEUM_INTEGRATION.md",
@@ -248,8 +258,8 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1949,
-      "sha256": "39a5b1a0b2cdccd09a7368e2ae270bffd269027a1739bf510287131a9f794392"
+      "bytes": 1973,
+      "sha256": "e48eab8d5934c911c338e75cd7a10fd24ff4b3eaf6e85ad9dfda645f52e3e110"
     },
     {
       "path": "docs/QA.md",
@@ -258,8 +268,8 @@
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 13533,
-      "sha256": "8d9aaee50cce9969da4d84f003a7f1513f03f6f8b319e9294f2d3b285f06f386"
+      "bytes": 14469,
+      "sha256": "4d6e41efd091900e740e833e7e7af54bb2bf722297c65e89ca978ad32f26e95d"
     },
     {
       "path": "docs/SEED_ARCHIVE.md",
@@ -272,9 +282,14 @@
       "sha256": "cf48f16ca2c0f4d3d24796cab83ea88015d441df63c27738d81eb9b4fad26d75"
     },
     {
+      "path": "docs/STORY_TYPES_ALPHA25.md",
+      "bytes": 1637,
+      "sha256": "4454e01a82b181a4df06d92468aca09da061fe82735b1e2004414e323d8278aa"
+    },
+    {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1230,
-      "sha256": "e231d0e88f89f97059a79258bd1673ed3e4280bfcd6f72a638a1c9c5410f96ac"
+      "bytes": 936,
+      "sha256": "f6d16be1d68aaa09302bd99d2a425122c1c543734b47c40bf6b159d423d1581e"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -283,18 +298,18 @@
     },
     {
       "path": "index.html",
-      "bytes": 23302,
-      "sha256": "a4ee8700d1e739612b0dd74a2dd7d2322baf86afe272b6d4447b34c296a6643e"
+      "bytes": 23294,
+      "sha256": "6bb25338951b95a1a14d8a386f2e95d3735b29650f7faacdb2330d4748fc998e"
     },
     {
       "path": "js/app.js",
-      "bytes": 114808,
-      "sha256": "37e92bb5000ced8b6630532a7ba1e05fab6e0ea150a5368c3020c8356fcd5408"
+      "bytes": 114962,
+      "sha256": "793c49ecb4214a0846051cbf91e9af00130a5c502487cc9c71534f6525b16cf6"
     },
     {
       "path": "js/core.js",
-      "bytes": 1129,
-      "sha256": "9dc11443ed08087aa728abb4476528302bcc53888e68aacb8bbe3c1003ec346d"
+      "bytes": 2332,
+      "sha256": "54d0660fc72bb284dad57d839cb863c32e4561de489203068d7ab0d87b9243f2"
     },
     {
       "path": "schemas/context.schema.json",
@@ -338,8 +353,8 @@
     },
     {
       "path": "schemas/story.schema.json",
-      "bytes": 4742,
-      "sha256": "96901987dc5ef60fe7794649936cb4cb2527f663bd5f622aeec683d69fb64f30"
+      "bytes": 6101,
+      "sha256": "a1ba38455ba514511ebed3236a72f06a3a39dc2fb08c8e77345f7f99ddb3dcb6"
     },
     {
       "path": "schemas/subject.schema.json",
@@ -494,12 +509,17 @@
     {
       "path": "tools/test_geographic_explorer.py",
       "bytes": 4012,
-      "sha256": "f608638a876d77e7d3e643ce53d4d3341fde23ee802a966c281f4625f83c767c"
+      "sha256": "469182930622244d8c4b3d1507a81196a97b3b1f2643106d4fa3b37258246910"
     },
     {
       "path": "tools/test_global_map_search_data.py",
       "bytes": 2090,
       "sha256": "3f9e2ebb23df45bb9b8e0df5ae188b9296a2336f1904bab1e0e4f9a994b995a2"
+    },
+    {
+      "path": "tools/test_k1_knowledge_alignment.py",
+      "bytes": 2992,
+      "sha256": "ec2f7135b319d393596f715315085f99cf5e2c1eba42006ade31fe9515099f82"
     },
     {
       "path": "tools/test_light_contrast.py",
@@ -524,7 +544,7 @@
     {
       "path": "tools/test_map_coverage.py",
       "bytes": 2073,
-      "sha256": "fd2ecde75ae8721f33b15524619d57f9189564b5671bf8faf198aa2400fb2edb"
+      "sha256": "f68d60e8edcdda730bde0aa8da25b6b66ad31f3bbfa19ad684501f242d2e31cf"
     },
     {
       "path": "tools/test_mobile_contract.py",
@@ -538,8 +558,8 @@
     },
     {
       "path": "tools/test_narrative_museum_contract.py",
-      "bytes": 3516,
-      "sha256": "c3f95c842006fdb17e63d6593139dbc6f42ad461315c3f2697a0863124939c82"
+      "bytes": 3953,
+      "sha256": "cef8ca1dc9dc39d4f342188fa8230f834ffcb28af52acbad8699f194b74a8d2e"
     },
     {
       "path": "tools/test_navigation_algorithms.mjs",
@@ -592,6 +612,16 @@
       "sha256": "2f4690f13a0ecf5bd896e63a35c7cb4b0123862bed41f2fd74bbb482efc8c683"
     },
     {
+      "path": "tools/test_story_types.mjs",
+      "bytes": 1627,
+      "sha256": "b5a41e29e2bba2a01737c99c645f3e059275e2e5c91ab581fb0811ec5b7e2e3d"
+    },
+    {
+      "path": "tools/test_story_types.py",
+      "bytes": 2106,
+      "sha256": "6bf3c81d30dcfdeacd2586ae4257fb96eaefc361cf6d92bc56dfc995c48b29f7"
+    },
+    {
       "path": "tools/test_subject_history.py",
       "bytes": 3649,
       "sha256": "11056ab070d0fac3f4efe8a37c5401eb6b39e97f853d2167ac7c35efc5b0f4b3"
@@ -628,8 +658,8 @@
     },
     {
       "path": "tools/validate_project.py",
-      "bytes": 12182,
-      "sha256": "c9e4556e242324de999337b00bae364099e3638f82cba688be48e2deab939d77"
+      "bytes": 13013,
+      "sha256": "6b266a7071ecfe08f61ad428c906b2c13182e559eff7219b1a1de1d1394d3e80"
     }
   ]
 }

@@ -172,8 +172,21 @@ for d in developments:
 for story in stories:
     label=f"story:{story.get('id')}"
     source_refs(story,label,required_for_review=True)
-    if story.get("subjectRef") not in S:
-        errors.append(f"{label}: subjectRef roto {story.get('subjectRef')}")
+    story_type=story.get("storyType")
+    primary=story.get("primarySubjectRef")
+    related=story.get("relatedSubjectRefs",[])
+    if story_type not in {"subject","transversal"}:
+        errors.append(f"{label}: storyType inválido {story_type}")
+    if len(related)!=len(set(related)):
+        errors.append(f"{label}: relatedSubjectRefs duplicados")
+    for ref in related:
+        if ref not in S: errors.append(f"{label}: relatedSubjectRef roto {ref}")
+    if story_type=="subject":
+        if primary not in S: errors.append(f"{label}: primarySubjectRef roto {primary}")
+        elif primary not in related: errors.append(f"{label}: primarySubjectRef debe estar en relatedSubjectRefs")
+    elif story_type=="transversal":
+        if primary is not None: errors.append(f"{label}: historia transversal debe tener primarySubjectRef=null")
+        if len(related)<2: errors.append(f"{label}: historia transversal necesita >=2 relatedSubjectRefs")
     scene_ids=[]
     for scene in story.get("scenes",[]):
         sid=scene.get("id")

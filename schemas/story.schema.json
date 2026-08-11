@@ -5,7 +5,9 @@
   "additionalProperties": false,
   "required": [
     "id",
-    "subjectRef",
+    "storyType",
+    "primarySubjectRef",
+    "relatedSubjectRefs",
     "title",
     "question",
     "teaser",
@@ -23,9 +25,31 @@
       "type": "string",
       "pattern": "^[a-z0-9_]+$"
     },
-    "subjectRef": {
-      "type": "string",
-      "minLength": 1
+    "storyType": {
+      "enum": [
+        "subject",
+        "transversal"
+      ]
+    },
+    "primarySubjectRef": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "relatedSubjectRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     },
     "title": {
       "type": "string",
@@ -242,5 +266,55 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "storyType": {
+            "const": "subject"
+          }
+        },
+        "required": [
+          "storyType"
+        ]
+      },
+      "then": {
+        "properties": {
+          "primarySubjectRef": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "storyType": {
+            "const": "transversal"
+          }
+        },
+        "required": [
+          "storyType"
+        ]
+      },
+      "then": {
+        "properties": {
+          "primarySubjectRef": {
+            "type": "null"
+          },
+          "relatedSubjectRefs": {
+            "type": "array",
+            "minItems": 2,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
 }

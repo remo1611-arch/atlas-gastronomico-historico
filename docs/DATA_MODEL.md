@@ -600,7 +600,9 @@ La capa narrativa no altera el modelo histórico central.
 ```text
 story
 ├─ id
-├─ subjectRef
+├─ storyType                 # subject | transversal
+├─ primarySubjectRef         # subject: id canónico · transversal: null
+├─ relatedSubjectRefs[]      # subjects cubiertos por la visita
 ├─ title / question / teaser
 ├─ estimatedMinutes
 ├─ sourceRefs[]
@@ -618,6 +620,13 @@ story
    ├─ nextQuestion
    └─ glossaryRefs[]
 ```
+
+
+Reglas de contrato:
+- `storyType="subject"`: `primarySubjectRef` es obligatorio y debe figurar también en `relatedSubjectRefs`.
+- `storyType="transversal"`: `primarySubjectRef` es `null` y `relatedSubjectRefs` contiene al menos dos subjects reales.
+- No existe `story.subjectRef` legacy. Una técnica o proceso transversal no se modela como alimento ficticio.
+- La portada de Historias es el punto de descubrimiento universal; desde una evidencia se prioriza su historia monográfica; si no existe, solo se selecciona una transversal cuando es la única candidata relacionada.
 
 `itemRefs` puede apuntar a:
 - occurrence;

@@ -499,3 +499,23 @@ Se evaluará después de disponer de corpus G2/G3 suficiente:
 - recorridos ciencia/tecnología/seguridad.
 
 No bloquea G1 ni G2.
+
+---
+
+## Alpha.25 — Story Types
+**Estado: IMPLEMENTADO TÉCNICAMENTE · pendiente aceptación Xiaomi**
+
+Objetivo: demostrar que Historias puede representar tanto recorridos monográficos como transversales sin modelar técnicas/procesos como subjects ficticios.
+
+### Gate alpha.25
+- Vino y Pan funcionan tras migrar a `storyType="subject"`.
+- No existe `story.subjectRef` en datos, schema ni motor narrativo.
+- El schema acepta una historia transversal sintética con `primarySubjectRef: null` y varios `relatedSubjectRefs`.
+- La navegación desde una evidencia sigue priorizando la historia monográfica correspondiente.
+- Deep links, Atrás Android y round-trip Historia ↔ Atlas mantienen comportamiento.
+
+### Después
+1. integrar Fermentación como primera historia `transversal`;
+2. gate museográfico de Vino, Pan y Fermentación;
+3. congelación formal del contrato de producto;
+4. expansión editorial historia por historia.

@@ -163,13 +163,13 @@
   },
   {
     "id": "codex_alimentarius_commission_1963",
-    "name": "Creación de la Comisión del Codex Alimentarius",
+    "name": "Constitución de la Comisión del Codex Alimentarius",
     "type": "regulation",
     "period": {
-      "start": 1963,
+      "start": 1961,
       "end": 1963,
-      "precision": "exact",
-      "display": "1963"
+      "precision": "range",
+      "display": "1961–1963"
     },
     "placeRefs": [],
     "contextRefs": [],
@@ -178,13 +178,24 @@
       "standardizes",
       "improves_safety"
     ],
-    "summary": "FAO y OMS establecieron la Comisión del Codex Alimentarius en 1963 para desarrollar normas internacionales destinadas a proteger la salud de los consumidores y promover prácticas equitativas en el comercio de alimentos.",
+    "summary": "La Conferencia de la FAO aprobó en 1961 el establecimiento de la Comisión del Codex Alimentarius; la Asamblea Mundial de la Salud aprobó en 1963 el marco conjunto FAO/OMS, y la primera sesión de la Comisión se celebró en Roma del 25 de junio al 3 de julio de 1963. El Atlas representa así una secuencia constitutiva, no una creación instantánea en un único año.",
     "certainty": "high",
     "sourceRefs": [
       "src_codex_fao",
-      "src_codex_fao_who_home"
+      "src_codex_fao_who_home",
+      "src_codex_history_1961_1963",
+      "src_codex_first_session_1963"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "official_fao_who_chronology_crosscheck",
+      "independentSourceRefs": [
+        "src_codex_history_1961_1963",
+        "src_codex_first_session_1963"
+      ],
+      "note": "Se corrige la simplificación «creación en 1963»: FAO documenta resoluciones constitutivas en 1961 y 1963 y el informe oficial fija la primera sesión en junio-julio de 1963."
+    }
   },
   {
     "id": "chorleywood_bread_process_1961",
