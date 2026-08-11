@@ -53,3 +53,11 @@ Higiene, seguridad alimentaria, salud pública, regulación y sistemas de calida
 **Aceptada.**
 CSS, JS y todos los datos cargados dinámicamente deben llevar identificador de versión en cada release de GitHub Pages. `app.js` debe versionar también su importación de `core.js`.
 
+## ADR-015 — Tema claro como identidad propia
+**Aceptada.**
+El modo claro no es una inversión cromática del oscuro. Usa una paleta editorial cálida, manteniendo semántica de categorías y contraste.
+
+## ADR-016 — No overflow horizontal de página
+**Aceptada.**
+En móvil, solo pueden desplazarse horizontalmente componentes explícitos como leyendas o atajos. La página, paneles, títulos, grids y toolbars no deben ampliar el viewport.
+

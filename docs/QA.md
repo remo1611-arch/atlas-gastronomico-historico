@@ -9,6 +9,8 @@ node --check js/app.js
 node tools/test_core.mjs
 python tools/test_project_pages.py
 python tools/test_extended_contract.py
+python tools/test_light_contrast.py
+python tools/test_mobile_contract.py
 python tools/build_manifest.py
 ```
 
@@ -47,3 +49,12 @@ Antes de validar datos históricos:
 - [ ] civilización/cultura no tratada como origen automático;
 - [ ] seguridad/higiene diferenciada de gastronomía;
 - [ ] assets dinámicos con cache busting de release.
+
+## Gate móvil alpha.4
+- [ ] página sin overflow horizontal involuntario;
+- [ ] toolbar mapa estable en <= 820 px;
+- [ ] `En esta fecha` sin clipping;
+- [ ] textos largos rompen dentro del panel;
+- [ ] cabecera estable en <= 600 px;
+- [ ] modo claro con contraste AA en pares críticos;
+- [ ] scroll horizontal solo en leyenda/atajos/franja cuando sea deliberado.

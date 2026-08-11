@@ -1,5 +1,33 @@
 # Changelog
 
+## 0.1.0-alpha.4 — 2026-08-11
+
+### Mobile polish
+- eliminado overflow horizontal involuntario;
+- flex/grid con `min-width:0`;
+- toolbar Buscar / Capas / Filtros estabilizada;
+- títulos y textos largos con wrapping seguro;
+- `En esta fecha` corregido para móvil;
+- cabecera móvil más compacta;
+- tarjetas de contexto y evidencias ajustadas;
+- mapa móvil optimizado.
+
+### Light theme refinement
+- paleta clara rehecha desde cero;
+- fondo marfil/mineral;
+- superficies cálidas;
+- acentos cobre, oliva, violeta, turquesa y azul más sobrios;
+- mapa claro desaturado;
+- sombras y líneas reducidas.
+
+### Distribución
+- recursos y datos siguen versionados con `0.1.0-alpha.4`;
+- meta `atlas-build` añadida para diagnóstico de versión.
+
+### Arquitectura
+- sin cambios de contrato;
+- contexts/developments/capas de alpha.3 se conservan.
+
 ## 0.1.0-alpha.3 — 2026-08-11
 
 ### Museum polish

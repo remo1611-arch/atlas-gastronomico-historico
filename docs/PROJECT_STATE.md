@@ -4,7 +4,7 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.3
+0.1.0-alpha.4
 
 ## Gate
 - G0: CERRADO.
@@ -59,3 +59,20 @@ Publicar alpha.3 y auditar en móvil/escritorio. Si la UX es estable, iniciar G2
 - un hito de higiene/seguridad;
 - una norma o sistema de control.
 
+
+
+## Alpha.4 — mobile polish + light theme
+
+Correcciones:
+- defensa sistemática contra overflow horizontal;
+- grids/flex con `min-width:0`;
+- toolbar del mapa estable con tres acciones;
+- “En esta fecha” adaptable en móvil;
+- contexto y evidencias con ruptura segura de texto;
+- cabecera móvil compactada;
+- métricas/franja editorial más discreta;
+- tema claro rehecho como paleta cálida de museo;
+- mapa claro con tonos minerales/desaturados;
+- cache busting de release preservado.
+
+La estética oscura se conserva como referencia principal y solo recibe ajustes estructurales.

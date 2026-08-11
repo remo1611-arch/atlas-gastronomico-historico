@@ -42,3 +42,6 @@
 39. Las capas visuales no alteran el significado de los datos.
 40. Toda release debe versionar las URLs de CSS, JavaScript, JSON y GeoJSON para evitar mezclar recursos en caché.
 
+41. En móvil se prohíbe el overflow horizontal de página; solo se admite en componentes declarados como carrusel/leyenda.
+42. El modo claro debe conservar identidad museográfica propia y contraste suficiente; no será una inversión automática del modo oscuro.
+

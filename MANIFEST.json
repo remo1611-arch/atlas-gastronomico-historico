@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 2061,
-      "sha256": "81cf1dc65c5a33d2cfee6087da21dd702a1ba29a5fb3348a37aab65df265b1e3"
+      "bytes": 2903,
+      "sha256": "ce872dcab33bf58c133dd4ee8ac773bfb1de426f0a0c1e0ce4a00b2b1e92ee11"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -22,7 +22,7 @@
     {
       "path": "README.md",
       "bytes": 3354,
-      "sha256": "3a43622174d0ec9fc36735577bc08c2fad5c207a673f1d72a43ec48e74359201"
+      "sha256": "018c005a67ca8abb7c7abd8cd1108074ce2df082a067e6e5aab697e27d93cfcb"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -36,8 +36,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 29775,
-      "sha256": "f1539ee279864c23867d1e2b499e7f20ecea0ad154748891fe8dc2497cdc2c88"
+      "bytes": 38088,
+      "sha256": "f531925d6043d5779d4ba87908dde1dd7ae589da02e29cc5130d4667a073a224"
     },
     {
       "path": "data/basemap/world_110m.geojson",
@@ -47,7 +47,7 @@
     {
       "path": "data/config.json",
       "bytes": 517,
-      "sha256": "edbdee186c29b8711b46f21b05b4e906a128d1004ab304efbc3f7f8be135c54a"
+      "sha256": "b9cde5d19eb775aba523c62658302e6c2328d17d6708447a5cecf40fb0cd9284"
     },
     {
       "path": "data/contexts.json",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 2950,
-      "sha256": "7cef55224008cdb212040ab2888105fb331c89e7acd0d7db7fdfe14ab264c183"
+      "bytes": 3217,
+      "sha256": "ed1acb2a2ef8b331e7a72a426ce8eb19e93e0f12a663449d8f11927c1fab9170"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -111,8 +111,8 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 2240,
-      "sha256": "991ed0222634a5c506d52df366ca966e6230fe3147faca422f137f613c4cf014"
+      "bytes": 2687,
+      "sha256": "d12c6dc3bf33309b071388042b9c855324f9ee724ca0ef247414f16c78b06d56"
     },
     {
       "path": "docs/GITHUB_PAGES.md",
@@ -131,13 +131,13 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1666,
-      "sha256": "7bc951278f39c5fa336308444fd785497f50d3286b15265cd80ca5139ed461d3"
+      "bytes": 2257,
+      "sha256": "f2cc5c1de3378ee28d86e98d38b1b0bb9ff2eab730d11a88a8cd67991538eaea"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 1164,
-      "sha256": "5387abf1854dec440f07bba9be06a22efd085b77cfa4227e7f2d7289b465fad5"
+      "bytes": 1603,
+      "sha256": "c0773b9d8d79ffc61fcacb294cda775efc9731b44af96a082c2a82fa3463684a"
     },
     {
       "path": "docs/ROADMAP.md",
@@ -151,18 +151,18 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1614,
-      "sha256": "74a14c094d9e05df994e35e3c50de4cec0758a5e1672c07663744c1c345def45"
+      "bytes": 2063,
+      "sha256": "4388abe25506e7a7165308bb16fbe1446cdcdda2b4542b04ca5de9ce2ccde79d"
     },
     {
       "path": "index.html",
-      "bytes": 17551,
-      "sha256": "7463a08ed09d37e4a5b0c600d4c2db9954e5296bb3f75376d520aab142d80180"
+      "bytes": 17603,
+      "sha256": "58de9c22def35dee8070a9878b22eb92c4fe2fb0baaeac7ca9c8546283cf16b5"
     },
     {
       "path": "js/app.js",
       "bytes": 26648,
-      "sha256": "05c5f989917603f92eb90191d40798772bb9580c35418c73e2af9e275d13ea24"
+      "sha256": "f64a88b83c4c1267d6bc3fc901b78b852a3e41c68a209233e8a0ee322f4ff64f"
     },
     {
       "path": "js/core.js",
@@ -212,7 +212,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 626,
-      "sha256": "c696fa55929fd985a9c6af68ed1a9385569ac050dd610b50ba6a2675da5a17f4"
+      "sha256": "1b7ba9c9b47c85da9eee5ee5c77d0f6a723a24d417f17bcb07df181b251fbeed"
     },
     {
       "path": "tools/serve.py",
@@ -228,6 +228,16 @@
       "path": "tools/test_extended_contract.py",
       "bytes": 1763,
       "sha256": "495ab6ae8364546379c08f0f55a6fcccb84d006896f3877bab5942b2c4ef988d"
+    },
+    {
+      "path": "tools/test_light_contrast.py",
+      "bytes": 1041,
+      "sha256": "02d1667b0a1062710b4ed9a771f13fec2472dcdcf8e0e9cf7edf40a3f8b424b2"
+    },
+    {
+      "path": "tools/test_mobile_contract.py",
+      "bytes": 1222,
+      "sha256": "6a7720a99035826e2acb04147a2cdffc279d4d16e7a01df23a7032a26aea5811"
     },
     {
       "path": "tools/test_project_pages.py",

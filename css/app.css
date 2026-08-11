@@ -631,3 +631,485 @@ html[data-theme="light"]{--museum-rule:rgba(52,45,33,.11)}
   .transformation-band{padding:16px;border-radius:16px}
   .transform-head{align-items:start;flex-direction:column}
 }
+
+
+/* ===== alpha.4 · mobile polish + light theme refinement ===== */
+
+/* Defensive sizing: flex/grid children must be allowed to shrink. */
+.museum-shell,
+.museum-card,
+.time-gallery,
+.explorer-grid,
+.map-museum,
+.now-panel,
+.museum-story,
+.events-section,
+.transformation-band,
+.story-intro,
+.context-highlights,
+.map-toolbar,
+.now-heading,
+.events-heading,
+.transform-head,
+.map-actions,
+.category-summary,
+.evidence-list,
+.context-card,
+.summary-card,
+.evidence-card{
+  min-width:0;
+  max-width:100%;
+}
+
+h1,h2,h3,p,span,strong,small{
+  overflow-wrap:break-word;
+}
+
+.now-heading h2,
+.map-toolbar h2,
+.story-intro h2,
+.events-heading h2,
+.transform-head h2{
+  max-width:100%;
+  text-wrap:balance;
+}
+
+.evidence-card,
+.summary-card,
+.context-card,
+.transform-tile{
+  overflow:hidden;
+}
+
+/* ---------- Light theme: warm museum / editorial palette ---------- */
+html[data-theme="light"]{
+  --bg:#eee9df;
+  --bg-2:#e7e0d4;
+  --surface:rgba(250,247,240,.94);
+  --surface-solid:#fbf8f1;
+  --surface-2:#f0eadf;
+  --surface-3:#e8dfd1;
+  --text:#2b2924;
+  --text-strong:#1d1b18;
+  --muted:#686158;
+  --line:rgba(64,53,39,.15);
+  --line-strong:rgba(64,53,39,.27);
+  --accent:#a85319;
+  --accent-deep:#843a0b;
+  --gold:#8b6715;
+  --crop:#967013;
+  --drink:#68459b;
+  --technique:#1d7774;
+  --product:#9e4548;
+  --ingredient:#4c7546;
+  --place:#35678f;
+  --event:#9d501f;
+  --danger:#9d3d3d;
+  --shadow:0 16px 42px rgba(75,59,35,.10);
+  --shadow-soft:0 9px 24px rgba(75,59,35,.07);
+  --museum-rule:rgba(64,53,39,.12);
+}
+
+html[data-theme="light"] body{
+  background:
+    radial-gradient(circle at 9% -5%,rgba(177,108,42,.10),transparent 25rem),
+    radial-gradient(circle at 96% 12%,rgba(66,103,135,.065),transparent 31rem),
+    linear-gradient(180deg,#f3efe7 0%,var(--bg) 46%,#e9e2d7 100%);
+}
+
+html[data-theme="light"] .ambient{
+  opacity:.08;
+  filter:blur(105px);
+}
+html[data-theme="light"] .ambient-a{background:#bd7737}
+html[data-theme="light"] .ambient-b{background:#597998}
+
+html[data-theme="light"] .topbar{
+  background:rgba(248,245,238,.88);
+  border-bottom-color:rgba(64,53,39,.14);
+}
+
+html[data-theme="light"] .museum-card,
+html[data-theme="light"] .snapshot-tile{
+  background:rgba(251,248,241,.92);
+}
+
+html[data-theme="light"] .timeline-stage,
+html[data-theme="light"] .summary-card,
+html[data-theme="light"] .evidence-card,
+html[data-theme="light"] .context-card,
+html[data-theme="light"] .drawer-panel,
+html[data-theme="light"] .detail-panel{
+  background:var(--surface-solid);
+}
+
+html[data-theme="light"] .round-btn,
+html[data-theme="light"] .toolbar-btn,
+html[data-theme="light"] #goYearBtn,
+html[data-theme="light"] .era-shortcuts button,
+html[data-theme="light"] .timeline-controls button,
+html[data-theme="light"] .legend-pill{
+  background:#f7f3eb;
+  border-color:rgba(64,53,39,.17);
+}
+
+html[data-theme="light"] .legend-pill.active{
+  background:#e9e2d6;
+  color:var(--text-strong);
+  border-color:rgba(64,53,39,.24);
+}
+
+html[data-theme="light"] .map-frame{
+  background:#dfe4e1;
+  border-color:rgba(52,66,63,.16);
+}
+html[data-theme="light"] .ocean{fill:#e5e9e5}
+html[data-theme="light"] .country{
+  fill:#cbd3cc;
+  stroke:#a6b1a9;
+}
+html[data-theme="light"] .map-year-badge{
+  background:rgba(252,249,243,.88);
+  color:var(--text-strong);
+  border-color:rgba(64,53,39,.16);
+  box-shadow:0 8px 20px rgba(64,53,39,.08);
+}
+html[data-theme="light"] .occ-marker text{
+  stroke:#fbf8f1;
+}
+html[data-theme="light"] .method-note{
+  background:rgba(248,242,225,.78);
+}
+
+/* ---------- More editorial desktop/tablet rhythm ---------- */
+.museum-rail{
+  padding-inline:8px;
+}
+
+.map-actions{
+  flex-wrap:wrap;
+}
+
+.map-actions .toolbar-btn{
+  min-width:0;
+}
+
+.category-summary .summary-card{
+  min-width:0;
+}
+
+.evidence-heading span{
+  white-space:normal;
+}
+
+/* ---------- Mobile: strict no-page-overflow ---------- */
+@media(max-width:820px){
+  html,body{
+    max-width:100%;
+    overflow-x:hidden;
+  }
+
+  .museum-shell{
+    width:calc(100% - 16px);
+    max-width:100%;
+  }
+
+  .hero,
+  .time-gallery,
+  .map-museum,
+  .now-panel,
+  .museum-story,
+  .events-section,
+  .transformation-band{
+    width:100%;
+    max-width:100%;
+  }
+
+  .map-toolbar,
+  .now-heading,
+  .events-heading,
+  .transform-head{
+    width:100%;
+  }
+
+  .map-actions{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    width:100%;
+    gap:7px;
+  }
+
+  .map-actions .toolbar-btn{
+    width:100%;
+    min-width:0;
+    padding-inline:8px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  .category-summary{
+    width:100%;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .summary-card{
+    width:100%;
+    min-width:0;
+  }
+
+  .summary-card span{
+    min-width:0;
+    line-height:1.25;
+  }
+
+  .now-heading{
+    gap:10px;
+  }
+
+  .now-heading h2{
+    font-size:clamp(1.75rem,8vw,2.35rem);
+    line-height:1.05;
+  }
+
+  .evidence-list,
+  .evidence-card,
+  .context-highlights,
+  .context-card{
+    width:100%;
+  }
+
+  .context-card span,
+  .evidence-card small,
+  .evidence-card span{
+    overflow-wrap:anywhere;
+  }
+
+  .map-foot{
+    width:100%;
+  }
+
+  .map-foot p{
+    width:100%;
+    overflow-wrap:anywhere;
+  }
+}
+
+@media(max-width:600px){
+  .topbar{
+    gap:8px;
+    padding:7px 10px;
+  }
+
+  .brand{
+    min-width:0;
+    gap:9px;
+  }
+
+  .brand-mark{
+    width:38px;
+    height:38px;
+    border-radius:12px;
+    flex:0 0 auto;
+  }
+
+  .brand-mark svg{
+    width:24px;
+    height:24px;
+  }
+
+  .brand-copy{
+    min-width:0;
+  }
+
+  .brand-copy strong{
+    font-size:.86rem;
+    line-height:1.12;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    overflow:hidden;
+  }
+
+  .top-actions{
+    flex:0 0 auto;
+    gap:6px;
+  }
+
+  .round-btn{
+    min-width:39px;
+    width:39px;
+    height:39px;
+    padding:0;
+    border-radius:12px;
+  }
+
+  .museum-shell{
+    width:calc(100% - 12px);
+  }
+
+  .museum-rail{
+    gap:9px;
+    padding:8px 2px;
+    margin-top:8px;
+    font-size:.73rem;
+    overscroll-behavior-x:contain;
+    scrollbar-width:none;
+  }
+  .museum-rail::-webkit-scrollbar{display:none}
+
+  .museum-rail strong{
+    font-size:.92rem;
+  }
+
+  .map-museum,
+  .now-panel,
+  .museum-story,
+  .events-section,
+  .transformation-band{
+    padding:13px;
+  }
+
+  .map-toolbar h2{
+    font-size:clamp(1.8rem,9vw,2.35rem);
+    line-height:1.04;
+  }
+
+  .map-actions{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+
+  .map-actions .toolbar-btn{
+    font-size:.78rem;
+    padding:9px 5px;
+  }
+
+  .category-legend{
+    margin-inline:-2px;
+    padding-bottom:5px;
+    overscroll-behavior-x:contain;
+  }
+
+  .legend-pill{
+    font-size:.7rem;
+    padding:7px 9px;
+  }
+
+  .map-frame,
+  .map-frame svg{
+    min-height:330px;
+  }
+
+  .map-year-badge{
+    left:10px;
+    top:10px;
+    padding:8px 10px;
+  }
+
+  .map-year-badge strong{
+    font-size:1rem;
+  }
+
+  .now-heading{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:start;
+  }
+
+  .now-heading > div{
+    min-width:0;
+  }
+
+  .now-heading h2{
+    margin-right:0;
+    font-size:clamp(1.65rem,8.7vw,2.18rem);
+    line-height:1.04;
+  }
+
+  .count-badge{
+    min-width:36px;
+    width:36px;
+    height:36px;
+    margin-top:2px;
+  }
+
+  .category-summary{
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+  }
+
+  .summary-card{
+    padding:10px;
+    min-height:72px;
+    display:grid;
+    align-content:center;
+    gap:4px;
+    text-align:left;
+  }
+
+  .summary-card span{
+    font-size:.69rem;
+  }
+
+  .summary-card strong{
+    font-size:1.15rem;
+  }
+
+  .evidence-heading{
+    margin-top:16px;
+  }
+
+  .evidence-card{
+    padding:11px;
+  }
+
+  .evidence-card strong{
+    font-size:.98rem;
+  }
+
+  .museum-story{
+    gap:14px;
+  }
+
+  .story-intro h2{
+    font-size:clamp(1.75rem,8.8vw,2.25rem);
+    line-height:1.07;
+  }
+
+  .story-intro p{
+    font-size:.88rem;
+    line-height:1.55;
+  }
+
+  .context-highlights{
+    grid-template-columns:1fr;
+  }
+
+  .context-card{
+    padding:12px;
+  }
+
+  .transform-head h2{
+    font-size:clamp(1.65rem,8vw,2.1rem);
+  }
+}
+
+/* Very narrow phones: prevent action labels from driving viewport width. */
+@media(max-width:380px){
+  .map-actions .toolbar-btn{
+    font-size:.72rem;
+    letter-spacing:-.01em;
+  }
+
+  .category-summary{
+    grid-template-columns:1fr;
+  }
+
+  .now-heading{
+    grid-template-columns:1fr;
+  }
+
+  .count-badge{
+    justify-self:start;
+  }
+}
