@@ -511,5 +511,86 @@
     "sourceType": "peer_reviewed_letter",
     "accessed": "2026-08-11",
     "notes": "Réplica que discute el diseño e interpretación de Thomson et al. y mantiene que la evidencia previa no queda refutada."
+  },
+  {
+    "id": "src_galili_1997_kfar_samir_olive_oil",
+    "title": "Evidence for Earliest Olive-Oil Production in Submerged Settlements off the Carmel Coast, Israel",
+    "publisher": "Journal of Archaeological Science",
+    "url": "https://doi.org/10.1006/jasc.1997.0193",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Producción de aceite asociada a miles de huesos de aceituna triturados y pulpa en Kfar Samir y otros asentamientos sumergidos de la costa del Carmelo."
+  },
+  {
+    "id": "src_namdar_2015_ein_zippori_olive_oil",
+    "title": "Olive oil storage during the fifth and sixth millennia BC at Ein Zippori, Northern Israel",
+    "publisher": "Israel Journal of Plant Sciences",
+    "url": "https://doi.org/10.1080/07929978.2014.960733",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "GC-MS identifica residuos de aceite de oliva en recipientes de niveles del VI–V milenios a.C."
+  },
+  {
+    "id": "src_langgut_2023_olive_history",
+    "title": "The history of olive cultivation in the southern Levant",
+    "publisher": "Scientific Reports",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9996078/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Síntesis interdisciplinaria sobre explotación, producción de aceite y cultivo del olivo en el Levante meridional."
+  },
+  {
+    "id": "src_remesal_baetican_oil_2009",
+    "title": "The Latest Work on the Export of Baetican Olive Oil to Rome and the Army",
+    "publisher": "Greece & Rome",
+    "url": "https://doi.org/10.1017/S0017383500024153",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Artículo de 1992 (digitalizado posteriormente) sobre el material de Monte Testaccio y la exportación de aceite bético a Roma."
+  },
+  {
+    "id": "src_berni_2024_baetican_amphorae",
+    "title": "Before the Dressel 20: pottery workshops and olive oil amphorae of the Guadalquivir valley between the Late Republic and Augustan-Tiberian times",
+    "publisher": "Journal of Roman Archaeology",
+    "url": "https://doi.org/10.1017/S1047759424000023",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Revisión arqueológica abierta sobre producción y difusión de ánforas olearias béticas y el comercio romano de aceite."
+  },
+  {
+    "id": "src_cappers_2006_berenike_foodprints",
+    "title": "Roman Foodprints at Berenike: Archaeobotanical Evidence of Subsistence and Trade in the Eastern Desert of Egypt",
+    "publisher": "UCLA Cotsen Institute of Archaeology",
+    "url": "https://escholarship.org/uc/item/75b5x6sw",
+    "sourceType": "scholarly_monograph",
+    "accessed": "2026-08-11",
+    "notes": "Monografía arqueobotánica de Berenike; documenta grandes cantidades de pimienta negra y otros productos importados."
+  },
+  {
+    "id": "src_sidebotham_2011_berenike_trade",
+    "title": "Trade in Roman Berenike",
+    "publisher": "Oxford University Press",
+    "url": "https://doi.org/10.1525/california/9780520244306.003.0012",
+    "sourceType": "scholarly_monograph",
+    "accessed": "2026-08-11",
+    "notes": "Síntesis del comercio romano de Berenike; destaca la pimienta negra entre las importaciones del ámbito indio."
+  },
+  {
+    "id": "src_degroene_2023_goat_management",
+    "title": "Sheep and goat management in the Early Neolithic in the Zagros region (8000–5000 BC): New zooarchaeological and isotopic evidence from Ganj Dareh, Bestansur and Jarmo",
+    "publisher": "Journal of Archaeological Science: Reports",
+    "url": "https://doi.org/10.1016/j.jasrep.2023.103936",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Línea independiente zooarqueológica e isotópica que confirma gestión caprina en Ganj Dareh."
+  },
+  {
+    "id": "src_forme_cury_harley_bl",
+    "title": "Harley MS 1605/3 — The Forme of Cury",
+    "publisher": "British Library",
+    "url": "https://searcharchives.bl.uk/catalog/040-003536752",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Segundo manuscrito catalogado de The Forme of Cury; confirma su contexto en la casa de Ricardo II y la tradición manuscrita múltiple."
   }
 ]

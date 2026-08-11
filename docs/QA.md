@@ -185,3 +185,14 @@ Antes de validar datos históricos:
 - [ ] position sourceRefs incluidos en occurrence sourceRefs;
 - [ ] debate visible en ficha;
 - [ ] ninguna posición declarada ganadora por la UI.
+
+## Gate G2 maturity alpha.14
+- [ ] segunda revisión B/C/D explícita;
+- [ ] no promover bread/cheese/disputed sin contraste suficiente;
+- [ ] olive_oil canónico;
+- [ ] olive_oil_demo deprecated + supersededBy;
+- [ ] >=3 occurrences reviewed/verified de olive_oil;
+- [ ] tercer recorrido derivado del motor genérico;
+- [ ] black_pepper reviewed;
+- [ ] pimienta de Berenike = trade + archaeobotanical;
+- [ ] no convertir hallazgo antiguo en origen absoluto.

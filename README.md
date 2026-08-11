@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.13
+**Versión:** 0.1.0-alpha.14
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -201,3 +201,14 @@ Alpha.13 añade la primera técnica culinaria canónica vinculada longitudinalme
 - relación `maize → uses_technique → nixtamalization`.
 
 También incorpora el primer registro `certainty: disputed`, basado en el debate académico sobre las gallinas de El Arenal-1, Chile.
+
+## G2 · maduración alpha.14
+
+- segunda revisión B/C/D;
+- tercer recorrido longitudinal: aceite de oliva;
+- primer eje grasa/aceite canónico;
+- primera especia canónica: pimienta negra en Berenike;
+- 14 registros verified;
+- seeds de aceite migrados mediante deprecated + supersededBy.
+
+G2 todavía no se declara cerrado: queda retirar o canonizar los seeds demostrativos restantes.

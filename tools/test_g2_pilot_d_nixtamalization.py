@@ -6,7 +6,7 @@ S={x['id']:x for x in load('subjects.json')}; O={x['id']:x for x in load('occurr
 errors=[]
 if 'technique_attestation' not in T['occurrenceTypes']: errors.append('taxonomy sin technique_attestation')
 tech=S.get('nixtamalization')
-if not tech or tech.get('status')!='reviewed' or tech.get('type')!='culinary_technique': errors.append('nixtamalization canonical incorrecta')
+if not tech or tech.get('status') not in {'reviewed','verified'} or tech.get('type')!='culinary_technique': errors.append('nixtamalization canonical incorrecta')
 for oid in ['occ_nixtamal_san_bartolo_600_800','occ_nixtamal_la_corona_600_800']:
     o=O.get(oid)
     if not o: errors.append('falta '+oid); continue
@@ -17,7 +17,7 @@ for oid in ['occ_nixtamal_san_bartolo_600_800','occ_nixtamal_la_corona_600_800']
     text=(o.get('summary','')+' '+o.get('period',{}).get('note','')).lower()
     if 'origen de la técnica fue' in text or 'se inventó en' in text: errors.append(oid+' claim de origen simplista')
 r=R.get('rel_maize_uses_nixtamalization_maya_classic')
-if not r or r.get('from')!='maize' or r.get('to')!='nixtamalization' or r.get('type')!='uses_technique' or r.get('status')!='reviewed': errors.append('relación canónica incorrecta')
+if not r or r.get('from')!='maize' or r.get('to')!='nixtamalization' or r.get('type')!='uses_technique' or r.get('status') not in {'reviewed','verified'}: errors.append('relación canónica incorrecta')
 for old,new in [('nixtamalization_demo','nixtamalization')]:
     x=S.get(old)
     if not x or x.get('status')!='deprecated' or x.get('supersededBy')!=new: errors.append('migración subject demo incorrecta')

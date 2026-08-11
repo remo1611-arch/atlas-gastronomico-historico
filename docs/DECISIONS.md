@@ -180,3 +180,20 @@ Una pulsación dentro de un event/development conserva la posición temporal pul
 ## ADR-046 — Año exacto como acción explícita
 **Aceptada.**
 “Ir al año”, Home/End y atajos editoriales no aplican magnetismo. Así se separa consultar una fecha exacta de explorar historia documentada.
+
+## ADR-049 — Aceite de oliva como tercer recorrido
+**Aceptada.**
+Se usa `olive_oil` para probar el tercer recorrido longitudinal y cubrir simultáneamente el eje grasa/aceite.
+
+## ADR-050 — Segunda revisión granular
+**Aceptada.**
+Verificar la entidad técnica `nixtamalization` no promueve automáticamente las occurrences de San Bartolo y La Corona. La verificación es granular.
+
+## ADR-051 — Pimienta sin ruta inventada
+**Aceptada.**
+Berenike documenta comercio/presencia arqueobotánica de pimienta negra. No se proyecta una ruta cartográfica específica sin evidencia de cada trayecto.
+
+## ADR-052 — No cerrar G2 con seeds visibles
+**Aceptada.**
+G2 no se cerrará formalmente mientras los seeds demostrativos restantes puedan confundirse con corpus histórico público.
+

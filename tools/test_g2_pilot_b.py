@@ -36,8 +36,8 @@ for group,lookup in [
 ]:
     for id_ in group:
         item=lookup.get(id_,{})
-        if item.get("status")!="reviewed":
-            errors.append(f"{id_}: la tanda B debe entrar como reviewed")
+        if item.get("status") not in {"reviewed","verified"}:
+            errors.append(f"{id_}: la tanda B debe permanecer reviewed/verified")
         if not item.get("sourceRefs"):
             errors.append(f"{id_}: reviewed sin fuentes")
         for r in item.get("sourceRefs",[]):

@@ -66,6 +66,15 @@
       "src_cagnato_2024_la_corona_nixtamal",
       "src_johnson_marston_2020_nixtamal_spherulites"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_method_and_multisite_review",
+      "independentSourceRefs": [
+        "src_johnson_marston_2020_nixtamal_spherulites",
+        "src_cagnato_2024_la_corona_nixtamal"
+      ],
+      "note": "La relación maíz-nixtamalización se apoya en el marcador experimental y en evidencias arqueológicas directas independientes de más de un sitio maya."
+    }
   }
 ]

@@ -20,7 +20,8 @@
       "grasa",
       "aceite"
     ],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "olive_oil"
   },
   {
     "id": "fermentation_demo",
@@ -223,9 +224,18 @@
     ],
     "sourceRefs": [
       "src_goat_zagros_pnas_2021",
-      "src_goat_domestication_mtdna_2008"
+      "src_goat_domestication_mtdna_2008",
+      "src_degroene_2023_goat_management"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_isotopic_zooarchaeological_review",
+      "independentSourceRefs": [
+        "src_degroene_2023_goat_management"
+      ],
+      "note": "La arqueogenómica y demografía arqueozoológica iniciales se contrastaron con un estudio posterior independiente basado en zooarqueología e isótopos estables que confirma gestión caprina en Ganj Dareh."
+    }
   },
   {
     "id": "bread_like_flatbread",
@@ -278,9 +288,18 @@
     ],
     "sourceRefs": [
       "src_forme_cury_bl",
-      "src_forme_cury_loc"
+      "src_forme_cury_loc",
+      "src_forme_cury_harley_bl"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_institutional_manuscript_review",
+      "independentSourceRefs": [
+        "src_forme_cury_loc"
+      ],
+      "note": "El registro de British Library se contrastó con Library of Congress y con la existencia de copias manuscritas adicionales catalogadas."
+    }
   },
   {
     "id": "nixtamalization",
@@ -303,7 +322,16 @@
       "src_cagnato_2024_la_corona_nixtamal",
       "src_zizumbo_colunga_2016_ash_precursor"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_method_and_multisite_review",
+      "independentSourceRefs": [
+        "src_johnson_marston_2020_nixtamal_spherulites",
+        "src_cagnato_2024_la_corona_nixtamal"
+      ],
+      "note": "La identificación experimental de esferulitos de almidón asociados a nixtamalización se contrastó con evidencia arqueológica directa en más de un contexto maya."
+    }
   },
   {
     "id": "chicken",
@@ -327,6 +355,50 @@
       "src_storey_2008_chicken_reply",
       "src_thomson_2014_polynesian_chickens",
       "src_storey_matisoo_2014_reply"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "olive_oil",
+    "name": "Aceite de oliva",
+    "type": "processed_product",
+    "summary": "Grasa vegetal obtenida del fruto del olivo. El Atlas separa explotación del olivo, extracción, almacenamiento, consumo y comercio del aceite, sin convertir la evidencia más antigua conocida en un origen absoluto.",
+    "aliases": [
+      "aceite de oliva",
+      "olive oil"
+    ],
+    "tags": [
+      "grasa",
+      "aceite",
+      "olivo",
+      "Mediterráneo"
+    ],
+    "sourceRefs": [
+      "src_galili_1997_kfar_samir_olive_oil",
+      "src_namdar_2015_ein_zippori_olive_oil",
+      "src_langgut_2023_olive_history",
+      "src_remesal_baetican_oil_2009",
+      "src_berni_2024_baetican_amphorae"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "black_pepper",
+    "name": "Pimienta negra",
+    "type": "ingredient",
+    "summary": "Especia obtenida de Piper nigrum. El registro piloto documenta su presencia arqueobotánica y circulación comercial en Berenike dentro de las redes del océano Índico y el mundo romano.",
+    "aliases": [
+      "pimienta",
+      "Piper nigrum"
+    ],
+    "tags": [
+      "especia",
+      "comercio",
+      "océano Índico"
+    ],
+    "sourceRefs": [
+      "src_cappers_2006_berenike_foodprints",
+      "src_sidebotham_2011_berenike_trade"
     ],
     "status": "reviewed"
   }

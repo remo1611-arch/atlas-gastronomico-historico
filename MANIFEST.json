@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.13",
+  "version": "0.1.0-alpha.14",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7684,
-      "sha256": "9466475797fbe8398cb632172c6dbc402a1f80640d7dc68b43775a12af616f05"
+      "bytes": 8320,
+      "sha256": "757c23d5f826e91f836b6cfd273a9704e366e546481de62d6af6b197235c94ef"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5402,
-      "sha256": "0512dd0691879f776c8a18b1bb555d4d3a755487b85d1f7b027e6e0ddc733f95"
+      "bytes": 5790,
+      "sha256": "8ac3c4e9d7c0d18ca5ea05a4151d344a4c62d2d9ed396b3b1bee3e0376df20c8"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -47,7 +47,7 @@
     {
       "path": "data/config.json",
       "bytes": 416,
-      "sha256": "59430a772d910649c662e26d705bfed2ef58103660d4f098a268b9671547e5b5"
+      "sha256": "97137f56ae0597a2991cd4ca02d78e487ae2e8cec1d1308a300ec66453ff1ae5"
     },
     {
       "path": "data/contexts.json",
@@ -66,28 +66,28 @@
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 24528,
-      "sha256": "3c88c18acbf5fabf80aa09b252a92fc9012bb124526535ec9549e4ca5d067d9e"
+      "bytes": 29166,
+      "sha256": "0bf60b47542a3e8ab8e7380497961d6475f442a12428b2d57be4039982ef7f7b"
     },
     {
       "path": "data/places.json",
-      "bytes": 11111,
-      "sha256": "5776c6bafc4028fb8c6856be2a3cb802ab7d9fb719393a8c4f2eaf18ac754885"
+      "bytes": 12703,
+      "sha256": "cd783bf4fd55d4c6310f7e519c39eef3863e4c9aaa970dbb1aa67468f4680ead"
     },
     {
       "path": "data/relationships.json",
-      "bytes": 2038,
-      "sha256": "4b4079e5a355a98730384b70e3c88af73044208d943a11d93014617226c4c9e5"
+      "bytes": 2475,
+      "sha256": "c4e4d33628370f70d7c3962fc9080a96363f5f6b2f501c905b9b48dc4e832b88"
     },
     {
       "path": "data/sources.json",
-      "bytes": 25922,
-      "sha256": "643030f552c4aad6a4556b004dfcf3f358414897e06922ed35b62eb1451f0efe"
+      "bytes": 30205,
+      "sha256": "bfb5cde8a8b71942334a2d8f7b14d4d842cc08942bb9914f4eb0d6037dfef7be"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 9418,
-      "sha256": "6978c1ad9c574e76f6c864129222f5b2a3ff5d4daa8b674ce0da34b0815a16da"
+      "bytes": 12102,
+      "sha256": "654c7f9e0a8992f2ce3056389808c484ed8e5f85855cc59999e3a6c35dd17537"
     },
     {
       "path": "data/taxonomy.json",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 8725,
-      "sha256": "62cd188460a77d1841ec95ed0671de4b8cf6c2731b2515c03793eb82fc052055"
+      "bytes": 9374,
+      "sha256": "6f85cb63ce7c3d3578223bdc7300dfc899665d48debd7bfb5bcd8f09f59d5fad"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -111,13 +111,18 @@
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 9031,
-      "sha256": "5515091ee1033e07d86db3cd7631e818a4bac7a6a78a7a3290399d8be7f59ea9"
+      "bytes": 9818,
+      "sha256": "6e51a4b2f5f9ac1eb154cb189e38c6f99e13c897c1642a3fe72f3e01fc29a77a"
     },
     {
       "path": "docs/G2_DISPUTED_EL_ARENAL.md",
       "bytes": 2647,
       "sha256": "bf71c4ae95780c6f02bda951d9921953c38b13a49338253d1b670a25ce587982"
+    },
+    {
+      "path": "docs/G2_MATURITY_ALPHA14.md",
+      "bytes": 3696,
+      "sha256": "88ad7fdc611c74be9995d7e083b1fbfb97cba383604408bd689f8f30b13f18d9"
     },
     {
       "path": "docs/G2_PILOT.md",
@@ -156,8 +161,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 2898,
-      "sha256": "79ab8bcbe4c5624d1f0238403b2587ba63874fc8732db475d1cf3048f422843a"
+      "bytes": 3212,
+      "sha256": "45edba95316159edcd050db105e4b9cc903f8a145043bbc91d8f8eed853ecfab"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -166,18 +171,18 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1607,
-      "sha256": "f7c99e6009efd20c4252063bd249048b19ab865d9d1c09a064ccf131ea267a08"
+      "bytes": 1570,
+      "sha256": "51463c84e2dc3984f42d26c1a7b8b94854fee547f77517dbce05dd6c07386f28"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 6301,
-      "sha256": "dc7d0aef032b0608c3a9b295c457940d3c33a845872893ffd046071edfa967a9"
+      "bytes": 6761,
+      "sha256": "3b84d9ac327852b6c88a0486f869bfa5c066d9bd2945e6cbb1b022088752697e"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 6493,
-      "sha256": "4dcf4f8ea6ed2597a956a65db0171dc53297e0e35f11916af742aca2743733e0"
+      "bytes": 7157,
+      "sha256": "ba9da465993513c00d38396d4d5ba1bc81ef776d9103ffb707de71eabd545380"
     },
     {
       "path": "docs/SOURCE_POLICY.md",
@@ -186,18 +191,18 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1827,
-      "sha256": "2da23a9af5eab6a15fa1610e4c27663b342f77c5f794aa76d1fea167e32aeaf9"
+      "bytes": 1841,
+      "sha256": "aed6d956cf860d0a67d09eec38ef81b9cc97c69fc7fb611e8b5fba930a459af7"
     },
     {
       "path": "index.html",
       "bytes": 20568,
-      "sha256": "8dbed0938c21b120eb3cc3c437bb6f5dcc81f957011388ddff7036837876bbe6"
+      "sha256": "a4086e5be643bdd19dc32bb71a0bf87f0c24cebc92e17ab1ddc045b620ab13c1"
     },
     {
       "path": "js/app.js",
       "bytes": 70147,
-      "sha256": "35f0ce3500aa8f5967af75759912a12ea19961dc41811f4615581476b60093f1"
+      "sha256": "d461474e4c92ce4cb79d88324c1543b56aaac72578102c2d0c922a508bc9a78c"
     },
     {
       "path": "js/core.js",
@@ -247,7 +252,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 627,
-      "sha256": "f7241532cfa0709f10095c285a145c3b6a91d23288d7be012c4d89f7ec4d2d8e"
+      "sha256": "da29a13c7e8d48a79c9e94dd564608694839154681e953a2fd88a79867cb26aa"
     },
     {
       "path": "tools/serve.py",
@@ -281,8 +286,8 @@
     },
     {
       "path": "tools/test_g2_pilot_b.py",
-      "bytes": 2638,
-      "sha256": "ebf884e2eb7f30a2c0115b2efdbbf234cddd33d00e996ce28e7ca19e007de899"
+      "bytes": 2665,
+      "sha256": "ece3e2889fb5c6edc3a0ed1133a8518166ade1f3f4b89d7d3194e780e4f730cb"
     },
     {
       "path": "tools/test_g2_pilot_c_maize.py",
@@ -291,8 +296,18 @@
     },
     {
       "path": "tools/test_g2_pilot_d_nixtamalization.py",
-      "bytes": 2461,
-      "sha256": "48b39ad25ffd14bbedbaae546b4865bade611866d5958ed4c42c165e4320dacd"
+      "bytes": 2499,
+      "sha256": "fdf3cdfbc63768ed0bfe5b9d4a8be0e572328c9a6ffc71e213e67a267fa39208"
+    },
+    {
+      "path": "tools/test_g2_second_review.py",
+      "bytes": 1742,
+      "sha256": "84616a3d5a3b188d64e92c879a1f5b0ed7b5a0f8572c45802719efcdcb52ffd1"
+    },
+    {
+      "path": "tools/test_g2_thematic_coverage.py",
+      "bytes": 1547,
+      "sha256": "1335d608234ac6a2f33c5e54b9af1bdaf8e0fe4b28e32fa2a33d270ede1d0cf8"
     },
     {
       "path": "tools/test_g2_traceability_ui.py",
@@ -325,6 +340,11 @@
       "sha256": "048c760494aa29855ac38295cfc87804b1ff73269362400fb2542e5f9e6f2142"
     },
     {
+      "path": "tools/test_pilot_promotion_compatibility.py",
+      "bytes": 634,
+      "sha256": "405f92e2dd424b81b47ed0cbf2b66bd72e595e83d5b95598871c48b5eb159786"
+    },
+    {
       "path": "tools/test_project_pages.py",
       "bytes": 1867,
       "sha256": "6b7289f3f93c36a96f10adc453a935c8095577820ae4598ae7c6b912eb23d18d"
@@ -346,8 +366,8 @@
     },
     {
       "path": "tools/test_subject_history.py",
-      "bytes": 3385,
-      "sha256": "fc026fcc5f5bb7502c4daaeb75f283e8595e8acc84a9ebc235172b8107476e0c"
+      "bytes": 3649,
+      "sha256": "11056ab070d0fac3f4efe8a37c5401eb6b39e97f853d2167ac7c35efc5b0f4b3"
     },
     {
       "path": "tools/test_technique_history.py",
@@ -358,6 +378,11 @@
       "path": "tools/test_temporal_navigator.py",
       "bytes": 2307,
       "sha256": "edfcd16586aea2e24b369ea6322da88d089d890eecc77c94a9363fcaacadd900"
+    },
+    {
+      "path": "tools/test_third_longitudinal_history.py",
+      "bytes": 1929,
+      "sha256": "bacce09fe7065c2a537efdb7ebc65b5dbc4ca98b93c670a3236216ff0526e3fe"
     },
     {
       "path": "tools/test_ui_contract.py",

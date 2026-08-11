@@ -1,5 +1,32 @@
 # Changelog
 
+## 0.1.0-alpha.14 — 2026-08-11
+
+### Segunda revisión B/C/D
+- goat + Ganj Dareh → verified;
+- Forme of Cury + occurrence → verified;
+- nixtamalization → verified;
+- maize→nixtamalization → verified.
+
+### Tercer recorrido
+- olive_oil canónico;
+- Kfar Samir;
+- Ein Zippori;
+- Monte Testaccio;
+- historia automática sin JS específico.
+
+### Nueva cobertura temática
+- grasa/aceite;
+- black_pepper;
+- Berenike.
+
+### Migración
+- olive_oil_demo deprecated → olive_oil;
+- occ_oil_med_demo deprecated → canonical occurrence.
+
+### Gate
+G2 queda en maduración final, no cerrado: permanecen seeds demostrativos por resolver.
+
 ## 0.1.0-alpha.13 — 2026-08-11
 
 ### G2-D · nixtamalización

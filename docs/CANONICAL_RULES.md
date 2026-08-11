@@ -99,3 +99,9 @@
 78. La interfaz debe presentar las posiciones disputed de forma paralela, sin convertir la redacción editorial en árbitro del debate.
 79. Evidencia, datación e inferencia causal/origen deben poder discutirse por separado dentro de un mismo caso.
 
+79. El tercer recorrido longitudinal debe emerger del mismo motor genérico; no se admite código por subject.
+80. Aceite de oliva se modela separando producción, almacenamiento y comercio; la evidencia temprana no equivale a origen absoluto.
+81. Una especia encontrada en un puerto documenta presencia/comercio en ese contexto; no autoriza a dibujar una ruta individual sin evidencia.
+82. La segunda revisión puede verificar un subject o relationship sin verificar automáticamente todas sus occurrences.
+83. Un gate de cobertura temática no justifica promociones editoriales: `reviewed` permanece válido cuando falta contraste independiente.
+

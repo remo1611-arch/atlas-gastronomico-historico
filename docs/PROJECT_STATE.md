@@ -4,71 +4,76 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.13
+0.1.0-alpha.14
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · G2-D implementado.
+- G2: EN CURSO · maduración final.
 - G3+: no iniciados.
 
 ## Corpus
-- 19 subjects.
-- 28 places.
-- 31 occurrences.
+- 21 subjects.
+- 32 places.
+- 35 occurrences.
 - 3 events.
 - 4 relationships.
 - 7 contexts.
 - 6 developments.
-- 57 sources.
+- 66 sources.
 
-## Nixtamalización
+## Verified
+14 registros superan actualmente el gate `verified`.
 
-Subject canónico:
-- `nixtamalization` · reviewed.
+Nuevas promociones alpha.14:
+- goat;
+- occ_goat_ganj_dareh_8200_bce;
+- forme_of_cury;
+- occ_forme_of_cury_1390;
+- nixtamalization;
+- rel_maize_uses_nixtamalization_maya_classic.
 
-Evidencias directas:
-- San Bartolo, siglos VII–VIII d.C.;
-- La Corona, siglos VII–VIII d.C.
+## Historias longitudinales
+1. vino;
+2. maíz;
+3. aceite de oliva.
 
-Nueva taxonomía:
-- `technique_attestation`.
+El tercer recorrido es completamente genérico: no se añade JS específico para aceite.
 
-Relación:
-- `maize → uses_technique → nixtamalization`.
+## Aceite de oliva
+Canonical:
+- `olive_oil`.
 
-Historia del maíz incorpora las dos evidencias como `TÉCNICA`.
+Occurrences:
+- Kfar Samir · producción;
+- Ein Zippori · almacenamiento;
+- Monte Testaccio · comercio.
 
-La hipótesis de tratamientos con ceniza como precursor permanece bibliográfica y no se fecha artificialmente.
+Migración:
+- olive_oil_demo → deprecated → olive_oil;
+- occ_oil_med_demo → deprecated → occ_olive_oil_kfar_samir_6500_bp.
 
-## Primer disputed
-
-Subject:
-- `chicken` · reviewed.
+## Especia
+Canonical:
+- black_pepper.
 
 Occurrence:
-- `occ_chicken_el_arenal_polynesian_debate`.
+- Berenike · trade · archaeobotanical.
 
-Estado:
-- reviewed;
-- certainty: disputed.
+## Conservadurismo editorial
+Permanecen reviewed:
+- bread_like_flatbread;
+- cheese;
+- chicken/disputed;
+- nuevos registros de aceite;
+- pimienta negra.
 
-La occurrence contiene dos posiciones documentadas:
-- favorable a introducción polinesia precolombina;
-- crítica con esa interpretación.
+## UX
+Se conserva Magnetic Timeline alpha.12 sin cambios.
 
-La ficha muestra `DEBATE ABIERTO` y las fuentes de cada posición.
+## Pendiente para cierre G2
+Los seeds demostrativos restantes todavía deben:
+- sustituirse por casos canónicos sustentados, o
+- desaparecer de la experiencia pública.
 
-## Migraciones
-- nixtamalization_demo → deprecated → nixtamalization;
-- occ_nixtamal_demo → deprecated → occ_nixtamal_san_bartolo_600_800;
-- rel_nixtamal_maize_demo → deprecated → rel_maize_uses_nixtamalization_maya_classic.
-
-## UX temporal
-Se conserva alpha.12 Magnetic Timeline sin cambios de interacción.
-
-## Próximo trabajo
-1. segunda revisión B/C/D;
-2. tercer recorrido longitudinal;
-3. aceite/grasa y especia;
-4. preparar gate de cierre G2.
+Después se ejecutará el gate final G2 y se congelará el contrato para iniciar G3.

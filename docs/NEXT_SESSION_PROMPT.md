@@ -76,3 +76,10 @@ Continuación alpha.13:
 - primer disputed = gallinas de El Arenal-1;
 - no convertir hipótesis de origen en fechas;
 - siguiente paso: segunda revisión B/C/D + tercer recorrido + aceite/grasa/especia.
+
+Continuación alpha.14:
+- ejecutar cierre formal de G2;
+- auditar todos los subjects/occurrences status seed;
+- decidir por cada seed: canonizar con fuentes o excluir de experiencia pública;
+- no cargar corpus masivo antes de cerrar ese gate;
+- conservar tres historias genéricas: vino, maíz, aceite de oliva.

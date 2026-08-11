@@ -31,7 +31,8 @@
     "certainty": "unknown",
     "summary": "Dato semilla para probar producción antigua de aceite.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "occ_olive_oil_kfar_samir_6500_bp"
   },
   {
     "id": "occ_wine_med_demo",
@@ -300,9 +301,18 @@
     "developmentRefs": [],
     "sourceRefs": [
       "src_goat_zagros_pnas_2021",
-      "src_goat_domestication_mtdna_2008"
+      "src_goat_domestication_mtdna_2008",
+      "src_degroene_2023_goat_management"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_isotopic_zooarchaeological_review",
+      "independentSourceRefs": [
+        "src_degroene_2023_goat_management"
+      ],
+      "note": "La inferencia de gestión caprina basada en genómica y perfiles arqueozoológicos se contrastó con un estudio independiente de isótopos estables y zooarqueología."
+    }
   },
   {
     "id": "occ_bread_shubayqa_14400_bp",
@@ -371,9 +381,18 @@
     "developmentRefs": [],
     "sourceRefs": [
       "src_forme_cury_bl",
-      "src_forme_cury_loc"
+      "src_forme_cury_loc",
+      "src_forme_cury_harley_bl"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_institutional_manuscript_review",
+      "independentSourceRefs": [
+        "src_forme_cury_loc"
+      ],
+      "note": "La datación aproximada y atribución cortesana se contrastaron entre catálogos institucionales independientes y copias manuscritas adicionales."
+    }
   },
   {
     "id": "occ_wine_areni_4000_bce",
@@ -695,5 +714,101 @@
       ],
       "editorialNote": "El Atlas no resuelve el desacuerdo. Separa la existencia de restos arqueológicos, su datación y la inferencia sobre el origen de las aves."
     }
+  },
+  {
+    "id": "occ_olive_oil_kfar_samir_6500_bp",
+    "subjectRef": "olive_oil",
+    "placeRef": "kfar_samir_submerged_site",
+    "period": {
+      "start": -4650,
+      "end": -4450,
+      "precision": "circa",
+      "display": "ca. 6500 BP (≈4550 a. C.)",
+      "note": "La publicación expresa la antigüedad como aproximadamente 6500 años; la equivalencia a a.C. se muestra solo como orientación."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "archaeological",
+    "certainty": "high",
+    "summary": "Concentraciones de miles de huesos de aceituna triturados con pulpa y contextos asociados se interpretan como evidencia de una tecnología temprana de extracción de aceite en los asentamientos sumergidos de la costa del Carmelo.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_galili_1997_kfar_samir_olive_oil",
+      "src_langgut_2023_olive_history"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_olive_oil_ein_zippori_6th_5th_millennia",
+    "subjectRef": "olive_oil",
+    "placeRef": "ein_zippori",
+    "period": {
+      "start": -6000,
+      "end": -5000,
+      "precision": "millennium",
+      "display": "VI–V milenios a. C.",
+      "note": "Se conserva la resolución cronológica amplia publicada para los niveles neolíticos/calcolíticos."
+    },
+    "occurrenceType": "storage",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Análisis GC-MS de recipientes cerámicos identificaron aceite de oliva de forma recurrente desde niveles del VI al V milenio a.C., documentando almacenamiento y uso del producto.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_namdar_2015_ein_zippori_olive_oil",
+      "src_langgut_2023_olive_history"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_olive_oil_monte_testaccio_1_3c",
+    "subjectRef": "olive_oil",
+    "placeRef": "monte_testaccio_rome",
+    "period": {
+      "start": 1,
+      "end": 300,
+      "precision": "range",
+      "display": "siglos I–III d. C.",
+      "note": "El intervalo resume el principal horizonte imperial documentado por ánforas olearias béticas; no representa la totalidad cronológica del monte."
+    },
+    "occurrenceType": "trade",
+    "evidenceType": "material_culture",
+    "certainty": "high",
+    "summary": "Las ánforas olearias béticas, especialmente Dressel 20, documentan a gran escala el transporte y abastecimiento de aceite de oliva hacia Roma durante el periodo imperial.",
+    "contextRefs": [
+      "roman_empire_west_reference"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_remesal_baetican_oil_2009",
+      "src_berni_2024_baetican_amphorae"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_black_pepper_berenike_roman",
+    "subjectRef": "black_pepper",
+    "placeRef": "berenike_red_sea_port",
+    "period": {
+      "start": 1,
+      "end": 300,
+      "precision": "range",
+      "display": "época romana · siglos I–III d. C.",
+      "note": "La cronología se expresa como horizonte romano amplio del puerto; los hallazgos proceden de múltiples contextos excavados."
+    },
+    "occurrenceType": "trade",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Los depósitos romanos de Berenike proporcionaron grandes cantidades de granos de pimienta negra, incluida una concentración excepcional en recipiente de almacenamiento, documentando el comercio de esta especia a través del mar Rojo.",
+    "contextRefs": [
+      "roman_empire_west_reference"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_cappers_2006_berenike_foodprints",
+      "src_sidebotham_2011_berenike_trade"
+    ],
+    "status": "reviewed"
   }
 ]

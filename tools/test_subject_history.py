@@ -15,6 +15,7 @@ css=(ROOT/"css/app.css").read_text(encoding="utf-8")
 errors=[]
 wine=[x for x in occ if x.get("subjectRef")=="wine" and x.get("status") in {"reviewed","verified"}]
 maize=[x for x in occ if x.get("subjectRef")=="maize" and x.get("status") in {"reviewed","verified"}]
+olive=[x for x in occ if x.get("subjectRef")=="olive_oil" and x.get("status") in {"reviewed","verified"}]
 wine_dev=[x for x in dev if "wine" in x.get("impactSubjectRefs",[]) and x.get("status") in {"reviewed","verified"}]
 events=json.loads((ROOT/"data"/"events.json").read_text(encoding="utf-8"))
 maize_events=[x for x in events if "maize" in x.get("subjectRefs",[]) and x.get("status") in {"reviewed","verified"}]
@@ -27,6 +28,8 @@ if len(maize)<7:
     errors.append(f"maize: se esperaban >=7 occurrences reviewed/verified, hay {len(maize)}")
 if not maize_events:
     errors.append("maize: falta al menos un evento histórico relacionado")
+if len(olive)<3:
+    errors.append(f"olive_oil: se esperaban >=3 occurrences reviewed/verified, hay {len(olive)}")
 if any(x.get("status") in {"seed","deprecated"} for x in wine):
     errors.append("historia wine incluye seed/deprecated")
 if "storage" not in tax.get("occurrenceTypes",[]):
@@ -81,5 +84,6 @@ print("Wine occurrences:",len(wine))
 print("Wine developments:",len(wine_dev))
 print("Maize occurrences:",len(maize))
 print("Maize events:",len(maize_events))
+print("Olive oil occurrences:",len(olive))
 print("Span wine:",years[0],"→",years[-1])
 print("Generic UI + event contract present.")

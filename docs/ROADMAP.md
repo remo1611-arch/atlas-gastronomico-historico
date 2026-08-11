@@ -199,6 +199,33 @@ La numeración G2-F refleja una intervención UX adelantada; no altera la secuen
 ---
 ---
 
+## G2-H — Maduración final del piloto
+**Estado: IMPLEMENTADO · alpha.14**
+
+Segunda revisión:
+- goat/Ganj Dareh → verified;
+- Forme of Cury → verified;
+- nixtamalization subject → verified;
+- maize→nixtamalization relationship → verified;
+- bread/cheese/chicken permanecen reviewed.
+
+Tercer recorrido longitudinal:
+- olive_oil;
+- Kfar Samir;
+- Ein Zippori;
+- Monte Testaccio.
+
+Cobertura nueva:
+- grasa/aceite;
+- especia: black_pepper / Berenike.
+
+### Pendiente para cerrar G2
+- eliminar de la experiencia pública los seeds demostrativos restantes o sustituirlos por casos canónicos;
+- auditoría final de G2;
+- congelar contrato antes de G3.
+
+---
+
 ## G3 — Evidencia y precisión
 **No iniciado**
 
