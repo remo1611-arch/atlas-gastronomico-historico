@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.21
+**Versión:** 0.1.0-alpha.22
 **Estado:** Narrative Museum integrado · validación móvil pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -292,3 +292,17 @@ Historias iniciales:
 La app abre en Historias. El Atlas permanece completo como modo secundario.
 
 La timeline corrige además el binding táctil de `Anterior / Siguiente` y utiliza títulos que describen la afirmación histórica en vez de repetir únicamente el nombre del alimento.
+
+## Navigation hardening alpha.22
+
+Alpha.22 no añade contenido histórico. Endurece la continuidad entre Historias, Atlas y Evidencia.
+
+- historial del navegador y rutas internas recuperables;
+- Atrás/Adelante puede reconstruir escenas;
+- `Ver en el Atlas` revela la evidencia aunque filtros antiguos la oculten;
+- events/developments quedan enfocados en la timeline;
+- ranges de occurrences conservan la posición dentro del intervalo;
+- anterior/siguiente navega respecto al hito seleccionado, incluidos hitos con la misma fecha inicial;
+- `CANONICAL_RULES.md` normalizado a numeración única.
+
+El corpus, stories, glossary, schemas históricos y fingerprint G2 no cambian.

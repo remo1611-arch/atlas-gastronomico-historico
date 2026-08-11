@@ -140,3 +140,14 @@ Estado de continuación:
 - E1 pausado; no añadir contenido hasta aceptación móvil.
 - Probar en Xiaomi: lectura, glosario, escena anterior/siguiente, Historia→Atlas→Evidencia y timeline anterior/siguiente.
 - No iniciar G4.
+
+Estado de continuación alpha.22:
+- Narrative Museum sigue siendo la arquitectura canónica.
+- Alpha.22 corrige navegación y continuidad; no añade contenido.
+- Rutas internas: #historias / #historia/... / #atlas/....
+- Probar Atrás/Adelante real en Xiaomi.
+- Probar Historia → Atlas → Atrás.
+- Probar `Ver en el Atlas` con filtros previamente activos.
+- Probar Pasteur: debe enfocar transformación, no solo cambiar de año.
+- Probar anterior/siguiente con hitos de rango y misma fecha.
+- E1 y G4 siguen pausados hasta aceptación.

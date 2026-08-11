@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.22 — 2026-08-11
+
+### Navegación y continuidad
+- rutas `#historias`, `#historia/<id>/<escena>`, `#atlas/evidencia/<id>`, `#atlas/hito/<kind>/<id>` y `#atlas/fecha/<año>`;
+- restauración mediante historial del navegador;
+- volver desde Atlas recupera la escena narrativa previa;
+- deep links cargan la vista correspondiente.
+
+### Historia → Atlas
+- una occurrence abierta desde una historia no puede quedar oculta por filtros anteriores;
+- filtros incompatibles se ajustan para mostrar la evidencia solicitada;
+- events/developments se enfocan en la timeline, no solo cambian el año.
+
+### Timeline
+- ranges de occurrences conservan el año apuntado dentro del intervalo;
+- fuera del intervalo se ajustan al límite más cercano;
+- anterior/siguiente usa el hito seleccionado cuando existe y permite recorrer varios hitos con la misma fecha inicial.
+
+### QA
+- navigation algorithms;
+- Story ↔ Atlas roundtrip;
+- route data;
+- canonical rule numbering;
+- tests previos actualizados a alpha.22.
+
+### Higiene contractual
+- `CANONICAL_RULES.md` renumerado de forma única y consecutiva;
+- corpus sin cambios;
+- G2 fingerprint intacto.
+
 ## 0.1.0-alpha.21 — 2026-08-11
 
 ### Product Reset integrado

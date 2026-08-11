@@ -17,13 +17,13 @@ expected=[
     "$('#nextTemporalHitBtn').addEventListener('click',()=>stepTemporalHit(1));",
     "$('#storyPrevBtn').addEventListener('click',()=>stepNarrativeScene(-1));",
     "$('#storyNextBtn').addEventListener('click',()=>stepNarrativeScene(1));",
-    "$('#openAtlasFromStoriesBtn').addEventListener('click',()=>setExperienceView('explore'));",
+    "$('#openAtlasFromStoriesBtn').addEventListener('click',()=>{withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('explore');routeToAtlas();});",
 ]
 for needle in expected:
     if needle not in app: errors.append('binding primario ausente: '+needle)
 
 # The algorithms they invoke must exist.
-for needle in ['function stepTemporalHit(direction)','function stepNarrativeScene(direction)','function setExperienceView(view,{scroll=true}={})']:
+for needle in ['function stepTemporalHit(direction)','function stepNarrativeScene(direction)','function setExperienceView(view,{scroll=true}={})','function restoreRouteFromLocation({initial=false}={})']:
     if needle not in app: errors.append('acción primaria ausente: '+needle)
 
 # Default product entry is Histories, Atlas secondary.

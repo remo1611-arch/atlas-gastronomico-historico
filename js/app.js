@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.21';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.22';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.21',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.21',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.21',
-  places:'./data/places.json?v=0.1.0-alpha.21',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.21',
-  events:'./data/events.json?v=0.1.0-alpha.21',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.21',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.21',
-  developments:'./data/developments.json?v=0.1.0-alpha.21',
-  sources:'./data/sources.json?v=0.1.0-alpha.21',
-  stories:'./data/stories.json?v=0.1.0-alpha.21',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.21',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.21'
+  config:'./data/config.json?v=0.1.0-alpha.22',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.22',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.22',
+  places:'./data/places.json?v=0.1.0-alpha.22',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.22',
+  events:'./data/events.json?v=0.1.0-alpha.22',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.22',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.22',
+  developments:'./data/developments.json?v=0.1.0-alpha.22',
+  sources:'./data/sources.json?v=0.1.0-alpha.22',
+  stories:'./data/stories.json?v=0.1.0-alpha.22',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.22',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.22'
 };
 
 const s={
@@ -188,7 +188,8 @@ async function load(){
     bind();
     applyTheme(getStore('agh_theme')==='light'?'light':'dark');
     setYear(s.year);
-    setExperienceView('histories',{scroll:false});
+    if(!location.hash) history.replaceState({aghRoute:true},'','#historias');
+    restoreRouteFromLocation({initial:true});
 
     $('#versionLabel').textContent=config.project.version.replace('0.1.0-','');
     showToast('Atlas cargado');
@@ -242,6 +243,125 @@ function sourceById(id){return s.sources.find(x=>x.id===id)}
 function storyById(id){return s.stories.find(x=>x.id===id)}
 function storyForSubject(subjectId){return s.stories.find(x=>x.subjectRef===subjectId&&isPublicStatus(x.status))||null}
 function glossaryById(id){return s.glossary.find(x=>x.id===id&&isPublicStatus(x.status))||null}
+
+let routeSyncLocked=false;
+
+function withRouteSyncLocked(fn){
+  const previous=routeSyncLocked;
+  routeSyncLocked=true;
+  try{return fn();}
+  finally{routeSyncLocked=previous;}
+}
+
+function safeRoutePart(value){
+  return encodeURIComponent(String(value??''));
+}
+
+function parseExperienceRoute(hash=location.hash){
+  const raw=String(hash||'').replace(/^#/,'');
+  if(!raw||raw==='inicio'||raw==='historias') return {view:'histories'};
+
+  const parts=raw.split('/').map(x=>{
+    try{return decodeURIComponent(x)}
+    catch{return x}
+  });
+
+  if(parts[0]==='historia'&&parts[1]){
+    return {view:'histories',storyId:parts[1],scene:Math.max(0,(Number(parts[2])||1)-1)};
+  }
+
+  if(parts[0]==='atlas'){
+    if(parts[1]==='evidencia'&&parts[2]) return {view:'explore',kind:'occurrence',ref:parts[2]};
+    if(parts[1]==='hito'&&parts[2]&&parts[3]) return {view:'explore',kind:parts[2],ref:parts[3]};
+    if(parts[1]==='fecha'&&parts[2]&&Number.isFinite(Number(parts[2]))) return {view:'explore',year:Number(parts[2])};
+    return {view:'explore'};
+  }
+
+  return {view:'histories'};
+}
+
+function pushExperienceRoute(hash,{replace=false}={}){
+  if(routeSyncLocked) return;
+  const target=hash.startsWith('#')?hash:`#${hash}`;
+  if(location.hash===target) return;
+  history[replace?'replaceState':'pushState']({aghRoute:true},'',target);
+}
+
+function routeToHistories({replace=false}={}){
+  pushExperienceRoute('#historias',{replace});
+}
+
+function routeToStory(storyId,sceneIndex,{replace=false}={}){
+  pushExperienceRoute(`#historia/${safeRoutePart(storyId)}/${Number(sceneIndex)+1}`,{replace});
+}
+
+function routeToAtlas({kind=null,ref=null,year=null,replace=false}={}){
+  if(kind&&ref){
+    const hash=kind==='occurrence'
+      ? `#atlas/evidencia/${safeRoutePart(ref)}`
+      : `#atlas/hito/${safeRoutePart(kind)}/${safeRoutePart(ref)}`;
+    pushExperienceRoute(hash,{replace});
+    return;
+  }
+  if(Number.isFinite(Number(year))){
+    pushExperienceRoute(`#atlas/fecha/${Number(year)}`,{replace});
+    return;
+  }
+  pushExperienceRoute('#atlas',{replace});
+}
+
+function temporalEntryForRoute(kind,ref){
+  return temporalCorpusItems().find(entry=>entry.key===`${kind}:${ref}`)||null;
+}
+
+function applyExperienceRoute(route,{initial=false}={}){
+  const target=route||{view:'histories'};
+  withRouteSyncLocked(()=>{
+    closeHistory();
+    closeDrawer();
+    closeLayers();
+    closeDetail();
+
+    if(target.view==='histories'){
+      setExperienceView('histories',{scroll:false});
+      if(target.storyId&&storyById(target.storyId)) openNarrativeStory(target.storyId,target.scene||0);
+      else closeNarrativeStory({scroll:false});
+      return;
+    }
+
+    closeNarrativeStory({scroll:false});
+    setExperienceView('explore',{scroll:false});
+
+    if(target.kind==='occurrence'&&target.ref){
+      const o=s.occurrences.find(x=>x.id===target.ref);
+      if(o){
+        revealOccurrenceForDirectAccess(o);
+        setYear(o.period.start);
+        selectOccurrence(o.id,true);
+        return;
+      }
+    }
+
+    if(target.kind&&target.ref){
+      const entry=temporalEntryForRoute(target.kind,target.ref);
+      if(entry){
+        focusTemporalItem(entry,true);
+        setTimeout(()=>$('#temporalNavigator')?.scrollIntoView({behavior:initial?'auto':'smooth',block:'center'}),20);
+        return;
+      }
+    }
+
+    if(Number.isFinite(target.year)){
+      const year=Math.max(s.config.timeline.minYear,Math.min(s.config.timeline.maxYear,target.year));
+      setExactYear(year);
+    }
+  });
+}
+
+function restoreRouteFromLocation({initial=false}={}){
+  applyExperienceRoute(parseExperienceRoute(location.hash),{initial});
+}
+
 
 function isPublicStatus(status){
   return status==='reviewed'||status==='verified';
@@ -821,17 +941,15 @@ function temporalDistanceToYear(entry,year=s.year){
 function temporalSnapCandidate(entry,targetYear){
   if(!entry) return null;
   const targetOrdinal=toOrdinal(targetYear);
-  if(entry.kind==='occurrence'){
-    const snapYear=temporalRepresentativeYear(entry);
-    return {entry,snapYear,distanceOrdinal:Math.abs(toOrdinal(snapYear)-targetOrdinal),contains:false};
-  }
   const startOrdinal=toOrdinal(entry.period.start);
   const endOrdinal=toOrdinal(entry.period.end);
   const low=Math.min(startOrdinal,endOrdinal);
   const high=Math.max(startOrdinal,endOrdinal);
+
   if(targetOrdinal>=low && targetOrdinal<=high){
     return {entry,snapYear:targetYear,distanceOrdinal:0,contains:true};
   }
+
   const boundaryOrdinal=Math.abs(targetOrdinal-low)<=Math.abs(targetOrdinal-high)?low:high;
   return {entry,snapYear:fromOrdinal(boundaryOrdinal),distanceOrdinal:Math.abs(targetOrdinal-boundaryOrdinal),contains:false};
 }
@@ -895,6 +1013,7 @@ function setExactYear(year){
   s.temporalSelection=null;
   clearMagneticCandidate();
   setYear(year);
+  if(s.view==='explore') routeToAtlas({year});
 }
 
 function temporalBins(items){
@@ -1058,6 +1177,7 @@ function focusTemporalItem(entry,jump=false,snapYear=null){
   if(jump){
     const year=snapYear??temporalRepresentativeYear(entry);
     setYear(year);
+    if(s.view==='explore') routeToAtlas({kind:entry.kind,ref:entry.item.id});
     showToast(`${entry.title} · ${entry.period.display||formatYear(year)}`);
   }
 }
@@ -1084,13 +1204,8 @@ function renderTemporalNavigator(){
   previewTemporalItem(focused);
   renderTemporalPrecisionWindow(focused);
 
-  const currentOrdinal=toOrdinal(s.year);
-  const before=items
-    .filter(x=>toOrdinal(temporalRepresentativeYear(x))<currentOrdinal)
-    .sort((a,b)=>toOrdinal(temporalRepresentativeYear(b))-toOrdinal(temporalRepresentativeYear(a)))[0];
-  const after=items
-    .filter(x=>toOrdinal(temporalRepresentativeYear(x))>currentOrdinal)
-    .sort((a,b)=>toOrdinal(temporalRepresentativeYear(a))-toOrdinal(temporalRepresentativeYear(b)))[0];
+  const before=temporalStepTarget(items,-1);
+  const after=temporalStepTarget(items,1);
 
   const prev=$('#prevTemporalHitBtn');
   const next=$('#nextTemporalHitBtn');
@@ -1106,9 +1221,18 @@ function renderTemporalNavigator(){
   }
 }
 
-function stepTemporalHit(direction){
-  const items=temporalCorpusItems();
-  const current=toOrdinal(s.year);
+function temporalStepTarget(items,direction,currentYear=s.year,selectedKey=s.temporalSelection){
+  if(!items.length) return null;
+
+  if(selectedKey){
+    const index=items.findIndex(entry=>entry.key===selectedKey);
+    if(index>=0){
+      const next=index+(direction<0?-1:1);
+      return next>=0&&next<items.length?items[next]:null;
+    }
+  }
+
+  const current=toOrdinal(currentYear);
   const candidates=items
     .filter(entry=>{
       const ord=toOrdinal(temporalRepresentativeYear(entry));
@@ -1120,7 +1244,16 @@ function stepTemporalHit(direction){
       return direction<0?ob-oa:oa-ob;
     });
 
-  if(candidates[0]) focusTemporalItem(candidates[0],true);
+  return candidates[0]||null;
+}
+
+function stepTemporalHit(direction){
+  const items=temporalCorpusItems();
+  const target=temporalStepTarget(items,direction);
+  if(target){
+    focusTemporalItem(target,true);
+    routeToAtlas({kind:target.kind,ref:target.item.id});
+  }
 }
 
 
@@ -1730,10 +1863,11 @@ function openNarrativeStory(storyId,sceneIndex=0){
   if(!story||!isPublicStatus(story.status)) return;
   s.activeStory=storyId;
   s.storyScene=Math.max(0,Math.min(story.scenes.length-1,Number(sceneIndex)||0));
-  setExperienceView('histories',{scroll:false});
+  withRouteSyncLocked(()=>setExperienceView('histories',{scroll:false}));
   $('#narrativeLanding')?.classList.add('hidden');
   $('#narrativeStoryPlayer')?.classList.remove('hidden');
   renderNarrativeStory();
+  routeToStory(storyId,s.storyScene);
   $('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
@@ -1742,6 +1876,7 @@ function closeNarrativeStory({scroll=true}={}){
   s.storyScene=0;
   $('#narrativeStoryPlayer')?.classList.add('hidden');
   $('#narrativeLanding')?.classList.remove('hidden');
+  if(s.view==='histories') routeToHistories();
   if(scroll) $('#narrativeLanding')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
@@ -1786,14 +1921,26 @@ function openGlossaryEntry(id){
 
 function openStoryItemInAtlas(itemRef){
   const item=resolveStoryItem(itemRef);if(!item) return;
-  setExperienceView('explore',{scroll:false});
+  withRouteSyncLocked(()=>setExperienceView('explore',{scroll:false}));
+
   if(itemRef.kind==='occurrence'){
+    const filtersChanged=revealOccurrenceForDirectAccess(item);
     setYear(item.period.start);
     selectOccurrence(item.id,true);
-  }else{
-    setYear(item.period.start);
-    $('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'});
+    if(filtersChanged) showToast('Filtros ajustados para mostrar esta evidencia');
+    return;
   }
+
+  const entry=temporalEntryForRoute(itemRef.kind,item.id);
+  if(entry){
+    focusTemporalItem(entry,true);
+    routeToAtlas({kind:itemRef.kind,ref:item.id});
+    setTimeout(()=>$('#temporalNavigator')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
+    return;
+  }
+
+  setYear(item.period.start);
+  routeToAtlas({year:item.period.start});
 }
 
 function renderNarrativeStory(){
@@ -1824,7 +1971,7 @@ function renderNarrativeStory(){
   const end=$('#storyEndCard');
   if(index===story.scenes.length-1){end.classList.remove('hidden');end.innerHTML=`<h3>${esc(story.endTitle)}</h3><p>${esc(story.endText)}</p>`;}else{end.classList.add('hidden');end.innerHTML='';}
 
-  $$('[data-story-scene]').forEach(button=>button.addEventListener('click',()=>{s.storyScene=Number(button.dataset.storyScene);renderNarrativeStory();$('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});}));
+  $$('[data-story-scene]').forEach(button=>button.addEventListener('click',()=>{s.storyScene=Number(button.dataset.storyScene);renderNarrativeStory();routeToStory(story.id,s.storyScene);$('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});}));
   $$('[data-glossary-ref]').forEach(button=>button.addEventListener('click',()=>openGlossaryEntry(button.dataset.glossaryRef)));
   $$('[data-story-atlas-ref]').forEach(button=>button.addEventListener('click',()=>openStoryItemInAtlas({kind:button.dataset.storyAtlasKind,ref:button.dataset.storyAtlasRef})));
 }
@@ -1836,6 +1983,7 @@ function stepNarrativeScene(direction){
   if(next>=story.scenes.length){closeNarrativeStory();return;}
   s.storyScene=next;
   renderNarrativeStory();
+  routeToStory(story.id,s.storyScene);
   $('#narrativeStoryPlayer')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
@@ -1870,6 +2018,26 @@ function renderEvents(){
   });
 }
 
+function revealOccurrenceForDirectAccess(o){
+  if(!o) return false;
+  let changed=false;
+
+  if(s.search){s.search='';$('#searchInput').value='';changed=true;}
+  if(s.evidence!=='all'){s.evidence='all';$('#evidenceFilter').value='all';changed=true;}
+  if(s.occurrenceType!=='all'){s.occurrenceType='all';$('#occurrenceTypeFilter').value='all';changed=true;}
+  if(s.certainty!=='all'){s.certainty='all';$('#certaintyFilter').value='all';changed=true;}
+  if(s.precision!=='all'){s.precision='all';$('#precisionFilter').value='all';changed=true;}
+  if(s.spatial!=='all'){s.spatial='all';$('#spatialFilter').value='all';changed=true;}
+  if(s.category!=='all'){s.category='all';syncTypeControls();changed=true;}
+  if(!s.layers.gastronomy){
+    s.layers.gastronomy=true;
+    $('#layerGastronomy').checked=true;
+    changed=true;
+  }
+
+  return changed;
+}
+
 function selectOccurrence(id,openDrawer=false){
   s.selectedOccurrence=id;
   const o=s.occurrences.find(x=>x.id===id);
@@ -1877,6 +2045,7 @@ function selectOccurrence(id,openDrawer=false){
   renderDetails(o);
 
   if(openDrawer) openDetail();
+  if(o&&s.view==='explore') routeToAtlas({kind:'occurrence',ref:o.id});
 }
 
 
@@ -2464,12 +2633,12 @@ function bind(){
   $('#storyPrevBtn').addEventListener('click',()=>stepNarrativeScene(-1));
   $('#storyNextBtn').addEventListener('click',()=>stepNarrativeScene(1));
   $('#glossaryCloseBtn').addEventListener('click',()=>$('#glossaryDialog').close());
-  $('#openAtlasFromStoriesBtn').addEventListener('click',()=>setExperienceView('explore'));
+  $('#openAtlasFromStoriesBtn').addEventListener('click',()=>{withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('explore');routeToAtlas();});
 
-  $('#exploreNavBtn').addEventListener('click',()=>setExperienceView('explore'));
-  $('#historiesNavBtn').addEventListener('click',()=>{closeNarrativeStory({scroll:false});setExperienceView('histories')});
-  $('#openHistoriesHeroBtn').addEventListener('click',()=>{closeNarrativeStory({scroll:false});setExperienceView('histories')});
-  $('.brand')?.addEventListener('click',event=>{event.preventDefault();closeNarrativeStory({scroll:false});setExperienceView('histories',{scroll:false})});
+  $('#exploreNavBtn').addEventListener('click',()=>{withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('explore');routeToAtlas();});
+  $('#historiesNavBtn').addEventListener('click',()=>{withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('histories');routeToHistories();});
+  $('#openHistoriesHeroBtn').addEventListener('click',()=>{withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('histories');routeToHistories();});
+  $('.brand')?.addEventListener('click',event=>{event.preventDefault();withRouteSyncLocked(()=>closeNarrativeStory({scroll:false}));setExperienceView('histories',{scroll:false});routeToHistories();});
 
   $('#jumpMapBtn').addEventListener('click',()=>{
     setExperienceView('explore',{scroll:false});
@@ -2485,14 +2654,23 @@ function bind(){
 
   window.addEventListener('resize',()=>renderMarkers(occVisible()));
 
+  window.addEventListener('popstate',()=>restoreRouteFromLocation());
+
 
   document.addEventListener('keydown',event=>{
     if(event.key==='Escape'){
+      const glossaryOpen=Boolean($('#glossaryDialog')?.open);
+      const overlayOpen=$('#historyDrawer').classList.contains('open')
+        ||$('#filterDrawer').classList.contains('open')
+        ||$('#layersDrawer').classList.contains('open')
+        ||$('#detailDrawer').classList.contains('open');
+
       closeHistory();
       closeDrawer();
       closeLayers();
       closeDetail();
-      if($('#glossaryDialog')?.open) $('#glossaryDialog').close();
+      if(glossaryOpen) $('#glossaryDialog').close();
+      else if(!overlayOpen&&s.view==='histories'&&s.activeStory) closeNarrativeStory();
     }
     if(s.view==='histories'&&s.activeStory&&event.key==='ArrowLeft'){
       event.preventDefault();stepNarrativeScene(-1);

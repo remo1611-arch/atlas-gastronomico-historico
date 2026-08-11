@@ -223,3 +223,15 @@ Antes de retomar expansión E1 o iniciar G4:
 5. comprobar Historia → Atlas → Evidencia;
 6. comprobar anterior/siguiente en la timeline táctil;
 7. recoger defectos reales antes de crear la tercera historia.
+
+## Alpha.22 — continuidad de navegación
+
+La integración narrativa se mantiene sin cambios editoriales. Alpha.22 endurece:
+- historial del navegador;
+- deep links;
+- round-trip Historia ↔ Atlas;
+- foco real de events/developments;
+- revelado de occurrences ocultas por filtros previos;
+- semántica de intervalos y stepping temporal.
+
+Véase `docs/NAVIGATION_HARDENING_ALPHA22.md`.

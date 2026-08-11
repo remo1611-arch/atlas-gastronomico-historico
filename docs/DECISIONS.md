@@ -313,3 +313,27 @@ La ausencia de listener táctil de anterior/siguiente en alpha.20 se considera f
 **Aceptada.**
 Cuando un subject dispone de historia curada, la ficha abre esa visita. `openHistory()` se conserva para subjects sin narrativa editorial.
 
+## ADR-082 — Historial del navegador como navegación real
+**Aceptada.**
+Historias y Atlas exponen rutas internas mediante hash. Atrás/Adelante debe reconstruir vista, historia y escena sin depender de un servidor con routing dinámico.
+
+## ADR-083 — Story → Atlas debe revelar el objetivo
+**Aceptada.**
+Si filtros previos esconden una occurrence enlazada desde una escena, la navegación directa ajusta los filtros incompatibles y comunica el ajuste. Un enlace explícito no puede desembocar en contenido invisible.
+
+## ADR-084 — Developments/events deben quedar enfocados
+**Aceptada.**
+`Ver en el Atlas` para una transformación o evento selecciona el hito temporal correspondiente. Cambiar únicamente el año no satisface la acción.
+
+## ADR-085 — Intervalos coherentes para todos los tipos temporales
+**Aceptada.**
+Occurrences, events y developments comparten semántica de intervalo: un target dentro del periodo se conserva; fuera se ajusta al límite más cercano.
+
+## ADR-086 — Anterior/siguiente respecto a selección
+**Aceptada.**
+Cuando existe un hito seleccionado, anterior/siguiente recorre el orden del corpus desde esa selección y no únicamente desde el año numérico. Esto permite navegar hitos distintos con el mismo comienzo cronológico.
+
+## ADR-087 — Normalización de numeración canónica
+**Aceptada.**
+Los conflictos históricos de numeración de `CANONICAL_RULES.md` se corrigen renumerando todas las reglas según su orden documental. Ningún dato, schema o comportamiento histórico cambia por esta normalización.
+

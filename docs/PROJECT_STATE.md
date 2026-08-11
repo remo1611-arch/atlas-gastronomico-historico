@@ -4,10 +4,10 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.21
+0.1.0-alpha.22
 
 ## Producto
-**Narrative Museum integrado.**
+**Narrative Museum integrado y navegación endurecida.**
 
 Jerarquía:
 1. Historias — entender;
@@ -22,11 +22,11 @@ Jerarquía:
 - G4: NO INICIADO.
 
 ## Expansión editorial
-E1 queda **PAUSADO** hasta validar alpha.21 en móvil.
+E1 permanece **PAUSADO**.
 
-No se añadieron records históricos en esta release.
+Alpha.22 no añade records, stories ni glossary entries.
 
-## Corpus histórico
+## Corpus
 - 11 subjects;
 - 30 places;
 - 30 occurrences;
@@ -34,42 +34,37 @@ No se añadieron records históricos en esta release.
 - 1 relationship;
 - 7 contexts;
 - 7 developments;
-- 86 sources.
-
-## Capa narrativa
-- 2 stories revisadas;
+- 86 sources;
+- 2 stories;
 - 13 scenes;
-- 16 glossary entries;
-- 2 schemas narrativos nuevos.
-
-Historias publicadas:
-- Historia del vino — 6 escenas;
-- Historia del pan — 7 escenas.
+- 16 glossary entries.
 
 ## Contrato
-- G2 fingerprint: 9/9 intacto.
-- schemas históricos: sin cambios.
-- schemas totales runtime/editorial: 10.
+- G2 fingerprint: 9/9.
+- 8 schemas históricos: sin cambios.
+- 2 schemas narrativos: sin cambios.
+- 10 schemas totales.
 
-## Atlas
-Corrección alpha.21:
-- `prevTemporalHitBtn` → `stepTemporalHit(-1)`;
-- `nextTemporalHitBtn` → `stepTemporalHit(1)`.
+## Alpha.22
+- historial de navegador;
+- deep links de Historias/Atlas;
+- round-trip Historia ↔ Atlas;
+- filtros incompatibles se ajustan para revelar enlaces directos;
+- developments/events quedan enfocados;
+- semántica temporal de ranges uniforme;
+- stepping selection-aware;
+- reglas canónicas: 154 números únicos y consecutivos.
 
-Las occurrences de la timeline usan headlines semánticos y dejan de titularse solo por el nombre del subject.
+## Próximo gate
+**Aceptación real en Xiaomi.**
 
-## QA de producto
-Nuevos gates:
-- narrative museum contract;
-- editorial depth;
-- primary navigation bindings;
-- Atlas semantic headlines.
+Probar:
+1. Historia del vino, varias escenas;
+2. botón Atrás del sistema entre escenas;
+3. `Ver en el Atlas` desde Areni/Tel Kabri/Pasteur;
+4. Atrás para volver a la escena exacta;
+5. activar filtros antes de entrar en una historia y comprobar que la evidencia enlazada aparece;
+6. anterior/siguiente en timeline, incluidos ranges;
+7. navegación móvil y fullscreen.
 
-## Pendiente inmediato
-1. desplegar alpha.21 en GitHub Pages;
-2. probar Vino/Pan en Xiaomi;
-3. revisar ritmo y longitud;
-4. probar glosario;
-5. probar Historia → Atlas → Evidencia;
-6. probar anterior/siguiente táctil;
-7. decidir alpha.22 solo a partir de defectos/aceptación reales.
+No ampliar contenido hasta esa aceptación.

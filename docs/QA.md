@@ -331,3 +331,19 @@ python tools/test_atlas_semantic_headlines.py
 - [ ] timeline usa headline semántico;
 - [ ] G2 fingerprint 9/9;
 - [ ] aceptación visual/táctil real antes de alpha.22.
+
+python tools/test_story_atlas_roundtrip.py
+python tools/test_navigation_route_data.py
+python tools/test_canonical_rule_numbering.py
+node tools/test_navigation_algorithms.mjs
+
+## Alpha.22 · navegación
+- [ ] #historias carga landing;
+- [ ] deep link de story abre escena correcta;
+- [ ] browser back vuelve escena por escena;
+- [ ] story → Atlas → back recupera escena;
+- [ ] occurrence enlazada se revela aunque haya filtros previos;
+- [ ] development/event queda seleccionado en timeline;
+- [ ] range occurrence conserva target dentro del intervalo;
+- [ ] anterior/siguiente recorre hitos con misma fecha;
+- [ ] canonical rules 1..154 sin duplicados.

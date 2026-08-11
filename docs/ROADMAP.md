@@ -311,7 +311,7 @@ La siguiente prioridad es expansión editorial controlada antes de redes complej
 
 
 ## P1 — Narrative Museum
-**Estado: INTEGRADO · alpha.21 · pendiente aceptación móvil**
+**Estado: INTEGRADO · alpha.22 · navegación endurecida · pendiente aceptación móvil**
 
 Objetivo:
 - convertir Historias en la entrada principal;
@@ -322,7 +322,7 @@ Objetivo:
 - validar producto antes de seguir ampliando corpus.
 
 ### Gate de aceptación
-No continuar E1 ni iniciar G4 hasta probar alpha.21 en dispositivo real.
+No continuar E1 ni iniciar G4 hasta probar alpha.22 en dispositivo real.
 
 ## E1 — Expansión editorial controlada
 **Estado: PAUSADO tras alpha.20 · esperando validación de P1**
@@ -363,6 +363,21 @@ Se priorizará el dossier que aporte simultáneamente:
 - nuevos territorios;
 - conexiones futuras útiles para G4;
 - fuentes primarias académicas/institucionales fuertes.
+
+---
+
+### Alpha.22 — Navigation hardening
+**IMPLEMENTADO · pendiente aceptación móvil**
+
+- browser back/forward;
+- deep links;
+- Historia ↔ Atlas round-trip;
+- direct evidence reveal;
+- temporal interval semantics;
+- selection-aware previous/next;
+- canonical rule numbering normalized.
+
+No añade corpus ni nueva historia.
 
 ---
 
