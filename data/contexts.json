@@ -38,5 +38,45 @@
       "src_met_italy_1_500"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "natufian",
+    "name": "Natufiense",
+    "type": "archaeological_culture",
+    "period": {
+      "start": -13050,
+      "end": -9550,
+      "precision": "range",
+      "display": "ca. 13.050–9.550 a. C.",
+      "note": "Rango contextual aproximado; el registro concreto de Shubayqa conserva su datación propia."
+    },
+    "placeRefs": [
+      "shubayqa_1"
+    ],
+    "summary": "Complejo arqueológico epipaleolítico del Levante; Shubayqa 1 aporta una secuencia natufiense temprana y tardía.",
+    "sourceRefs": [
+      "src_shubayqa_dates_2017",
+      "src_shubayqa_bread_pnas_2018"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "richard_ii_royal_household",
+    "name": "Casa real inglesa de Ricardo II",
+    "type": "institution",
+    "period": {
+      "start": 1377,
+      "end": 1399,
+      "precision": "range",
+      "display": "1377–1399"
+    },
+    "placeRefs": [
+      "england_richard_ii_reference"
+    ],
+    "summary": "Contexto cortesano asociado a la composición de The Forme of Cury por los cocineros principales de Ricardo II.",
+    "sourceRefs": [
+      "src_forme_cury_bl"
+    ],
+    "status": "reviewed"
   }
 ]

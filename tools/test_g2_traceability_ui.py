@@ -8,6 +8,7 @@ errors=[]
 for needle in [
     "function statusMeta(status)",
     "function sourceListHTML",
+    "function verificationHTML",
     "Fuentes del elemento",
     "Fuentes del registro",
     "renderTransformationPreview()",
@@ -15,7 +16,7 @@ for needle in [
 ]:
     if needle not in app:errors.append("app falta: "+needle)
 
-for needle in [".status-badge.reviewed",".source-list",".development-card"]:
+for needle in [".status-badge.reviewed",".source-list",".development-card",".verification-box"]:
     if needle not in css:errors.append("css falta: "+needle)
 
 if errors:

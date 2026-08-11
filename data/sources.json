@@ -142,5 +142,167 @@
     "sourceType": "official_institution",
     "accessed": "2026-08-11",
     "notes": "USDA atribuye el desarrollo inicial de HACCP a Pillsbury y NASA para mejorar la seguridad de los alimentos en vuelos tripulados."
+  },
+  {
+    "id": "src_maize_pnas_commentary_2009",
+    "title": "Rio Balsas most likely region for maize domestication",
+    "publisher": "Proceedings of the National Academy of Sciences / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2664049/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Comentario académico independiente sobre los resultados de Xihuatoxtla y la domesticación temprana de maíz en el Balsas."
+  },
+  {
+    "id": "src_carannante_garum_2019",
+    "title": "The last garum of Pompeii: Archaeozoological analyses on fish remains from the 'garum shop' and related ecological inferences",
+    "publisher": "International Journal of Osteoarchaeology",
+    "url": "https://doi.org/10.1002/oa.2783",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis arqueozoológico detallado de restos de garum del taller de Pompeya."
+  },
+  {
+    "id": "src_garum_composition_2010",
+    "title": "Amino acids and minerals in ancient remnants of fish sauce (garum) sampled in the 'Garum Shop' of Pompeii, Italy",
+    "publisher": "Journal of Food Composition and Analysis",
+    "url": "https://doi.org/10.1016/j.jfca.2010.03.005",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Análisis bioquímico independiente de restos conservados de salsa de pescado en Pompeya."
+  },
+  {
+    "id": "src_science_history_pasteur",
+    "title": "Louis Pasteur",
+    "publisher": "Science History Institute",
+    "url": "https://www.sciencehistory.org/education/scientific-biographies/louis-pasteur/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Fuente independiente para la patente de pasteurización del vino de 1865."
+  },
+  {
+    "id": "src_pasteur_letter_1866",
+    "title": "Letter from Louis Pasteur to an unidentified colleague, 1866",
+    "publisher": "Science History Institute Digital Collections",
+    "url": "https://digital.sciencehistory.org/works/ws859f70x",
+    "sourceType": "primary_text",
+    "accessed": "2026-08-11",
+    "notes": "Fuente primaria que documenta la aplicación de su procedimiento de conservación del vino en 1865."
+  },
+  {
+    "id": "src_uchicago_monitor_top",
+    "title": "Monitor-Top Style Double Door Refrigerator",
+    "publisher": "University of Chicago · CEGU",
+    "url": "https://cegu.uchicago.edu/exhibitions/calumet/monitor-top-style-double-door-refrigerator/",
+    "sourceType": "museum",
+    "accessed": "2026-08-11",
+    "notes": "Fuente institucional independiente para la línea Monitor Top fabricada desde 1927."
+  },
+  {
+    "id": "src_nasa_haccp_2024",
+    "title": "Food Safety Program for Space Has Taken Over on Earth",
+    "publisher": "NASA",
+    "url": "https://www.nasa.gov/directorates/stmd/tech-transfer/spinoffs/food-safety-program-for-space-has-taken-over-on-earth/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Historia de la colaboración NASA-Pillsbury y desarrollo del fundamento de HACCP."
+  },
+  {
+    "id": "src_national_academies_haccp",
+    "title": "Food Safety Tools — Scientific Criteria to Ensure Safe Food",
+    "publisher": "National Academies Press / NCBI Bookshelf",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK221552/",
+    "sourceType": "monograph",
+    "accessed": "2026-08-11",
+    "notes": "Síntesis académica independiente que sitúa los antecedentes de HACCP en 1959 y su debut público en 1971."
+  },
+  {
+    "id": "src_goat_zagros_pnas_2021",
+    "title": "Herded and hunted goat genomes from the dawn of domestication in the Zagros Mountains",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8237664/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Arqueogenómica y arqueozoología de cabras gestionadas en Ganj Dareh y Tepe Abdul Hosein hacia 8200 cal a.C."
+  },
+  {
+    "id": "src_goat_domestication_mtdna_2008",
+    "title": "The goat domestication process inferred from large-scale mitochondrial DNA analysis of wild and domestic individuals",
+    "publisher": "Proceedings of the National Academy of Sciences / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2584717/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Línea genética independiente sobre los focos y proceso de domesticación caprina."
+  },
+  {
+    "id": "src_shubayqa_bread_pnas_2018",
+    "title": "Archaeobotanical evidence reveals the origins of bread 14,400 years ago in northeastern Jordan",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.1801071115",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Restos carbonizados de productos tipo pan de Shubayqa 1 anteriores a la agricultura."
+  },
+  {
+    "id": "src_shubayqa_dates_2017",
+    "title": "High Resolution AMS Dates from Shubayqa 1, northeast Jordan Reveal Complex Origins of Late Epipalaeolithic Natufian in the Levant",
+    "publisher": "Scientific Reports / PMC",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5717003/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Cronología y coordenadas académicas de Shubayqa 1."
+  },
+  {
+    "id": "src_cheese_nature_2013",
+    "title": "Earliest evidence for cheese making in the sixth millennium bc in northern Europe",
+    "publisher": "Nature",
+    "url": "https://doi.org/10.1038/nature11698",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Evidencia química de grasas lácteas en recipientes perforados usados para separar cuajada y suero."
+  },
+  {
+    "id": "src_forme_cury_bl",
+    "title": "Add MS 5016 — Forme of Cury",
+    "publisher": "British Library",
+    "url": "https://searcharchives.bl.uk/catalog/032-002110532",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Catálogo del manuscrito: tratado culinario compuesto ca. 1390 por los cocineros principales de Ricardo II."
+  },
+  {
+    "id": "src_forme_cury_loc",
+    "title": "The forme of cury",
+    "publisher": "Library of Congress",
+    "url": "https://www.loc.gov/item/44031282/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Edición histórica y metadatos bibliográficos sobre la compilación de ca. 1390."
+  },
+  {
+    "id": "src_appert_ucanr_2026",
+    "title": "A Brief History of the Canning Jar",
+    "publisher": "University of California Agriculture and Natural Resources · Master Food Preserver",
+    "url": "https://ucanr.edu/program/uc-master-food-preserver/article/brief-history-canning-jar-march-2026",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Síntesis institucional del proceso de Appert, premio y publicación de 1810."
+  },
+  {
+    "id": "src_codex_fao",
+    "title": "Codex Alimentarius",
+    "publisher": "Food and Agriculture Organization of the United Nations",
+    "url": "https://www.fao.org/food-safety/food-control-systems/codex-alimentarius/en",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "FAO documenta que la Comisión del Codex fue establecida por FAO y OMS en 1963."
+  },
+  {
+    "id": "src_codex_fao_who_home",
+    "title": "Codex Alimentarius — About",
+    "publisher": "FAO/WHO Codex Alimentarius",
+    "url": "https://www.fao.org/fao-who-codexalimentarius/home/en/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Fuente institucional conjunta sobre el establecimiento y finalidad del Codex."
   }
 ]

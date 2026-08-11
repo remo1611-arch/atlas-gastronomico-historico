@@ -23,9 +23,20 @@
     "certainty": "high",
     "sourceRefs": [
       "src_pasteur_legacy",
-      "src_pasteur_middle_years"
+      "src_pasteur_middle_years",
+      "src_science_history_pasteur",
+      "src_pasteur_letter_1866"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_institutional_and_primary_review",
+      "independentSourceRefs": [
+        "src_science_history_pasteur",
+        "src_pasteur_letter_1866"
+      ],
+      "note": "La cronología del Institut Pasteur se contrastó con Science History Institute y correspondencia primaria de Pasteur."
+    }
   },
   {
     "id": "perkins_mechanical_refrigeration_1834",
@@ -49,7 +60,15 @@
       "src_ashrae_refrigeration_timeline",
       "src_smithsonian_perkins_1834"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_museum_review",
+      "independentSourceRefs": [
+        "src_smithsonian_perkins_1834"
+      ],
+      "note": "La cronología de ASHRAE se contrastó con el objeto/documentación histórica del Smithsonian."
+    }
   },
   {
     "id": "monitor_top_refrigerator_1927",
@@ -71,9 +90,18 @@
     "summary": "Smithsonian identifica el General Electric Monitor Top, introducido en 1927, como el primer refrigerador que alcanzó amplia popularidad en los hogares estadounidenses.",
     "certainty": "high",
     "sourceRefs": [
-      "src_smithsonian_electric_refrigeration"
+      "src_smithsonian_electric_refrigeration",
+      "src_uchicago_monitor_top"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_institutional_review",
+      "independentSourceRefs": [
+        "src_uchicago_monitor_top"
+      ],
+      "note": "La documentación del Smithsonian se contrastó con una exposición institucional de la University of Chicago sobre la línea Monitor Top."
+    }
   },
   {
     "id": "haccp_development_1960s",
@@ -94,7 +122,67 @@
     "summary": "El enfoque Hazard Analysis and Critical Control Point fue desarrollado inicialmente por Pillsbury y NASA para reforzar la seguridad de los alimentos destinados a vuelos espaciales tripulados.",
     "certainty": "high",
     "sourceRefs": [
-      "src_usda_haccp_2010"
+      "src_usda_haccp_2010",
+      "src_nasa_haccp_2024",
+      "src_national_academies_haccp"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_government_and_academic_review",
+      "independentSourceRefs": [
+        "src_nasa_haccp_2024",
+        "src_national_academies_haccp"
+      ],
+      "note": "La atribución USDA se contrastó con la historia oficial de NASA y una síntesis de National Academies sobre el origen y evolución de HACCP."
+    }
+  },
+  {
+    "id": "appert_preservation_1809_1810",
+    "name": "Appertización y publicación del método de conserva",
+    "type": "preservation_technology",
+    "period": {
+      "start": 1809,
+      "end": 1810,
+      "precision": "range",
+      "display": "1809–1810"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "extends_shelf_life",
+      "enables"
+    ],
+    "summary": "Nicolas Appert fue premiado por un método de conservar alimentos mediante calentamiento y cierre de recipientes y publicó el procedimiento en 1810, antes de que existiese una explicación microbiológica del deterioro.",
+    "certainty": "medium",
+    "sourceRefs": [
+      "src_appert_ucanr_2026"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "codex_alimentarius_commission_1963",
+    "name": "Creación de la Comisión del Codex Alimentarius",
+    "type": "regulation",
+    "period": {
+      "start": 1963,
+      "end": 1963,
+      "precision": "exact",
+      "display": "1963"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "standardizes",
+      "improves_safety"
+    ],
+    "summary": "FAO y OMS establecieron la Comisión del Codex Alimentarius en 1963 para desarrollar normas internacionales destinadas a proteger la salud de los consumidores y promover prácticas equitativas en el comercio de alimentos.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_codex_fao",
+      "src_codex_fao_who_home"
     ],
     "status": "reviewed"
   }

@@ -155,9 +155,18 @@
     ],
     "sourceRefs": [
       "src_ranere_2009_balsas_context",
-      "src_piperno_2009_balsas_maize"
+      "src_piperno_2009_balsas_maize",
+      "src_maize_pnas_commentary_2009"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_scholarly_review",
+      "independentSourceRefs": [
+        "src_maize_pnas_commentary_2009"
+      ],
+      "note": "La cronología de Xihuatoxtla y la interpretación del Balsas fueron contrastadas con un comentario académico independiente del artículo arqueobotánico original."
+    }
   },
   {
     "id": "garum",
@@ -171,7 +180,93 @@
       "Roma"
     ],
     "sourceRefs": [
-      "src_pompeii_antiquarium_garum"
+      "src_pompeii_antiquarium_garum",
+      "src_carannante_garum_2019",
+      "src_garum_composition_2010"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_archaeological_review",
+      "independentSourceRefs": [
+        "src_carannante_garum_2019",
+        "src_garum_composition_2010"
+      ],
+      "note": "La evidencia institucional de Pompeya se contrastó con análisis arqueozoológicos y bioquímicos independientes de restos del taller de garum."
+    }
+  },
+  {
+    "id": "goat",
+    "name": "Cabra doméstica",
+    "type": "food_species",
+    "summary": "Capra hircus, uno de los primeros animales gestionados por comunidades neolíticas; el Atlas separa manejo, domesticación genética, cambios morfológicos y explotación alimentaria.",
+    "aliases": [
+      "cabra",
+      "Capra hircus"
+    ],
+    "tags": [
+      "ganadería",
+      "animal doméstico",
+      "Neolítico"
+    ],
+    "sourceRefs": [
+      "src_goat_zagros_pnas_2021",
+      "src_goat_domestication_mtdna_2008"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "bread_like_flatbread",
+    "name": "Producto tipo pan plano",
+    "type": "preparation",
+    "summary": "Preparación cereal/tubérculo procesada y cocinada; el registro de Shubayqa 1 documenta productos semejantes a panes planos antes del establecimiento de la agricultura.",
+    "aliases": [
+      "pan plano prehistórico"
+    ],
+    "tags": [
+      "cereal",
+      "pan",
+      "procesado"
+    ],
+    "sourceRefs": [
+      "src_shubayqa_bread_pnas_2018"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "cheese",
+    "name": "Queso / cuajada procesada",
+    "type": "processed_product",
+    "summary": "Producto lácteo obtenido mediante separación y transformación de componentes de la leche; la evidencia arqueológica debe distinguir procesado de leche de una receta moderna de queso.",
+    "aliases": [
+      "cuajada"
+    ],
+    "tags": [
+      "lácteo",
+      "conservación",
+      "ganadería"
+    ],
+    "sourceRefs": [
+      "src_cheese_nature_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "forme_of_cury",
+    "name": "The Forme of Cury",
+    "type": "historical_text",
+    "summary": "Colección culinaria inglesa compuesta hacia 1390 para la casa real de Ricardo II y conservada en varios manuscritos.",
+    "aliases": [
+      "Forme of Cury"
+    ],
+    "tags": [
+      "recetario",
+      "Edad Media",
+      "Inglaterra"
+    ],
+    "sourceRefs": [
+      "src_forme_cury_bl",
+      "src_forme_cury_loc"
     ],
     "status": "reviewed"
   }

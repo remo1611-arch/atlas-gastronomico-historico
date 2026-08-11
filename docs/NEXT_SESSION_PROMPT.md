@@ -30,3 +30,10 @@ Estado actual:
 - No volver a rediseñar G1 salvo defecto reproducible.
 - Continuar desde `docs/G2_PILOT.md`.
 - `reviewed` no se promueve a `verified` sin segunda revisión explícita.
+
+Continuación alpha.7:
+- G1 cerrado.
+- G2 tandas A+B.
+- leer G2_SECOND_REVIEW_A.md y G2_PILOT_B.md.
+- no promover B a verified sin segunda revisión.
+- no asignar coordenadas a regiones solo para rellenar el mapa.

@@ -64,41 +64,37 @@ Debe cerrar:
 ---
 
 ## G2 — Corpus piloto verificado
-**Estado: EN CURSO · tanda A reviewed**
+**Estado: EN CURSO · tandas A y B**
 
-Tanda A:
-- vino neolítico de Georgia; ✅ reviewed
-- maíz temprano de Xihuatoxtla; ✅ reviewed
-- garum en Pompeya; ✅ reviewed
-- Shulaveri-Shomutepe; ✅ reviewed
-- marco imperial romano occidental; ✅ reviewed
-- pasteurización del vino; ✅ reviewed
-- refrigeración mecánica de Perkins; ✅ reviewed
-- Monitor Top 1927; ✅ reviewed
-- HACCP, década de 1960; ✅ reviewed
+### Segunda revisión A
+Promovidos a `verified`:
+- maíz / Xihuatoxtla;
+- garum / Pompeya;
+- pasteurización;
+- refrigeración mecánica Perkins;
+- Monitor Top;
+- HACCP.
+
+Permanecen `reviewed`:
+- vino neolítico;
+- Shulaveri-Shomutepe;
+- marco imperial romano occidental.
+
+### Tanda B · reviewed
+- cabra / Ganj Dareh;
+- producto tipo pan / Shubayqa 1;
+- queso/procesado lácteo / Kuyavia;
+- The Forme of Cury;
+- appertización;
+- Codex Alimentarius.
 
 Pendiente:
-- segunda revisión para promover casos a `verified`;
-- ampliar animales, grasas, conservación, textos/recetas y regulación;
-- probar conflictos de fuentes.
+- segunda revisión de la tanda B;
+- ampliar grasas/aceites, especias, congelación, envases, inspección y regulación comparada;
+- introducir casos con fuentes en conflicto;
+- probar historia multi-occurrence de un mismo subject.
 
-Casos deliberadamente heterogéneos, a seleccionar y verificar:
-
-- cereal/domesticación;
-- leguminosa;
-- animal doméstico;
-- fermentación;
-- aceite/grasa;
-- bebida;
-- condimento/especia;
-- técnica de conservación;
-- producto elaborado;
-- plato con tradición documental;
-- intercambio transoceánico;
-- texto culinario histórico.
-
-Objetivo: comprobar que el modelo resuelve casos reales sin forzar categorías.
-
+---
 ---
 
 ## G3 — Evidencia y precisión

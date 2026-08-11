@@ -51,6 +51,26 @@ def source_refs(o,label,required_for_review=True):
     if required_for_review and o.get("status") in {"reviewed","verified"} and not refs:
         errors.append(f"{label}: reviewed/verified sin fuentes")
 
+    if o.get("status")=="verified":
+        verification=o.get("verification")
+        if not verification:
+            errors.append(f"{label}: verified sin metadatos verification")
+            return
+        indep=verification.get("independentSourceRefs",[])
+        if not indep:
+            errors.append(f"{label}: verified sin independentSourceRefs")
+        for ref in indep:
+            if ref not in SRC:
+                errors.append(f"{label}: verification sourceRef roto {ref}")
+            if ref not in refs:
+                errors.append(f"{label}: verification sourceRef no incluido en sourceRefs {ref}")
+        if not verification.get("verifiedOn"):
+            errors.append(f"{label}: verified sin verifiedOn")
+        if not verification.get("method"):
+            errors.append(f"{label}: verified sin método")
+        if not verification.get("note"):
+            errors.append(f"{label}: verified sin nota")
+
 for s in subjects:
     source_refs(s,f"subject:{s.get('id')}")
     if s.get("status")=="deprecated" and not s.get("supersededBy"):

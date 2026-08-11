@@ -164,5 +164,58 @@
       "src_pasteur_legacy"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "ganj_dareh",
+    "name": "Ganj Dareh",
+    "type": "site",
+    "point": null,
+    "summary": "Yacimiento del Neolítico acerámico en los Zagros centrales, cerca de Harsin, Irán occidental.",
+    "sourceRefs": [
+      "src_goat_zagros_pnas_2021"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "shubayqa_1",
+    "name": "Shubayqa 1",
+    "type": "site",
+    "point": {
+      "lat": 32.406437,
+      "lon": 37.2281,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_shubayqa_dates_2017"
+      ],
+      "note": "Coordenadas publicadas en el estudio cronológico del yacimiento."
+    },
+    "summary": "Yacimiento natufiense del noreste de Jordania, en el Desierto Negro.",
+    "sourceRefs": [
+      "src_shubayqa_dates_2017",
+      "src_shubayqa_bread_pnas_2018"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "kuyavia_poland",
+    "name": "Kuyavia (Polonia central)",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Región de Polonia central donde recipientes perforados neolíticos aportaron evidencia química de procesado lácteo.",
+    "sourceRefs": [
+      "src_cheese_nature_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "england_richard_ii_reference",
+    "name": "Inglaterra de Ricardo II (referencia)",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Marco geográfico de referencia para The Forme of Cury; no representa una frontera cartográfica precisa.",
+    "sourceRefs": [
+      "src_forme_cury_bl"
+    ],
+    "status": "reviewed"
   }
 ]

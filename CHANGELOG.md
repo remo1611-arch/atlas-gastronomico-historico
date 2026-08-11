@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.1.0-alpha.7 — 2026-08-11
+
+### Segunda revisión G2-A
+Promovidos a verified:
+- maize + Xihuatoxtla;
+- garum + Pompeya;
+- pasteurización;
+- Perkins 1834;
+- Monitor Top 1927;
+- HACCP.
+
+### Gate verified
+- nuevo objeto `verification`;
+- independentSourceRefs;
+- fecha/método/nota de segunda revisión;
+- validación automática.
+
+### Tanda G2-B
+- cabra / Ganj Dareh;
+- pan tipo torta / Shubayqa 1;
+- queso/procesado lácteo / Kuyavia;
+- The Forme of Cury;
+- appertización;
+- Codex 1963.
+
+### Modelo
+- prueba real de lugares reviewed sin coordenadas;
+- domesticación como proceso;
+- recetario ≠ dieta general.
+
 ## 0.1.0-alpha.6 — 2026-08-11
 
 ### Gate

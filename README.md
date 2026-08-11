@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.6
+**Versión:** 0.1.0-alpha.7
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -143,3 +143,15 @@ Primeros casos `reviewed`:
 - HACCP.
 
 La aplicación muestra las fuentes vinculadas dentro de las fichas.
+
+## G2 · tanda B
+
+Alpha.7 añade:
+- cabra/domesticación;
+- pan preagrícola;
+- procesado lácteo/queso;
+- recetario medieval;
+- appertización;
+- Codex Alimentarius.
+
+Además estrena el gate auditado `verified` con metadatos de segunda revisión.

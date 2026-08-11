@@ -92,3 +92,15 @@ En ese caso:
 - el punto debe declarar `precision`;
 - esa fuente no sustenta automáticamente la cronología, origen o interpretación histórica.
 
+## Segunda revisión / verified
+
+Para ascender a `verified`:
+- debe existir una revisión distinta de la incorporación inicial;
+- se registra en `verification`;
+- las fuentes utilizadas se guardan en `independentSourceRefs`;
+- se prioriza independencia editorial, institucional o metodológica;
+- un resumen del mismo artículo no cuenta automáticamente como evidencia independiente;
+- una fuente primaria puede complementar una segunda revisión institucional o académica.
+
+La promoción es reversible si aparecen contradicciones o problemas de procedencia.
+

@@ -1288,3 +1288,32 @@ html[data-theme="light"] .source-link{
     padding:3px 5px;
   }
 }
+
+
+/* ===== alpha.7 · verified gate ===== */
+.verification-box{
+  margin-top:14px;
+  padding:11px 12px;
+  border:1px solid color-mix(in srgb,var(--ingredient) 34%,var(--line));
+  border-left:3px solid var(--ingredient);
+  border-radius:10px;
+  background:color-mix(in srgb,var(--ingredient) 7%,transparent);
+}
+.verification-box span{
+  display:block;
+  color:var(--ingredient);
+  font-size:.61rem;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.verification-box strong{
+  display:block;
+  margin-top:4px;
+  font-size:.78rem;
+}
+.verification-box p{
+  margin:5px 0 0!important;
+  color:var(--muted);
+  font-size:.73rem;
+  line-height:1.45;
+}

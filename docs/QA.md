@@ -11,6 +11,8 @@ python tools/test_project_pages.py
 python tools/test_extended_contract.py
 python tools/test_g2_traceability_ui.py
 python tools/test_g2_pilot.py
+python tools/test_g2_pilot_b.py
+python tools/test_verified_gate.py
 python tools/test_public_state.py
 python tools/test_schema_validation.py
 python tools/test_search_debounce.py
@@ -84,3 +86,18 @@ Antes de validar datos históricos:
 - [ ] demo sustituido mediante deprecated + supersededBy;
 - [ ] fuentes visibles en la ficha;
 - [ ] no usar `verified` sin segunda revisión.
+
+## Gate verified
+- [ ] verification presente;
+- [ ] verifiedOn;
+- [ ] method;
+- [ ] note;
+- [ ] independentSourceRefs no vacío;
+- [ ] independentSourceRefs existen y forman parte de sourceRefs.
+
+## Gate G2-B
+- [ ] todos los nuevos registros entran reviewed;
+- [ ] Ganj Dareh/Kuyavia sin falso punto;
+- [ ] Shubayqa conserva coordenadas publicadas;
+- [ ] texto culinario contextualizado;
+- [ ] domesticación animal no reducida a año de invención.

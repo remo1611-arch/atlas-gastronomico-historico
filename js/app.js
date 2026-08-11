@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.6';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.7';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.6',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.6',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.6',
-  places:'./data/places.json?v=0.1.0-alpha.6',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.6',
-  events:'./data/events.json?v=0.1.0-alpha.6',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.6',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.6',
-  developments:'./data/developments.json?v=0.1.0-alpha.6',
-  sources:'./data/sources.json?v=0.1.0-alpha.6',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.6'
+  config:'./data/config.json?v=0.1.0-alpha.7',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.7',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.7',
+  places:'./data/places.json?v=0.1.0-alpha.7',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.7',
+  events:'./data/events.json?v=0.1.0-alpha.7',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.7',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.7',
+  developments:'./data/developments.json?v=0.1.0-alpha.7',
+  sources:'./data/sources.json?v=0.1.0-alpha.7',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.7'
 };
 
 const s={
@@ -170,7 +170,18 @@ function pointPrecisionLabel(pl){
   const precision=pl?.point?.precision;
   if(precision==='approximate') return 'Punto cartográfico aproximado';
   if(precision==='reference') return 'Punto cartográfico de referencia';
+  if(precision==='exact_from_publication') return 'Coordenadas publicadas';
   return pl?.point ? 'Punto cartográfico' : 'Sin punto cartográfico';
+}
+
+function verificationHTML(item){
+  if(item?.status!=='verified'||!item.verification) return '';
+  const v=item.verification;
+  return `<div class="verification-box">
+    <span>SEGUNDA REVISIÓN</span>
+    <strong>Verificado · ${esc(v.verifiedOn||'')}</strong>
+    <p>${esc(v.note||'')}</p>
+  </div>`;
 }
 
 function occVisible(){
@@ -638,6 +649,7 @@ function renderDetails(o){
       <div><b>Tipo</b><span>${esc(TYPE_LABELS[subject.type]||subject.type)}</span></div>
       <div><b>Nombres alternativos</b><span>${esc((subject.aliases||[]).join(', ')||'—')}</span></div>
     </div>
+    ${verificationHTML(subject)}
     <div class="detail-sources">
       <b>Fuentes del elemento</b>
       ${sourceListHTML(subject.sourceRefs||[])}
@@ -657,6 +669,7 @@ function renderDetails(o){
       <div><b>Cartografía</b><span>${esc(pointPrecisionLabel(pl))}</span></div>
     </div>
     ${o.period.note?`<p class="evidence-note">${esc(o.period.note)}</p>`:''}
+    ${verificationHTML(o)}
     <div class="detail-sources">
       <b>Fuentes del registro</b>
       ${sourceListHTML(o.sourceRefs||[])}
@@ -679,6 +692,7 @@ function renderDetails(o){
           <h3>${esc(c.name)}</h3>
           <p>${esc(c.summary)}</p>
           <small>${esc(c.period.display||`${formatYear(c.period.start)}–${formatYear(c.period.end)}`)}</small>
+          ${verificationHTML(c)}
           ${sourceListHTML(c.sourceRefs||[])}
         </article>`;
     }).join('');
@@ -697,6 +711,7 @@ function renderDetails(o){
           <h3>${esc(d.name)}</h3>
           <p>${esc(d.summary)}</p>
           <small>${esc(d.period.display||`${formatYear(d.period.start)}–${formatYear(d.period.end)}`)}</small>
+          ${verificationHTML(d)}
           ${sourceListHTML(d.sourceRefs||[])}
         </article>`;
     }).join('');

@@ -4,63 +4,70 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.6
+0.1.0-alpha.7
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · tanda A `reviewed`.
+- G2: EN CURSO · tandas A y B.
 - G3+: no iniciados.
 
-## Distribución
-GitHub Pages.
+## Segunda revisión tanda A
 
-## G1
-Cerrado tras:
-- motor temporal sin año 0;
-- UX museográfica;
-- responsive real en Xiaomi 15;
-- tema oscuro/claro;
-- capas;
-- filtros unificados;
-- debounce;
-- cobertura cartográfica explícita;
-- GitHub Pages;
-- QA automatizado.
+Promovidos a `verified`:
+- maize;
+- occ_maize_xihuatoxtla_early_holocene;
+- garum;
+- occ_garum_pompeii_first_century;
+- pasteurization_wine_1863_1865;
+- perkins_mechanical_refrigeration_1834;
+- monitor_top_refrigerator_1927;
+- haccp_development_1960s.
 
-## G2 · primera tanda revisada
+Cada uno incluye `verification`.
 
-### Subjects canónicos reviewed
-- wine
-- maize
-- garum
+Permanecen `reviewed`:
+- wine y su occurrence neolítica;
+- Shulaveri-Shomutepe;
+- marco imperial romano occidental.
 
-### Occurrences reviewed
-- vino neolítico en Gadachrili Gora;
-- maíz temprano en Xihuatoxtla;
-- garum en Pompeya.
+## Tanda B reviewed
 
-### Contexts reviewed
-- cultura Shulaveri-Shomutepe;
-- mundo imperial romano, referencia occidental.
+### Subjects
+- goat;
+- bread_like_flatbread;
+- cheese;
+- forme_of_cury.
 
-### Developments reviewed
-- pasteurización aplicada al vino, 1863–1865;
-- patente de refrigeración mecánica de Perkins, 1834;
-- GE Monitor Top, 1927;
-- desarrollo inicial de HACCP, década de 1960.
+### Occurrences
+- cabra gestionada/domesticación en Ganj Dareh;
+- producto tipo pan en Shubayqa 1;
+- procesado lácteo/quesero en Kuyavia;
+- atestiguación textual de The Forme of Cury.
 
-## Trazabilidad
-- subjects reviewed requieren fuentes;
-- places reviewed requieren fuentes;
-- occurrences reviewed requieren fuentes;
-- contexts/developments reviewed requieren fuentes;
-- puntos aproximados tienen procedencia cartográfica propia;
-- la interfaz muestra títulos y editor de las fuentes.
+### Contexts
+- Natufiense;
+- casa real de Ricardo II.
 
-## Migraciones
-`wine_demo`, `maize_demo`, `garum_demo` y sus occurrences equivalentes se conservan como `deprecated` y apuntan a sus IDs canónicos.
+### Developments
+- appertización 1809–1810;
+- Comisión del Codex Alimentarius 1963.
+
+## Cartografía
+
+Se prueba deliberadamente el caso de registros reviewed sin punto:
+- Ganj Dareh;
+- Kuyavia;
+- Inglaterra de Ricardo II.
+
+No se inventan coordenadas. El Atlas mantiene esos registros y avisa de la cobertura incompleta.
+
+Shubayqa 1 sí usa coordenadas publicadas en un artículo académico.
 
 ## Próxima acción
-Auditar la tanda A histórica y promover solo los casos suficientemente contrastados a `verified`. Después ampliar G2 con una segunda tanda heterogénea.
+
+1. publicar/probar alpha.7;
+2. segunda revisión de tanda B;
+3. introducir primer subject con múltiples occurrences históricas revisadas para activar “Historia del elemento”;
+4. iniciar casos con evidencia discutida/conflictiva.
 

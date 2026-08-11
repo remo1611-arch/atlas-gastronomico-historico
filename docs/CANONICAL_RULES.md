@@ -52,3 +52,9 @@
 47. La migración de un ID seed a un ID canónico usa `supersededBy`; no se borra silenciosamente.
 48. Un intervalo convertido desde `cal BP` conserva también la notación original.
 
+49. Todo registro `verified` debe incluir `verification` con fecha, método, nota y `independentSourceRefs`.
+50. Las fuentes de segunda revisión deben existir también en `sourceRefs` del registro.
+51. Una región histórica no debe recibir un punto arbitrario solo para aparecer en el mapa.
+52. Un texto culinario documenta un texto/receta, no la dieta general de toda la población.
+53. La domesticación animal se modela como proceso: manejo, afinidad genética doméstica y cambio morfológico pueden ocurrir en momentos distintos.
+

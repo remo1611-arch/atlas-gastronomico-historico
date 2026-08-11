@@ -375,3 +375,39 @@ Ejemplos posibles:
 
 Hasta que se diseñe el contrato editorial, no se crea `tours.json` ni se infieren rutas automáticamente de `relationships.json`.
 
+---
+
+## 14. verification
+
+Metadatos obligatorios para cualquier registro `verified`.
+
+```json
+{
+  "verification": {
+    "verifiedOn": "2026-08-11",
+    "method": "independent_scholarly_review",
+    "independentSourceRefs": ["src_x"],
+    "note": "Qué se contrastó y por qué se considera superada la segunda revisión."
+  }
+}
+```
+
+Reglas:
+- no sustituye `sourceRefs`;
+- las fuentes independientes también deben figurar en `sourceRefs`;
+- `verified` no significa certeza absoluta;
+- si aparece evidencia conflictiva posterior, el registro puede volver a `reviewed` o marcarse `disputed`.
+
+---
+
+## 15. Lugares sin punto
+
+`place.point` es opcional.
+
+Un lugar puede carecer de coordenadas cuando:
+- la evidencia espacial no es suficientemente precisa;
+- es una región histórica amplia;
+- no existe todavía una fuente cartográfica aceptada.
+
+La ausencia de punto no elimina el registro de la interfaz.
+

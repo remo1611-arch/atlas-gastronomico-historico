@@ -1,85 +1,77 @@
-# Resultados de validación — 0.1.0-alpha.6
+# Resultados de validación — 0.1.0-alpha.7
 
 Fecha: 2026-08-11
 
-## Gate
+## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · tanda A `reviewed`.
+- G2: EN CURSO · segunda revisión A + tanda B.
 
 ## Suite completa: PASS
 
-### Datos y referencias
-- `validate_project.py`: PASS.
-- 13 subjects · 3 reviewed.
-- 12 places · 4 reviewed.
-- 14 occurrences · 3 reviewed.
+### Estructura
+- 17 subjects · 7 reviewed/verified.
+- 16 places · 8 reviewed/verified.
+- 18 occurrences · 7 reviewed/verified.
 - 2 events.
 - 3 relationships.
-- 2 contexts · 2 reviewed.
-- 4 developments · 4 reviewed.
-- 16 sources.
-- 0 occurrences activas/no-deprecated sin punto.
+- 4 contexts · 4 reviewed/verified.
+- 6 developments · 6 reviewed/verified.
+- 34 sources.
+- 3 occurrences no cartografiables deliberadamente.
 
-### JSON Schema
+### Schema
 - `test_schema_validation.py`: PASS.
-- 66 objetos.
-- 8 schemas.
+- 100 objetos contra 8 schemas.
 
-### Motor / JavaScript
-- `node --check js/core.js`: PASS.
-- `node --check js/app.js`: PASS.
-- `test_core.mjs`: 14 aserciones PASS.
+### Motor/UI
+- JS core/app: PASS.
+- core: 14 aserciones.
+- UI contract: PASS.
+- mobile contract: PASS.
+- contraste tema claro: PASS.
+- filtros unificados: PASS.
+- debounce: PASS.
+- cobertura cartográfica: PASS.
 
-### UI y responsive
-- `test_ui_contract.py`: PASS · 82 IDs / 75 refs JS.
-- `test_mobile_contract.py`: PASS · 10 contratos responsive.
-- `test_light_contrast.py`: PASS.
-- `test_filter_state.py`: PASS.
-- `test_map_coverage.py`: PASS.
-- `test_search_debounce.py`: PASS · 160 ms.
+### Estado editorial
+- public state/deprecated: PASS.
+- G2 pilot A: PASS.
+- G2 pilot B: PASS.
+- verified gate: PASS.
+- traceability UI: PASS.
 
-### Contrato extendido
-- `test_extended_contract.py`: PASS.
-- 13 tipos de contexto.
-- 17 tipos de development.
-- 13 tipos de impacto.
-- nuevo `food_storage_appliance` derivado del caso real Monitor Top.
+### Registros verified
+- maize.
+- occ_maize_xihuatoxtla_early_holocene.
+- garum.
+- occ_garum_pompeii_first_century.
+- pasteurization_wine_1863_1865.
+- perkins_mechanical_refrigeration_1834.
+- monitor_top_refrigerator_1927.
+- haccp_development_1960s.
 
-### G2
-- `test_public_state.py`: PASS.
-  - 3 subjects demo deprecated preservados/ocultos.
-  - 3 occurrences demo deprecated preservadas/ocultas.
-- `test_g2_pilot.py`: PASS.
-  - 3 subjects reviewed.
-  - 3 occurrences reviewed.
-  - 2 contexts reviewed.
-  - 4 developments reviewed.
-  - 16 fuentes.
-- `test_g2_traceability_ui.py`: PASS.
-  - estados visibles;
-  - fuentes visibles en fichas;
-  - developments dinámicos;
-  - deprecated excluidos de la experiencia pública.
+Todos incluyen:
+- `verification.verifiedOn`;
+- `verification.method`;
+- `verification.note`;
+- `verification.independentSourceRefs`.
+
+### Tanda B reviewed
+- goat / Ganj Dareh.
+- bread_like_flatbread / Shubayqa 1.
+- cheese / Kuyavia.
+- forme_of_cury / Inglaterra de Ricardo II.
+- appertization 1809–1810.
+- Codex Alimentarius Commission 1963.
+
+### Cartografía deliberadamente incompleta
+Sin punto:
+- ganj_dareh;
+- kuyavia_poland;
+- england_richard_ii_reference.
+
+Esto no es FAIL: se evita crear coordenadas falsas. Shubayqa 1 usa coordenadas publicadas.
 
 ### GitHub Pages
-- `test_project_pages.py`: PASS · 16/16 recursos críticos.
-
-## Contenido histórico reviewed — tanda A
-
-- Vino neolítico · Georgia.
-- Maíz temprano · Xihuatoxtla.
-- Garum · Pompeya.
-- Cultura Shulaveri-Shomutepe.
-- Marco imperial romano occidental.
-- Pasteurización aplicada al vino · 1863–1865.
-- Refrigeración mecánica de Perkins · 1834.
-- GE Monitor Top · 1927.
-- HACCP · década de 1960.
-
-## Estado editorial
-
-Ningún registro nuevo se marca `verified`.
-
-`reviewed` significa que ha superado esta primera auditoría histórica y dispone de fuentes trazables. `verified` queda reservado para una segunda revisión explícita.
-
+- 16/16 recursos críticos HTTP 200 bajo subdirectorio.

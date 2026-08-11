@@ -232,9 +232,18 @@
     "developmentRefs": [],
     "sourceRefs": [
       "src_ranere_2009_balsas_context",
-      "src_piperno_2009_balsas_maize"
+      "src_piperno_2009_balsas_maize",
+      "src_maize_pnas_commentary_2009"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_scholarly_review",
+      "independentSourceRefs": [
+        "src_maize_pnas_commentary_2009"
+      ],
+      "note": "La presencia temprana de maíz y su encaje en el proceso de domesticación del Balsas fueron revisados mediante comentario académico independiente."
+    }
   },
   {
     "id": "occ_garum_pompeii_first_century",
@@ -256,7 +265,112 @@
     ],
     "developmentRefs": [],
     "sourceRefs": [
-      "src_pompeii_antiquarium_garum"
+      "src_pompeii_antiquarium_garum",
+      "src_carannante_garum_2019",
+      "src_garum_composition_2010"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-11",
+      "method": "independent_archaeological_review",
+      "independentSourceRefs": [
+        "src_carannante_garum_2019",
+        "src_garum_composition_2010"
+      ],
+      "note": "Restos materiales, arqueozoología y análisis de composición convergen en la identificación y producción de salsa de pescado en Pompeya."
+    }
+  },
+  {
+    "id": "occ_goat_ganj_dareh_8200_bce",
+    "subjectRef": "goat",
+    "placeRef": "ganj_dareh",
+    "period": {
+      "start": -8300,
+      "end": -8100,
+      "precision": "circa",
+      "display": "ca. 8200 cal a. C.",
+      "note": "La publicación sitúa el manejo de cabras genéticamente domésticas hacia 8200 cal a.C.; no implica un evento puntual de domesticación."
+    },
+    "occurrenceType": "domestication_evidence",
+    "evidenceType": "genetic",
+    "certainty": "high",
+    "summary": "Arqueogenómica y perfiles arqueozoológicos indican manejo de rebaños de cabras genéticamente diferenciadas de poblaciones silvestres hacia 8200 cal a.C., antes de cambios morfológicos claros.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_goat_zagros_pnas_2021",
+      "src_goat_domestication_mtdna_2008"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_bread_shubayqa_14400_bp",
+    "subjectRef": "bread_like_flatbread",
+    "placeRef": "shubayqa_1",
+    "period": {
+      "start": -12500,
+      "end": -12300,
+      "precision": "circa",
+      "display": "ca. 14.400 cal BP (≈12.450 a. C.)",
+      "note": "El estudio describe productos tipo pan de ca. 14.400 años; se conserva la naturaleza aproximada de la conversión."
+    },
+    "occurrenceType": "consumption",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Restos carbonizados muestran preparación de productos planos tipo pan con cereales silvestres y tubérculos por cazadores-recolectores natufienses, milenios antes de la agricultura consolidada.",
+    "contextRefs": [
+      "natufian"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_shubayqa_bread_pnas_2018",
+      "src_shubayqa_dates_2017"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_cheese_kuyavia_sixth_millennium_bce",
+    "subjectRef": "cheese",
+    "placeRef": "kuyavia_poland",
+    "period": {
+      "start": -5500,
+      "end": -5000,
+      "precision": "millennium",
+      "display": "VI milenio a. C.",
+      "note": "El registro se expresa a escala de milenio; no se inventa un año concreto."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Residuos de grasa láctea en recipientes perforados proporcionan evidencia directa de separación de cuajada y suero, compatible con producción temprana de queso o productos lácteos reducidos en lactosa.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_cheese_nature_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_forme_of_cury_1390",
+    "subjectRef": "forme_of_cury",
+    "placeRef": "england_richard_ii_reference",
+    "period": {
+      "start": 1385,
+      "end": 1395,
+      "precision": "circa",
+      "display": "ca. 1390"
+    },
+    "occurrenceType": "textual_attestation",
+    "evidenceType": "textual",
+    "certainty": "high",
+    "summary": "La British Library cataloga The Forme of Cury como tratado culinario compuesto hacia 1390 por los cocineros principales de la casa de Ricardo II.",
+    "contextRefs": [
+      "richard_ii_royal_household"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_forme_cury_bl",
+      "src_forme_cury_loc"
     ],
     "status": "reviewed"
   }

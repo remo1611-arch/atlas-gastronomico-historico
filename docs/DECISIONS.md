@@ -97,3 +97,19 @@ El corpus G2 demuestra que `cooking_appliance` no describe adecuadamente frigor�
 **Aceptada.**
 Un hito de invención/patente no hereda automáticamente impactos propios de la adopción posterior. Por ejemplo, la patente de refrigeración mecánica se marca `enables`; la implantación de cadena de frío deberá modelarse con developments/occurrences propios.
 
+## ADR-026 — Verification metadata obligatorio
+**Aceptada.**
+Todo `verified` conserva dentro del dato la fecha, método, nota y fuentes de segunda revisión.
+
+## ADR-027 — Regiones sin falso punto
+**Aceptada.**
+Kuyavia y el marco inglés de The Forme of Cury permanecen sin coordenadas hasta disponer de una representación espacial canónica adecuada.
+
+## ADR-028 — Domesticación como proceso
+**Aceptada.**
+El caso de Ganj Dareh confirma que manejo, diferenciación genética y morfología doméstica deben poder representarse por separado.
+
+## ADR-029 — Textos culinarios no equivalen a dieta general
+**Aceptada.**
+Un recetario cortesano demuestra tradición textual/culinaria en ese contexto, no consumo generalizado de toda la sociedad.
+
