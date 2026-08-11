@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.15
+**Versión:** 0.1.0-alpha.16
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -222,3 +222,18 @@ Desde alpha.15:
 - el contrato del corpus piloto queda congelado.
 
 Siguiente fase: G3 — Evidencia y precisión.
+
+## G3-A — Evidencia y precisión
+
+Alpha.16 inicia G3 sin modificar el contrato G2.
+
+Novedades:
+- filtrar por certeza;
+- filtrar por precisión cronológica;
+- filtrar por cobertura cartográfica;
+- resumen de calidad de lectura sin score;
+- explicación separada de estado editorial, certeza y precisión;
+- comparar fuentes;
+- abrir desde el mapa los registros sin coordenadas.
+
+Los schemas y la taxonomía están protegidos por fingerprint SHA-256 respecto a G2 CLOSED.

@@ -209,3 +209,23 @@ Los registros seed/deprecated del prototipo se trasladan a `data/archive/demo_re
 **Aceptada.**
 G2 queda cerrado en alpha.15. Durante G3, cualquier cambio estructural requiere caso real, ADR, migración y tests; aumentar el corpus no reabre G2.
 
+## ADR-056 — Sin evidence score
+**Aceptada.**
+G3 no reduce certeza, precisión, estado editorial y cantidad de fuentes a una puntuación única. La evidencia se presenta multidimensionalmente.
+
+## ADR-057 — Filtros G3 derivados del contrato existente
+**Aceptada.**
+Certeza, precisión cronológica y cobertura espacial se filtran usando campos existentes. No se modifica schema en G3-A.
+
+## ADR-058 — Comparación descriptiva de fuentes
+**Aceptada.**
+La interfaz permite comparar tipo, procedencia, título y notas de fuentes, pero no las ordena mediante un ranking automático.
+
+## ADR-059 — Unmapped como contenido accesible
+**Aceptada.**
+Los registros sin punto cartográfico se muestran y abren desde el propio bloque del mapa; la ausencia de coordenadas no los relega a un warning pasivo.
+
+## ADR-060 — Fingerprint del contrato G2
+**Aceptada.**
+Schemas y taxonomía de G2 CLOSED se protegen con SHA-256. Un cambio posterior debe ser explícito y justificado.
+

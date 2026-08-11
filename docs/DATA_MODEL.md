@@ -545,3 +545,48 @@ En `pointerup`:
 - se ejecuta `setYear()`;
 - se aplica el render completo.
 
+---
+
+## 20. Proyecciones G3 de evidencia
+
+G3-A no añade entidades ni campos.
+
+Deriva vistas de:
+
+```text
+occurrence.status
+occurrence.certainty
+occurrence.period.precision
+occurrence.sourceRefs
+place.point
+place.point.precision
+```
+
+### Dimensiones independientes
+
+```text
+status    → proceso editorial
+certainty → solidez/disputa histórica
+precision → resolución cronológica
+point     → cobertura/precisión espacial
+sources   → base documental
+```
+
+No deben combinarse en un score único.
+
+### Unmapped
+
+```text
+placeRef existe
+place.point puede ser null
+```
+
+Esto expresa:
+
+“sabemos a qué lugar/región se refiere el registro, pero no tenemos una coordenada canónica apropiada”.
+
+No expresa:
+
+“no sabemos dónde ocurrió”.
+
+

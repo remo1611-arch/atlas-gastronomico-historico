@@ -1,22 +1,22 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.15';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.16';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.15',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.15',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.15',
-  places:'./data/places.json?v=0.1.0-alpha.15',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.15',
-  events:'./data/events.json?v=0.1.0-alpha.15',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.15',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.15',
-  developments:'./data/developments.json?v=0.1.0-alpha.15',
-  sources:'./data/sources.json?v=0.1.0-alpha.15',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.15'
+  config:'./data/config.json?v=0.1.0-alpha.16',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.16',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.16',
+  places:'./data/places.json?v=0.1.0-alpha.16',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.16',
+  events:'./data/events.json?v=0.1.0-alpha.16',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.16',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.16',
+  developments:'./data/developments.json?v=0.1.0-alpha.16',
+  sources:'./data/sources.json?v=0.1.0-alpha.16',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.16'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
-  year:1500,search:'',evidence:'all',occurrenceType:'all',labelMode:'auto',
+  year:1500,search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
   selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
@@ -88,6 +88,67 @@ const CERTAINTY_LABELS={
   unknown:'Desconocida'
 };
 
+
+const PRECISION_LABELS={
+  exact:'Exacta',
+  year:'Año',
+  decade:'Década',
+  century:'Siglo',
+  millennium:'Milenio',
+  range:'Intervalo',
+  phase:'Fase',
+  before:'Anterior a',
+  after:'Posterior a',
+  circa:'Aproximada',
+  unknown:'Desconocida'
+};
+
+const PRECISION_HELP={
+  exact:'La fuente permite situar la afirmación en una fecha explícita y concreta.',
+  year:'La resolución disponible es de un año, sin afirmar mayor precisión interna.',
+  decade:'La evidencia solo permite resolver la cronología a escala de década.',
+  century:'La cronología se expresa a escala de siglo; no debe leerse como un año concreto.',
+  millennium:'La cronología se expresa a escala de milenio; el intervalo amplio es parte de la evidencia.',
+  range:'La afirmación corresponde a un intervalo documentado; no existe una fecha única válida.',
+  phase:'La datación depende de una fase arqueológica o histórica, no de un año aislado.',
+  before:'La evidencia establece un límite anterior, no una fecha exacta.',
+  after:'La evidencia establece un límite posterior, no una fecha exacta.',
+  circa:'La fecha es aproximada. El valor mostrado orienta, pero no debe interpretarse como exacto.',
+  unknown:'La resolución cronológica no está determinada con seguridad.'
+};
+
+const CERTAINTY_HELP={
+  high:'La afirmación central está sólidamente respaldada por la evidencia citada en este registro. No significa certeza absoluta ni convierte una primera evidencia en un origen.',
+  medium:'La afirmación es plausible y está documentada, pero conserva una limitación relevante de evidencia, interpretación o generalización.',
+  low:'La afirmación tiene apoyo limitado y debe leerse con cautela.',
+  disputed:'Existen interpretaciones académicas contrapuestas. El Atlas conserva el desacuerdo y muestra las posiciones y sus fuentes.',
+  unknown:'No existe todavía una evaluación de certeza suficientemente informativa.'
+};
+
+const STATUS_HELP={
+  reviewed:'El registro ha superado revisión editorial de fuentes, cronología, precisión, evidencia y redacción.',
+  verified:'El registro ha superado una segunda revisión explícita con contraste independiente cuando ha sido posible.'
+};
+
+const SOURCE_TYPE_LABELS={
+  peer_reviewed_article:'Artículo revisado por pares',
+  peer_reviewed_letter:'Carta científica revisada por pares',
+  official_institution:'Institución oficial',
+  scholarly_monograph:'Monografía académica',
+  monograph:'Monografía',
+  primary_text:'Texto primario',
+  primary_source:'Fuente primaria',
+  book:'Libro',
+  institutional_outreach:'Divulgación institucional',
+  dataset:'Dataset',
+  museum:'Museo / colección',
+  museum_collection:'Colección museística',
+  other:'Otra fuente',
+  unknown:'Tipo no clasificado'
+};
+
+const PRECISION_ORDER=['exact','year','decade','circa','range','century','millennium','phase','before','after','unknown'];
+
 const EVENT_LABELS={
   diffusion:'Difusión / intercambio',
   exchange:'Intercambio',
@@ -144,6 +205,20 @@ function fillControls(){
   const of=$('#occurrenceTypeFilter');
   s.taxonomy.occurrenceTypes.forEach(x=>of.add(new Option(OCC_LABELS[x]||x,x)));
 
+  const cf=$('#certaintyFilter');
+  s.taxonomy.certaintyLevels.forEach(x=>cf.add(new Option(CERTAINTY_LABELS[x]||x,x)));
+
+  const pf=$('#precisionFilter');
+  const precisions=[...new Set(
+    [...s.occurrences,...s.events,...s.developments]
+      .filter(item=>isPublicStatus(item.status))
+      .map(item=>item.period?.precision)
+      .filter(Boolean)
+  )].sort((a,b)=>{
+    const ai=PRECISION_ORDER.indexOf(a),bi=PRECISION_ORDER.indexOf(b);
+    return (ai<0?999:ai)-(bi<0?999:bi)||a.localeCompare(b,'es');
+  });
+  precisions.forEach(x=>pf.add(new Option(PRECISION_LABELS[x]||x,x)));
 
   const ew=$('#eventWindowSelect');
   [25,50,100,250,500].forEach(x=>ew.add(new Option(`±${x} años`,x)));
@@ -219,6 +294,122 @@ function pointPrecisionLabel(pl){
   return pl?.point ? 'Punto cartográfico' : 'Sin punto cartográfico';
 }
 
+function pointPrecisionHelp(pl){
+  const precision=pl?.point?.precision;
+  if(precision==='exact_from_publication') return 'Las coordenadas proceden de una publicación citada. Esto describe la posición del lugar, no la precisión de la afirmación histórica.';
+  if(precision==='reference') return 'Se usa un punto de referencia para orientar el mapa; no debe interpretarse como localización exacta del hallazgo o de toda la región.';
+  if(precision==='approximate') return 'La posición es aproximada y se representa solo como orientación espacial.';
+  if(pl?.point) return 'Existe un punto cartográfico, pero su precisión espacial debe leerse según la procedencia documentada.';
+  return 'El registro conserva su lugar histórico, pero no se ha asignado un punto porque no hay coordenadas suficientemente fiables. No se usa un centroide arbitrario para rellenar el mapa.';
+}
+
+function sourceTypeLabel(type){
+  return SOURCE_TYPE_LABELS[type]||String(type||'Tipo no clasificado').replaceAll('_',' ');
+}
+
+function sourceProfile(refs=[]){
+  const resolved=[...new Set(refs)].map(sourceById).filter(Boolean);
+  const types=new Map();
+  const publishers=new Set();
+  for(const src of resolved){
+    const label=sourceTypeLabel(src.sourceType);
+    types.set(label,(types.get(label)||0)+1);
+    if(src.publisher) publishers.add(src.publisher);
+  }
+  return {resolved,types,publishers};
+}
+
+function sourceProfileText(refs=[]){
+  const {resolved,types}=sourceProfile(refs);
+  if(!resolved.length) return 'Sin fuentes resueltas';
+  const detail=[...types.entries()]
+    .map(([label,count])=>`${count} ${label.toLowerCase()}`)
+    .join(' · ');
+  return `${resolved.length} ${resolved.length===1?'fuente':'fuentes'}${detail?` · ${detail}`:''}`;
+}
+
+function sourceComparisonHTML(refs=[]){
+  const {resolved}=sourceProfile(refs);
+  if(resolved.length<2) return '';
+
+  return `<details class="source-comparison">
+    <summary>Comparar ${resolved.length} fuentes</summary>
+    <div class="source-comparison-grid">
+      ${resolved.map((src,index)=>`
+        <article class="source-compare-card">
+          <span>${String(index+1).padStart(2,'0')} · ${esc(sourceTypeLabel(src.sourceType))}</span>
+          <strong>${esc(src.publisher||'Fuente')}</strong>
+          <p>${esc(src.title)}</p>
+          ${src.notes?`<small>${esc(src.notes)}</small>`:''}
+          ${src.url?`<a href="${esc(src.url)}" target="_blank" rel="noopener noreferrer">Abrir fuente ↗</a>`:''}
+        </article>
+      `).join('')}
+    </div>
+  </details>`;
+}
+
+function precisionLabel(item){
+  return PRECISION_LABELS[item?.period?.precision]||item?.period?.precision||'Sin precisión';
+}
+
+function evidenceReadingHTML(o,pl){
+  const status=statusMeta(o.status);
+  const sourceText=sourceProfileText(o.sourceRefs||[]);
+  const precision=o.period?.precision||'unknown';
+  const certainty=o.certainty||'unknown';
+
+  return `<div class="evidence-reading-grid">
+    <article class="reading-card chronology">
+      <span>RESOLUCIÓN CRONOLÓGICA</span>
+      <strong>${esc(precisionLabel(o))}</strong>
+      <p>${esc(PRECISION_HELP[precision]||'La fecha debe interpretarse con la resolución declarada en el registro.')}</p>
+      ${o.period?.note?`<small>${esc(o.period.note)}</small>`:''}
+    </article>
+
+    <article class="reading-card certainty ${esc(certainty)}">
+      <span>CERTEZA HISTÓRICA</span>
+      <strong>${esc(CERTAINTY_LABELS[certainty]||certainty)}</strong>
+      <p>${esc(CERTAINTY_HELP[certainty]||CERTAINTY_HELP.unknown)}</p>
+    </article>
+
+    <article class="reading-card editorial ${esc(status.className)}">
+      <span>ESTADO EDITORIAL</span>
+      <strong>${esc(status.label)}</strong>
+      <p>${esc(STATUS_HELP[o.status]||'Estado editorial del registro.')}</p>
+    </article>
+
+    <article class="reading-card spatial">
+      <span>PRECISIÓN ESPACIAL</span>
+      <strong>${esc(pointPrecisionLabel(pl))}</strong>
+      <p>${esc(pointPrecisionHelp(pl))}</p>
+    </article>
+
+    <article class="reading-card sources">
+      <span>BASE DOCUMENTAL</span>
+      <strong>${esc(sourceText)}</strong>
+      <p>El número de fuentes no equivale por sí solo a mayor certeza: importa su independencia, pertinencia y tipo de evidencia.</p>
+    </article>
+  </div>
+  <div class="reading-separation-note">
+    <strong>No confundir:</strong>
+    <span><b>${esc(status.label)}</b> describe el proceso editorial del Atlas; <b>${esc(CERTAINTY_LABELS[certainty]||certainty)}</b> describe la solidez o grado de disputa de la afirmación histórica; <b>${esc(precisionLabel(o))}</b> describe la resolución temporal.</span>
+  </div>`;
+}
+
+function matchesSpatialFilter(o){
+  if(s.spatial==='all') return true;
+  const pl=place(o.placeRef);
+  const mapped=Boolean(pl?.point && Number.isFinite(Number(pl.point.lat)) && Number.isFinite(Number(pl.point.lon)));
+  return s.spatial==='mapped' ? mapped : !mapped;
+}
+
+function matchesEvidenceQualityFilters(item){
+  if(s.certainty!=='all' && item.certainty!==s.certainty) return false;
+  if(s.precision!=='all' && item.period?.precision!==s.precision) return false;
+  return true;
+}
+
+
 function verificationHTML(item){
   if(item?.status!=='verified'||!item.verification) return '';
   const v=item.verification;
@@ -238,6 +429,8 @@ function occVisible(){
     if(!active(o.period,s.year)) return false;
     if(s.evidence!=='all' && o.evidenceType!==s.evidence) return false;
     if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) return false;
+    if(!matchesEvidenceQualityFilters(o)) return false;
+    if(!matchesSpatialFilter(o)) return false;
 
     const subject=subj(o.subjectRef);
     const pl=place(o.placeRef);
@@ -248,7 +441,8 @@ function occVisible(){
     if(q){
       const haystack=norm([
         subject.name,subject.summary,(subject.aliases||[]).join(' '),
-        pl.name,o.summary,TYPE_LABELS[subject.type],EVIDENCE_LABELS[o.evidenceType],OCC_LABELS[o.occurrenceType]
+        pl.name,o.summary,TYPE_LABELS[subject.type],EVIDENCE_LABELS[o.evidenceType],OCC_LABELS[o.occurrenceType],
+        CERTAINTY_LABELS[o.certainty],PRECISION_LABELS[o.period?.precision],pointPrecisionLabel(pl)
       ].join(' '));
       if(!haystack.includes(q)) return false;
     }
@@ -269,18 +463,46 @@ function renderMapCoverage(list){
   if(!box) return;
 
   const missing=occurrencesWithoutMapPoint(list);
+  const panel=$('#unmappedRecordsPanel');
+
   if(!missing.length){
     box.classList.add('hidden');
     box.textContent='';
+    if(panel){
+      panel.classList.add('hidden');
+      panel.innerHTML='';
+    }
     return;
   }
 
   const uniquePlaces=new Set(missing.map(o=>o.placeRef)).size;
   box.classList.remove('hidden');
   box.innerHTML=`
-    <strong>${missing.length} ${missing.length===1?'registro visible no puede':'registros visibles no pueden'} situarse en el mapa.</strong>
-    <span>${uniquePlaces} ${uniquePlaces===1?'lugar carece':'lugares carecen'} de coordenadas fiables. El registro sigue disponible en la lista.</span>
+    <strong>${missing.length} ${missing.length===1?'registro visible no puede':'registros visibles no pueden'} situarse con un punto fiable.</strong>
+    <span>${uniquePlaces} ${uniquePlaces===1?'lugar carece':'lugares carecen'} de coordenadas canónicas. No se inventan centroides para rellenar el mapa.</span>
   `;
+
+  if(panel){
+    panel.classList.remove('hidden');
+    panel.innerHTML=`<details>
+      <summary>Ver ${missing.length} ${missing.length===1?'registro sin punto':'registros sin punto'}</summary>
+      <div class="unmapped-record-list">
+        ${missing.map(o=>{
+          const subject=subj(o.subjectRef);
+          const pl=place(o.placeRef);
+          return `<button type="button" data-unmapped-occurrence="${esc(o.id)}">
+            <span>${esc(subject?.name||o.subjectRef)}</span>
+            <strong>${esc(pl?.name||o.placeRef)}</strong>
+            <small>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)} · ${esc(precisionLabel(o))}</small>
+          </button>`;
+        }).join('')}
+      </div>
+    </details>`;
+
+    $$('[data-unmapped-occurrence]').forEach(button=>{
+      button.addEventListener('click',()=>selectOccurrence(button.dataset.unmappedOccurrence,true));
+    });
+  }
 
   for(const o of missing){
     if(!warnedUnmapped.has(o.id)){
@@ -320,6 +542,8 @@ function temporalCorpusItems(){
       if(!subjectMatchesTemporalFilters(subject)) continue;
       if(s.evidence!=='all' && o.evidenceType!==s.evidence) continue;
       if(s.occurrenceType!=='all' && o.occurrenceType!==s.occurrenceType) continue;
+      if(!matchesEvidenceQualityFilters(o)) continue;
+      if(!matchesSpatialFilter(o)) continue;
 
       out.push({
         key:`occurrence:${o.id}`,
@@ -336,6 +560,7 @@ function temporalCorpusItems(){
 
   for(const e of s.events){
     if(e.status!=='reviewed'&&e.status!=='verified') continue;
+    if(!matchesEvidenceQualityFilters(e)) continue;
     const related=(e.subjectRefs||[]).map(subj).filter(Boolean);
     if(s.category!=='all' && !related.some(subject=>subject.type===s.category)) continue;
 
@@ -363,6 +588,7 @@ function temporalCorpusItems(){
 
   for(const d of s.developments){
     if(d.status!=='reviewed'&&d.status!=='verified') continue;
+    if(!matchesEvidenceQualityFilters(d)) continue;
     const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
     if(safety ? !s.layers.safety : !s.layers.developments) continue;
 
@@ -887,6 +1113,7 @@ function render(){
   renderTemporalNavigator();
   renderMetrics(list);
   renderCategorySummary(list);
+  renderEvidenceLens(list);
   renderList(list);
   renderMapCoverage(list);
   renderMarkers(list);
@@ -907,7 +1134,7 @@ function renderMetrics(list){
   $('#occurrenceCount').textContent=list.length;
   $('#subjectCount').textContent=new Set(list.map(x=>x.subjectRef)).size;
   $('#placeCount').textContent=new Set(list.map(x=>x.placeRef)).size;
-  $('#eventCount').textContent=s.events.filter(e=>isPublicStatus(e.status)&&distance(e.period,s.year)<=s.eventWindow).length;
+  $('#eventCount').textContent=s.events.filter(e=>isPublicStatus(e.status)&&matchesEvidenceQualityFilters(e)&&distance(e.period,s.year)<=s.eventWindow).length;
   $('#visibleBadge').textContent=list.length;
   $('#evidenceContext').textContent=list.length
     ? `${list.length} ${list.length===1?'registro visible':'registros visibles'} en ${formatYear(s.year)}.`
@@ -941,6 +1168,62 @@ function renderCategorySummary(list){
   syncTypeControls();
 }
 
+
+function renderEvidenceLens(list){
+  const box=$('#evidenceLensSummary');
+  if(!box) return;
+
+  if(!list.length){
+    box.innerHTML='<p class="lens-empty">No hay registros visibles para resumir con los filtros actuales.</p>';
+    return;
+  }
+
+  const certaintyCounts=new Map();
+  const precisionCounts=new Map();
+  let mapped=0;
+
+  for(const o of list){
+    certaintyCounts.set(o.certainty,(certaintyCounts.get(o.certainty)||0)+1);
+    const precision=o.period?.precision||'unknown';
+    precisionCounts.set(precision,(precisionCounts.get(precision)||0)+1);
+    if(!occurrencesWithoutMapPoint([o]).length) mapped++;
+  }
+
+  const certaintyHTML=[...certaintyCounts.entries()]
+    .sort((a,b)=>{
+      const order=['high','medium','low','disputed','unknown'];
+      return order.indexOf(a[0])-order.indexOf(b[0]);
+    })
+    .map(([key,count])=>`<span class="lens-stat certainty ${esc(key)}"><b>${count}</b>${esc(CERTAINTY_LABELS[key]||key)}</span>`)
+    .join('');
+
+  const precisionHTML=[...precisionCounts.entries()]
+    .sort((a,b)=>{
+      const ai=PRECISION_ORDER.indexOf(a[0]),bi=PRECISION_ORDER.indexOf(b[0]);
+      return (ai<0?999:ai)-(bi<0?999:bi);
+    })
+    .map(([key,count])=>`<span class="lens-stat precision"><b>${count}</b>${esc(PRECISION_LABELS[key]||key)}</span>`)
+    .join('');
+
+  box.innerHTML=`
+    <div class="lens-row">
+      <span class="lens-row-label">Certeza</span>
+      <div>${certaintyHTML}</div>
+    </div>
+    <div class="lens-row">
+      <span class="lens-row-label">Cronología</span>
+      <div>${precisionHTML}</div>
+    </div>
+    <div class="lens-row">
+      <span class="lens-row-label">Mapa</span>
+      <div>
+        <span class="lens-stat mapped"><b>${mapped}</b>con punto</span>
+        <span class="lens-stat unmapped"><b>${list.length-mapped}</b>sin punto</span>
+      </div>
+    </div>
+  `;
+}
+
 function renderList(list){
   const box=$('#occurrenceList');
   box.innerHTML='';
@@ -967,8 +1250,13 @@ function renderList(list){
           <strong>${esc(subject.name)}</strong>
           <em class="mini-status ${esc(sm.className)}">${esc(sm.label)}</em>
         </span>
-        <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}${o.certainty==='disputed'?` · <b class="certainty-inline disputed">Discutida</b>`:''}</span>
+        <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
         <small>${esc(pl.name)} · ${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
+        <span class="evidence-card-quality">
+          <b class="quality-chip certainty ${esc(o.certainty)}">${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</b>
+          <b class="quality-chip precision">${esc(precisionLabel(o))}</b>
+          ${!pl.point?'<b class="quality-chip unmapped">Sin punto</b>':''}
+        </span>
       `;
       button.addEventListener('click',()=>selectOccurrence(o.id,true));
       box.appendChild(button);
@@ -1084,7 +1372,7 @@ function renderDevelopmentLayer(){
   if(!s.layers.developments && !s.layers.safety) return;
 
   s.developments
-    .filter(d=>isPublicStatus(d.status)&&active(d.period,s.year))
+    .filter(d=>isPublicStatus(d.status)&&matchesEvidenceQualityFilters(d)&&active(d.period,s.year))
     .filter(d=>{
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'];
       return safety.includes(d.type) ? s.layers.safety : s.layers.developments;
@@ -1135,7 +1423,7 @@ function renderTransformationPreview(){
   if(!box) return;
 
   const candidates=s.developments
-    .filter(d=>isPublicStatus(d.status))
+    .filter(d=>isPublicStatus(d.status)&&matchesEvidenceQualityFilters(d))
     .filter(d=>{
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
       return safety ? s.layers.safety : s.layers.developments;
@@ -1165,7 +1453,7 @@ function renderTransformationPreview(){
       <span>${esc(developmentTypeLabel(d.type).toUpperCase())}</span>
       <strong>${esc(d.name)}</strong>
       <small>${esc(d.period.display||`${formatYear(d.period.start)}–${formatYear(d.period.end)}`)} · ${esc(relation)}</small>
-      <em class="mini-status ${esc(sm.className)}">${esc(sm.label)} · ${(d.sourceRefs||[]).length} ${(d.sourceRefs||[]).length===1?'fuente':'fuentes'}</em>
+      <em class="mini-status ${esc(sm.className)}">${esc(sm.label)} · ${esc(CERTAINTY_LABELS[d.certainty]||d.certainty||'—')} · ${esc(precisionLabel(d))} · ${(d.sourceRefs||[]).length} ${(d.sourceRefs||[]).length===1?'fuente':'fuentes'}</em>
     </button>`;
   }).join('');
 
@@ -1253,7 +1541,7 @@ function renderEvents(){
   box.innerHTML='';
 
   const ev=s.events
-    .filter(e=>isPublicStatus(e.status)&&distance(e.period,s.year)<=s.eventWindow)
+    .filter(e=>isPublicStatus(e.status)&&matchesEvidenceQualityFilters(e)&&distance(e.period,s.year)<=s.eventWindow)
     .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year));
 
   if(!ev.length){
@@ -1272,6 +1560,8 @@ function renderEvents(){
       <div class="event-meta">
         <span>${esc(EVENT_LABELS[e.eventType]||e.eventType||'Proceso histórico')}</span>
         <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+        <span>${esc(CERTAINTY_LABELS[e.certainty]||e.certainty||'—')}</span>
+        <span>${esc(precisionLabel(e))}</span>
         <span>${(e.sourceRefs||[]).length} ${(e.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
       </div>
     `;
@@ -1553,6 +1843,8 @@ function renderDetails(o){
     $('#detailCategory').textContent='Elemento gastronómico';
     $('#subjectDetail').innerHTML='<p>Selecciona un punto del mapa o un registro de la lista.</p>';
     $('#occurrenceDetail').innerHTML='<p>Aquí se separarán lugar, intervalo, tipo de evidencia, certeza y fuentes.</p>';
+    $('#evidenceReadingSection')?.classList.add('hidden');
+    $('#evidenceReadingDetail').innerHTML='';
     $('#historicalContextSection')?.classList.add('hidden');
     $('#developmentContextSection')?.classList.add('hidden');
     $('#subjectHistoryBtn').disabled=true;
@@ -1581,6 +1873,7 @@ function renderDetails(o){
     <div class="detail-sources">
       <b>Fuentes del elemento</b>
       ${sourceListHTML(subject.sourceRefs||[])}
+      ${sourceComparisonHTML(subject.sourceRefs||[])}
     </div>
   `;
 
@@ -1590,7 +1883,7 @@ function renderDetails(o){
     <p>${esc(o.summary)}</p>
     <div class="detail-meta">
       <div><b>Intervalo</b><span>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</span></div>
-      <div><b>Precisión</b><span>${esc(o.period.precision)}</span></div>
+      <div><b>Precisión</b><span>${esc(precisionLabel(o))}</span></div>
       <div><b>Qué documenta</b><span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span></div>
       <div><b>Evidencia</b><span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span></div>
       <div><b>Certeza</b><span class="certainty-value ${esc(o.certainty)}">${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</span></div>
@@ -1602,8 +1895,12 @@ function renderDetails(o){
     <div class="detail-sources">
       <b>Fuentes del registro</b>
       ${sourceListHTML(o.sourceRefs||[])}
+      ${sourceComparisonHTML(o.sourceRefs||[])}
     </div>
   `;
+
+  $('#evidenceReadingSection').classList.remove('hidden');
+  $('#evidenceReadingDetail').innerHTML=evidenceReadingHTML(o,pl);
 
   const relatedContexts=(o.contextRefs||[]).map(contextById).filter(c=>c&&isPublicStatus(c.status));
   const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(d=>d&&isPublicStatus(d.status));
@@ -1722,6 +2019,9 @@ function syncTypeControls(){
   if($('#subjectTypeFilter')){
     $('#subjectTypeFilter').value=s.category;
   }
+  if($('#certaintyFilter')) $('#certaintyFilter').value=s.certainty;
+  if($('#precisionFilter')) $('#precisionFilter').value=s.precision;
+  if($('#spatialFilter')) $('#spatialFilter').value=s.spatial;
 
   $$('[data-summary-category]').forEach(button=>{
     button.classList.toggle('active',button.dataset.summaryCategory===s.category);
@@ -1738,6 +2038,9 @@ function resetFilters(){
   s.search='';
   s.evidence='all';
   s.occurrenceType='all';
+  s.certainty='all';
+  s.precision='all';
+  s.spatial='all';
   s.category='all';
   s.labelMode='auto';
 
@@ -1745,6 +2048,9 @@ function resetFilters(){
   $('#subjectTypeFilter').value='all';
   $('#evidenceFilter').value='all';
   $('#occurrenceTypeFilter').value='all';
+  $('#certaintyFilter').value='all';
+  $('#precisionFilter').value='all';
+  $('#spatialFilter').value='all';
   $('#labelMode').value='auto';
 
   syncTypeControls();
@@ -1797,6 +2103,9 @@ function bind(){
   });
   $('#evidenceFilter').addEventListener('change',e=>{s.evidence=e.target.value;render()});
   $('#occurrenceTypeFilter').addEventListener('change',e=>{s.occurrenceType=e.target.value;render()});
+  $('#certaintyFilter').addEventListener('change',e=>{s.certainty=e.target.value;render()});
+  $('#precisionFilter').addEventListener('change',e=>{s.precision=e.target.value;render()});
+  $('#spatialFilter').addEventListener('change',e=>{s.spatial=e.target.value;render()});
   $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occVisible())});
   $('#eventWindowSelect').addEventListener('change',e=>{s.eventWindow=Number(e.target.value)||100;renderMetrics(occVisible());renderEvents()});
 
@@ -1814,6 +2123,7 @@ function bind(){
   $('#layerSafety').addEventListener('change',e=>{s.layers.safety=e.target.checked;render()});
 
   $('#filterBtn').addEventListener('click',openDrawer);
+  $('#evidenceLensFilterBtn').addEventListener('click',openDrawer);
   $('#openFiltersHeroBtn').addEventListener('click',openDrawer);
   $$('[data-close-drawer]').forEach(x=>x.addEventListener('click',closeDrawer));
 

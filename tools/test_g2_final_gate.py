@@ -18,8 +18,8 @@ app=(ROOT/"js/app.js").read_text(encoding="utf-8")
 errors=[]
 public={"reviewed","verified"}
 
-if config.get("project",{}).get("gate")!="G2_CLOSED":
-    errors.append("config.project.gate no marca G2_CLOSED")
+if config.get("project",{}).get("gate") not in {"G2_CLOSED","G3_IN_PROGRESS"}:
+    errors.append("estado de proyecto incompatible con G2 ya cerrado")
 
 # Runtime corpus must be production-clean.
 for label,items in [

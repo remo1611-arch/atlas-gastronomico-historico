@@ -23,8 +23,12 @@ if "function occurrencesWithoutMapPoint" not in app:
     errors.append("falta detector de registros sin punto")
 if "function renderMapCoverage" not in app:
     errors.append("falta render de cobertura cartográfica")
-if "El registro sigue disponible en la lista" not in app:
-    errors.append("la UI no explica que un registro sin punto sigue accesible")
+if 'id="unmappedRecordsPanel"' not in html:
+    errors.append("falta panel accionable de registros sin punto")
+if "data-unmapped-occurrence" not in app:
+    errors.append("los registros sin punto no tienen acceso directo desde el mapa")
+if "No se inventan centroides" not in app:
+    errors.append("la UI no explica la política de no inventar coordenadas")
 if "console.warn(`[Atlas] Registro sin punto cartográfico:" not in app:
     errors.append("falta warning diagnóstico de registro sin punto")
 

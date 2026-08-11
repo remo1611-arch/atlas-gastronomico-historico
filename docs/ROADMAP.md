@@ -246,6 +246,28 @@ Contrato G2 congelado.
 ---
 
 ## G3 — Evidencia y precisión
+
+
+### G3-A — Evidencia y precisión
+**Estado: IMPLEMENTADO · alpha.16**
+
+- filtros de certeza;
+- filtros de precisión cronológica;
+- filtro mapped/unmapped;
+- lente de evidencia;
+- ficha semántica status/certainty/precision/spatial;
+- comparación descriptiva de fuentes;
+- registros sin punto accionables;
+- fingerprint G2;
+- cero cambios en schemas/taxonomía.
+
+### Pendiente G3
+- rationale específico por registro, solo si un caso real justifica cambio de contrato;
+- tratamiento visual avanzado de intervalos y precisión en más vistas;
+- comparación de posiciones disputed más profunda;
+- geometrías regionales verificadas;
+- auditoría de accesibilidad/UX con corpus mayor.
+
 **No iniciado**
 
 - panel de fuentes por ocurrencia;

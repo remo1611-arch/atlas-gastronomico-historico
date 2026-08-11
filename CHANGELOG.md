@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.1.0-alpha.16 — 2026-08-11
+
+### G3-A · Evidencia y precisión
+- filtro certainty;
+- filtro period.precision;
+- filtro mapped/unmapped;
+- Evidence Lens;
+- ficha de lectura de evidencia;
+- comparación descriptiva de fuentes;
+- registros sin punto accionables.
+
+### Semántica
+- status editorial ≠ certainty;
+- certainty ≠ precision;
+- precision temporal ≠ precisión cartográfica.
+
+### Contrato
+- schemas sin cambios;
+- taxonomy sin cambios;
+- fingerprint SHA-256 de G2 CLOSED.
+
+### Política
+- no evidence score;
+- no ranking automático de fuentes;
+- no centroides inventados.
+
+### Datos
+- corpus histórico sin cambios respecto a alpha.15.
+
 ## 0.1.0-alpha.15 — 2026-08-11
 
 ### Gate

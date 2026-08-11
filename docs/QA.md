@@ -213,3 +213,21 @@ python tools/test_g2_final_gate.py
 - [ ] Magnetic Timeline PASS;
 - [ ] GITHUB PAGES PASS;
 - [ ] config.project.gate = G2_CLOSED.
+
+python tools/test_g3_evidence_precision.py
+python tools/test_g3_source_comparison.py
+python tools/test_g3_unmapped_access.py
+python tools/test_g3_detail_semantics.py
+
+## G3-A
+- [ ] G2 fingerprint intacto;
+- [ ] certainty filter;
+- [ ] precision filter;
+- [ ] mapped/unmapped filter;
+- [ ] reset restaura los tres;
+- [ ] Evidence Lens coincide con registros visibles;
+- [ ] status/certainty/precision separados;
+- [ ] source comparison descriptiva;
+- [ ] no evidenceScore;
+- [ ] registros sin punto abribles desde mapa;
+- [ ] filtros repercuten en timeline/events/developments.

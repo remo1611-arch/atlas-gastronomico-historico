@@ -90,3 +90,10 @@ Estado de continuación:
 - No reabrir arquitectura G2 salvo defecto verificable.
 - Iniciar G3: evidencia y precisión.
 - Leer docs/G2_FINAL_GATE.md y docs/SEED_ARCHIVE.md.
+
+Estado de continuación:
+- G2 CLOSED.
+- G3-A implementado.
+- No modificar schemas/taxonomy sin romper explícitamente el fingerprint y justificarlo mediante ADR.
+- Próximo trabajo: auditoría visual/táctil de filtros/lente/ficha y decidir G3-B.
+- No crear un evidenceScore.

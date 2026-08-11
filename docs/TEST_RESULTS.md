@@ -1,101 +1,92 @@
-# Resultados de validación — 0.1.0-alpha.15
+# Resultados de validación — 0.1.0-alpha.16
 
 Fecha: 2026-08-11
-
-# Resultado
-
-**G2 FINAL GATE: PASS**
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- G3: SIGUIENTE.
+- G3: EN CURSO · G3-A implementado.
 
-## Corpus runtime
-- 11 subjects.
-- 24 places.
-- 24 occurrences.
-- 1 event.
-- 1 relationship.
-- 7 contexts.
-- 6 developments.
+## Corpus
+Sin cambios históricos respecto a alpha.15:
+- 11 subjects;
+- 24 places;
+- 24 occurrences;
+- 1 event;
+- 1 relationship;
+- 7 contexts;
+- 6 developments;
 - 66 sources.
 
-Todo el runtime histórico está en `reviewed` o `verified`.
-
-## Archivo demo
-`data/archive/demo_records_pre_g2.json`
-
-- 34 registros archivados.
-- 5 seeds históricos no canonizados preservados.
-- seed/deprecated fuera del runtime.
-- seedToggle/showSeed ausentes.
-
-## Schema
-- 140 objetos runtime.
+## Contrato G2
+Fingerprint SHA-256:
+- taxonomy;
 - 8 schemas.
-- PASS.
 
-## Verified
-- 14 registros con metadata `verification`.
-- PASS.
+**9/9 sin cambios.**
 
-## Disputed
-- 1 occurrence estructurada.
-- 2 posiciones con fuentes separadas.
-- PASS.
+## G3-A
+PASS:
+- certainty filter;
+- precision filter;
+- mapped/unmapped filter;
+- Evidence Lens;
+- detail semantics;
+- source comparison;
+- unmapped actionable access;
+- no opaque evidence score.
 
-## Historias longitudinales
-1. vino;
-2. maíz;
-3. aceite de oliva.
+## Ficha
+Se separan:
+- estado editorial;
+- certeza histórica;
+- precisión cronológica;
+- precisión espacial;
+- base documental.
 
-Motor genérico: PASS.
-
-## Técnica
-Nixtamalización canónica y relación verificada con maíz: PASS.
-
-## Cobertura temática
-- grasa/aceite: PASS;
-- especia: PASS;
-- animal: PASS;
-- bebida: PASS;
-- texto culinario: PASS;
-- conservación: PASS;
-- ciencia/tecnología: PASS;
-- seguridad/regulación: PASS.
-
-## Temporal UX
-- Temporal Navigator: PASS.
-- Unified Timeline: PASS.
-- Magnetic Timeline: PASS.
-- Magnetic algorithm: 8 assertions PASS.
-- slider antiguo: ausente.
-- ± años: ausentes.
-- playback cronológico: ausente.
-
-## UI / responsive
-- UI contract: 99 IDs / 87 refs JS.
-- Mobile contract: PASS.
-- Light contrast: PASS.
-- Filter state: PASS.
-- Search debounce: PASS.
-- Map coverage: PASS.
+## Fuentes
+- 9 tipos de fuente presentes en el corpus;
+- 9/9 con etiqueta legible;
+- comparación descriptiva;
+- sin ranking automático.
 
 ## Cartografía
-18 occurrences públicas carecen deliberadamente de punto canónico.
+- 18 occurrences públicas sin punto canónico;
+- todas siguen accesibles;
+- panel accionable en mapa;
+- no centroides inventados.
 
-Esto no es un fallo: permanecen visibles en historia/listas y no reciben coordenadas inventadas.
+## Suite regresiva
+PASS:
+- validate_project;
+- schema validation: 140 objetos / 8 schemas;
+- G2 final gate;
+- public state;
+- verified gate;
+- disputed;
+- técnica;
+- historias longitudinales;
+- thematic coverage;
+- UI contract: 108 IDs / 95 refs JS;
+- filter state;
+- mobile;
+- light contrast;
+- map coverage;
+- search debounce;
+- Temporal Navigator;
+- Unified Timeline;
+- Magnetic Timeline;
+- GitHub Pages 16/16;
+- core 11 assertions;
+- magnetic algorithm 8 assertions.
 
-## GitHub Pages
-- 16/16 recursos críticos PASS.
+## Pendiente real
+Validación visual/táctil en dispositivo real de:
+- drawer con nuevos filtros;
+- Evidence Lens;
+- ficha G3;
+- source comparison;
+- panel de registros sin punto.
 
-## Política posterior
-El contrato G2 queda congelado.
-
-Cambios estructurales en G3 requieren:
-- caso real;
-- ADR;
-- migración;
-- tests de regresión.
+No se declara prueba visual automatizada del navegador local.

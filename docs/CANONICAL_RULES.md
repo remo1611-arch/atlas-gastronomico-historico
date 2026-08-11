@@ -111,3 +111,12 @@
 87. El contrato de G2 queda congelado: cambios estructurales en G3 requieren caso real, ADR, migración y regresión.
 88. Archivar un registro demo no equivale a borrarlo: su procedencia y `supersededBy` permanecen auditables.
 
+89. Estado editorial, certeza histórica y precisión cronológica son dimensiones distintas y deben mostrarse separadas.
+90. G3 no utilizará un score numérico opaco para resumir la calidad de una evidencia.
+91. El número de fuentes no se interpreta automáticamente como mayor certeza; independencia, pertinencia y tipo de evidencia importan.
+92. Los filtros de certeza y precisión operan sobre valores canónicos existentes; no transforman el dato para hacerlo encajar.
+93. La ausencia de punto cartográfico es una propiedad de cobertura espacial, no una razón para ocultar el registro histórico.
+94. La comparación de fuentes es descriptiva, no un ranking.
+95. El contrato G2 se protege mediante fingerprint de schemas y taxonomía durante G3.
+96. Una explicación genérica del significado de `high/medium/disputed` no debe presentarse como rationale específico del registro.
+

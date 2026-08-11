@@ -26,6 +26,9 @@ for needle in [
     "s.category='all'",
     "s.evidence='all'",
     "s.occurrenceType='all'",
+    "s.certainty='all'",
+    "s.precision='all'",
+    "s.spatial='all'",
     "s.labelMode='auto'",
 ]:
     if needle not in app:
@@ -37,4 +40,18 @@ if errors:
     sys.exit(1)
 
 print("FILTER STATE: PASS")
+for needle in [
+    "$('#certaintyFilter').value='all'",
+    "$('#precisionFilter').value='all'",
+    "$('#spatialFilter').value='all'",
+]:
+    if needle not in app:
+        errors.append("reset UI G3 incompleto: "+needle)
+
+if errors:
+    print("FILTER STATE: FAIL")
+    for e in errors:print("ERROR:",e)
+    sys.exit(1)
+
 print("Tipo/categoría usa un único estado canónico: s.category")
+print("Filtros G3 certainty/precision/spatial: reset canónico PASS")

@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.15">
+  <meta name="atlas-build" content="0.1.0-alpha.16">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.15">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.16">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.15</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.16</span></small>
     </span>
   </a>
 
@@ -170,6 +170,7 @@
         <button type="button" data-category="processed_product" class="legend-pill cat-product"><i></i>Productos</button>
       </div>
       <div id="mapCoverageStatus" class="map-coverage hidden" role="status" aria-live="polite"></div>
+      <div id="unmappedRecordsPanel" class="unmapped-records hidden"></div>
 
       <div class="map-frame">
         <svg id="worldMap" viewBox="0 0 1000 500" role="img" aria-label="Mapa mundial con evidencias gastronómicas históricas">
@@ -211,6 +212,18 @@
       </div>
 
       <div id="categorySummary" class="category-summary"></div>
+
+
+      <section class="evidence-lens" aria-labelledby="evidenceLensTitle">
+        <div class="evidence-lens-head">
+          <div>
+            <span class="detail-label">Lectura de la evidencia</span>
+            <h3 id="evidenceLensTitle">Certeza, cronología y cobertura</h3>
+          </div>
+          <button id="evidenceLensFilterBtn" type="button" class="lens-filter-btn">Ajustar</button>
+        </div>
+        <div id="evidenceLensSummary" class="evidence-lens-summary"></div>
+      </section>
 
       <div class="evidence-heading">
         <h3>Registros visibles</h3>
@@ -339,6 +352,26 @@
         <select id="occurrenceTypeFilter"><option value="all">Todas</option></select>
       </label>
 
+
+      <label class="field">Certeza histórica
+        <select id="certaintyFilter"><option value="all">Todas</option></select>
+        <small class="field-help">Independiente del estado editorial reviewed/verified.</small>
+      </label>
+
+      <label class="field">Precisión cronológica
+        <select id="precisionFilter"><option value="all">Todas</option></select>
+        <small class="field-help">Filtra por la resolución declarada de la fecha, sin inventar precisión.</small>
+      </label>
+
+      <label class="field">Cobertura cartográfica
+        <select id="spatialFilter">
+          <option value="all">Todos los registros</option>
+          <option value="mapped">Con punto cartográfico</option>
+          <option value="unmapped">Sin punto cartográfico</option>
+        </select>
+        <small class="field-help">“Sin punto” no significa “sin lugar”: significa que no hay coordenadas fiables.</small>
+      </label>
+
       <label class="field">Etiquetas del mapa
         <select id="labelMode">
           <option value="auto">Automáticas</option>
@@ -374,6 +407,12 @@
     <div class="detail-section evidence-section">
       <span class="detail-label">Registro histórico seleccionado</span>
       <div id="occurrenceDetail"></div>
+    </div>
+
+
+    <div id="evidenceReadingSection" class="detail-section evidence-reading-section hidden">
+      <span class="detail-label">Cómo leer esta evidencia</span>
+      <div id="evidenceReadingDetail"></div>
     </div>
 
     <div id="historicalContextSection" class="detail-section hidden">
@@ -421,12 +460,12 @@
     <span class="section-label">Sobre el proyecto</span>
     <h2>Atlas Gastronómico Histórico</h2>
     <p>Un museo digital para estudiar cómo cambian los alimentos, técnicas, productos, intercambios y prácticas culinarias a través del tiempo y el espacio.</p>
-    <p>El proyecto prioriza evidencia trazable y evita simplificaciones como asignar un “origen” único a fenómenos complejos cuando las fuentes no lo permiten.</p>
+    <p>El proyecto prioriza evidencia trazable y separa estado editorial, certeza histórica, precisión cronológica y cobertura cartográfica para evitar presentar inferencias como hechos más precisos de lo que permiten las fuentes.</p>
   </div>
 </dialog>
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.15"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.16"></script>
 </body>
 </html>
