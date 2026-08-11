@@ -16,7 +16,7 @@
 ---
 
 ## G1 — Motor temporal gastronómico
-**Estado: MUSEUM POLISH + CAPAS CONTEXTUALES IMPLEMENTADAS / pendiente validación real**
+**Estado: CERRADO**
 
 Debe cerrar:
 
@@ -51,8 +51,36 @@ Debe cerrar:
 
 ---
 
+## G1.3 — Interaction & data hardening
+**Estado: IMPLEMENTADO en alpha.5**
+
+- filtro de tipo unificado;
+- debounce de búsqueda;
+- diagnóstico de registros sin coordenadas;
+- transición visual de marcadores;
+- reset completo de filtros;
+- tests de regresión.
+
+---
+
 ## G2 — Corpus piloto verificado
-**No iniciado**
+**Estado: EN CURSO · tanda A reviewed**
+
+Tanda A:
+- vino neolítico de Georgia; ✅ reviewed
+- maíz temprano de Xihuatoxtla; ✅ reviewed
+- garum en Pompeya; ✅ reviewed
+- Shulaveri-Shomutepe; ✅ reviewed
+- marco imperial romano occidental; ✅ reviewed
+- pasteurización del vino; ✅ reviewed
+- refrigeración mecánica de Perkins; ✅ reviewed
+- Monitor Top 1927; ✅ reviewed
+- HACCP, década de 1960; ✅ reviewed
+
+Pendiente:
+- segunda revisión para promover casos a `verified`;
+- ampliar animales, grasas, conservación, textos/recetas y regulación;
+- probar conflictos de fuentes.
 
 Casos deliberadamente heterogéneos, a seleccionar y verificar:
 
@@ -145,3 +173,16 @@ Solo tras G0–G6:
 - QA por lotes;
 - rendimiento.
 
+
+---
+
+## Extensión futura — Rutas museográficas y comparación
+**No iniciada**
+
+Se evaluará después de disponer de corpus G2/G3 suficiente:
+- rutas editoriales guiadas;
+- comparación de dos fechas;
+- historias de un elemento;
+- recorridos ciencia/tecnología/seguridad.
+
+No bloquea G1 ni G2.

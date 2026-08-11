@@ -13,7 +13,7 @@
     "certainty": "unknown",
     "summary": "Relación semilla, no cronología histórica validada.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated"
   },
   {
     "id": "rel_garum_fermentation_demo",
@@ -29,12 +29,12 @@
     "certainty": "unknown",
     "summary": "Relación semilla.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated"
   },
   {
     "id": "rel_nixtamal_maize_demo",
     "from": "nixtamalization_demo",
-    "to": "maize_demo",
+    "to": "maize",
     "type": "produced_with",
     "period": {
       "start": -2000,

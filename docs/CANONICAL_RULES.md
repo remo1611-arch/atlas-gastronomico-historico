@@ -45,3 +45,10 @@
 41. En móvil se prohíbe el overflow horizontal de página; solo se admite en componentes declarados como carrusel/leyenda.
 42. El modo claro debe conservar identidad museográfica propia y contraste suficiente; no será una inversión automática del modo oscuro.
 
+43. `reviewed` exige fuentes válidas también en `subject` y `place`, no solo en occurrences.
+44. `verified` requiere segunda revisión explícita; no equivale a “tiene una fuente”.
+45. Una fuente cartográfica auxiliar no sustenta por sí sola una afirmación histórica.
+46. Los registros `deprecated` permanecen en los datos pero no se muestran al público.
+47. La migración de un ID seed a un ID canónico usa `supersededBy`; no se borra silenciosamente.
+48. Un intervalo convertido desde `cal BP` conserva también la notación original.
+

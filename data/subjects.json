@@ -44,7 +44,8 @@
       "bebida",
       "fermentación"
     ],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "wine"
   },
   {
     "id": "garum_demo",
@@ -56,7 +57,8 @@
       "pescado",
       "fermentación"
     ],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "garum"
   },
   {
     "id": "sugar_demo",
@@ -80,7 +82,8 @@
       "cereal",
       "intercambio"
     ],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "maize"
   },
   {
     "id": "potato_demo",
@@ -119,5 +122,57 @@
       "técnica"
     ],
     "status": "seed"
+  },
+  {
+    "id": "wine",
+    "name": "Vino",
+    "type": "beverage",
+    "summary": "Bebida fermentada obtenida de uvas; el Atlas documenta sus evidencias históricas por lugar y período, sin convertir la evidencia más antigua conocida en una afirmación de origen absoluto.",
+    "aliases": [],
+    "tags": [
+      "bebida",
+      "fermentación",
+      "uva"
+    ],
+    "sourceRefs": [
+      "src_mcgovern_2017_neolithic_wine"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "maize",
+    "name": "Maíz",
+    "type": "food_species",
+    "summary": "Zea mays, cultivo americano derivado de teosinte; el registro piloto se centra en evidencias arqueobotánicas tempranas del valle central del Balsas.",
+    "aliases": [
+      "maíz",
+      "corn"
+    ],
+    "tags": [
+      "cereal",
+      "domesticación",
+      "Mesoamérica"
+    ],
+    "sourceRefs": [
+      "src_ranere_2009_balsas_context",
+      "src_piperno_2009_balsas_maize"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "garum",
+    "name": "Garum",
+    "type": "processed_product",
+    "summary": "Conjunto de salsas de pescado saladas/fermentadas del mundo antiguo; en Pompeya se conservan restos materiales y evidencias de producción y consumo romano.",
+    "aliases": [],
+    "tags": [
+      "pescado",
+      "condimento",
+      "Roma"
+    ],
+    "sourceRefs": [
+      "src_pompeii_antiquarium_garum"
+    ],
+    "status": "reviewed"
   }
 ]

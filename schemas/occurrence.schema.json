@@ -77,6 +77,12 @@
       "items": {
         "type": "string"
       }
+    },
+    "supersededBy": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   }
 }

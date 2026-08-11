@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "shulaveri_shomutepe",
+    "name": "Cultura Shulaveri-Shomutepe",
+    "type": "archaeological_culture",
+    "period": {
+      "start": -5900,
+      "end": -5000,
+      "precision": "range",
+      "display": "ca. 5900–5000 a. C."
+    },
+    "placeRefs": [
+      "gadachrili_gora"
+    ],
+    "summary": "Cultura del Neolítico cerámico del Cáucaso meridional; PNAS sitúa en este marco los yacimientos de Gadachrili Gora y Shulaveris Gora estudiados para la evidencia temprana de vino.",
+    "sourceRefs": [
+      "src_mcgovern_2017_neolithic_wine",
+      "src_cnrs_gadachrili"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "roman_empire_west_reference",
+    "name": "Mundo imperial romano (referencia occidental)",
+    "type": "empire",
+    "period": {
+      "start": -27,
+      "end": 476,
+      "precision": "range",
+      "display": "27 a. C.–476 d. C. (referencia occidental)"
+    },
+    "placeRefs": [
+      "pompeii"
+    ],
+    "summary": "Marco político-cultural romano desde Augusto; para Occidente se usa 476 d.C. como cierre convencional. La continuidad oriental debe modelarse mediante contextos propios y no queda absorbida por este registro.",
+    "sourceRefs": [
+      "src_met_roman_empire",
+      "src_met_italy_1_500"
+    ],
+    "status": "reviewed"
+  }
+]

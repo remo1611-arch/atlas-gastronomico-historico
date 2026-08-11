@@ -4,75 +4,63 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.4
+0.1.0-alpha.6
 
-## Gate
+## Gates
 - G0: CERRADO.
-- G1.1 Museum polish: implementado.
-- G1.2 capas de contexto/transformación: contrato implementado.
-- G1: pendiente de prueba visual real en GitHub Pages/Xiaomi 15.
-- G2+: no iniciados.
+- G1: CERRADO.
+- G2: EN CURSO · tanda A `reviewed`.
+- G3+: no iniciados.
 
-## Arquitectura activa
-Núcleo:
-- subject;
-- occurrence;
-- place;
-- event;
-- relationship;
-- source.
+## Distribución
+GitHub Pages.
 
-Capas nuevas:
-- context: civilizaciones, culturas, pueblos, entidades políticas, instituciones;
-- development: ciencia, tecnología, equipamiento, conservación, frío, industria, higiene, regulación, calidad y logística.
+## G1
+Cerrado tras:
+- motor temporal sin año 0;
+- UX museográfica;
+- responsive real en Xiaomi 15;
+- tema oscuro/claro;
+- capas;
+- filtros unificados;
+- debounce;
+- cobertura cartográfica explícita;
+- GitHub Pages;
+- QA automatizado.
 
-## Regla estructural
-El Atlas sigue siendo gastronómico.
-Las civilizaciones aportan contexto y los developments explican transformaciones; ninguno sustituye a `occurrence` como unidad de evidencia gastronómica.
+## G2 · primera tanda revisada
 
-## Interfaz alpha.3
-- menos cajas tipo dashboard;
-- métricas convertidas en franja editorial;
-- mapa con mayor jerarquía;
-- panel “Transformaciones”;
-- drawer de capas;
-- ficha preparada para contextos y developments;
-- URLs CSS/JS versionadas para evitar caché cruzada.
+### Subjects canónicos reviewed
+- wine
+- maize
+- garum
 
-## Datos
-- 10 subjects seed;
-- 8 places seed;
-- 11 occurrences seed;
-- 2 events seed;
-- 3 relationships seed;
-- 0 contexts;
-- 0 developments.
+### Occurrences reviewed
+- vino neolítico en Gadachrili Gora;
+- maíz temprano en Xihuatoxtla;
+- garum en Pompeya.
 
-Los dos últimos están deliberadamente vacíos hasta G2.
+### Contexts reviewed
+- cultura Shulaveri-Shomutepe;
+- mundo imperial romano, referencia occidental.
 
-## Próximo gate
-Publicar alpha.3 y auditar en móvil/escritorio. Si la UX es estable, iniciar G2 con un corpus piloto que incluya al menos:
-- una cultura/civilización contextual;
-- un descubrimiento científico;
-- una tecnología de conservación;
-- un aparato/equipamiento;
-- un hito de higiene/seguridad;
-- una norma o sistema de control.
+### Developments reviewed
+- pasteurización aplicada al vino, 1863–1865;
+- patente de refrigeración mecánica de Perkins, 1834;
+- GE Monitor Top, 1927;
+- desarrollo inicial de HACCP, década de 1960.
 
+## Trazabilidad
+- subjects reviewed requieren fuentes;
+- places reviewed requieren fuentes;
+- occurrences reviewed requieren fuentes;
+- contexts/developments reviewed requieren fuentes;
+- puntos aproximados tienen procedencia cartográfica propia;
+- la interfaz muestra títulos y editor de las fuentes.
 
+## Migraciones
+`wine_demo`, `maize_demo`, `garum_demo` y sus occurrences equivalentes se conservan como `deprecated` y apuntan a sus IDs canónicos.
 
-## Alpha.4 — mobile polish + light theme
+## Próxima acción
+Auditar la tanda A histórica y promover solo los casos suficientemente contrastados a `verified`. Después ampliar G2 con una segunda tanda heterogénea.
 
-Correcciones:
-- defensa sistemática contra overflow horizontal;
-- grids/flex con `min-width:0`;
-- toolbar del mapa estable con tres acciones;
-- “En esta fecha” adaptable en móvil;
-- contexto y evidencias con ruptura segura de texto;
-- cabecera móvil compactada;
-- métricas/franja editorial más discreta;
-- tema claro rehecho como paleta cálida de museo;
-- mapa claro con tonos minerales/desaturados;
-- cache busting de release preservado.
-
-La estética oscura se conserva como referencia principal y solo recibe ajustes estructurales.

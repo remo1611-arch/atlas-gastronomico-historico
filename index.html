@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.4">
+  <meta name="atlas-build" content="0.1.0-alpha.6">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.4">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.6">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.4</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.6</span></small>
     </span>
   </a>
 
@@ -150,6 +150,7 @@
         <button type="button" data-category="culinary_technique" class="legend-pill cat-technique"><i></i>Técnicas</button>
         <button type="button" data-category="processed_product" class="legend-pill cat-product"><i></i>Productos</button>
       </div>
+      <div id="mapCoverageStatus" class="map-coverage hidden" role="status" aria-live="polite"></div>
 
       <div class="map-frame">
         <svg id="worldMap" viewBox="0 0 1000 500" role="img" aria-label="Mapa mundial con evidencias gastronómicas históricas">
@@ -378,6 +379,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.4"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.6"></script>
 </body>
 </html>

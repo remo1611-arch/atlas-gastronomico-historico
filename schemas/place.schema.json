@@ -30,14 +30,36 @@
         },
         "lon": {
           "type": "number"
+        },
+        "precision": {
+          "type": "string"
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": "string"
         }
-      }
+      },
+      "required": [
+        "lat",
+        "lon"
+      ]
     },
     "summary": {
       "type": "string"
     },
     "status": {
       "type": "string"
+    },
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   }
 }

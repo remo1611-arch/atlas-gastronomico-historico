@@ -48,7 +48,8 @@
     "certainty": "unknown",
     "summary": "Dato semilla para probar evidencia de bebidas fermentadas.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "occ_wine_gadachrili_6000_5800_bce"
   },
   {
     "id": "occ_garum_roman_demo",
@@ -65,7 +66,8 @@
     "certainty": "unknown",
     "summary": "Dato semilla para probar un producto elaborado de época antigua.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "occ_garum_pompeii_first_century"
   },
   {
     "id": "occ_sugar_south_asia_demo",
@@ -99,7 +101,8 @@
     "certainty": "unknown",
     "summary": "Dato semilla para probar domesticación y múltiples evidencias.",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "occ_maize_xihuatoxtla_early_holocene"
   },
   {
     "id": "occ_nixtamal_demo",
@@ -185,5 +188,76 @@
     "summary": "Dato semilla para técnica de larga duración.",
     "sourceRefs": [],
     "status": "seed"
+  },
+  {
+    "id": "occ_wine_gadachrili_6000_5800_bce",
+    "subjectRef": "wine",
+    "placeRef": "gadachrili_gora",
+    "period": {
+      "start": -6000,
+      "end": -5800,
+      "precision": "range",
+      "display": "ca. 6000–5800 a. C.",
+      "note": "Rango publicado para la evidencia biomolecular y arqueobotánica del estudio."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Análisis químicos de compuestos absorbidos en cerámica, apoyados por datos arqueobotánicos, aportan evidencia temprana de vino de uva/vinicultura en el Cáucaso meridional.",
+    "contextRefs": [
+      "shulaveri_shomutepe"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_mcgovern_2017_neolithic_wine"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_xihuatoxtla_early_holocene",
+    "subjectRef": "maize",
+    "placeRef": "xihuatoxtla_shelter",
+    "period": {
+      "start": -7040,
+      "end": -6660,
+      "precision": "range",
+      "display": "8990–8610 cal BP (≈7040–6660 a. C.)",
+      "note": "El rango histórico mostrado es una conversión aproximada de la datación calibrada BP publicada; se conserva el valor cal BP original."
+    },
+    "occurrenceType": "domestication_evidence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Almidones y fitolitos de maíz asociados a herramientas y sedimentos aparecen en niveles contemporáneos o inferiores al horizonte radiocarbónico 8990–8610 cal BP de Xihuatoxtla.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_ranere_2009_balsas_context",
+      "src_piperno_2009_balsas_maize"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_garum_pompeii_first_century",
+    "subjectRef": "garum",
+    "placeRef": "pompeii",
+    "period": {
+      "start": 1,
+      "end": 79,
+      "precision": "range",
+      "display": "siglo I d. C.; contexto pompeyano anterior a 79 d. C.",
+      "note": "La fecha final refleja el contexto arqueológico de Pompeya; no se interpreta como fecha de invención del garum."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "archaeological",
+    "certainty": "high",
+    "summary": "El Antiquarium de Pompeya conserva un fragmento de ánfora con escamas, espinas y residuo sólido de garum; el Parque Arqueológico señala que la salsa también se producía en Pompeya y era ampliamente utilizada en cocina romana.",
+    "contextRefs": [
+      "roman_empire_west_reference"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_pompeii_antiquarium_garum"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -1,5 +1,5 @@
 from pathlib import Path
-import json,sys,re
+import json,sys
 
 ROOT=Path(__file__).resolve().parents[1]
 errors=[]
@@ -44,11 +44,31 @@ def period(o,label):
     if a==0 or b==0:errors.append(f"{label}: año 0 no permitido")
     if a>b:errors.append(f"{label}: start > end")
 
-def source_refs(o,label):
-    for ref in o.get("sourceRefs",[]):
+def source_refs(o,label,required_for_review=True):
+    refs=o.get("sourceRefs",[])
+    for ref in refs:
         if ref not in SRC:errors.append(f"{label}: sourceRef roto {ref}")
-    if o.get("status") in {"reviewed","verified"} and not o.get("sourceRefs"):
+    if required_for_review and o.get("status") in {"reviewed","verified"} and not refs:
         errors.append(f"{label}: reviewed/verified sin fuentes")
+
+for s in subjects:
+    source_refs(s,f"subject:{s.get('id')}")
+    if s.get("status")=="deprecated" and not s.get("supersededBy"):
+        errors.append(f"subject:{s.get('id')}: deprecated sin supersededBy")
+    if s.get("supersededBy") and s.get("supersededBy") not in S:
+        errors.append(f"subject:{s.get('id')}: supersededBy roto")
+
+for p in places:
+    label=f"place:{p.get('id')}"
+    source_refs(p,label)
+    pt=p.get("point")
+    if pt:
+        if not(-90<=pt.get("lat",999)<=90 and -180<=pt.get("lon",999)<=180):
+            errors.append(f"{label}: coordenadas inválidas")
+        for ref in pt.get("sourceRefs",[]):
+            if ref not in SRC:errors.append(f"{label}: point sourceRef roto {ref}")
+        if p.get("status") in {"reviewed","verified"} and pt.get("precision") in {"approximate","reference"} and not pt.get("sourceRefs"):
+            errors.append(f"{label}: punto reviewed aproximado/referencia sin fuente cartográfica")
 
 for o in occ:
     label=f"occ:{o.get('id')}"
@@ -59,6 +79,10 @@ for o in occ:
         if ref not in C:errors.append(f"{label}: contextRef roto {ref}")
     for ref in o.get("developmentRefs",[]):
         if ref not in D:errors.append(f"{label}: developmentRef roto {ref}")
+    if o.get("status")=="deprecated" and not o.get("supersededBy"):
+        errors.append(f"{label}: deprecated sin supersededBy")
+    if o.get("supersededBy") and o.get("supersededBy") not in O:
+        errors.append(f"{label}: supersededBy roto")
 
 for e in events:
     label=f"event:{e.get('id')}"
@@ -94,10 +118,11 @@ for d in developments:
     for ref in d.get("impactSubjectRefs",[]):
         if ref not in S:errors.append(f"{label}: impactSubjectRef roto {ref}")
 
-for p in places:
-    pt=p.get("point")
-    if pt and not(-90<=pt.get("lat",999)<=90 and -180<=pt.get("lon",999)<=180):
-        errors.append(f"place:{p.get('id')}: coordenadas inválidas")
+for src in sources:
+    if not src.get("title") or not src.get("publisher"):
+        errors.append(f"source:{src.get('id')}: metadatos mínimos incompletos")
+    if src.get("url") and not str(src["url"]).startswith(("https://","http://")):
+        errors.append(f"source:{src.get('id')}: URL no HTTP(S)")
 
 required=[
     "index.html",".nojekyll","css/app.css","js/core.js","js/app.js",
@@ -106,7 +131,8 @@ required=[
     "data/contexts.json","data/developments.json","data/sources.json",
     "data/basemap/world_110m.geojson",
     "schemas/context.schema.json","schemas/development.schema.json",
-    "docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md","docs/ROADMAP.md"
+    "docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md",
+    "docs/ROADMAP.md","docs/G2_PILOT.md"
 ]
 for x in required:
     if not(ROOT/x).exists():errors.append("Falta: "+x)
@@ -131,11 +157,29 @@ if errors:
     for x in errors:print("ERROR:",x)
     sys.exit(1)
 
+reviewed_counts={
+    "subjects":sum(x.get("status") in {"reviewed","verified"} for x in subjects),
+    "places":sum(x.get("status") in {"reviewed","verified"} for x in places),
+    "occurrences":sum(x.get("status") in {"reviewed","verified"} for x in occ),
+    "contexts":sum(x.get("status") in {"reviewed","verified"} for x in contexts),
+    "developments":sum(x.get("status") in {"reviewed","verified"} for x in developments),
+}
+
+unmapped=0
+place_by_id={p.get("id"):p for p in places}
+for o in occ:
+    if o.get("status")=="deprecated":continue
+    pl=place_by_id.get(o.get("placeRef"))
+    if not (pl or {}).get("point"):
+        unmapped+=1
+
 print("VALIDACIÓN: PASS")
-print("Subjects:",len(subjects))
-print("Places:",len(places))
-print("Occurrences:",len(occ))
+print("Subjects:",len(subjects),"· reviewed/verified:",reviewed_counts["subjects"])
+print("Places:",len(places),"· reviewed/verified:",reviewed_counts["places"])
+print("Occurrences:",len(occ),"· reviewed/verified:",reviewed_counts["occurrences"])
 print("Events:",len(events))
 print("Relationships:",len(rels))
-print("Contexts:",len(contexts))
-print("Developments:",len(developments))
+print("Contexts:",len(contexts),"· reviewed/verified:",reviewed_counts["contexts"])
+print("Developments:",len(developments),"· reviewed/verified:",reviewed_counts["developments"])
+print("Sources:",len(sources))
+print("Unmapped active/nondeprecated occurrences:",unmapped)

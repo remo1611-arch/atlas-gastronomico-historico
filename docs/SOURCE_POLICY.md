@@ -64,3 +64,31 @@ Una receta escrita puede representar:
 
 No generalizar automáticamente.
 
+## Estados editoriales
+
+### reviewed
+Un registro puede pasar a `reviewed` cuando:
+- sus afirmaciones están acotadas;
+- dispone de `sourceRefs`;
+- la fuente es adecuada al tipo de afirmación;
+- la cronología y precisión han sido revisadas;
+- evidencia e interpretación están separadas;
+- la certeza está declarada.
+
+### verified
+`verified` es un gate superior. No se obtiene automáticamente por tener una URL.
+
+Requiere una segunda revisión explícita y, cuando el tema lo permita:
+- contraste con otra fuente o línea de evidencia;
+- ausencia de conflicto no declarado;
+- metadatos cartográficos y cronológicos suficientemente robustos.
+
+## Fuentes cartográficas auxiliares
+
+Una fuente secundaria puede utilizarse exclusivamente para un punto de referencia cartográfico.
+
+En ese caso:
+- se registra dentro de `point.sourceRefs`;
+- el punto debe declarar `precision`;
+- esa fuente no sustenta automáticamente la cronología, origen o interpretación histórica.
+

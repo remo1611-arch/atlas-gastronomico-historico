@@ -288,7 +288,8 @@ Tipos iniciales:
 - descubrimiento científico;
 - tecnología alimentaria;
 - tecnología de conservación;
-- aparato de cocina;
+- aparato de cocina/cocción;
+- aparato de almacenamiento o conservación alimentaria;
 - refrigeración;
 - infraestructura energética;
 - proceso industrial;
@@ -346,4 +347,31 @@ La interfaz admite cuatro capas lógicas:
 4. `safety`
 
 La capa `safety` es una vista temática sobre developments de higiene, seguridad, salud pública, regulación y calidad.
+
+---
+
+## 13. Extensión reservada — rutas museográficas
+
+Las rutas guiadas NO forman parte todavía del contrato de datos.
+
+Motivo:
+una relación histórica como `derived_from`, `variant_of` o `predecessor_of` describe una relación entre objetos, pero no define por sí sola un buen recorrido editorial.
+
+Una futura ruta podría incluir:
+- título;
+- capítulos;
+- orden;
+- introducciones narrativas;
+- subjects/occurrences/developments seleccionados;
+- transiciones;
+- objetivos pedagógicos opcionales.
+
+Ejemplos posibles:
+- Historia de la conservación;
+- Del fuego a la inducción;
+- Fermentaciones;
+- Del intercambio colombino a la cocina global;
+- Ciencia y seguridad alimentaria.
+
+Hasta que se diseñe el contrato editorial, no se crea `tours.json` ni se infieren rutas automáticamente de `relationships.json`.
 

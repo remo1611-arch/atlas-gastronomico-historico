@@ -23,3 +23,10 @@ Reglas críticas:
 
 Indica siempre gate abierto, cambios, pruebas PASS/FAIL y pendientes.
 
+
+Estado actual:
+- G1 CERRADO.
+- G2 EN CURSO.
+- No volver a rediseñar G1 salvo defecto reproducible.
+- Continuar desde `docs/G2_PILOT.md`.
+- `reviewed` no se promueve a `verified` sin segunda revisión explícita.

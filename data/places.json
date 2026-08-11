@@ -86,5 +86,83 @@
     },
     "summary": "Referencia visual para el prototipo del café.",
     "status": "seed"
+  },
+  {
+    "id": "gadachrili_gora",
+    "name": "Gadachrili Gora",
+    "type": "site",
+    "point": {
+      "lat": 41.39055,
+      "lon": 44.82084,
+      "precision": "approximate",
+      "sourceRefs": [
+        "src_gadachrili_coords_secondary"
+      ],
+      "note": "Punto aproximado para visualización; la cronología procede de fuentes académicas independientes."
+    },
+    "summary": "Yacimiento neolítico en Kvemo Kartli, Georgia, vinculado a la cultura Shulaveri-Shomutepe.",
+    "sourceRefs": [
+      "src_mcgovern_2017_neolithic_wine",
+      "src_cnrs_gadachrili"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "xihuatoxtla_shelter",
+    "name": "Abrigo de Xihuatoxtla",
+    "type": "site",
+    "point": {
+      "lat": 18.37,
+      "lon": -99.4,
+      "precision": "approximate",
+      "sourceRefs": [
+        "src_xihuatoxtla_coords_secondary"
+      ],
+      "note": "Punto aproximado para visualización; el contexto arqueológico procede de PNAS."
+    },
+    "summary": "Abrigo rocoso del valle central del Balsas, Guerrero, México, con depósitos del Holoceno temprano.",
+    "sourceRefs": [
+      "src_ranere_2009_balsas_context",
+      "src_piperno_2009_balsas_maize"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "pompeii",
+    "name": "Pompeya",
+    "type": "city",
+    "point": {
+      "lat": 40.7508,
+      "lon": 14.4869,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_pompeii_antiquarium_garum"
+      ],
+      "note": "Punto de referencia del yacimiento arqueológico para el mapa."
+    },
+    "summary": "Ciudad romana del área vesubiana cuyo registro arqueológico conserva materiales relacionados con producción y consumo alimentario.",
+    "sourceRefs": [
+      "src_pompeii_antiquarium_garum"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "arbois_france",
+    "name": "Arbois (Jura, Francia)",
+    "type": "city",
+    "point": {
+      "lat": 46.903,
+      "lon": 5.774,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_pasteur_legacy"
+      ],
+      "note": "Punto urbano de referencia para los trabajos de Pasteur sobre el vino."
+    },
+    "summary": "Localidad del Jura donde Pasteur desarrolló parte de sus investigaciones sobre las enfermedades del vino.",
+    "sourceRefs": [
+      "src_pasteur_legacy"
+    ],
+    "status": "reviewed"
   }
 ]

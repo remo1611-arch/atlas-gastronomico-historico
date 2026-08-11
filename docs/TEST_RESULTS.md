@@ -1,84 +1,85 @@
-# Resultados de validación — 0.1.0-alpha.4
+# Resultados de validación — 0.1.0-alpha.6
 
 Fecha: 2026-08-11
 
-## PASS automático
+## Gate
+- G0: CERRADO.
+- G1: CERRADO.
+- G2: EN CURSO · tanda A `reviewed`.
 
-### Estructura y datos
-- `python tools/validate_project.py`: PASS.
-- 10 subjects.
-- 8 places.
-- 11 occurrences.
+## Suite completa: PASS
+
+### Datos y referencias
+- `validate_project.py`: PASS.
+- 13 subjects · 3 reviewed.
+- 12 places · 4 reviewed.
+- 14 occurrences · 3 reviewed.
 - 2 events.
 - 3 relationships.
-- 0 contexts.
-- 0 developments.
+- 2 contexts · 2 reviewed.
+- 4 developments · 4 reviewed.
+- 16 sources.
+- 0 occurrences activas/no-deprecated sin punto.
 
-### JavaScript
+### JSON Schema
+- `test_schema_validation.py`: PASS.
+- 66 objetos.
+- 8 schemas.
+
+### Motor / JavaScript
 - `node --check js/core.js`: PASS.
 - `node --check js/app.js`: PASS.
-- `node tools/test_core.mjs`: **14 aserciones PASS**.
+- `test_core.mjs`: 14 aserciones PASS.
 
-### Contrato UI
-- `python tools/test_ui_contract.py`: PASS.
-- 81 IDs HTML.
-- 73 referencias JS.
+### UI y responsive
+- `test_ui_contract.py`: PASS · 82 IDs / 75 refs JS.
+- `test_mobile_contract.py`: PASS · 10 contratos responsive.
+- `test_light_contrast.py`: PASS.
+- `test_filter_state.py`: PASS.
+- `test_map_coverage.py`: PASS.
+- `test_search_debounce.py`: PASS · 160 ms.
 
-### Capas históricas
-- `python tools/test_extended_contract.py`: PASS.
-- 13 context types.
-- 16 development types.
-- 13 impact types.
+### Contrato extendido
+- `test_extended_contract.py`: PASS.
+- 13 tipos de contexto.
+- 17 tipos de development.
+- 13 tipos de impacto.
+- nuevo `food_storage_appliance` derivado del caso real Monitor Top.
 
-### Responsive móvil
-- `python tools/test_mobile_contract.py`: PASS.
-- 9 defensas/contratos críticos comprobados.
-- `min-width:0` para flex/grid.
-- toolbar mapa en 3 columnas `minmax(0,1fr)`.
-- clipping de textos protegido.
-- breakpoint para teléfonos muy estrechos.
-- build marker alpha.4.
-
-### Tema claro
-- `python tools/test_light_contrast.py`: PASS.
-- texto principal / surface: 13.70:1.
-- texto secundario / surface: 5.76:1.
-- acento / surface: 5.06:1.
-- bebida / surface: 6.80:1.
-- técnica / surface: 5.02:1.
-- producto / surface: 5.83:1.
-- ingrediente / surface: 5.02:1.
-- lugar / surface: 5.68:1.
+### G2
+- `test_public_state.py`: PASS.
+  - 3 subjects demo deprecated preservados/ocultos.
+  - 3 occurrences demo deprecated preservadas/ocultas.
+- `test_g2_pilot.py`: PASS.
+  - 3 subjects reviewed.
+  - 3 occurrences reviewed.
+  - 2 contexts reviewed.
+  - 4 developments reviewed.
+  - 16 fuentes.
+- `test_g2_traceability_ui.py`: PASS.
+  - estados visibles;
+  - fuentes visibles en fichas;
+  - developments dinámicos;
+  - deprecated excluidos de la experiencia pública.
 
 ### GitHub Pages
-- `python tools/test_project_pages.py`: **16/16 HTTP 200** bajo subdirectorio de Project Pages.
+- `test_project_pages.py`: PASS · 16/16 recursos críticos.
 
-## Cache busting
+## Contenido histórico reviewed — tanda A
 
-Release alpha.4:
-- `app.css?v=0.1.0-alpha.4`;
-- `app.js?v=0.1.0-alpha.4`;
-- `core.js?v=0.1.0-alpha.4`;
-- JSON/GeoJSON dinámicos versionados;
-- `<meta name="atlas-build" content="0.1.0-alpha.4">`.
+- Vino neolítico · Georgia.
+- Maíz temprano · Xihuatoxtla.
+- Garum · Pompeya.
+- Cultura Shulaveri-Shomutepe.
+- Marco imperial romano occidental.
+- Pasteurización aplicada al vino · 1863–1865.
+- Refrigeración mecánica de Perkins · 1834.
+- GE Monitor Top · 1927.
+- HACCP · década de 1960.
 
-## Correcciones basadas en capturas reales Xiaomi 15
+## Estado editorial
 
-- clipping horizontal de `En esta fecha`;
-- grids de categorías que podían ampliar viewport;
-- toolbar Buscar / Capas / Filtros;
-- títulos largos;
-- tarjetas de contexto;
-- cabecera móvil;
-- ancho del mapa y paneles;
-- modo claro rehecho.
+Ningún registro nuevo se marca `verified`.
 
-## Pendiente para cierre formal G1
-
-- publicar alpha.4;
-- validar visualmente en Xiaomi 15;
-- validar modo claro real;
-- revisar drawer Capas;
-- Fullscreen API;
-- reproducción prolongada.
+`reviewed` significa que ha superado esta primera auditoría histórica y dispone de fuentes trazables. `verified` queda reservado para una segunda revisión explícita.
 

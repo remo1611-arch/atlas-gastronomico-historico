@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.4
+**Versión:** 0.1.0-alpha.6
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -126,3 +126,20 @@ La arquitectura alpha.3 añade, sin descentrar la gastronomía:
 - **Seguridad e higiene** como vista temática de developments.
 
 Estas capas están preparadas pero permanecen vacías hasta la auditoría histórica G2.
+
+## G2 · contenido revisado
+
+Alpha.6 inaugura el corpus histórico sustentado.
+
+Primeros casos `reviewed`:
+- vino neolítico de Georgia;
+- maíz del valle central del Balsas;
+- garum de Pompeya;
+- Shulaveri-Shomutepe;
+- mundo imperial romano;
+- pasteurización;
+- refrigeración mecánica;
+- refrigeración eléctrica doméstica;
+- HACCP.
+
+La aplicación muestra las fuentes vinculadas dentro de las fichas.

@@ -61,3 +61,39 @@ El modo claro no es una inversión cromática del oscuro. Usa una paleta editori
 **Aceptada.**
 En móvil, solo pueden desplazarse horizontalmente componentes explícitos como leyendas o atajos. La página, paneles, títulos, grids y toolbars no deben ampliar el viewport.
 
+## ADR-017 — Un solo estado de filtro por tipo
+**Aceptada.**
+Chips, tarjetas-resumen y selector del drawer controlan `s.category`. Se elimina el estado paralelo `s.subjectType` para impedir filtros contradictorios silenciosos.
+
+## ADR-018 — Registros sin punto siguen siendo visibles
+**Aceptada.**
+La ausencia de coordenadas no invalida una evidencia. El registro permanece en lista/fichas y la interfaz informa de que no puede situarse cartográficamente. No se inventa un punto.
+
+## ADR-019 — Rutas museográficas aplazadas
+**Aceptada.**
+Las rutas guiadas serán una capa editorial distinta del grafo histórico. No se crea schema hasta disponer de corpus G2 suficiente para diseñarlo con casos reales.
+
+## ADR-020 — G1 cerrado
+**Aceptada.**
+Tras validación real en Xiaomi 15 y suite alpha.5, el motor/UX base de G1 queda cerrado. Nuevos cambios se justifican por necesidades de datos reales de G2.
+
+## ADR-021 — reviewed ≠ verified
+**Aceptada.**
+La primera incorporación sustentada pasa a `reviewed`. `verified` exige una segunda revisión explícita y, cuando sea viable, contraste independiente.
+
+## ADR-022 — Migración de seeds por deprecación
+**Aceptada.**
+Los IDs demo no se renombran ni eliminan: se marcan `deprecated` y apuntan a `supersededBy`.
+
+## ADR-023 — Procedencia cartográfica separada
+**Aceptada.**
+`place.point` puede contener `precision`, `sourceRefs` y `note` propios para separar colocación del mapa de evidencia histórica.
+
+## ADR-024 — Equipamiento de conservación separado de cocción
+**Aceptada.**
+El corpus G2 demuestra que `cooking_appliance` no describe adecuadamente frigoríficos y equipamiento de almacenamiento. Se añade `food_storage_appliance`. La taxonomía evoluciona por necesidades de casos reales, no por anticipación especulativa.
+
+## ADR-025 — Impactos conservadores
+**Aceptada.**
+Un hito de invención/patente no hereda automáticamente impactos propios de la adopción posterior. Por ejemplo, la patente de refrigeración mecánica se marca `enables`; la implantación de cadena de frío deberá modelarse con developments/occurrences propios.
+

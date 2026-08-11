@@ -27,7 +27,7 @@ required={
 "playBtn","playStepSelect","occurrenceCount","subjectCount","placeCount","eventCount",
 "searchInput","subjectTypeFilter","evidenceFilter","occurrenceTypeFilter","labelMode",
 "seedToggle","resetFiltersBtn","worldMap","basemapLayer","occurrenceLayer","occurrenceList",
-"categorySummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety"
+"categorySummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus"
 }
 mr=sorted(required-set(p.ids))
 if mr:errors.append("Faltan IDs requeridas: "+", ".join(mr))

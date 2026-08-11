@@ -1113,3 +1113,178 @@ html[data-theme="light"] .method-note{
     justify-self:start;
   }
 }
+
+
+/* ===== alpha.5 · interaction & data hardening ===== */
+
+.map-coverage{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin:10px 0 2px;
+  padding:10px 12px;
+  border-left:3px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 7%,transparent);
+  color:var(--muted);
+  font-size:.74rem;
+  line-height:1.45;
+  border-radius:0 10px 10px 0;
+}
+.map-coverage strong{
+  color:var(--text);
+  flex:0 0 auto;
+}
+.map-coverage span{min-width:0}
+
+.summary-card.active{
+  border-color:color-mix(in srgb,var(--accent) 55%,var(--line));
+  background:color-mix(in srgb,var(--accent) 7%,var(--surface-2));
+}
+
+/* Newly rendered historical evidence appears as a subtle temporal crossfade. */
+.occ-marker{
+  animation:markerReveal .22s ease-out both;
+}
+@keyframes markerReveal{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@media(max-width:600px){
+  .map-coverage{
+    display:block;
+    font-size:.71rem;
+  }
+  .map-coverage strong,
+  .map-coverage span{
+    display:block;
+  }
+  .map-coverage span{margin-top:3px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .occ-marker{animation:none!important}
+}
+
+
+/* ===== alpha.6 · G2 traceability ===== */
+.mini-status{
+  margin-left:auto;
+  flex:0 0 auto;
+  font-size:.61rem;
+  font-style:normal;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:4px 6px;
+  border-radius:999px;
+  border:1px solid var(--line);
+}
+.mini-status.reviewed,
+.status-badge.reviewed{
+  color:var(--technique);
+  background:color-mix(in srgb,var(--technique) 10%,transparent);
+  border-color:color-mix(in srgb,var(--technique) 30%,var(--line));
+}
+.mini-status.verified,
+.status-badge.verified{
+  color:var(--ingredient);
+  background:color-mix(in srgb,var(--ingredient) 10%,transparent);
+  border-color:color-mix(in srgb,var(--ingredient) 30%,var(--line));
+}
+.mini-status.seed,
+.status-badge.seed{
+  color:var(--gold);
+  background:color-mix(in srgb,var(--gold) 10%,transparent);
+}
+.mini-status.draft,
+.status-badge.draft{color:var(--muted)}
+.mini-status.deprecated,
+.status-badge.deprecated{color:var(--danger)}
+
+.status-badge{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:.67rem;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+.detail-sources{margin-top:16px}
+.detail-sources>b{
+  display:block;
+  font-size:.73rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  margin-bottom:7px;
+}
+.source-list{display:grid;gap:6px}
+.source-link{
+  display:grid;
+  gap:2px;
+  padding:9px 10px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface-2);
+}
+.source-link:hover{border-color:var(--accent)}
+.source-link span{
+  color:var(--accent);
+  font-size:.64rem;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+}
+.source-link strong{
+  color:var(--text);
+  font-family:inherit;
+  font-size:.75rem;
+  line-height:1.35;
+}
+.source-empty{font-size:.76rem;color:var(--muted)}
+
+.evidence-note{
+  margin-top:12px!important;
+  padding:10px 11px;
+  border-left:3px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 6%,transparent);
+  font-size:.75rem;
+}
+
+.context-detail-card+ .context-detail-card{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+}
+.context-detail-card small{
+  color:var(--accent);
+}
+
+.development-card{
+  text-align:left;
+  color:var(--text);
+  border:0;
+  cursor:pointer;
+}
+.development-card:hover{
+  background:color-mix(in srgb,var(--accent) 4%,transparent);
+}
+.development-card .mini-status{
+  display:inline-flex;
+  margin:13px 0 0;
+}
+html[data-theme="light"] .source-link{
+  background:#f5efe5;
+}
+
+@media(max-width:600px){
+  .card-top{min-width:0}
+  .card-top strong{min-width:0}
+  .mini-status{
+    font-size:.56rem;
+    padding:3px 5px;
+  }
+}

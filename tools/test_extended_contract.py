@@ -10,7 +10,7 @@ occ=json.loads((ROOT/"data/occurrences.json").read_text(encoding="utf-8"))
 errors=[]
 
 required_context={"civilization","culture","empire","institution"}
-required_dev={"scientific_discovery","food_technology","cooking_appliance","hygiene","food_safety","regulation","quality_system"}
+required_dev={"scientific_discovery","food_technology","cooking_appliance","food_storage_appliance","hygiene","food_safety","regulation","quality_system"}
 
 if not required_context.issubset(set(tax.get("contextTypes",[]))):
     errors.append("Taxonomía de contextos incompleta")
@@ -37,4 +37,4 @@ print("EXTENDED CONTRACT: PASS")
 print("Context types:",len(tax["contextTypes"]))
 print("Development types:",len(tax["developmentTypes"]))
 print("Impact types:",len(tax["impactTypes"]))
-print("Empty context/development datasets accepted for pre-G2.")
+print("Context/development datasets satisfy the extended contract.")

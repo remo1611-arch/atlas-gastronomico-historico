@@ -10,7 +10,7 @@
     },
     "eventType": "diffusion",
     "subjectRefs": [
-      "maize_demo",
+      "maize",
       "potato_demo"
     ],
     "placeRefs": [

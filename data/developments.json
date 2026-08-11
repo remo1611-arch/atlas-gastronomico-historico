@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "pasteurization_wine_1863_1865",
+    "name": "Pasteurización aplicada al vino",
+    "type": "preservation_technology",
+    "period": {
+      "start": 1863,
+      "end": 1865,
+      "precision": "range",
+      "display": "1863–1865"
+    },
+    "placeRefs": [
+      "arbois_france"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "wine"
+    ],
+    "impactTypes": [
+      "extends_shelf_life"
+    ],
+    "summary": "Pasteur investigó las alteraciones microbianas del vino desde 1863 y patentó en 1865 un procedimiento de conservación mediante calentamiento moderado protegido del aire.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_pasteur_legacy",
+      "src_pasteur_middle_years"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "perkins_mechanical_refrigeration_1834",
+    "name": "Patente de refrigeración mecánica de Jacob Perkins",
+    "type": "refrigeration",
+    "period": {
+      "start": 1834,
+      "end": 1834,
+      "precision": "exact",
+      "display": "1834"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "enables"
+    ],
+    "summary": "La cronología histórica de ASHRAE registra en 1834 la patente de Jacob Perkins para una máquina de refrigeración mecánica; Smithsonian conserva un modelo asociado a esa fecha.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_ashrae_refrigeration_timeline",
+      "src_smithsonian_perkins_1834"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "monitor_top_refrigerator_1927",
+    "name": "General Electric Monitor Top y refrigeración doméstica eléctrica",
+    "type": "food_storage_appliance",
+    "period": {
+      "start": 1927,
+      "end": 1927,
+      "precision": "exact",
+      "display": "1927"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "extends_shelf_life",
+      "changes_domestic_cooking"
+    ],
+    "summary": "Smithsonian identifica el General Electric Monitor Top, introducido en 1927, como el primer refrigerador que alcanzó amplia popularidad en los hogares estadounidenses.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_smithsonian_electric_refrigeration"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "haccp_development_1960s",
+    "name": "Desarrollo inicial del sistema HACCP",
+    "type": "food_safety",
+    "period": {
+      "start": 1960,
+      "end": 1969,
+      "precision": "decade",
+      "display": "década de 1960"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "improves_safety"
+    ],
+    "summary": "El enfoque Hazard Analysis and Critical Control Point fue desarrollado inicialmente por Pillsbury y NASA para reforzar la seguridad de los alimentos destinados a vuelos espaciales tripulados.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_usda_haccp_2010"
+    ],
+    "status": "reviewed"
+  }
+]

@@ -1,22 +1,22 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.4';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.6';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.4',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.4',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.4',
-  places:'./data/places.json?v=0.1.0-alpha.4',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.4',
-  events:'./data/events.json?v=0.1.0-alpha.4',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.4',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.4',
-  developments:'./data/developments.json?v=0.1.0-alpha.4',
-  sources:'./data/sources.json?v=0.1.0-alpha.4',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.4'
+  config:'./data/config.json?v=0.1.0-alpha.6',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.6',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.6',
+  places:'./data/places.json?v=0.1.0-alpha.6',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.6',
+  events:'./data/events.json?v=0.1.0-alpha.6',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.6',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.6',
+  developments:'./data/developments.json?v=0.1.0-alpha.6',
+  sources:'./data/sources.json?v=0.1.0-alpha.6',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.6'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
-  year:1500,search:'',subjectType:'all',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
+  year:1500,search:'',evidence:'all',occurrenceType:'all',showSeed:true,labelMode:'auto',
   selectedOccurrence:null,eventWindow:100,playStep:50,playing:false,timer:null,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
@@ -136,16 +136,49 @@ function fillControls(){
 
   $('#yearRange').min=toOrdinal(s.config.timeline.minYear);
   $('#yearRange').max=toOrdinal(s.config.timeline.maxYear);
+  syncTypeControls();
 }
 
 function subj(id){return s.subjects.find(x=>x.id===id)}
 function place(id){return s.places.find(x=>x.id===id)}
+function sourceById(id){return s.sources.find(x=>x.id===id)}
+
+function statusMeta(status){
+  const map={
+    verified:{label:'Verificado',className:'verified'},
+    reviewed:{label:'Revisado',className:'reviewed'},
+    draft:{label:'Borrador',className:'draft'},
+    seed:{label:'Dato provisional',className:'seed'},
+    deprecated:{label:'Obsoleto',className:'deprecated'}
+  };
+  return map[status]||{label:status||'Sin estado',className:'draft'};
+}
+
+function sourceListHTML(refs=[]){
+  const resolved=[...new Set(refs)].map(sourceById).filter(Boolean);
+  if(!resolved.length) return '<p class="source-empty">Fuentes pendientes.</p>';
+
+  return `<div class="source-list">${resolved.map(src=>`
+    <a class="source-link" href="${esc(src.url||'#')}" target="_blank" rel="noopener noreferrer">
+      <span>${esc(src.publisher||'Fuente')}</span>
+      <strong>${esc(src.title)}</strong>
+    </a>
+  `).join('')}</div>`;
+}
+
+function pointPrecisionLabel(pl){
+  const precision=pl?.point?.precision;
+  if(precision==='approximate') return 'Punto cartográfico aproximado';
+  if(precision==='reference') return 'Punto cartográfico de referencia';
+  return pl?.point ? 'Punto cartográfico' : 'Sin punto cartográfico';
+}
 
 function occVisible(){
   if(!s.layers.gastronomy) return [];
   const q=norm(s.search.trim());
 
   return s.occurrences.filter(o=>{
+    if(o.status==='deprecated') return false;
     if(!active(o.period,s.year)) return false;
     if(!s.showSeed && o.status==='seed') return false;
     if(s.evidence!=='all' && o.evidenceType!==s.evidence) return false;
@@ -153,9 +186,8 @@ function occVisible(){
 
     const subject=subj(o.subjectRef);
     const pl=place(o.placeRef);
-    if(!subject || !pl) return false;
+    if(!subject || !pl || subject.status==='deprecated' || pl.status==='deprecated') return false;
 
-    if(s.subjectType!=='all' && subject.type!==s.subjectType) return false;
     if(s.category!=='all' && subject.type!==s.category) return false;
 
     if(q){
@@ -168,6 +200,42 @@ function occVisible(){
     return true;
   });
 }
+
+
+function occurrencesWithoutMapPoint(list){
+  return list.filter(o=>{
+    const pl=place(o.placeRef);
+    return !pl?.point || !Number.isFinite(Number(pl.point.lat)) || !Number.isFinite(Number(pl.point.lon));
+  });
+}
+
+function renderMapCoverage(list){
+  const box=$('#mapCoverageStatus');
+  if(!box) return;
+
+  const missing=occurrencesWithoutMapPoint(list);
+  if(!missing.length){
+    box.classList.add('hidden');
+    box.textContent='';
+    return;
+  }
+
+  const uniquePlaces=new Set(missing.map(o=>o.placeRef)).size;
+  box.classList.remove('hidden');
+  box.innerHTML=`
+    <strong>${missing.length} ${missing.length===1?'registro visible no puede':'registros visibles no pueden'} situarse en el mapa.</strong>
+    <span>${uniquePlaces} ${uniquePlaces===1?'lugar carece':'lugares carecen'} de coordenadas fiables. El registro sigue disponible en la lista.</span>
+  `;
+
+  for(const o of missing){
+    if(!warnedUnmapped.has(o.id)){
+      warnedUnmapped.add(o.id);
+      console.warn(`[Atlas] Registro sin punto cartográfico: ${o.id} · placeRef=${o.placeRef}`);
+    }
+  }
+}
+
+const warnedUnmapped=new Set();
 
 function setYear(year){
   s.year=Math.max(s.config.timeline.minYear,Math.min(s.config.timeline.maxYear,year===0?1:year));
@@ -190,9 +258,11 @@ function render(){
   renderMetrics(list);
   renderCategorySummary(list);
   renderList(list);
+  renderMapCoverage(list);
   renderMarkers(list);
   renderContextLayer();
   renderDevelopmentLayer();
+  renderTransformationPreview();
   renderContext(list);
   renderEvents();
 
@@ -206,7 +276,7 @@ function renderMetrics(list){
   $('#occurrenceCount').textContent=list.length;
   $('#subjectCount').textContent=new Set(list.map(x=>x.subjectRef)).size;
   $('#placeCount').textContent=new Set(list.map(x=>x.placeRef)).size;
-  $('#eventCount').textContent=s.events.filter(e=>(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow).length;
+  $('#eventCount').textContent=s.events.filter(e=>e.status!=='deprecated'&&(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow).length;
   $('#visibleBadge').textContent=list.length;
   $('#evidenceContext').textContent=list.length
     ? `${list.length} ${list.length===1?'registro visible':'registros visibles'} en ${formatYear(s.year)}.`
@@ -233,11 +303,11 @@ function renderCategorySummary(list){
 
   $$('[data-summary-category]').forEach(button=>{
     button.addEventListener('click',()=>{
-      s.category=s.category===button.dataset.summaryCategory?'all':button.dataset.summaryCategory;
-      syncLegend();
+      setCategoryFilter(s.category===button.dataset.summaryCategory?'all':button.dataset.summaryCategory);
       render();
     });
   });
+  syncTypeControls();
 }
 
 function renderList(list){
@@ -259,10 +329,12 @@ function renderList(list){
       const button=document.createElement('button');
       button.type='button';
       button.className='evidence-card'+(o.id===s.selectedOccurrence?' active':'');
+      const sm=statusMeta(o.status);
       button.innerHTML=`
         <span class="card-top">
           <i class="category-dot" data-kind="${esc(subject.type)}"></i>
           <strong>${esc(subject.name)}</strong>
+          <em class="mini-status ${esc(sm.className)}">${esc(sm.label)}</em>
         </span>
         <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
         <small>${esc(pl.name)} · ${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
@@ -363,7 +435,7 @@ function renderContextLayer(){
   if(!s.layers.contexts) return;
 
   s.contexts
-    .filter(c=>(s.showSeed||c.status!=='seed')&&active(c.period,s.year))
+    .filter(c=>c.status!=='deprecated'&&(s.showSeed||c.status!=='seed')&&active(c.period,s.year))
     .forEach(c=>{
       const firstPlace=(c.placeRefs||[]).map(place).find(Boolean);
       if(!firstPlace?.point) return;
@@ -381,7 +453,7 @@ function renderDevelopmentLayer(){
   if(!s.layers.developments && !s.layers.safety) return;
 
   s.developments
-    .filter(d=>(s.showSeed||d.status!=='seed')&&active(d.period,s.year))
+    .filter(d=>d.status!=='deprecated'&&(s.showSeed||d.status!=='seed')&&active(d.period,s.year))
     .filter(d=>{
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'];
       return safety.includes(d.type) ? s.layers.safety : s.layers.developments;
@@ -395,6 +467,80 @@ function renderDevelopmentLayer(){
       g.appendChild(svg('circle',{r:'4.5'}));
       layer.appendChild(g);
     });
+}
+
+
+function developmentTypeLabel(type){
+  const labels={
+    scientific_discovery:'Descubrimiento científico',
+    food_technology:'Tecnología alimentaria',
+    preservation_technology:'Conservación',
+    cooking_appliance:'Equipamiento de cocción',
+    food_storage_appliance:'Equipamiento de conservación',
+    refrigeration:'Refrigeración',
+    energy_infrastructure:'Energía',
+    industrial_process:'Proceso industrial',
+    hygiene:'Higiene',
+    food_safety:'Seguridad alimentaria',
+    public_health:'Salud pública',
+    regulation:'Regulación',
+    quality_system:'Sistema de calidad',
+    analytical_method:'Método analítico',
+    packaging:'Envase',
+    transport_logistics:'Logística',
+    other:'Transformación'
+  };
+  return labels[type]||type;
+}
+
+function transformationClass(type){
+  if(['hygiene','food_safety','public_health','regulation','quality_system'].includes(type)) return 'safety';
+  if(['scientific_discovery','analytical_method'].includes(type)) return 'science';
+  return 'technology';
+}
+
+function renderTransformationPreview(){
+  const box=$('#transformationPreview');
+  if(!box) return;
+
+  const candidates=s.developments
+    .filter(d=>d.status!=='deprecated'&&(s.showSeed||d.status!=='seed'))
+    .filter(d=>{
+      const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
+      return safety ? s.layers.safety : s.layers.developments;
+    });
+
+  const activeNow=candidates.filter(d=>active(d.period,s.year));
+  const chosen=(activeNow.length?activeNow:candidates
+    .slice()
+    .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year)))
+    .slice(0,3);
+
+  if(!chosen.length){
+    box.innerHTML=`
+      <article class="transform-tile science"><span>CIENCIA</span><strong>Capa preparada</strong><small>Contenido revisado pendiente.</small></article>
+      <article class="transform-tile technology"><span>TECNOLOGÍA</span><strong>Capa preparada</strong><small>Contenido revisado pendiente.</small></article>
+      <article class="transform-tile safety"><span>SEGURIDAD</span><strong>Capa preparada</strong><small>Contenido revisado pendiente.</small></article>`;
+    return;
+  }
+
+  box.innerHTML=chosen.map(d=>{
+    const sm=statusMeta(d.status);
+    const relation=active(d.period,s.year)
+      ? 'Activo en esta fecha'
+      : `A ${distance(d.period,s.year)} ${distance(d.period,s.year)===1?'año':'años'} de la fecha seleccionada`;
+
+    return `<button class="transform-tile ${transformationClass(d.type)} development-card" type="button" data-development-year="${d.period.start}">
+      <span>${esc(developmentTypeLabel(d.type).toUpperCase())}</span>
+      <strong>${esc(d.name)}</strong>
+      <small>${esc(d.period.display||`${formatYear(d.period.start)}–${formatYear(d.period.end)}`)} · ${esc(relation)}</small>
+      <em class="mini-status ${esc(sm.className)}">${esc(sm.label)} · ${(d.sourceRefs||[]).length} ${(d.sourceRefs||[]).length===1?'fuente':'fuentes'}</em>
+    </button>`;
+  }).join('');
+
+  $$('[data-development-year]').forEach(button=>{
+    button.addEventListener('click',()=>setYear(Number(button.dataset.developmentYear)));
+  });
 }
 
 function renderContext(list){
@@ -412,15 +558,17 @@ function renderContext(list){
   const subjects=[...new Set(list.map(x=>subj(x.subjectRef)?.name).filter(Boolean))];
   const places=[...new Set(list.map(x=>place(x.placeRef)?.name).filter(Boolean))];
   const evidence=[...new Set(list.map(x=>EVIDENCE_LABELS[x.evidenceType]||x.evidenceType))];
+  const reviewed=list.filter(x=>x.status==='reviewed'||x.status==='verified').length;
+  const seed=list.filter(x=>x.status==='seed').length;
 
   title.textContent=`${formatYear(s.year)} · una instantánea del mundo alimentario`;
-  text.textContent=`El prototipo muestra ${list.length} ${list.length===1?'evidencia':'evidencias'} asociadas a ${subjects.length} ${subjects.length===1?'elemento gastronómico':'elementos gastronómicos'} y ${places.length} ${places.length===1?'lugar':'lugares'}.`;
+  text.textContent=`El Atlas muestra ${list.length} ${list.length===1?'registro':'registros'} asociados a ${subjects.length} ${subjects.length===1?'elemento gastronómico':'elementos gastronómicos'} y ${places.length} ${places.length===1?'lugar':'lugares'}.`;
 
   const cards=[
     ['Elementos visibles',subjects.slice(0,4).join(' · ')||'—'],
     ['Lugares representados',places.slice(0,4).join(' · ')||'—'],
     ['Tipos de evidencia',evidence.slice(0,4).join(' · ')||'—'],
-    ['Estado del corpus','Datos provisionales de demostración; verificación histórica pendiente de G2.']
+    ['Estado del corpus',`${reviewed} revisados/verificados · ${seed} provisionales`]
   ];
 
   box.innerHTML=cards.map(([a,b])=>`<article class="context-card"><strong>${esc(a)}</strong><span>${esc(b)}</span></article>`).join('');
@@ -431,11 +579,11 @@ function renderEvents(){
   box.innerHTML='';
 
   const ev=s.events
-    .filter(e=>(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow)
+    .filter(e=>e.status!=='deprecated'&&(s.showSeed||e.status!=='seed')&&distance(e.period,s.year)<=s.eventWindow)
     .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year));
 
   if(!ev.length){
-    box.innerHTML='<p class="map-foot">No hay procesos semilla en esta ventana temporal.</p>';
+    box.innerHTML='<p class="map-foot">No hay procesos registrados en esta ventana temporal.</p>';
     return;
   }
 
@@ -475,23 +623,29 @@ function renderDetails(o){
 
   const subject=subj(o.subjectRef);
   const pl=place(o.placeRef);
+  const subjectStatus=statusMeta(subject.status);
+  const occurrenceStatus=statusMeta(o.status);
 
   $('#detailCategory').textContent=TYPE_LABELS[subject.type]||subject.type;
   $('#detailTitle').textContent=subject.name;
   $('#detailSubtitle').textContent=subject.summary;
 
   $('#subjectDetail').innerHTML=`
-    <span class="provisional-badge">Dato provisional</span>
+    <span class="status-badge ${esc(subjectStatus.className)}">${esc(subjectStatus.label)}</span>
     <h3>${esc(subject.name)}</h3>
     <p>${esc(subject.summary)}</p>
     <div class="detail-meta">
       <div><b>Tipo</b><span>${esc(TYPE_LABELS[subject.type]||subject.type)}</span></div>
       <div><b>Nombres alternativos</b><span>${esc((subject.aliases||[]).join(', ')||'—')}</span></div>
     </div>
+    <div class="detail-sources">
+      <b>Fuentes del elemento</b>
+      ${sourceListHTML(subject.sourceRefs||[])}
+    </div>
   `;
 
   $('#occurrenceDetail').innerHTML=`
-    <span class="provisional-badge">Registro histórico no verificado</span>
+    <span class="status-badge ${esc(occurrenceStatus.className)}">${esc(occurrenceStatus.label)}</span>
     <h3>${esc(pl.name)}</h3>
     <p>${esc(o.summary)}</p>
     <div class="detail-meta">
@@ -500,21 +654,34 @@ function renderDetails(o){
       <div><b>Qué documenta</b><span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span></div>
       <div><b>Evidencia</b><span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span></div>
       <div><b>Certeza</b><span>${esc(o.certainty)}</span></div>
-      <div><b>Fuentes</b><span>${o.sourceRefs?.length?`${o.sourceRefs.length} vinculadas`:'Pendientes de G2'}</span></div>
+      <div><b>Cartografía</b><span>${esc(pointPrecisionLabel(pl))}</span></div>
+    </div>
+    ${o.period.note?`<p class="evidence-note">${esc(o.period.note)}</p>`:''}
+    <div class="detail-sources">
+      <b>Fuentes del registro</b>
+      ${sourceListHTML(o.sourceRefs||[])}
     </div>
   `;
 
-  const relatedContexts=(o.contextRefs||[]).map(contextById).filter(Boolean);
-  const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(Boolean);
+  const relatedContexts=(o.contextRefs||[]).map(contextById).filter(c=>c&&c.status!=='deprecated');
+  const relatedDevelopments=(o.developmentRefs||[]).map(developmentById).filter(d=>d&&d.status!=='deprecated');
 
   const contextSection=$('#historicalContextSection');
   const developmentSection=$('#developmentContextSection');
 
   if(relatedContexts.length){
     contextSection.classList.remove('hidden');
-    $('#historicalContextDetail').innerHTML=relatedContexts.map(c=>`
-      <div class="detail-meta"><div><b>${esc(c.name)}</b><span>${esc(c.summary)}</span></div></div>
-    `).join('');
+    $('#historicalContextDetail').innerHTML=relatedContexts.map(c=>{
+      const sm=statusMeta(c.status);
+      return `
+        <article class="context-detail-card">
+          <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          <h3>${esc(c.name)}</h3>
+          <p>${esc(c.summary)}</p>
+          <small>${esc(c.period.display||`${formatYear(c.period.start)}–${formatYear(c.period.end)}`)}</small>
+          ${sourceListHTML(c.sourceRefs||[])}
+        </article>`;
+    }).join('');
   }else{
     contextSection.classList.add('hidden');
     $('#historicalContextDetail').innerHTML='';
@@ -522,16 +689,42 @@ function renderDetails(o){
 
   if(relatedDevelopments.length){
     developmentSection.classList.remove('hidden');
-    $('#developmentContextDetail').innerHTML=relatedDevelopments.map(d=>`
-      <div class="detail-meta"><div><b>${esc(d.name)}</b><span>${esc(d.summary)}</span></div></div>
-    `).join('');
+    $('#developmentContextDetail').innerHTML=relatedDevelopments.map(d=>{
+      const sm=statusMeta(d.status);
+      return `
+        <article class="context-detail-card">
+          <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          <h3>${esc(d.name)}</h3>
+          <p>${esc(d.summary)}</p>
+          <small>${esc(d.period.display||`${formatYear(d.period.start)}–${formatYear(d.period.end)}`)}</small>
+          ${sourceListHTML(d.sourceRefs||[])}
+        </article>`;
+    }).join('');
   }else{
     developmentSection.classList.add('hidden');
     $('#developmentContextDetail').innerHTML='';
   }
 
-  $('#subjectHistoryBtn').disabled=true;
-  $('#subjectHistoryBtn').title='Se activará cuando un elemento tenga varias ocurrencias históricas verificadas.';
+  const historyCount=s.occurrences.filter(x=>x.status!=='deprecated'&&x.subjectRef===subject.id&&(x.status==='reviewed'||x.status==='verified')).length;
+  $('#subjectHistoryBtn').disabled=historyCount<2;
+  $('#subjectHistoryBtn').title=historyCount<2
+    ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
+    : 'Abrir historia del elemento.';
+}
+
+function debounce(fn,wait=160){
+  let timer=null;
+  const wrapped=(...args)=>{
+    clearTimeout(timer);
+    timer=setTimeout(()=>fn(...args),wait);
+  };
+  wrapped.cancel=()=>{
+    if(timer!==null){
+      clearTimeout(timer);
+      timer=null;
+    }
+  };
+  return wrapped;
 }
 
 function openLayers(){
@@ -569,24 +762,43 @@ function closeDetail(){
   document.body.style.overflow='';
 }
 
-function syncLegend(){
+function syncTypeControls(){
   $$('#categoryLegend [data-category]').forEach(button=>{
     button.classList.toggle('active',button.dataset.category===s.category);
+    button.setAttribute('aria-pressed',String(button.dataset.category===s.category));
   });
+
+  if($('#subjectTypeFilter')){
+    $('#subjectTypeFilter').value=s.category;
+  }
+
+  $$('[data-summary-category]').forEach(button=>{
+    button.classList.toggle('active',button.dataset.summaryCategory===s.category);
+    button.setAttribute('aria-pressed',String(button.dataset.summaryCategory===s.category));
+  });
+}
+
+function setCategoryFilter(value){
+  s.category=value||'all';
+  syncTypeControls();
 }
 
 function resetFilters(){
   s.search='';
-  s.subjectType='all';
   s.evidence='all';
   s.occurrenceType='all';
   s.category='all';
+  s.labelMode='auto';
+  s.showSeed=true;
 
   $('#searchInput').value='';
   $('#subjectTypeFilter').value='all';
   $('#evidenceFilter').value='all';
   $('#occurrenceTypeFilter').value='all';
-  syncLegend();
+  $('#labelMode').value='auto';
+  $('#seedToggle').checked=true;
+
+  syncTypeControls();
   render();
 }
 
@@ -624,25 +836,33 @@ function bind(){
     if(!$('#quickSearch').classList.contains('hidden')) $('#searchInput').focus();
   });
 
+  const debouncedSearch=debounce(value=>{
+    s.search=value;
+    render();
+  },160);
+
   $('#clearSearchBtn').addEventListener('click',()=>{
+    debouncedSearch.cancel();
     s.search='';
     $('#searchInput').value='';
     render();
   });
 
   $('#searchInput').addEventListener('input',e=>{
-    s.search=e.target.value;
-    render();
+    debouncedSearch(e.target.value);
   });
 
-  $('#subjectTypeFilter').addEventListener('change',e=>{s.subjectType=e.target.value;render()});
+  $('#subjectTypeFilter').addEventListener('change',e=>{
+    setCategoryFilter(e.target.value);
+    render();
+  });
   $('#evidenceFilter').addEventListener('change',e=>{s.evidence=e.target.value;render()});
   $('#occurrenceTypeFilter').addEventListener('change',e=>{s.occurrenceType=e.target.value;render()});
   $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occVisible())});
   $('#seedToggle').addEventListener('change',e=>{s.showSeed=e.target.checked;render()});
   $('#eventWindowSelect').addEventListener('change',e=>{s.eventWindow=Number(e.target.value)||100;renderMetrics(occVisible());renderEvents()});
 
-  $('#resetFiltersBtn').addEventListener('click',resetFilters);
+  $('#resetFiltersBtn').addEventListener('click',()=>{debouncedSearch.cancel();resetFilters()});
   $('#applyFiltersBtn').addEventListener('click',closeDrawer);
 
   $('#layersBtn').addEventListener('click',openLayers);
@@ -666,8 +886,7 @@ function bind(){
 
   $$('#categoryLegend [data-category]').forEach(button=>{
     button.addEventListener('click',()=>{
-      s.category=button.dataset.category;
-      syncLegend();
+      setCategoryFilter(button.dataset.category);
       render();
     });
   });

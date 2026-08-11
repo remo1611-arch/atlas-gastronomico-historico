@@ -105,6 +105,7 @@
     "food_technology",
     "preservation_technology",
     "cooking_appliance",
+    "food_storage_appliance",
     "refrigeration",
     "energy_infrastructure",
     "industrial_process",

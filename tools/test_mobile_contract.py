@@ -1,9 +1,11 @@
 from pathlib import Path
-import sys
+import json,sys
 
 ROOT=Path(__file__).resolve().parents[1]
 css=(ROOT/"css/app.css").read_text(encoding="utf-8")
 html=(ROOT/"index.html").read_text(encoding="utf-8")
+config=json.loads((ROOT/"data/config.json").read_text(encoding="utf-8"))
+version=config["project"]["version"]
 errors=[]
 
 checks={
@@ -13,16 +15,21 @@ checks={
     "mobile category grid":"grid-template-columns:1fr 1fr",
     "text overflow defense":"overflow-wrap:anywhere",
     "narrow-phone breakpoint":"@media(max-width:380px)",
-    "build marker":'meta name="atlas-build" content="0.1.0-alpha.4"',
-    "layers button":'id="layersBtn"',
-    "museum rail":'class="museum-rail"',
 }
 
 for label,needle in checks.items():
-    if needle not in (html if label in {"build marker","layers button","museum rail"} else css):
+    if needle not in css:
         errors.append(f"{label}: falta {needle}")
 
-# Explicitly disallow accidental global horizontal auto-scroll on body.
+for label,needle in {
+    "build marker":f'meta name="atlas-build" content="{version}"',
+    "layers button":'id="layersBtn"',
+    "museum rail":'class="museum-rail"',
+    "map coverage":'id="mapCoverageStatus"',
+}.items():
+    if needle not in html:
+        errors.append(f"{label}: falta {needle}")
+
 if "body{" not in css or "overflow-x:hidden" not in css:
     errors.append("body no bloquea overflow horizontal")
 
@@ -32,4 +39,5 @@ if errors:
     sys.exit(1)
 
 print("MOBILE CONTRACT: PASS")
-print("Responsive guards:",len(checks))
+print("Version:",version)
+print("Responsive guards:",len(checks)+4)

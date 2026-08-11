@@ -1,5 +1,59 @@
 # Changelog
 
+## 0.1.0-alpha.6 — 2026-08-11
+
+### Gate
+- G1 cerrado.
+- G2 iniciado.
+
+### Corpus reviewed
+- vino neolítico de Georgia;
+- maíz temprano de Xihuatoxtla;
+- garum en Pompeya;
+- Shulaveri-Shomutepe;
+- marco imperial romano occidental;
+- pasteurización;
+- refrigeración mecánica 1834;
+- Monitor Top 1927;
+- HACCP década de 1960.
+
+### Trazabilidad
+- `sourceRefs` en subjects y places;
+- procedencia específica de puntos cartográficos;
+- fuentes visibles en fichas;
+- badges reviewed/seed/verified;
+- developments reales en panel Transformaciones.
+
+### Migración
+- wine_demo → wine;
+- maize_demo → maize;
+- garum_demo → garum;
+- demos conservados como deprecated.
+
+## 0.1.0-alpha.5 — 2026-08-11
+
+### Interaction hardening
+- eliminado estado duplicado `subjectType`;
+- chips, resumen y dropdown usan `s.category`;
+- reset completo de filtros;
+- buscador con debounce de 160 ms;
+- marcadores con aparición temporal suave y respeto a reduced motion.
+
+### Data hardening
+- registros sin coordenadas permanecen en lista;
+- aviso visible de cobertura cartográfica incompleta;
+- `console.warn` una sola vez por registro sin punto;
+- validador reporta número de occurrences no cartografiables;
+- tests específicos de filtro, debounce y cobertura.
+
+### Arquitectura futura
+- rutas museográficas documentadas como extensión reservada;
+- no se crea `tours.json` todavía;
+- no se confunde grafo histórico con recorrido editorial.
+
+### Incluye
+- todo el mobile polish y nuevo tema claro de alpha.4.
+
 ## 0.1.0-alpha.4 — 2026-08-11
 
 ### Mobile polish

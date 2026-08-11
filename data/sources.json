@@ -7,5 +7,140 @@
     "sourceType": "dataset",
     "accessed": "2026-08-11",
     "notes": "Mapa moderno de contexto. No representa fronteras gastronómicas ni históricas."
+  },
+  {
+    "id": "src_mcgovern_2017_neolithic_wine",
+    "title": "Early Neolithic wine of Georgia in the South Caucasus",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.1714728114",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Fuente principal para la evidencia biomolecular y arqueobotánica de vino en Georgia, ca. 6000–5800 a.C."
+  },
+  {
+    "id": "src_cnrs_gadachrili",
+    "title": "Gadachrili gora: a Neolithic site in the Kura Valley (Georgia)",
+    "publisher": "CNRS · Laboratoire Trajectoires",
+    "url": "https://trajectoires.cnrs.fr/en/projects/completed-projects/gadachrili-gora-a-neolithic-site-in-the-kura-valley-georgia/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Contexto arqueológico de Gadachrili Gora y datación de niveles conservados."
+  },
+  {
+    "id": "src_gadachrili_coords_secondary",
+    "title": "Gadachrili Gora — cartographic reference",
+    "publisher": "Megalithic Portal",
+    "url": "https://www.megalithic.co.uk/article.php?sid=47864",
+    "sourceType": "other",
+    "accessed": "2026-08-11",
+    "notes": "Fuente secundaria utilizada solo para el punto aproximado del mapa; no sustenta cronología ni interpretación histórica."
+  },
+  {
+    "id": "src_ranere_2009_balsas_context",
+    "title": "The cultural and chronological context of early Holocene maize and squash domestication in the Central Balsas River Valley, Mexico",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.0812590106",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Contexto estratigráfico y radiocarbónico de Xihuatoxtla."
+  },
+  {
+    "id": "src_piperno_2009_balsas_maize",
+    "title": "Starch grain and phytolith evidence for early ninth millennium B.P. maize from the Central Balsas River Valley, Mexico",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.0812525106",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Evidencia de almidones y fitolitos de maíz en Xihuatoxtla."
+  },
+  {
+    "id": "src_xihuatoxtla_coords_secondary",
+    "title": "Xihuatoxtla — cartographic reference",
+    "publisher": "Megalithic Portal",
+    "url": "https://www.megalithic.co.uk/article.php?map=2&sid=26329",
+    "sourceType": "other",
+    "accessed": "2026-08-11",
+    "notes": "Fuente secundaria utilizada solo para punto aproximado del mapa."
+  },
+  {
+    "id": "src_pompeii_antiquarium_garum",
+    "title": "Antiquarium, Room I — Fragment of a Clay Amphora Containing Garum",
+    "publisher": "Parco Archeologico di Pompei",
+    "url": "https://pompeiisites.org/en/boscoreale-en/antiquarium-sala-i/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Documenta restos de garum en ánfora, producción en Pompeya y uso en cocina romana."
+  },
+  {
+    "id": "src_met_roman_empire",
+    "title": "The Roman Empire (27 B.C.–393 A.D.)",
+    "publisher": "The Metropolitan Museum of Art · Heilbrunn Timeline of Art History",
+    "url": "https://www.metmuseum.org/essays/the-roman-empire-27-b-c-393-a-d",
+    "sourceType": "museum",
+    "accessed": "2026-08-11",
+    "notes": "Marco cronológico institucional para el Imperio romano."
+  },
+  {
+    "id": "src_met_italy_1_500",
+    "title": "Italian Peninsula, 1–500 A.D.",
+    "publisher": "The Metropolitan Museum of Art · Heilbrunn Timeline of Art History",
+    "url": "https://www.metmuseum.org/toah/ht/05/eust.html",
+    "sourceType": "museum",
+    "accessed": "2026-08-11",
+    "notes": "Contextualiza la continuidad del Imperio romano occidental hasta 476 d.C."
+  },
+  {
+    "id": "src_pasteur_legacy",
+    "title": "Louis Pasteur: a universal legacy",
+    "publisher": "Institut Pasteur",
+    "url": "https://www.pasteur.fr/en/research-journal/reports/louis-pasteur-universal-legacy",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Investigación sobre enfermedades del vino desde 1863 y patente de conservación mediante calentamiento moderado en 1865."
+  },
+  {
+    "id": "src_pasteur_middle_years",
+    "title": "The middle years 1862–1877",
+    "publisher": "Institut Pasteur",
+    "url": "https://www.pasteur.fr/en/institut-pasteur/history/middle-years-1862-1877",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Describe la base microbiológica y el protocolo de calentamiento del vino."
+  },
+  {
+    "id": "src_ashrae_refrigeration_timeline",
+    "title": "Air Conditioning and Refrigeration Timeline",
+    "publisher": "ASHRAE",
+    "url": "https://www.ashrae.org/about/mission-and-vision/ashrae-industry-history/air-conditioning-and-refrigeration-timeline",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Registra en 1834 la patente de la máquina de refrigeración mecánica de Jacob Perkins."
+  },
+  {
+    "id": "src_smithsonian_perkins_1834",
+    "title": "Jacob Perkins Ice Machine, 1834, Model",
+    "publisher": "Smithsonian National Museum of American History",
+    "url": "https://americanhistory.si.edu/collections/object/nmah_846195",
+    "sourceType": "museum",
+    "accessed": "2026-08-11",
+    "notes": "Objeto museístico vinculado a la máquina de hielo/refrigeración de Perkins de 1834."
+  },
+  {
+    "id": "src_smithsonian_electric_refrigeration",
+    "title": "Keeping your (food) cool: From ice harvesting to electric refrigeration",
+    "publisher": "Smithsonian National Museum of American History",
+    "url": "https://americanhistory.si.edu/explore/stories/keeping-your-food-cool-ice-harvesting-electric-refrigeration",
+    "sourceType": "museum",
+    "accessed": "2026-08-11",
+    "notes": "Documenta DOMELRE (1914), Monitor Top (1927) y adopción doméstica de refrigeradores eléctricos."
+  },
+  {
+    "id": "src_usda_haccp_2010",
+    "title": "Introduction to the Principles of HACCP",
+    "publisher": "USDA Agricultural Research Service",
+    "url": "https://www.ars.usda.gov/research/publications/publication/?seqNo115=253706",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "USDA atribuye el desarrollo inicial de HACCP a Pillsbury y NASA para mejorar la seguridad de los alimentos en vuelos tripulados."
   }
 ]
