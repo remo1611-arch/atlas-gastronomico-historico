@@ -24,10 +24,9 @@ if missing:errors.append("IDs usadas por JS inexistentes: "+", ".join(missing))
 
 required={
 "heroYear","heroEra","yearDisplay","yearMagnitude","yearEra","goYearBtn",
-"occurrenceCount","subjectCount","placeCount","eventCount",
 "searchInput","subjectTypeFilter","evidenceFilter","occurrenceTypeFilter","certaintyFilter","precisionFilter","spatialFilter","labelMode",
 "resetFiltersBtn","worldMap","basemapLayer","occurrenceLayer","occurrenceList",
-"categorySummary","evidenceLensSummary","evidenceLensFilterBtn","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","evidenceReadingSection","evidenceReadingDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus","unmappedRecordsPanel","historyDrawer","historyTitle","historySubtitle","historySummary","historyTimeline","temporalNavigator","temporalRail","temporalDensity","temporalVerified","temporalEvents","temporalDevelopments","temporalPrecisionWindow","temporalCursor","temporalFocus","prevTemporalHitBtn","nextTemporalHitBtn","temporalMinLabel","temporalNavigatorHint","temporalMaxLabel"
+"evidenceLensSummary","eventList","filterDrawer","layersDrawer","detailDrawer","subjectDetail","occurrenceDetail","evidenceReadingSection","evidenceReadingDetail","contextLayer","developmentLayer","layerGastronomy","layerContexts","layerDevelopments","layerSafety","mapCoverageStatus","unmappedRecordsPanel","historyDrawer","historyTitle","historySubtitle","historySummary","historyTimeline","temporalNavigator","temporalRail","temporalDensity","temporalVerified","temporalEvents","temporalDevelopments","temporalPrecisionWindow","temporalCursor","temporalFocus","prevTemporalHitBtn","nextTemporalHitBtn","temporalMinLabel","temporalNavigatorHint","temporalMaxLabel","exploreView","historiesView","exploreNavBtn","historiesNavBtn","openHistoriesHeroBtn","changesDisclosure","changesCount"
 }
 mr=sorted(required-set(p.ids))
 if mr:errors.append("Faltan IDs requeridas: "+", ".join(mr))

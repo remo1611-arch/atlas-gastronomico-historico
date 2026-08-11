@@ -245,3 +245,35 @@ node tools/test_g3_chronology_algorithm.mjs
 - [ ] disputed muestra posiciones + perfil documental;
 - [ ] disputed no tiene winner/ranking;
 - [ ] G2 fingerprint intacto.
+
+python tools/test_focused_exploration.py
+python tools/test_progressive_disclosure.py
+
+## Focused Exploration alpha.18
+- [ ] Explorar / Historias;
+- [ ] Tiempo → Mapa → En esta fecha;
+- [ ] no museum rail;
+- [ ] no categorySummary/categoryLegend;
+- [ ] no context dashboard;
+- [ ] no transformation/event standalone sections;
+- [ ] Evidence Lens solo bajo Filtros;
+- [ ] Periodos colapsados;
+- [ ] Ir al año colapsado;
+- [ ] máximo 4 evidencias antes de Ver más;
+- [ ] procesos y cambios colapsados;
+- [ ] metodología accesible desde Acerca;
+- [ ] navegación desde Historia vuelve correctamente a Explorar;
+- [ ] no CSS/JS legacy de los bloques retirados.
+
+
+## QA visual alpha.18
+- [x] Chromium 1440×1000;
+- [x] Chromium 393×852;
+- [x] no overflow horizontal;
+- [x] no console/page errors;
+- [x] Explorar ↔ Historias;
+- [x] Filtros móvil renderiza;
+- [ ] Xiaomi 15 táctil;
+- [ ] modo claro en Xiaomi 15.
+
+Ver `docs/VISUAL_QA_ALPHA18.md`.

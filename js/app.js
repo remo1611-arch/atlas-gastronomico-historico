@@ -1,22 +1,22 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.17';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.18';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.17',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.17',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.17',
-  places:'./data/places.json?v=0.1.0-alpha.17',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.17',
-  events:'./data/events.json?v=0.1.0-alpha.17',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.17',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.17',
-  developments:'./data/developments.json?v=0.1.0-alpha.17',
-  sources:'./data/sources.json?v=0.1.0-alpha.17',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.17'
+  config:'./data/config.json?v=0.1.0-alpha.18',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.18',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.18',
+  places:'./data/places.json?v=0.1.0-alpha.18',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.18',
+  events:'./data/events.json?v=0.1.0-alpha.18',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.18',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.18',
+  developments:'./data/developments.json?v=0.1.0-alpha.18',
+  sources:'./data/sources.json?v=0.1.0-alpha.18',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.18'
 };
 
 const s={
   config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],basemap:null,
-  year:1500,search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
+  year:1500,view:'explore',search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
   selectedOccurrence:null,historySubject:null,temporalSelection:null,eventWindow:100,category:'all',layers:{gastronomy:true,contexts:true,developments:true,safety:true}
 };
 
@@ -605,44 +605,39 @@ function occurrencesWithoutMapPoint(list){
 
 function renderMapCoverage(list){
   const box=$('#mapCoverageStatus');
-  if(!box) return;
-
-  const missing=occurrencesWithoutMapPoint(list);
   const panel=$('#unmappedRecordsPanel');
+  const missing=occurrencesWithoutMapPoint(list);
 
   if(!missing.length){
     box.classList.add('hidden');
-    box.textContent='';
-    if(panel){
-      panel.classList.add('hidden');
-      panel.innerHTML='';
-    }
+    box.innerHTML='';
+    panel?.classList.add('hidden');
+    if(panel) panel.innerHTML='';
     return;
   }
 
-  const uniquePlaces=new Set(missing.map(o=>o.placeRef)).size;
   box.classList.remove('hidden');
-  box.innerHTML=`
-    <strong>${missing.length} ${missing.length===1?'registro visible no puede':'registros visibles no pueden'} situarse con un punto fiable.</strong>
-    <span>${uniquePlaces} ${uniquePlaces===1?'lugar carece':'lugares carecen'} de coordenadas canónicas. No se inventan centroides para rellenar el mapa.</span>
-  `;
+  box.innerHTML=`<button type="button" class="coverage-chip" data-toggle-unmapped>
+    ${missing.length} ${missing.length===1?'sin localización precisa':'sin localización precisa'}
+  </button>`;
 
   if(panel){
-    panel.classList.remove('hidden');
-    panel.innerHTML=`<details>
-      <summary>Ver ${missing.length} ${missing.length===1?'registro sin punto':'registros sin punto'}</summary>
-      <div class="unmapped-record-list">
-        ${missing.map(o=>{
-          const subject=subj(o.subjectRef);
-          const pl=place(o.placeRef);
-          return `<button type="button" data-unmapped-occurrence="${esc(o.id)}">
-            <span>${esc(subject?.name||o.subjectRef)}</span>
-            <strong>${esc(pl?.name||o.placeRef)}</strong>
-            <small>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)} · ${esc(precisionLabel(o))}</small>
-          </button>`;
-        }).join('')}
-      </div>
-    </details>`;
+    panel.classList.add('hidden');
+    panel.innerHTML=`<div class="unmapped-record-list">
+      ${missing.map(o=>{
+        const subject=subj(o.subjectRef);
+        const pl=place(o.placeRef);
+        return `<button type="button" data-unmapped-occurrence="${esc(o.id)}">
+          <span>${esc(subject?.name||o.subjectRef)}</span>
+          <strong>${esc(pl?.name||o.placeRef)}</strong>
+          <small>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
+        </button>`;
+      }).join('')}
+    </div>`;
+
+    $('[data-toggle-unmapped]')?.addEventListener('click',()=>{
+      panel.classList.toggle('hidden');
+    });
 
     $$('[data-unmapped-occurrence]').forEach(button=>{
       button.addEventListener('click',()=>selectOccurrence(button.dataset.unmappedOccurrence,true));
@@ -1264,11 +1259,37 @@ function setYear(year){
   render();
 }
 
+
+function setExperienceView(view,{scroll=true}={}){
+  const next=view==='histories'?'histories':'explore';
+  s.view=next;
+
+  const explore=$('#exploreView');
+  const histories=$('#historiesView');
+  explore?.classList.toggle('hidden',next!=='explore');
+  explore?.classList.toggle('active',next==='explore');
+  histories?.classList.toggle('hidden',next!=='histories');
+  histories?.classList.toggle('active',next==='histories');
+
+  const exploreBtn=$('#exploreNavBtn');
+  const historiesBtn=$('#historiesNavBtn');
+  exploreBtn?.classList.toggle('active',next==='explore');
+  historiesBtn?.classList.toggle('active',next==='histories');
+  exploreBtn?.setAttribute('aria-pressed',String(next==='explore'));
+  historiesBtn?.setAttribute('aria-pressed',String(next==='histories'));
+
+  if(next==='histories') renderHistorySpotlight();
+
+  if(scroll){
+    const target=next==='histories'?histories:explore;
+    target?.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
 function render(){
   const list=occVisible();
   renderTemporalNavigator();
   renderMetrics(list);
-  renderCategorySummary(list);
   renderEvidenceLens(list);
   renderList(list);
   renderMapCoverage(list);
@@ -1276,9 +1297,8 @@ function render(){
   renderContextLayer();
   renderDevelopmentLayer();
   renderTransformationPreview();
-  renderContext(list);
-  renderHistorySpotlight();
   renderEvents();
+  if(s.view==='histories') renderHistorySpotlight();
 
   if(s.selectedOccurrence && !list.some(x=>x.id===s.selectedOccurrence)){
     s.selectedOccurrence=null;
@@ -1286,43 +1306,38 @@ function render(){
   }
 }
 
+function visibleEventCandidates(){
+  return s.events
+    .filter(e=>isPublicStatus(e.status)&&matchesEvidenceQualityFilters(e)&&distance(e.period,s.year)<=s.eventWindow)
+    .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year));
+}
+
+function visibleDevelopmentCandidates(){
+  const candidates=s.developments
+    .filter(d=>isPublicStatus(d.status)&&matchesEvidenceQualityFilters(d))
+    .filter(d=>{
+      const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
+      return safety ? s.layers.safety : s.layers.developments;
+    });
+
+  const activeNow=candidates.filter(d=>active(d.period,s.year));
+  return (activeNow.length
+    ? activeNow
+    : candidates.slice().sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year))
+  ).slice(0,3);
+}
+
 function renderMetrics(list){
-  $('#occurrenceCount').textContent=list.length;
-  $('#subjectCount').textContent=new Set(list.map(x=>x.subjectRef)).size;
-  $('#placeCount').textContent=new Set(list.map(x=>x.placeRef)).size;
-  $('#eventCount').textContent=s.events.filter(e=>isPublicStatus(e.status)&&matchesEvidenceQualityFilters(e)&&distance(e.period,s.year)<=s.eventWindow).length;
   $('#visibleBadge').textContent=list.length;
   $('#evidenceContext').textContent=list.length
-    ? `${list.length} ${list.length===1?'registro visible':'registros visibles'} en ${formatYear(s.year)}.`
-    : `No hay registros visibles en ${formatYear(s.year)} con estos filtros.`;
+    ? `${list.length} ${list.length===1?'registro':'registros'} en ${formatYear(s.year)}.`
+    : `Sin registros en ${formatYear(s.year)} con los filtros actuales.`;
+
+  const changes=visibleEventCandidates().length+visibleDevelopmentCandidates().length;
+  const badge=$('#changesCount');
+  if(badge) badge.textContent=changes;
 }
 
-function renderCategorySummary(list){
-  const box=$('#categorySummary');
-  const counts=new Map();
-
-  list.forEach(o=>{
-    const subject=subj(o.subjectRef);
-    const key=subject?.type || 'other';
-    counts.set(key,(counts.get(key)||0)+1);
-  });
-
-  const order=['food_species','beverage','culinary_technique','processed_product'];
-  box.innerHTML=order.map(kind=>`
-    <button class="summary-card" data-kind="${kind}" type="button" data-summary-category="${kind}">
-      <span>${esc(CATEGORY_LABELS[kind])}</span>
-      <strong>${counts.get(kind)||0}</strong>
-    </button>
-  `).join('');
-
-  $$('[data-summary-category]').forEach(button=>{
-    button.addEventListener('click',()=>{
-      setCategoryFilter(s.category===button.dataset.summaryCategory?'all':button.dataset.summaryCategory);
-      render();
-    });
-  });
-  syncTypeControls();
-}
 
 
 function renderEvidenceLens(list){
@@ -1380,43 +1395,55 @@ function renderEvidenceLens(list){
   `;
 }
 
+function evidenceCardNode(o){
+  const subject=subj(o.subjectRef);
+  const pl=place(o.placeRef);
+  const button=document.createElement('button');
+  button.type='button';
+  button.className='evidence-card focused'+(o.id===s.selectedOccurrence?' active':'');
+  const uncertainty=o.certainty&&o.certainty!=='high'
+    ? `<span class="focused-caution ${esc(o.certainty)}">${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</span>`
+    : '';
+
+  button.innerHTML=`
+    <span class="card-top focused">
+      <i class="category-dot" data-kind="${esc(subject.type)}"></i>
+      <strong>${esc(subject.name)}</strong>
+      ${uncertainty}
+    </span>
+    <span class="focused-evidence-type">${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+    <small>${esc(pl.name)} · ${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
+  `;
+  button.addEventListener('click',()=>selectOccurrence(o.id,true));
+  return button;
+}
+
 function renderList(list){
   const box=$('#occurrenceList');
   box.innerHTML='';
 
   if(!list.length){
-    box.innerHTML='<p class="map-foot">No hay evidencias visibles. Cambia de fecha o abre Filtros para ampliar la búsqueda.</p>';
+    box.innerHTML='<p class="focused-empty">No hay evidencias visibles. Cambia de fecha o abre Filtros.</p>';
     return;
   }
 
-  list
+  const sorted=list
     .slice()
-    .sort((a,b)=>subj(a.subjectRef).name.localeCompare(subj(b.subjectRef).name,'es'))
-    .forEach(o=>{
-      const subject=subj(o.subjectRef);
-      const pl=place(o.placeRef);
+    .sort((a,b)=>subj(a.subjectRef).name.localeCompare(subj(b.subjectRef).name,'es'));
 
-      const button=document.createElement('button');
-      button.type='button';
-      button.className='evidence-card'+(o.id===s.selectedOccurrence?' active':'');
-      const sm=statusMeta(o.status);
-      button.innerHTML=`
-        <span class="card-top">
-          <i class="category-dot" data-kind="${esc(subject.type)}"></i>
-          <strong>${esc(subject.name)}</strong>
-          <em class="mini-status ${esc(sm.className)}">${esc(sm.label)}</em>
-        </span>
-        <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)} · ${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
-        <small>${esc(pl.name)} · ${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
-        <span class="evidence-card-quality">
-          <b class="quality-chip certainty ${esc(o.certainty)}">${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</b>
-          <b class="quality-chip precision">${esc(precisionLabel(o))}</b>
-          ${!pl.point?'<b class="quality-chip unmapped">Sin punto</b>':''}
-        </span>
-      `;
-      button.addEventListener('click',()=>selectOccurrence(o.id,true));
-      box.appendChild(button);
-    });
+  const primary=sorted.slice(0,4);
+  const rest=sorted.slice(4);
+
+  primary.forEach(o=>box.appendChild(evidenceCardNode(o)));
+
+  if(rest.length){
+    const details=document.createElement('details');
+    details.className='evidence-more';
+    details.innerHTML=`<summary>Ver ${rest.length} ${rest.length===1?'registro más':'registros más'}</summary><div class="evidence-more-list"></div>`;
+    const listBox=details.querySelector('.evidence-more-list');
+    rest.forEach(o=>listBox.appendChild(evidenceCardNode(o)));
+    box.appendChild(details);
+  }
 }
 
 function renderBasemap(){
@@ -1578,18 +1605,7 @@ function renderTransformationPreview(){
   const box=$('#transformationPreview');
   if(!box) return;
 
-  const candidates=s.developments
-    .filter(d=>isPublicStatus(d.status)&&matchesEvidenceQualityFilters(d))
-    .filter(d=>{
-      const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
-      return safety ? s.layers.safety : s.layers.developments;
-    });
-
-  const activeNow=candidates.filter(d=>active(d.period,s.year));
-  const chosen=(activeNow.length?activeNow:candidates
-    .slice()
-    .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year)))
-    .slice(0,3);
+  const chosen=visibleDevelopmentCandidates();
 
   if(!chosen.length){
     box.innerHTML=`
@@ -1618,36 +1634,6 @@ function renderTransformationPreview(){
   });
 }
 
-function renderContext(list){
-  const title=$('#contextTitle');
-  const text=$('#contextText');
-  const box=$('#contextHighlights');
-
-  if(!list.length){
-    title.textContent='Un momento sin registros visibles';
-    text.textContent='Con el corpus y los filtros actuales no hay evidencias activas para esta fecha.';
-    box.innerHTML='<article class="context-card"><strong>Explora otra fecha</strong><span>Usa la línea temporal o amplía los filtros para recuperar evidencias.</span></article>';
-    return;
-  }
-
-  const subjects=[...new Set(list.map(x=>subj(x.subjectRef)?.name).filter(Boolean))];
-  const places=[...new Set(list.map(x=>place(x.placeRef)?.name).filter(Boolean))];
-  const evidence=[...new Set(list.map(x=>EVIDENCE_LABELS[x.evidenceType]||x.evidenceType))];
-  const reviewed=list.filter(x=>x.status==='reviewed').length;
-  const verified=list.filter(x=>x.status==='verified').length;
-
-  title.textContent=`${formatYear(s.year)} · una instantánea del mundo alimentario`;
-  text.textContent=`El Atlas muestra ${list.length} ${list.length===1?'registro':'registros'} asociados a ${subjects.length} ${subjects.length===1?'elemento gastronómico':'elementos gastronómicos'} y ${places.length} ${places.length===1?'lugar':'lugares'}.`;
-
-  const cards=[
-    ['Elementos visibles',subjects.slice(0,4).join(' · ')||'—'],
-    ['Lugares representados',places.slice(0,4).join(' · ')||'—'],
-    ['Tipos de evidencia',evidence.slice(0,4).join(' · ')||'—'],
-    ['Estado del corpus',`${reviewed} revisados · ${verified} verificados`]
-  ];
-
-  box.innerHTML=cards.map(([a,b])=>`<article class="context-card"><strong>${esc(a)}</strong><span>${esc(b)}</span></article>`).join('');
-}
 
 
 function renderHistorySpotlight(){
@@ -1696,9 +1682,7 @@ function renderEvents(){
   const box=$('#eventList');
   box.innerHTML='';
 
-  const ev=s.events
-    .filter(e=>isPublicStatus(e.status)&&matchesEvidenceQualityFilters(e)&&distance(e.period,s.year)<=s.eventWindow)
-    .sort((a,b)=>distance(a.period,s.year)-distance(b.period,s.year));
+  const ev=visibleEventCandidates();
 
   if(!ev.length){
     box.innerHTML='<p class="map-foot">No hay procesos registrados en esta ventana temporal.</p>';
@@ -1946,6 +1930,7 @@ function renderSubjectHistory(subjectId){
       const o=s.occurrences.find(x=>x.id===id);
       if(!o) return;
       closeHistory();
+      setExperienceView('explore',{scroll:false});
       setYear(o.period.start);
       selectOccurrence(id,true);
       setTimeout(()=>$('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
@@ -1958,6 +1943,7 @@ function renderSubjectHistory(subjectId){
       const o=s.occurrences.find(x=>x.id===id);
       if(!o) return;
       closeHistory();
+      setExperienceView('explore',{scroll:false});
       setYear(o.period.start);
       selectOccurrence(id,true);
       setTimeout(()=>$('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
@@ -1970,7 +1956,10 @@ function renderSubjectHistory(subjectId){
       if(!e) return;
       closeHistory();
       closeDetail();
+      setExperienceView('explore',{scroll:false});
       setYear(e.period.start);
+      const changes=$('#changesDisclosure');
+      if(changes) changes.open=true;
       setTimeout(()=>$('#eventList')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
       showToast(e.title);
     });
@@ -1982,8 +1971,11 @@ function renderSubjectHistory(subjectId){
       if(!d) return;
       closeHistory();
       closeDetail();
+      setExperienceView('explore',{scroll:false});
       setYear(d.period.start);
-      setTimeout(()=>$('#transformTitle')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
+      const changes=$('#changesDisclosure');
+      if(changes) changes.open=true;
+      setTimeout(()=>$('#transformationPreview')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
       showToast(d.name);
     });
   });
@@ -2177,10 +2169,6 @@ function closeDetail(){
 }
 
 function syncTypeControls(){
-  $$('#categoryLegend [data-category]').forEach(button=>{
-    button.classList.toggle('active',button.dataset.category===s.category);
-    button.setAttribute('aria-pressed',String(button.dataset.category===s.category));
-  });
 
   if($('#subjectTypeFilter')){
     $('#subjectTypeFilter').value=s.category;
@@ -2189,10 +2177,6 @@ function syncTypeControls(){
   if($('#precisionFilter')) $('#precisionFilter').value=s.precision;
   if($('#spatialFilter')) $('#spatialFilter').value=s.spatial;
 
-  $$('[data-summary-category]').forEach(button=>{
-    button.classList.toggle('active',button.dataset.summaryCategory===s.category);
-    button.setAttribute('aria-pressed',String(button.dataset.summaryCategory===s.category));
-  });
 }
 
 function setCategoryFilter(value){
@@ -2273,7 +2257,11 @@ function bind(){
   $('#precisionFilter').addEventListener('change',e=>{s.precision=e.target.value;render()});
   $('#spatialFilter').addEventListener('change',e=>{s.spatial=e.target.value;render()});
   $('#labelMode').addEventListener('change',e=>{s.labelMode=e.target.value;renderMarkers(occVisible())});
-  $('#eventWindowSelect').addEventListener('change',e=>{s.eventWindow=Number(e.target.value)||100;renderMetrics(occVisible());renderEvents()});
+  $('#eventWindowSelect').addEventListener('change',e=>{
+    s.eventWindow=Number(e.target.value)||100;
+    renderMetrics(occVisible());
+    renderEvents();
+  });
 
   $('#resetFiltersBtn').addEventListener('click',()=>{debouncedSearch.cancel();resetFilters()});
   $('#applyFiltersBtn').addEventListener('click',closeDrawer);
@@ -2289,8 +2277,6 @@ function bind(){
   $('#layerSafety').addEventListener('change',e=>{s.layers.safety=e.target.checked;render()});
 
   $('#filterBtn').addEventListener('click',openDrawer);
-  $('#evidenceLensFilterBtn').addEventListener('click',openDrawer);
-  $('#openFiltersHeroBtn').addEventListener('click',openDrawer);
   $$('[data-close-drawer]').forEach(x=>x.addEventListener('click',closeDrawer));
 
   $$('[data-close-detail]').forEach(x=>x.addEventListener('click',closeDetail));
@@ -2301,13 +2287,14 @@ function bind(){
     if(o) openHistory(o.subjectRef);
   });
 
-  $('#jumpMapBtn').addEventListener('click',()=>$('#mapSection').scrollIntoView({behavior:'smooth',block:'start'}));
+  $('#exploreNavBtn').addEventListener('click',()=>setExperienceView('explore'));
+  $('#historiesNavBtn').addEventListener('click',()=>setExperienceView('histories'));
+  $('#openHistoriesHeroBtn').addEventListener('click',()=>setExperienceView('histories'));
+  $('.brand')?.addEventListener('click',()=>setExperienceView('explore',{scroll:false}));
 
-  $$('#categoryLegend [data-category]').forEach(button=>{
-    button.addEventListener('click',()=>{
-      setCategoryFilter(button.dataset.category);
-      render();
-    });
+  $('#jumpMapBtn').addEventListener('click',()=>{
+    setExperienceView('explore',{scroll:false});
+    $('#mapSection').scrollIntoView({behavior:'smooth',block:'start'});
   });
 
   $('#themeBtn').addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));

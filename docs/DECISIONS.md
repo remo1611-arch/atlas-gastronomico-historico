@@ -245,3 +245,27 @@ Las amplitudes y gaps se calculan con `toOrdinal()` para conservar la regla de a
 **Aceptada.**
 La UI puede profundizar en fuentes y posiciones de un desacuerdo, pero no inferirá una posición preferida ni un score de consenso.
 
+## ADR-065 — Explorar no es un dashboard
+**Aceptada.**
+La superficie principal se reduce a Tiempo → Mapa → En esta fecha. Métricas y diagnósticos dejan de ocupar bloques permanentes.
+
+## ADR-066 — Historias como experiencia independiente
+**Aceptada.**
+Los recorridos longitudinales pasan a una vista propia `Historias`, manteniendo el motor genérico.
+
+## ADR-067 — Evidence Lens bajo demanda
+**Aceptada.**
+Evidence Lens permanece funcional, pero se mueve al drawer de Filtros como `Resumen de la selección`.
+
+## ADR-068 — Procesos y cambios unificados
+**Aceptada.**
+Events y developments se muestran juntos mediante un disclosure contextual. Las entidades y datasets siguen separados.
+
+## ADR-069 — Overview de evidencia minimalista
+**Aceptada.**
+La tarjeta principal no repite reviewed/verified, precisión y cartografía completa. Solo destaca incertidumbre relevante; el detalle completo vive en la ficha.
+
+## ADR-070 — Límite editorial de resultados
+**Aceptada.**
+`En esta fecha` muestra cuatro resultados prioritarios y revela el resto bajo demanda, evitando que el crecimiento del corpus convierta la home en una lista infinita.
+

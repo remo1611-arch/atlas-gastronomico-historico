@@ -18,12 +18,14 @@ if len(unmapped)!=18:
 for needle in [
     'id="unmappedRecordsPanel"',
     "data-unmapped-occurrence",
-    "No se inventan centroides",
     "function matchesSpatialFilter(o)",
 ]:
     target=html if needle.startswith('id=') else app
     if needle not in target:
         errors.append("acceso sin punto incompleto: "+needle)
+
+if "inventar un centroide cartográfico" not in html:
+    errors.append("la política espacial ya no está accesible en Acerca del atlas")
 
 if "spatialFilter" not in html:
     errors.append("falta filtro de cobertura cartográfica")

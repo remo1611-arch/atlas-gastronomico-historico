@@ -104,3 +104,11 @@ Estado de continuación:
 - Fingerprint G2 debe permanecer 9/9.
 - No crear score de evidencia ni winner disputed.
 - Antes de G3-C, revisar visualmente timeline precision window, history gaps y dispute comparison.
+
+Estado:
+- G2 CLOSED.
+- G3-A/B/C implementados.
+- Focused Exploration es la arquitectura pública actual.
+- No reintroducir museum rail, category dashboard, context dashboard ni secciones standalone de transformaciones/eventos.
+- Próximo bloque: G3-D auditoría espacial de 18 unmapped.
+- Antes, validar alpha.18 visual/táctilmente en Xiaomi 15.

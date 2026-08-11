@@ -13,13 +13,13 @@ if "subject.type!==s.subjectType" in app:
 if "subject.type!==s.category" not in app:
     errors.append("falta el filtro canónico único s.category")
 
-# Chips, summary and dropdown must converge on setCategoryFilter.
+# Focused Exploration keeps a single category control: the drawer dropdown.
 if "setCategoryFilter(e.target.value)" not in app:
     errors.append("dropdown Tipo no usa setCategoryFilter")
-if "setCategoryFilter(button.dataset.category)" not in app:
-    errors.append("chips de categoría no usan setCategoryFilter")
-if "button.dataset.summaryCategory" not in app or "setCategoryFilter(" not in app:
-    errors.append("resumen de categorías no usa estado unificado")
+if "setCategoryFilter(button.dataset.category)" in app:
+    errors.append("reaparecieron chips de categoría redundantes")
+if "button.dataset.summaryCategory" in app:
+    errors.append("reapareció el resumen de categorías redundante")
 
 # Reset must restore all controls in the filter drawer.
 for needle in [

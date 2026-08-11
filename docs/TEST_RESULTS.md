@@ -1,12 +1,12 @@
-# Resultados de validación — 0.1.0-alpha.17
+# Resultados de validación — 0.1.0-alpha.18
 
 Fecha: 2026-08-11
 
-## Gates
+## Estado
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- G3: EN CURSO · G3-A/B implementados.
+- G3: EN CURSO · A/B/C implementados.
 
 ## Corpus
 Sin cambios históricos respecto a alpha.15:
@@ -20,77 +20,101 @@ Sin cambios históricos respecto a alpha.15:
 - 66 sources.
 
 ## Contrato G2
-Fingerprint SHA-256:
-- taxonomy;
-- 8 schemas.
+- taxonomy + 8 schemas: **9/9 intactos**.
+- 140 objetos / 8 schemas: PASS.
+- G2 FINAL GATE: PASS.
 
-**9/9 intactos.**
-
-## G3-A
+## Focused Exploration
 PASS:
-- certainty/precision/spatial filters;
-- Evidence Lens;
-- detail semantics;
-- source comparison;
-- unmapped actionable access;
-- no evidence score.
+- Explorar / Historias;
+- Tiempo → Mapa → En esta fecha;
+- legacy dashboard sections eliminadas;
+- Evidence Lens bajo Filtros;
+- Periodos e Ir al año bajo disclosure;
+- hasta 4 evidencias antes de Ver más;
+- Procesos y cambios colapsado;
+- metodología en Acerca del Atlas;
+- navegación desde Historia vuelve a Explorar.
 
-## G3-B
-PASS:
-- ventana temporal contextual;
-- point/range/circa/broad diferenciados;
-- perfil cronológico en ficha;
-- duración mediante ordinal histórico;
-- gaps/solapamientos en Historia del elemento;
-- precision + certainty en todos los tipos de hito;
-- comparación documental ampliada de disputed;
-- sin winner/ranking/consensus score.
+## Limpieza legacy
+Ausentes en la experiencia pública:
+- museum rail;
+- category summary;
+- category legend;
+- context dashboard;
+- transformation standalone section;
+- events standalone section;
+- method note.
 
-## Algoritmos
-- CORE: 11 aserciones PASS.
-- Magnetic Timeline: 8 aserciones PASS.
-- G3 Chronology: 6 aserciones PASS.
-- prueba explícita -1 → 1 sin año 0: PASS.
+Se retiraron también sus bindings/funciones CSS legacy asociados.
 
-## Regresión
+## Suite completa
 PASS:
 - validate_project;
-- schema validation: 140 objetos / 8 schemas;
-- public state;
 - demo archive;
-- G2 final gate;
+- schema validation;
+- public state;
+- filter state;
+- verified gate;
 - pilots A/B/C/D;
-- verified gate: 14;
-- disputed contract;
-- technique history;
 - second review;
 - thematic coverage;
+- traceability UI;
+- disputed contract;
+- technique history;
 - three longitudinal histories;
 - G3 evidence & precision;
-- G3 source comparison;
-- G3 unmapped access;
-- G3 detail semantics;
-- G3 chronology semantics;
-- G3 disputed comparison;
+- source comparison;
+- unmapped access;
+- detail semantics;
+- chronology semantics;
+- disputed comparison;
 - light contrast;
-- mobile;
-- filter state;
 - map coverage;
+- mobile contract;
 - search debounce;
 - Temporal Navigator;
 - Unified Timeline;
 - Magnetic Timeline;
+- Focused Exploration;
+- Progressive Disclosure;
 - GitHub Pages 16/16.
 
-## UI
-- UI contract: 109 IDs / 96 referencias JS.
+## Algoritmos
+- CORE: 11 assertions PASS.
+- Magnetic algorithm: 8 assertions PASS.
+- G3 chronology algorithm: 6 assertions PASS.
 
-## Pendiente real
-Validación visual/táctil en dispositivo real de:
-- ventana temporal contextual;
-- circa/range/broad;
-- gaps en Historia del elemento;
-- disputed comparison en móvil;
-- modos oscuro/claro.
+## UI contract
+- 104 IDs;
+- 92 referencias JS;
+- PASS.
 
-No se declara prueba visual automatizada de navegador.
+## QA visual real
+Chromium:
+
+### Escritorio 1440 × 1000
+- scrollWidth = clientWidth = 1440;
+- sin overflow horizontal;
+- errores consola/pageerror: 0;
+- Explorar ↔ Historias: PASS;
+- altura Explorar alpha.18: 1803 px.
+
+### Móvil 393 × 852
+- scrollWidth = clientWidth = 393;
+- sin overflow horizontal;
+- errores consola/pageerror: 0;
+- Explorar ↔ Historias: PASS;
+- altura Explorar alpha.18: 2119 px.
+
+### Reducción frente a alpha.17
+- escritorio: **-50,8 %** de altura de página inicial;
+- móvil: **-63,6 %**.
+
+Detalle:
+`docs/VISUAL_QA_ALPHA18.md`
+
+## Pendiente
+- validación táctil real en Xiaomi 15;
+- modo claro en dispositivo real;
+- G3-D: auditoría espacial rigurosa de 18 occurrences sin punto.

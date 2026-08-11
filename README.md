@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.17
+**Versión:** 0.1.0-alpha.18
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -247,3 +247,19 @@ Alpha.17 profundiza en la lectura del tiempo y del desacuerdo académico:
 - disputed compara posiciones y sus fuentes sin declarar un ganador.
 
 No cambia ningún schema, taxonomy ni registro histórico.
+
+## Focused Exploration
+
+Alpha.18 reduce la pantalla principal a tres preguntas:
+
+1. ¿Cuándo estoy? → Tiempo.
+2. ¿Dónde hay evidencia? → Mapa.
+3. ¿Qué merece abrir? → En esta fecha.
+
+La profundidad técnica no desaparece:
+- Evidence Lens vive en Filtros;
+- procesos y cambios son desplegables;
+- fuentes, certeza y precisión completas viven en la ficha;
+- Historias tiene una vista propia.
+
+No hay cambios de corpus ni de contrato.

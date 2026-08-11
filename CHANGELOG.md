@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.1.0-alpha.18 — 2026-08-11
+
+### Focused Exploration
+- nueva navegación Explorar / Historias;
+- home reducida a Tiempo → Mapa → En esta fecha;
+- cronología visualmente aligerada;
+- Periodos e Ir al año pasan a disclosures;
+- filtros rápidos duplicados eliminados del mapa;
+- cobertura sin punto convertida en señal compacta;
+- Evidence Lens movida a Filtros;
+- overview de evidencias limitado a 4 + Ver más;
+- Transformaciones + Procesos y cambios fusionados;
+- Historias pasa a vista propia;
+- metodología trasladada a Acerca del Atlas.
+
+### Limpieza
+- museum rail eliminado;
+- category summary eliminado;
+- context dashboard eliminado;
+- transformation/event standalone sections eliminadas;
+- method note eliminada;
+- CSS y bindings legacy retirados.
+
+### Datos / contrato
+- corpus sin cambios;
+- schemas sin cambios;
+- taxonomy sin cambios;
+- G2 fingerprint intacto.
+
 ## 0.1.0-alpha.17 — 2026-08-11
 
 ### G3-B · Cronología

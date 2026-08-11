@@ -27,8 +27,10 @@ if 'id="unmappedRecordsPanel"' not in html:
     errors.append("falta panel accionable de registros sin punto")
 if "data-unmapped-occurrence" not in app:
     errors.append("los registros sin punto no tienen acceso directo desde el mapa")
-if "No se inventan centroides" not in app:
-    errors.append("la UI no explica la política de no inventar coordenadas")
+if "coverage-chip" not in app:
+    errors.append("falta señal compacta de cobertura")
+if "inventar un centroide cartográfico" not in html:
+    errors.append("Acerca del atlas no conserva la política de no inventar coordenadas")
 if "console.warn(`[Atlas] Registro sin punto cartográfico:" not in app:
     errors.append("falta warning diagnóstico de registro sin punto")
 

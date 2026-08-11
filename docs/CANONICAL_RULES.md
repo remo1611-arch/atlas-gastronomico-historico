@@ -128,3 +128,13 @@
 102. Un caso `disputed` puede comparar posiciones y fuentes, pero no asignar ganador, preferencia o score de consenso automáticamente.
 103. La revisión editorial correcta de un desacuerdo no equivale a resolverlo.
 
+104. La experiencia principal no debe reproducir la estructura interna del modelo de datos como un dashboard.
+105. `Explorar` prioriza únicamente tiempo, mapa y contenido relevante de la fecha.
+106. La profundidad técnica se ofrece mediante divulgación progresiva: filtros, details, drawers y fichas.
+107. `Historias` constituye una experiencia propia y no una sección secundaria añadida al final de Explorar.
+108. No coexistirán filtros rápidos redundantes con el drawer de filtros cuando ambos controlen el mismo estado.
+109. La lista principal mostrará un máximo editorial razonable antes de exigir una acción explícita para ver más.
+110. En tarjetas de overview se priorizan excepciones interpretativas; estado editorial y metadatos completos pertenecen a la ficha.
+111. La metodología permanente se concentra en Acerca del Atlas o ayudas contextuales, no en bloques repetidos de la home.
+112. Procesos, eventos y transformaciones pueden compartir un disclosure contextual cuando su separación permanente genere ruido sin aportar una decisión distinta.
+

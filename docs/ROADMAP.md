@@ -272,6 +272,19 @@ Contrato G2 congelado.
 - comparación documental avanzada de disputed;
 - cero cambios de schema/taxonomy.
 
+### G3-C — Focused Exploration
+**Estado: IMPLEMENTADO · alpha.18**
+
+- Explorar / Historias como experiencias separadas;
+- home reducida a Tiempo → Mapa → En esta fecha;
+- métricas repetidas eliminadas;
+- Evidence Lens movida a Filtros;
+- categorías rápidas duplicadas eliminadas;
+- Transformaciones + Procesos fusionados bajo disclosure;
+- metodología movida a Acerca del Atlas;
+- overview limitado a 4 registros + `Ver más`;
+- legacy HTML/JS/CSS eliminado.
+
 ### Pendiente G3
 - rationale específico por registro, solo si un caso real justifica cambio de contrato;
 - tratamiento visual avanzado de intervalos y precisión en más vistas;

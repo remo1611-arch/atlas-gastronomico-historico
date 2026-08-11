@@ -4,17 +4,17 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.17
+0.1.0-alpha.18
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- **G3: EN CURSO · A/B implementados.**
+- **G3: EN CURSO · A/B/C implementados.**
 - G4+: no iniciados.
 
 ## Corpus
-Sin cambios históricos respecto a alpha.15:
+Sin cambios respecto a alpha.15:
 - 11 subjects;
 - 24 places;
 - 24 occurrences;
@@ -25,30 +25,53 @@ Sin cambios históricos respecto a alpha.15:
 - 66 sources.
 
 ## Contrato
-Schemas y taxonomy permanecen idénticos a G2 CLOSED.
+Schemas y taxonomy siguen idénticos a G2 CLOSED.
 
-Fingerprint:
-`docs/G2_CONTRACT_FINGERPRINT.json`
+Fingerprint G2:
+9/9.
 
 ## G3-A
-- filtros certainty/precision/spatial;
+Evidencia y precisión:
+- filters;
 - Evidence Lens;
-- ficha semántica;
-- comparación de fuentes;
-- acceso a unmapped.
+- source comparison;
+- unmapped access.
 
 ## G3-B
-- ventana temporal del hito enfocado;
-- lectura point/range/circa/broad;
-- amplitud cronológica en ficha;
-- gaps y solapamientos en Historia del elemento;
-- precision/certainty en occurrence/event/technique/development;
-- disputed con comparación documental ampliada;
-- ninguna posición se prioriza automáticamente.
+Cronología y disputed:
+- intervalos;
+- gaps;
+- comparison;
+- neutralidad editorial.
 
-## Pendiente
-1. validación visual/táctil real de G3-A/B;
-2. decidir si rationale específico por registro justifica cambio de contrato;
-3. estudiar geometrías regionales verificadas;
-4. decidir alcance exacto de G3-C;
-5. cerrar G3 antes de redes/difusión G4.
+## G3-C
+Focused Exploration:
+- `Explorar`;
+- `Historias`;
+- Tiempo → Mapa → En esta fecha;
+- Evidence Lens bajo demanda;
+- hasta 4 registros en overview;
+- Procesos y cambios bajo disclosure;
+- metodología en Acerca del Atlas;
+- eliminación de bloques legacy.
+
+## Próximo objetivo
+G3-D — cobertura espacial rigurosa.
+
+Auditar los 18 registros públicos sin punto:
+A. lugar concreto localizable;
+B. región que requiere geometría;
+C. evidencia que debe permanecer deliberadamente sin geometría.
+
+Después, evaluar cierre de G3.
+
+## QA visual alpha.18
+Chromium real:
+- escritorio 1440×1000: PASS;
+- móvil 393×852: PASS;
+- overflow horizontal: 0;
+- errores de consola: 0;
+- reducción de altura frente a alpha.17: -50,8 % escritorio / -63,6 % móvil.
+
+## Pendiente visual
+Validación táctil real en Xiaomi 15 de alpha.18.
