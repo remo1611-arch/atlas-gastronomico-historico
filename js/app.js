@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.8';
+import {toOrdinal,fromOrdinal,formatYear,shiftYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.9';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.8',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.8',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.8',
-  places:'./data/places.json?v=0.1.0-alpha.8',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.8',
-  events:'./data/events.json?v=0.1.0-alpha.8',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.8',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.8',
-  developments:'./data/developments.json?v=0.1.0-alpha.8',
-  sources:'./data/sources.json?v=0.1.0-alpha.8',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.8'
+  config:'./data/config.json?v=0.1.0-alpha.9',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.9',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.9',
+  places:'./data/places.json?v=0.1.0-alpha.9',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.9',
+  events:'./data/events.json?v=0.1.0-alpha.9',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.9',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.9',
+  developments:'./data/developments.json?v=0.1.0-alpha.9',
+  sources:'./data/sources.json?v=0.1.0-alpha.9',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.9'
 };
 
 const s={
@@ -77,6 +77,15 @@ const OCC_LABELS={
   industrial_production:'Producción industrial',
   traditional_attribution:'Atribución tradicional',
   other:'Otro'
+};
+
+const EVENT_LABELS={
+  diffusion:'Difusión / intercambio',
+  exchange:'Intercambio',
+  regulation:'Regulación',
+  scientific:'Cambio científico',
+  industrial:'Cambio industrial',
+  other:'Proceso histórico'
 };
 
 const CATEGORY_LABELS={
@@ -597,8 +606,9 @@ function renderHistorySpotlight(){
     .map(subject=>{
       const items=subjectHistoryItems(subject.id);
       const occurrences=items.filter(x=>x.kind==='occurrence');
+      const events=items.filter(x=>x.kind==='event');
       const developments=items.filter(x=>x.kind==='development');
-      return {subject,items,occurrences,developments};
+      return {subject,items,occurrences,events,developments};
     })
     .filter(x=>x.occurrences.length>=2)
     .sort((a,b)=>{
@@ -611,13 +621,13 @@ function renderHistorySpotlight(){
     return;
   }
 
-  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,developments})=>{
+  box.innerHTML=available.slice(0,6).map(({subject,items,occurrences,events,developments})=>{
     const first=items[0]?.period?.start;
     const last=items[items.length-1]?.period?.end;
     return `<button class="history-spotlight-card" type="button" data-history-subject="${esc(subject.id)}">
       <span class="history-spotlight-kicker">${esc(TYPE_LABELS[subject.type]||subject.type)}</span>
       <strong>Historia de ${esc(subject.name)}</strong>
-      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
+      <p>${occurrences.length} ${occurrences.length===1?'evidencia':'evidencias'}${events.length?` · ${events.length} ${events.length===1?'evento':'eventos'}`:''}${developments.length?` · ${developments.length} ${developments.length===1?'transformación':'transformaciones'}`:''}</p>
       <small>${first!==undefined&&last!==undefined?`${esc(formatYear(first))} → ${esc(formatYear(last))}`:'Recorrido disponible'}</small>
       <em>Explorar recorrido →</em>
     </button>`;
@@ -644,10 +654,16 @@ function renderEvents(){
   ev.forEach(e=>{
     const article=document.createElement('article');
     article.className='event-card';
+    const sm=statusMeta(e.status);
     article.innerHTML=`
       <span class="event-date">${esc(e.period.display||`${formatYear(e.period.start)}–${formatYear(e.period.end)}`)}</span>
       <strong>${esc(e.title)}</strong>
       <p>${esc(e.summary)}</p>
+      <div class="event-meta">
+        <span>${esc(EVENT_LABELS[e.eventType]||e.eventType||'Proceso histórico')}</span>
+        <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+        <span>${(e.sourceRefs||[]).length} ${(e.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
+      </div>
     `;
     box.appendChild(article);
   });
@@ -668,11 +684,15 @@ function subjectHistoryItems(subjectId){
     .filter(o=>o.subjectRef===subjectId&&o.status!=='deprecated'&&(o.status==='reviewed'||o.status==='verified'))
     .map(o=>({kind:'occurrence',period:o.period,item:o}));
 
+  const events=s.events
+    .filter(e=>e.status!=='deprecated'&&(e.status==='reviewed'||e.status==='verified')&&(e.subjectRefs||[]).includes(subjectId))
+    .map(e=>({kind:'event',period:e.period,item:e}));
+
   const developments=s.developments
     .filter(d=>d.status!=='deprecated'&&(d.status==='reviewed'||d.status==='verified')&&(d.impactSubjectRefs||[]).includes(subjectId))
     .map(d=>({kind:'development',period:d.period,item:d}));
 
-  return [...occurrences,...developments].sort((a,b)=>{
+  return [...occurrences,...events,...developments].sort((a,b)=>{
     if(a.period.start!==b.period.start) return a.period.start-b.period.start;
     return a.period.end-b.period.end;
   });
@@ -691,17 +711,20 @@ function renderSubjectHistory(subjectId){
 
   const items=subjectHistoryItems(subjectId);
   const occurrenceCount=items.filter(x=>x.kind==='occurrence').length;
+  const eventCount=items.filter(x=>x.kind==='event').length;
   const developmentCount=items.filter(x=>x.kind==='development').length;
 
   s.historySubject=subjectId;
   $('#historyTitle').textContent=`Historia de ${subject.name}`;
-  $('#historySubtitle').textContent='Evidencias y transformaciones documentadas actualmente en el Atlas.';
+  $('#historySubtitle').textContent='Evidencias, procesos históricos y transformaciones documentados actualmente en el Atlas.';
 
   if(items.length){
     const first=items[0].period.start;
     const last=items[items.length-1].period.end;
     $('#historySummary').innerHTML=`
       <span><strong>${occurrenceCount}</strong> ${occurrenceCount===1?'evidencia':'evidencias'}</span>
+      <i></i>
+      <span><strong>${eventCount}</strong> ${eventCount===1?'evento':'eventos'}</span>
       <i></i>
       <span><strong>${developmentCount}</strong> ${developmentCount===1?'transformación':'transformaciones'}</span>
       <i></i>
@@ -738,10 +761,40 @@ function renderSubjectHistory(subjectId){
           <div class="history-meta">
             <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
             <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+            ${o.certainty&&o.certainty!=='high'?`<span class="history-uncertainty">Certeza: ${esc(o.certainty)}</span>`:''}
             ${contexts.map(c=>`<span>${esc(c)}</span>`).join('')}
             <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
+          ${o.certainty==='medium'?'<div class="history-caution">La evidencia o interpretación de este hito conserva incertidumbre explícita.</div>':''}
           <button type="button" class="history-open-record" data-history-occurrence="${esc(o.id)}">Abrir evidencia</button>
+        </div>
+      `;
+      timeline.appendChild(article);
+    }else if(entry.kind==='event'){
+      const e=entry.item;
+      const sm=statusMeta(e.status);
+      const article=document.createElement('article');
+      article.className='history-item history-event';
+      article.innerHTML=`
+        <div class="history-axis">
+          <span class="history-index">${String(index+1).padStart(2,'0')}</span>
+          <i></i>
+        </div>
+        <div class="history-card">
+          <div class="history-card-head">
+            <span class="history-kind event">EVENTO</span>
+            <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
+          </div>
+          <time>${esc(e.period.display||`${formatYear(e.period.start)}–${formatYear(e.period.end)}`)}</time>
+          <h3>${esc(e.title)}</h3>
+          <p>${esc(e.summary)}</p>
+          <div class="history-meta">
+            <span>${esc(EVENT_LABELS[e.eventType]||e.eventType||'Proceso histórico')}</span>
+            ${e.certainty&&e.certainty!=='high'?`<span class="history-uncertainty">Certeza: ${esc(e.certainty)}</span>`:''}
+            <span>${(e.sourceRefs||[]).length} ${(e.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
+          </div>
+          ${verificationHTML(e)}
+          <button type="button" class="history-open-event" data-history-event="${esc(e.id)}">Ir al proceso histórico</button>
         </div>
       `;
       timeline.appendChild(article);
@@ -784,6 +837,18 @@ function renderSubjectHistory(subjectId){
       setYear(o.period.start);
       selectOccurrence(id,true);
       setTimeout(()=>$('#mapSection')?.scrollIntoView({behavior:'smooth',block:'start'}),40);
+    });
+  });
+
+  $$('[data-history-event]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      const e=s.events.find(x=>x.id===button.dataset.historyEvent);
+      if(!e) return;
+      closeHistory();
+      closeDetail();
+      setYear(e.period.start);
+      setTimeout(()=>$('#eventList')?.scrollIntoView({behavior:'smooth',block:'center'}),40);
+      showToast(e.title);
     });
   });
 
@@ -917,11 +982,12 @@ function renderDetails(o){
 
   const historyItems=subjectHistoryItems(subject.id);
   const historyCount=historyItems.filter(x=>x.kind==='occurrence').length;
+  const eventCount=historyItems.filter(x=>x.kind==='event').length;
   const transformationCount=historyItems.filter(x=>x.kind==='development').length;
   $('#subjectHistoryBtn').disabled=historyCount<2;
   $('#subjectHistoryBtn').textContent=historyCount<2
     ? 'Historia todavía insuficiente'
-    : `Ver historia · ${historyCount} hitos${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
+    : `Ver historia · ${historyCount} evidencias${eventCount?` + ${eventCount} evento${eventCount===1?'':'s'}`:''}${transformationCount?` + ${transformationCount} transformación${transformationCount===1?'':'es'}`:''}`;
   $('#subjectHistoryBtn').title=historyCount<2
     ? 'Se activará cuando este elemento tenga al menos dos registros históricos revisados.'
     : 'Abrir recorrido histórico documentado.';

@@ -14,12 +14,19 @@ css=(ROOT/"css/app.css").read_text(encoding="utf-8")
 
 errors=[]
 wine=[x for x in occ if x.get("subjectRef")=="wine" and x.get("status") in {"reviewed","verified"}]
+maize=[x for x in occ if x.get("subjectRef")=="maize" and x.get("status") in {"reviewed","verified"}]
 wine_dev=[x for x in dev if "wine" in x.get("impactSubjectRefs",[]) and x.get("status") in {"reviewed","verified"}]
+events=json.loads((ROOT/"data"/"events.json").read_text(encoding="utf-8"))
+maize_events=[x for x in events if "maize" in x.get("subjectRefs",[]) and x.get("status") in {"reviewed","verified"}]
 
 if len(wine)<5:
     errors.append(f"wine: se esperaban >=5 occurrences reviewed/verified, hay {len(wine)}")
 if not wine_dev:
     errors.append("wine: falta al menos un development relacionado")
+if len(maize)<7:
+    errors.append(f"maize: se esperaban >=7 occurrences reviewed/verified, hay {len(maize)}")
+if not maize_events:
+    errors.append("maize: falta al menos un evento histórico relacionado")
 if any(x.get("status") in {"seed","deprecated"} for x in wine):
     errors.append("historia wine incluye seed/deprecated")
 if "storage" not in tax.get("occurrenceTypes",[]):
@@ -46,6 +53,8 @@ for needle in [
     "function renderSubjectHistory(subjectId)",
     "function openHistory(subjectId)",
     "function renderHistorySpotlight()",
+    "kind:'event'",
+    "data-history-event",
     "data-history-occurrence",
     "data-history-development",
     "subjectHistoryBtn",
@@ -70,5 +79,7 @@ if errors:
 print("SUBJECT HISTORY: PASS")
 print("Wine occurrences:",len(wine))
 print("Wine developments:",len(wine_dev))
-print("Span:",years[0],"→",years[-1])
-print("Generic UI contract present.")
+print("Maize occurrences:",len(maize))
+print("Maize events:",len(maize_events))
+print("Span wine:",years[0],"→",years[-1])
+print("Generic UI + event contract present.")

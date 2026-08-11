@@ -147,7 +147,7 @@
     "id": "maize",
     "name": "Maíz",
     "type": "food_species",
-    "summary": "Zea mays, cultivo americano derivado de teosinte; el registro piloto se centra en evidencias arqueobotánicas tempranas del valle central del Balsas.",
+    "summary": "Zea mays, cultivo americano derivado de teosinte. El Atlas documenta su domesticación como proceso y su expansión posterior mediante evidencias arqueobotánicas, dietarias, históricas y de adopción regional.",
     "aliases": [
       "maíz",
       "corn"
@@ -160,7 +160,14 @@
     "sourceRefs": [
       "src_ranere_2009_balsas_context",
       "src_piperno_2009_balsas_maize",
-      "src_maize_pnas_commentary_2009"
+      "src_maize_pnas_commentary_2009",
+      "src_pohl_san_andres_2007",
+      "src_grobman_paredones_2012",
+      "src_paredones_diet_2020",
+      "src_crawford_lower_great_lakes_2017",
+      "src_aragon_cantabrian_maize_2021",
+      "src_miracle_africa_maize_1965",
+      "src_cambridge_world_history_maize"
     ],
     "status": "verified",
     "verification": {

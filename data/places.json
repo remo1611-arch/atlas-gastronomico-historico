@@ -271,5 +271,61 @@
       "src_jerusalem_vanilla_wine_2022"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "san_andres_tabasco",
+    "name": "San Andrés (Tabasco)",
+    "type": "site",
+    "point": null,
+    "summary": "Yacimiento del litoral tropical del Golfo de México con microfósiles que documentan expansión temprana del cultivo de maíz.",
+    "sourceRefs": [
+      "src_pohl_san_andres_2007"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "paredones_peru",
+    "name": "Paredones · valle de Chicama",
+    "type": "site",
+    "point": null,
+    "summary": "Yacimiento precerámico de la costa norte del Perú con una extensa secuencia de restos de maíz y evidencia dietaria.",
+    "sourceRefs": [
+      "src_grobman_paredones_2012",
+      "src_paredones_diet_2020"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "lower_great_lakes_region",
+    "name": "Región de los Grandes Lagos inferiores",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Región arqueológica de referencia para las primeras muestras de maíz directamente datadas en el área de los Grandes Lagos inferiores.",
+    "sourceRefs": [
+      "src_crawford_lower_great_lakes_2017"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "cantabrian_region",
+    "name": "Región cantábrica",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Marco regional del norte de la península ibérica utilizado para documentar la adopción del maíz durante la Edad Moderna.",
+    "sourceRefs": [
+      "src_aragon_cantabrian_maize_2021"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "tropical_atlantic_africa_coasts",
+    "name": "Costas atlánticas del África tropical (referencia)",
+    "type": "macroregion",
+    "point": null,
+    "summary": "Marco regional amplio para documentar referencias de cultivo de maíz en la costa occidental y centro-occidental africana durante el siglo XVI, sin fingir una única ruta o punto de entrada.",
+    "sourceRefs": [
+      "src_miracle_africa_maize_1965"
+    ],
+    "status": "reviewed"
   }
 ]

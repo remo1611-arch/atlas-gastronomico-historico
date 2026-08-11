@@ -11,6 +11,8 @@ for needle in [
     "function verificationHTML",
     "function subjectHistoryItems",
     "function renderSubjectHistory",
+    "data-history-event",
+    "EVENT_LABELS",
     "Fuentes del elemento",
     "Fuentes del registro",
     "renderTransformationPreview()",

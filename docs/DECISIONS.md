@@ -128,4 +128,3 @@ Tel Kabri demuestra que almacenamiento puede ser la afirmación histórica princ
 ## ADR-033 — Descubrimiento automático de recorridos
 **Aceptada.**
 “Historias disponibles” se genera desde subjects con al menos dos occurrences reviewed/verified. No contiene IDs hardcodeados.
-

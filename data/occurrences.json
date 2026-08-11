@@ -466,5 +466,136 @@
       "src_jerusalem_vanilla_wine_2022"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_san_andres_7300_calbp",
+    "subjectRef": "maize",
+    "placeRef": "san_andres_tabasco",
+    "period": {
+      "start": -5450,
+      "end": -5250,
+      "precision": "circa",
+      "display": "ca. 7300 cal BP (≈5350 a. C.)",
+      "note": "Se conserva la datación original en cal BP; la equivalencia a a.C. es aproximada."
+    },
+    "occurrenceType": "cultivation",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Fitolitos de sedimentos de San Andrés confirman que el cultivo de maíz se había extendido hasta la costa tropical del Golfo de México hace más de 7000 años.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_pohl_san_andres_2007"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_paredones_6775_6504_calbp",
+    "subjectRef": "maize",
+    "placeRef": "paredones_peru",
+    "period": {
+      "start": -4825,
+      "end": -4554,
+      "precision": "range",
+      "display": "6775–6504 cal BP (≈4825–4554 a. C.)",
+      "note": "El intervalo procede de dataciones calibradas de los contextos más tempranos con restos de maíz; se conserva el rango cal BP original."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Macrorrestos y microrestos de maíz en Paredones y Huaca Prieta documentan su llegada y diversificación temprana en la costa peruana durante el Precerámico.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_grobman_paredones_2012"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_paredones_consumption_6500_6000_calbp",
+    "subjectRef": "maize",
+    "placeRef": "paredones_peru",
+    "period": {
+      "start": -4550,
+      "end": -4050,
+      "precision": "range",
+      "display": "ca. 6500–6000 cal BP (≈4550–4050 a. C.)",
+      "note": "El estudio dietario documenta consumo regular por este intervalo; no implica que toda la costa peruana compartiese la misma dieta."
+    },
+    "occurrenceType": "consumption",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Isótopos estables y microdesgaste dental indican consumo regular de maíz entre individuos de Paredones, con especial relevancia en dietas infantiles.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_paredones_diet_2020"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_lower_great_lakes_540_1030",
+    "subjectRef": "maize",
+    "placeRef": "lower_great_lakes_region",
+    "period": {
+      "start": 540,
+      "end": 1030,
+      "precision": "range",
+      "display": "cal d. C. 540–1030"
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "archaeobotanical",
+    "certainty": "high",
+    "summary": "Cinco dataciones AMS de muestras de maíz del Grand Banks site confirman su presencia temprana en la región de los Grandes Lagos inferiores durante el Princess Point Complex.",
+    "contextRefs": [
+      "princess_point_complex"
+    ],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_crawford_lower_great_lakes_2017"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_cantabrian_adoption_late_16c",
+    "subjectRef": "maize",
+    "placeRef": "cantabrian_region",
+    "period": {
+      "start": 1580,
+      "end": 1600,
+      "precision": "circa",
+      "display": "finales del siglo XVI"
+    },
+    "occurrenceType": "adoption",
+    "evidenceType": "economic_record",
+    "certainty": "high",
+    "summary": "La documentación histórica indica que el cultivo de maíz para consumo humano comenzó a expandirse por la región cantábrica hacia finales del siglo XVI y ganó importancia de forma progresiva.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_aragon_cantabrian_maize_2021"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_maize_atlantic_africa_16c",
+    "subjectRef": "maize",
+    "placeRef": "tropical_atlantic_africa_coasts",
+    "period": {
+      "start": 1500,
+      "end": 1600,
+      "precision": "century",
+      "display": "siglo XVI"
+    },
+    "occurrenceType": "adoption",
+    "evidenceType": "textual",
+    "certainty": "medium",
+    "summary": "Fuentes históricas permiten documentar cultivo de maíz en varios sectores costeros del África tropical durante el siglo XVI, pero el modo, número de introducciones y rutas exactas permanecen inciertos.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_miracle_africa_maize_1965"
+    ],
+    "status": "reviewed"
   }
 ]

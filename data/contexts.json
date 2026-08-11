@@ -117,5 +117,24 @@
       "src_tel_kabri_archaeobotany_2023"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "princess_point_complex",
+    "name": "Princess Point Complex",
+    "type": "archaeological_culture",
+    "period": {
+      "start": 500,
+      "end": 1000,
+      "precision": "range",
+      "display": "ca. siglos VI–X d. C."
+    },
+    "placeRefs": [
+      "lower_great_lakes_region"
+    ],
+    "summary": "Complejo arqueológico Late Woodland del sur de Ontario asociado a la presencia temprana de maíz directamente datado en la región.",
+    "sourceRefs": [
+      "src_crawford_lower_great_lakes_2017"
+    ],
+    "status": "reviewed"
   }
 ]

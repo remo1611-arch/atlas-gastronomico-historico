@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.8",
+  "version": "0.1.0-alpha.9",
   "generated": "2026-08-11",
   "algorithm": "SHA-256",
   "files": [
@@ -11,8 +11,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5618,
-      "sha256": "311e589c13de3c9cdd876a5224f07f7729499a3f1086f989663e7dce1802a6c6"
+      "bytes": 5626,
+      "sha256": "9fc0f4b88e5e895cf42911d7116d343a598019662fcb035924224e2869b89a32"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -21,8 +21,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 4348,
-      "sha256": "35f6247012b87704cbee882453c2e03f56cdb95bab95e7b1e51c9b7bf6831067"
+      "bytes": 4343,
+      "sha256": "8f48b82399fc8e5ba02ff483d7a2a820fa856eb74cc8541a831332b4962f90e6"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -36,8 +36,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 49579,
-      "sha256": "8e7f39b03c91a5f1acd403fa95d4bdd0240661216c2591b7f715a7eba7982307"
+      "bytes": 50816,
+      "sha256": "dcebec76b298b96023c68fcbc4c27c7d2f4944431ffa1f59407e575d108d815e"
     },
     {
       "path": "data/basemap/world_110m.geojson",
@@ -47,12 +47,12 @@
     {
       "path": "data/config.json",
       "bytes": 517,
-      "sha256": "688096ea3f2969a830496651f3b78420d651885aa830a7e040cbeebe5a1a5571"
+      "sha256": "4a88ca4eef1f6b43cf58098784341531aa971b9f0f3a4f0ed5022bd89e89ee2e"
     },
     {
       "path": "data/contexts.json",
-      "bytes": 3563,
-      "sha256": "46a1eea9a22b1463402debe3dd8d36a9cc3e61dde9a904e1253097333b4daf2b"
+      "bytes": 4123,
+      "sha256": "cf12f576a5787ca262c22dabd98bfa3ea3abd50c75d1cc7839ca8367dd0cbc05"
     },
     {
       "path": "data/developments.json",
@@ -61,18 +61,18 @@
     },
     {
       "path": "data/events.json",
-      "bytes": 1187,
-      "sha256": "5439d425ce784a82c1ce40bb5b1650c3b276a32737cca8d81dad1ecdadc0e710"
+      "bytes": 2230,
+      "sha256": "437227bc60973aba45dcfe3d02d4a6e856c73f923cc913e58ebbbb226a513d21"
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 15555,
-      "sha256": "95ce10fe325902d0faff8ee302b3b47e11bf684b60d309452467f2deb9471a24"
+      "bytes": 20202,
+      "sha256": "d17b13eeec155dae2db369fd071c3f6f3a26e54f291c11951a13d96615756823"
     },
     {
       "path": "data/places.json",
-      "bytes": 7702,
-      "sha256": "4c85a22dc1f0a21c563b261eaaba2c51f812d378b04fd09785daf9b2ba63f8c8"
+      "bytes": 9664,
+      "sha256": "66bdaa4f78b04e2dd2a9bb4a9ac816fb953e75cc367d548249f2160d0739d754"
     },
     {
       "path": "data/relationships.json",
@@ -81,13 +81,13 @@
     },
     {
       "path": "data/sources.json",
-      "bytes": 17418,
-      "sha256": "67e7a12b49cee448568a2b2d9ff55062977a9f592db733b6a429b66b8989eb71"
+      "bytes": 21249,
+      "sha256": "fe422a1fbf196d31553ad4d7843c3283ae8d8f7e643011d61480646bc4f5ec94"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 7543,
-      "sha256": "6ebc1b2655c4a342b0bce0c6090948dcfb86eede438de697732f33b1eca5b4c8"
+      "bytes": 7877,
+      "sha256": "3e5c6539a2848900d6a29ac8e382c4dc501b463531995faa0cb533e234d8ab70"
     },
     {
       "path": "data/taxonomy.json",
@@ -96,8 +96,8 @@
     },
     {
       "path": "docs/CANONICAL_RULES.md",
-      "bytes": 4758,
-      "sha256": "2dff8d82e4822f821df04856c933ee38e4898d111f1387594b8e5421f021ce22"
+      "bytes": 5448,
+      "sha256": "2ecf368641f11102df6ad8224f453561ffdc9f4409dbd5d784b1becdb88526ce"
     },
     {
       "path": "docs/CARTOGRAPHY_POLICY.md",
@@ -106,13 +106,13 @@
     },
     {
       "path": "docs/DATA_MODEL.md",
-      "bytes": 8226,
-      "sha256": "b9a85007d41d82f54baedc56e32fc4dc1904d06937b929f244f2b92469032903"
+      "bytes": 9265,
+      "sha256": "3e2fe27b643070334fdb404b2a78d888ada0ca3b1f82f896a63b338392c286ec"
     },
     {
       "path": "docs/DECISIONS.md",
-      "bytes": 6381,
-      "sha256": "71cd626f652a3a2689106852a42cb9d6de07d595886e4b1a8d2a6e144c5677ca"
+      "bytes": 6380,
+      "sha256": "d27dd2e82123e73bdcfe55f69ea4d7efd8e452f36dec24ecad784f3a8c8a9143"
     },
     {
       "path": "docs/G2_PILOT.md",
@@ -130,6 +130,11 @@
       "sha256": "54ac116465113ff1e71d6dc6ee2ccff46a13a01c56bed436d54b72b801f8aa8d"
     },
     {
+      "path": "docs/G2_PILOT_C_MAIZE.md",
+      "bytes": 4148,
+      "sha256": "fb23436d7d9182c36308846e090016678816dff66f57dca8dded2b7f779c601d"
+    },
+    {
       "path": "docs/G2_SECOND_REVIEW_A.md",
       "bytes": 2088,
       "sha256": "7a701c991b9f3f8340fef67cc7e65f3ca95f2ff8088981e25ef112dd3b397044"
@@ -141,8 +146,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 1534,
-      "sha256": "a2f1a9c4b382bd3caeb0e72996f44eaae3ed460c36b2d65502e253ded701df58"
+      "bytes": 1838,
+      "sha256": "892d922ebaf6cbc19e79aa3e0d6033797c0b4b8aa662a407f3f53021bb12dbea"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -151,38 +156,38 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 1451,
-      "sha256": "c11c056da3749b6f85edf27bdc4763694cf6ad3e6e9230144de7ad4f2b7d6fe7"
+      "bytes": 1610,
+      "sha256": "19d974f163917cd19a5cd4fc932b2ec23640d6f908dc8921821c82b49be4a950"
     },
     {
       "path": "docs/QA.md",
-      "bytes": 3564,
-      "sha256": "763445e52a54c0c6493062a9d0ff8c9a6c6f2cfe8d16eb3ddf755864a929970e"
+      "bytes": 3933,
+      "sha256": "2df99fd4e24b588139d11ffec387bf5319001a9d62c3c77efbe6011b0f90976a"
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 3856,
-      "sha256": "3f453f6f84cf4ccda07122c9b4052afb1c2ed387eb661c06d0b36f560c256b04"
+      "bytes": 4457,
+      "sha256": "0cca1e4a768962dd803e60b3900f7fb3de28afcbfd7c5702dd6c81df9d1ef5c3"
     },
     {
       "path": "docs/SOURCE_POLICY.md",
-      "bytes": 2942,
-      "sha256": "1a74f3c870a7b4e69c787927c38d8e0d86b45d735acfd83027e2e142b2978c8a"
+      "bytes": 3348,
+      "sha256": "e238f83275078f64e6578ef67741742d4d26d50fc60d83722c6aaab132850da0"
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1781,
-      "sha256": "fe92c273974339a48743b80ca6a488ccf35fe25743865b2d0ae32ac9ce6e2879"
+      "bytes": 1697,
+      "sha256": "d6487a86c6c58603c84f71052ddb0397d99b869c4d58091a5b30066a9b9214aa"
     },
     {
       "path": "index.html",
       "bytes": 19125,
-      "sha256": "64b9d926763de8e8bd2cba42b7f0023b67a56ff45462a2fabeeac64ece280734"
+      "sha256": "4330980421ee6fd9f2316dd8a2ceeee30ad0915ff82519b6067d94ecdcf66913"
     },
     {
       "path": "js/app.js",
-      "bytes": 44021,
-      "sha256": "27836d6e522df312cdcadbc1cdeeea38c24586d5cb0d20da1e43a3611fc041e9"
+      "bytes": 47344,
+      "sha256": "9a3f007d09a33a2301df50cd7743cab906c9aa0a27d41fc2bb8503af803b0aa5"
     },
     {
       "path": "js/core.js",
@@ -201,8 +206,8 @@
     },
     {
       "path": "schemas/event.schema.json",
-      "bytes": 2010,
-      "sha256": "447f376b48f6e36298bfdc68bac5c5eeb30edc0da3dc5fe647c03d2ec78dfefd"
+      "bytes": 2096,
+      "sha256": "d226c35cbe9aa8d2f576aa2e6075afcd5b556b9a9bee0baf291805d8763b04be"
     },
     {
       "path": "schemas/occurrence.schema.json",
@@ -232,7 +237,7 @@
     {
       "path": "tools/build_manifest.py",
       "bytes": 626,
-      "sha256": "8082e728d9384c9f2a8009f6b53795f39689b1ee213f4ce756ae7ded756c5fe5"
+      "sha256": "a5680e9bd3b67b6de9fd0194f8ba872579c07acce0021e13db942d5a06ec1178"
     },
     {
       "path": "tools/serve.py",
@@ -265,9 +270,14 @@
       "sha256": "ebf884e2eb7f30a2c0115b2efdbbf234cddd33d00e996ce28e7ca19e007de899"
     },
     {
+      "path": "tools/test_g2_pilot_c_maize.py",
+      "bytes": 3277,
+      "sha256": "886b5f60911e5fdf95194a11abe2440cf093098755925abf0a43aade9867e151"
+    },
+    {
       "path": "tools/test_g2_traceability_ui.py",
-      "bytes": 864,
-      "sha256": "e9f58523a8e1a75d859809caf4b07441d9f3a93a383b72e706798ecce1bda93a"
+      "bytes": 910,
+      "sha256": "3b4e481c671bdfcdb16fedefa52497744ae22fe84833c94982728908e7c11dc8"
     },
     {
       "path": "tools/test_light_contrast.py",
@@ -291,8 +301,8 @@
     },
     {
       "path": "tools/test_public_state.py",
-      "bytes": 1104,
-      "sha256": "0a756d413b19e89ec548376295640ad3aadd87c2082fd7203880c16830eb3465"
+      "bytes": 1336,
+      "sha256": "9397884181a3ad3d204f33f61f57b04c6a344537b3dd65da67592982f1e6de44"
     },
     {
       "path": "tools/test_schema_validation.py",
@@ -306,8 +316,8 @@
     },
     {
       "path": "tools/test_subject_history.py",
-      "bytes": 2743,
-      "sha256": "911de5a95a452928e5ae481a76aae166db10f7cdba1f8188c469bdbf97edb199"
+      "bytes": 3385,
+      "sha256": "fc026fcc5f5bb7502c4daaeb75f283e8595e8acc84a9ebc235172b8107476e0c"
     },
     {
       "path": "tools/test_ui_contract.py",
@@ -321,8 +331,8 @@
     },
     {
       "path": "tools/validate_project.py",
-      "bytes": 8731,
-      "sha256": "74cc19fcd2062003756d160905cedaa20f3e8770882c069becdef4a6db0b0535"
+      "bytes": 8980,
+      "sha256": "18a0f932488cca218cf8815aa875b63b1849836bc9507c33ff303830607e9320"
     }
   ]
 }

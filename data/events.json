@@ -21,7 +21,8 @@
     "summary": "Evento semilla para probar difusión transoceánica; G2 deberá subdividir cultivos, rutas y cronologías.",
     "certainty": "unknown",
     "sourceRefs": [],
-    "status": "seed"
+    "status": "deprecated",
+    "supersededBy": "event_maize_transatlantic_exchange_1492_1700"
   },
   {
     "id": "event_sugar_diffusion_demo",
@@ -44,5 +45,32 @@
     "certainty": "unknown",
     "sourceRefs": [],
     "status": "seed"
+  },
+  {
+    "id": "event_maize_transatlantic_exchange_1492_1700",
+    "title": "Transferencia transatlántica y difusión global del maíz",
+    "period": {
+      "start": 1492,
+      "end": 1700,
+      "precision": "range",
+      "display": "siglos XVI–XVII, tras los contactos transatlánticos iniciados a finales del XV"
+    },
+    "eventType": "diffusion",
+    "subjectRefs": [
+      "maize"
+    ],
+    "placeRefs": [
+      "cantabrian_region",
+      "tropical_atlantic_africa_coasts"
+    ],
+    "summary": "Tras la conexión sostenida entre América y el Viejo Mundo, el maíz pasó a Europa y posteriormente se difundió por África y Asia. El proceso fue regional, escalonado y no debe reducirse a una sola fecha o ruta.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_cambridge_world_history_maize",
+      "src_nps_columbian_exchange",
+      "src_aragon_cantabrian_maize_2021",
+      "src_miracle_africa_maize_1965"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -431,3 +431,47 @@ Condición mínima de publicación del recorrido: dos occurrences históricas re
 
 Nuevo `occurrenceType` introducido por Tel Kabri para evidencias cuyo contenido histórico principal es almacenamiento.
 
+---
+
+## 16. event dentro de Historia del elemento
+
+`event` representa un proceso histórico de escala distinta a una occurrence.
+
+Ejemplos:
+- intercambio transatlántico;
+- apertura/cierre de una ruta comercial;
+- transformación macroeconómica;
+- gran cambio institucional.
+
+Un event puede vincular subjects mediante `subjectRefs`.
+
+Historia del elemento puede derivar:
+
+```text
+occurrence → occurrence → event → occurrence → development
+```
+
+sin convertir el event en evidencia arqueológica o textual de un lugar concreto.
+
+Los events `deprecated` pueden incluir:
+
+```json
+{
+  "supersededBy": "event_canonic_id"
+}
+```
+
+---
+
+## 17. Incertidumbre en recorridos
+
+El motor de historias no altera `certainty`.
+
+Una occurrence `medium` permanece `medium` aunque forme parte de un recorrido editorial.
+
+La interfaz debe diferenciar:
+- estado editorial (`reviewed`, `verified`);
+- certeza de la afirmación (`high`, `medium`, `low`, `disputed`).
+
+Un registro puede estar bien revisado y seguir teniendo incertidumbre histórica real.
+

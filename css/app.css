@@ -1662,3 +1662,64 @@ html[data-theme="light"] .history-card{
   .history-spotlight{padding:15px;border-radius:16px}
   .history-spotlight-list{grid-template-columns:1fr}
 }
+
+
+/* ===== alpha.9 · Historia longitudinal del maíz + eventos ===== */
+.history-event .history-index{
+  color:var(--drink);
+  border-color:color-mix(in srgb,var(--drink) 38%,var(--line));
+}
+.history-kind.event{color:var(--drink)}
+
+.history-open-event{
+  margin-top:13px;
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:transparent;
+  color:var(--text);
+  font-size:.73rem;
+  font-weight:800;
+}
+.history-open-event:hover{
+  border-color:var(--drink);
+  color:var(--drink);
+}
+
+.history-uncertainty{
+  color:var(--gold)!important;
+  border-color:color-mix(in srgb,var(--gold) 40%,var(--line))!important;
+}
+.history-caution{
+  margin-top:11px;
+  padding:8px 10px;
+  border-left:3px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 7%,transparent);
+  color:var(--muted);
+  font-size:.7rem;
+  line-height:1.42;
+}
+
+.event-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  align-items:center;
+  margin-top:10px;
+}
+.event-meta>span:not(.status-badge){
+  padding:4px 7px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.64rem;
+}
+
+@media(max-width:600px){
+  .history-summary{
+    gap:7px;
+  }
+  .history-summary span{
+    white-space:nowrap;
+  }
+}

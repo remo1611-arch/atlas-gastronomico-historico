@@ -104,6 +104,32 @@ Pendiente:
 ---
 ---
 
+## G2-C — Segundo recorrido longitudinal
+**Estado: IMPLEMENTADO · alpha.9**
+
+Historia del maíz:
+- Balsas/Xihuatoxtla;
+- San Andrés;
+- Paredones: presencia;
+- Paredones: consumo;
+- Grandes Lagos inferiores;
+- evento transatlántico;
+- África atlántica tropical;
+- adopción cantábrica.
+
+Motor:
+- occurrence + event + development;
+- incertidumbre visible;
+- migración auditable de events seed.
+
+Pendiente en G2:
+- segunda revisión de tanda B/C;
+- primer subject con técnica relacionada canónica;
+- primer caso `disputed`;
+- primer dossier/región histórica con geometría no puntual.
+
+---
+
 ## G3 — Evidencia y precisión
 **No iniciado**
 

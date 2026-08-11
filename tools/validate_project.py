@@ -115,6 +115,10 @@ for e in events:
         if ref not in C:errors.append(f"{label}: contextRef roto {ref}")
     for ref in e.get("developmentRefs",[]):
         if ref not in D:errors.append(f"{label}: developmentRef roto {ref}")
+    if e.get("status")=="deprecated" and not e.get("supersededBy"):
+        errors.append(f"{label}: deprecated sin supersededBy")
+    if e.get("supersededBy") and e.get("supersededBy") not in E:
+        errors.append(f"{label}: supersededBy roto")
 
 for r in rels:
     label=f"rel:{r.get('id')}"

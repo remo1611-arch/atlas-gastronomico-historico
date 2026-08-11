@@ -109,6 +109,12 @@
           "minLength": 1
         }
       }
+    },
+    "supersededBy": {
+      "type": [
+        "string",
+        "null"
+      ]
     }
   }
 }

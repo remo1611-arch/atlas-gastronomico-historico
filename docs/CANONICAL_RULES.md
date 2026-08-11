@@ -63,3 +63,10 @@
 56. Solo `reviewed` y `verified` entran en recorridos públicos; `seed`, `draft` y `deprecated` quedan excluidos.
 57. `storage` se usa cuando la evidencia documenta almacenamiento y no debe deformarse como producción o consumo.
 
+54. `event` y `occurrence` no son intercambiables: un evento contextualiza procesos; una occurrence documenta una evidencia/manifestación concreta.
+55. Historia del elemento puede combinar occurrence, event y development, pero debe etiquetar visualmente cada clase.
+56. Un proceso de difusión transcontinental no implica una ruta única ni una fecha única.
+57. Si la historiografía no permite establecer una ruta o mecanismo de introducción, la incertidumbre debe conservarse en `certainty` y en el texto público.
+58. Introducción, cultivo, adopción y conversión en alimento básico son fases distintas.
+59. Un evento demo sustituido se conserva como `deprecated + supersededBy`.
+

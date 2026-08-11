@@ -1,27 +1,27 @@
 # Changelog
 
-## 0.1.0-alpha.8 — 2026-08-11
+## 0.1.0-alpha.9 — 2026-08-11
 
-### G2-C · Historia longitudinal
-- 4 nuevas occurrences de wine;
-- Areni-1;
-- Abydos;
-- Tel Kabri;
-- Jerusalén 586 a.C.;
-- wine alcanza 5 occurrences reviewed;
-- pasteurización se integra como transformación relacionada.
+### Historia del maíz
+- San Andrés;
+- Paredones: presencia;
+- Paredones: consumo;
+- Grandes Lagos;
+- África atlántica;
+- región cantábrica.
 
-### UX
-- drawer Historia del elemento;
-- cronología vertical museográfica;
-- navegación a cada evidencia;
-- salto a developments;
-- aviso explícito de no exhaustividad;
-- sección Historias disponibles generada automáticamente.
+### Events
+- Historia del elemento integra events.
+- evento canónico de transferencia transatlántica del maíz.
+- event demo anterior deprecated + supersededBy.
 
-### Contrato
-- nuevo occurrenceType `storage`;
-- historia derivada sin nuevo dataset narrativo.
+### Incertidumbre
+- tarjeta específica para certainty medium;
+- caso africano conserva incertidumbre sobre rutas de introducción.
+
+### Motor
+- historias genéricas: occurrence + event + development.
+- Historias disponibles muestra número de eventos.
 
 ## 0.1.0-alpha.7 — 2026-08-11
 

@@ -43,3 +43,10 @@ Continuación alpha.8:
 - “Historia del elemento” es derivada, no duplicar hitos;
 - el próximo recorrido debe demostrar reutilización genérica;
 - no interpretar huecos como ausencia histórica.
+
+Continuación alpha.9:
+- dos historias longitudinales activas: vino y maíz;
+- leer docs/G2_PILOT_C_MAIZE.md;
+- subjectHistoryItems combina occurrence/event/development;
+- siguiente candidato de contrato: nixtamalización canónica + relación con maíz;
+- antes de G3 probar al menos un caso disputed.

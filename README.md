@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.8
+**Versión:** 0.1.0-alpha.9
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -156,8 +156,14 @@ Alpha.7 añade:
 
 Además estrena el gate auditado `verified` con metadatos de segunda revisión.
 
-## Historia del elemento
+## Historia del maíz
 
-Alpha.8 incorpora el primer recorrido longitudinal real. La aplicación detecta automáticamente subjects con varias evidencias revisadas y combina sus occurrences con developments relacionados.
+Alpha.9 activa el segundo recorrido longitudinal automático:
+- domesticación;
+- expansión precolombina;
+- presencia/consumo en Sudamérica;
+- difusión norteamericana;
+- evento transatlántico;
+- adopciones africana y cantábrica.
 
-Primer recorrido: **Historia del vino**, desde las evidencias neolíticas del Cáucaso hasta la pasteurización.
+El motor de recorridos admite ahora occurrences, events y developments.

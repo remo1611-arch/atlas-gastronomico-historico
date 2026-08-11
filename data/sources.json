@@ -358,5 +358,77 @@
     "sourceType": "peer_reviewed_article",
     "accessed": "2026-08-11",
     "notes": "Análisis de residuos de recipientes de Jerusalén destruidos en 586 a.C.; documenta vino y compuestos asociados a vainilla."
+  },
+  {
+    "id": "src_pohl_san_andres_2007",
+    "title": "Microfossil evidence for pre-Columbian maize dispersals in the neotropics from San Andrés, Tabasco, Mexico",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.0701425104",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Fitolitos de San Andrés confirman expansión del cultivo de maíz a la costa tropical del Golfo de México hacia 7300 cal BP."
+  },
+  {
+    "id": "src_grobman_paredones_2012",
+    "title": "Preceramic maize from Paredones and Huaca Prieta, Peru",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.1120270109",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Macro y microrestos de maíz de Paredones/Huaca Prieta fechados entre ca. 6700 y 3000 cal BP; evidencia temprana de difusión hacia Sudamérica."
+  },
+  {
+    "id": "src_paredones_diet_2020",
+    "title": "Early specialized maritime and maize economies on the north coast of Peru",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://doi.org/10.1073/pnas.2009121117",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Isótopos estables y microdesgaste dental documentan consumo regular de maíz en Paredones ca. 6500–6000 cal BP y uso como alimento básico posteriormente."
+  },
+  {
+    "id": "src_crawford_lower_great_lakes_2017",
+    "title": "Dating the Entry of Corn (Zea Mays) into the Lower Great Lakes Region",
+    "publisher": "American Antiquity",
+    "url": "https://doi.org/10.2307/282382",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Artículo de 1997 (publicado digitalmente después): cinco dataciones AMS de maíz del Grand Banks site, Ontario, entre cal d.C. 540 y 1030."
+  },
+  {
+    "id": "src_aragon_cantabrian_maize_2021",
+    "title": "The diffusion of maize in the Cantabrian region and its economic and demographic consequences during the Ancient Regime",
+    "publisher": "Rural History",
+    "url": "https://doi.org/10.1017/S0956793320000102",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Documenta la expansión del cultivo de maíz para consumo humano por la región cantábrica desde finales del siglo XVI."
+  },
+  {
+    "id": "src_miracle_africa_maize_1965",
+    "title": "The Introduction and Spread of Maize in Africa",
+    "publisher": "The Journal of African History",
+    "url": "https://doi.org/10.1017/S0021853700005326",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-11",
+    "notes": "Revisión histórica sobre introducción y difusión del maíz en África; advierte que el modo exacto de introducción no puede establecerse y documenta cultivo costero en el siglo XVI."
+  },
+  {
+    "id": "src_cambridge_world_history_maize",
+    "title": "Maize",
+    "publisher": "The Cambridge World History of Food",
+    "url": "https://doi.org/10.1017/CHOL9780521402149.014",
+    "sourceType": "scholarly_monograph",
+    "accessed": "2026-08-11",
+    "notes": "Síntesis académica que sitúa la introducción del maíz en Europa, Asia y África durante los siglos XVI y XVII."
+  },
+  {
+    "id": "src_nps_columbian_exchange",
+    "title": "Spanish Colonial Culture — The Columbian Exchange",
+    "publisher": "U.S. National Park Service",
+    "url": "https://www.nps.gov/casa/learn/historyculture/spanish-colonial-culture.htm",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-11",
+    "notes": "Contexto institucional del intercambio transatlántico de plantas, animales, personas, enfermedades, ideas y tecnologías tras los contactos europeos con América."
   }
 ]

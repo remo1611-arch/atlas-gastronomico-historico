@@ -104,3 +104,18 @@ Para ascender a `verified`:
 
 La promoción es reversible si aparecen contradicciones o problemas de procedencia.
 
+## Difusión e introducciones
+
+Para afirmar una ruta de difusión concreta se necesitan fuentes que sostengan esa ruta.
+
+Si solo puede documentarse:
+- presencia;
+- cultivo;
+- adopción;
+- referencias costeras;
+- cronología general;
+
+no se infiere automáticamente el vector de traslado entre puntos.
+
+La ausencia de consenso sobre el mecanismo debe representarse mediante `certainty` y texto explícito.
+

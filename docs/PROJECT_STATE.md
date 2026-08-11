@@ -4,45 +4,72 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.8
+0.1.0-alpha.9
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
-- G2: EN CURSO · tandas A, B y C.
+- G2: EN CURSO · A + B + C.
 - G3+: no iniciados.
 
-## G2-A
-Segunda revisión completada parcialmente: 8 registros `verified` con metadata de verificación.
+## Historias longitudinales activas
 
-## G2-B
-Casos reviewed de domesticación animal, pan preagrícola, procesado lácteo, texto culinario, appertización y Codex.
+### Vino
+- 5 occurrences reviewed/verified;
+- 1 development relacionado;
+- recorrido ca. 6000 a.C. → 1863.
 
-## G2-C
-Primera historia longitudinal implementada.
+### Maíz
+- 7 occurrences reviewed/verified;
+- 1 event histórico canónico;
+- recorrido ca. 7040 a.C. → siglos XVI–XVII.
 
-### Wine
-5 occurrences reviewed:
-- Gadachrili Gora, ca. 6000–5800 a.C.;
-- Areni-1, ca. 4100–4000 a.C.;
-- Abydos, ca. 3150 a.C.;
-- Tel Kabri, Bronce Medio;
-- Jerusalén, finales s. VII–586 a.C.
+## G2-C · Maíz
 
-1 development relacionado:
-- pasteurización del vino, 1863–1865 · verified.
+Nuevos registros:
+- cultivo en San Andrés;
+- presencia precerámica en Paredones;
+- consumo regular en Paredones;
+- presencia en Grandes Lagos inferiores;
+- adopción en África atlántica tropical;
+- adopción en región cantábrica.
 
-### Función Historia del elemento
-Genérica. Se activa con >=2 occurrences reviewed/verified y añade developments relacionados por `impactSubjectRefs`.
+Nuevo context:
+- Princess Point Complex.
 
-### Descubrimiento
-“Historias disponibles” se genera automáticamente. Actualmente wine es el primer subject que cumple el gate.
+Nuevo event:
+- transferencia transatlántica y difusión global del maíz.
 
-### Cartografía
-6 occurrences activas/no-deprecated carecen deliberadamente de punto fiable y siguen disponibles en lista/historia.
+Migración:
+- `event_columbian_exchange_demo`
+  → deprecated
+  → `event_maize_transatlantic_exchange_1492_1700`.
 
-## Próxima acción
-1. publicar/probar alpha.8;
-2. segunda revisión de G2-B;
-3. crear un segundo recorrido longitudinal (preferentemente maíz o pan) para comprobar que la función es realmente genérica con otro patrón histórico;
-4. iniciar casos con evidencia disputada.
+## Motor Historia del elemento
+
+Tipos integrados:
+- EVIDENCIA;
+- EVENTO;
+- TRANSFORMACIÓN.
+
+El motor sigue siendo genérico y derivado de datos.
+
+## Incertidumbre
+
+El caso africano conserva:
+`certainty: medium`
+
+La UI muestra esta incertidumbre aunque el registro tenga `status: reviewed`.
+
+## Cartografía
+
+12 occurrences activas/revisadas carecen actualmente de punto canónico.
+Esto es deliberado y no bloquea su visualización en lista/historia.
+
+## Próximo trabajo
+
+1. segunda revisión G2-B/C;
+2. incorporar una técnica culinaria canónica relacionada (candidato: nixtamalización);
+3. probar `certainty: disputed`;
+4. preparar G3 sin iniciar carga masiva.
+

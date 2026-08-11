@@ -12,6 +12,7 @@ python tools/test_extended_contract.py
 python tools/test_g2_traceability_ui.py
 python tools/test_g2_pilot.py
 python tools/test_g2_pilot_b.py
+python tools/test_g2_pilot_c_maize.py
 python tools/test_subject_history.py
 python tools/test_verified_gate.py
 python tools/test_public_state.py
@@ -112,3 +113,12 @@ Antes de validar datos históricos:
 - [ ] abrir evidencia vuelve al mapa/ficha;
 - [ ] abrir development salta al momento histórico;
 - [ ] función genérica, sin código específico por subject.
+
+## Gate G2-C / Maíz
+- [ ] >= 7 occurrences reviewed/verified;
+- [ ] evento transatlántico canónico reviewed;
+- [ ] event demo deprecated + supersededBy;
+- [ ] Historia del elemento incorpora events;
+- [ ] certeza medium visible;
+- [ ] introducción/adopción no tratadas como origen;
+- [ ] sin rutas cartográficas inventadas.
