@@ -1,95 +1,52 @@
 # Estado actual
 
-## Proyecto
-Atlas Gastronómico Histórico
-
 ## Versión
-0.1.0-alpha.23
+0.1.0-alpha.24
 
 ## Producto
-- Historias = entender.
-- Atlas = explorar.
-- Evidencia = comprobar.
+- **Historias = comprender.**
+- **Atlas = descubrir.**
+- **Evidencia = verificar.**
+
+Arquitectura candidata a congelación. No ampliar corpus hasta superar el gate móvil y el posterior gate museográfico de Vino/Pan.
 
 ## Gates
-- G0: CERRADO.
-- G1: CERRADO.
-- G2: CERRADO.
-- G3: CERRADO.
+- G0/G1/G2/G3: CERRADOS.
 - Narrative Museum: integrado.
 - Navigation Hardening: integrado.
-- **Geographic Explorer: integrado.**
-- E1 editorial: PAUSADO.
+- Geographic Explorer: integrado.
+- **Product Consolidation alpha.24: implementado técnicamente; aceptación Xiaomi pendiente.**
+- E1: PAUSADO.
 - G4: NO INICIADO.
 
 ## Corpus
-- 11 subjects.
-- 30 places.
-- 30 occurrences.
-- 1 event.
-- 1 relationship.
-- 7 contexts.
-- 7 developments.
-- 86 sources.
-- 2 stories.
-- 13 narrative scenes.
-- 16 glossary entries.
+11 subjects · 30 places · 30 occurrences · 1 event · 1 relationship · 7 contexts · 7 developments · 86 sources · 2 stories · 13 escenas · 16 términos de glosario.
 
 ## Cobertura espacial
-- 16 occurrences con punto.
-- 14 sin punto.
+- occurrences: 16 con punto / 14 sin punto;
+- contexts: 5 con punto cartografiable / 2 sin punto;
+- developments: 1 con punto cartografiable / 6 sin punto.
 
-## Cambio cartográfico alpha.23
+«Sin punto» puede ser correcto para ámbitos regionales, multiterritoriales o sin localización puntual suficientemente sustentada.
 
-Antes:
-`occVisible()` filtraba por `active(period, year)` antes de renderizar el mapa.
+## Alpha.24
+Corrige:
+- omisión silenciosa de contexts/developments sin punto;
+- selección del primer lugar existente en vez del primer lugar cartografiable;
+- falta de guard defensivo en `renderMapCoverage()`;
+- pérdida de `gate`/`phase` al regenerar MANIFEST.
 
-Consecuencia verificable:
-- año inicial 1500;
-- 1 occurrence activa;
-- esa occurrence no tiene punto;
-- mapa = 0 pines.
+Incorpora:
+- `placeHasMapPoint()`;
+- `firstResolvedPlace()` y `firstMappablePlace()`;
+- diagnóstico multicapas visible;
+- explicación de registros regionales/multiterritoriales;
+- estado espacial de developments en búsqueda;
+- separación lugar descriptivo / lugar cartografiable en escenas;
+- tests multicapas y de estabilidad del manifiesto.
 
-Ahora:
-- `occMapVisible()` aplica búsqueda/filtros sin exigir coincidencia temporal;
-- `occVisible()` conserva el filtro temporal estricto para `En esta fecha`;
-- mapa inicial = hasta 16 occurrences geolocalizadas;
-- las occurrences activas en la fecha seleccionada se resaltan;
-- las demás permanecen visibles en segundo plano.
+## Contratos preservados
+Corpus, stories/glossary y G2 fingerprint sin cambios. No se inventan coordenadas. G4 sigue sin iniciarse.
 
-## Búsqueda
-- global respecto al corpus filtrado;
-- resultados textuales visibles;
-- fecha + headline + lugar;
-- estado cero explícito;
-- selección sincroniza mapa + tiempo + detalle;
-- términos cortos por palabra/prefijo.
-
-Ejemplo baseline:
-- `vino`: 5 occurrences, 5 con punto, aunque en 1500 no haya vino activo;
-- `pan`: 7 occurrences, sin falsos positivos por `España`.
-
-## Mapa
-El autoencuadre de resultados modifica únicamente el `viewBox`.
-
-No representa:
-- difusión;
-- comercio;
-- influencia;
-- trayectorias.
-
-No se dibujan líneas automáticas entre puntos.
-
-## Contrato histórico
-G2 fingerprint permanece protegido 9/9.
-
-## Próximo gate
-Validación táctil/visual real de:
-1. mapa inicial no vacío;
-2. búsqueda Vino/Pan;
-3. autoencuadre;
-4. selección mapa → fecha → ficha;
-5. botón Mundo;
-6. legibilidad en móvil.
-
-No ampliar corpus hasta validar esta experiencia.
+## Próximo paso
+Ejecutar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Si pasa: pulido museográfico Vino/Pan → congelación formal del contrato → E1 Fermentación.

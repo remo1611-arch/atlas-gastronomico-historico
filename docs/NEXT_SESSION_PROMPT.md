@@ -162,4 +162,4 @@ Estado de continuación:
 - Buscar `pan` debe devolver 7 occurrences y no coincidir con `España`.
 - Pin → sincroniza fecha + ficha + zoom regional.
 - `Mundo` restablece viewBox global.
-- No añadir historias/corpus hasta validación táctil de alpha.23.
+- No añadir historias/corpus hasta completar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Alpha.24 corrige cobertura multicapas y firstMappablePlace; después, gate museográfico Vino/Pan y congelación del contrato.

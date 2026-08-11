@@ -382,32 +382,47 @@ No añade corpus ni nueva historia.
 ---
 
 ## Geographic Explorer
-**Estado: IMPLEMENTADO · alpha.23 · pendiente validación táctil**
+**Estado: IMPLEMENTADO · alpha.23**
 
-Problema resuelto:
-- el mapa filtraba por año exacto;
-- con corpus todavía disperso podía quedar completamente vacío;
-- buscar un alimento en una fecha no coincidente no devolvía geografía visible.
+Contrato: mapa global filtrado + fecha como énfasis + `En esta fecha` temporal estricto + búsqueda global + autoencuadre + sincronización mapa/tiempo/ficha.
 
-Contrato alpha.23:
-- mapa = corpus geolocalizado compatible con búsqueda/filtros;
-- fecha = énfasis visual;
-- `En esta fecha` = filtro temporal estricto;
-- búsqueda global con resultados textuales;
-- autoencuadre de resultados;
-- selección sincroniza mapa + tiempo + ficha;
-- ausencia de punto sigue visible;
-- sin rutas/difusión inferidas.
+---
 
-Baseline:
-- 30 occurrences;
-- 16 mapped;
-- año 1500: 1 active / 0 mapped;
-- búsqueda `vino`: 5 / 5 mapped;
-- búsqueda `pan`: 7, sin falso positivo por `España`.
+## Product Consolidation
+**Estado: IMPLEMENTADO TÉCNICAMENTE · alpha.24 · pendiente aceptación Xiaomi**
 
-Siguiente gate:
-validación real en Xiaomi antes de ampliar corpus o iniciar G4.
+### Gate A — interacción real
+Validar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Sin contenido nuevo.
+
+### Gate B — experiencia museográfica
+Revisar solo Vino y Pan: ritmo, densidad, jerarquía visual, glosario, contexto geográfico, legibilidad móvil y aprendizaje. Sin historias nuevas.
+
+### Gate C — congelación del contrato
+Si A+B pasan, congelar formalmente: **Historias = comprender · Atlas = descubrir · Evidencia = verificar**. El motor debe seguir genérico.
+
+### E1 — expansión editorial
+Orden preferente: **Fermentación → Cacao/chocolate → Café → Azúcar → Patata → Especias/conservación**. Investigar primero relato, escenas, regiones, evidencias, transformaciones y fuentes; después incorporar registros.
+
+### Objetivo intermedio
+Referencia de **50–70 occurrences buenas**, no cuota rígida. Cada alta debe cubrir periodo, región, técnica, conexión futura o historia relevante.
+
+### Auditoría espacial continua
+Localizar solo con procedencia sólida; regiones pueden seguir sin pin; geometrías regionales reales cuando proceda; nunca centroides inventados.
+
+### Entrada a G4
+Solo con corpus suficiente. Distinguir **presencia → introducción → adopción → generalización**. No inferir flechas por coincidencia.
+
+### Historias transversales
+Con suficientes dossiers: conservación, fermentación→Pasteur, cultivos americanos en Europa, especias, grano→pan, ciudad medieval.
+
+### Capa visual rica
+Después de historias consolidadas y con procedencia/licencia clara.
+
+### Beta
+6–8 historias excelentes + Atlas denso + QA Android/iPhone/escritorio/impresión/accesibilidad/rendimiento/deep links/persistencia/GitHub Pages.
+
+### 1.0
+Sistema editorial y técnico cerrado; añadir historias no exige cambiar arquitectura; experiencia suficientemente rica para volver a utilizarla. Objetivo operativo tras congelación: ~20 % ingeniería / 80 % investigación, redacción y curación.
 
 ---
 

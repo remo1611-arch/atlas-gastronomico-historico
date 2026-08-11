@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.0-alpha.24 — 2026-08-11
+
+### Cobertura cartográfica multicapas
+- `placeHasMapPoint()` centraliza la validez cartográfica.
+- `firstMappablePlace()` sustituye el patrón «primer place existente» en las capas.
+- contexts/developments activos sin punto dejan de omitirse sin explicación.
+- el panel distingue evidencias del corpus sin punto de capas activas no puntuales.
+- no se añaden centroides ni coordenadas artificiales.
+
+### Robustez
+- búsqueda de developments informa `con punto` / `sin punto único`;
+- escenas separan lugar descriptivo de lugar cartografiable;
+- `renderMapCoverage()` añade guard defensivo;
+- `build_manifest.py` preserva `gate`/`phase` y toma la versión de `data/config.json`;
+- tests de cobertura multicapas y estabilidad del manifiesto.
+
+### Alcance
+- corpus e historias sin cambios;
+- G4 no iniciado;
+- gate táctil/museográfico en Xiaomi pendiente.
+
 ## 0.1.0-alpha.23 — 2026-08-11
 
 ### Geographic Explorer

@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.23';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.24';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.23',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.23',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.23',
-  places:'./data/places.json?v=0.1.0-alpha.23',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.23',
-  events:'./data/events.json?v=0.1.0-alpha.23',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.23',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.23',
-  developments:'./data/developments.json?v=0.1.0-alpha.23',
-  sources:'./data/sources.json?v=0.1.0-alpha.23',
-  stories:'./data/stories.json?v=0.1.0-alpha.23',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.23',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.23'
+  config:'./data/config.json?v=0.1.0-alpha.24',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.24',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.24',
+  places:'./data/places.json?v=0.1.0-alpha.24',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.24',
+  events:'./data/events.json?v=0.1.0-alpha.24',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.24',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.24',
+  developments:'./data/developments.json?v=0.1.0-alpha.24',
+  sources:'./data/sources.json?v=0.1.0-alpha.24',
+  stories:'./data/stories.json?v=0.1.0-alpha.24',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.24',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.24'
 };
 
 const s={
@@ -767,11 +767,29 @@ function occVisible(){
 }
 
 
-function occurrencesWithoutMapPoint(list){
-  return list.filter(o=>{
-    const pl=place(o.placeRef);
-    return !pl?.point || !Number.isFinite(Number(pl.point.lat)) || !Number.isFinite(Number(pl.point.lon));
-  });
+function placeHasMapPoint(pl){
+  return Boolean(pl?.point && Number.isFinite(Number(pl.point.lat)) && Number.isFinite(Number(pl.point.lon)));
+}
+function firstResolvedPlace(placeRefs=[]){return placeRefs.map(place).find(Boolean)||null;}
+function firstMappablePlace(placeRefs=[]){return placeRefs.map(place).find(placeHasMapPoint)||null;}
+function occurrencesWithoutMapPoint(list){return list.filter(o=>!placeHasMapPoint(place(o.placeRef)));}
+function activeUnmappedSecondaryRecords(){
+  const records=[];
+  if(s.layers.contexts){
+    for(const c of s.contexts){
+      if(!isPublicStatus(c.status)||!active(c.period,s.year)||firstMappablePlace(c.placeRefs||[])) continue;
+      const resolved=firstResolvedPlace(c.placeRefs||[]);
+      records.push({kind:'context',id:c.id,title:c.name,period:c.period,placeLabel:resolved?.name||'Ámbito no puntual',reason:(c.placeRefs||[]).length?'Ámbito regional o referencia histórica sin un punto cartográfico validado.':'Contexto sin una localización puntual única atribuida.'});
+    }
+  }
+  for(const d of s.developments){
+    if(!isPublicStatus(d.status)||!matchesEvidenceQualityFilters(d)||!active(d.period,s.year)) continue;
+    const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
+    if((safety?!s.layers.safety:!s.layers.developments)||firstMappablePlace(d.placeRefs||[])) continue;
+    const resolved=firstResolvedPlace(d.placeRefs||[]);
+    records.push({kind:'development',id:d.id,title:d.name,period:d.period,placeLabel:resolved?.name||'Proceso multiterritorial',reason:(d.placeRefs||[]).length?'Referencia espacial existente, pero sin un punto cartográfico validado.':'Transformación multiterritorial o sin una localización puntual única sustentada.'});
+  }
+  return records;
 }
 
 function setMapViewBox(view,{mode='custom'}={}){
@@ -792,12 +810,7 @@ function resetMapView({silent=false}={}){
   if(!silent) showToast('Vista mundial');
 }
 
-function mappedOccurrences(list){
-  return list.filter(o=>{
-    const pl=place(o.placeRef);
-    return pl?.point && Number.isFinite(Number(pl.point.lat)) && Number.isFinite(Number(pl.point.lon));
-  });
-}
+function mappedOccurrences(list){return list.filter(o=>placeHasMapPoint(place(o.placeRef)));}
 
 function mapBoundsForOccurrences(list){
   const pts=mappedOccurrences(list).map(o=>{
@@ -896,9 +909,12 @@ function renderMapSearchResults(){
     if(entry.kind==='occurrence'){
       const pl=place(entry.item.placeRef);
       placeLabel=pl?.name||'Lugar sin resolver';
-      mapped=Boolean(pl?.point);
+      mapped=placeHasMapPoint(pl);
+    }else if(entry.kind==='development'){
+      mapped=Boolean(firstMappablePlace(entry.item.placeRefs||[]));
+      placeLabel=`Transformación · ${mapped?'con punto':'sin punto único'}`;
     }else{
-      placeLabel=entry.kind==='development'?'Transformación':'Proceso histórico';
+      placeLabel='Proceso histórico';
     }
     return `<button type="button" class="map-search-result" data-map-result-kind="${esc(entry.kind)}" data-map-result-id="${esc(entry.item.id)}">
       <span>${esc(entry.period.display||formatYear(entry.period.start))}</span>
@@ -929,50 +945,27 @@ function renderMapSearchResults(){
 function renderMapCoverage(list){
   const box=$('#mapCoverageStatus');
   const panel=$('#unmappedRecordsPanel');
-  const missing=occurrencesWithoutMapPoint(list);
-
-  if(!missing.length){
-    box.classList.add('hidden');
-    box.innerHTML='';
-    panel?.classList.add('hidden');
-    if(panel) panel.innerHTML='';
-    return;
-  }
-
+  if(!box) return;
+  const missingOccurrences=occurrencesWithoutMapPoint(list);
+  const secondary=activeUnmappedSecondaryRecords();
+  if(!missingOccurrences.length&&!secondary.length){box.classList.add('hidden');box.innerHTML='';panel?.classList.add('hidden');if(panel)panel.innerHTML='';return;}
+  const labels=[];
+  if(missingOccurrences.length) labels.push(`${missingOccurrences.length} ${missingOccurrences.length===1?'evidencia del corpus sin punto':'evidencias del corpus sin punto'}`);
+  if(secondary.length) labels.push(`${secondary.length} ${secondary.length===1?'capa activa no puntual':'capas activas no puntuales'}`);
   box.classList.remove('hidden');
-  box.innerHTML=`<button type="button" class="coverage-chip" data-toggle-unmapped>
-    ${missing.length} ${missing.length===1?'sin localización precisa':'sin localización precisa'}
-  </button>`;
-
+  box.innerHTML=`<button type="button" class="coverage-chip" data-toggle-unmapped aria-expanded="false">${esc(labels.join(' · '))}</button>`;
   if(panel){
     panel.classList.add('hidden');
-    panel.innerHTML=`<div class="unmapped-record-list">
-      ${missing.map(o=>{
-        const subject=subj(o.subjectRef);
-        const pl=place(o.placeRef);
-        return `<button type="button" data-unmapped-occurrence="${esc(o.id)}">
-          <span>${esc(subject?.name||o.subjectRef)}</span>
-          <strong>${esc(pl?.name||o.placeRef)}</strong>
-          <small>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)}</small>
-        </button>`;
-      }).join('')}
-    </div>`;
-
-    $('[data-toggle-unmapped]')?.addEventListener('click',()=>{
-      panel.classList.toggle('hidden');
-    });
-
-    $$('[data-unmapped-occurrence]').forEach(button=>{
-      button.addEventListener('click',()=>selectOccurrence(button.dataset.unmappedOccurrence,true));
-    });
+    panel.innerHTML=`<p class="unmapped-explanation">El Atlas no inventa centroides ni puntos únicos. Algunos registros se mantienen en cronología e historias aunque su ámbito sea regional, multiterritorial o no disponga de una localización puntual suficientemente sustentada.</p>
+    ${missingOccurrences.length?`<section class="unmapped-section"><h3>Evidencias del corpus sin punto</h3><div class="unmapped-record-list">${missingOccurrences.map(o=>{const subject=subj(o.subjectRef);const pl=place(o.placeRef);return `<button type="button" data-unmapped-occurrence="${esc(o.id)}"><span>Evidencia</span><strong>${esc(subject?.name||o.subjectRef)} · ${esc(pl?.name||o.placeRef)}</strong><small>${esc(o.period.display||`${formatYear(o.period.start)}–${formatYear(o.period.end)}`)} · abrir ficha</small></button>`;}).join('')}</div></section>`:''}
+    ${secondary.length?`<section class="unmapped-section"><h3>Capas activas en ${esc(formatYear(s.year))} sin punto único</h3><div class="unmapped-record-list secondary">${secondary.map(item=>{const clickable=item.kind==='development';const tag=clickable?'button':'article';const attrs=clickable?` type="button" data-unmapped-secondary="${esc(item.id)}"`:'';return `<${tag}${attrs}><span>${item.kind==='development'?'Transformación':'Contexto'}</span><strong>${esc(item.title)}</strong><small>${esc(item.period.display||formatYear(item.period.start))} · ${esc(item.reason)}</small></${tag}>`;}).join('')}</div></section>`:''}`;
+    const toggle=$('[data-toggle-unmapped]');
+    toggle?.addEventListener('click',()=>{const willOpen=panel.classList.contains('hidden');panel.classList.toggle('hidden');toggle.setAttribute('aria-expanded',String(willOpen));});
+    $$('[data-unmapped-occurrence]').forEach(button=>button.addEventListener('click',()=>selectOccurrence(button.dataset.unmappedOccurrence,true)));
+    $$('[data-unmapped-secondary]').forEach(button=>button.addEventListener('click',()=>{const entry=temporalEntryForRoute('development',button.dataset.unmappedSecondary);if(entry){focusTemporalItem(entry,true);routeToAtlas({kind:'development',ref:entry.item.id});$('#temporalNavigator')?.scrollIntoView({behavior:'smooth',block:'center'});}}));
   }
-
-  for(const o of missing){
-    if(!warnedUnmapped.has(o.id)){
-      warnedUnmapped.add(o.id);
-      console.warn(`[Atlas] Registro sin punto cartográfico: ${o.id} · placeRef=${o.placeRef}`);
-    }
-  }
+  for(const o of missingOccurrences){const key=`occurrence:${o.id}`;if(!warnedUnmapped.has(key)){warnedUnmapped.add(key);console.warn(`[Atlas] Registro sin punto cartográfico: ${o.id} · placeRef=${o.placeRef}`);}}
+  for(const item of secondary){const key=`${item.kind}:${item.id}`;if(!warnedUnmapped.has(key)){warnedUnmapped.add(key);console.warn(`[Atlas] Capa activa sin punto cartográfico: ${item.kind}:${item.id} · ${item.reason}`);}}
 }
 
 const warnedUnmapped=new Set();
@@ -1890,8 +1883,8 @@ function renderContextLayer(){
   s.contexts
     .filter(c=>isPublicStatus(c.status)&&active(c.period,s.year))
     .forEach(c=>{
-      const firstPlace=(c.placeRefs||[]).map(place).find(Boolean);
-      if(!firstPlace?.point) return;
+      const firstPlace=firstMappablePlace(c.placeRefs||[]);
+      if(!firstPlace) return;
       const [x,y]=project(firstPlace.point.lon,firstPlace.point.lat);
       const g=svg('g',{class:'context-marker',transform:`translate(${x} ${y})`});
       g.appendChild(svg('circle',{r:'4'}));
@@ -1912,8 +1905,8 @@ function renderDevelopmentLayer(){
       return safety.includes(d.type) ? s.layers.safety : s.layers.developments;
     })
     .forEach(d=>{
-      const firstPlace=(d.placeRefs||[]).map(place).find(Boolean);
-      if(!firstPlace?.point) return;
+      const firstPlace=firstMappablePlace(d.placeRefs||[]);
+      if(!firstPlace) return;
       const [x,y]=project(firstPlace.point.lon,firstPlace.point.lat);
       const safety=['hygiene','food_safety','public_health','regulation','quality_system'].includes(d.type);
       const g=svg('g',{class:safety?'safety-marker':'development-marker',transform:`translate(${x} ${y})`});
@@ -2036,11 +2029,11 @@ function storyItemPresentation(itemRef){
     };
   }
   if(itemRef.kind==='event'){
-    const pl=(item.placeRefs||[]).map(place).find(Boolean);
-    return {kind:'Proceso',title:item.title,when:item.period.display||formatYear(item.period.start),place:pl?.name||'Proceso multiterritorial',summary:item.summary,meta:`${EVENT_LABELS[item.eventType]||item.eventType} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:pl?.point||null,item};
+    const displayPlace=firstResolvedPlace(item.placeRefs||[]);const mapPlace=firstMappablePlace(item.placeRefs||[]);
+    return {kind:'Proceso',title:item.title,when:item.period.display||formatYear(item.period.start),place:displayPlace?.name||'Proceso multiterritorial',summary:item.summary,meta:`${EVENT_LABELS[item.eventType]||item.eventType} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:mapPlace?.point||null,item};
   }
-  const pl=(item.placeRefs||[]).map(place).find(Boolean);
-  return {kind:'Transformación',title:item.name,when:item.period.display||formatYear(item.period.start),place:pl?.name||'Transformación científica/tecnológica',summary:item.summary,meta:`${developmentTypeLabel(item.type)} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:pl?.point||null,item};
+  const displayPlace=firstResolvedPlace(item.placeRefs||[]);const mapPlace=firstMappablePlace(item.placeRefs||[]);
+  return {kind:'Transformación',title:item.name,when:item.period.display||formatYear(item.period.start),place:displayPlace?.name||'Transformación científica/tecnológica',summary:item.summary,meta:`${developmentTypeLabel(item.type)} · certeza ${CERTAINTY_LABELS[item.certainty]||item.certainty}`,point:mapPlace?.point||null,item};
 }
 
 function openNarrativeStory(storyId,sceneIndex=0){

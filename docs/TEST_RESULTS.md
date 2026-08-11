@@ -1,87 +1,35 @@
-# Resultados de validación — 0.1.0-alpha.23
+# Resultados de validación — 0.1.0-alpha.24
 
 Fecha: 2026-08-11
 
-## Resultado
-**GEOGRAPHIC EXPLORER: PASS**
+## Estado
+**PASS técnico. Gate físico Xiaomi pendiente.**
 
 ## Corpus
-- 11 subjects.
-- 30 places.
-- 30 occurrences.
-- 1 event.
-- 1 relationship.
-- 7 contexts.
-- 7 developments.
-- 86 sources.
-- 2 stories.
-- 13 narrative scenes.
-- 16 glossary entries.
+11 subjects · 30 places · 30 occurrences · 1 event · 1 relationship · 7 contexts · 7 developments · 86 sources · 2 stories · 13 escenas · 16 términos.
 
-## Diagnóstico que motivó alpha.23
-Semántica anterior:
-`map = occVisible() = filtro por año exacto`.
+## Cobertura
+- occurrences: 16/30 con punto; 14 sin punto;
+- contexts: 5/7 cartografiables; 2 sin punto;
+- developments: 1/7 cartografiable; 6 sin punto.
 
-Baseline a 1500:
-- 1 occurrence activa;
-- 0 occurrences activas con punto.
+## Validación reproducible
+- `tools/validate_project.py`: **PASS**;
+- `node --check js/app.js`: **PASS**;
+- scripts Python `test_*.py`: **50/50 PASS**;
+- scripts Node `test_*.mjs`: **4/4 PASS**;
+- cobertura multicapas: **PASS**;
+- estabilidad de metadatos MANIFEST: **PASS**.
 
-Por tanto el mapa quedaba visualmente vacío aunque el corpus tuviese:
-- 16 occurrences geolocalizadas.
+## Correcciones protegidas
+- cobertura visible en occurrences + contexts + developments;
+- `firstMappablePlace()`;
+- no centroides inventados;
+- `renderMapCoverage()` defensivo;
+- MANIFEST conserva `gate` y `phase`.
 
-## Semántica alpha.23
-- `occMapVisible()` = mapa global filtrado por búsqueda/filtros, sin año exacto.
-- `occVisible()` = occurrences activas en la fecha.
-- mapa = `occMapVisible()`.
-- `En esta fecha` = `occVisible()`.
-- fecha seleccionada = énfasis visual sobre los pines.
+## Navegador
+Se intentó smoke test automatizado con Chromium/viewport móvil, pero el entorno bloqueó `localhost` y `file://` con `ERR_BLOCKED_BY_ADMINISTRATOR`. No se declara PASS de navegador a partir de ese intento.
 
-## Búsqueda
-PASS:
-- global, independiente del año;
-- resultados textuales visibles;
-- zero-state explícito;
-- autoencuadre;
-- click sincroniza fecha y ficha;
-- consultas cortas por palabra/prefijo.
-
-Baselines:
-- `vino`: 5 occurrences globales · 5 mapped · 0 activas en 1500;
-- `pan`: 7 occurrences · sin falso positivo por `España`.
-
-## Navegación cartográfica
-PASS:
-- vista mundial inicial;
-- fit regional para resultados;
-- fit a una occurrence seleccionada;
-- botón `Mundo`;
-- marker click → periodo + detalle;
-- story/deep-link → región de la evidence cuando existe point;
-- unmapped sigue accesible.
-
-## Regresión
-- Python gates: **50/50 PASS**.
-- Node gates/checks: **6/6 PASS**.
-- G3 FINAL GATE: PASS.
-- Focused Exploration: PASS.
-- Progressive Disclosure: PASS.
-- Narrative Museum: PASS.
-- Navigation Hardening: PASS.
-- GitHub Pages: **18/18 PASS**.
-- G2 frozen fingerprint: **9/9 PASS**.
-- canonical rules: **163/163**.
-
-## QA visual
-No se declara una nueva validación visual/táctil automatizada de alpha.23.
-
-El gate pendiente es comprobar en el dispositivo real:
-1. mapa mundial con pines visibles;
-2. diferencia visual entre fecha actual y otras fechas;
-3. búsqueda `vino`;
-4. búsqueda `pan`;
-5. encuadre regional;
-6. tap de pin → fecha/ficha;
-7. reset `Mundo`;
-8. legibilidad y densidad de pines en móvil.
-
-Hasta ese gate no se amplía el corpus.
+## Gate pendiente
+`docs/MOBILE_ACCEPTANCE_ALPHA24.md`.

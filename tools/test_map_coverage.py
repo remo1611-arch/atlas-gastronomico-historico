@@ -1,45 +1,24 @@
 from pathlib import Path
-import json,sys,re
-
+import json,sys
 ROOT=Path(__file__).resolve().parents[1]
-places=json.loads((ROOT/"data/places.json").read_text(encoding="utf-8"))
-occ=json.loads((ROOT/"data/occurrences.json").read_text(encoding="utf-8"))
-html=(ROOT/"index.html").read_text(encoding="utf-8")
-app=(ROOT/"js/app.js").read_text(encoding="utf-8")
-
-errors=[]
-by_id={p["id"]:p for p in places}
-unmapped=[]
-
-for o in occ:
-    p=by_id.get(o.get("placeRef"))
-    point=(p or {}).get("point")
-    if not point:
-        unmapped.append(o["id"])
-
-if 'id="mapCoverageStatus"' not in html:
-    errors.append("falta mapCoverageStatus en HTML")
-if "function occurrencesWithoutMapPoint" not in app:
-    errors.append("falta detector de registros sin punto")
-if "function renderMapCoverage" not in app:
-    errors.append("falta render de cobertura cartográfica")
-if 'id="unmappedRecordsPanel"' not in html:
-    errors.append("falta panel accionable de registros sin punto")
-if "data-unmapped-occurrence" not in app:
-    errors.append("los registros sin punto no tienen acceso directo desde el mapa")
-if "coverage-chip" not in app:
-    errors.append("falta señal compacta de cobertura")
-if "inventar un centroide cartográfico" not in html:
-    errors.append("Acerca del atlas no conserva la política de no inventar coordenadas")
-if "console.warn(`[Atlas] Registro sin punto cartográfico:" not in app:
-    errors.append("falta warning diagnóstico de registro sin punto")
-
+load=lambda n:json.loads((ROOT/'data'/n).read_text(encoding='utf-8'))
+places=load('places.json');occ=load('occurrences.json');contexts=load('contexts.json');developments=load('developments.json');html=(ROOT/'index.html').read_text(encoding='utf-8');app=(ROOT/'js/app.js').read_text(encoding='utf-8');by={p['id']:p for p in places};errors=[]
+def hp(i):
+ p=by.get(i) or {}; q=p.get('point');
+ if not q:return False
+ try:return -90<=float(q['lat'])<=90 and -180<=float(q['lon'])<=180
+ except:return False
+def anyp(refs):return any(hp(x) for x in refs or [])
+uo=[o['id'] for o in occ if not hp(o.get('placeRef'))];uc=[c['id'] for c in contexts if not anyp(c.get('placeRefs'))];ud=[d['id'] for d in developments if not anyp(d.get('placeRefs'))]
+for needle in ['id="mapCoverageStatus"','id="unmappedRecordsPanel"','sin inventar centroides']:
+ if needle not in html:errors.append('HTML falta '+needle)
+for needle in ['function placeHasMapPoint(pl)','function firstResolvedPlace(placeRefs=[])','function firstMappablePlace(placeRefs=[])','function activeUnmappedSecondaryRecords()','if(!box) return;','data-unmapped-occurrence','data-unmapped-secondary','Capa activa sin punto cartográfico:','El Atlas no inventa centroides ni puntos únicos.','const firstPlace=firstMappablePlace(c.placeRefs||[])','const firstPlace=firstMappablePlace(d.placeRefs||[])']:
+ if needle not in app:errors.append('app falta '+needle)
+for legacy in ['const firstPlace=(c.placeRefs||[]).map(place).find(Boolean)','const firstPlace=(d.placeRefs||[]).map(place).find(Boolean)']:
+ if legacy in app:errors.append('legacy '+legacy)
+if len(uo)!=14:errors.append(f'occ {len(uo)} != 14')
+if len(uc)!=2:errors.append(f'contexts {len(uc)} != 2')
+if len(ud)!=6:errors.append(f'dev {len(ud)} != 6')
 if errors:
-    print("MAP COVERAGE: FAIL")
-    for e in errors:print("ERROR:",e)
-    sys.exit(1)
-
-print("MAP COVERAGE: PASS")
-print("Registros actuales sin punto:",len(unmapped))
-if unmapped:
-    print("IDs:",", ".join(unmapped))
+ print('MAP COVERAGE: FAIL');[print('ERROR:',e) for e in errors];sys.exit(1)
+print('MAP COVERAGE: PASS');print('Occurrences sin punto:',len(uo));print('Contexts sin punto:',len(uc));print('Developments sin punto:',len(ud))

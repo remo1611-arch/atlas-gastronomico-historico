@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.23
-**Estado:** Narrative Museum + Geographic Explorer · validación de producto
+**Versión:** 0.1.0-alpha.24
+**Estado:** Narrative Museum + Atlas · consolidación de producto · gate móvil pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -104,7 +104,7 @@ Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed`
 
 Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Desde alpha.19, la cobertura espacial también está auditada: 15 de 24 occurrences públicas tienen punto y las 9 restantes permanecen sin punto por una decisión explícita, no por olvido.
+El corpus actual contiene 30 occurrences públicas: 16 tienen punto y 14 permanecen sin punto por decisión explícita. Alpha.24 extiende el diagnóstico a `contexts` y `developments` sin inventar centroides.
 
 ## Capas históricas
 
@@ -114,7 +114,7 @@ La arquitectura alpha.3 añade, sin descentrar la gastronomía:
 - **Ciencia y tecnología** (`developments.json`);
 - **Seguridad e higiene** como vista temática de developments.
 
-Estas capas están preparadas pero permanecen vacías hasta la auditoría histórica G2.
+Estas capas ya contienen corpus revisado. Solo se dibuja un marcador cuando existe un `placeRef` con punto sustentado; los ámbitos regionales o multiterritoriales pueden permanecer legítimamente sin pin.
 
 ## G2 · contenido revisado
 

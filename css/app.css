@@ -4260,3 +4260,13 @@ html[data-theme="light"] .story-map-frame .country{fill:#d7ddd8;stroke:#aeb9b3}
     max-width:66%;
   }
 }
+
+/* alpha.24 · cobertura cartográfica multicapas */
+.unmapped-explanation{margin:2px 2px 9px;color:var(--muted);font-size:.64rem;line-height:1.45}
+.unmapped-section+.unmapped-section{margin-top:10px;padding-top:9px;border-top:1px solid var(--line)}
+.unmapped-section h3{margin:0 2px 7px;color:var(--muted);font-size:.61rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase}
+.unmapped-record-list article{min-width:0;padding:9px 10px;text-align:left;border:1px dashed var(--line);border-radius:10px;background:color-mix(in srgb,var(--surface-solid) 82%,transparent);color:var(--text)}
+.unmapped-record-list article span,.unmapped-record-list article strong,.unmapped-record-list article small{display:block;min-width:0}
+.unmapped-record-list article span{color:var(--place);font-size:.58rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+.unmapped-record-list article strong{margin-top:3px;font-family:Georgia,serif;font-size:.84rem}
+.unmapped-record-list article small{margin-top:3px;color:var(--muted);font-size:.6rem;line-height:1.35}
