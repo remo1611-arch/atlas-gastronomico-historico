@@ -1,4 +1,4 @@
-# Resultados de validación — 0.1.0-alpha.16
+# Resultados de validación — 0.1.0-alpha.17
 
 Fecha: 2026-08-11
 
@@ -6,7 +6,7 @@ Fecha: 2026-08-11
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- G3: EN CURSO · G3-A implementado.
+- G3: EN CURSO · G3-A/B implementados.
 
 ## Corpus
 Sin cambios históricos respecto a alpha.15:
@@ -24,69 +24,73 @@ Fingerprint SHA-256:
 - taxonomy;
 - 8 schemas.
 
-**9/9 sin cambios.**
+**9/9 intactos.**
 
 ## G3-A
 PASS:
-- certainty filter;
-- precision filter;
-- mapped/unmapped filter;
+- certainty/precision/spatial filters;
 - Evidence Lens;
 - detail semantics;
 - source comparison;
 - unmapped actionable access;
-- no opaque evidence score.
+- no evidence score.
 
-## Ficha
-Se separan:
-- estado editorial;
-- certeza histórica;
-- precisión cronológica;
-- precisión espacial;
-- base documental.
+## G3-B
+PASS:
+- ventana temporal contextual;
+- point/range/circa/broad diferenciados;
+- perfil cronológico en ficha;
+- duración mediante ordinal histórico;
+- gaps/solapamientos en Historia del elemento;
+- precision + certainty en todos los tipos de hito;
+- comparación documental ampliada de disputed;
+- sin winner/ranking/consensus score.
 
-## Fuentes
-- 9 tipos de fuente presentes en el corpus;
-- 9/9 con etiqueta legible;
-- comparación descriptiva;
-- sin ranking automático.
+## Algoritmos
+- CORE: 11 aserciones PASS.
+- Magnetic Timeline: 8 aserciones PASS.
+- G3 Chronology: 6 aserciones PASS.
+- prueba explícita -1 → 1 sin año 0: PASS.
 
-## Cartografía
-- 18 occurrences públicas sin punto canónico;
-- todas siguen accesibles;
-- panel accionable en mapa;
-- no centroides inventados.
-
-## Suite regresiva
+## Regresión
 PASS:
 - validate_project;
 - schema validation: 140 objetos / 8 schemas;
-- G2 final gate;
 - public state;
-- verified gate;
-- disputed;
-- técnica;
-- historias longitudinales;
+- demo archive;
+- G2 final gate;
+- pilots A/B/C/D;
+- verified gate: 14;
+- disputed contract;
+- technique history;
+- second review;
 - thematic coverage;
-- UI contract: 108 IDs / 95 refs JS;
-- filter state;
-- mobile;
+- three longitudinal histories;
+- G3 evidence & precision;
+- G3 source comparison;
+- G3 unmapped access;
+- G3 detail semantics;
+- G3 chronology semantics;
+- G3 disputed comparison;
 - light contrast;
+- mobile;
+- filter state;
 - map coverage;
 - search debounce;
 - Temporal Navigator;
 - Unified Timeline;
 - Magnetic Timeline;
-- GitHub Pages 16/16;
-- core 11 assertions;
-- magnetic algorithm 8 assertions.
+- GitHub Pages 16/16.
+
+## UI
+- UI contract: 109 IDs / 96 referencias JS.
 
 ## Pendiente real
 Validación visual/táctil en dispositivo real de:
-- drawer con nuevos filtros;
-- Evidence Lens;
-- ficha G3;
-- source comparison;
-- panel de registros sin punto.
+- ventana temporal contextual;
+- circa/range/broad;
+- gaps en Historia del elemento;
+- disputed comparison en móvil;
+- modos oscuro/claro.
 
-No se declara prueba visual automatizada del navegador local.
+No se declara prueba visual automatizada de navegador.

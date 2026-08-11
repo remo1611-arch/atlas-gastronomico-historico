@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#10121a">
-  <meta name="atlas-build" content="0.1.0-alpha.16">
+  <meta name="atlas-build" content="0.1.0-alpha.17">
   <title>Atlas Gastronómico Histórico</title>
   <meta name="description" content="Museo digital interactivo de la historia de la alimentación y la gastronomía a través del tiempo y el espacio.">
-  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.16">
+  <link rel="stylesheet" href="./css/app.css?v=0.1.0-alpha.17">
 </head>
 <body>
 <div class="ambient ambient-a" aria-hidden="true"></div>
@@ -21,7 +21,7 @@
     </span>
     <span class="brand-copy">
       <strong>Atlas Gastronómico Histórico</strong>
-      <small>Museo digital · <span id="versionLabel">alpha.16</span></small>
+      <small>Museo digital · <span id="versionLabel">alpha.17</span></small>
     </span>
   </a>
 
@@ -100,6 +100,9 @@
           <div class="temporal-verified" id="temporalVerified"></div>
           <div class="temporal-events" id="temporalEvents"></div>
           <div class="temporal-developments" id="temporalDevelopments"></div>
+          <div id="temporalPrecisionWindow" class="temporal-precision-window hidden" aria-hidden="true">
+            <i></i><span></span>
+          </div>
           <div id="temporalCursor" class="temporal-cursor" role="slider" tabindex="0"
             aria-label="Fecha seleccionada"
             aria-valuemin="-12000" aria-valuemax="2026"
@@ -466,6 +469,6 @@
 
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<script type="module" src="./js/app.js?v=0.1.0-alpha.16"></script>
+<script type="module" src="./js/app.js?v=0.1.0-alpha.17"></script>
 </body>
 </html>

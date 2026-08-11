@@ -1,6 +1,6 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.16
+**Versión:** 0.1.0-alpha.17
 **Estado:** nueva base canónica / prototipo funcional  
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
@@ -237,3 +237,13 @@ Novedades:
 - abrir desde el mapa los registros sin coordenadas.
 
 Los schemas y la taxonomía están protegidos por fingerprint SHA-256 respecto a G2 CLOSED.
+
+## G3-B — Cronología y desacuerdo
+
+Alpha.17 profundiza en la lectura del tiempo y del desacuerdo académico:
+- el hito enfocado revela su intervalo real en la timeline;
+- la ficha explica amplitud y tipo de precisión;
+- Historia del elemento muestra gaps/solapamientos entre hitos;
+- disputed compara posiciones y sus fuentes sin declarar un ganador.
+
+No cambia ningún schema, taxonomy ni registro histórico.

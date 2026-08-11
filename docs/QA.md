@@ -231,3 +231,17 @@ python tools/test_g3_detail_semantics.py
 - [ ] no evidenceScore;
 - [ ] registros sin punto abribles desde mapa;
 - [ ] filtros repercuten en timeline/events/developments.
+
+python tools/test_g3_chronology_semantics.py
+python tools/test_g3_disputed_comparison.py
+node tools/test_g3_chronology_algorithm.mjs
+
+## G3-B
+- [ ] ventana temporal del hito enfocado;
+- [ ] point/range/circa/broad distinguibles;
+- [ ] ventana no actúa como segundo slider;
+- [ ] historia explicita gap/solapamiento;
+- [ ] todos los tipos de hito muestran precisión y certeza;
+- [ ] disputed muestra posiciones + perfil documental;
+- [ ] disputed no tiene winner/ranking;
+- [ ] G2 fingerprint intacto.

@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.17 — 2026-08-11
+
+### G3-B · Cronología
+- ventana temporal contextual en Unified/Magnetic Timeline;
+- representación diferenciada point/range/circa/broad;
+- perfil cronológico en ficha;
+- amplitud calculada con ordinal histórico;
+- gaps/solapamientos explícitos entre hitos de Historia del elemento;
+- precision + certainty visibles en todos los tipos de hito.
+
+### G3-B · Disputed
+- resumen de posiciones;
+- fuentes únicas y compartidas;
+- perfil documental por posición;
+- comparación desplegable de fuentes;
+- neutralidad editorial explícita.
+
+### Contrato
+- taxonomy sin cambios;
+- schemas sin cambios;
+- corpus sin cambios.
+
 ## 0.1.0-alpha.16 — 2026-08-11
 
 ### G3-A · Evidencia y precisión

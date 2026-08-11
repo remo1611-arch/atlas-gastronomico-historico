@@ -120,3 +120,11 @@
 95. El contrato G2 se protege mediante fingerprint de schemas y taxonomía durante G3.
 96. Una explicación genérica del significado de `high/medium/disputed` no debe presentarse como rationale específico del registro.
 
+97. La amplitud de un `period` debe poder leerse sin convertirla en una puntuación de calidad.
+98. Una historia editorial con tarjetas equidistantes debe explicitar la distancia temporal entre hitos para no sugerir equidistancia histórica.
+99. La distancia entre hitos se calcula desde el final del hito anterior hasta el inicio del siguiente, respetando solapamientos.
+100. Las duraciones históricas usan ordinales sin año 0.
+101. `circa`, `range`, `century`, `millennium` y fechas puntuales deben conservar diferencias visuales sin alterar el dato persistido.
+102. Un caso `disputed` puede comparar posiciones y fuentes, pero no asignar ganador, preferencia o score de consenso automáticamente.
+103. La revisión editorial correcta de un desacuerdo no equivale a resolverlo.
+

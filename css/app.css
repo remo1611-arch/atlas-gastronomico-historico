@@ -2936,3 +2936,351 @@ html[data-theme="light"] .reading-card{
     grid-column:auto;
   }
 }
+
+
+/* ===== alpha.17 · G3-B Chronology & Dispute Semantics ===== */
+
+/* The main timeline reveals the documented temporal window of the focused hit.
+   This is a reading aid, not a second slider. */
+.temporal-precision-window{
+  position:absolute;
+  z-index:2;
+  left:var(--left);
+  top:7px;
+  width:var(--width);
+  min-width:2px;
+  height:13px;
+  pointer-events:none;
+}
+
+.temporal-precision-window>i{
+  position:absolute;
+  inset:4px 0 auto;
+  height:4px;
+  border-radius:999px;
+  background:color-mix(in srgb,var(--place) 45%,transparent);
+  border:1px solid color-mix(in srgb,var(--place) 54%,var(--line));
+}
+
+.temporal-precision-window>span{
+  position:absolute;
+  left:50%;
+  top:13px;
+  max-width:220px;
+  transform:translateX(-50%);
+  padding:3px 6px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--surface-solid);
+  color:var(--muted);
+  font-size:.54rem;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  opacity:0;
+  transition:opacity .14s ease;
+}
+
+.temporal-rail:hover .temporal-precision-window>span,
+.temporal-rail.dragging .temporal-precision-window>span{
+  opacity:1;
+}
+
+.temporal-precision-window[data-mode="point"]{
+  width:2px!important;
+  min-width:2px;
+}
+
+.temporal-precision-window[data-mode="point"]>i{
+  left:0;
+  width:2px;
+  border-radius:0;
+}
+
+.temporal-precision-window[data-mode="circa"]>i{
+  border-style:dashed;
+  background:
+    linear-gradient(90deg,
+      transparent,
+      color-mix(in srgb,var(--gold) 32%,transparent) 18%,
+      color-mix(in srgb,var(--gold) 50%,transparent) 50%,
+      color-mix(in srgb,var(--gold) 32%,transparent) 82%,
+      transparent);
+  border-color:color-mix(in srgb,var(--gold) 48%,transparent);
+}
+
+.temporal-precision-window[data-mode="broad"]>i{
+  background:repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb,var(--place) 34%,transparent) 0 5px,
+    transparent 5px 8px
+  );
+}
+
+.temporal-precision-window[data-mode="before"]>i{
+  border-radius:999px 0 0 999px;
+}
+
+.temporal-precision-window[data-mode="after"]>i{
+  border-radius:0 999px 999px 0;
+}
+
+/* Local semantic profile: communicates the type of chronology, while text
+   provides the actual declared span. It is not a hidden numerical score. */
+.period-profile{
+  display:grid;
+  grid-template-columns:74px minmax(0,1fr);
+  align-items:center;
+  gap:9px;
+  margin-top:9px;
+  padding-top:9px;
+  border-top:1px solid var(--line);
+}
+
+.period-profile-rail{
+  position:relative;
+  height:20px;
+}
+
+.period-profile-rail::before{
+  content:"";
+  position:absolute;
+  left:3px;
+  right:3px;
+  top:50%;
+  height:1px;
+  background:var(--line-strong);
+}
+
+.period-profile-rail>i,
+.period-profile-rail>b,
+.period-profile-rail>em{
+  position:absolute;
+  top:50%;
+  display:block;
+  transform:translateY(-50%);
+  font-style:normal;
+}
+
+.period-profile-rail>i{
+  left:8px;
+  right:8px;
+  height:6px;
+  border:1px solid color-mix(in srgb,var(--place) 46%,var(--line));
+  border-radius:999px;
+  background:color-mix(in srgb,var(--place) 20%,transparent);
+}
+
+.period-profile-rail>b{
+  left:7px;
+  width:1px;
+  height:12px;
+  background:var(--place);
+}
+
+.period-profile-rail>em{
+  right:7px;
+  width:1px;
+  height:12px;
+  background:var(--place);
+}
+
+.period-profile.point .period-profile-rail>i{
+  left:50%;
+  right:auto;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:var(--place);
+}
+
+.period-profile.point .period-profile-rail>b,
+.period-profile.point .period-profile-rail>em{
+  display:none;
+}
+
+.period-profile.circa .period-profile-rail>i{
+  border-style:dashed;
+  border-color:color-mix(in srgb,var(--gold) 52%,var(--line));
+  background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--gold) 25%,transparent),transparent);
+}
+
+.period-profile.broad .period-profile-rail>i{
+  background:repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb,var(--place) 20%,transparent) 0 5px,
+    transparent 5px 8px
+  );
+}
+
+.period-profile.before .period-profile-rail>em,
+.period-profile.after .period-profile-rail>b{
+  display:none;
+}
+
+.period-profile.before .period-profile-rail>i{
+  left:3px;
+  border-left-color:transparent;
+}
+
+.period-profile.after .period-profile-rail>i{
+  right:3px;
+  border-right-color:transparent;
+}
+
+.period-profile-copy{
+  min-width:0;
+}
+
+.period-profile-copy strong,
+.period-profile-copy span{
+  display:block;
+}
+
+.period-profile-copy strong{
+  color:var(--text);
+  font-size:.68rem;
+  line-height:1.3;
+}
+
+.period-profile-copy span{
+  margin-top:2px;
+  color:var(--muted);
+  font-size:.59rem;
+  line-height:1.35;
+}
+
+/* Equal vertical card spacing no longer implies equal historical spacing. */
+.history-gap{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  margin:-3px 0 10px;
+  color:var(--muted);
+  font-size:.58rem;
+  font-weight:800;
+  letter-spacing:.02em;
+}
+
+.history-gap>i{
+  flex:0 0 17px;
+  height:1px;
+  background:var(--line-strong);
+}
+
+.history-gap>span{
+  min-width:0;
+}
+
+.history-precision{
+  border-color:color-mix(in srgb,var(--place) 38%,var(--line))!important;
+}
+
+.history-precision.circa{
+  border-style:dashed!important;
+}
+
+.history-precision.century,
+.history-precision.millennium,
+.history-precision.phase{
+  background:repeating-linear-gradient(
+    90deg,
+    color-mix(in srgb,var(--place) 5%,transparent) 0 5px,
+    transparent 5px 8px
+  )!important;
+}
+
+.history-uncertainty.high{
+  border-color:color-mix(in srgb,var(--ingredient) 32%,var(--line))!important;
+}
+
+.history-uncertainty.medium{
+  border-style:dashed!important;
+  border-color:color-mix(in srgb,var(--gold) 38%,var(--line))!important;
+}
+
+.history-uncertainty.disputed{
+  color:var(--gold)!important;
+  border-color:color-mix(in srgb,var(--gold) 50%,var(--line))!important;
+}
+
+/* Disputed evidence becomes an explicit source-backed comparison. */
+.dispute-head>small{
+  display:block;
+  margin-top:6px;
+  color:var(--muted);
+  font-size:.62rem;
+  line-height:1.4;
+}
+
+.dispute-position-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:8px;
+}
+
+.dispute-position-head>small{
+  flex:0 1 48%;
+  color:var(--muted);
+  font-size:.56rem;
+  line-height:1.3;
+  text-align:right;
+}
+
+.dispute-position .source-comparison{
+  margin-top:8px;
+}
+
+.dispute-neutrality{
+  display:grid;
+  gap:3px;
+  margin-top:10px;
+  padding:10px 11px;
+  border:1px solid color-mix(in srgb,var(--gold) 34%,var(--line));
+  border-radius:10px;
+  background:color-mix(in srgb,var(--gold) 4%,transparent);
+}
+
+.dispute-neutrality strong{
+  color:var(--gold);
+  font-size:.65rem;
+}
+
+.dispute-neutrality span{
+  color:var(--muted);
+  font-size:.65rem;
+  line-height:1.45;
+}
+
+html[data-theme="light"] .period-profile-rail>i{
+  background:rgba(76,92,104,.10);
+}
+
+@media(max-width:600px){
+  .temporal-precision-window>span{
+    display:none;
+  }
+
+  .period-profile{
+    grid-template-columns:58px minmax(0,1fr);
+  }
+
+  .dispute-position-head{
+    display:block;
+  }
+
+  .dispute-position-head>small{
+    display:block;
+    margin-top:4px;
+    text-align:left;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .temporal-precision-window>span{
+    transition:none!important;
+  }
+}

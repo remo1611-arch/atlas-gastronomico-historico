@@ -1,17 +1,17 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.16';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project} from './core.js?v=0.1.0-alpha.17';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.16',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.16',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.16',
-  places:'./data/places.json?v=0.1.0-alpha.16',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.16',
-  events:'./data/events.json?v=0.1.0-alpha.16',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.16',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.16',
-  developments:'./data/developments.json?v=0.1.0-alpha.16',
-  sources:'./data/sources.json?v=0.1.0-alpha.16',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.16'
+  config:'./data/config.json?v=0.1.0-alpha.17',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.17',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.17',
+  places:'./data/places.json?v=0.1.0-alpha.17',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.17',
+  events:'./data/events.json?v=0.1.0-alpha.17',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.17',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.17',
+  developments:'./data/developments.json?v=0.1.0-alpha.17',
+  sources:'./data/sources.json?v=0.1.0-alpha.17',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.17'
 };
 
 const s={
@@ -265,23 +265,38 @@ function sourceListHTML(refs=[]){
 
 function disputeHTML(item){
   if(item?.certainty!=='disputed'||!item.dispute) return '';
-  const positions=(item.dispute.positions||[]).map((position,index)=>`
-    <article class="dispute-position">
+  const summary=disputedSourceSummary(item);
+  const positions=(item.dispute.positions||[]).map((position,index)=>{
+    const profile=sourceProfileText(position.sourceRefs||[]);
+    return `<article class="dispute-position">
       <span>${String(index+1).padStart(2,'0')}</span>
       <div>
-        <strong>${esc(position.label)}</strong>
+        <div class="dispute-position-head">
+          <strong>${esc(position.label)}</strong>
+          <small>${esc(profile)}</small>
+        </div>
         <p>${esc(position.summary)}</p>
         ${sourceListHTML(position.sourceRefs||[])}
+        ${sourceComparisonHTML(position.sourceRefs||[])}
       </div>
-    </article>
-  `).join('');
+    </article>`;
+  }).join('');
+
+  const sharedText=summary?.shared?.length
+    ? `${summary.shared.length} ${summary.shared.length===1?'fuente aparece':'fuentes aparecen'} en más de una posición`
+    : 'Las posiciones no comparten fuentes citadas en este registro';
 
   return `<section class="dispute-box" aria-label="Debate historiográfico">
     <div class="dispute-head">
-      <span>DEBATE ABIERTO</span>
+      <span>DEBATE ABIERTO · SIN CONSENSO EDITORIAL IMPUESTO</span>
       <strong>${esc(item.dispute.question)}</strong>
+      <small>${summary?.positions?.length||0} posiciones · ${summary?.unique?.length||0} fuentes únicas · ${esc(sharedText)}</small>
     </div>
     <div class="dispute-positions">${positions}</div>
+    <div class="dispute-neutrality">
+      <strong>Cómo leer este debate</strong>
+      <span>Que el registro esté revisado significa que el desacuerdo está documentado correctamente; no significa que el Atlas haya resuelto cuál interpretación es correcta.</span>
+    </div>
     ${item.dispute.editorialNote?`<p class="dispute-editorial">${esc(item.dispute.editorialNote)}</p>`:''}
   </section>`;
 }
@@ -352,6 +367,135 @@ function precisionLabel(item){
   return PRECISION_LABELS[item?.period?.precision]||item?.period?.precision||'Sin precisión';
 }
 
+function periodSpanYears(period){
+  if(!period) return null;
+  const start=toOrdinal(period.start);
+  const end=toOrdinal(period.end);
+  if(!Number.isFinite(start)||!Number.isFinite(end)) return null;
+  return Math.abs(end-start);
+}
+
+function formatTemporalSpan(years){
+  if(!Number.isFinite(years)) return 'Amplitud no calculable';
+  if(years===0) return 'Fecha puntual en la resolución declarada';
+  const fmt=new Intl.NumberFormat('es-ES');
+  return `≈ ${fmt.format(years)} ${years===1?'año':'años'} de intervalo`;
+}
+
+function periodSemantics(item){
+  const precision=item?.period?.precision||'unknown';
+  const span=periodSpanYears(item?.period);
+  const open=precision==='before'||precision==='after';
+  const approximate=precision==='circa';
+  const broad=['century','millennium','phase'].includes(precision);
+  const ranged=precision==='range'||(Number.isFinite(span)&&span>0);
+
+  let mode='point';
+  if(open) mode=precision;
+  else if(approximate) mode='circa';
+  else if(broad) mode='broad';
+  else if(ranged) mode='range';
+
+  return {precision,span,open,approximate,broad,ranged,mode};
+}
+
+function periodProfileHTML(item){
+  const sem=periodSemantics(item);
+  const display=item?.period?.display||`${formatYear(item.period.start)}–${formatYear(item.period.end)}`;
+  let spanText=formatTemporalSpan(sem.span);
+  if(sem.open) spanText=sem.precision==='before'?'Límite abierto hacia fechas anteriores':'Límite abierto hacia fechas posteriores';
+
+  return `<div class="period-profile ${esc(sem.mode)}">
+    <div class="period-profile-rail" aria-hidden="true">
+      <i></i><b></b><em></em>
+    </div>
+    <div class="period-profile-copy">
+      <strong>${esc(display)}</strong>
+      <span>${esc(precisionLabel(item))} · ${esc(spanText)}</span>
+    </div>
+  </div>`;
+}
+
+function historyGapLabel(previous,current){
+  if(!previous?.period||!current?.period) return '';
+  const previousEnd=toOrdinal(previous.period.end);
+  const currentStart=toOrdinal(current.period.start);
+  if(!Number.isFinite(previousEnd)||!Number.isFinite(currentStart)) return '';
+
+  if(currentStart<=previousEnd){
+    return 'Se solapa temporalmente con el hito anterior';
+  }
+
+  const gap=currentStart-previousEnd;
+  if(gap<=1) return 'Continuidad temporal con el hito anterior';
+
+  const fmt=new Intl.NumberFormat('es-ES');
+  return `≈ ${fmt.format(gap)} ${gap===1?'año':'años'} desde el final del hito anterior`;
+}
+
+function historyGapHTML(previous,current){
+  if(!previous) return '';
+  const label=historyGapLabel(previous,current);
+  return label?`<div class="history-gap"><i></i><span>${esc(label)}</span></div>`:'';
+}
+
+function temporalPeriodPercent(period){
+  if(!period) return null;
+  const start=temporalPercent(period.start);
+  const end=temporalPercent(period.end);
+  if(!Number.isFinite(start)||!Number.isFinite(end)) return null;
+  return {
+    left:Math.min(start,end),
+    width:Math.abs(end-start),
+    start,
+    end
+  };
+}
+
+function renderTemporalPrecisionWindow(entry){
+  const box=$('#temporalPrecisionWindow');
+  if(!box) return;
+
+  if(!entry?.period){
+    box.classList.add('hidden');
+    box.removeAttribute('data-mode');
+    return;
+  }
+
+  const pos=temporalPeriodPercent(entry.period);
+  if(!pos){
+    box.classList.add('hidden');
+    return;
+  }
+
+  const sem=periodSemantics(entry);
+  const center=temporalPercent(temporalRepresentativeYear(entry));
+  const exact=sem.span===0&&!sem.open;
+  const left=exact?center:pos.left;
+  const width=exact?0:pos.width;
+
+  box.classList.remove('hidden');
+  box.dataset.mode=sem.mode;
+  box.style.setProperty('--left',`${left.toFixed(4)}%`);
+  box.style.setProperty('--width',`${width.toFixed(4)}%`);
+  box.querySelector('span').textContent=`${precisionLabel(entry)} · ${entry.period.display||formatYear(entry.period.start)}`;
+}
+
+function disputedSourceSummary(item){
+  if(item?.certainty!=='disputed'||!item.dispute) return null;
+  const positions=item.dispute.positions||[];
+  const unique=[...new Set(positions.flatMap(position=>position.sourceRefs||[]))];
+  const overlap=new Map();
+  for(const position of positions){
+    for(const ref of new Set(position.sourceRefs||[])){
+      overlap.set(ref,(overlap.get(ref)||0)+1);
+    }
+  }
+  const shared=[...overlap.entries()].filter(([,count])=>count>1).map(([ref])=>ref);
+  return {positions,unique,shared};
+}
+
+
 function evidenceReadingHTML(o,pl){
   const status=statusMeta(o.status);
   const sourceText=sourceProfileText(o.sourceRefs||[]);
@@ -363,6 +507,7 @@ function evidenceReadingHTML(o,pl){
       <span>RESOLUCIÓN CRONOLÓGICA</span>
       <strong>${esc(precisionLabel(o))}</strong>
       <p>${esc(PRECISION_HELP[precision]||'La fecha debe interpretarse con la resolución declarada en el registro.')}</p>
+      ${periodProfileHTML(o)}
       ${o.period?.note?`<small>${esc(o.period.note)}</small>`:''}
     </article>
 
@@ -711,7 +856,10 @@ function markMagneticCandidate(candidate,items){
 function previewMagneticCandidate(targetYear,items=temporalCorpusItems()){
   const candidate=nearestTemporalHit(targetYear,items);
   markMagneticCandidate(candidate,items);
-  if(candidate) previewTemporalItem(candidate.entry,true);
+  if(candidate){
+    previewTemporalItem(candidate.entry,true);
+    renderTemporalPrecisionWindow(candidate.entry);
+  }
   return candidate;
 }
 
@@ -904,7 +1052,9 @@ function renderTemporalNavigator(){
   const selected=s.temporalSelection
     ? items.find(x=>x.key===s.temporalSelection)
     : null;
-  previewTemporalItem(selected||currentTemporalCandidate(items));
+  const focused=selected||currentTemporalCandidate(items);
+  previewTemporalItem(focused);
+  renderTemporalPrecisionWindow(focused);
 
   const currentOrdinal=toOrdinal(s.year);
   const before=items
@@ -1085,6 +1235,12 @@ function cancelTemporalDrag(event){
   }
   temporalDrag.startYear=null;
   temporalDrag.grabOffsetPx=0;
+
+  const restoredItems=temporalCorpusItems();
+  const restored=s.temporalSelection
+    ? restoredItems.find(x=>x.key===s.temporalSelection)
+    : currentTemporalCandidate(restoredItems);
+  renderTemporalPrecisionWindow(restored);
 }
 
 function handleTemporalCursorKey(event){
@@ -1667,6 +1823,7 @@ function renderSubjectHistory(subjectId){
           <i></i>
         </div>
         <div class="history-card">
+          ${historyGapHTML(items[index-1],entry)}
           <div class="history-card-head">
             <span class="history-kind">EVIDENCIA</span>
             <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
@@ -1677,7 +1834,8 @@ function renderSubjectHistory(subjectId){
           <div class="history-meta">
             <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
             <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
-            ${o.certainty&&o.certainty!=='high'?`<span class="history-uncertainty ${esc(o.certainty)}">Certeza: ${esc(CERTAINTY_LABELS[o.certainty]||o.certainty)}</span>`:''}
+            <span class="history-precision ${esc(o.period?.precision||'unknown')}">${esc(precisionLabel(o))}</span>
+            <span class="history-uncertainty ${esc(o.certainty||'unknown')}">Certeza: ${esc(CERTAINTY_LABELS[o.certainty]||o.certainty||'—')}</span>
             ${contexts.map(c=>`<span>${esc(c)}</span>`).join('')}
             <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
@@ -1697,6 +1855,7 @@ function renderSubjectHistory(subjectId){
           <i></i>
         </div>
         <div class="history-card">
+          ${historyGapHTML(items[index-1],entry)}
           <div class="history-card-head">
             <span class="history-kind event">EVENTO</span>
             <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
@@ -1706,7 +1865,8 @@ function renderSubjectHistory(subjectId){
           <p>${esc(e.summary)}</p>
           <div class="history-meta">
             <span>${esc(EVENT_LABELS[e.eventType]||e.eventType||'Proceso histórico')}</span>
-            ${e.certainty&&e.certainty!=='high'?`<span class="history-uncertainty">Certeza: ${esc(e.certainty)}</span>`:''}
+            <span class="history-precision ${esc(e.period?.precision||'unknown')}">${esc(precisionLabel(e))}</span>
+            <span class="history-uncertainty ${esc(e.certainty||'unknown')}">Certeza: ${esc(CERTAINTY_LABELS[e.certainty]||e.certainty||'—')}</span>
             <span>${(e.sourceRefs||[]).length} ${(e.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
           ${verificationHTML(e)}
@@ -1727,6 +1887,7 @@ function renderSubjectHistory(subjectId){
           <i></i>
         </div>
         <div class="history-card">
+          ${historyGapHTML(items[index-1],entry)}
           <div class="history-card-head">
             <span class="history-kind technique">TÉCNICA</span>
             <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
@@ -1737,6 +1898,8 @@ function renderSubjectHistory(subjectId){
           <div class="history-meta">
             <span>${esc(OCC_LABELS[o.occurrenceType]||o.occurrenceType)}</span>
             <span>${esc(EVIDENCE_LABELS[o.evidenceType]||o.evidenceType)}</span>
+            <span class="history-precision ${esc(o.period?.precision||'unknown')}">${esc(precisionLabel(o))}</span>
+            <span class="history-uncertainty ${esc(o.certainty||'unknown')}">Certeza: ${esc(CERTAINTY_LABELS[o.certainty]||o.certainty||'—')}</span>
             <span>Relación: usa técnica</span>
             <span>${(o.sourceRefs||[]).length} ${(o.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
@@ -1755,6 +1918,7 @@ function renderSubjectHistory(subjectId){
           <i></i>
         </div>
         <div class="history-card">
+          ${historyGapHTML(items[index-1],entry)}
           <div class="history-card-head">
             <span class="history-kind development">TRANSFORMACIÓN</span>
             <span class="status-badge ${esc(sm.className)}">${esc(sm.label)}</span>
@@ -1764,6 +1928,8 @@ function renderSubjectHistory(subjectId){
           <p>${esc(d.summary)}</p>
           <div class="history-meta">
             <span>${esc(developmentTypeLabel(d.type))}</span>
+            <span class="history-precision ${esc(d.period?.precision||'unknown')}">${esc(precisionLabel(d))}</span>
+            <span class="history-uncertainty ${esc(d.certainty||'unknown')}">Certeza: ${esc(CERTAINTY_LABELS[d.certainty]||d.certainty||'—')}</span>
             <span>${(d.sourceRefs||[]).length} ${(d.sourceRefs||[]).length===1?'fuente':'fuentes'}</span>
           </div>
           ${verificationHTML(d)}

@@ -97,3 +97,10 @@ Estado de continuación:
 - No modificar schemas/taxonomy sin romper explícitamente el fingerprint y justificarlo mediante ADR.
 - Próximo trabajo: auditoría visual/táctil de filtros/lente/ficha y decidir G3-B.
 - No crear un evidenceScore.
+
+Estado de continuación:
+- G2 CLOSED.
+- G3-A/B implementados.
+- Fingerprint G2 debe permanecer 9/9.
+- No crear score de evidencia ni winner disputed.
+- Antes de G3-C, revisar visualmente timeline precision window, history gaps y dispute comparison.

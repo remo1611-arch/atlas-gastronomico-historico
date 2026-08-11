@@ -229,3 +229,19 @@ Los registros sin punto cartográfico se muestran y abren desde el propio bloque
 **Aceptada.**
 Schemas y taxonomía de G2 CLOSED se protegen con SHA-256. Un cambio posterior debe ser explícito y justificado.
 
+## ADR-061 — Ventana temporal contextual
+**Aceptada.**
+El hito enfocado puede proyectar su intervalo real sobre la cronología principal. La proyección es solo lectura y no constituye un segundo selector.
+
+## ADR-062 — Historia no proporcional con gaps explícitos
+**Aceptada.**
+La Historia del elemento mantiene tarjetas legibles y equidistantes, pero explicita la distancia o solapamiento entre hitos. Se evita un layout proporcional que sería inutilizable en recorridos de milenios.
+
+## ADR-063 — Duración mediante ordinal histórico
+**Aceptada.**
+Las amplitudes y gaps se calculan con `toOrdinal()` para conservar la regla de ausencia de año 0.
+
+## ADR-064 — Disputed sin ganador
+**Aceptada.**
+La UI puede profundizar en fuentes y posiciones de un desacuerdo, pero no inferirá una posición preferida ni un score de consenso.
+

@@ -261,6 +261,17 @@ Contrato G2 congelado.
 - fingerprint G2;
 - cero cambios en schemas/taxonomía.
 
+### G3-B — Cronología y desacuerdo
+**Estado: IMPLEMENTADO · alpha.17**
+
+- ventana temporal contextual del hito;
+- point/range/circa/broad diferenciados;
+- perfil de amplitud cronológica en ficha;
+- gaps/solapamientos explícitos en Historia del elemento;
+- precision + certainty en todos los tipos de hito;
+- comparación documental avanzada de disputed;
+- cero cambios de schema/taxonomy.
+
 ### Pendiente G3
 - rationale específico por registro, solo si un caso real justifica cambio de contrato;
 - tratamiento visual avanzado de intervalos y precisión en más vistas;

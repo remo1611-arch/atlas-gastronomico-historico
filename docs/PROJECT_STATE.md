@@ -4,13 +4,13 @@
 Atlas Gastronómico Histórico
 
 ## Versión
-0.1.0-alpha.16
+0.1.0-alpha.17
 
 ## Gates
 - G0: CERRADO.
 - G1: CERRADO.
 - G2: CERRADO.
-- **G3: EN CURSO · A implementado.**
+- **G3: EN CURSO · A/B implementados.**
 - G4+: no iniciados.
 
 ## Corpus
@@ -31,24 +31,24 @@ Fingerprint:
 `docs/G2_CONTRACT_FINGERPRINT.json`
 
 ## G3-A
-Implementado:
-- certainty filter;
-- precision filter;
-- spatial mapped/unmapped filter;
+- filtros certainty/precision/spatial;
 - Evidence Lens;
-- ficha de interpretación de evidencia;
-- source comparison;
-- acceso directo a 18 registros sin punto;
-- etiquetas legibles de precisión.
+- ficha semántica;
+- comparación de fuentes;
+- acceso a unmapped.
 
-## Principio
-No existe `evidenceScore`.
-
-G3 presenta la evidencia por dimensiones separadas.
+## G3-B
+- ventana temporal del hito enfocado;
+- lectura point/range/circa/broad;
+- amplitud cronológica en ficha;
+- gaps y solapamientos en Historia del elemento;
+- precision/certainty en occurrence/event/technique/development;
+- disputed con comparación documental ampliada;
+- ninguna posición se prioriza automáticamente.
 
 ## Pendiente
-1. validar visualmente G3-A en móvil;
-2. decidir si existe una necesidad real de rationale específico por registro;
-3. profundizar en disputed;
-4. estudiar geometrías regionales verificadas;
-5. cerrar G3 antes de G4.
+1. validación visual/táctil real de G3-A/B;
+2. decidir si rationale específico por registro justifica cambio de contrato;
+3. estudiar geometrías regionales verificadas;
+4. decidir alcance exacto de G3-C;
+5. cerrar G3 antes de redes/difusión G4.
