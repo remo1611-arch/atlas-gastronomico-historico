@@ -691,3 +691,51 @@ Quinta expansión editorial posterior al Product Contract Freeze y segunda histo
 2. dossier transversal **Cómo aprendimos a conservar los alimentos**;
 3. reutilizar occurrences/developments existentes antes de añadir hitos nuevos;
 4. seguir aumentando densidad del corpus y evaluar cuándo G4 aporta valor real.
+
+
+## Alpha.33 — Conservación
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Primera historia transversal de segundo nivel construida principalmente mediante reutilización del corpus.
+
+### Integrado
+- 6 escenas: transformación empírica, Appert, frío, Pasteur, APPCC y Codex;
+- 0 subjects, 0 places, 0 occurrences y 0 developments nuevos;
+- 2 fuentes nuevas para reforzar Appert y 6 términos de glosario;
+- `appert_preservation_1809_1810` pasa a `verified/high` con contraste institucional + fuente primaria.
+
+### Reglas epistemológicas
+- transformación ≠ intención demostrada de conservación;
+- Appert ≠ origen universal de toda conserva;
+- refrigeración mecánica ≠ nacimiento del uso del frío;
+- APPCC ≠ técnica para prolongar vida útil;
+- Codex ≠ ley mundial única.
+
+### Después
+1. evaluar madurez global del corpus;
+2. priorizar una transversal capaz de documentar introducción/adopción antes de abrir G4;
+3. no dibujar redes hasta disponer de evidencia de vector suficiente.
+
+## Alpha.34 — Intercambio colombino · G4 readiness
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+### Integrado
+- 6 escenas sobre cultivos americanos y transformación de cocinas europeas;
+- 3 subjects nuevos: judía común, tomate y Capsicum;
+- 5 occurrences nuevas y 4 lugares regionales sin centroides;
+- corpus total: 50 occurrences;
+- filtros runtime cubren valores específicos sin modificar la taxonomía G2 congelada.
+
+### Reglas epistemológicas
+- historia anterior a 1492 ≠ descubrimiento europeo;
+- introducción ≠ cultivo ≠ adopción ≠ generalización;
+- Mattioli 1544 ≠ llegada del tomate;
+- Gran Canaria 1567 ≠ llegada absoluta de la patata a Europa;
+- Gran Canaria→Herbón no se infiere;
+- adaptación genética ≠ ruta demostrada;
+- intercambio colombino ≠ simetría.
+
+### Gate G4
+**PILOT-READY · FULL NETWORK: NO.**
+
+El siguiente paso, solo tras aceptación móvil, es un G4 Pilot A limitado a vectores directos sustentados por fuentes. La red amplia seguirá bloqueada hasta disponer de suficientes conexiones independientes para que la visualización no induzca inferencias.

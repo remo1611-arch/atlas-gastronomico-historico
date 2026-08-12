@@ -926,5 +926,47 @@
       "src_spices_nationaalarchief_banda_1621"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "europe_common_bean_intro_regional",
+    "name": "Europa · introducción temprana de la judía común (referencia macroregional)",
+    "summary": "Marco regional para una introducción reconstruida mediante genómica e historia. No representa un puerto único de entrada ni se cartografía mediante centroide.",
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023"
+    ],
+    "status": "reviewed",
+    "type": "macroregion"
+  },
+  {
+    "id": "northeast_italy_bean_network_1532",
+    "name": "Nordeste de Italia–Eslovenia–Dalmacia · red temprana de cultivo de judía",
+    "summary": "Región compuesta citada por la documentación histórica utilizada en el estudio genómico de la judía común. Se conserva sin punto porque no corresponde a una parcela o ciudad única.",
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023",
+      "src_common_bean_iconography_frontiers_2022"
+    ],
+    "status": "reviewed",
+    "type": "historical_region"
+  },
+  {
+    "id": "italy_tomato_mattioli_1544",
+    "name": "Italia · referencia botánica de tomate en 1544",
+    "summary": "Referencia regional para la descripción italiana de Mattioli. El lugar de publicación/documentación no se usa como supuesto punto exacto de introducción o cultivo.",
+    "sourceRefs": [
+      "src_tomato_europe_jxb_2022",
+      "src_mattioli_dioscoride_1544_primary"
+    ],
+    "status": "reviewed",
+    "type": "historical_region"
+  },
+  {
+    "id": "southern_europe_tomato_adoption_18c",
+    "name": "Europa meridional · adopción culinaria del tomate (referencia regional)",
+    "summary": "Región amplia utilizada para representar la adopción alimentaria del tomate hacia el siglo XVIII. Permanece sin centroide porque el proceso fue desigual entre territorios.",
+    "sourceRefs": [
+      "src_tomato_europe_jxb_2022"
+    ],
+    "status": "reviewed",
+    "type": "macroregion"
   }
 ]

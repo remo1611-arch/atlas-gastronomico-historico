@@ -2373,5 +2373,345 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_columbian_exchange_europe",
+    "storyType": "transversal",
+    "primarySubjectRef": null,
+    "relatedSubjectRefs": [
+      "maize",
+      "potato",
+      "common_bean",
+      "tomato",
+      "capsicum_pepper",
+      "cacao",
+      "sugar"
+    ],
+    "title": "Cultivos americanos, cocinas europeas",
+    "question": "¿Cómo pasaron plantas americanas de ser novedades documentadas a transformar cultivos, cocinas y economías europeas, y por qué “llegar” no significa “ser adoptadas”?",
+    "teaser": "Judías, tomate, pimientos, maíz, patata y cacao muestran que el intercambio colombino no fue una fecha ni una flecha: cada alimento siguió ritmos distintos de presencia, cultivo, adopción y generalización.",
+    "eyebrow": "6 escenas · presencia, introducción, adopción y poder",
+    "subtitle": "Del siglo XVI a la transformación de dietas regionales: una visita para aprender a distinguir movimiento biológico de integración alimentaria.",
+    "estimatedMinutes": 14,
+    "endTitle": "Una planta puede cruzar el océano en meses y tardar siglos en cambiar una cocina",
+    "endText": "El intercambio colombino fue una reorganización biológica y humana de escala planetaria, pero sus efectos no fueron instantáneos ni simétricos. Judías, tomate, Capsicum, maíz y patata muestran ritmos distintos de introducción y adopción; cacao y azúcar recuerdan que el cambio culinario europeo estuvo ligado también a imperios, trabajo forzado y mercados atlánticos.",
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023",
+      "src_common_bean_iconography_frontiers_2022",
+      "src_tomato_europe_jxb_2022",
+      "src_tomato_domestication_mbe_2020",
+      "src_mattioli_dioscoride_1544_primary",
+      "src_capsicum_spain_horticulture_2019",
+      "src_aragon_cantabrian_maize_2021",
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024",
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_galicia_obradoiro_2018",
+      "src_norton_chocolate_ahr_2006",
+      "src_loveman_chocolate_england_2013",
+      "src_sugar_smithsonian_trade",
+      "src_sugar_slavevoyages_maps_2025",
+      "src_sugar_technikmuseum_berlin",
+      "src_ranere_2009_balsas_context",
+      "src_piperno_2009_balsas_maize",
+      "src_potato_jiskairumoko_pnas_2016",
+      "src_cacao_salf_nature_2018",
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_visitmadeira_city_2026"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "columbian_1_before_1492",
+        "sceneType": "context",
+        "label": "01 · Antes de 1492 · historias americanas profundas",
+        "title": "El intercambio no empieza con alimentos “sin historia” esperando ser descubiertos",
+        "lead": "Maíz, patata y cacao ya acumulaban milenios de domesticación, cultivo y uso antes de entrar en redes atlánticas europeas.",
+        "geography": {
+          "today": "México, Andes y alta Amazonía · varios yacimientos de referencia",
+          "region": "Américas precolombinas",
+          "orientation": "La escena reúne Xihuatoxtla, Jiskairumoko y Santa Ana-La Florida como ventanas independientes. No los une mediante una ruta ni los convierte en centros absolutos de origen.",
+          "society": "Comunidades americanas con tradiciones agrícolas y alimentarias desarrolladas mucho antes de la expansión europea."
+        },
+        "narrative": [
+          "Cuando una historia comienza en 1492 es fácil producir una ilusión: que maíz, patata o cacao aparecen de pronto en el escenario mundial porque europeos los encuentran. El registro arqueológico cuenta algo muy distinto. En Xihuatoxtla, almidones y fitolitos sitúan al maíz en un proceso de domesticación muy antiguo; en Jiskairumoko aparecen almidones compatibles con patata cultivada; en Santa Ana-La Florida, biomarcadores, almidones y ADN antiguo documentan uso de cacao miles de años antes del contacto atlántico.",
+          "Estas evidencias no son intercambiables ni fijan un “lugar de invención”. Cada cultivo tiene una biografía propia, con domesticaciones complejas, desplazamientos anteriores a 1492 y usos que no siempre podemos reconstruir con detalle. Lo importante para esta visita es establecer el punto de partida correcto: Europa no recibe materias primas ahistóricas, sino plantas y prácticas ya transformadas durante generaciones por sociedades americanas.",
+          "Esa profundidad temporal cambia también cómo debemos leer las palabras introducción y adopción. La introducción describe la entrada en un territorio nuevo; no borra la historia anterior del cultivo. Y cuando una semilla cruza un océano, todavía quedan problemas de clima, fotoperiodo, suelos, conocimientos agrarios, gustos, mercados y prestigio. El movimiento físico es solo el primer paso de una cadena mucho más larga.",
+          "Por eso esta historia no dibujará una gran flecha América→Europa. Seguirá casos documentados donde podemos distinguir etapas. La primera es especialmente útil porque combina genómica moderna y textos del siglo XVI: la judía común permite observar cómo una introducción deja huella tanto en archivos como en el propio genoma de las variedades europeas."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_maize_xihuatoxtla_early_holocene"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_jiskairumoko_3400_1600_bce"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_cacao_santa_ana_la_florida_3500_3300_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_ranere_2009_balsas_context",
+          "src_piperno_2009_balsas_maize",
+          "src_potato_jiskairumoko_pnas_2016",
+          "src_cacao_salf_nature_2018"
+        ],
+        "method": {
+          "title": "Empezar por las historias anteriores al contacto",
+          "body": "Se combinan evidencias arqueobotánicas, microbotánicas y biomoleculares de tres cultivos distintos para evitar presentar 1492 como origen de sus historias. La escena compara escalas sin inferir conexiones entre los yacimientos."
+        },
+        "limits": "Los tres yacimientos no representan el origen absoluto de sus cultivos ni una muestra exhaustiva de las agriculturas americanas. “Precolombino” describe aquí una relación cronológica con 1492, no una cultura única.",
+        "whyItMatters": "Evita que el intercambio colombino se cuente como descubrimiento unilateral y prepara la distinción central de la visita: mover una planta no equivale a integrarla en otro sistema alimentario.",
+        "nextQuestion": "¿Qué aspecto tiene una introducción cuando podemos combinar reconstrucción genética con documentación europea del siglo XVI?",
+        "glossaryRefs": [
+          "intercambio_colombino",
+          "introduccion_cultivo"
+        ]
+      },
+      {
+        "id": "columbian_2_common_bean",
+        "sceneType": "introduction",
+        "label": "02 · 1529–1532 · judía común en Europa",
+        "title": "Una introducción puede reconstruirse sin conocer el barco exacto",
+        "lead": "La genómica de variedades europeas y una red de cultivo documentada desde 1532 permiten seguir una entrada temprana de Phaseolus vulgaris sin inventar un puerto único.",
+        "geography": {
+          "today": "Europa y red del nordeste de Italia–Eslovenia–Dalmacia",
+          "region": "Europa meridional y centro-oriental del siglo XVI",
+          "orientation": "El Atlas conserva dos escalas: una introducción reconstruida a nivel continental y una red regional de cultivo. Ninguna recibe un centroide cartográfico artificial.",
+          "society": "Botánicos, propietarios, agricultores y redes de intercambio de semillas en la Europa del Renacimiento."
+        },
+        "narrative": [
+          "La judía común ofrece un caso excepcional porque el movimiento histórico puede leerse a la vez en textos y en genomas. Un estudio de 2023 sobre 218 accesiones americanas y europeas concluye que los primeros cultivares introducidos con éxito en Europa fueron de ascendencia andina y sitúa ese episodio después de la expedición de Pizarro al norte del Perú en 1529. El resultado es un modelo histórico-genómico, no el registro de una caja de semillas desembarcada en un muelle concreto.",
+          "La escala se hace más tangible pocos años después. La documentación asociada a Piero Valeriano describe desde 1532 esfuerzos para cultivar y reproducir judías en una red que incluía el nordeste de Italia, Eslovenia y Dalmacia. Esto ya no es mera presencia de una semilla exótica: hay cultivo intencional, intercambio de material y observación de rasgos. Aun así, cultivo local no significa todavía generalización continental.",
+          "La genómica añade otra capa que los cronistas del siglo XVI no podían ver. Las variedades europeas actuales muestran mezcla entre acervos andinos y mesoamericanos, selección de rasgos relacionados con floración y fotoperiodo e introgressiones que ayudaron a adaptarse a ambientes templados. La “difusión” no fue simplemente transporte: implicó selección y recombinación después de la llegada.",
+          "Este caso muestra por qué G4 no debería dibujar una flecha automática Perú→Italia. Podemos sostener una introducción europea posterior a 1529 y cultivo en una red regional desde 1532; el itinerario preciso, los intermediarios y la secuencia de todos los movimientos no están igualmente documentados. La red histórica deberá mostrar solo vínculos cuyo vector tenga evidencia propia."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_common_bean_europe_intro_1529_1532"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_common_bean_ne_italy_cultivation_1532"
+          }
+        ],
+        "sourceRefs": [
+          "src_common_bean_europe_nature_2023",
+          "src_common_bean_iconography_frontiers_2022"
+        ],
+        "method": {
+          "title": "Combinar genómica e historia sin confundir escalas",
+          "body": "La introducción continental se apoya en inferencia genómica e historia de cultivares; el cultivo regional, en documentación del siglo XVI sintetizada y contrastada por estudios modernos. El Atlas conserva cada afirmación en su escala correspondiente."
+        },
+        "limits": "Después de 1529 no significa “en 1529”; cultivo desde 1532 no demuestra que ese fuese el primer cultivo europeo; y una reconstrucción de ascendencia no identifica automáticamente todos los trayectos seguidos por las semillas.",
+        "whyItMatters": "Introduce una idea clave para G4: una red alimentaria puede necesitar nodos de diferente escala y evidencias distintas para introducción, cultivo y adaptación.",
+        "nextQuestion": "¿Puede una planta estar perfectamente documentada en Europa y, aun así, tardar siglos en convertirse en alimento cotidiano?",
+        "glossaryRefs": [
+          "introduccion_cultivo",
+          "aclimatacion_cultivo",
+          "adopcion_cultivo"
+        ]
+      },
+      {
+        "id": "columbian_3_tomato",
+        "sceneType": "adoption",
+        "label": "03 · 1544 → siglo XVIII · tomate",
+        "title": "Estar descrito no significa estar adoptado",
+        "lead": "Mattioli permite documentar tomate en Italia en 1544; la integración alimentaria amplia en Europa meridional pertenece a otra cronología.",
+        "geography": {
+          "today": "Italia y Europa meridional · referencias regionales",
+          "region": "Mediterráneo europeo de la Edad Moderna",
+          "orientation": "La escena no coloca un pin en Venecia como supuesto punto de llegada. Usa Italia para la atestiguación de 1544 y Europa meridional para una adopción culinaria distribuida.",
+          "society": "Naturalistas, horticultores, agricultores y cocinas mediterráneas que asignaron usos distintos a una planta recién llegada."
+        },
+        "narrative": [
+          "En 1544 Pietro Andrea Mattioli describió frutos identificados por la historiografía botánica moderna como tomates. Esa fecha es valiosa porque documenta conocimiento europeo temprano, pero sería un error transformarla en “el tomate llegó a Europa en 1544”. Para que Mattioli pudiera describirlo, el proceso de traslado ya había comenzado; lo que conserva la fuente es una atestiguación, no el primer desembarco.",
+          "El paso siguiente tampoco fue automático. El tomate fue ornamental, medicinal, sospechoso o culinario según el lugar y el momento. La literatura botánica moderna resume que, mientras en algunas regiones la aceptación alimentaria fue lenta, en Europa meridional estaba ampliamente cultivado y consumido hacia el siglo XVIII. Entre una descripción de 1544 y esa integración hay generaciones de experimentación, selección y aprendizaje culinario.",
+          "Esa distancia temporal permite distinguir tres estados que una cronología simplista suele fusionar: presencia documentada, cultivo y adopción. Incluso después de la adopción, la generalización puede ser desigual. Un ingrediente puede ser central en una región y marginal en otra durante el mismo siglo. Por eso una futura red G4 necesita representar estados, no solo fechas de “llegada”.",
+          "El tomate es también una advertencia sobre el lenguaje moderno. Hoy parece inseparable de muchas cocinas mediterráneas, lo que puede hacernos proyectar esa centralidad hacia el siglo XVI. El Atlas debe hacer lo contrario: reconstruir cuándo y dónde una práctica se vuelve significativa, sin usar la familiaridad actual como prueba histórica."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_tomato_italy_mattioli_1544"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_tomato_southern_europe_adoption_18c"
+          }
+        ],
+        "sourceRefs": [
+          "src_tomato_europe_jxb_2022",
+          "src_tomato_domestication_mbe_2020",
+          "src_mattioli_dioscoride_1544_primary"
+        ],
+        "method": {
+          "title": "Separar atestiguación de adopción",
+          "body": "Una fuente textual de 1544 fija una presencia documental. La adopción del siglo XVIII se formula a escala regional a partir de literatura botánica e histórica moderna. No se interpola una fecha de llegada entre ambas."
+        },
+        "limits": "“Europa meridional” agrupa territorios con ritmos distintos; el siglo XVIII no implica consumo universal ni idéntico papel culinario. La historia de domesticación americana del tomate también es compleja y no se reduce a un único centro.",
+        "whyItMatters": "Es el ejemplo más limpio del principio presencia → adopción: dos hechos verdaderos separados por más de un siglo pueden describir fases históricas completamente distintas.",
+        "nextQuestion": "Otros cultivos se integraron con ritmos diferentes. ¿Qué ocurre cuando una planta encuentra rápidamente usos y selección local en el nuevo territorio?",
+        "glossaryRefs": [
+          "adopcion_cultivo",
+          "generalizacion_cultivo",
+          "intercambio_colombino"
+        ]
+      },
+      {
+        "id": "columbian_4_capsicum_maize",
+        "sceneType": "regional_adoption",
+        "label": "04 · siglo XVI · Capsicum y maíz",
+        "title": "No todos los cultivos esperan el mismo tiempo ni siguen el mismo mapa",
+        "lead": "Pimientos y maíz muestran adopciones relativamente rápidas, pero incluso dentro de la península ibérica su importancia dependió de regiones, agricultores y sistemas agrarios concretos.",
+        "geography": {
+          "today": "España y cornisa cantábrica · referencias regionales",
+          "region": "Península ibérica de la Edad Moderna",
+          "orientation": "Capsicum se representa a escala española y el maíz mediante la región cantábrica ya documentada. No se dibuja una ruta entre México, un puerto ibérico y cada área de cultivo.",
+          "society": "Agricultores que seleccionan variedades, economías campesinas y cocinas regionales que incorporan nuevos cultivos a ritmos distintos."
+        },
+        "narrative": [
+          "Los pimientos del género Capsicum muestran una trayectoria distinta a la del tomate. El análisis genético de variedades españolas describe a España como centro secundario de diversidad de C. annuum y vincula su llegada principalmente con materiales mexicanos introducidos tras 1492. Más de cinco siglos de selección campesina generaron ecotipos adaptados a condiciones y usos locales. La importancia de esa historia no está en localizar una primera semilla, sino en ver cómo un cultivo americano se convierte en diversidad regional europea.",
+          "El maíz proporciona otra escala. La documentación histórica estudiada para la región cantábrica sitúa la expansión del cultivo para alimentación humana hacia finales del siglo XVI. Su importancia creció progresivamente y estuvo relacionada con condiciones climáticas, crisis de subsistencia, productividad y mercados campesinos. El cultivo no se “adopta en España” de una vez: adquiere peso en territorios concretos y en calendarios concretos.",
+          "Comparar ambos casos evita una nueva trampa. Una introducción puede propagarse rápido sin que podamos dibujar cada trayecto, y una adopción puede ser profunda sin ser uniforme. El pimiento genera diversidad local; el maíz reordena sistemas agrarios cantábricos. Ambos son americanos, ambos llegan después de 1492, pero eso no los convierte en la misma historia de difusión.",
+          "Para G4, esta escena marca un requisito técnico y epistemológico: una red útil deberá distinguir movimiento documentado de material, presencia regional, adopción agraria y generalización. Un simple segmento entre “América” y “Europa” borraría precisamente la información que hace interesante el proceso."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_capsicum_spain_adoption_16c"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_maize_cantabrian_adoption_late_16c"
+          }
+        ],
+        "sourceRefs": [
+          "src_capsicum_spain_horticulture_2019",
+          "src_aragon_cantabrian_maize_2021"
+        ],
+        "method": {
+          "title": "Comparar adopciones sin igualarlas",
+          "body": "Se usan dos estudios con metodologías distintas —genética de poblaciones y documentación económico-rural— para observar resultados regionales de adopción. La comparación es conceptual, no una afirmación de que ambos cultivos siguieran la misma ruta."
+        },
+        "limits": "La región cantábrica y España son escalas distintas; “rápida expansión” de Capsicum no fija una cronología completa por provincia; y la selección moderna no reconstruye por sí sola todos los movimientos del siglo XVI.",
+        "whyItMatters": "Muestra que la unidad correcta de análisis no siempre es un país: las adopciones alimentarias se producen en paisajes, economías y comunidades concretas.",
+        "nextQuestion": "¿Y qué ocurre cuando tenemos una presencia comercial temprana y un ensayo local, pero la generalización tarda todavía mucho más?",
+        "glossaryRefs": [
+          "adopcion_cultivo",
+          "aclimatacion_cultivo",
+          "generalizacion_cultivo"
+        ]
+      },
+      {
+        "id": "columbian_5_potato",
+        "sceneType": "adoption_sequence",
+        "label": "05 · 1567 → siglo XIX · patata",
+        "title": "La patata convierte una “llegada” en una secuencia de tres siglos",
+        "lead": "Gran Canaria, Herbón y la Galicia del XVIII muestran cómo comercio, ensayo y generalización pueden quedar muy separados en el tiempo.",
+        "geography": {
+          "today": "Canarias y Galicia · España",
+          "region": "Atlántico ibérico y noroeste peninsular",
+          "orientation": "Gran Canaria documenta una exportación; Herbón un ensayo retrospectivamente recordado; Galicia interior una expansión regional posterior. Cada registro conserva su propia escala espacial.",
+          "society": "Mercaderes, comunidades monásticas y campesinado gallego dentro de sistemas agrícolas que cambian bajo presiones demográficas y crisis cerealistas."
+        },
+        "narrative": [
+          "El 28 de noviembre de 1567 un registro notarial documenta barriles de patatas enviados desde Gran Canaria a Amberes. Es una evidencia magnífica de presencia y comercio, pero no la fecha en que la patata “llegó a Europa”. Para exportar ya tenía que existir cultivo y circulación previos. La fuente fija lo que puede fijar: una operación concreta dentro de un proceso anterior menos visible.",
+          "Pocos años después aparece el caso gallego de Herbón. Jerónimo del Hoyo escribió en 1607 que durante el arzobispado de Francisco Blanco, entre 1574 y 1581, se habían plantado patatas en las huertas del monasterio. La memoria es relevante, pero el silencio documental posterior impide convertir ese ensayo en el inicio de una difusión continua. Introducir o probar un cultivo no obliga a que una sociedad lo adopte.",
+          "La expansión gallega importante pertenece sobre todo al siglo XVIII. Pequeños cultivos aparecen en 1736 y 1740 y el proceso se acelera desde el último tercio del siglo, especialmente tras la crisis de 1769–1770. Aun entonces la generalización es desigual: las áreas altas de Mondoñedo, Lugo y Ourense avanzan antes que amplias zonas occidentales donde el maíz ya ocupaba un lugar fuerte.",
+          "Patata y maíz muestran por tanto que los cultivos americanos no rellenaron un “vacío” europeo. Entraron en sistemas agrarios con cultivos previos, necesidades, preferencias y restricciones. Un alimento nuevo compite, complementa o desplaza a otros en procesos que pueden durar generaciones. Esa dimensión temporal es la que una red G4 deberá preservar."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_gran_canaria_export_1567"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_herbon_trial_1574_1607"
+          },
+          {
+            "kind": "development",
+            "ref": "galicia_potato_adoption_1736_1850"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_europe_hawkes_1993",
+          "src_potato_canary_rios_2024",
+          "src_potato_galicia_usc_sobrado",
+          "src_potato_galicia_obradoiro_2018"
+        ],
+        "method": {
+          "title": "Construir una cadena sin inventar el eslabón que falta",
+          "body": "Se yuxtaponen comercio documentado, memoria retrospectiva de cultivo y expansión regional posterior. Las fuentes permiten una secuencia histórica, pero no prueban que la patata de Herbón procediera directamente de la partida canaria de 1567."
+        },
+        "limits": "Gran Canaria→Amberes es un envío documentado; Gran Canaria→Herbón no lo es. El Atlas no une ambos registros mediante una flecha causal. La adopción gallega tampoco fue uniforme ni quedó completada en una fecha única.",
+        "whyItMatters": "Es probablemente el mejor caso actual del corpus para enseñar por qué presencia, introducción, ensayo, adopción y generalización son categorías distintas.",
+        "nextQuestion": "Hasta ahora hemos seguido plantas que se cultivan en Europa. ¿Qué ocurre cuando el cambio europeo depende sobre todo de mercancías producidas en sistemas coloniales fuera de Europa?",
+        "glossaryRefs": [
+          "introduccion_cultivo",
+          "adopcion_cultivo",
+          "generalizacion_cultivo"
+        ]
+      },
+      {
+        "id": "columbian_6_cacao_sugar",
+        "sceneType": "power_and_consumption",
+        "label": "06 · siglos XVI–XVIII · cacao, azúcar y mundo atlántico",
+        "title": "Cambiar una cocina no exige cultivar el ingrediente al lado de ella",
+        "lead": "Chocolate y azúcar recuerdan que el intercambio colombino fue también una transformación de consumo sostenida por imperios, plantaciones, trabajo forzado y comercio transoceánico.",
+        "geography": {
+          "today": "España y mundo atlántico · escala multinodal",
+          "region": "Europa, África y Américas conectadas por sistemas coloniales",
+          "orientation": "La escena mantiene los developments de cacao y azúcar sin inventar un único punto central para un sistema que abarca producción, circulación y consumo en varios continentes.",
+          "society": "Consumidores europeos, productores americanos, comerciantes, poderes coloniales y millones de personas esclavizadas o sometidas a trabajo coercitivo dentro de economías atlánticas."
+        },
+        "narrative": [
+          "No todos los alimentos americanos que transformaron Europa se convirtieron en cultivos europeos importantes. El cacao es un ejemplo claro. Durante la primera mitad del siglo XVII el chocolate se consolidó en España, pero ese proceso consistió sobre todo en circulación de materia prima, técnicas, gustos y significados. La historiografía reciente subraya además que Europa no “inventó” el chocolate desde cero: adoptó y reformuló prácticas mesoamericanas.",
+          "El azúcar muestra el movimiento contrario y obliga a abandonar incluso la imagen de un intercambio América→Europa. La caña tenía una historia asiática y mediterránea previa; desde Madeira y otros espacios atlánticos, la producción se trasladó y expandió en América. Las plantaciones azucareras del Caribe y Sudamérica se vincularon íntimamente a esclavización, desplazamiento forzado y mercados europeos. El cambio de dieta europea no puede aislarse de ese sistema humano.",
+          "Juntos, cacao y azúcar transformaron bebidas, confitería y hábitos de consumo europeos, pero su “adopción” no se parece a la de la patata en una parcela gallega. Aquí el nodo relevante puede ser un puerto, una plantación, una casa de chocolate, una red mercantil o una regulación fiscal. G4 necesitará varios tipos de relación y no una única flecha de difusión aplicable a todo.",
+          "La visita termina así donde debe empezar una futura red: con categorías mejor definidas, no con más líneas. Podemos afirmar presencia, introducción, cultivo, adopción o comercio cuando cada estado tiene evidencia propia. Solo cuando una fuente sostenga el vector podremos afirmar una ruta concreta. Esa disciplina evita que un mapa visualmente atractivo sustituya a la historia."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "chocolate_established_spain_1600_1650"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_sugar_madeira_cycle_1400_1600"
+          },
+          {
+            "kind": "development",
+            "ref": "atlantic_sugar_plantation_slavery_1490_1750"
+          }
+        ],
+        "sourceRefs": [
+          "src_norton_chocolate_ahr_2006",
+          "src_loveman_chocolate_england_2013",
+          "src_sugar_smithsonian_trade",
+          "src_sugar_slavevoyages_maps_2025",
+          "src_sugar_technikmuseum_berlin",
+          "src_sugar_abulafia_spain_2008",
+          "src_sugar_visitmadeira_city_2026"
+        ],
+        "method": {
+          "title": "Ampliar “intercambio” más allá del traslado de cultivos",
+          "body": "La escena combina historia cultural del chocolate e historia económica del azúcar para mostrar que circulación alimentaria puede modificar consumo sin equivaler a cultivo local. El sistema atlántico se mantiene multinodal y sin centroide."
+        },
+        "limits": "Intercambio colombino no implica simetría entre actores ni beneficios equivalentes. Tampoco toda transformación europea procede de un cultivo americano: la caña de azúcar ejemplifica un flujo biológico en sentido inverso cuya expansión americana alteró profundamente el consumo europeo.",
+        "whyItMatters": "Evita reducir la globalización alimentaria a botánica. Las redes futuras deberán representar también comercio, coerción, transformación técnica y adopción cultural cuando las fuentes lo permitan.",
+        "nextQuestion": "Idea para llevarte: una ruta solo existe en el Atlas cuando existe evidencia para el vector; compartir un alimento entre dos lugares no basta.",
+        "glossaryRefs": [
+          "intercambio_colombino",
+          "adopcion_cultivo",
+          "generalizacion_cultivo"
+        ]
+      }
+    ]
   }
 ]

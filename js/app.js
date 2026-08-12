@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.33';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.34';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.33',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.33',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.33',
-  places:'./data/places.json?v=0.1.0-alpha.33',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.33',
-  events:'./data/events.json?v=0.1.0-alpha.33',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.33',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.33',
-  developments:'./data/developments.json?v=0.1.0-alpha.33',
-  sources:'./data/sources.json?v=0.1.0-alpha.33',
-  stories:'./data/stories.json?v=0.1.0-alpha.33',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.33',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.33'
+  config:'./data/config.json?v=0.1.0-alpha.34',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.34',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.34',
+  places:'./data/places.json?v=0.1.0-alpha.34',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.34',
+  events:'./data/events.json?v=0.1.0-alpha.34',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.34',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.34',
+  developments:'./data/developments.json?v=0.1.0-alpha.34',
+  sources:'./data/sources.json?v=0.1.0-alpha.34',
+  stories:'./data/stories.json?v=0.1.0-alpha.34',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.34',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.34'
 };
 
 const s={
@@ -56,6 +56,10 @@ const TYPE_LABELS={
   historical_text:'Texto histórico',
   recipe:'Receta',
   trade_good:'Mercancía alimentaria',
+  food_beverage_subject:'Bebida / alimento',
+  food_crop_subject:'Cultivo alimentario',
+  food_ingredient_subject:'Ingrediente alimentario',
+  spice_subject:'Especia',
   other:'Otro'
 };
 
@@ -72,6 +76,17 @@ const EVIDENCE_LABELS={
   economic_record:'Registro económico',
   ethnographic:'Etnográfica',
   traditional:'Tradicional',
+  ancient_dental_calculus_proteomics:'Proteómica de cálculo dental antiguo',
+  chemical_residue:'Residuo químico',
+  early_modern_written_memory:'Memoria escrita de época moderna',
+  epigraphic_iconographic_material:'Material epigráfico e iconográfico',
+  historical_and_landscape_documentation:'Documentación histórica y paisajística',
+  historical_material_and_documentary_record:'Registro material y documental histórico',
+  historical_textual_tradition:'Tradición textual histórica',
+  microbotanical_starch_analysis:'Análisis microbotánico de almidones',
+  multi_proxy_biomolecular_archaeobotanical:'Evidencia biomolecular y arqueobotánica multiproxy',
+  notarial_record:'Registro notarial',
+  population_genomics_and_biogeography:'Genómica de poblaciones y biogeografía',
   unknown:'Sin validar'
 };
 
@@ -91,6 +106,17 @@ const OCC_LABELS={
   regulation:'Regulación',
   industrial_production:'Producción industrial',
   traditional_attribution:'Atribución tradicional',
+  archaeobotanical_food_use:'Uso alimentario arqueobotánico',
+  archaeological_use:'Uso arqueológico',
+  beverage_evidence:'Evidencia de bebida',
+  consumption_or_exposure_evidence:'Consumo / exposición',
+  crop_domestication_inference:'Inferencia de domesticación',
+  documented_beverage_use:'Uso de bebida documentado',
+  documented_trade_presence:'Presencia comercial documentada',
+  regional_production:'Producción regional',
+  regional_sugar_production:'Producción azucarera regional',
+  retrospective_cultivation_record:'Registro retrospectivo de cultivo',
+  textual_iconographic_presence:'Presencia textual e iconográfica',
   other:'Otro'
 };
 
@@ -219,15 +245,28 @@ async function load(){
   }
 }
 
+function runtimeTaxonomyValues(base=[],observed=[]){
+  return [...new Set([...(base||[]),...(observed||[]).filter(Boolean)])];
+}
+
 function fillControls(){
   const sf=$('#subjectTypeFilter');
-  s.taxonomy.subjectTypes.forEach(x=>sf.add(new Option(TYPE_LABELS[x]||x,x)));
+  runtimeTaxonomyValues(
+    s.taxonomy.subjectTypes,
+    s.subjects.filter(x=>isPublicStatus(x.status)).map(x=>x.type)
+  ).forEach(x=>sf.add(new Option(TYPE_LABELS[x]||x,x)));
 
   const ef=$('#evidenceFilter');
-  s.taxonomy.evidenceTypes.forEach(x=>ef.add(new Option(EVIDENCE_LABELS[x]||x,x)));
+  runtimeTaxonomyValues(
+    s.taxonomy.evidenceTypes,
+    s.occurrences.filter(x=>isPublicStatus(x.status)).map(x=>x.evidenceType)
+  ).forEach(x=>ef.add(new Option(EVIDENCE_LABELS[x]||x,x)));
 
   const of=$('#occurrenceTypeFilter');
-  s.taxonomy.occurrenceTypes.forEach(x=>of.add(new Option(OCC_LABELS[x]||x,x)));
+  runtimeTaxonomyValues(
+    s.taxonomy.occurrenceTypes,
+    s.occurrences.filter(x=>isPublicStatus(x.status)).map(x=>x.occurrenceType)
+  ).forEach(x=>of.add(new Option(OCC_LABELS[x]||x,x)));
 
   const cf=$('#certaintyFilter');
   s.taxonomy.certaintyLevels.forEach(x=>cf.add(new Option(CERTAINTY_LABELS[x]||x,x)));

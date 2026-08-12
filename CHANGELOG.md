@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.0-alpha.34 — 2026-08-12
+
+### Intercambio colombino · G4 readiness
+- nueva historia transversal de 6 escenas: historias pre-1492, judía, tomate, Capsicum/maíz, patata y cacao/azúcar;
+- añade 3 subjects, 4 places regionales, 5 occurrences, 6 sources y 4 términos de glosario;
+- el corpus alcanza 50 occurrences;
+- presencia, introducción, cultivo, adopción y generalización se separan explícitamente;
+- Mattioli 1544 no se presenta como fecha de llegada del tomate;
+- Gran Canaria 1567 no se conecta causalmente con Herbón;
+- intercambio colombino se presenta como proceso bidireccional y desigual, no como una flecha América→Europa;
+- G4 queda `PILOT-READY`, pero la red completa permanece bloqueada.
+
+### Robustez taxonómica
+- `data/taxonomy.json` permanece bit a bit dentro del fingerprint G2;
+- filtros de subject/evidence/occurrence unen taxonomía congelada + valores observados en runtime;
+- se añaden etiquetas públicas para todos los valores actualmente usados, evitando IDs técnicos en la interfaz;
+- nuevo gate `test_taxonomy_runtime_alignment.py`.
+
+### QA alpha.34
+- nuevos `test_columbian_exchange_story.py` y `test_g4_readiness.py`;
+- Product Contract Freeze alpha.27 intacto;
+- G2 fingerprint intacto;
+- aceptación táctil/visual: pendiente.
+
 ## 0.1.0-alpha.33 — 2026-08-12
 
 ### Conservación · primera transversal de segundo nivel

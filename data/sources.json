@@ -1411,5 +1411,59 @@
     "sourceType": "primary_text",
     "accessed": "2026-08-12",
     "notes": "Ejemplar digital de la traducción inglesa de 1811 de la obra de Appert. Se usa como fuente primaria del procedimiento publicado, no para fijar por sí sola todos los detalles cronológicos de 1809–1810."
+  },
+  {
+    "id": "src_common_bean_europe_nature_2023",
+    "title": "Selection and adaptive introgression guided the complex evolutionary history of the European common bean",
+    "publisher": "Nature Communications 14, 1908 (2023)",
+    "url": "https://www.nature.com/articles/s41467-023-37332-z",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Genómica de 218 accesiones y contraste histórico. Propone que los primeros cultivares de judía común introducidos con éxito en Europa fueron de origen andino después de 1529; documenta además una red de cultivo desde 1532 y adaptación posterior. No fija un puerto o día único de llegada."
+  },
+  {
+    "id": "src_common_bean_iconography_frontiers_2022",
+    "title": "Iconography of beans and related legumes following the Columbian Exchange",
+    "publisher": "Frontiers in Plant Science 13 (2022)",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8964180/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Revisión iconográfica e histórica de la introducción de Phaseolus vulgaris en Europa. Se usa como contraste independiente de la documentación europea del siglo XVI."
+  },
+  {
+    "id": "src_tomato_europe_jxb_2022",
+    "title": "European traditional tomatoes: a result of farmers’ selection of a few diversity-rich loci",
+    "publisher": "Journal of Experimental Botany 73(11) (2022)",
+    "url": "https://academic.oup.com/jxb/article/73/11/3431/6561782",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Sintetiza la llegada del tomate a Europa, la descripción de Mattioli de 1544 y la adopción alimentaria desigual: cultivo y consumo extendidos en Europa meridional hacia el siglo XVIII. No convierte 1544 en fecha de llegada."
+  },
+  {
+    "id": "src_tomato_domestication_mbe_2020",
+    "title": "Genomic Evidence for Complex Domestication History of the Cultivated Tomato in Latin America",
+    "publisher": "Molecular Biology and Evolution 37(4) (2020)",
+    "url": "https://academic.oup.com/mbe/article/37/4/1118/5679792",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Reconstrucción genómica de una historia de domesticación compleja entre Sudamérica y Mesoamérica. Sustenta que el origen del tomate cultivado no debe reducirse a un único sitio o episodio."
+  },
+  {
+    "id": "src_mattioli_dioscoride_1544_primary",
+    "title": "Di Pedacio Dioscoride Anazarbeo libri cinque della historia et materia medicinale",
+    "publisher": "Pietro Andrea Mattioli · Venecia, 1544 · copia digital McGill Library / Internet Archive",
+    "url": "https://archive.org/details/McGillLibrary-osl_di_pedacio_dioscoride_anazarbeo_folioWZ240d594dm1544-20467",
+    "sourceType": "primary_text",
+    "accessed": "2026-08-12",
+    "notes": "Edición de 1544 usada como fuente primaria del marco documental atribuido a Mattioli. La identificación histórica del pasaje como tomate se contrasta con literatura botánica moderna."
+  },
+  {
+    "id": "src_capsicum_spain_horticulture_2019",
+    "title": "Genetic diversity, population structure, and relationships in a collection of pepper (Capsicum spp.) landraces from the Spanish centre of diversity revealed by genotyping-by-sequencing",
+    "publisher": "Horticulture Research 6 (2019)",
+    "url": "https://academic.oup.com/hr/article/doi/10.1038/s41438-019-0132-8/6437859",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "El estudio describe España como centro secundario de diversidad de C. annuum, introducido principalmente desde México tras 1492 y sometido a más de cinco siglos de selección local. Se usa para documentar adopción regional, no una ruta o fecha puntual."
   }
 ]

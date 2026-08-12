@@ -274,5 +274,29 @@
     "term": "Codex Alimentarius",
     "definition": "Programa internacional FAO/OMS que elabora normas, directrices y códigos de prácticas alimentarias. Sus textos sirven de referencia internacional, pero no constituyen por sí mismos una única ley mundial directamente aplicable en todos los países.",
     "status": "reviewed"
+  },
+  {
+    "id": "intercambio_colombino",
+    "term": "intercambio colombino",
+    "definition": "Conjunto de transferencias biológicas, alimentarias, humanas y patógenas entre América, Europa, África y otros espacios tras 1492. No fue un intercambio simétrico ni una única ruta y estuvo ligado a conquista, colonización, migraciones y coerción.",
+    "status": "reviewed"
+  },
+  {
+    "id": "introduccion_cultivo",
+    "term": "introducción de un cultivo",
+    "definition": "Entrada documentada o reconstruida de una planta cultivada en una región donde no estaba previamente presente. Una introducción puede fracasar, permanecer experimental o preceder por décadas o siglos a su adopción significativa.",
+    "status": "reviewed"
+  },
+  {
+    "id": "generalizacion_cultivo",
+    "term": "generalización de un cultivo",
+    "definition": "Fase en la que un cultivo ya adoptado alcanza una presencia amplia y sostenida en un territorio o sistema alimentario. Generalización no equivale a presencia inicial ni tiene por qué ocurrir simultáneamente en todas las regiones.",
+    "status": "reviewed"
+  },
+  {
+    "id": "aclimatacion_cultivo",
+    "term": "aclimatación y adaptación de cultivos",
+    "definition": "Proceso por el que materiales vegetales introducidos se ajustan biológica y agronómicamente a nuevos ambientes mediante selección, recombinación, prácticas campesinas y cambios en calendarios o usos. No implica una adaptación instantánea tras la llegada.",
+    "status": "reviewed"
   }
 ]

@@ -1,20 +1,19 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.33
+**Versión:** 0.1.0-alpha.34
 **Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
-## Alpha.33 — Conservación, primera transversal de segundo nivel
+## Alpha.34 — Cultivos americanos, cocinas europeas · G4 readiness
 
-- Nueva historia «Cómo aprendimos a conservar los alimentos»: 6 escenas, construida principalmente por reutilización de corpus.
-- No existe un subject ficticio de conservación y no se modifica ningún schema congelado.
-- Jiahu + garum abren la distinción transformación / efecto conservador / intención histórica.
-- Appert queda reforzado con USDA/NAL y una edición primaria conservada por Library of Congress.
-- Refrigeración se narra como máquina + infraestructura + adopción, no como fecha de invención del frío.
-- Pasteur se reutiliza desde una pregunta distinta a Fermentación.
-- APPCC separa vida útil e inocuidad; Codex separa normalización internacional de ley mundial.
-- El contrato congelado en alpha.27 permanece intacto.
+- Nueva historia transversal de 6 escenas sobre intercambio colombino, presencia, introducción, adopción y generalización.
+- Añade judía común, tomate y Capsicum como subjects canónicos.
+- Añade 5 occurrences cuidadosamente diferenciadas: introducción/cultivo de judía, atestiguación/adopción de tomate y adopción regional de Capsicum.
+- El corpus alcanza 50 occurrences públicas, referencia mínima fijada para evaluar G4.
+- G4 queda **PILOT-READY**, pero una red completa sigue bloqueada: solo se dibujarán vectores cuando una fuente sostenga la ruta.
+- `taxonomy.json` permanece congelado por G2; los filtros runtime incorporan también valores observados y los muestran con etiquetas públicas legibles.
+- El contrato de producto congelado en alpha.27 permanece intacto.
 
 ## Propósito
 
@@ -115,9 +114,9 @@ python tools/serve.py
 
 Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Alpha.33 contiene **45 occurrences públicas**: 21 tienen punto y 24 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 30 `developments` (13 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+Alpha.34 contiene **50 occurrences públicas**: 21 tienen punto y 29 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 30 `developments` (13 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus completo queda en **19 subjects, 59 places, 157 sources, 9 stories, 49 escenas y 46 términos de glosario**. Conservación es la primera transversal de segundo nivel construida principalmente mediante reutilización del corpus sobre el contrato congelado en alpha.27.
+El corpus completo queda en **22 subjects, 63 places, 163 sources, 10 stories, 55 escenas y 50 términos de glosario**. La nueva transversal de intercambio colombino lleva el corpus al umbral mínimo de densidad previsto para ensayar G4, pero la red completa sigue bloqueada por falta de vectores demostrados suficientes.
 
 ## Capas históricas
 

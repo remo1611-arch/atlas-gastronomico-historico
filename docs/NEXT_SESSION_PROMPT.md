@@ -246,3 +246,16 @@ Estado de continuación alpha.30:
 - Appert reforzado con USDA/NAL + Library of Congress;
 - schemas congelados alpha.27 sin cambios;
 - QA automatizado alpha.33: 61/61 Python + 5/5 Node PASS; aceptación móvil pendiente.
+
+Estado de continuación alpha.34:
+- G0/G1/G2/G3 CLOSED.
+- Product Contract Freeze alpha.27 ACTIVE; no modificar los 10 schemas salvo migración explícita.
+- Fingerprint G2 ACTIVE; `data/taxonomy.json` permanece congelado.
+- Alpha.34 integra `Cultivos americanos, cocinas europeas`: 6 escenas / 7 subjects relacionados.
+- Corpus: 22 subjects / 63 places / 50 occurrences / 163 sources / 10 stories / 55 scenes / 50 glossary.
+- Presencia, introducción, cultivo, adopción y generalización son estados distintos; no colapsarlos.
+- G4: **PILOT-READY · FULL NETWORK: NO**.
+- Solo después de aceptación móvil puede plantearse G4 Pilot A.
+- G4 Pilot A debe limitarse a vectores directamente sustentados por fuentes; candidatos actuales: patata Gran Canaria→Amberes (1567) y café Malabar→Batavia (1696/1699).
+- Compartir un subject entre lugares nunca autoriza una flecha.
+- No crear centroides ni rutas inferidas para mejorar densidad visual.

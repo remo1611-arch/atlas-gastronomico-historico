@@ -1136,5 +1136,117 @@
       ],
       "note": "Se verifica la centralidad productiva de Banda para nuez moscada/macis en el periodo de expansión comercial europea; no se convierte en fecha de origen botánico o culinario."
     }
+  },
+  {
+    "id": "occ_common_bean_europe_intro_1529_1532",
+    "subjectRef": "common_bean",
+    "placeRef": "europe_common_bean_intro_regional",
+    "period": {
+      "start": 1529,
+      "end": 1532,
+      "precision": "range",
+      "display": "después de 1529; cultivo documentado desde 1532",
+      "note": "El intervalo combina el modelo de introducción exitosa posterior a la expedición de Pizarro de 1529 con la primera red de cultivo documentada desde 1532; no fija un viaje concreto."
+    },
+    "occurrenceType": "introduction",
+    "evidenceType": "genetic",
+    "certainty": "medium",
+    "summary": "La combinación de genómica de variedades europeas e historia agrícola propone que los primeros cultivares de Phaseolus vulgaris introducidos con éxito en Europa fueron de origen andino tras 1529. Es un modelo de introducción continental, no un punto de desembarco demostrado.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_common_bean_ne_italy_cultivation_1532",
+    "subjectRef": "common_bean",
+    "placeRef": "northeast_italy_bean_network_1532",
+    "period": {
+      "start": 1532,
+      "end": 1532,
+      "precision": "year",
+      "display": "1532",
+      "note": "Fecha inicial de los esfuerzos de cultivo y reproducción descritos por la documentación histórica sintetizada en el estudio de 2023."
+    },
+    "occurrenceType": "cultivation",
+    "evidenceType": "textual",
+    "certainty": "high",
+    "summary": "La documentación de Piero Valeriano describe esfuerzos coordinados para cultivar y reproducir judías comunes desde 1532 en una red del nordeste de Italia, Eslovenia y Dalmacia. Demuestra cultivo temprano, no generalización europea inmediata.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023",
+      "src_common_bean_iconography_frontiers_2022"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_tomato_italy_mattioli_1544",
+    "subjectRef": "tomato",
+    "placeRef": "italy_tomato_mattioli_1544",
+    "period": {
+      "start": 1544,
+      "end": 1544,
+      "precision": "year",
+      "display": "1544",
+      "note": "Año de la primera edición italiana de Mattioli utilizada en la tradición historiográfica; atestiguación documental ≠ fecha de llegada del tomate a Europa."
+    },
+    "occurrenceType": "textual_attestation",
+    "evidenceType": "textual",
+    "certainty": "high",
+    "summary": "Mattioli describió en 1544 frutos identificados por la historiografía botánica como tomates. La evidencia demuestra conocimiento documental en Italia a mediados del siglo XVI, pero no permite fechar la primera introducción europea.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_tomato_europe_jxb_2022",
+      "src_mattioli_dioscoride_1544_primary"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_tomato_southern_europe_adoption_18c",
+    "subjectRef": "tomato",
+    "placeRef": "southern_europe_tomato_adoption_18c",
+    "period": {
+      "start": 1700,
+      "end": 1800,
+      "precision": "century",
+      "display": "siglo XVIII",
+      "note": "La literatura sintetiza cultivo y consumo alimentario extendidos en Europa meridional hacia el siglo XVIII; la adopción fue regionalmente desigual."
+    },
+    "occurrenceType": "adoption",
+    "evidenceType": "textual",
+    "certainty": "medium",
+    "summary": "Hacia el siglo XVIII el tomate estaba ampliamente cultivado y consumido como alimento en Europa meridional, mientras otras regiones europeas siguieron ritmos distintos. La distancia entre 1544 y esta adopción muestra que presencia documental no equivale a integración culinaria.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_tomato_europe_jxb_2022"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_capsicum_spain_adoption_16c",
+    "subjectRef": "capsicum_pepper",
+    "placeRef": "spain_early_modern_regional",
+    "period": {
+      "start": 1500,
+      "end": 1600,
+      "precision": "century",
+      "display": "siglo XVI",
+      "note": "El estudio genético-histórico sitúa la introducción de C. annuum desde México poco después de 1492 y describe más de cinco siglos de selección en España. Se conserva un siglo amplio, no una fecha puntual."
+    },
+    "occurrenceType": "adoption",
+    "evidenceType": "genetic",
+    "certainty": "medium",
+    "summary": "Capsicum annuum fue introducido principalmente desde México tras 1492 y se integró con rapidez en España, donde generaciones de agricultores produjeron una gran diversidad local. El Atlas representa adopción y selección regional, no una única ruta de entrada.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_capsicum_spain_horticulture_2019"
+    ],
+    "status": "reviewed"
   }
 ]

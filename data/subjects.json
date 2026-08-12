@@ -501,5 +501,77 @@
       "src_spices_nationaalarchief_banda_1621"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "common_bean",
+    "name": "Judía común (Phaseolus vulgaris)",
+    "type": "food_species",
+    "summary": "Leguminosa domesticada en América con acervos genéticos andino y mesoamericano. El Atlas distingue introducción europea, cultivo documentado y adaptación posterior, sin tratar Europa como un destino homogéneo.",
+    "aliases": [
+      "judía común",
+      "frijol común",
+      "alubia",
+      "common bean",
+      "Phaseolus vulgaris"
+    ],
+    "tags": [
+      "legumbre",
+      "América",
+      "Europa",
+      "intercambio colombino",
+      "adaptación"
+    ],
+    "sourceRefs": [
+      "src_common_bean_europe_nature_2023",
+      "src_common_bean_iconography_frontiers_2022"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "tomato",
+    "name": "Tomate (Solanum lycopersicum)",
+    "type": "food_species",
+    "summary": "Fruto americano de historia de domesticación compleja entre Sudamérica y Mesoamérica. En Europa el Atlas separa atestiguación botánica temprana, cultivo y adopción culinaria posterior.",
+    "aliases": [
+      "tomate",
+      "tomato",
+      "Solanum lycopersicum"
+    ],
+    "tags": [
+      "solanácea",
+      "América",
+      "Europa",
+      "intercambio colombino",
+      "hortaliza"
+    ],
+    "sourceRefs": [
+      "src_tomato_domestication_mbe_2020",
+      "src_tomato_europe_jxb_2022"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "capsicum_pepper",
+    "name": "Pimientos y chiles (Capsicum annuum y afines)",
+    "type": "food_species",
+    "summary": "Capsicum americano incorporado a cocinas de Europa, África y Asia tras 1492. El Atlas trata su expansión como proceso de introducción, selección y adopción regional, no como sustitución instantánea de la pimienta negra.",
+    "aliases": [
+      "pimiento",
+      "chile",
+      "ají",
+      "capsicum",
+      "Capsicum annuum"
+    ],
+    "tags": [
+      "condimento",
+      "América",
+      "España",
+      "intercambio colombino",
+      "selección campesina"
+    ],
+    "sourceRefs": [
+      "src_capsicum_spain_horticulture_2019"
+    ],
+    "status": "reviewed"
   }
 ]

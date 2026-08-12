@@ -1,4 +1,4 @@
-# Resultados de validación — 0.1.0-alpha.33
+# Resultados de validación — 0.1.0-alpha.34
 
 ## Estado
 
@@ -6,40 +6,57 @@
 
 ## Corpus
 
-- 19 subjects
-- 59 places
-- 45 occurrences
+- 22 subjects
+- 63 places
+- 50 occurrences
 - 1 event
 - 1 relationship
 - 7 contexts
 - 30 developments
-- 157 sources
-- 9 stories / 49 escenas
-- 46 términos de glosario
+- 163 sources
+- 10 stories / 55 escenas
+- 50 términos de glosario
 
 ## Suite
 
-- Python `test_*.py`: **61/61 PASS**
-- Node: **5/5 PASS**
+- Python `test_*.py`: **64/64 PASS**
+- Node `test_*.mjs`: **5/5 PASS**
 - `validate_project.py`: **PASS**
 - `node --check js/app.js`: **PASS**
 - `node --check js/core.js`: **PASS**
-- `test_preservation_story.py`: **PASS**
+- `test_columbian_exchange_story.py`: **PASS**
+- `test_g4_readiness.py`: **PASS**
+- `test_taxonomy_runtime_alignment.py`: **PASS**
 - `test_narrative_editorial_depth.py`: **PASS**
 - `test_museographic_gate.py`: **PASS**
 - `test_product_contract_freeze.py`: **PASS**
+- `test_editorial_expansion_bread.py` (fingerprint G2): **PASS**
 
-## Contrato
+## Contratos preservados
 
-Los diez schemas congelados en alpha.27 permanecen sin modificación y conservan el fingerprint canónico. Alpha.33 añade una historia transversal de segundo nivel sin renderer, ruta ni excepción específica.
+- Los diez schemas congelados en alpha.27 conservan el fingerprint canónico.
+- `data/taxonomy.json` conserva el fingerprint G2 previo.
+- Los tipos específicos presentes en el corpus se incorporan a filtros y etiquetas desde runtime, sin mutar la taxonomía congelada.
 
-## Cambios de conocimiento
+## Alpha.34
 
-No se añaden subjects, places, occurrences ni developments. Se añaden dos fuentes para contrastar Appert y seis términos de glosario. `appert_preservation_1809_1810` pasa a `verified/high` tras contraste USDA/NAL + Library of Congress.
+- Nueva historia transversal `story_columbian_exchange_europe`: **6 escenas / 7 subjects relacionados**.
+- 5 occurrences nuevas elevan el corpus a **50 occurrences**.
+- Se distinguen explícitamente presencia, introducción, cultivo, adopción y generalización.
+- No se añade ninguna relationship ni vector geográfico nuevo.
+- G4 queda **PILOT-READY · FULL NETWORK: NO**.
+
+## Cobertura espacial
+
+- occurrences: **21 con punto / 29 sin punto**;
+- contexts: **5 con punto / 2 sin punto**;
+- developments: **13 con punto / 17 sin punto**.
+
+Los lugares regionales añadidos en alpha.34 permanecen sin centroides artificiales.
 
 ## Artefacto
 
-- MANIFEST: **164/164 archivos verificados por tamaño y SHA-256**
-- `build_manifest.py`: **idempotente**
-- ZIP: **verificación interna PASS**
-- doble construcción determinista: **byte a byte idéntica**
+- MANIFEST: **171/171 archivos verificados por tamaño y SHA-256**.
+- `build_manifest.py`: **idempotente** y preserva `G3_CLOSED / EDITORIAL_EXPANSION_G4_READINESS`.
+- doble construcción determinista del ZIP: **byte a byte idéntica**.
+- verificación interna del ZIP: **0 faltantes · 0 hashes incorrectos · 0 extras**.
