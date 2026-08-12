@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.35 — 2026-08-12
+## 0.1.0-alpha.35.1 — 2026-08-12
 
 ### G4 Pilot A · vínculos documentados
 - nuevo contrato aditivo `transfer` para vectores históricos direccionales entre lugares;

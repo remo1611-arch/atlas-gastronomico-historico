@@ -1,4 +1,4 @@
-# Resultados de validación — 0.1.0-alpha.35
+# Resultados de validación — 0.1.0-alpha.35.1
 
 ## Veredicto
 **QA automatizado: PASS · aceptación táctil/visual: pendiente**
@@ -32,12 +32,13 @@
 - reglas canónicas: 169, únicas y consecutivas.
 
 ## Suite
-- Python `test_*.py`: **65/65 PASS**;
+- Python `test_*.py`: **66/66 PASS**;
 - Node `test_*.mjs`: **5/5 PASS**;
 - `validate_project.py`: PASS;
 - `node --check js/app.js`: PASS;
 - `node --check js/core.js`: PASS;
 - `test_g4_pilot_a.py`: PASS;
+- `test_public_ui_cleanliness.py`: PASS;
 - `test_g4_readiness.py`: PASS;
 - `test_public_state.py`: PASS;
 - `test_verified_gate.py`: PASS;
@@ -50,4 +51,4 @@
 Ningún centroide, puerto o trayecto se ha inventado para el piloto. La ausencia de geometría es un resultado explícito y verificable.
 
 ## Pendiente
-Prueba física en Xiaomi según `docs/MOBILE_ACCEPTANCE_ALPHA35.md`. El gate debe comprobar especialmente si `0 líneas` se entiende como cautela metodológica y no como error de render.
+Prueba física en Xiaomi según `docs/MOBILE_ACCEPTANCE_ALPHA35_1.md`. El gate debe comprobar especialmente si `0 líneas` se entiende como cautela metodológica y no como error de render.

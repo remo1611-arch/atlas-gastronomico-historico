@@ -759,3 +759,7 @@ G4 demuestra que puede representar dirección histórica sin fabricar geometría
 2. auditar candidatos para Pilot B;
 3. solo promover un transfer a `endpoint_connection` si ambos extremos y la representación visual superan revisión espacial;
 4. mantener **FULL NETWORK: BLOQUEADA** hasta disponer de suficientes vectores independientes.
+
+
+## Hotfix alpha.35.1
+Limpieza de terminología pública antes de cualquier Pilot B. Sin cambios de corpus ni contrato.

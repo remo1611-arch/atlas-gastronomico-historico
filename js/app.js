@@ -1,20 +1,20 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.35';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.35.1';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.35',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.35',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.35',
-  places:'./data/places.json?v=0.1.0-alpha.35',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.35',
-  events:'./data/events.json?v=0.1.0-alpha.35',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.35',
-  transfers:'./data/transfers.json?v=0.1.0-alpha.35',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.35',
-  developments:'./data/developments.json?v=0.1.0-alpha.35',
-  sources:'./data/sources.json?v=0.1.0-alpha.35',
-  stories:'./data/stories.json?v=0.1.0-alpha.35',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.35',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.35'
+  config:'./data/config.json?v=0.1.0-alpha.35.1',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.35.1',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.35.1',
+  places:'./data/places.json?v=0.1.0-alpha.35.1',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.35.1',
+  events:'./data/events.json?v=0.1.0-alpha.35.1',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.35.1',
+  transfers:'./data/transfers.json?v=0.1.0-alpha.35.1',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.35.1',
+  developments:'./data/developments.json?v=0.1.0-alpha.35.1',
+  sources:'./data/sources.json?v=0.1.0-alpha.35.1',
+  stories:'./data/stories.json?v=0.1.0-alpha.35.1',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.35.1',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.35.1'
 };
 
 const s={
@@ -245,7 +245,8 @@ async function load(){
     if(!location.hash) history.replaceState({aghRoute:true},'','#historias');
     restoreRouteFromLocation({initial:true});
 
-    $('#versionLabel').textContent=config.project.version.replace('0.1.0-','');
+    const aboutVersion=$('#aboutVersion');
+    if(aboutVersion) aboutVersion.textContent=`Versión ${config.project.version}`;
     showToast('Atlas cargado');
   }catch(error){
     console.error(error);
@@ -2051,13 +2052,13 @@ function renderTransferPilot(){
   const list=visibleTransfers();
   box.classList.remove('hidden');
   if(!list.length){
-    box.innerHTML='<div class="transfer-pilot-head"><div><span>G4 · PILOTO</span><strong>Vínculos documentados</strong></div><small>Sin vínculos para la búsqueda/filtro actual.</small></div>';
+    box.innerHTML='<div class="transfer-pilot-head"><div><span>CONEXIONES</span><strong>Vínculos documentados</strong></div><small>Sin vínculos para la búsqueda/filtro actual.</small></div>';
     return;
   }
   const projectable=list.filter(transferProjectable).length;
   box.innerHTML=`
     <div class="transfer-pilot-head">
-      <div><span>G4 · PILOTO</span><strong>Vínculos documentados</strong></div>
+      <div><span>CONEXIONES</span><strong>Vínculos documentados</strong></div>
       <small>${list.length} ${list.length===1?'vínculo':'vínculos'} · ${projectable} ${projectable===1?'conexión cartografiable':'conexiones cartografiables'}</small>
     </div>
     <p class="transfer-pilot-note">Solo se muestran vectores que una fuente sostiene explícitamente. Una conexión histórica puede ser válida sin línea: el mapa no inventa puertos, centroides ni trayectos.</p>

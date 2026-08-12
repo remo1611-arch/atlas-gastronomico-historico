@@ -1,14 +1,14 @@
 # Estado actual
 
 ## Versión
-0.1.0-alpha.35
+0.1.0-alpha.35.1
 
 ## Producto
 - **Historias = comprender.**
 - **Atlas = descubrir.**
 - **Evidencia = verificar.**
 
-Alpha.35 abre **G4 Pilot A** de forma aditiva y limitada. Introduce vínculos históricos direccionales solo cuando la fuente documenta el vector; no convierte coincidencias de subject en rutas.
+Alpha.35.1 conserva **G4 Pilot A** y limpia su presentación pública de forma aditiva y limitada. Introduce vínculos históricos direccionales solo cuando la fuente documenta el vector; no convierte coincidencias de subject en rutas.
 
 ## Gates
 - G0/G1/G2/G3: CERRADOS.
@@ -45,4 +45,4 @@ La ausencia de geometría no invalida el vínculo.
 No abrir red extensa hasta disponer de más vectores independientes de calidad. La densidad se evaluará por variedad de subjects, periodos, regiones y tipos de transferencia, no por número de líneas.
 
 ## Próximo paso
-Validar alpha.35 en Xiaomi: capa G4, lectura sin líneas, acceso a evidencia y ausencia de confusión con rutas. Si pasa, auditar un **Pilot B** con más candidatos documentales antes de decidir cualquier visualización de red amplia.
+Validar alpha.35.1 en Xiaomi: capa G4, lectura sin líneas, acceso a evidencia y ausencia de confusión con rutas. Si pasa, auditar un **Pilot B** con más candidatos documentales antes de decidir cualquier visualización de red amplia.
