@@ -1465,5 +1465,32 @@
     "sourceType": "peer_reviewed_article",
     "accessed": "2026-08-12",
     "notes": "El estudio describe España como centro secundario de diversidad de C. annuum, introducido principalmente desde México tras 1492 y sometido a más de cinco siglos de selección local. Se usa para documentar adopción regional, no una ruta o fecha puntual."
+  },
+  {
+    "id": "src_coffee_mnhn_jardin_2026",
+    "title": "Le café, une histoire liée à celle du Jardin des Plantes",
+    "publisher": "Muséum national d'Histoire naturelle",
+    "url": "https://www.mnhn.fr/fr/le-cafe-une-histoire-liee-a-celle-du-jardin-des-plantes",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-12",
+    "notes": "Historia institucional del cafeto del Jardin du roi. Confirma el regalo neerlandés a Louis XIV en 1714, su cultivo en el jardín parisino y la multiplicación posterior; se usa para contrastar el vector Ámsterdam→París y contextualizar el extremo receptor."
+  },
+  {
+    "id": "src_amsterdam_wikidata_q727",
+    "title": "Amsterdam — Wikidata Q727",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q727",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para una referencia urbana de Ámsterdam. El punto no pretende localizar el ejemplar histórico ni el lugar exacto desde el que salió el cafeto."
+  },
+  {
+    "id": "src_jardin_plantes_wikidata_q730948",
+    "title": "Jardin des Plantes — Wikidata Q730948",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q730948",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para el Jardin des Plantes de París. La coordenada representa el jardín actual, continuidad institucional/territorial del Jardin du roi citado por las fuentes históricas; no una posición submétrica del invernadero de 1714."
   }
 ]

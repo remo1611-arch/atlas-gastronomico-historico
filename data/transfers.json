@@ -58,5 +58,39 @@
     "mapMode": "none",
     "mapNote": "Batavia tiene una referencia cartográfica actual, pero el extremo Malabar es regional; no se dibuja una línea con un origen inventado.",
     "status": "reviewed"
+  },
+  {
+    "id": "transfer_coffee_amsterdam_paris_1714",
+    "subjectRef": "coffee",
+    "type": "plant_transfer",
+    "period": {
+      "start": 1714,
+      "end": 1714,
+      "precision": "year",
+      "display": "1714"
+    },
+    "fromPlaceRef": "amsterdam_1714_urban_reference",
+    "toPlaceRef": "jardin_des_plantes_paris_1714",
+    "certainty": "high",
+    "summary": "En 1714 el alcalde de Ámsterdam ofreció un cafeto a Luis XIV y el ejemplar fue instalado en el Jardin du roi de París. Las fuentes sostienen la dirección Ámsterdam→París; la línea del mapa conecta referencias espaciales documentadas y no pretende reproducir el itinerario del transporte.",
+    "evidenceRef": {
+      "kind": "development",
+      "ref": "coffee_amsterdam_paris_1714"
+    },
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_mnhn_jardin_2026"
+    ],
+    "mapMode": "endpoint_connection",
+    "mapNote": "Primera conexión cartográfica del piloto G4: ambos extremos se representan mediante referencias puntuales explícitas. La línea es una conexión semántica entre extremos, no una ruta histórica ni un trayecto geodésico documentado.",
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "independent_institutional_vector_crosscheck",
+      "independentSourceRefs": [
+        "src_coffee_mnhn_jardin_2026"
+      ],
+      "note": "WCR documenta la oferta del alcalde de Ámsterdam y el destino en Jardin des Plantes; MNHN confirma el cafeto de 1714 en el Jardin du roi y su multiplicación. Los puntos son referencias cartográficas, no localizaciones submétricas del transporte."
+    }
   }
 ]

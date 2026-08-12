@@ -990,5 +990,46 @@
       "src_coffee_wcr_arabica_history"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "amsterdam_1714_urban_reference",
+    "name": "Ámsterdam (referencia urbana, Países Bajos)",
+    "type": "city_reference",
+    "point": {
+      "lat": 52.3667,
+      "lon": 4.8833,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_amsterdam_wikidata_q727"
+      ],
+      "note": "Punto urbano de referencia de Ámsterdam. El vector histórico documenta la ciudad de origen, no el lugar exacto de salida del cafeto."
+    },
+    "summary": "Extremo urbano de origen del cafeto que el alcalde de Ámsterdam ofreció a Luis XIV en 1714. La referencia espacial no identifica un vivero o embarcadero histórico concreto.",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_amsterdam_wikidata_q727"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "jardin_des_plantes_paris_1714",
+    "name": "Jardin des Plantes / Jardin du roi (París)",
+    "type": "institution_reference",
+    "point": {
+      "lat": 48.8439,
+      "lon": 2.3597,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_jardin_plantes_wikidata_q730948"
+      ],
+      "note": "Referencia del actual Jardin des Plantes para el Jardin du roi receptor del cafeto en 1714. No localiza el invernadero histórico de forma submétrica."
+    },
+    "summary": "Jardín real parisino donde fue instalado y multiplicado el cafeto recibido desde Ámsterdam en 1714, según World Coffee Research y el Muséum national d’Histoire naturelle.",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_mnhn_jardin_2026",
+      "src_jardin_plantes_wikidata_q730948"
+    ],
+    "status": "reviewed"
   }
 ]

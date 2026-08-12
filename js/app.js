@@ -1,20 +1,20 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.35.1';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.36';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.35.1',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.35.1',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.35.1',
-  places:'./data/places.json?v=0.1.0-alpha.35.1',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.35.1',
-  events:'./data/events.json?v=0.1.0-alpha.35.1',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.35.1',
-  transfers:'./data/transfers.json?v=0.1.0-alpha.35.1',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.35.1',
-  developments:'./data/developments.json?v=0.1.0-alpha.35.1',
-  sources:'./data/sources.json?v=0.1.0-alpha.35.1',
-  stories:'./data/stories.json?v=0.1.0-alpha.35.1',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.35.1',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.35.1'
+  config:'./data/config.json?v=0.1.0-alpha.36',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.36',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.36',
+  places:'./data/places.json?v=0.1.0-alpha.36',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.36',
+  events:'./data/events.json?v=0.1.0-alpha.36',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.36',
+  transfers:'./data/transfers.json?v=0.1.0-alpha.36',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.36',
+  developments:'./data/developments.json?v=0.1.0-alpha.36',
+  sources:'./data/sources.json?v=0.1.0-alpha.36',
+  stories:'./data/stories.json?v=0.1.0-alpha.36',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.36',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.36'
 };
 
 const s={
@@ -2021,6 +2021,19 @@ function renderTransferLayer(){
     title.textContent=`${subj(t.subjectRef)?.name||t.subjectRef}: ${from.name} → ${to.name} · conexión entre extremos documentados, no trayecto`;
     g.appendChild(title);
     g.appendChild(line);
+    const origin=svg('circle',{cx:x1.toFixed(2),cy:y1.toFixed(2),r:'3.4',class:'transfer-vector-origin'});
+    const angle=Math.atan2(y2-y1,x2-x1);
+    const size=9;
+    const backX=x2-Math.cos(angle)*size;
+    const backY=y2-Math.sin(angle)*size;
+    const sideX=Math.sin(angle)*(size*.48);
+    const sideY=-Math.cos(angle)*(size*.48);
+    const arrow=svg('polygon',{
+      points:`${x2.toFixed(2)},${y2.toFixed(2)} ${(backX+sideX).toFixed(2)},${(backY+sideY).toFixed(2)} ${(backX-sideX).toFixed(2)},${(backY-sideY).toFixed(2)}`,
+      class:'transfer-vector-arrow'
+    });
+    g.appendChild(origin);
+    g.appendChild(arrow);
     layer.appendChild(g);
   });
 }

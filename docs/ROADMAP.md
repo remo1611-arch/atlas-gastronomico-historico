@@ -763,3 +763,21 @@ G4 demuestra que puede representar dirección histórica sin fabricar geometría
 
 ## Hotfix alpha.35.1
 Limpieza de terminología pública antes de cualquier Pilot B. Sin cambios de corpus ni contrato.
+
+
+## Alpha.36 — G4 Pilot B · primera conexión cartográfica
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+### Integrado
+- tercer transfer: Café · Ámsterdam→París · 1714;
+- primer `endpoint_connection` del Atlas;
+- 2 places cartográficos de referencia, 1 development y 3 sources;
+- origen + punta de flecha para codificar dirección;
+- Pilot A preservado sin geometría;
+- 0 cambios en los diez schemas congelados de alpha.27.
+
+### Gate
+1. comprobar que el usuario interpreta la flecha como conexión y no como trayecto;
+2. comprobar que 3 vínculos / 1 cartografiable se entiende sin ruido metodológico;
+3. mantener FULL NETWORK bloqueada;
+4. solo continuar Pilot C si aparecen más vectores independientes con ganancia museográfica real.

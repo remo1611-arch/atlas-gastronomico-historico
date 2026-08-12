@@ -991,5 +991,44 @@
       ],
       "note": "El Archivo Nacional neerlandés caracteriza explícitamente los hechos de 1621 como genocidio y aporta referencia al informe contemporáneo de Coen; UNESCO documenta el sistema de monopolio y plantación de Banda."
     }
+  },
+  {
+    "id": "coffee_amsterdam_paris_1714",
+    "name": "Transferencia de un cafeto de Ámsterdam al Jardin du roi de París",
+    "type": "crop_diffusion_colonial",
+    "period": {
+      "start": 1714,
+      "end": 1714,
+      "precision": "year",
+      "display": "1714"
+    },
+    "placeRefs": [
+      "amsterdam_1714_urban_reference",
+      "jardin_des_plantes_paris_1714"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "plant_transfer",
+      "botanical_garden",
+      "global_diffusion"
+    ],
+    "summary": "World Coffee Research documenta que en 1714 el alcalde de Ámsterdam ofreció un cafeto a Luis XIV y que el ejemplar fue plantado en el Jardin des Plantes de París. El Muséum national d’Histoire naturelle confirma el episodio y la multiplicación del cafeto en el Jardin du roi. Se modela como transferencia de material vegetal entre extremos documentados, no como ruta de viaje reconstruida.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_mnhn_jardin_2026"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "independent_institutional_crosscheck",
+      "independentSourceRefs": [
+        "src_coffee_mnhn_jardin_2026"
+      ],
+      "note": "WCR y MNHN coinciden en el vector Ámsterdam→París y en el Jardin du roi/Jardin des Plantes como receptor. La cartografía usa referencias puntuales explícitamente calificadas como tales."
+    }
   }
 ]

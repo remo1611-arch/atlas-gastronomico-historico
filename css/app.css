@@ -4295,3 +4295,6 @@ html[data-theme="light"] .story-map-frame .country{fill:#d7ddd8;stroke:#aeb9b3}
 .transfer-vector-line{stroke:var(--gold);stroke-width:2;stroke-dasharray:7 5;opacity:.75;vector-effect:non-scaling-stroke}
 .transfer-vector.temporal-context{opacity:.35}.transfer-vector.temporal-current{opacity:1}
 @media(max-width:760px){.transfer-pilot-list{grid-template-columns:1fr}.transfer-pilot-head{flex-direction:column}.transfer-pilot-head small{text-align:left}}
+
+.transfer-vector-origin{fill:var(--gold);stroke:var(--bg);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.transfer-vector-arrow{fill:var(--gold);stroke:var(--bg);stroke-width:1;vector-effect:non-scaling-stroke}

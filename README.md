@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.35.1
-**Estado:** contrato de producto congelado · G4 Pilot A activo · red completa bloqueada
+**Versión:** 0.1.0-alpha.36
+**Estado:** contrato de producto congelado · G4 Pilot B activo · primera conexión cartográfica verificada · red completa bloqueada
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -12,11 +12,11 @@
 - Sustituye en la interfaz pública la jerga interna `G4 / piloto` por lenguaje museográfico (`Vínculos documentados` / `CONEXIONES`).
 - No modifica corpus, transfers, schemas, reglas ni comportamiento cartográfico respecto a alpha.35.
 
-### Base funcional heredada de alpha.35 · G4 Pilot A
-- Abre G4 únicamente como **piloto**, no como red amplia.
+### G4 Pilot B · primera conexión cartográfica
+- Mantiene G4 como **piloto de evidencia**, no como red amplia.
 - Añade `data/transfers.json` y `schemas/transfer.schema.json` como contrato aditivo del piloto; los diez schemas congelados en alpha.27 permanecen bit a bit intactos.
 - Primeros vectores: **Gran Canaria → Amberes · patata · 1567** y **costa de Malabar → Batavia · café · 1696/1699**.
-- Ambos vectores tienen dirección histórica explícita, evidencia canónica y fuentes; **0/2 se dibujan como línea**, porque falta precisión puntual suficiente en al menos un extremo.
+- Conserva los dos vectores de Pilot A sin línea e incorpora **Ámsterdam → París, 1714** como primer `endpoint_connection` verificado; **1/3 vínculos** es cartografiable.
 - El Atlas incorpora una capa pública `Vínculos documentados` que muestra relación, fecha, tipo, certeza, limitación cartográfica y acceso a la evidencia original.
 - `relationships.json` continúa reservado a relaciones entre subjects; G4 no reutiliza ese contrato con semántica espacial incompatible.
 - Red completa: **BLOQUEADA** hasta disponer de más vectores independientes y geometría responsable.
@@ -121,9 +121,9 @@ python tools/serve.py
 
 Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Alpha.34 contiene **50 occurrences públicas**: 21 tienen punto y 29 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 30 `developments` (13 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+El corpus contiene **50 occurrences públicas**: 21 tienen punto y 29 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` y 31 `developments`; el nuevo development de 1714 documenta el vector del primer transfer cartografiable. El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus completo queda en **22 subjects, 65 places, 163 sources, 10 stories, 55 escenas y 50 términos de glosario**. La nueva transversal de intercambio colombino lleva el corpus al umbral mínimo de densidad previsto para ensayar G4, pero la red completa sigue bloqueada por falta de vectores demostrados suficientes.
+El corpus completo queda en **22 subjects, 67 places, 166 sources, 10 stories, 55 escenas y 50 términos de glosario**. G4 Pilot B contiene 3 transfers, de los cuales 1 es cartografiable. La nueva transversal de intercambio colombino lleva el corpus al umbral mínimo de densidad previsto para ensayar G4, pero la red completa sigue bloqueada por falta de vectores demostrados suficientes.
 
 ## Capas históricas
 

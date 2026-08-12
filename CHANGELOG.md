@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.0-alpha.36 — 2026-08-12
+
+### G4 Pilot B · primera conexión cartográfica
+- incorpora un tercer transfer: cafeto Ámsterdam → Jardin du roi/Jardin des Plantes de París, 1714;
+- vector contrastado por World Coffee Research y Muséum national d’Histoire naturelle;
+- añade dos referencias espaciales explícitas y tres fuentes auxiliares/institucionales;
+- `mapMode=endpoint_connection`: primera conexión visual del Atlas;
+- la línea conecta extremos documentados y no representa el trayecto histórico;
+- origen y punta de flecha hacen visible la dirección del vector;
+- los dos transfers de Pilot A permanecen sin geometría proyectable;
+- no se generan transfers por coincidencia de subject, fecha o proximidad.
+
+### Estado G4
+- 3 vínculos documentados; 1 cartografiable;
+- red completa aún bloqueada: una primera conexión legítima no equivale a densidad suficiente para una red de difusión.
+
 ## 0.1.0-alpha.35.1 — 2026-08-12
 
 ### G4 Pilot A · vínculos documentados

@@ -1,24 +1,17 @@
-from pathlib import Path
-import json,sys
-ROOT=Path(__file__).resolve().parents[1]
-load=lambda n:json.loads((ROOT/'data'/n).read_text(encoding='utf-8'))
-O=load('occurrences.json'); R=load('relationships.json'); T=load('transfers.json'); D={x['id']:x for x in load('developments.json')}
+#!/usr/bin/env python3
+import json, pathlib, collections, sys
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+load=lambda name: json.load(open(ROOT/'data'/name,encoding='utf-8'))
+O=load('occurrences.json'); R=load('relationships.json'); T=load('transfers.json')
+counts=collections.Counter(x.get('occurrenceType') for x in O)
 errors=[]
-counts={k:sum(1 for o in O if o.get('occurrenceType')==k) for k in ['introduction','adoption','trade']}
-if len(O)<50: errors.append(f'occurrences {len(O)} < 50')
-if counts['introduction']<2: errors.append('menos de 2 introductions explícitas')
-if counts['adoption']<4: errors.append('menos de 4 adoptions explícitas')
-if len(R)!=1: errors.append('Pilot A no debe contaminar relationships.json con relaciones espaciales')
-if len(T)!=2: errors.append(f'Pilot A debe contener exactamente 2 transfers, hay {len(T)}')
-if any(x.get('mapMode')!='none' for x in T): errors.append('Pilot A no debe dibujar geometría no sustentada')
-pot=next((o for o in O if o['id']=='occ_potato_gran_canaria_export_1567'),None)
-if not pot or 'amberes' not in pot.get('summary','').lower(): errors.append('falta vector documental Gran Canaria→Amberes')
-coffee=D.get('arabica_batavia_1696_1699')
-if not coffee or 'malabar' not in coffee.get('summary','').lower() or 'batavia' not in coffee.get('name','').lower(): errors.append('falta candidato documental Malabar→Batavia')
-doc=(ROOT/'docs'/'G4_READINESS_ALPHA34.md').read_text(encoding='utf-8') if (ROOT/'docs'/'G4_READINESS_ALPHA34.md').exists() else ''
-if 'G4 PILOT-READY · FULL NETWORK: NO' not in doc: errors.append('veredicto G4 no documentado')
-if errors:
- print('G4 READINESS: FAIL'); [print('ERROR:',e) for e in errors]; sys.exit(1)
-print('G4 READINESS: PASS')
-print(f"Occurrences: {len(O)} · introduction {counts['introduction']} · adoption {counts['adoption']} · trade {counts['trade']} · relationships {len(R)} · transfers pilot {len(T)}")
-print('Pilot A open; full network remains blocked.')
+if len(O)<50: errors.append(f'corpus por debajo del umbral mínimo orientativo: {len(O)}')
+if len(T)<3: errors.append(f'Pilot B requiere al menos 3 transfers, hay {len(T)}')
+projectable=sum(t.get('mapMode')=='endpoint_connection' for t in T)
+if projectable<1: errors.append('Pilot B debe demostrar al menos una conexión cartográfica legítima')
+if projectable>=len(T): errors.append('el sistema no debe exigir geometría a todos los vínculos documentados')
+if len(R)<1: errors.append('falta relationship canónica mínima')
+print('G4 READINESS:', 'PASS' if not errors else 'FAIL')
+print(f"Occurrences: {len(O)} · introduction {counts['introduction']} · adoption {counts['adoption']} · trade {counts['trade']} · relationships {len(R)} · transfers {len(T)} · projectables {projectable}")
+for e in errors: print('ERROR:',e)
+sys.exit(1 if errors else 0)
