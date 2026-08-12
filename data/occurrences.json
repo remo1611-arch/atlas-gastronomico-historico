@@ -995,5 +995,84 @@
       "src_sugar_visitmadeira_city_2026"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_potato_jiskairumoko_3400_1600_bce",
+    "subjectRef": "potato",
+    "placeRef": "jiskairumoko_titicaca_region",
+    "period": {
+      "start": -3400,
+      "end": -1600,
+      "precision": "range",
+      "display": "ca. 3400–1600 a. C."
+    },
+    "occurrenceType": "archaeobotanical_food_use",
+    "evidenceType": "microbotanical_starch_analysis",
+    "certainty": "high",
+    "summary": "Cincuenta gránulos de almidón recuperados de herramientas líticas de Jiskairumoko fueron identificados como consistentes con patata cultivada en contextos fechados aproximadamente entre 3400 y 1600 cal a. C. Es evidencia directa de uso en el corazón botánico andino, no una fecha de “invención” de la patata.",
+    "contextRefs": [],
+    "developmentRefs": [
+      "potato_andean_domestication_process"
+    ],
+    "sourceRefs": [
+      "src_potato_jiskairumoko_pnas_2016",
+      "src_potato_spooner_pnas_2005"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_potato_gran_canaria_export_1567",
+    "subjectRef": "potato",
+    "placeRef": "gran_canaria_potato_1567",
+    "period": {
+      "start": 1567,
+      "end": 1567,
+      "precision": "year",
+      "display": "1567"
+    },
+    "occurrenceType": "documented_trade_presence",
+    "evidenceType": "notarial_record",
+    "certainty": "high",
+    "summary": "Un registro notarial de 28 de noviembre de 1567 documenta barriles de patatas enviados desde Gran Canaria a Amberes. Es una de las primeras presencias europeas sólidamente documentadas y demuestra cultivo suficiente para exportar; no identifica el día o puerto exacto de llegada del tubérculo a Europa.",
+    "contextRefs": [],
+    "developmentRefs": [
+      "potato_early_europe_presence_1567_1576"
+    ],
+    "sourceRefs": [
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "peer_reviewed_historical_record_crosscheck",
+      "independentSourceRefs": [
+        "src_potato_canary_rios_2024"
+      ],
+      "note": "El registro de 1567 y su interpretación como presencia europea temprana se contrastan entre el estudio clásico y una revisión reciente sobre variedades canarias."
+    }
+  },
+  {
+    "id": "occ_potato_herbon_trial_1574_1607",
+    "subjectRef": "potato",
+    "placeRef": "herbon_padron_reference",
+    "period": {
+      "start": 1574,
+      "end": 1607,
+      "precision": "range",
+      "display": "ensayo atribuido a 1574–1581; referencia escrita en 1607"
+    },
+    "occurrenceType": "retrospective_cultivation_record",
+    "evidenceType": "early_modern_written_memory",
+    "certainty": "medium",
+    "summary": "Jerónimo del Hoyo escribió en 1607 que años antes, durante el arzobispado de Francisco Blanco (1574-1581), se habían plantado patatas en las huertas del monasterio de Herbón. Es la primera referencia conocida para Galicia, pero el silencio documental posterior aconseja tratarla como ensayo puntual y no como inicio de una difusión continua.",
+    "contextRefs": [],
+    "developmentRefs": [
+      "galicia_potato_adoption_1736_1850"
+    ],
+    "sourceRefs": [
+      "src_potato_galicia_usc_sobrado"
+    ],
+    "status": "reviewed"
   }
 ]

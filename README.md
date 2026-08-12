@@ -1,17 +1,18 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.30
+**Versión:** 0.1.0-alpha.31
 **Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
-## Alpha.30 — Azúcar, tercera expansión editorial post-freeze
+## Alpha.31 — Patata, cuarta expansión editorial post-freeze
 
-- Nueva Historia del Azúcar: 5 escenas, sin cambios de schema ni navegación.
-- Se separan domesticación de la caña y cristalización de sacarosa.
-- Mediterráneo/Madeira se presenta como desplazamiento productivo documentado, no como flecha de difusión simplificada.
-- El sistema atlántico integra plantación, esclavitud y escala humana como parte estructural del cambio de disponibilidad.
-- Marggraf 1747 y Achard 1801 se distinguen como descubrimiento químico y producción fabril desde remolacha.
+- Nueva Historia de la Patata: 5 escenas, sin cambios de schema ni navegación.
+- Jiskairumoko se usa como evidencia arqueológica de uso andino, no como origen absoluto.
+- Gran Canaria 1567 se formula como primera presencia documental europea sólida del corpus, no como fecha exacta de llegada.
+- Herbón distingue ensayo temprano de adopción efectiva.
+- Galicia 1736–1850 muestra una expansión desigual, acelerada desde la crisis de 1769–1770 en áreas concretas.
+- La Gran Hambruna irlandesa separa agente biológico, dependencia alimentaria y vulnerabilidad social.
 - El contrato congelado en alpha.27 permanece intacto.
 
 ## Propósito
@@ -113,9 +114,9 @@ python tools/serve.py
 
 Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Alpha.30 contiene **40 occurrences públicas**: 19 tienen punto y 21 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 23 `developments` (11 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+Alpha.31 contiene **43 occurrences públicas**: 20 tienen punto y 23 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 27 `developments` (12 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus completo queda en **16 subjects, 51 places, 135 sources, 6 stories, 33 escenas y 32 términos de glosario**. Azúcar es la tercera expansión editorial completa realizada sobre el contrato congelado en alpha.27.
+El corpus completo queda en **17 subjects, 56 places, 146 sources, 7 stories, 38 escenas y 36 términos de glosario**. Patata es la cuarta expansión editorial completa realizada sobre el contrato congelado en alpha.27.
 
 ## Capas históricas
 

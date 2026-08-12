@@ -217,3 +217,12 @@ Estado de continuación alpha.30:
 - QA automatizado alpha.30: 58/58 Python + 5/5 Node PASS; aceptación móvil pendiente.
 - Siguiente dossier E1: Patata; después Especias/conservación.
 - G4 sigue bloqueado hasta densidad de corpus suficiente.
+
+
+## Estado de continuación alpha.31
+- Product Contract Freeze alpha.27 sigue intacto.
+- Historias públicas: Vino, Pan, Fermentación, Cacao/chocolate, Café, Azúcar y Patata.
+- Corpus: 17 subjects · 56 places · 43 occurrences · 27 developments · 146 sources · 7 stories / 38 escenas.
+- QA automatizado alpha.31: 59/59 Python + 5/5 Node PASS; aceptación móvil pendiente.
+- Próxima expansión editorial preferente: **Especias/conservación**.
+- No romper schemas ni añadir rutas específicas salvo defecto demostrado y ADR explícita.

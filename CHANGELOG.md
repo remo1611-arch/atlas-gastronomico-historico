@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.31 — 2026-08-12
+
+### Expansión editorial E1 — Patata
+- Nueva historia de 5 escenas: Andes/Jiskairumoko, Canarias 1567, Herbón, adopción regional gallega y Gran Hambruna irlandesa.
+- Añade 1 subject, 5 places, 3 occurrences, 4 developments, 11 sources y 4 términos de glosario.
+- Sin cambios en los 10 schemas congelados ni lógica específica de Patata.
+- Jiskairumoko se formula como evidencia de uso, no como origen absoluto.
+- Gran Canaria 1567 se formula como presencia documental, no como fecha exacta de llegada a Europa.
+- Herbón mantiene `certainty=medium` por el carácter retrospectivo de la referencia de 1607.
+- Galicia separa pequeños plantíos de primera mitad del XVIII, aceleración tras 1769–1770 y generalización territorialmente desigual.
+- Irlanda separa `Phytophthora infestans` y el linaje HERB-1 de las causas sociales, económicas y políticas de la Gran Hambruna.
+
+### QA alpha.31
+- Añade `test_potato_story.py`.
+- Product Contract Freeze alpha.27 permanece intacto.
+- Python `test_*.py`: 59/59 PASS; Node `test_*.mjs`: 5/5 PASS.
+- Aceptación táctil/visual de alpha.31: pendiente.
+
 ## 0.1.0-alpha.30 — 2026-08-12
 
 ### Expansión editorial E1 — Azúcar

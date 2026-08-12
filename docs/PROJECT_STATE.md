@@ -1,14 +1,14 @@
 # Estado actual
 
 ## Versión
-0.1.0-alpha.30
+0.1.0-alpha.31
 
 ## Producto
 - **Historias = comprender.**
 - **Atlas = descubrir.**
 - **Evidencia = verificar.**
 
-Alpha.30 integra **Historia del Azúcar** como tercera expansión editorial posterior al Product Contract Freeze de alpha.27. No modifica ninguno de los diez schemas congelados, la navegación ni el motor narrativo genérico.
+Alpha.31 integra **Historia de la Patata** como cuarta expansión editorial posterior al Product Contract Freeze de alpha.27. No modifica ninguno de los diez schemas congelados, la navegación ni el motor narrativo genérico.
 
 ## Gates
 - G0/G1/G2/G3: CERRADOS.
@@ -17,18 +17,19 @@ Alpha.30 integra **Historia del Azúcar** como tercera expansión editorial post
 - **Product Contract Freeze alpha.27: ACTIVE.**
 - E1 Cacao/chocolate alpha.28: QA automatizado PASS.
 - E1 Café alpha.29: QA automatizado PASS.
-- **E1 Azúcar alpha.30: QA automatizado PASS; aceptación móvil pendiente.**
+- E1 Azúcar alpha.30: QA automatizado PASS.
+- **E1 Patata alpha.31: QA automatizado PASS; aceptación móvil pendiente.**
 - G4: NO INICIADO.
 
 ## Corpus
-16 subjects · 51 places · 40 occurrences · 1 event · 1 relationship · 7 contexts · 23 developments · 135 sources · 6 stories · 33 escenas · 32 términos de glosario.
+17 subjects · 56 places · 43 occurrences · 1 event · 1 relationship · 7 contexts · 27 developments · 146 sources · 7 stories · 38 escenas · 36 términos de glosario.
 
 ## Cobertura espacial
-- occurrences: 19 con punto / 21 sin punto;
+- occurrences: 20 con punto / 23 sin punto;
 - contexts: 5 con punto / 2 sin punto;
-- developments: 11 con punto / 12 sin punto.
+- developments: 12 con punto / 15 sin punto.
 
-Nueva Guinea y Asia meridional permanecen sin punto único para los procesos antiguos. Funchal se usa solo como referencia urbana de Madeira. El sistema atlántico de plantación/esclavitud no recibe centroide. Berlín se cartografía como referencia urbana; Cunern permanece sin punto hasta disponer de georreferencia histórica específica.
+Jiskairumoko, Gran Canaria, Galicia interior e Irlanda permanecen sin centroide cuando la evidencia es regional. Herbón usa únicamente un punto territorial contemporáneo con `precision=reference`, no una supuesta huerta histórica exacta.
 
 ## Contrato narrativo congelado
 - `storyType="subject"` → `primarySubjectRef` canónico + `relatedSubjectRefs`.
@@ -36,15 +37,15 @@ Nueva Guinea y Asia meridional permanecen sin punto único para los procesos ant
 - No existe `story.subjectRef` legacy.
 - Los diez schemas canónicos conservan el fingerprint de alpha.27 en `docs/PRODUCT_CONTRACT_FINGERPRINT.json`.
 
-## E1 · Azúcar
+## E1 · Patata
 5 escenas:
-1. domesticación de `Saccharum officinarum` en Nueva Guinea;
-2. cristalización en Asia meridional como cronología historiográfica aproximada;
-3. desplazamiento productivo Mediterráneo → Madeira;
-4. sistema atlántico de plantación y esclavitud;
-5. Marggraf 1747 → Achard 1801 y azúcar de remolacha.
+1. Andes/Jiskairumoko: domesticación como proceso y evidencia microbotánica ca. 3400–1600 a. C.;
+2. Gran Canaria 1567: presencia documental europea, no fecha exacta de llegada;
+3. Herbón 1574–1607: ensayo temprano retrospectivamente documentado, no adopción continua;
+4. Galicia 1736–1850: difusión desigual y aceleración desde la crisis cerealera de 1769–1770;
+5. Irlanda 1845–1852: Phytophthora infestans, dependencia alimentaria y Gran Hambruna como crisis multicausal.
 
-Reglas protegidas: caña ≠ azúcar cristalizado; difusión ≠ generalización del consumo; no existe fecha canónica «350 = invención»; el abaratamiento atlántico no se narra sin coerción/esclavitud; remolacha no equivale a sustitución inmediata de caña ni a final causal de la esclavitud.
+Reglas protegidas: evidencia más antigua ≠ origen absoluto; presencia ≠ llegada; presencia ≠ adopción; adopción ≠ difusión uniforme; tizón ≠ explicación social suficiente de una hambruna.
 
 ## Próximo paso
-Validar alpha.30 en móvil. Si no aparece una regresión real, continuar E1 con **Patata → Especias/conservación** sin reabrir arquitectura salvo defecto demostrado.
+Validar alpha.31 en móvil. Si no aparece una regresión real, continuar E1 con **Especias/conservación** y después comenzar a valorar historias transversales de segundo nivel sin reabrir arquitectura salvo defecto demostrado.

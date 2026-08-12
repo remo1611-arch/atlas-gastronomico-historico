@@ -424,5 +424,33 @@
       "src_sugar_abulafia_spain_2008",
       "src_sugar_technikmuseum_berlin"
     ]
+  },
+  {
+    "id": "potato",
+    "name": "Patata (Solanum tuberosum)",
+    "type": "food_crop_subject",
+    "summary": "Solanum tuberosum como cultivo alimentario y tubérculo. El Atlas distingue domesticación andina, evidencias arqueológicas de uso, presencia documental en Europa, adopción regional y dependencia alimentaria; no convierte la primera mención conservada en una fecha absoluta de llegada.",
+    "aliases": [
+      "patata",
+      "papa",
+      "potato",
+      "Solanum tuberosum"
+    ],
+    "tags": [
+      "tubérculo",
+      "Andes",
+      "Canarias",
+      "Galicia",
+      "Europa",
+      "Phytophthora infestans"
+    ],
+    "sourceRefs": [
+      "src_potato_spooner_pnas_2005",
+      "src_potato_jiskairumoko_pnas_2016",
+      "src_potato_europe_hawkes_1993",
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_famine_elife_2013"
+    ],
+    "status": "reviewed"
   }
 ]

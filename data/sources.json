@@ -1213,5 +1213,104 @@
     "sourceType": "dataset",
     "accessed": "2026-08-12",
     "notes": "Fuente cartográfica auxiliar para un punto urbano de referencia de Berlín. No sustenta por sí sola la cronología de Marggraf o Achard."
+  },
+  {
+    "id": "src_potato_spooner_pnas_2005",
+    "title": "A single domestication for potato based on multilocus amplified fragment length polymorphism genotyping",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.0507400102",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Estudio genético de referencia sobre el origen de la patata cultivada. Se utiliza para distinguir la reconstrucción de domesticación andina de un supuesto punto o fecha única de invención."
+  },
+  {
+    "id": "src_potato_jiskairumoko_pnas_2016",
+    "title": "Late Archaic–Early Formative period microbotanical evidence for potato at Jiskairumoko in the Titicaca Basin of southern Peru",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.1604265113",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Evidencia microbotánica directa de uso de patata en Jiskairumoko entre aproximadamente 3400 y 1600 cal a. C.; no prueba el inicio absoluto de la domesticación."
+  },
+  {
+    "id": "src_potato_europe_hawkes_1993",
+    "title": "The early history of the potato in Europe",
+    "publisher": "Euphytica",
+    "url": "https://link.springer.com/article/10.1007/BF00029633",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Revisión de registros europeos tempranos. Documenta barriles de patatas exportados desde Gran Canaria a Amberes en noviembre de 1567 y registros sevillanos de 1573 y 1576. Se usa como evidencia de presencia, no como fecha exacta de llegada."
+  },
+  {
+    "id": "src_potato_canary_rios_2024",
+    "title": "Ancient Potato Varieties of the Canary Islands: Their History, Diversity and Origin of the Potato in Europe",
+    "publisher": "Potato Research / Springer Nature",
+    "url": "https://link.springer.com/article/10.1007/s11540-023-09672-2",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Revisión reciente de variedades antiguas canarias y del papel del archipiélago en los primeros registros europeos de Solanum tuberosum."
+  },
+  {
+    "id": "src_potato_galicia_usc_sobrado",
+    "title": "La introducción y difusión del cultivo de la patata en Galicia, siglos XVI-XIX",
+    "publisher": "Grupo de Investigación de Historia Moderna · Universidade de Santiago de Compostela",
+    "url": "https://hmoderna.usc.gal/la-introduccion-y-difusion-del-cultivo-de-la-patata-en-galicia-siglos-xvi-xix/",
+    "sourceType": "scholarly_reference",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis de Hortensio Sobrado Correa basada en fuentes judiciales, fiscales y bibliografía especializada. Sustenta Herbón, los pequeños cultivos de 1736/1740, la aceleración tras 1769-1770 y la difusión desigual hasta mediados del XIX."
+  },
+  {
+    "id": "src_potato_galicia_obradoiro_2018",
+    "title": "Algunas precisiones en torno al alcance de las consecuencias económicas, sociales y demográficas del cultivo de la patata en la Galicia de finales del Antiguo Régimen",
+    "publisher": "Obradoiro de Historia Moderna · Universidade de Santiago de Compostela",
+    "url": "https://doi.org/10.15304/ohm.27.5516",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Artículo académico utilizado para contrastar la escala y consecuencias de la difusión de la patata en Galicia a finales del siglo XVIII y primera mitad del XIX."
+  },
+  {
+    "id": "src_potato_galicia_dog_castana_2024",
+    "title": "Resolución de 11 de diciembre de 2024 — modificación del pliego IGP Castaña de Galicia",
+    "publisher": "Diario Oficial de Galicia / Xunta de Galicia",
+    "url": "https://www.xunta.gal/dog/Publicados/2024/20241220/AnuncioG0528-111224-0002_gl.html",
+    "sourceType": "official_document",
+    "accessed": "2026-08-12",
+    "notes": "Fuente oficial complementaria: sitúa la masificación del cultivo de patata y maíz en Galicia durante el siglo XIX y su relación con la pérdida de protagonismo de la castaña como fuente de hidratos de carbono."
+  },
+  {
+    "id": "src_potato_famine_elife_2013",
+    "title": "The rise and fall of the Phytophthora infestans lineage that triggered the Irish potato famine",
+    "publisher": "eLife",
+    "url": "https://elifesciences.org/articles/00731",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Genómica histórica de ejemplares de herbario. Identifica el linaje HERB-1 asociado a la epidemia decimonónica y permite explicar el agente biológico sin reducir la hambruna a una causa única."
+  },
+  {
+    "id": "src_potato_famine_national_archives_ie",
+    "title": "Famine Records: Distress Papers and the Relief Commission",
+    "publisher": "National Archives of Ireland",
+    "url": "https://nationalarchives.ie/help-with-research/research-guides/famine-records-distress-papers-and-the-relief-commission/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Fuente archivística institucional para la Gran Hambruna de 1845-1852 y la respuesta gubernamental; permite separar el fracaso del cultivo de la estructura social, política y asistencial de la crisis."
+  },
+  {
+    "id": "src_potato_famine_nmi",
+    "title": "Irish Emigration to America",
+    "publisher": "National Museum of Ireland",
+    "url": "https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Other/Emigration/Irish-Emigration-to-America",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis institucional sobre el impacto de la Gran Hambruna, el fracaso del cultivo por tizón, la insuficiencia de alternativas y la emigración a gran escala."
+  },
+  {
+    "id": "src_potato_herbon_wikidata",
+    "title": "Herbón, Padrón — Wikidata Q12951957",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q12951957",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para el punto actual de la parroquia de Herbón. El punto es referencia territorial contemporánea y no pretende localizar una parcela histórica del siglo XVI."
   }
 ]

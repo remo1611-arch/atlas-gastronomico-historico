@@ -805,5 +805,73 @@
       "src_sugar_technikmuseum_berlin"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "jiskairumoko_titicaca_region",
+    "name": "Jiskairumoko · cuenca del Titicaca (sur de Perú)",
+    "type": "archaeological_site",
+    "point": null,
+    "summary": "Yacimiento al aire libre del valle de Ilave, en la cuenca occidental del Titicaca, donde se recuperaron microrestos de almidón compatibles con patata cultivada. Se conserva sin pin puntual porque la fuente canónica utilizada para el hecho histórico no se emplea aquí como georreferencia exacta.",
+    "sourceRefs": [
+      "src_potato_jiskairumoko_pnas_2016"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "gran_canaria_potato_1567",
+    "name": "Gran Canaria · referencia insular",
+    "type": "island",
+    "point": null,
+    "summary": "Isla desde la que un documento notarial registra en noviembre de 1567 el envío de barriles de patatas a Amberes. No se usa un centroide insular como si fuera el lugar exacto de cultivo, carga o embarque.",
+    "sourceRefs": [
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "herbon_padron_reference",
+    "name": "Herbón, Padrón (referencia territorial)",
+    "type": "locality",
+    "point": {
+      "lat": 42.734722,
+      "lon": -8.628333,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_potato_herbon_wikidata"
+      ],
+      "note": "Punto actual de referencia de la parroquia de Herbón. No identifica la huerta histórica concreta donde la memoria de 1607 sitúa un ensayo de cultivo durante el arzobispado de Francisco Blanco."
+    },
+    "summary": "Parroquia de Padrón vinculada por la fuente de Jerónimo del Hoyo (1607) al recuerdo de un ensayo temprano de cultivo de patata durante el arzobispado de Francisco Blanco (1574-1581).",
+    "sourceRefs": [
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_herbon_wikidata"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "galicia_interior_potato_diffusion",
+    "name": "Galicia interior · difusión de la patata (referencia regional)",
+    "type": "macroregion",
+    "point": null,
+    "summary": "Conjunto regional que agrupa las zonas altas y centeneras de Mondoñedo, Lugo y Ourense donde la patata avanzó con mayor intensidad desde el último tercio del siglo XVIII. No se representa mediante un centroide.",
+    "sourceRefs": [
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_galicia_obradoiro_2018"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "ireland_great_famine_region",
+    "name": "Irlanda durante la Gran Hambruna (referencia regional)",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Referencia regional para la crisis de 1845-1852. El fracaso de la patata afectó a amplias zonas y se combinó con pobreza, estructura agraria, políticas de alivio y emigración; un único pin sería engañoso.",
+    "sourceRefs": [
+      "src_potato_famine_national_archives_ie",
+      "src_potato_famine_nmi",
+      "src_potato_famine_elife_2013"
+    ],
+    "status": "reviewed"
   }
 ]

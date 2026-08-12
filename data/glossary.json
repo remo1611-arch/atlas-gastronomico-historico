@@ -190,5 +190,29 @@
     "term": "remolacha azucarera",
     "definition": "Cultivo de Beta vulgaris seleccionado por alta concentración de sacarosa en la raíz. Desde finales del siglo XVIII y el XIX permitió producir azúcar en regiones templadas donde la caña tropical no era viable.",
     "status": "reviewed"
+  },
+  {
+    "id": "tuberculo",
+    "term": "tubérculo",
+    "definition": "Órgano vegetal engrosado que almacena reservas. En la patata, los tubérculos son tallos subterráneos modificados; no son raíces, aunque en cocina se agrupen a menudo con otros productos subterráneos.",
+    "status": "reviewed"
+  },
+  {
+    "id": "propagacion_vegetativa",
+    "term": "propagación vegetativa",
+    "definition": "Multiplicación de una planta a partir de una parte del organismo y no de una semilla sexual. Plantar tubérculos permite conservar genotipos de patata, pero también puede propagar patógenos presentes en el material de siembra.",
+    "status": "reviewed"
+  },
+  {
+    "id": "tizon_tardio_patata",
+    "term": "tizón tardío de la patata",
+    "definition": "Enfermedad causada por el oomiceto Phytophthora infestans, capaz de destruir follaje y tubérculos con rapidez bajo condiciones favorables. Fue el agente biológico central de las grandes pérdidas de cosecha europeas de la década de 1840.",
+    "status": "reviewed"
+  },
+  {
+    "id": "adopcion_cultivo",
+    "term": "adopción de un cultivo",
+    "definition": "Proceso por el que una planta deja de ser una presencia ocasional o experimental y pasa a integrarse de forma significativa en sistemas agrarios, rotaciones, economía y dieta. Puede variar mucho entre regiones y grupos sociales.",
+    "status": "reviewed"
   }
 ]

@@ -1578,5 +1578,250 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_potato",
+    "storyType": "subject",
+    "primarySubjectRef": "potato",
+    "relatedSubjectRefs": [
+      "potato"
+    ],
+    "title": "Historia de la patata",
+    "question": "¿Cómo pasó un tubérculo andino de una historia de domesticación milenaria a integrarse de manera desigual en Europa y convertirse, en algunos lugares, en alimento del que dependía la supervivencia?",
+    "teaser": "Andes, Canarias, Galicia e Irlanda: cinco escenas para separar domesticación, presencia, adopción y dependencia, y para entender por qué una planta productiva puede ser a la vez fuente de seguridad y de vulnerabilidad.",
+    "eyebrow": "5 escenas · Andes, Europa y Galicia",
+    "subtitle": "Una historia de adopciones, no de una “llegada” instantánea",
+    "estimatedMinutes": 11,
+    "endTitle": "Presencia, adopción y dependencia son etapas históricas distintas",
+    "endText": "Jiskairumoko demuestra uso andino antiguo; Canarias documenta presencia europea en 1567; Herbón recuerda un ensayo que no generó una difusión inmediata; Galicia muestra una adopción regional y desigual; Irlanda recuerda que la productividad de un cultivo no elimina la vulnerabilidad cuando dieta, enfermedad y estructura social convergen.",
+    "sourceRefs": [
+      "src_potato_spooner_pnas_2005",
+      "src_potato_jiskairumoko_pnas_2016",
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024",
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_galicia_obradoiro_2018",
+      "src_potato_galicia_dog_castana_2024",
+      "src_potato_famine_elife_2013",
+      "src_potato_famine_national_archives_ie",
+      "src_potato_famine_nmi",
+      "src_potato_herbon_wikidata"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "potato_1_andes",
+        "sceneType": "origins",
+        "label": "01 · Andes · ca. 3400–1600 a. C.",
+        "title": "Una evidencia antigua de patata no es el día en que alguien la “inventó”",
+        "lead": "La domesticación es un proceso de generaciones. Jiskairumoko ofrece algo más preciso y más humilde: evidencia directa de que comunidades andinas estaban usando patata hace milenios.",
+        "geography": {
+          "today": "Cuenca del Titicaca · sur de Perú",
+          "region": "Altiplano andino",
+          "orientation": "Jiskairumoko es un asentamiento al aire libre del valle de Ilave, en la cuenca occidental del Titicaca. El Atlas lo mantiene sin pin puntual porque la fuente histórica usada aquí localiza bien el paisaje arqueológico, pero no se convierte en una georreferencia de precisión por aproximación.",
+          "society": "Comunidades de cazadores-recolectores tardíos y agricultores tempranos de las tierras altas andinas, en un entorno donde tubérculos, granos y recursos silvestres formaban sistemas alimentarios diversos."
+        },
+        "narrative": [
+          "La patata cultivada procede de una historia andina mucho más antigua que cualquier documento escrito europeo. Los estudios genéticos de Solanum tuberosum reconstruyen un proceso de domesticación en los Andes a partir de poblaciones silvestres y variedades locales. Esa reconstrucción no ofrece un día inaugural: selección, propagación de tubérculos y adaptación humana se acumulan durante muchas generaciones.",
+          "Jiskairumoko permite acercarnos a una escala distinta. En herramientas líticas procedentes de contextos fechados aproximadamente entre 3400 y 1600 a. C., el análisis microbotánico identificó cincuenta gránulos de almidón consistentes con patata cultivada. Aquí no inferimos un alimento solo porque el ambiente sea apropiado: existe un residuo microscópico asociado a instrumentos utilizados por quienes vivieron en el asentamiento.",
+          "La combinación de genética y arqueología es importante porque responde a preguntas diferentes. La genética ayuda a reconstruir parentescos y procesos de domesticación; los microrestos sitúan uso humano en lugares y momentos concretos. Ninguna de las dos pruebas convierte Jiskairumoko en “la cuna de la patata” ni demuestra que allí comenzara el cultivo antes que en cualquier otro punto de los Andes.",
+          "La patata tampoco era una variedad única y homogénea. Los Andes conservaron una enorme diversidad de formas, colores, ciclos y adaptaciones. La propagación vegetativa mediante tubérculos permitía mantener materiales concretos y, al mismo tiempo, las comunidades podían seleccionar qué plantas funcionaban mejor en altitudes, suelos y usos alimentarios diferentes.",
+          "La primera idea del recorrido es, por tanto, metodológica: una primera evidencia conservada no equivale al origen absoluto. Podemos afirmar que estas comunidades usaban patata y que el cultivo tiene raíces andinas profundas; lo que no podemos hacer es convertir una fecha arqueológica en una escena de invención."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_jiskairumoko_3400_1600_bce"
+          },
+          {
+            "kind": "development",
+            "ref": "potato_andean_domestication_process"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_spooner_pnas_2005",
+          "src_potato_jiskairumoko_pnas_2016"
+        ],
+        "method": {
+          "title": "Genética y microrestos no responden a la misma pregunta",
+          "body": "El dossier separa una reconstrucción poblacional de domesticación de una evidencia arqueológica concreta. Los gránulos de almidón sustentan uso de patata en Jiskairumoko; el estudio genético sustenta el origen andino de la patata cultivada. Ninguno autoriza una fecha única de domesticación."
+        },
+        "limits": "La datación arqueológica corresponde a los contextos analizados y la identificación microbotánica se expresa como compatible con patata cultivada. No conocemos una receta concreta ni el comienzo absoluto de la domesticación.",
+        "whyItMatters": "Evitar la falsa “primera patata” permite explicar cómo funciona realmente la historia de los cultivos: procesos largos, múltiples comunidades y evidencias que sobreviven de manera desigual.",
+        "nextQuestion": "Si el cultivo tenía una historia milenaria en los Andes, ¿qué podemos afirmar con seguridad sobre su entrada en una Europa que no dejó un acta de llegada?",
+        "glossaryRefs": [
+          "tuberculo",
+          "propagacion_vegetativa"
+        ]
+      },
+      {
+        "id": "potato_2_canary",
+        "sceneType": "transfer",
+        "label": "02 · Gran Canaria · 1567",
+        "title": "Europa tiene una primera presencia documentada; no una fecha demostrada de llegada",
+        "lead": "Un documento comercial puede probar que una patata estaba allí. No puede contarnos necesariamente cuándo desembarcó por primera vez ni qué cargamento inició toda la historia europea.",
+        "geography": {
+          "today": "Gran Canaria · Islas Canarias",
+          "region": "Atlántico oriental · conexión entre América y Europa",
+          "orientation": "El registro de 1567 habla de patatas enviadas desde Gran Canaria a Amberes. El Atlas representa la isla como referencia regional sin pin porque el documento no identifica una parcela de cultivo o un punto de embarque que debamos inventar.",
+          "society": "Navegantes, agricultores insulares, mercaderes y redes portuarias de la monarquía hispánica conectaban cultivos americanos con circuitos atlánticos y europeos."
+        },
+        "narrative": [
+          "No se conserva un documento que diga “hoy llegó la primera patata a Europa”. La historiografía tiene que trabajar de otra manera: localizar las presencias más tempranas que sí están documentadas y no convertirlas en una llegada absoluta que la fuente no prueba. Esa diferencia es pequeña en apariencia, pero cambia la honestidad del relato.",
+          "El 28 de noviembre de 1567 un registro notarial menciona barriles de patatas enviados desde Gran Canaria a Amberes. Para poder exportar tubérculos, el cultivo debía estar ya establecido en alguna medida en la isla. El dato demuestra presencia y producción; no nos dice qué barco introdujo la planta ni en qué año exacto comenzó a cultivarse.",
+          "Otros documentos amplían la ventana: Tenerife aparece en un envío hacia Rouen en 1574 y los archivos sevillanos contienen registros de Solanum tuberosum en 1573 y 1576. La secuencia es más útil que una leyenda de introducción única porque muestra que el tubérculo circulaba por varios nodos atlánticos y continentales en pocos años.",
+          "También había un problema lingüístico. “Patata”, “batata” y otros nombres podían confundirse en textos antiguos; por eso los estudios especializados vuelven a los documentos y comprueban cuándo se está hablando realmente de Solanum tuberosum y cuándo de la batata, Ipomoea batatas. Identificar bien la especie es parte del trabajo histórico.",
+          "Esta escena cambia el verbo. No decimos “la patata llegó a Europa en 1567”. Decimos que en 1567 está documentada en Gran Canaria y que, durante la década siguiente, aparece también en otros registros europeos. Presencia es una afirmación demostrable; llegada exacta sigue siendo una reconstrucción."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_gran_canaria_export_1567"
+          },
+          {
+            "kind": "development",
+            "ref": "potato_early_europe_presence_1567_1576"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_europe_hawkes_1993",
+          "src_potato_canary_rios_2024"
+        ],
+        "method": {
+          "title": "La primera mención conservada no se convierte en una primera llegada",
+          "body": "La escena utiliza registros notariales y de archivo revisados por historiadores de la patata. El gate exige formularlos como terminus documental: sabemos que la patata estaba presente y circulaba en esas fechas; el transporte inicial pudo ser anterior."
+        },
+        "limits": "La documentación conservada es fragmentaria. Que Canarias ofrezca el registro europeo más temprano actualmente conocido no demuestra que ningún tubérculo hubiera llegado antes a otro puerto o territorio.",
+        "whyItMatters": "Esta distinción prepara la escena gallega: que un cultivo esté presente o incluso sea ensayado en un lugar no significa que agricultores y consumidores lo adopten inmediatamente.",
+        "nextQuestion": "¿Qué ocurre cuando encontramos una patata en una huerta gallega del siglo XVI, pero después casi desaparece de la documentación durante generaciones?",
+        "glossaryRefs": [
+          "adopcion_cultivo"
+        ]
+      },
+      {
+        "id": "potato_3_herbon",
+        "sceneType": "regional_entry",
+        "label": "03 · Herbón, Galicia · 1574–1607",
+        "title": "Una patata plantada no equivale todavía a una agricultura de patata",
+        "lead": "Galicia ofrece un caso perfecto para distinguir ensayo, memoria documental y adopción: conocemos un episodio temprano, pero después el cultivo no deja una trayectoria continua visible.",
+        "geography": {
+          "today": "Herbón · Padrón · A Coruña",
+          "region": "Galicia atlántica",
+          "orientation": "El mapa usa la parroquia actual de Herbón como referencia territorial. No afirma que el punto corresponda a la huerta exacta del monasterio en el siglo XVI.",
+          "society": "Huertas eclesiásticas, redes arzobispales y agricultura campesina coexistían en un paisaje donde castaña, centeno, mijo y, más tarde, maíz desempeñaban papeles alimentarios mucho más establecidos."
+        },
+        "narrative": [
+          "La primera referencia conocida al cultivo de patata en Galicia aparece en las Memorias del Arzobispado de Santiago de Jerónimo del Hoyo, redactadas en 1607. Del Hoyo recuerda que el arzobispo Francisco Blanco, cuyo mandato fue de 1574 a 1581, había mandado plantar el tubérculo americano en las huertas del monasterio de Herbón.",
+          "El dato es atractivo porque parece ofrecer un origen local muy temprano. Sin embargo, la fuente es retrospectiva: fue escrita después del episodio que describe. Y, sobre todo, los historiadores no encuentran una cadena de testimonios durante el siglo XVII que permita seguir una expansión sostenida desde aquella huerta hacia los campos gallegos.",
+          "Por eso el Atlas clasifica el episodio como un ensayo temprano con certeza media y no como “la introducción definitiva de la patata en Galicia”. Una planta puede crecer en una huerta de curiosidad, medicinal, experimental o alimentaria sin que haya suficiente semilla, interés, necesidad o encaje agronómico para incorporarla a las rotaciones campesinas.",
+          "Esta diferencia también protege contra una narración retrospectiva: hoy la patata parece tan gallega que resulta fácil imaginar que su utilidad fue evidente desde el primer contacto. La documentación sugiere lo contrario. Durante muchas décadas, la mera presencia del tubérculo no produjo todavía la transformación agrícola que asociamos con los siglos XVIII y XIX.",
+          "Herbón es valioso precisamente porque no es un “momento fundacional”. Nos enseña a no confundir una huerta con un territorio, un experimento con una economía ni una referencia escrita con una adopción social. Para entender cuándo la patata empieza a importar de verdad hay que esperar a otras fuentes."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_potato_herbon_trial_1574_1607"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_galicia_usc_sobrado",
+          "src_potato_herbon_wikidata"
+        ],
+        "method": {
+          "title": "Una memoria de 1607 se lee como memoria, no como acta contemporánea",
+          "body": "La fuente resume un episodio atribuido al arzobispado de 1574-1581 y el estudio de USC lo identifica como la primera referencia conocida. La ausencia posterior de testimonios abundantes se incorpora al relato como límite, no se rellena con una continuidad supuesta."
+        },
+        "limits": "La referencia no permite conocer superficie, rendimiento, uso culinario ni continuidad del cultivo. El punto del mapa corresponde a Herbón actual y no a la parcela histórica concreta.",
+        "whyItMatters": "El caso demuestra de forma muy clara que la historia alimentaria necesita distinguir introducción puntual de adopción. Esa misma distinción será decisiva para entender por qué unas zonas gallegas abrazaron la patata antes que otras.",
+        "nextQuestion": "¿Qué cambió en el siglo XVIII para que un cultivo antes marginal pasara a ocupar una parte importante de los campos y de la dieta en ciertas comarcas gallegas?",
+        "glossaryRefs": [
+          "adopcion_cultivo"
+        ]
+      },
+      {
+        "id": "potato_4_galicia_adoption",
+        "sceneType": "adoption",
+        "label": "04 · Galicia · 1736–1850",
+        "title": "La patata no conquista Galicia de una vez: avanza donde resuelve problemas concretos",
+        "lead": "Los documentos fiscales y judiciales permiten ver el proceso casi comarca a comarca. El resultado rompe otra simplificación: la adopción fue temprana y profunda en unas zonas, tardía y débil en otras.",
+        "geography": {
+          "today": "Galicia · especialmente interior de Lugo y Ourense y antigua provincia de Mondoñedo",
+          "region": "Noroeste de la península ibérica",
+          "orientation": "La capa regional permanece sin centroide. Las fuentes muestran justamente una distribución desigual: poner un único punto en el centro de Galicia borraría la diferencia entre tierras altas centeneras, zonas de maíz y litoral sudoccidental.",
+          "society": "Economías campesinas con fuerte autoconsumo, diezmos, rotaciones de cereal y ganado, sometidas a oscilaciones de cosecha y a crisis de subsistencia."
+        },
+        "narrative": [
+          "La documentación cambia en el siglo XVIII. Fuentes judiciales y fiscales permiten confirmar pequeños plantíos en Santiago de Bravos, en la antigua provincia de Mondoñedo, en 1736, y en Río Freixo, al sur de Ourense, en 1740. A mediados de siglo el Catastro de Ensenada registra patatas en varias parroquias ourensanas. Ya no estamos ante un único ensayo recordado décadas después.",
+          "El gran salto se produce desde el último tercio del siglo XVIII. La grave crisis agraria de 1769-1770, con descenso de la producción cerealera y hambre, actuó como incentivo para ampliar un cultivo que podía ofrecer mucho alimento por superficie y encajar bien en determinadas tierras. Pero “la necesidad introdujo la patata” sería todavía demasiado simple: el tubérculo ya estaba presente y lo que cambia es su escala de adopción.",
+          "La expansión fue geográficamente desigual. En tierras altas de Mondoñedo, Lugo y zonas interiores de Ourense, donde no tenía que desplazar al maíz de las rotaciones, la patata llegó a representar una parte muy importante de lo cosechado. En la Galicia occidental y meridional de maíz y viñedo la implantación fue más lenta, y todavía en el siglo XIX había contrastes muy fuertes entre parroquias.",
+          "Esta nueva planta podía diversificar la dieta de forma directa y también liberar otros recursos: menos grano y castaña dedicados a determinadas necesidades, más posibilidades para alimentar ganado y rotaciones más intensas. La historiografía gallega relaciona su expansión con cambios económicos y demográficos importantes, pero evita tratarla como una explicación única de todo el crecimiento rural.",
+          "La propia documentación oficial sobre la historia de la castaña recuerda que la masificación de patata y maíz durante el siglo XIX contribuyó a desplazar a la castaña de parte de su antiguo papel como fuente principal de hidratos de carbono. La cocina “tradicional” cambia: un alimento americano puede terminar pareciendo ancestral cuando varias generaciones lo integran en agricultura, mercado y mesa."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "galicia_potato_adoption_1736_1850"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_galicia_usc_sobrado",
+          "src_potato_galicia_obradoiro_2018",
+          "src_potato_galicia_dog_castana_2024"
+        ],
+        "method": {
+          "title": "La adopción se reconstruye con impuestos, pleitos, inventarios y diccionarios",
+          "body": "Las fuentes no solo dicen si existe patata: permiten observar diezmos, proporciones de cosecha y presencia parroquial. Esa granularidad revela una Galicia oriental/interior mucho más adelantada que parte de la Galicia occidental, y evita hablar de una difusión uniforme."
+        },
+        "limits": "Las relaciones entre patata, nutrición, intensificación agraria y crecimiento demográfico son multicausales. El Atlas conserva las asociaciones propuestas por la historiografía sin atribuir todo cambio poblacional al tubérculo.",
+        "whyItMatters": "Galicia muestra mejor que una fecha aislada qué significa adoptar un alimento: cambia su superficie, su papel en la rotación, su valor económico y finalmente su posición en la dieta cotidiana.",
+        "nextQuestion": "Si una población llega a depender mucho de un cultivo productivo y propagado vegetativamente, ¿qué ocurre cuando aparece un patógeno capaz de destruirlo a gran escala?",
+        "glossaryRefs": [
+          "adopcion_cultivo",
+          "propagacion_vegetativa"
+        ]
+      },
+      {
+        "id": "potato_5_famine",
+        "sceneType": "risk_and_society",
+        "label": "05 · Irlanda · 1845–1852",
+        "title": "El tizón destruye cosechas; una sociedad convierte esa pérdida en catástrofe",
+        "lead": "La Gran Hambruna irlandesa obliga a separar agente biológico y explicación histórica. Phytophthora infestans fue decisivo, pero ni la patata ni el patógeno bastan por sí solos para explicar hambre, muerte y emigración.",
+        "geography": {
+          "today": "Irlanda · isla de Irlanda",
+          "region": "Isla de Irlanda · especialmente comunidades rurales dependientes de la patata",
+          "orientation": "La crisis afectó amplias zonas y cambió a lo largo de varios años. El Atlas no la reduce a Dublín ni a un centroide nacional: la deja como referencia regional sin pin único.",
+          "society": "Campesinado pobre, arrendatarios, propietarios, comerciantes, instituciones de alivio y un Estado imperial operaban dentro de una estructura de tierra y mercado que condicionaba qué alimentos estaban realmente disponibles para cada hogar."
+        },
+        "narrative": [
+          "En 1845 un tizón de comportamiento devastador alcanzó las plantaciones de patata irlandesas y europeas. El agente es Phytophthora infestans, un oomiceto, no un hongo verdadero. Estudios genómicos de hojas históricas de herbario han identificado un linaje denominado HERB-1 entre los responsables de la gran epidemia del siglo XIX. Esa evidencia permite explicar biología sin recurrir a nombres vagos como “podredumbre”.",
+          "La patata tenía características que habían mejorado la seguridad alimentaria de muchas familias: alto rendimiento, adaptación a pequeñas parcelas y capacidad de alimentar a poblaciones densas. Precisamente por eso la dependencia podía ser muy alta entre sectores con pocas alternativas. Cuando el patógeno arruinó sucesivas cosechas, la pérdida no fue un simple cambio de menú.",
+          "Pero la Gran Hambruna no debe narrarse como “una enfermedad de la patata mató a Irlanda”. Los National Archives of Ireland conservan una enorme documentación sobre pobreza, peticiones de ayuda, comisiones de socorro, obras públicas y decisiones administrativas. La disponibilidad de alimentos, el acceso a recursos, la estructura agraria y la respuesta política condicionaron quién podía sobrevivir a una crisis agrícola.",
+          "El National Museum of Ireland vincula el fracaso del cultivo por tizón con insuficiente provisión de alternativas y con destitución, enfermedad y emigración a escala catastrófica. La historia de un alimento se convierte aquí en historia social: el mismo cultivo que había sostenido a millones expone los peligros de una dependencia extrema cuando un sistema económico ofrece poco margen de sustitución.",
+          "La idea final no es que la patata sea peligrosa. Es casi la contraria: su enorme productividad hizo posible sostener poblaciones y transformar dietas, pero ninguna tecnología agrícola elimina el riesgo. Diversidad genética, sanidad vegetal, acceso a alimentos y estructuras sociales importan tanto como el rendimiento de una cosecha. La seguridad alimentaria es un sistema, no un tubérculo."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "irish_great_famine_potato_1845_1852"
+          }
+        ],
+        "sourceRefs": [
+          "src_potato_famine_elife_2013",
+          "src_potato_famine_national_archives_ie",
+          "src_potato_famine_nmi"
+        ],
+        "method": {
+          "title": "Patógeno y hambruna se documentan con fuentes diferentes",
+          "body": "La genómica de herbario identifica el linaje del patógeno; archivos estatales y colecciones museísticas documentan el impacto humano y la respuesta institucional. El dossier evita usar la biología como explicación suficiente de un fenómeno social y político."
+        },
+        "limits": "La Gran Hambruna tuvo variaciones regionales y una historiografía extensa sobre políticas, mercados, propiedad y mortalidad que cinco párrafos no pueden agotar. Esta escena se limita a demostrar por qué fracaso agrícola y hambruna no son sinónimos.",
+        "whyItMatters": "Cerrar la historia con Irlanda transforma una cronología de difusión en una pregunta contemporánea sobre resiliencia: qué ocurre cuando una sociedad obtiene gran parte de su seguridad de un cultivo susceptible a una enfermedad emergente.",
+        "nextQuestion": "Idea para llevarte: una patata puede estar presente durante siglos antes de ser esencial; y cuando se vuelve esencial, comprender su historia exige mirar simultáneamente planta, patógeno, agricultura y sociedad.",
+        "glossaryRefs": [
+          "tizon_tardio_patata",
+          "propagacion_vegetativa"
+        ]
+      }
+    ]
   }
 ]

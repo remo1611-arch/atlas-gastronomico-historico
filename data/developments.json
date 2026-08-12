@@ -724,5 +724,152 @@
       "src_sugar_fems_sucrose_history_2016"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "potato_andean_domestication_process",
+    "name": "Domesticación andina de la patata cultivada",
+    "type": "crop_domestication_process",
+    "period": {
+      "start": -8000,
+      "end": -3000,
+      "precision": "range",
+      "display": "proceso prehistórico andino, varios milenios antes de nuestra era"
+    },
+    "placeRefs": [
+      "jiskairumoko_titicaca_region"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "potato"
+    ],
+    "impactTypes": [
+      "domestication",
+      "crop_diversity",
+      "vegetative_propagation"
+    ],
+    "summary": "Los datos genéticos sitúan el origen de la patata cultivada en un proceso de domesticación andino. La evidencia de Jiskairumoko documenta uso temprano dentro de ese amplio proceso, pero no permite convertir un yacimiento ni una datación concreta en el origen absoluto del cultivo.",
+    "certainty": "medium",
+    "sourceRefs": [
+      "src_potato_spooner_pnas_2005",
+      "src_potato_jiskairumoko_pnas_2016"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "potato_early_europe_presence_1567_1576",
+    "name": "Primeras presencias documentales de patata en Europa",
+    "type": "crop_transfer_and_documentation",
+    "period": {
+      "start": 1567,
+      "end": 1576,
+      "precision": "range",
+      "display": "1567–1576"
+    },
+    "placeRefs": [
+      "gran_canaria_potato_1567"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "potato"
+    ],
+    "impactTypes": [
+      "transfer",
+      "cultivation",
+      "trade",
+      "documentary_record"
+    ],
+    "summary": "La historiografía puede documentar presencia y circulación tempranas sin conocer un “momento de llegada”. Gran Canaria exporta patatas a Amberes en 1567; Tenerife aparece en un envío a Rouen en 1574; y archivos sevillanos confirman registros de Solanum tuberosum en 1573 y 1576. El desarrollo se formula como ventana documental, no como una introducción instantánea.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "galicia_potato_adoption_1736_1850",
+    "name": "De ensayo puntual a cultivo importante: difusión desigual de la patata en Galicia",
+    "type": "regional_crop_adoption",
+    "period": {
+      "start": 1736,
+      "end": 1850,
+      "precision": "range",
+      "display": "1736–mediados del siglo XIX"
+    },
+    "placeRefs": [
+      "herbon_padron_reference",
+      "galicia_interior_potato_diffusion"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "potato"
+    ],
+    "impactTypes": [
+      "adoption",
+      "subsistence",
+      "crop_rotation",
+      "dietary_change",
+      "regional_divergence"
+    ],
+    "summary": "Tras ensayos tempranos aislados, fuentes judiciales y fiscales confirman pequeños cultivos en Santiago de Bravos (1736) y Río Freixo (1740). Desde el último tercio del XVIII, y especialmente tras la crisis cerealera y hambruna de 1769-1770, la patata se expandió con fuerza por áreas altas de Mondoñedo, Lugo y Ourense, mientras la Galicia occidental maicera la adoptó más lentamente. A mediados del XIX la generalización seguía siendo territorialmente desigual.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_potato_galicia_usc_sobrado",
+      "src_potato_galicia_obradoiro_2018",
+      "src_potato_galicia_dog_castana_2024"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "university_historical_synthesis_plus_peer_reviewed_and_official_crosscheck",
+      "independentSourceRefs": [
+        "src_potato_galicia_obradoiro_2018",
+        "src_potato_galicia_dog_castana_2024"
+      ],
+      "note": "La secuencia de adopción gallega se contrasta con publicación académica y documentación oficial sobre la masificación del cultivo en el XIX."
+    }
+  },
+  {
+    "id": "irish_great_famine_potato_1845_1852",
+    "name": "Tizón de la patata y Gran Hambruna irlandesa",
+    "type": "crop_disease_and_social_crisis",
+    "period": {
+      "start": 1845,
+      "end": 1852,
+      "precision": "range",
+      "display": "1845–1852"
+    },
+    "placeRefs": [
+      "ireland_great_famine_region"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "potato"
+    ],
+    "impactTypes": [
+      "plant_disease",
+      "crop_failure",
+      "food_dependency",
+      "famine",
+      "migration",
+      "public_policy"
+    ],
+    "summary": "Phytophthora infestans devastó repetidamente el cultivo de patata desde 1845. La genómica histórica identifica HERB-1 entre los linajes asociados a la epidemia. En Irlanda, la dependencia de la patata entre amplios sectores rurales, la pobreza, la estructura de acceso a tierra y alimentos y las respuestas institucionales convirtieron el fracaso agrícola en una catástrofe de hambre, enfermedad y emigración. El Atlas no presenta la patata ni el patógeno como causa social única de la Gran Hambruna.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_potato_famine_elife_2013",
+      "src_potato_famine_national_archives_ie",
+      "src_potato_famine_nmi"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "ancient_pathogen_genomics_plus_national_archives_and_museum_crosscheck",
+      "independentSourceRefs": [
+        "src_potato_famine_national_archives_ie",
+        "src_potato_famine_nmi"
+      ],
+      "note": "Se separa el agente biológico de los factores sociales, económicos y políticos de la crisis, apoyándose en genómica histórica y fuentes institucionales irlandesas."
+    }
   }
 ]

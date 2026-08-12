@@ -642,3 +642,27 @@ Tercera expansión editorial posterior al Product Contract Freeze.
 1. aceptación móvil de Azúcar y regresión de las cinco historias previas;
 2. **Patata → Especias/conservación**;
 3. seguir aumentando densidad de corpus antes de G4.
+
+
+## Alpha.31 — Patata
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Cuarta expansión editorial posterior al Product Contract Freeze.
+
+### Integrado
+- 5 escenas: Andes/Jiskairumoko, Canarias 1567, Herbón, Galicia 1736–1850 e Irlanda 1845–1852;
+- 1 subject, 5 places, 3 occurrences, 4 developments, 11 sources y 4 términos de glosario;
+- ningún cambio en los diez schemas congelados ni lógica específica por historia.
+
+### Reglas epistemológicas
+- domesticación ≠ primera evidencia arqueológica;
+- primera presencia documental europea ≠ fecha exacta de llegada;
+- ensayo en Herbón ≠ adopción continua;
+- crisis de 1769–1770 acelera una adopción ya iniciada, no “introduce” por sí sola la patata;
+- difusión gallega ≠ proceso uniforme;
+- `Phytophthora infestans` explica el fracaso vegetal, no por sí solo la Gran Hambruna.
+
+### Después
+1. aceptación móvil de Patata y regresión de las seis historias previas;
+2. **Especias/conservación**;
+3. revisar densidad global del corpus y preparar historias transversales de segundo nivel antes de G4.
