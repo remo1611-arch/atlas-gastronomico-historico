@@ -1,7 +1,7 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.25
-**Estado:** Narrative Museum + Atlas · consolidación de producto · gate móvil pendiente
+**Versión:** 0.1.0-alpha.26
+**Estado:** Narrative Museum + Atlas · primera historia transversal integrada · gate móvil/museográfico pendiente
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
@@ -59,6 +59,8 @@ Desde alpha.21 la jerarquía de producto es:
 
 Las historias se cargan desde `data/stories.json` y referencian el corpus existente. No existe un renderer específico por alimento.
 
+Desde alpha.25 el contrato distingue historias `subject` y `transversal`. Alpha.26 demuestra el segundo tipo con Fermentación sin crear un subject ficticio para la técnica: una transversal puede relacionar varios subjects y reutilizar occurrences/developments del corpus.
+
 
 ## Forma principal de uso
 
@@ -104,7 +106,9 @@ Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed`
 
 Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-El corpus actual contiene 32 occurrences públicas: 17 tienen punto y 15 permanecen sin punto por decisión explícita. Alpha.24 extiende el diagnóstico a `contexts` y `developments` sin inventar centroides.
+El corpus actual contiene **34 occurrences públicas**: 18 tienen punto y 16 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 9 `developments` (1 cartografiable). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+
+Alpha.26 integra la primera historia transversal real: **Historia de la fermentación**, con 5 escenas. El corpus completo queda en 13 subjects, 33 places, 98 sources, 3 stories, 18 escenas y 20 términos de glosario.
 
 ## Capas históricas
 

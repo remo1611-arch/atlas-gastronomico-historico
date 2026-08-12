@@ -519,3 +519,29 @@ Objetivo: demostrar que Historias puede representar tanto recorridos monográfic
 2. gate museográfico de Vino, Pan y Fermentación;
 3. congelación formal del contrato de producto;
 4. expansión editorial historia por historia.
+
+
+## Alpha.26 — Primera historia transversal real
+**Estado: IMPLEMENTADA TÉCNICAMENTE · pendiente aceptación Xiaomi/museográfica**
+
+Objetivo: demostrar con Fermentación que el contrato transversal funciona con contenido heterogéneo real sin volver a rediseñar la aplicación.
+
+### Integrado
+- `story_fermentation` con 5 escenas.
+- Jiahu y Xiaohe como nuevas evidencias arqueológicas seleccionadas.
+- Pasteur 1857 y Hansen 1883 como developments científicos.
+- Reutilización de vino de Georgia y pasteurización existente.
+- Ningún renderer específico por historia.
+
+### Gate alpha.26
+- Vino y Pan no regresionan.
+- Fermentación funciona de extremo a extremo en Android.
+- El visitante comprende práctica empírica → explicación microbiana → control/reproducibilidad.
+- Los registros no puntuales son comprensibles en mapa/escenas.
+- No se introducen mitos de prioridad ni coordenadas inferidas.
+
+### Después
+1. gate museográfico conjunto Vino/Pan/Fermentación;
+2. congelación formal del contrato de producto si pasa;
+3. reanudación E1: Cacao/chocolate → Café → Azúcar → Patata → Especias/conservación;
+4. G4 permanece bloqueado hasta disponer de corpus suficiente.

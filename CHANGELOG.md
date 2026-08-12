@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.0-alpha.26 — 2026-08-12
+
+### Primera historia transversal real
+- Integra `story_fermentation` con `storyType="transversal"`, `primarySubjectRef: null` y cuatro `relatedSubjectRefs`.
+- Añade 5 escenas: Jiahu; diversidad Georgia/Xiaohe; Pasteur 1857; control del vino 1863–1865; Hansen 1883.
+- El renderer sigue siendo genérico: no existe lógica específica de Fermentación en `app.js` o `core.js`.
+
+### Corpus y evidencia
+- Añade 1 subject (`mixed_fermented_beverage`), 2 places, 2 occurrences, 2 developments y 8 sources.
+- Jiahu se cartografía con coordenadas publicadas en la literatura arqueológica; Xiaohe permanece deliberadamente sin punto.
+- La definición de fermentación se generaliza y se añaden `levadura`, `bacterias_acido_lacticas`, `cultivo_puro` y `cultivo_iniciador` al glosario.
+- Raqefet no se integra por la controversia interpretativa actual; no se etiqueta ningún pan antiguo como fermentado sin evidencia específica.
+
+### QA
+- Añade `test_fermentation_story.py` y actualiza baselines semánticos/espaciales.
+- Python `test_*.py`: 53/53 PASS.
+- Node `test_*.mjs`: 5/5 PASS.
+- `validate_project.py`, JSON Schema y `node --check` de `app.js`/`core.js`: PASS.
+- Gate táctil y museográfico en Xiaomi: pendiente.
+
 ## 0.1.0-alpha.25 — 2026-08-12
 
 - Generaliza el contrato de Historias para soportar visitas monográficas (`subject`) y transversales (`transversal`).

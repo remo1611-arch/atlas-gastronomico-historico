@@ -163,3 +163,13 @@ Estado de continuación:
 - Pin → sincroniza fecha + ficha + zoom regional.
 - `Mundo` restablece viewBox global.
 - No añadir historias/corpus hasta completar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Alpha.24 corrige cobertura multicapas y firstMappablePlace; después, gate museográfico Vino/Pan y congelación del contrato.
+
+
+Estado de continuación alpha.26:
+- Primera historia transversal real integrada: Fermentación, 5 escenas.
+- Corpus: 13 subjects / 33 places / 34 occurrences / 98 sources / 3 stories / 18 scenes / 20 glossary entries.
+- QA automatizado: 53/53 Python + 5/5 Node + validador/sintaxis PASS antes de empaquetado.
+- Raqefet excluido por controversia; no inferir pan fermentado ni coordenadas de Xiaohe.
+- Gate pendiente: `docs/MOBILE_ACCEPTANCE_ALPHA26.md` en Xiaomi real.
+- Si pasa: gate museográfico Vino/Pan/Fermentación y congelación formal del contrato.
+- No iniciar G4 ni añadir otra historia antes de resolver ese gate.

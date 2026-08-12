@@ -321,5 +321,28 @@
       ],
       "note": "La identidad taxonómica y las dataciones proceden del artículo arqueobotánico PNAS 2026; un comentario académico PNAS independiente se usa como contraste editorial. No se infiere pan elaborado."
     }
+  },
+  {
+    "id": "mixed_fermented_beverage",
+    "name": "Bebida fermentada mixta",
+    "type": "processed_product",
+    "summary": "Categoría prudente para bebidas antiguas cuya evidencia indica fermentación de una mezcla de materias primas sin equipararlas automáticamente con cerveza, vino u otra bebida moderna.",
+    "aliases": [
+      "bebida fermentada",
+      "fermented beverage",
+      "bebida de arroz miel y fruta"
+    ],
+    "tags": [
+      "fermentación",
+      "bebida",
+      "arroz",
+      "miel",
+      "fruta",
+      "biotecnología alimentaria"
+    ],
+    "sourceRefs": [
+      "src_jiahu_fermented_beverage_pnas_2004"
+    ],
+    "status": "reviewed"
   }
 ]

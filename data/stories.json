@@ -598,5 +598,255 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_fermentation",
+    "storyType": "transversal",
+    "primarySubjectRef": null,
+    "relatedSubjectRefs": [
+      "mixed_fermented_beverage",
+      "wine",
+      "bread_like_flatbread",
+      "cheese"
+    ],
+    "title": "Historia de la fermentación",
+    "question": "¿Cómo pasamos de fermentar alimentos sin conocer a los microorganismos a controlar cultivos y procesos de forma reproducible?",
+    "teaser": "De una bebida neolítica en Jiahu al cultivo puro de Hansen: la historia sigue cómo una práctica milenaria pasó de repetirse empíricamente a explicarse y controlarse microbiológicamente.",
+    "eyebrow": "5 escenas · práctica, evidencia y control",
+    "subtitle": "No buscamos quién «inventó» la fermentación. Seguimos cambios en la evidencia y en el grado de control: bebidas, vino, lácteos, microbiología, conservación y cultivo puro.",
+    "estimatedMinutes": 6,
+    "endTitle": "La fermentación no dejó de ser antigua cuando se volvió científica",
+    "endText": "Durante milenios las comunidades seleccionaron materias, recipientes, tiempos y reinóculos sin una teoría microbiana. Pasteur cambió la explicación; Hansen aumentó la reproducibilidad. La ciencia no sustituyó una práctica primitiva: hizo visible y controlable parte de una biotecnología alimentaria mucho más antigua.",
+    "sourceRefs": [
+      "src_jiahu_fermented_beverage_pnas_2004",
+      "src_jiahu_site_wiley_2013",
+      "src_mcgovern_2017_neolithic_wine",
+      "src_xiaohe_cheese_cell_2024",
+      "src_xiaohe_environment_plos_2013",
+      "src_pasteur_history_1857",
+      "src_pasteur_early_fermentation_1857_1862",
+      "src_pasteur_legacy",
+      "src_pasteur_middle_years",
+      "src_science_history_pasteur",
+      "src_pasteur_letter_1866",
+      "src_carlsberg_hansen_pure_yeast_1883",
+      "src_pasteur_carlsberg_2023"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "fermentation_1_jiahu",
+        "sceneType": "orientation",
+        "label": "01 · Jiahu · VII milenio a. C.",
+        "title": "Fermentar antes de saber qué era un microorganismo",
+        "lead": "Una vasija puede conservar durante milenios señales químicas de una práctica que nadie de su tiempo habría descrito con la palabra «microbiología».",
+        "geography": {
+          "today": "Jiahu · Wuyang · Henan · China",
+          "region": "Cuenca del río Huai · China central",
+          "orientation": "Jiahu se sitúa en la llanura de Henan, cerca del borde oriental de las montañas Funiu. La referencia arqueológica publica el yacimiento en torno a 33°36′ N, 113°40′ E.",
+          "society": "Comunidad neolítica con cerámica, explotación de recursos vegetales y animales y prácticas alimentarias que combinaban producción, recolección y procesado."
+        },
+        "narrative": [
+          "En Jiahu, los arqueólogos no encontraron una botella cerrada que pudiera abrirse y probarse. Encontraron recipientes cerámicos cuyo interior había absorbido compuestos orgánicos. El estudio químico de esos residuos detectó una combinación coherente con una bebida procesada a base de arroz, miel y fruta.",
+          "La interpretación es importante porque sitúa una práctica fermentativa compleja en el VII milenio a. C. Para repetirla no hacía falta conocer levaduras, bacterias ni metabolismo: bastaba con controlar de forma empírica materias primas, agua, recipientes, temperatura ambiental y tiempo suficientemente bien como para obtener un resultado reconocible.",
+          "El registro no autoriza, sin embargo, a proclamar una «primera bebida alcohólica de la humanidad». La arqueología solo conoce lo que se ha conservado, excavado, analizado y publicado. Jiahu es una evidencia temprana sólida dentro de ese registro, no el minuto cero de la fermentación.",
+          "La primera idea del recorrido es por tanto metodológica: una tecnología puede existir y transmitirse mucho antes de que una sociedad conozca los agentes microscópicos que la hacen posible.",
+          "La combinación de ingredientes también obliga a evitar etiquetas modernas demasiado cómodas. El análisis permite hablar de una bebida fermentada mixta, pero no decidir que aquellas personas la entendieran como una categoría equivalente a nuestro vino, cerveza o hidromiel. Nombrar con prudencia es parte de conservar la evidencia."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_fermented_beverage_jiahu_7th_millennium_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_jiahu_fermented_beverage_pnas_2004",
+          "src_jiahu_site_wiley_2013"
+        ],
+        "method": {
+          "title": "Cómo se detecta una bebida que ya no existe",
+          "body": "El estudio combina análisis químicos de residuos absorbidos en la cerámica con el contexto arqueológico de los recipientes. La conclusión se formula sobre compatibilidad y procesamiento, no sobre una receta moderna exacta."
+        },
+        "limits": "La mezcla concreta, su graduación alcohólica y la comunidad microbiana no pueden reconstruirse como si dispusiéramos del producto fresco. «Evidencia temprana» tampoco equivale a «origen absoluto».",
+        "whyItMatters": "Demuestra que la fermentación alimentaria puede ser una tecnología empírica sofisticada sin teoría microbiológica.",
+        "nextQuestion": "Si distintas comunidades fermentaban sin conocer microorganismos, ¿estaban haciendo en realidad una sola cosa o muchas tecnologías diferentes?",
+        "glossaryRefs": [
+          "fermentacion"
+        ]
+      },
+      {
+        "id": "fermentation_2_diversity",
+        "sceneType": "comparison",
+        "label": "02 · Cáucaso meridional + cuenca del Tarim · Neolítico–Edad del Bronce",
+        "title": "Una palabra moderna agrupa transformaciones muy diferentes",
+        "lead": "Vino y queso tipo kéfir comparten intervención microbiana, pero no materia prima, proceso, paisaje ni función social.",
+        "geography": {
+          "today": "Georgia meridional + Xinjiang · China",
+          "region": "Cáucaso meridional y cuenca del Tarim",
+          "orientation": "La escena salta entre dos regiones de Eurasia separadas por miles de kilómetros. El mapa muestra Gadachrili Gora; Xiaohe permanece sin punto hasta disponer de una referencia espacial suficientemente trazable dentro del corpus.",
+          "society": "Comunidades agrícolas neolíticas del Cáucaso y poblaciones de la Edad del Bronce de la cuenca del Tarim, en contextos económicos y funerarios distintos."
+        },
+        "narrative": [
+          "En Gadachrili Gora, la evidencia biomolecular y arqueobotánica apunta al vino de uva en grandes recipientes neolíticos. En Xiaohe, más de cuatro milenios después, el objeto de estudio es muy distinto: pequeños restos lácteos conservados en un contexto funerario.",
+          "El estudio de 2024 sobre Xiaohe recuperó ADN antiguo de aquellas muestras y caracterizó señales compatibles con queso tipo kéfir, incluidas bacterias asociadas a esta fermentación. Aquí la evidencia no depende solo de la forma del alimento: llega hasta material genético preservado en el propio producto.",
+          "Reunir ambos casos bajo «fermentación» es útil si no borra sus diferencias. Una fermentación alcohólica de mosto de uva y una fermentación láctea de leche transforman sustratos distintos, dependen de comunidades microbianas diferentes y generan productos con propiedades también distintas.",
+          "Por eso esta historia no propone una escalera universal que vaya de una bebida a otra. Muestra algo más importante: muchas sociedades aprendieron a aprovechar ecosistemas microbianos mediante prácticas locales, aunque no compartieran una teoría común sobre lo que ocurría.",
+          "La comparación introduce además otra precaución: reconocer microorganismos asociados a una fermentación no significa que sus productores conocieran especies, cepas o cultivos como conceptos separados. La práctica podía ser estable y transmisible mediante materias, recipientes y reinóculos sin una clasificación microbiológica formal."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_wine_gadachrili_6000_5800_bce"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_xiaohe_kefir_cheese_ca_3500_bp"
+          }
+        ],
+        "sourceRefs": [
+          "src_mcgovern_2017_neolithic_wine",
+          "src_xiaohe_cheese_cell_2024",
+          "src_xiaohe_environment_plos_2013"
+        ],
+        "method": {
+          "title": "Cuando las evidencias no son del mismo tipo",
+          "body": "Gadachrili se apoya en residuos químicos y datos arqueobotánicos; Xiaohe incorpora ADN antiguo del alimento y sus microorganismos. Compararlos exige conservar la procedencia y los límites de cada método."
+        },
+        "limits": "El queso de Xiaohe documenta un sistema de fermentación láctea concreto y no demuestra un único origen del kéfir. La coincidencia dentro de una historia transversal tampoco implica contacto entre ambos lugares.",
+        "whyItMatters": "Rompe la idea de que «fermentación» sea un único invento o una única ruta histórica.",
+        "nextQuestion": "Durante milenios se podían repetir estas transformaciones. ¿Qué cambió cuando la ciencia empezó a preguntar qué agente las producía?",
+        "glossaryRefs": [
+          "fermentacion",
+          "bacterias_acido_lacticas"
+        ]
+      },
+      {
+        "id": "fermentation_3_pasteur_1857",
+        "sceneType": "turning_point",
+        "label": "03 · Lille–París · 1857",
+        "title": "Pasteur cambia la pregunta: de la transformación al agente vivo",
+        "lead": "La fermentación deja de estudiarse solo como una modificación química del alimento y pasa a investigarse también como actividad de organismos vivos.",
+        "geography": {
+          "today": "Lille y París · Francia",
+          "region": "Francia industrial y científica del siglo XIX",
+          "orientation": "Pasteur inició sus estudios de fermentación durante su etapa como decano en Lille y en 1857 regresó a la École Normale Supérieure de París, donde continuó su programa experimental.",
+          "society": "Industria de alcohol de remolacha, laboratorios de química y una comunidad científica que debatía la naturaleza de la fermentación y la generación espontánea."
+        },
+        "narrative": [
+          "Pasteur llegó al problema desde la química y desde una necesidad industrial concreta. En Lille, productores de alcohol sufrían fermentaciones irregulares. La cronología del Institut Pasteur sitúa el comienzo de sus estudios en 1855, la investigación sobre fermentación alcohólica en 1856 y sus memorias sobre fermentaciones láctica y alcohólica en 1857.",
+          "Sus observaciones relacionaron transformaciones distintas con microorganismos también distintos. La fermentación láctica no era simplemente el mismo fenómeno que la alcohólica bajo otra apariencia. Esa especificidad ayudó a convertir a los microorganismos en parte de la explicación experimental del proceso.",
+          "El cambio conceptual es enorme para la historia alimentaria. Si un proceso depende de organismos concretos, entonces las desviaciones, contaminaciones y resultados repetibles pueden estudiarse mediante condiciones de cultivo, observación microscópica y experimentación, no solo mediante una receta transmitida por experiencia.",
+          "Pero 1857 no es el año en que «se inventó» la fermentación ni el momento en que toda su bioquímica quedó resuelta. Pasteur trabajó dentro de debates científicos más amplios y su explicación se desarrolló durante años."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "pasteur_fermentation_1857"
+          }
+        ],
+        "sourceRefs": [
+          "src_pasteur_history_1857",
+          "src_pasteur_early_fermentation_1857_1862"
+        ],
+        "method": {
+          "title": "Cómo documentamos un giro científico",
+          "body": "La escena usa la cronología institucional del Institut Pasteur y su síntesis de los trabajos de 1847–1862 para fijar qué investigó y cuándo, evitando convertir una fecha editorial en una invención absoluta."
+        },
+        "limits": "La escena resume un debate científico complejo y no atribuye a Pasteur en solitario todo el conocimiento posterior sobre metabolismo fermentativo.",
+        "whyItMatters": "Identificar agentes vivos convierte una práctica ancestral en un problema experimental que puede analizarse y controlarse de otra manera.",
+        "nextQuestion": "Comprender que microorganismos concretos intervienen en el proceso permite hacer otra pregunta: ¿podemos impedir que algunos alteren el alimento?",
+        "glossaryRefs": [
+          "fermentacion",
+          "levadura",
+          "bacterias_acido_lacticas"
+        ]
+      },
+      {
+        "id": "fermentation_4_wine_control",
+        "sceneType": "application",
+        "label": "04 · Francia · 1863–1865",
+        "title": "Del microorganismo al control del deterioro",
+        "lead": "El conocimiento microbiológico empieza a traducirse en una intervención tecnológica sobre un alimento real: el vino.",
+        "geography": {
+          "today": "Arbois y otros centros de trabajo de Pasteur · Francia",
+          "region": "Jura y Francia del Segundo Imperio",
+          "orientation": "La historia del vino ya sitúa Arbois como punto de referencia para los trabajos de Pasteur. Aquí regresamos al mismo alimento desde una pregunta distinta: cómo estabilizarlo.",
+          "society": "Viticultura, comercio del vino y ciencia aplicada a problemas de alteración y conservación."
+        },
+        "narrative": [
+          "En 1863 Napoleón III pidió a Pasteur que estudiara las enfermedades de los vinos. El problema no era producir alcohol desde cero, sino entender por qué un vino ya elaborado podía sufrir alteraciones que arruinaban su calidad y su capacidad de viajar o almacenarse.",
+          "Pasteur relacionó determinadas alteraciones con microorganismos y ensayó el calentamiento moderado del vino en condiciones destinadas a limitar el contacto con el aire. En 1865 presentó una patente de conservación y mejora mediante ese procedimiento.",
+          "La importancia de esta escena dentro de Fermentación no es repetir la Historia del Vino. Es mostrar el cambio de escala intelectual: cuando se distinguen microorganismos deseados de organismos asociados al deterioro, la intervención puede diseñarse sobre el proceso microbiano.",
+          "El calor aplicado a alimentos es mucho más antiguo que Pasteur. Lo novedoso aquí es la articulación entre una explicación microbiológica concreta, un problema industrial y un procedimiento controlado de conservación.",
+          "El caso muestra también que “controlar” no significa esterilizar ni eliminar toda vida microbiana. En una bebida fermentada, parte de la microbiota participa en la transformación deseada y otra puede provocar alteraciones. La tecnología consiste en intervenir con un objetivo definido y en un momento concreto del proceso."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "pasteurization_wine_1863_1865"
+          }
+        ],
+        "sourceRefs": [
+          "src_pasteur_legacy",
+          "src_pasteur_middle_years",
+          "src_science_history_pasteur",
+          "src_pasteur_letter_1866"
+        ],
+        "method": {
+          "title": "Cruzar institución, historia de la ciencia y documento primario",
+          "body": "La cronología del Institut Pasteur se contrasta con Science History Institute y correspondencia primaria de 1866. La fecha de la patente y la finalidad del procedimiento no dependen de una única fuente divulgativa."
+        },
+        "limits": "Pasteurización y fermentación no son sinónimos: una busca controlar determinados microorganismos mediante calor; la otra describe transformaciones metabólicas. La escena las conecta porque el conocimiento microbiano permite intervenir sobre ambas.",
+        "whyItMatters": "Es el paso de explicar un fenómeno a diseñar una tecnología basada explícitamente en esa explicación.",
+        "nextQuestion": "Controlar microorganismos indeseados es un avance. Pero ¿cómo conseguir que el microorganismo deseado sea también más reproducible de un lote a otro?",
+        "glossaryRefs": [
+          "pasteurizacion",
+          "fermentacion"
+        ]
+      },
+      {
+        "id": "fermentation_5_hansen_1883",
+        "sceneType": "standardization",
+        "label": "05 · Copenhague · noviembre de 1883",
+        "title": "Hansen: seleccionar una levadura y repetirla a escala industrial",
+        "lead": "El siguiente salto no consiste en descubrir que existen levaduras, sino en aislar una población seleccionada y convertirla en una herramienta de producción reproducible.",
+        "geography": {
+          "today": "Copenhague · Dinamarca",
+          "region": "Carlsberg Research Laboratory · industria cervecera europea",
+          "orientation": "El laboratorio de investigación de Carlsberg se creó junto a la cervecería de Copenhague como institución dedicada a resolver problemas científicos de la elaboración.",
+          "society": "Industria cervecera de gran escala, laboratorios microbiológicos emergentes y circulación internacional del conocimiento de Pasteur y sus contemporáneos."
+        },
+        "narrative": [
+          "La cerveza del siglo XIX podía sufrir lo que los cerveceros llamaban beer sickness: lotes con sabores y comportamientos indeseados. Emil Chr. Hansen, en el Carlsberg Research Laboratory, investigó la contaminación por levaduras no deseadas dentro de los cultivos de inoculación.",
+          "Su solución consistió en aislar una sola célula de una levadura adecuada y propagarla como cultivo puro. Carlsberg documenta que el nuevo cultivo se utilizó con éxito a escala de producción en noviembre de 1883.",
+          "Esto no significa que Hansen inventara la levadura ni que antes no existiese selección artesanal. Los cerveceros habían reutilizado sedimentos y fermentos de elaboraciones anteriores durante generaciones. La diferencia es el grado de aislamiento, identificación y reproducibilidad que permite el laboratorio.",
+          "La historia termina aquí porque el principio ya es reconocible en muchas fermentaciones modernas: caracterizar un microorganismo, conservarlo, multiplicarlo e inocularlo de forma deliberada. Los starters actuales son mucho más diversos y sofisticados, pero el cambio de lógica ya está visible.",
+          "La innovación de Hansen es por ello más precisa que la expresión popular “descubrir la levadura”. Las levaduras eran visibles al microscopio y su papel fermentativo estaba en discusión científica desde antes; el avance industrial fue disponer de una estrategia para separar una levadura seleccionada de otras poblaciones y propagarla de forma controlada."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "hansen_pure_yeast_1883"
+          }
+        ],
+        "sourceRefs": [
+          "src_carlsberg_hansen_pure_yeast_1883",
+          "src_pasteur_carlsberg_2023"
+        ],
+        "method": {
+          "title": "Qué puede y qué no puede demostrar una historia institucional",
+          "body": "Carlsberg ofrece una cronología directa del trabajo de Hansen y del uso industrial de 1883; el Institut Pasteur aporta contexto independiente sobre la relación científica entre Hansen, Pasteur y la cervecería. La escena evita afirmaciones genéticas universales sobre todas las lager modernas."
+        },
+        "limits": "Un cultivo puro no elimina toda variabilidad del proceso y la microbiología contemporánea no puede proyectarse retrospectivamente sobre cada fermentación artesanal anterior.",
+        "whyItMatters": "La selección empírica se convierte en selección microbiológica explícita y parcialmente estandarizable.",
+        "nextQuestion": "Fin del recorrido. La siguiente capa del museo podrá estudiar cómo los cultivos iniciadores, el control de temperatura y las técnicas moleculares amplían ese principio sin borrar la diversidad de fermentaciones tradicionales.",
+        "glossaryRefs": [
+          "levadura",
+          "cultivo_puro",
+          "cultivo_iniciador",
+          "fermentacion"
+        ]
+      }
+    ]
   }
 ]

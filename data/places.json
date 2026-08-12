@@ -489,5 +489,37 @@
       "src_mcgovern_2017_neolithic_wine"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "jiahu_henan",
+    "name": "Jiahu · Henan",
+    "type": "site",
+    "point": {
+      "lat": 33.6,
+      "lon": 113.6666666667,
+      "precision": "exact_from_publication",
+      "sourceRefs": [
+        "src_jiahu_site_wiley_2013"
+      ],
+      "note": "Coordenadas publicadas para el yacimiento de Jiahu; sitúan el sitio arqueológico, no una vasija concreta."
+    },
+    "summary": "Yacimiento neolítico de Wuyang, Henan, en la cuenca del río Huai, con ocupación, cerámica y un registro alimentario excepcionalmente diverso.",
+    "sourceRefs": [
+      "src_jiahu_fermented_beverage_pnas_2004",
+      "src_jiahu_site_wiley_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "xiaohe_cemetery",
+    "name": "Cementerio de Xiaohe · Xinjiang",
+    "type": "site",
+    "point": null,
+    "summary": "Necrópolis de la Edad del Bronce en el entorno de Lop Nur, cuenca del Tarim. Se conserva sin punto cartográfico hasta disponer en el corpus de una referencia espacial primaria o académica suficientemente trazable para ese propósito.",
+    "sourceRefs": [
+      "src_xiaohe_cheese_cell_2024",
+      "src_xiaohe_environment_plos_2013"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -216,5 +216,57 @@
       "src_chorleywood_bread_process_1966"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "pasteur_fermentation_1857",
+    "name": "Pasteur y la interpretación biológica de la fermentación",
+    "type": "scientific_discovery",
+    "period": {
+      "start": 1857,
+      "end": 1857,
+      "precision": "exact",
+      "display": "1857"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "wine",
+      "cheese"
+    ],
+    "impactTypes": [
+      "enables"
+    ],
+    "summary": "En 1857 Pasteur publicó trabajos sobre fermentaciones láctica y alcohólica dentro de un programa iniciado en Lille. Sus experimentos vincularon fermentaciones específicas con microorganismos y ayudaron a desplazar una explicación puramente química hacia una interpretación biológica.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_pasteur_history_1857",
+      "src_pasteur_early_fermentation_1857_1862"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "hansen_pure_yeast_1883",
+    "name": "Hansen y el cultivo puro de levadura en Carlsberg",
+    "type": "scientific_discovery",
+    "period": {
+      "start": 1883,
+      "end": 1883,
+      "precision": "exact",
+      "display": "noviembre de 1883"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [],
+    "impactTypes": [
+      "standardizes",
+      "industrializes"
+    ],
+    "summary": "Emil Chr. Hansen aisló y propagó levadura desde una sola célula en cultivo puro; Carlsberg documenta su primer uso exitoso a escala de producción en noviembre de 1883. El avance permitió reducir parte de la variabilidad microbiana de la elaboración cervecera.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_carlsberg_hansen_pure_yeast_1883",
+      "src_pasteur_carlsberg_2023"
+    ],
+    "status": "reviewed"
   }
 ]

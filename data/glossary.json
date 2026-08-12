@@ -86,13 +86,37 @@
   {
     "id": "fermentacion",
     "term": "fermentación",
-    "definition": "Transformación causada por microorganismos como levaduras y bacterias. En el vino, las levaduras convierten principalmente los azúcares de la uva en alcohol y dióxido de carbono.",
+    "definition": "Transformación bioquímica en la que microorganismos y sus enzimas metabolizan componentes de un alimento o bebida. En alimentación incluye procesos diversos —alcohólicos, lácticos y otros— y no equivale por sí sola a conservación o inocuidad.",
     "status": "reviewed"
   },
   {
     "id": "edad_del_bronce",
     "term": "Edad del Bronce",
     "definition": "Periodo histórico definido por el uso generalizado de aleaciones de cobre, especialmente bronce, junto con cambios sociales y económicos que varían mucho según la región. No tiene las mismas fechas en todo el mundo.",
+    "status": "reviewed"
+  },
+  {
+    "id": "levadura",
+    "term": "levadura",
+    "definition": "Hongo unicelular. Determinadas especies y cepas participan en fermentaciones alimentarias, por ejemplo transformando azúcares en etanol, dióxido de carbono y otros metabolitos.",
+    "status": "reviewed"
+  },
+  {
+    "id": "bacterias_acido_lacticas",
+    "term": "bacterias ácido-lácticas",
+    "definition": "Grupo funcional de bacterias que producen ácido láctico como metabolito relevante a partir de azúcares y participan en numerosas fermentaciones de alimentos.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cultivo_puro",
+    "term": "cultivo puro",
+    "definition": "Cultivo obtenido a partir de una población microbiológica aislada y propagada bajo condiciones controladas. Históricamente permitió estudiar y reproducir con mayor precisión microorganismos concretos.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cultivo_iniciador",
+    "term": "cultivo iniciador / starter",
+    "definition": "Preparación de microorganismos seleccionados que se inocula para iniciar y orientar una fermentación de manera más controlada y reproducible.",
     "status": "reviewed"
   }
 ]

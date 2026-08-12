@@ -818,5 +818,49 @@
       ],
       "note": "La datación directa y la identificación morfológica se toman de PNAS 2026. La relación espacial con la historia del vino se presenta como coexistencia territorial documentada, no como causalidad."
     }
+  },
+  {
+    "id": "occ_fermented_beverage_jiahu_7th_millennium_bce",
+    "subjectRef": "mixed_fermented_beverage",
+    "placeRef": "jiahu_henan",
+    "period": {
+      "start": -7000,
+      "end": -6000,
+      "precision": "millennium",
+      "display": "VII milenio a. C.",
+      "note": "El artículo sitúa la producción de la bebida fermentada de Jiahu ya en el VII milenio a. C.; el Atlas conserva esa resolución amplia y no inventa un año puntual."
+    },
+    "occurrenceType": "production",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "Residuos orgánicos absorbidos en recipientes cerámicos de Jiahu son compatibles con una bebida fermentada procesada a base de arroz, miel y fruta. La evidencia documenta una práctica; no establece un origen absoluto de las bebidas fermentadas.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_jiahu_fermented_beverage_pnas_2004"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_xiaohe_kefir_cheese_ca_3500_bp",
+    "subjectRef": "cheese",
+    "placeRef": "xiaohe_cemetery",
+    "period": {
+      "start": -1600,
+      "end": -1500,
+      "precision": "circa",
+      "display": "ca. 3500 BP (aprox. siglo XVI a. C.)",
+      "note": "La publicación de 2024 describe muestras de queso tipo kéfir de unos 3.500 años. El rango del Atlas es deliberadamente aproximado y no pretende sustituir la cronología individual de cada enterramiento."
+    },
+    "occurrenceType": "archaeological_presence",
+    "evidenceType": "biomolecular",
+    "certainty": "high",
+    "summary": "ADN antiguo recuperado de restos lácteos del cementerio de Xiaohe identifica un queso tipo kéfir y permite estudiar microorganismos asociados a aquella fermentación láctea. El hallazgo documenta una tradición concreta, no un origen universal del kéfir.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_xiaohe_cheese_cell_2024"
+    ],
+    "status": "reviewed"
   }
 ]
