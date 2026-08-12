@@ -1,0 +1,26 @@
+{
+  "contractVersion": 1,
+  "frozenAt": "0.1.0-alpha.27",
+  "productRoles": {
+    "stories": "comprender",
+    "atlas": "descubrir",
+    "evidence": "verificar"
+  },
+  "storyTypes": [
+    "subject",
+    "transversal"
+  ],
+  "legacyStorySubjectRef": false,
+  "schemas": {
+    "schemas/context.schema.json": "c4fb063bf7013bc18f43d4478cce0d6784ab8bba183de8361efb8971b390ec0a",
+    "schemas/development.schema.json": "22495240c585a2a48893cc330f56a6fe6d3b3d1254345a45cc4eb32e8d857228",
+    "schemas/event.schema.json": "d226c35cbe9aa8d2f576aa2e6075afcd5b556b9a9bee0baf291805d8763b04be",
+    "schemas/glossary.schema.json": "4d8c0304e1dfe366dc55f5724a97e02dc63a6da452995d064b33f3829c721b96",
+    "schemas/occurrence.schema.json": "ba712ad51ba580800c2ead885b244f3c2283a56348cdb458ed2866a0a614a1a7",
+    "schemas/place.schema.json": "229b78b7d68df48b6fd5c66e0cc8afdb26681642aab398e9e3e131ae0d109df3",
+    "schemas/relationship.schema.json": "9b1233f91df0cec4a4ff44878b8c9caa8f0243f05b7a08e026c77361420c0159",
+    "schemas/source.schema.json": "6d044d9996683e50d6cabeb264f85cd7f30d470a2f514f079d4727a92309ee41",
+    "schemas/story.schema.json": "a1ba38455ba514511ebed3236a72f06a3a39dc2fb08c8e77345f7f99ddb3dcb6",
+    "schemas/subject.schema.json": "4f6e813527dae0d90d4422ce57cbf77468502a0db83f08289988fcdb7e5a8749"
+  }
+}

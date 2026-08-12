@@ -2,13 +2,13 @@ from pathlib import Path
 import json,sys,hashlib
 ROOT=Path(__file__).resolve().parents[1]
 def load(n): return json.loads((ROOT/'data'/n).read_text(encoding='utf-8'))
-stories=load('stories.json'); glossary=load('glossary.json')
+stories=load('stories.json'); glossary=load('glossary.json'); config=load('config.json')
 occ={x['id'] for x in load('occurrences.json')}; events={x['id'] for x in load('events.json')}; dev={x['id'] for x in load('developments.json')}
 sources={x['id'] for x in load('sources.json')}; subjects={x['id'] for x in load('subjects.json')}
 app=(ROOT/'js/app.js').read_text(encoding='utf-8'); html=(ROOT/'index.html').read_text(encoding='utf-8')
 fingerprint=json.loads((ROOT/'docs/G2_CONTRACT_FINGERPRINT.json').read_text(encoding='utf-8'))
 errors=[]
-if len(stories)!=3: errors.append(f'se esperaban 3 historias curadas, hay {len(stories)}')
+if len(stories)<3: errors.append(f'se esperaban al menos 3 historias curadas, hay {len(stories)}')
 by={x['id']:x for x in stories}
 expected=[('story_wine',6,'subject'),('story_bread',7,'subject'),('story_fermentation',5,'transversal')]
 for sid,n,typ in expected:
@@ -35,9 +35,10 @@ for sid,n,typ in expected:
         for ir in scene.get('itemRefs',[]):
             target={'occurrence':occ,'event':events,'development':dev}.get(ir.get('kind'))
             if target is None or ir.get('ref') not in target: errors.append(scene['id']+': itemRef roto '+str(ir))
+version=config['project']['version']
 for needle in [
-    "stories:'./data/stories.json?v=0.1.0-alpha.26'",
-    "glossary:'./data/glossary.json?v=0.1.0-alpha.26'",
+    f"stories:'./data/stories.json?v={version}'",
+    f"glossary:'./data/glossary.json?v={version}'",
     'function openNarrativeStory(storyId,sceneIndex=0)','function renderNarrativeStory()','function stepNarrativeScene(direction)','function renderStoryMap(scene)','function openGlossaryEntry(id)','function preferredStoryForSubject(subjectId)',
 ]:
     if needle not in app: errors.append('motor narrativo falta: '+needle)
@@ -51,5 +52,5 @@ for rel,expected_hash in fingerprint['files'].items():
 if errors:
     print('NARRATIVE MUSEUM CONTRACT: FAIL'); [print('ERROR:',e) for e in errors]; sys.exit(1)
 print('NARRATIVE MUSEUM CONTRACT: PASS')
-print('Stories: 3 · Scenes: 18 · Glossary:',len(glossary))
+print(f'Stories: {len(stories)} · Scenes: {sum(len(x.get("scenes",[])) for x in stories)} · Glossary: {len(glossary)}')
 print('Generic subject + transversal engine · G2 fingerprint 9/9.')

@@ -389,7 +389,7 @@ Contrato: mapa global filtrado + fecha como énfasis + `En esta fecha` temporal 
 ---
 
 ## Product Consolidation
-**Estado: IMPLEMENTADO TÉCNICAMENTE · alpha.24 · pendiente aceptación Xiaomi**
+**Estado: CERRADO · aceptación funcional y museográfica completada en alpha.27**
 
 ### Gate A — interacción real
 Validar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Sin contenido nuevo.
@@ -503,7 +503,7 @@ No bloquea G1 ni G2.
 ---
 
 ## Alpha.25 — Story Types
-**Estado: IMPLEMENTADO TÉCNICAMENTE · pendiente aceptación Xiaomi**
+**Estado: CERRADO · contrato demostrado con Fermentación y congelado en alpha.27**
 
 Objetivo: demostrar que Historias puede representar tanto recorridos monográficos como transversales sin modelar técnicas/procesos como subjects ficticios.
 
@@ -545,3 +545,54 @@ Objetivo: demostrar con Fermentación que el contrato transversal funciona con c
 2. congelación formal del contrato de producto si pasa;
 3. reanudación E1: Cacao/chocolate → Café → Azúcar → Patata → Especias/conservación;
 4. G4 permanece bloqueado hasta disponer de corpus suficiente.
+
+
+## Alpha.27 — Museographic Gate + Product Contract Freeze
+**Estado: CERRADO**
+
+- gate funcional alpha.26 aceptado en Xiaomi;
+- gate museográfico Vino/Pan/Fermentación PASS;
+- tiempos de visita ajustados a volumen real;
+- contexto duplicado eliminado;
+- cobertura cartográfica parcial visible;
+- `relatedSubjectRefs` limitado a cobertura efectiva;
+- diez schemas canónicos fingerprinted;
+- arquitectura formalmente congelada.
+
+### Regla posterior a alpha.27
+Una nueva historia debe resolverse con el contrato actual. Cualquier ruptura de schema exige decisión, migración, tests y actualización explícita del fingerprint.
+
+### Reanudación E1
+**Cacao/chocolate → Café → Azúcar → Patata → Especias/conservación.**
+
+Objetivo operativo: ~20 % ingeniería / 80 % investigación, redacción y curación.
+
+
+## Alpha.28 — Cacao/chocolate
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Primera demostración editorial posterior al Product Contract Freeze.
+
+### Integrado
+- 5 escenas de Cacao/chocolate;
+- alta Amazonía, Puerto Escondido, mundo maya clásico, circulación atlántica e industrialización;
+- 1 subject, 7 places, 3 occurrences, 4 developments, 11 sources y 3 términos de glosario;
+- ningún cambio en los diez schemas congelados ni lógica específica por historia.
+
+### Reglas epistemológicas
+- cacao no se usa como sinónimo automático de chocolate;
+- evidencia más antigua conocida no se presenta como origen absoluto;
+- la hipótesis de fermentación de pulpa en Puerto Escondido conserva su carácter interpretativo;
+- prensa Van Houten 1828 se separa de la alcalinización/dutching posterior;
+- no se canoniza una «primera tableta» dependiente de definición;
+- Daniel Peter se formula como ensayos documentados desde 1875;
+- conchado Lindt 1879 se explica sin necesitar la anécdota de la máquina olvidada.
+
+### Gate
+1. validar las 5 escenas en móvil;
+2. comprobar ausencia de regresiones en Vino/Pan/Fermentación;
+3. comprobar búsqueda `cacao` y `chocolate`;
+4. comprobar mapas parciales/no puntuales;
+5. si pasa, cerrar Cacao y continuar **Café → Azúcar → Patata → Especias/conservación**.
+
+La regla post-freeze se mantiene: una nueva historia se resuelve con el contrato existente; romper schema requiere ADR, migración y actualización explícita del fingerprint.

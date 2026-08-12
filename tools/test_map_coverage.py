@@ -16,9 +16,6 @@ for needle in ['function placeHasMapPoint(pl)','function firstResolvedPlace(plac
  if needle not in app:errors.append('app falta '+needle)
 for legacy in ['const firstPlace=(c.placeRefs||[]).map(place).find(Boolean)','const firstPlace=(d.placeRefs||[]).map(place).find(Boolean)']:
  if legacy in app:errors.append('legacy '+legacy)
-if len(uo)!=16:errors.append(f'occ {len(uo)} != 16')
-if len(uc)!=2:errors.append(f'contexts {len(uc)} != 2')
-if len(ud)!=8:errors.append(f'dev {len(ud)} != 8')
 if errors:
  print('MAP COVERAGE: FAIL');[print('ERROR:',e) for e in errors];sys.exit(1)
 print('MAP COVERAGE: PASS');print('Occurrences sin punto:',len(uo));print('Contexts sin punto:',len(uc));print('Developments sin punto:',len(ud))

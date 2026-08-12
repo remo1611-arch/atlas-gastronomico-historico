@@ -165,11 +165,30 @@ Estado de continuación:
 - No añadir historias/corpus hasta completar `docs/MOBILE_ACCEPTANCE_ALPHA24.md`. Alpha.24 corrige cobertura multicapas y firstMappablePlace; después, gate museográfico Vino/Pan y congelación del contrato.
 
 
-Estado de continuación alpha.26:
-- Primera historia transversal real integrada: Fermentación, 5 escenas.
-- Corpus: 13 subjects / 33 places / 34 occurrences / 98 sources / 3 stories / 18 scenes / 20 glossary entries.
-- QA automatizado: 53/53 Python + 5/5 Node + validador/sintaxis PASS antes de empaquetado.
-- Raqefet excluido por controversia; no inferir pan fermentado ni coordenadas de Xiaohe.
-- Gate pendiente: `docs/MOBILE_ACCEPTANCE_ALPHA26.md` en Xiaomi real.
-- Si pasa: gate museográfico Vino/Pan/Fermentación y congelación formal del contrato.
-- No iniciar G4 ni añadir otra historia antes de resolver ese gate.
+Estado de continuación alpha.27:
+- Gate funcional de alpha.26 aceptado en Xiaomi.
+- Gate museográfico conjunto Vino/Pan/Fermentación: PASS.
+- Contrato de producto formalmente congelado: Historias = comprender · Atlas = descubrir · Evidencia = verificar.
+- `storyType=subject|transversal` queda como contrato narrativo canónico; no existe `story.subjectRef` legacy.
+- `relatedSubjectRefs` solo declara subjects efectivamente cubiertos por evidencias de la visita.
+- Corpus histórico sin cambios respecto a alpha.26: 13 subjects / 33 places / 34 occurrences / 98 sources / 3 stories / 18 scenes / 20 glossary entries.
+- Vino ~10 min; Pan ~10 min; Fermentación ~7 min.
+- Mapas de escena informan cobertura parcial y no inventan puntos.
+- Fingerprint del contrato: `docs/PRODUCT_CONTRACT_FINGERPRINT.json`.
+- Próxima fase: E1 Cacao/chocolate → Café → Azúcar → Patata → Especias/conservación.
+- No reabrir arquitectura salvo necesidad demostrada + migración explícita + actualización del fingerprint.
+- G4 sigue sin iniciarse hasta disponer de corpus suficiente.
+
+
+Estado de continuación alpha.28:
+- Product Contract Freeze alpha.27 sigue ACTIVE; no actualizar fingerprint salvo migración explícita.
+- Primera expansión post-freeze integrada: Historia del cacao y el chocolate, 5 escenas.
+- Corpus: 14 subjects / 40 places / 37 occurrences / 109 sources / 4 stories / 23 scenes / 23 glossary.
+- Cacao: 3 occurrences arqueológicas + 4 developments históricos/industriales.
+- No afirmar «primer chocolate» ni «primera tableta» como prioridad universal.
+- Van Houten 1828 = prensado; dutching/alcalinización es posterior y distinto.
+- Daniel Peter = ensayos documentados desde 1875; Lindt = conchado 1879.
+- Santa Ana-La Florida, Puerto Escondido y ámbito maya permanecen sin punto si no existe procedencia puntual suficiente en la fuente seleccionada.
+- QA automatizado alpha.28: PASS; aceptación móvil pendiente.
+- Si pasa, siguiente dossier E1: Café; después Azúcar → Patata → Especias/conservación.
+- G4 sigue bloqueado hasta densidad de corpus suficiente.

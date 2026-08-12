@@ -7,9 +7,9 @@ st=stories.get('story_fermentation')
 if not st: errors.append('falta story_fermentation')
 else:
     if st.get('storyType')!='transversal' or st.get('primarySubjectRef') is not None: errors.append('contrato transversal incorrecto')
-    required={'mixed_fermented_beverage','wine','bread_like_flatbread','cheese'}
+    required={'mixed_fermented_beverage','wine','cheese'}
     if not required.issubset(set(st.get('relatedSubjectRefs',[]))): errors.append('relatedSubjectRefs incompletos')
-    if len(st.get('scenes',[]))!=5: errors.append('Fermentación debe cerrar alpha.26 con 5 escenas')
+    if len(st.get('scenes',[]))!=5: errors.append('Fermentación debe mantenerse en 5 escenas tras el gate museográfico')
     ids=[s['id'] for s in st.get('scenes',[])]
     if ids!=['fermentation_1_jiahu','fermentation_2_diversity','fermentation_3_pasteur_1857','fermentation_4_wine_control','fermentation_5_hansen_1883']: errors.append('orden editorial inesperado')
     text=json.dumps(st,ensure_ascii=False).lower()

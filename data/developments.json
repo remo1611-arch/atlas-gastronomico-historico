@@ -268,5 +268,132 @@
       "src_pasteur_carlsberg_2023"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "chocolate_established_spain_1600_1650",
+    "name": "Consolidación del chocolate en España",
+    "type": "culinary_adoption",
+    "period": {
+      "start": 1600,
+      "end": 1650,
+      "precision": "approximate_range",
+      "display": "primera mitad del siglo XVII"
+    },
+    "placeRefs": [
+      "spain_early_modern_regional"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "cacao"
+    ],
+    "impactTypes": [
+      "adoption",
+      "reformulation",
+      "global_circulation"
+    ],
+    "summary": "Durante la primera mitad del siglo XVII el chocolate se consolidó en España. La historiografía reciente subraya que la adopción europea internalizó y adaptó prácticas mesoamericanas, en lugar de constituir una invención europea independiente.",
+    "certainty": "medium_high",
+    "sourceRefs": [
+      "src_norton_chocolate_ahr_2006",
+      "src_loveman_chocolate_england_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "van_houten_cocoa_press_1828",
+    "name": "Patente de prensado de cacao de Coenraad van Houten",
+    "type": "processing_technology",
+    "period": {
+      "start": 1828,
+      "end": 1828,
+      "precision": "exact",
+      "display": "4 de abril de 1828"
+    },
+    "placeRefs": [
+      "amsterdam_netherlands"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "cacao"
+    ],
+    "impactTypes": [
+      "separates_cocoa_butter",
+      "enables_cocoa_powder",
+      "changes_formulation"
+    ],
+    "summary": "Coenraad van Houten obtuvo una patente para prensar la grasa de la masa de cacao sin añadir agua, produciendo tortas con menos grasa que podían molerse en cacao en polvo. Este hito debe distinguirse de la alcalinización o “dutching”, desarrollada posteriormente.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_smithsonian_chocolate_technology_2009",
+      "src_smithsonian_chocolate_vessels"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "museum_scholarly_crosscheck",
+      "independentSourceRefs": [
+        "src_smithsonian_chocolate_vessels"
+      ],
+      "note": "La fecha y función de la patente se contrastan entre un capítulo histórico-técnico y material del Smithsonian."
+    }
+  },
+  {
+    "id": "daniel_peter_milk_chocolate_trials_1875",
+    "name": "Ensayos de Daniel Peter con leche condensada para chocolate con leche",
+    "type": "product_process_development",
+    "period": {
+      "start": 1875,
+      "end": 1875,
+      "precision": "documented_start",
+      "display": "desde 1875"
+    },
+    "placeRefs": [
+      "vevey_switzerland"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "cacao"
+    ],
+    "impactTypes": [
+      "new_formulation",
+      "moisture_control"
+    ],
+    "summary": "La cronología de Nestlé documenta que en 1875 Daniel Peter empleó leche condensada en ensayos destinados a obtener chocolate con leche sólido. El Atlas conserva 1875 como inicio documentado de los ensayos, no como una fecha universal de “invención” cerrada.",
+    "certainty": "medium_high",
+    "sourceRefs": [
+      "src_nestle_daniel_peter_history",
+      "src_smithsonian_chocolate_technology_2009"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "lindt_conching_1879",
+    "name": "Conchado de Rodolphe Lindt",
+    "type": "processing_technology",
+    "period": {
+      "start": 1879,
+      "end": 1879,
+      "precision": "exact",
+      "display": "1879"
+    },
+    "placeRefs": [
+      "bern_switzerland"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "cacao"
+    ],
+    "impactTypes": [
+      "texture_control",
+      "flavor_development",
+      "flow_properties"
+    ],
+    "summary": "Rodolphe Lindt desarrolló en Berna el conchado: mezcla prolongada, aireación y trabajo mecánico que modifican textura, flujo y perfil aromático de la masa de chocolate. La anécdota del supuesto olvido de la máquina no se trata como evidencia histórica necesaria.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_lindt_conching_history",
+      "src_smithsonian_chocolate_technology_2009"
+    ],
+    "status": "reviewed"
   }
 ]

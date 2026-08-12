@@ -625,6 +625,7 @@ story
 Reglas de contrato:
 - `storyType="subject"`: `primarySubjectRef` es obligatorio y debe figurar también en `relatedSubjectRefs`.
 - `storyType="transversal"`: `primarySubjectRef` es `null` y `relatedSubjectRefs` contiene al menos dos subjects reales.
+- `relatedSubjectRefs` expresa **cobertura real de la visita**, no posibles conexiones futuras: cada subject declarado debe estar representado por evidencia del recorrido.
 - No existe `story.subjectRef` legacy. Una técnica o proceso transversal no se modela como alimento ficticio.
 - La portada de Historias es el punto de descubrimiento universal; desde una evidencia se prioriza su historia monográfica; si no existe, solo se selecciona una transversal cuando es la única candidata relacionada.
 
@@ -646,4 +647,6 @@ glossaryEntry
 ```
 
 El glosario pertenece a la capa de mediación museística, no al corpus de evidencia.
+
+Desde alpha.27 el contrato queda congelado y fingerprinted en `docs/PRODUCT_CONTRACT_FINGERPRINT.json`. Cambiar un schema exige una migración explícita y actualización deliberada de ese fingerprint.
 

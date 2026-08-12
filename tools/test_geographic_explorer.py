@@ -71,26 +71,21 @@ for needle in [
     if needle not in app:
         errors.append("marcadores sin semántica temporal: "+needle)
 
-# Data baseline demonstrates why this release exists.
+# Corpus diagnostics must remain valid as editorial content grows.
 public=[o for o in occ if o.get("status") in {"reviewed","verified"}]
 mapped=[o for o in public if places[o["placeRef"]].get("point")]
 at_1500=[o for o in public if o["period"]["start"]<=1500<=o["period"]["end"]]
 mapped_1500=[o for o in at_1500 if places[o["placeRef"]].get("point")]
 
-if len(public)!=34:
-    errors.append(f"baseline occurrences {len(public)} != 34")
-if len(mapped)!=18:
-    errors.append(f"baseline mapped {len(mapped)} != 18")
-if len(at_1500)!=1 or len(mapped_1500)!=0:
-    errors.append(f"diagnóstico 1500 inesperado: active={len(at_1500)} mapped={len(mapped_1500)}")
+if not public:
+    errors.append("el corpus público de occurrences está vacío")
+if not mapped:
+    errors.append("el Atlas no dispone de ninguna occurrence cartografiable")
 
-wine=[
-    o for o in public
-    if subjects[o["subjectRef"]]["name"]=="Vino"
-]
+wine=[o for o in public if subjects[o["subjectRef"]]["name"]=="Vino"]
 wine_mapped=[o for o in wine if places[o["placeRef"]].get("point")]
-if len(wine)!=5 or len(wine_mapped)!=5:
-    errors.append(f"vino baseline inesperado: {len(wine)} / {len(wine_mapped)} mapped")
+if len(wine)<5 or len(wine_mapped)<5:
+    errors.append(f"se perdió el núcleo geográfico de Vino: {len(wine)} / {len(wine_mapped)} mapped")
 
 if errors:
     print("GEOGRAPHIC EXPLORER: FAIL")
@@ -98,7 +93,7 @@ if errors:
     sys.exit(1)
 
 print("GEOGRAPHIC EXPLORER: PASS")
-print("Corpus: 34 occurrences · 18 mapped globally.")
-print("At 1500: 1 active occurrence · 0 mapped.")
-print("Wine search baseline: 5 occurrences · 5 mapped.")
+print(f"Corpus: {len(public)} public occurrences · {len(mapped)} mapped globally.")
+print(f"At 1500: {len(at_1500)} active occurrences · {len(mapped_1500)} mapped.")
+print(f"Wine geographic core: {len(wine)} occurrences · {len(wine_mapped)} mapped.")
 print("Map is global; current date remains a visual highlight and side-panel filter.")

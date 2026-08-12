@@ -11,7 +11,7 @@
     "teaser": "De una aldea neolítica del Cáucaso a Pasteur: una misma bebida permite estudiar química, producción, ritual, poder, comercio y microbiología.",
     "eyebrow": "6 escenas · unos 8.000 años",
     "subtitle": "No buscamos dónde «nació» el vino. Seguimos cómo cambian las preguntas y las pruebas: residuos, producción, ritual, economía palacial, comercio y microbiología.",
-    "estimatedMinutes": 5,
+    "estimatedMinutes": 10,
     "endTitle": "Una palabra, seis preguntas diferentes",
     "endText": "Si el recorrido funciona, «Vino» deja de ser un marcador repetido. Gadachrili habla de evidencia temprana; Areni de producción; Abydos de ritual y élite; Tel Kabri de almacenamiento palacial; Jerusalén de comercio y prestigio; Pasteur de microorganismos y conservación.",
     "sourceRefs": [
@@ -296,7 +296,7 @@
     "teaser": "De cazadores-recolectores a la panificación industrial: el pan revela cocina, tecnología, ritual, regulación y organización del trabajo.",
     "eyebrow": "7 escenas · más de 14.000 años",
     "subtitle": "No existe un único «pan» que avance en línea recta. Seguimos capacidades, rutinas, diversidad técnica, herramientas, ritual, regulación y producción industrial.",
-    "estimatedMinutes": 6,
+    "estimatedMinutes": 10,
     "endTitle": "El pan no tiene una sola historia",
     "endText": "Shubayqa muestra capacidad culinaria antes de la agricultura estable; Çatalhöyük, rutina doméstica; Küllüoba y Zúrich, diversidad; Ain Sukhna, tecnología; Saint-Memmie, contexto funerario; el assize, regulación; Chorleywood, organización industrial.",
     "sourceRefs": [
@@ -606,7 +606,6 @@
     "relatedSubjectRefs": [
       "mixed_fermented_beverage",
       "wine",
-      "bread_like_flatbread",
       "cheese"
     ],
     "title": "Historia de la fermentación",
@@ -614,7 +613,7 @@
     "teaser": "De una bebida neolítica en Jiahu al cultivo puro de Hansen: la historia sigue cómo una práctica milenaria pasó de repetirse empíricamente a explicarse y controlarse microbiológicamente.",
     "eyebrow": "5 escenas · práctica, evidencia y control",
     "subtitle": "No buscamos quién «inventó» la fermentación. Seguimos cambios en la evidencia y en el grado de control: bebidas, vino, lácteos, microbiología, conservación y cultivo puro.",
-    "estimatedMinutes": 6,
+    "estimatedMinutes": 7,
     "endTitle": "La fermentación no dejó de ser antigua cuando se volvió científica",
     "endText": "Durante milenios las comunidades seleccionaron materias, recipientes, tiempos y reinóculos sin una teoría microbiana. Pasteur cambió la explicación; Hansen aumentó la reproducibilidad. La ciencia no sustituyó una práctica primitiva: hizo visible y controlable parte de una biotecnología alimentaria mucho más antigua.",
     "sourceRefs": [
@@ -845,6 +844,246 @@
           "cultivo_puro",
           "cultivo_iniciador",
           "fermentacion"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story_cacao",
+    "storyType": "subject",
+    "primarySubjectRef": "cacao",
+    "relatedSubjectRefs": [
+      "cacao"
+    ],
+    "title": "Historia del cacao y el chocolate",
+    "question": "¿Cuándo deja de ser correcto llamar “chocolate” a cualquier evidencia de cacao?",
+    "teaser": "Del alto Amazonas a las fábricas del siglo XIX: el cacao cambia de uso, significado y tecnología hasta producir chocolates muy distintos de las primeras bebidas conocidas.",
+    "eyebrow": "5 escenas · más de 5.000 años",
+    "subtitle": "No buscamos una tableta inaugural. Seguimos cómo cambia la evidencia: uso de la planta, bebidas tempranas, cultura material maya, adopción atlántica y transformación industrial.",
+    "estimatedMinutes": 9,
+    "endTitle": "Cacao y chocolate no son la misma evidencia",
+    "endText": "Santa Ana-La Florida documenta uso de cacao; Puerto Escondido, bebidas tempranas; los vasos mayas permiten leer prácticas de consumo; la circulación atlántica transforma y difunde el chocolate; Van Houten, Peter y Lindt cambian materialmente lo que puede fabricarse con cacao.",
+    "sourceRefs": [
+      "src_cacao_salf_nature_2018",
+      "src_cacao_salf_unesco_2026",
+      "src_cacao_archaeogenomics_2024",
+      "src_puerto_escondido_cacao_pnas_2007",
+      "src_met_maya_chocolate_cup_2014",
+      "src_norton_chocolate_ahr_2006",
+      "src_loveman_chocolate_england_2013",
+      "src_smithsonian_chocolate_technology_2009",
+      "src_smithsonian_chocolate_vessels",
+      "src_nestle_daniel_peter_history",
+      "src_lindt_conching_history"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "cacao_1_salf",
+        "sceneType": "orientation",
+        "label": "01 · Alta Amazonía ecuatoriana · ca. 3500–3300 a. C.",
+        "title": "Santa Ana-La Florida: cacao antes de la historia mesoamericana que solíamos contar",
+        "lead": "La evidencia más antigua conocida no aparece en una corte maya ni en un documento azteca, sino en recipientes arqueológicos del sureste del actual Ecuador.",
+        "geography": {
+          "today": "Palanda · Zamora Chinchipe · Ecuador",
+          "region": "Vertiente oriental andina · alta Amazonía",
+          "orientation": "Santa Ana-La Florida se sitúa en el cantón Palanda, en una zona de transición entre Andes y Amazonía. El corpus conserva el yacimiento sin pin puntual porque las fuentes utilizadas aquí localizan el sitio regionalmente pero no aportan una coordenada arqueológica que queramos convertir en un centroide artificial.",
+          "society": "Comunidades de la tradición Mayo-Chinchipe-Marañón con arquitectura, contextos domésticos y funerarios e intercambios regionales."
+        },
+        "narrative": [
+          "Durante mucho tiempo, las historias populares del chocolate empezaban en Mesoamérica. La investigación arqueológica de Santa Ana-La Florida cambió esa imagen al identificar uso de Theobroma cacao en la alta Amazonía ecuatoriana hace aproximadamente 5.300 años.",
+          "El argumento no depende de una semilla visible etiquetada como cacao. El estudio combina tres líneas independientes: granos de almidón compatibles con Theobroma, residuos absorbidos de teobromina y ADN antiguo recuperado de recipientes arqueológicos. Cuando señales distintas convergen en el mismo contexto, la interpretación gana fuerza.",
+          "Esto permite hablar de uso temprano de cacao y de un centro antiguo de manejo/domesticación identificado en la alta Amazonía. No permite afirmar que allí una persona “inventó el chocolate”, ni que el producto se preparase como una bebida maya o como una tableta moderna.",
+          "Un estudio arqueogenómico de 2024 refuerza además la necesidad de pensar la domesticación y dispersión del cacao como una historia compleja de movimientos, mezclas y selecciones precolombinas, no como una flecha simple desde un único punto hacia todo el continente.",
+          "El lugar importa tanto como la fecha. Santa Ana-La Florida pertenece a un paisaje amazónico distinto de los grandes centros mesoamericanos que dominaron durante décadas la divulgación sobre cacao. La evidencia obliga así a separar dos preguntas: dónde documentamos usos muy antiguos de la planta y dónde se desarrollaron después tradiciones históricas de chocolate mejor conocidas por textos e imágenes."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_cacao_santa_ana_la_florida_3500_3300_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_cacao_salf_nature_2018",
+          "src_cacao_salf_unesco_2026",
+          "src_cacao_archaeogenomics_2024"
+        ],
+        "method": {
+          "title": "Tres señales diferentes para una misma planta",
+          "body": "Almidones, moléculas absorbidas y ADN antiguo responden a preguntas distintas. Coincidir en un mismo contexto reduce el riesgo de interpretar como cacao una señal aislada o ambigua."
+        },
+        "limits": "Uso de Theobroma cacao ≠ “chocolate” en sentido culinario moderno. Evidencia más antigua conocida ≠ origen absoluto de la planta o de todas sus preparaciones.",
+        "whyItMatters": "Obliga a separar planta, uso alimentario y producto cultural. Esa distinción será la regla de toda la historia.",
+        "nextQuestion": "Si el cacao se utilizaba en Sudamérica miles de años atrás, ¿qué tipo de bebida aparece después en Centroamérica?",
+        "glossaryRefs": [
+          "arqueobotanica",
+          "biomarcador",
+          "theobromine"
+        ]
+      },
+      {
+        "id": "cacao_2_puerto_escondido",
+        "sceneType": "evidence",
+        "label": "02 · Valle de Ulúa · ca. 1400–1100 a. C.",
+        "title": "Puerto Escondido: quizá primero interesó la pulpa, no la semilla tostada",
+        "lead": "Los residuos de cacao en vasijas hondureñas plantean una posibilidad contraintuitiva: una de las primeras bebidas mesoamericanas pudo parecerse más a una fermentación de la pulpa dulce que al chocolate posterior.",
+        "geography": {
+          "today": "Norte de la actual Honduras",
+          "region": "Valle de Ulúa · Caribe centroamericano",
+          "orientation": "Puerto Escondido se encuentra en el valle de Ulúa. El Atlas mantiene el yacimiento sin pin hasta incorporar una referencia espacial suficientemente trazable para el punto arqueológico concreto.",
+          "society": "Comunidades del Formativo temprano conectadas mediante redes regionales antes de las grandes configuraciones políticas mayas clásicas."
+        },
+        "narrative": [
+          "Los análisis químicos de recipientes de Puerto Escondido detectaron cacao en vasijas anteriores a 1000 a. C. Esto extendió hacia atrás la evidencia confirmada de bebidas de cacao en Mesoamérica.",
+          "Lo más interesante no es solo la fecha. Los autores propusieron que algunos de aquellos recipientes estrechos podían contener una bebida fermentada elaborada con la pulpa dulce que rodea las semillas del fruto. Es una hipótesis funcional basada en forma de vasijas, química y comparación etnográfica, no una receta recuperada.",
+          "La escena conecta con la Historia de la Fermentación, pero sin confundir categorías. Fermentar pulpa de cacao no equivale a preparar el chocolate espumado de épocas posteriores, y encontrar teobromina no nos dice por sí solo qué parte del fruto se usó ni cómo sabía la bebida.",
+          "Así aparece una segunda regla: la historia de un alimento puede cambiar incluso cuando la especie vegetal es la misma. Distintas partes del fruto y distintas operaciones producen objetos culinarios diferentes.",
+          "Esa cautela cambia también cómo leemos una vasija. Un resultado químico identifica un biomarcador compatible con cacao, pero la función culinaria surge al combinarlo con forma, contexto y comparación. La explicación más interesante no es necesariamente la más espectacular: aquí el valor está en reconstruir qué operaciones con el fruto son plausibles y cuáles siguen abiertas."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_cacao_puerto_escondido_1400_1100_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_puerto_escondido_cacao_pnas_2007"
+        ],
+        "method": {
+          "title": "Cuando la forma del recipiente entra en la interpretación",
+          "body": "Los residuos químicos demuestran presencia de cacao; la forma y capacidad de las vasijas ayudan a formular hipótesis sobre preparación y consumo. La parte “pulpa fermentada” es una interpretación propuesta, no un resultado químico directo."
+        },
+        "limits": "No rotulamos estas bebidas como “cerveza de cacao” ni como el primer chocolate. La cronología arqueológica conocida puede cambiar con nuevos hallazgos.",
+        "whyItMatters": "Enseña que cacao, bebida fermentada de cacao y chocolate son categorías históricas relacionadas pero no intercambiables.",
+        "nextQuestion": "Siglos después, la cerámica maya no solo conserva residuos: también empieza a decirnos para qué servían algunos vasos y cómo se buscaba la espuma.",
+        "glossaryRefs": [
+          "fermentacion",
+          "theobromine"
+        ]
+      },
+      {
+        "id": "cacao_3_maya",
+        "sceneType": "culture",
+        "label": "03 · Mundo maya clásico · siglos VII–IX d. C.",
+        "title": "Cuando el recipiente empieza a “hablar”: beber cacao también era escribir, mostrar y compartir",
+        "lead": "En algunos vasos mayas clásicos, texto, imagen y forma permiten ir más allá de detectar una molécula: podemos reconstruir parte del lenguaje social del consumo.",
+        "geography": {
+          "today": "Guatemala y México · referencia regional",
+          "region": "Área maya de Mesoamérica",
+          "orientation": "Los objetos estudiados por The Met se adscriben al mundo maya clásico y algunos tienen procedencias amplias o discutidas. Por eso esta escena utiliza una región sin convertirla en un pin arqueológico ficticio.",
+          "society": "Cortes y comunidades mayas clásicas en las que banquetes, regalos, escritura jeroglífica y objetos de prestigio formaban parte de relaciones políticas y rituales."
+        },
+        "narrative": [
+          "Los textos jeroglíficos de ciertos vasos mayas identifican el tipo de recipiente, su propietario o donante y, en algunos casos, el contenido asociado. La cultura material deja así de ser únicamente un soporte para análisis químicos: también contiene declaraciones escritas sobre beber.",
+          "La iconografía aporta otro gesto reconocible. Escenas de preparación muestran cacao vertido desde cierta altura hacia recipientes mayores para producir espuma. La espuma no es un detalle decorativo moderno: forma parte de cómo se representó y valoró la bebida en contextos cortesanos.",
+          "Esto no significa que todo cacao maya fuese monopolio de la élite ni que todos los vasos sirvieran para lo mismo. El registro conservado y musealizado está sesgado hacia objetos duraderos, contextos funerarios y piezas de alta calidad. Precisamente por eso conviene explicar qué población podemos ver y cuál queda menos representada.",
+          "Entre Puerto Escondido y estos vasos han cambiado materia prima seleccionada, técnicas, recipientes y función social. Llamar a todo simplemente “chocolate” oculta esa transformación.",
+          "La escritura en los vasos añade además una escala humana que la química rara vez ofrece por sí sola: objetos vinculados a personas, regalos y ocasiones sociales. Aun así, una inscripción no convierte automáticamente el contenido original de cada recipiente en una certeza absoluta. Texto, imagen, contexto arqueológico y análisis material deben leerse juntos y pueden conservar grados distintos de seguridad."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_cacao_classic_maya_drinking_vessels_600_900_ce"
+          }
+        ],
+        "sourceRefs": [
+          "src_met_maya_chocolate_cup_2014"
+        ],
+        "method": {
+          "title": "Leer un alimento con epigrafía e iconografía",
+          "body": "La escritura jeroglífica puede identificar función, dueño o contenido de un recipiente; las imágenes muestran acciones como verter y espumar. Son evidencias diferentes de un residuo químico y responden a preguntas sociales distintas."
+        },
+        "limits": "Una pieza sin procedencia arqueológica exacta no debe transformarse en un punto preciso del mapa. Las escenas cortesanas tampoco representan por sí solas toda la dieta maya.",
+        "whyItMatters": "Muestra que estudiar comida también es estudiar lenguaje, jerarquía, banquete, objeto y gesto.",
+        "nextQuestion": "¿Qué ocurre cuando esta bebida y sus técnicas entran en redes imperiales que cruzan el Atlántico?",
+        "glossaryRefs": []
+      },
+      {
+        "id": "cacao_4_atlantic",
+        "sceneType": "transformation",
+        "label": "04 · Nueva España ↔ España · siglos XVI–XVII",
+        "title": "Cruzar el Atlántico no convirtió el chocolate en una invención europea",
+        "lead": "La expansión del chocolate hacia Europa implicó adaptación, ingredientes nuevos y circuitos imperiales, pero también continuidad de técnicas, vocabulario y preferencias aprendidas en Mesoamérica.",
+        "geography": {
+          "today": "México y España · referencia transatlántica",
+          "region": "Imperio español · Atlántico temprano moderno",
+          "orientation": "La escena describe un proceso de circulación entre territorios y no una introducción puntual ocurrida un día en una ciudad. El mapa conserva por ello una referencia regional sin flechas causales inventadas.",
+          "society": "Sociedades coloniales de Nueva España y consumidores europeos conectados por conquista, comercio, misiones, trabajo forzado, circulación de recetas e intercambio de gustos."
+        },
+        "narrative": [
+          "Las narraciones antiguas presentaban a menudo una secuencia cómoda: los europeos encontraron una bebida “amarga”, la corrigieron con azúcar y así nació el chocolate aceptable. La historiografía reciente ha complicado seriamente ese relato.",
+          "Marcy Norton mostró que la adopción española implicó una internalización de estéticas y prácticas mesoamericanas: no solo llegaron granos de cacao, también formas de preparación, vocabulario, utensilios, preferencias por la espuma y maneras de consumir. Al mismo tiempo, las formulaciones cambiaron con azúcar, especias y contextos sociales distintos.",
+          "El chocolate se consolidó en España durante la primera mitad del siglo XVII y continuó circulando por Europa. Esto no borra la violencia del sistema colonial ni las relaciones laborales y comerciales que hicieron posible el flujo de cacao. “Difusión” no es una palabra neutral si oculta quién controlaba tierra, trabajo y comercio.",
+          "La escena sirve también para distinguir presencia de adopción: que una mercancía llegue a un puerto no significa que una sociedad la incorpore de inmediato. Aquí hablamos de un proceso de aprendizaje, reformulación y normalización que duró décadas.",
+          "Ese proceso tampoco fue una simple sustitución de una receta por otra. Ingredientes disponibles, precios, redes mercantiles, prescripciones médicas y hábitos de sociabilidad condicionaron qué versiones prosperaron en cada lugar. Por eso una historia atlántica rigurosa debe seguir prácticas además de mercancías y evitar convertir Europa en el único agente de transformación."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "chocolate_established_spain_1600_1650"
+          }
+        ],
+        "sourceRefs": [
+          "src_norton_chocolate_ahr_2006",
+          "src_loveman_chocolate_england_2013"
+        ],
+        "method": {
+          "title": "La historiografía también es evidencia revisable",
+          "body": "Para procesos coloniales no basta con fechar objetos. Se comparan recetas, textos médicos, comercio, vocabulario y prácticas de consumo. Las interpretaciones cambian cuando se releen esas fuentes desde preguntas menos eurocéntricas."
+        },
+        "limits": "No fijamos una “fecha de llegada del chocolate a Europa” como hito único. Presencia, circulación, adopción y popularización son procesos diferentes.",
+        "whyItMatters": "Introduce en el Atlas una idea clave para G4: difusión no equivale a una flecha simple entre dos puntos.",
+        "nextQuestion": "En el siglo XIX el cambio ya no será solo geográfico o cultural: nuevas máquinas alterarán físicamente qué productos puede fabricar la industria.",
+        "glossaryRefs": []
+      },
+      {
+        "id": "cacao_5_industry",
+        "sceneType": "industry",
+        "label": "05 · Ámsterdam + Vevey + Berna · 1828–1879",
+        "title": "Prensar, secar, mezclar, conchar: el chocolate moderno aparece por acumulación de procesos",
+        "lead": "No hubo una única máquina que inventase la tableta moderna. Tres cambios permiten ver cómo la industria separó componentes, controló humedad y transformó textura.",
+        "geography": {
+          "today": "Ámsterdam · Países Bajos; Vevey y Berna · Suiza",
+          "region": "Europa industrial del siglo XIX",
+          "orientation": "El mapa muestra puntos urbanos de referencia, no coordenadas de talleres históricos exactos. La escena compara tres desarrollos separados por medio siglo.",
+          "society": "Empresas familiares e industrias alimentarias europeas en expansión, con mayor mecanización, acceso a azúcar y cacao globales y creciente control de formulación y proceso."
+        },
+        "narrative": [
+          "En 1828 Coenraad van Houten recibió una patente para prensar grasa de la masa de cacao. Al extraer parte de la manteca se obtenían tortas con menos grasa que podían molerse en polvo. La innovación modificó tanto bebidas como formulaciones posteriores. Conviene separar este hito de la alcalinización conocida como dutching, que pertenece a otro desarrollo histórico.",
+          "Décadas después surgió otro problema técnico: incorporar leche a una fase grasa sin introducir tanta agua que el producto fuese inestable o se deteriorase. La cronología de Nestlé documenta que Daniel Peter utilizó leche condensada en ensayos desde 1875. Conservamos esa fecha como inicio documentado de experimentación, no como una proclamación absoluta del “primer chocolate con leche”.",
+          "En 1879 Rodolphe Lindt desarrolló el conchado en Berna. El trabajo prolongado de la masa modifica distribución de partículas, humedad, compuestos volátiles y propiedades de flujo; el resultado puede ser más suave y fundente. La anécdota del fin de semana con la máquina encendida es famosa, pero no es necesaria para explicar ni demostrar el proceso.",
+          "Vistos juntos, los tres hitos cambian la pregunta. Ya no preguntamos únicamente dónde se consumía cacao, sino cómo la ingeniería de proceso separa manteca, controla agua, ajusta formulación y construye textura. El “chocolate” del final del siglo XIX es materialmente distinto de las bebidas arqueológicas con las que comenzamos."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "van_houten_cocoa_press_1828"
+          },
+          {
+            "kind": "development",
+            "ref": "daniel_peter_milk_chocolate_trials_1875"
+          },
+          {
+            "kind": "development",
+            "ref": "lindt_conching_1879"
+          }
+        ],
+        "sourceRefs": [
+          "src_smithsonian_chocolate_technology_2009",
+          "src_smithsonian_chocolate_vessels",
+          "src_nestle_daniel_peter_history",
+          "src_lindt_conching_history"
+        ],
+        "method": {
+          "title": "Evitar la historia de “un inventor, una fecha, un producto”",
+          "body": "Los procesos alimentarios modernos suelen emerger por combinación de operaciones. Aquí separamos reducción de grasa, formulación con leche/control de humedad y conchado porque resuelven problemas tecnológicos diferentes."
+        },
+        "limits": "No afirmamos una única “primera tableta” ni convertimos cronologías corporativas en pruebas independientes cuando existen discrepancias historiográficas. Los puntos del mapa son referencias urbanas, no fábricas geolocalizadas.",
+        "whyItMatters": "Demuestra que el Atlas puede contar innovación tecnológica sin reducirla a héroes ni a una sucesión de patentes.",
+        "nextQuestion": "Idea para llevarte: el cacao es una planta; “chocolate” es una familia histórica de productos cuya materia, técnica y significado han cambiado radicalmente.",
+        "glossaryRefs": [
+          "cocoa_butter",
+          "conching"
         ]
       }
     ]

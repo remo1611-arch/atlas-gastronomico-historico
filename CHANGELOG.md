@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.1.0-alpha.28 — 2026-08-12
+
+### Expansión editorial E1 — Cacao/chocolate
+- Primera historia nueva creada después de congelar el contrato en alpha.27.
+- 5 escenas: alta Amazonía, Puerto Escondido, mundo maya clásico, circulación atlántica e industrialización del siglo XIX.
+- Nuevos registros: 1 subject, 7 places, 3 occurrences, 4 developments, 11 sources y 3 términos de glosario.
+- Sin cambios en los 10 schemas congelados, navegación ni motor narrativo.
+- Se evita canonizar “primer chocolate”, “primera tableta” o un único origen absoluto.
+- Van Houten 1828 se limita al prensado; la alcalinización/dutching queda separada.
+- Daniel Peter se formula como ensayos documentados desde 1875 para evitar una falsa fecha universal de invención.
+
+### QA alpha.28
+- Product Contract Freeze alpha.27 permanece intacto: 10/10 schemas sin cambios.
+- Añade `test_cacao_chocolate_story.py`.
+- Los tests de corpus se desacoplan de cantidades rígidas de alpha.27 y validan invariantes de crecimiento.
+- Python `test_*.py`: 56/56 PASS; Node `test_*.mjs`: 5/5 PASS.
+- Aceptación táctil/visual de alpha.28: pendiente.
+
+## 0.1.0-alpha.27 — 2026-08-12
+
+### Gate museográfico y congelación del producto
+- Da por superado el gate funcional de alpha.26 en dispositivo real y ejecuta el gate museográfico conjunto de Vino, Pan y Fermentación.
+- Congela formalmente **Historias = comprender · Atlas = descubrir · Evidencia = verificar**.
+- Añade `PRODUCT_CONTRACT_FINGERPRINT.json` y `test_product_contract_freeze.py` para detectar cambios de schema no declarados.
+
+### UX museográfica
+- Corrige duraciones infraestimadas: Vino ~10 min, Pan ~10 min, Fermentación ~7 min.
+- Elimina la tarjeta lateral de contexto, duplicada respecto al encabezado de cada escena.
+- El mapa de escena informa cuando la cobertura es parcial; si no hay puntos, usa una explicación neutral y no presupone un lugar puntual.
+- La última escena usa `Idea para llevarte` en vez de `Siguiente pregunta`.
+- La rejilla de historias usa `auto-fit` para equilibrar tres visitas en escritorio.
+- Fermentación elimina `bread_like_flatbread` de `relatedSubjectRefs` porque el recorrido actual no contiene evidencia panaria.
+
+### QA
+- Añade `test_museographic_gate.py`.
+- El corpus histórico no cambia respecto a alpha.26.
+
 ## 0.1.0-alpha.26 — 2026-08-12
 
 ### Primera historia transversal real

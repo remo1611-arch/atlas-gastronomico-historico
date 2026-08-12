@@ -118,5 +118,23 @@
     "term": "cultivo iniciador / starter",
     "definition": "Preparación de microorganismos seleccionados que se inocula para iniciar y orientar una fermentación de manera más controlada y reproducible.",
     "status": "reviewed"
+  },
+  {
+    "id": "theobromine",
+    "term": "teobromina",
+    "definition": "Alcaloide metilxantínico abundante en el cacao. En arqueología puede servir como marcador químico útil cuando se interpreta junto con contexto y otras líneas de evidencia; por sí solo no reconstruye una receta.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cocoa_butter",
+    "term": "manteca de cacao",
+    "definition": "Fracción grasa natural del cacao. Su separación mediante prensado permite obtener tortas de cacao con menor contenido graso y, a la vez, una grasa que puede reincorporarse en formulaciones de chocolate.",
+    "status": "reviewed"
+  },
+  {
+    "id": "conching",
+    "term": "conchado",
+    "definition": "Etapa de elaboración del chocolate basada en trabajo mecánico prolongado de la masa, normalmente con mezcla, cizallamiento, aireación y control térmico, que modifica textura, humedad, compuestos volátiles y propiedades de flujo.",
+    "status": "reviewed"
   }
 ]

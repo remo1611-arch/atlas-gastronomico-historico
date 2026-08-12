@@ -880,5 +880,104 @@
     "sourceType": "official_institution",
     "accessed": "2026-08-12",
     "notes": "Historia institucional del aislamiento y propagación de un cultivo puro por Emil Chr. Hansen y de su primer uso exitoso a escala de producción en noviembre de 1883."
+  },
+  {
+    "id": "src_cacao_salf_nature_2018",
+    "title": "The use and domestication of Theobroma cacao during the mid-Holocene in the upper Amazon",
+    "publisher": "Nature Ecology & Evolution",
+    "url": "https://doi.org/10.1038/s41559-018-0697-x",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Tres líneas independientes de evidencia —almidón, teobromina y ADN antiguo— documentan uso de T. cacao en Santa Ana-La Florida hace aproximadamente 5.300 años."
+  },
+  {
+    "id": "src_cacao_salf_unesco_2026",
+    "title": "Ecuadorian Cacao Cultural Landscape — Tentative List 7003",
+    "publisher": "UNESCO World Heritage Centre / Permanent Delegation of Ecuador",
+    "url": "https://whc.unesco.org/en/tentativelists/7003/",
+    "sourceType": "official_document",
+    "accessed": "2026-08-12",
+    "notes": "Documento estatal publicado por UNESCO en 2026; sitúa Santa Ana-La Florida en Palanda, Zamora Chinchipe, y resume el rango 3500–3300 a. C. para la evidencia temprana."
+  },
+  {
+    "id": "src_cacao_archaeogenomics_2024",
+    "title": "A revisited history of cacao domestication in pre-Columbian times revealed by archaeogenomic approaches",
+    "publisher": "Scientific Reports",
+    "url": "https://doi.org/10.1038/s41598-024-53010-6",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Revisión arqueogenómica de 2024 útil para evitar un relato lineal de un único origen y para contextualizar dispersión y diversidad precolombinas."
+  },
+  {
+    "id": "src_puerto_escondido_cacao_pnas_2007",
+    "title": "Chemical and archaeological evidence for the earliest cacao beverages",
+    "publisher": "Proceedings of the National Academy of Sciences (PNAS)",
+    "url": "https://doi.org/10.1073/pnas.0708815104",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Residuos de cacao en vasijas de Puerto Escondido, Honduras, anteriores a 1000 a. C.; los autores proponen que las bebidas más antiguas pudieron elaborarse fermentando la pulpa dulce que rodea las semillas."
+  },
+  {
+    "id": "src_met_maya_chocolate_cup_2014",
+    "title": "The Drinking Cup of a Classic Maya Noble",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/perspectives/maya-drinking-cup",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Epigrafía e iconografía de vasos mayas clásicos: textos que identifican recipientes y contenidos, y escenas de preparación de bebidas de cacao espumadas."
+  },
+  {
+    "id": "src_norton_chocolate_ahr_2006",
+    "title": "Tasting Empire: Chocolate and the European Internalization of Mesoamerican Aesthetics",
+    "publisher": "The American Historical Review / Oxford Academic",
+    "url": "https://academic.oup.com/ahr/article-abstract/111/3/660/13687",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Interpretación historiográfica de la adopción europea del chocolate como internalización y adaptación de prácticas mesoamericanas, no como simple sustitución unilateral de sabores indígenas."
+  },
+  {
+    "id": "src_loveman_chocolate_england_2013",
+    "title": "The Introduction of Chocolate into England: Retailers, Researchers and Consumers, 1640–1730",
+    "publisher": "Historical Research / JSTOR",
+    "url": "https://www.jstor.org/stable/43306044",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Documenta que el chocolate estaba establecido en España durante la primera mitad del siglo XVII y estudia su posterior circulación inglesa."
+  },
+  {
+    "id": "src_smithsonian_chocolate_technology_2009",
+    "title": "From Stone Metates to Steel Mills: The Evolution of Chocolate Manufacturing",
+    "publisher": "Smithsonian / Chocolate: History, Culture, and Heritage (Wiley)",
+    "url": "https://americanhistory.si.edu/sites/default/files/Snyder-Olsen-Brindle_From%20Stone%20Metates%20to%20Steel%20Mills_0.pdf",
+    "sourceType": "museum_scholarly_chapter",
+    "accessed": "2026-08-12",
+    "notes": "Historia técnica del procesado. Documenta la patente concedida a C. van Houten el 4 de abril de 1828 para prensar grasa del cacao y distingue ese proceso de la alcalinización posterior."
+  },
+  {
+    "id": "src_smithsonian_chocolate_vessels",
+    "title": "Serving Vessels in Early North America — Chocolate Preparation",
+    "publisher": "National Museum of American History, Smithsonian Institution",
+    "url": "https://americanhistory.si.edu/sites/default/files/Lange_Chocolate%20Preparation.pdf",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis museística que identifica 1828 como un punto de inflexión técnico por el proceso patentado de Van Houten para producir cacao con menor contenido graso."
+  },
+  {
+    "id": "src_nestle_daniel_peter_history",
+    "title": "The timeline of Nestlé’s company history",
+    "publisher": "Nestlé",
+    "url": "https://www.nestle.com/about/history/nestle-company-history",
+    "sourceType": "corporate_archive",
+    "accessed": "2026-08-12",
+    "notes": "La cronología corporativa documenta que en 1875 Daniel Peter utilizó leche condensada suministrada por Nestlé en sus ensayos para desarrollar chocolate con leche sólido."
+  },
+  {
+    "id": "src_lindt_conching_history",
+    "title": "Milestones in the history of Lindt & Sprüngli",
+    "publisher": "Lindt & Sprüngli",
+    "url": "https://www.lindt-spruengli.com/company/history/",
+    "sourceType": "corporate_archive",
+    "accessed": "2026-08-12",
+    "notes": "Historia corporativa del conchado de Rodolphe Lindt en Berna en 1879; se utiliza para el hito técnico, no para canonizar la anécdota del supuesto olvido de la máquina."
   }
 ]

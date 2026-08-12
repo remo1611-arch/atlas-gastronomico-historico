@@ -3850,7 +3850,7 @@ html[data-theme="light"] .context-disclosure .transform-tile{
 }
 .narrative-hero-actions{align-self:end}
 .narrative-spotlight{margin-top:12px}
-.narrative-story-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+.narrative-story-list{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .narrative-story-card{
   min-height:320px;
   display:flex;
@@ -4021,10 +4021,8 @@ html[data-theme="light"] .story-map-frame .country{fill:#d7ddd8;stroke:#aeb9b3}
 .story-map-caption span{display:block}
 .story-map-caption strong{font-family:Georgia,serif;font-size:1rem}
 .story-map-caption span{margin-top:4px;color:var(--muted);font-size:.64rem;line-height:1.45}
-.narrative-context,
+.story-map-coverage{display:block;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);color:var(--accent);font-size:.6rem;font-weight:800;line-height:1.45}
 .narrative-evidence{padding:18px}
-.narrative-context strong{display:block;margin-top:8px;font-family:Georgia,serif;font-size:1.05rem}
-.narrative-context p{margin:.45rem 0 0;color:var(--muted);font-size:.72rem;line-height:1.55}
 .narrative-evidence-list{display:grid;gap:7px;margin-top:10px}
 .narrative-evidence-item{
   padding:11px;border:1px solid var(--line);border-radius:12px;background:var(--surface-2)

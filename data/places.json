@@ -521,5 +521,104 @@
       "src_xiaohe_environment_plos_2013"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "santa_ana_la_florida",
+    "name": "Santa Ana-La Florida",
+    "type": "site",
+    "summary": "Yacimiento de la cultura Mayo-Chinchipe-Marañón en el cantón Palanda, Zamora Chinchipe, Ecuador, con evidencia arqueológica temprana de uso de Theobroma cacao.",
+    "sourceRefs": [
+      "src_cacao_salf_nature_2018",
+      "src_cacao_salf_unesco_2026"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "puerto_escondido_honduras",
+    "name": "Puerto Escondido (Honduras)",
+    "type": "site",
+    "summary": "Yacimiento del valle de Ulúa, Honduras, con vasijas del Formativo temprano que conservan residuos químicos compatibles con cacao.",
+    "sourceRefs": [
+      "src_puerto_escondido_cacao_pnas_2007"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "classic_maya_mesoamerica_regional",
+    "name": "Área maya clásica (referencia regional)",
+    "type": "region",
+    "summary": "Referencia regional para recipientes mayas clásicos de Guatemala o México cuyo contexto exacto de procedencia no permite fijar un punto arqueológico único.",
+    "sourceRefs": [
+      "src_met_maya_chocolate_cup_2014"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "spain_early_modern_regional",
+    "name": "España de la Edad Moderna (referencia regional)",
+    "type": "region",
+    "summary": "Referencia regional para la consolidación del consumo de chocolate en España durante la primera mitad del siglo XVII; el proceso no se reduce a una ciudad concreta.",
+    "sourceRefs": [
+      "src_norton_chocolate_ahr_2006",
+      "src_loveman_chocolate_england_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "amsterdam_netherlands",
+    "name": "Ámsterdam (Países Bajos)",
+    "type": "city",
+    "point": {
+      "lat": 52.3676,
+      "lon": 4.9041,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_smithsonian_chocolate_technology_2009"
+      ],
+      "note": "Punto urbano de referencia para el entorno de la fábrica/molinillo de la familia Van Houten; no localiza el taller histórico exacto."
+    },
+    "summary": "Ciudad donde Caspar van Houten estableció un molino de chocolate y donde Coenraad van Houten desarrolló el método patentado de prensado de cacao.",
+    "sourceRefs": [
+      "src_smithsonian_chocolate_technology_2009"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "vevey_switzerland",
+    "name": "Vevey (Suiza)",
+    "type": "city",
+    "point": {
+      "lat": 46.4628,
+      "lon": 6.843,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_nestle_daniel_peter_history"
+      ],
+      "note": "Punto urbano de referencia para los ensayos de Daniel Peter; no identifica una instalación exacta."
+    },
+    "summary": "Localidad suiza asociada a Daniel Peter y a sus ensayos con leche condensada para desarrollar chocolate con leche sólido.",
+    "sourceRefs": [
+      "src_nestle_daniel_peter_history"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "bern_switzerland",
+    "name": "Berna (Suiza)",
+    "type": "city",
+    "point": {
+      "lat": 46.948,
+      "lon": 7.4474,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_lindt_conching_history"
+      ],
+      "note": "Punto urbano de referencia para el trabajo de Rodolphe Lindt; no identifica la máquina o fábrica exacta."
+    },
+    "summary": "Ciudad donde Rodolphe Lindt desarrolló el proceso de conchado en 1879.",
+    "sourceRefs": [
+      "src_lindt_conching_history"
+    ],
+    "status": "reviewed"
   }
 ]

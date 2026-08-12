@@ -344,5 +344,30 @@
       "src_jiahu_fermented_beverage_pnas_2004"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "cacao",
+    "name": "Cacao",
+    "type": "food_species",
+    "summary": "Theobroma cacao y sus productos alimentarios derivados. El Atlas distingue el uso arqueológico del cacao de las formas históricas de “chocolate” y evita convertir la evidencia más antigua conocida en un origen absoluto.",
+    "aliases": [
+      "cacao",
+      "cocoa",
+      "chocolate"
+    ],
+    "tags": [
+      "Theobroma cacao",
+      "bebida",
+      "chocolate",
+      "fermentación",
+      "confitería"
+    ],
+    "sourceRefs": [
+      "src_cacao_salf_nature_2018",
+      "src_cacao_archaeogenomics_2024",
+      "src_puerto_escondido_cacao_pnas_2007",
+      "src_met_maya_chocolate_cup_2014"
+    ],
+    "status": "reviewed"
   }
 ]

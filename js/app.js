@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.26';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.28';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.26',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.26',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.26',
-  places:'./data/places.json?v=0.1.0-alpha.26',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.26',
-  events:'./data/events.json?v=0.1.0-alpha.26',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.26',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.26',
-  developments:'./data/developments.json?v=0.1.0-alpha.26',
-  sources:'./data/sources.json?v=0.1.0-alpha.26',
-  stories:'./data/stories.json?v=0.1.0-alpha.26',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.26',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.26'
+  config:'./data/config.json?v=0.1.0-alpha.28',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.28',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.28',
+  places:'./data/places.json?v=0.1.0-alpha.28',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.28',
+  events:'./data/events.json?v=0.1.0-alpha.28',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.28',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.28',
+  developments:'./data/developments.json?v=0.1.0-alpha.28',
+  sources:'./data/sources.json?v=0.1.0-alpha.28',
+  stories:'./data/stories.json?v=0.1.0-alpha.28',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.28',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.28'
 };
 
 const s={
@@ -160,6 +160,9 @@ const SOURCE_TYPE_LABELS={
   dataset:'Dataset',
   museum:'Museo / colección',
   museum_collection:'Colección museística',
+  museum_institution:'Museo / institución patrimonial',
+  museum_scholarly_chapter:'Capítulo académico museístico',
+  corporate_archive:'Archivo / historia corporativa',
   other:'Otra fuente',
   unknown:'Tipo no clasificado'
 };
@@ -2070,17 +2073,19 @@ function renderStoryMap(scene){
   for(const feature of s.basemap.features){
     const d=geom(feature.geometry);if(d) base.appendChild(svg('path',{d,class:'country'}));
   }
+  const presentedItems=scene.itemRefs.map(storyItemPresentation).filter(Boolean);
   const points=[];
-  for(const ref of scene.itemRefs){
-    const presented=storyItemPresentation(ref);
+  let mappableCount=0;
+  for(const presented of presentedItems){
     if(presented?.point&&Number.isFinite(Number(presented.point.lat))&&Number.isFinite(Number(presented.point.lon))){
+      mappableCount+=1;
       const key=`${presented.point.lat}:${presented.point.lon}`;
       if(!points.some(x=>x.key===key)) points.push({key,...presented});
     }
   }
   if(!points.length){
     notice.classList.remove('hidden');
-    notice.textContent='El lugar está identificado, pero esta escena no dispone de un punto cartográfico canónico. El Atlas no inventa un centroide para rellenar el mapa.';
+    notice.textContent='Esta escena no dispone de un punto cartográfico canónico. Puede tratarse de una localización todavía no resuelta con precisión o de un proceso que no debe reducirse a un único punto.';
   }else{
     notice.classList.add('hidden');notice.textContent='';
     for(const p of points){
@@ -2089,7 +2094,11 @@ function renderStoryMap(scene){
       markers.appendChild(svg('circle',{cx:x,cy:y,r:5,class:'story-map-pin'}));
     }
   }
-  caption.innerHTML=`<strong>${esc(scene.geography.today)}</strong><span>${esc(scene.geography.orientation)}</span>`;
+  const missingCount=Math.max(0,presentedItems.length-mappableCount);
+  const coverage=missingCount>0&&mappableCount>0
+    ?`<small class="story-map-coverage">Mapa parcial: ${mappableCount} de ${presentedItems.length} referencias de esta escena tienen punto canónico.</small>`
+    :'';
+  caption.innerHTML=`<strong>${esc(scene.geography.today)}</strong><span>${esc(scene.geography.orientation)}</span>${coverage}`;
 }
 
 function openGlossaryEntry(id){
@@ -2139,8 +2148,7 @@ function renderNarrativeStory(){
   $('#storyMethodBody').textContent=scene.method.body;
   $('#storyLimits').innerHTML=`<strong>Qué no podemos afirmar.</strong> ${esc(scene.limits)}`;
   $('#storyGlossary').innerHTML=scene.glossaryRefs.map(ref=>{const g=glossaryById(ref);return g?`<button type="button" data-glossary-ref="${esc(g.id)}">${esc(g.term)} ⓘ</button>`:''}).join('');
-  $('#storyNextQuestion').innerHTML=`<strong>Siguiente pregunta.</strong> ${esc(scene.nextQuestion)}`;
-  $('#storyContext').innerHTML=`<strong>${esc(scene.geography.region)}</strong><p>${esc(scene.geography.orientation)} ${esc(scene.geography.society)}</p>`;
+  $('#storyNextQuestion').innerHTML=`<strong>${index===story.scenes.length-1?'Idea para llevarte.':'Siguiente pregunta.'}</strong> ${esc(scene.nextQuestion)}`;
 
   const presented=scene.itemRefs.map(ref=>({ref,p:storyItemPresentation(ref)})).filter(x=>x.p);
   $('#storyEvidenceList').innerHTML=presented.map(({ref,p})=>`<article class="narrative-evidence-item"><span>${esc(p.when)}</span><strong>${esc(p.title)}</strong><small>${esc(p.place)} · ${esc(p.meta)}</small><button type="button" data-story-atlas-kind="${esc(ref.kind)}" data-story-atlas-ref="${esc(ref.ref)}">Ver en el Atlas →</button></article>`).join('');

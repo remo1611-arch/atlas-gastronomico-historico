@@ -862,5 +862,70 @@
       "src_xiaohe_cheese_cell_2024"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_cacao_santa_ana_la_florida_3500_3300_bce",
+    "subjectRef": "cacao",
+    "placeRef": "santa_ana_la_florida",
+    "period": {
+      "start": -3500,
+      "end": -3300,
+      "precision": "range",
+      "display": "ca. 3500–3300 a. C."
+    },
+    "occurrenceType": "archaeological_use",
+    "evidenceType": "multi_proxy_biomolecular_archaeobotanical",
+    "certainty": "high",
+    "summary": "Granos de almidón, teobromina absorbida y ADN antiguo identifican uso de Theobroma cacao en recipientes de Santa Ana-La Florida durante el Holoceno medio.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_cacao_salf_nature_2018",
+      "src_cacao_salf_unesco_2026",
+      "src_cacao_archaeogenomics_2024"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_cacao_puerto_escondido_1400_1100_bce",
+    "subjectRef": "cacao",
+    "placeRef": "puerto_escondido_honduras",
+    "period": {
+      "start": -1400,
+      "end": -1100,
+      "precision": "range",
+      "display": "ca. 1400–1100 a. C."
+    },
+    "occurrenceType": "beverage_evidence",
+    "evidenceType": "chemical_residue",
+    "certainty": "high",
+    "summary": "Residuos químicos en recipientes de Puerto Escondido documentan bebidas de cacao anteriores a 1000 a. C.; los autores consideran probable que algunos usos tempranos aprovecharan la pulpa dulce fermentada alrededor de las semillas.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_puerto_escondido_cacao_pnas_2007"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_cacao_classic_maya_drinking_vessels_600_900_ce",
+    "subjectRef": "cacao",
+    "placeRef": "classic_maya_mesoamerica_regional",
+    "period": {
+      "start": 600,
+      "end": 900,
+      "precision": "range",
+      "display": "siglos VII–IX d. C."
+    },
+    "occurrenceType": "textual_iconographic_presence",
+    "evidenceType": "epigraphic_iconographic_material",
+    "certainty": "high",
+    "summary": "Vasos mayas clásicos combinan forma, textos jeroglíficos e iconografía que identifican recipientes para beber y preparaciones de cacao/chocolate, incluida la producción de espuma por vertido.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_met_maya_chocolate_cup_2014"
+    ],
+    "status": "reviewed"
   }
 ]

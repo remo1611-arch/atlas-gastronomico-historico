@@ -21,7 +21,8 @@ for st in stories:
         if st.get('primarySubjectRef') is not None: errors.append(st['id']+': transversal con primarySubjectRef')
         if len(st.get('relatedSubjectRefs',[]))<2: errors.append(st['id']+': transversal con <2 related')
     else: errors.append(st['id']+': storyType desconocido')
-if (subject_count,transversal_count)!=(2,1): errors.append(f'composición esperada 2 subject + 1 transversal; hay {subject_count}+{transversal_count}')
+if subject_count<2: errors.append(f'se esperaban al menos 2 historias subject; hay {subject_count}')
+if transversal_count<1: errors.append(f'se esperaba al menos 1 historia transversal; hay {transversal_count}')
 fer=next((s for s in stories if s['id']=='story_fermentation'),None)
 if not fer or fer.get('storyType')!='transversal': errors.append('story_fermentation no prueba el contrato transversal real')
 
@@ -37,4 +38,4 @@ if not list(validator.iter_errors(subject_bad)): errors.append('schema acepta st
 if errors:
     print('STORY TYPES CONTRACT: FAIL'); [print('ERROR:',e) for e in errors]; sys.exit(1)
 print('STORY TYPES CONTRACT: PASS')
-print('Current stories: 2 subject + 1 transversal · legacy rejected.')
+print(f'Current stories: {subject_count} subject + {transversal_count} transversal · legacy rejected.')

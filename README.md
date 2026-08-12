@@ -1,9 +1,16 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.26
-**Estado:** Narrative Museum + Atlas · primera historia transversal integrada · gate móvil/museográfico pendiente
+**Versión:** 0.1.0-alpha.28
+**Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
+
+## Alpha.28 — primera expansión editorial tras el freeze
+
+- Nueva Historia del cacao y el chocolate: 5 escenas, sin cambios de schema ni navegación.
+- El contrato congelado en alpha.27 permanece intacto.
+- Se incorporan evidencias de Santa Ana-La Florida, Puerto Escondido y cultura material maya, más cuatro developments sobre circulación atlántica e industrialización.
+- Política editorial: cacao ≠ chocolate; evidencia más antigua ≠ origen absoluto; sin “primera tableta” dudosa; prensa de Van Houten ≠ dutching.
 
 ## Propósito
 
@@ -59,7 +66,7 @@ Desde alpha.21 la jerarquía de producto es:
 
 Las historias se cargan desde `data/stories.json` y referencian el corpus existente. No existe un renderer específico por alimento.
 
-Desde alpha.25 el contrato distingue historias `subject` y `transversal`. Alpha.26 demuestra el segundo tipo con Fermentación sin crear un subject ficticio para la técnica: una transversal puede relacionar varios subjects y reutilizar occurrences/developments del corpus.
+Desde alpha.25 el contrato distingue historias `subject` y `transversal`. Alpha.26 demostró el segundo tipo con Fermentación sin crear un subject ficticio para la técnica. **Alpha.27 supera el gate museográfico conjunto y congela formalmente el contrato de producto**: nuevas historias deben incorporarse sin rediseñar la arquitectura salvo migración explícita.
 
 
 ## Forma principal de uso
@@ -102,13 +109,11 @@ python tools/serve.py
 
 ## Estado del corpus público
 
-Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`.
+Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
+Alpha.28 contiene **37 occurrences públicas**: 18 tienen punto y 19 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 13 `developments` (4 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus actual contiene **34 occurrences públicas**: 18 tienen punto y 16 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 9 `developments` (1 cartografiable). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
-
-Alpha.26 integra la primera historia transversal real: **Historia de la fermentación**, con 5 escenas. El corpus completo queda en 13 subjects, 33 places, 98 sources, 3 stories, 18 escenas y 20 términos de glosario.
+El corpus completo queda en **14 subjects, 40 places, 109 sources, 4 stories, 23 escenas y 23 términos de glosario**. La nueva Historia del cacao y el chocolate es la primera expansión editorial realizada íntegramente sobre el contrato congelado en alpha.27.
 
 ## Capas históricas
 

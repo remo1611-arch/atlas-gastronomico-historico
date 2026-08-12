@@ -1,8 +1,8 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.26",
+  "version": "0.1.0-alpha.28",
   "gate": "G3_CLOSED",
-  "phase": "TRANSVERSAL_STORY_FERMENTATION",
+  "phase": "EDITORIAL_EXPANSION_POST_FREEZE",
   "generated": "2026-08-12",
   "algorithm": "SHA-256",
   "files": [
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 19886,
-      "sha256": "ff96b08ae262b09999d58c56acaacfabb5ff89f7b3aeba04aaf64903673f174a"
+      "bytes": 22202,
+      "sha256": "5deb9cbcec8f9d8a8a5519e5f934fbaf30a2ee985e4a89a2d9db1e298b56e42b"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11212,
-      "sha256": "065ba0c4e276ea409b6769c3f8d69dea3d7b15c2eea38a24bddf8499458264c2"
+      "bytes": 11868,
+      "sha256": "7cfc80ad370ce3a4c85b3728d61fec723f95f2eea46366501604745a106a032c"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -38,8 +38,8 @@
     },
     {
       "path": "css/app.css",
-      "bytes": 98496,
-      "sha256": "935426e26423af2febeef69e0b74987153c34f805ed218e94591a035208bbeb0"
+      "bytes": 98462,
+      "sha256": "1d1bba6af12a9b6119afff67ca88cd262fc972b33bd4db13f94a6701a502b888"
     },
     {
       "path": "data/archive/demo_records_pre_g2.json",
@@ -53,8 +53,8 @@
     },
     {
       "path": "data/config.json",
-      "bytes": 498,
-      "sha256": "d65bb2b5d0aa3205c38ae07663608b9cae120fbb5c69a8bf32f675134b3a2b01"
+      "bytes": 495,
+      "sha256": "c4a06ea78d8d4a5f91d50ff60b4da5fabd9cba4d53e2f4c5435d0137e529fb5b"
     },
     {
       "path": "data/contexts.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "data/developments.json",
-      "bytes": 9235,
-      "sha256": "f75d2aae40d669a05f1bab0d8daea06670839a4fe0051d69f017f7956af364b3"
+      "bytes": 13408,
+      "sha256": "4c79cbdc6d4d3c37d26af5fa2b5824b5174d8b0befd320c305e5326c0cb26ee8"
     },
     {
       "path": "data/events.json",
@@ -73,18 +73,18 @@
     },
     {
       "path": "data/glossary.json",
-      "bytes": 5796,
-      "sha256": "e9c4195f879567cae64c0cab76c7c73e4e3af8dbca0b047f3b0b8b5cc01c7ddb"
+      "bytes": 6772,
+      "sha256": "c554719a43754d7de82f2aa7b49ce7cad04d34de87aa9f17bcb39f2b86b8893a"
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 33842,
-      "sha256": "7bf0037ea4280b9dc9f255f2c059db36507d14cacb74bab5faacb5e50c25a6a4"
+      "bytes": 36180,
+      "sha256": "b6ff6bbead9252dd903db1164c8ba37cb5ba9a044e65fdb8d3742a351178b8be"
     },
     {
       "path": "data/places.json",
-      "bytes": 17681,
-      "sha256": "3a166d40b4f41114925aa4342d1708b3a67f7a2ab2ef7af3088233054742a530"
+      "bytes": 21168,
+      "sha256": "549dabcaf8485d1771e613e50c9df469676194661d6d85032c7cce95ffc8dabc"
     },
     {
       "path": "data/relationships.json",
@@ -93,18 +93,18 @@
     },
     {
       "path": "data/sources.json",
-      "bytes": 46343,
-      "sha256": "ded6b7e08a18c5500ded6ade01fbf9cb43b6c16801960ffeee29ae8e7ed5600c"
+      "bytes": 52178,
+      "sha256": "f83bd194b655792a3f3665ec984cae3a74cb492722aec5eafee4edb6ee271bb4"
     },
     {
       "path": "data/stories.json",
-      "bytes": 72863,
-      "sha256": "9b70768a28d44f5c8d8940ea64534774457e3c8d115b0a2f6eecb4c2e20106d7"
+      "bytes": 94084,
+      "sha256": "20f8562c3bcbd5d22b6b2d7f915e433eef9d13d381d95174a00de43ab55854d6"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 11238,
-      "sha256": "6edfebcddfe548f5e627bc938958a0374e377d90be1492eaf00b510a3573da94"
+      "bytes": 11970,
+      "sha256": "26220793321d2f90a92f08c304604dd131b41540b26d97000cfe19e211b08b3b"
     },
     {
       "path": "data/taxonomy.json",
@@ -123,8 +123,8 @@
     },
     {
       "path": "docs/DATA_MODEL.md",
-      "bytes": 13155,
-      "sha256": "da8fb667ee75cb3188220da02293d95a6ba5ae91b27ae85834230c5a699f8e63"
+      "bytes": 13530,
+      "sha256": "50944a9c644aebb98669edb243708cb412d4ef76bd5c2864de6ad7bf74fc5181"
     },
     {
       "path": "docs/DECISIONS.md",
@@ -132,9 +132,19 @@
       "sha256": "6b877fb41d0c21ce16566ccdf97eaed7d3e825c73e02a53c7038cc0adba212fb"
     },
     {
+      "path": "docs/DOSSIER_CACAO_CHOCOLATE_ALPHA28.md",
+      "bytes": 1883,
+      "sha256": "062f87443f7112c56ef4fb9ceb2da9c70e7f4fe58c9d97f7583543b759016f64"
+    },
+    {
       "path": "docs/EDITORIAL_EXPANSION_BREAD.md",
       "bytes": 5517,
       "sha256": "d5add93cb5c734cac3b847c7a6116fd286a37ac929f758b5e690bf31656d7fb4"
+    },
+    {
+      "path": "docs/EDITORIAL_GATE_CACAO_ALPHA28.md",
+      "bytes": 1206,
+      "sha256": "4ed547d4931e7fe66914c9c0a9064661b46bd551587fc1e8051563b92acb24d5"
     },
     {
       "path": "docs/FERMENTATION_STORY_ALPHA26.md",
@@ -247,6 +257,16 @@
       "sha256": "f89d8320e0f4d8f21f04c9407ed1e9ca4ebe1b3c692aa6c1e99d642dfd833f17"
     },
     {
+      "path": "docs/MOBILE_ACCEPTANCE_ALPHA28.md",
+      "bytes": 2348,
+      "sha256": "f36878cf98bdbf42e351cb3da35ef12136a21c778bdea9feae2f79dbcd57b10e"
+    },
+    {
+      "path": "docs/MUSEOGRAPHIC_GATE_ALPHA27.md",
+      "bytes": 3331,
+      "sha256": "7f66ba2e533519f6024a80da6e8abb28d70a6e68204b8b30e53650ed30e8eab0"
+    },
+    {
       "path": "docs/NARRATIVE_MUSEUM_INTEGRATION.md",
       "bytes": 5063,
       "sha256": "7df25928df4f539ba288dac32984b27da33fb224ba535ba919a09f847a742b5d"
@@ -258,8 +278,18 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 7415,
-      "sha256": "580c6486ef4fb00baf141d24f5ca6dbd8b907ba8a38c372b3b66dd2cd7901b70"
+      "bytes": 8887,
+      "sha256": "73a036823f4fd521e9daa16708485d297e12b888f98d2b017bf7372b82aa89d8"
+    },
+    {
+      "path": "docs/PRODUCT_CONTRACT_FINGERPRINT.json",
+      "bytes": 1312,
+      "sha256": "eecf56941cff51ce9ba7a85b71b4527d216a541d328f270302828aabad268aab"
+    },
+    {
+      "path": "docs/PRODUCT_CONTRACT_FREEZE_ALPHA27.md",
+      "bytes": 2455,
+      "sha256": "3ce592de27974c9dc2b2aa064b20c0ae03bffedcdd98d56775b528ae46b1f716"
     },
     {
       "path": "docs/PROJECT_CHARTER.md",
@@ -268,8 +298,8 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 2722,
-      "sha256": "9ece2fc1e536b7546c200aea3bdec177aade9ee53a123398de635dd48d9c1f5c"
+      "bytes": 3260,
+      "sha256": "293985aa25a395023f11df24f1429b0f575ba0bb14e5f46ac8edce426ab8c85e"
     },
     {
       "path": "docs/QA.md",
@@ -278,8 +308,8 @@
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 15671,
-      "sha256": "36bb0a25976183f433106d4c26476af940d312bd965c16c7b667a373806e9f5d"
+      "bytes": 18047,
+      "sha256": "768bcfef1a4fbb2319c86e3f25ac530371be249508b5d0d4b61c8b198ea9632a"
     },
     {
       "path": "docs/SEED_ARCHIVE.md",
@@ -298,8 +328,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 1297,
-      "sha256": "ffe86cc394cdb763987a9cf5cb3b8e77503715b97844cd2441941eabdd7ae1ef"
+      "bytes": 2181,
+      "sha256": "ff9856a33321ebeb1196390bf8c2d30856edf541c8782736039ae0b3004f5ed6"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -308,13 +338,13 @@
     },
     {
       "path": "index.html",
-      "bytes": 23294,
-      "sha256": "990af6cb253a8f7e1f1750af973e8ec14305457c69c71fccb59bc53d375a3f19"
+      "bytes": 23119,
+      "sha256": "e823423466a52b3f479f2cecbe8bc3558fa1773f53477f82cf387e7fb1aa6601"
     },
     {
       "path": "js/app.js",
-      "bytes": 114962,
-      "sha256": "45beaf7b81915c98755bae2f76a3348dcd645ea9630bcd79483bfc96dce116a5"
+      "bytes": 115461,
+      "sha256": "f8dfb5f8f4ff059c2edd0483eb9d15b6ad1dcc06018fea9e0ff2ab5dad5d34b0"
     },
     {
       "path": "js/core.js",
@@ -392,6 +422,11 @@
       "sha256": "ff96dc3b9a35b890bd7ddef9b70b68103e23213431cc1b7ee13ebf8e20e04ebe"
     },
     {
+      "path": "tools/test_cacao_chocolate_story.py",
+      "bytes": 3756,
+      "sha256": "2207de5a3895c52bb9758d4683c593d52a673f0b8eba09289dc4029e00e7db43"
+    },
+    {
       "path": "tools/test_canonical_rule_numbering.py",
       "bytes": 726,
       "sha256": "ff4f0a1fcaa8a857087dbf7b27e6d03d6677969897e1ad7620d7aca52b455a99"
@@ -423,8 +458,8 @@
     },
     {
       "path": "tools/test_fermentation_story.py",
-      "bytes": 2852,
-      "sha256": "a38a73a37cfc4a3ab2976373e1a70ca0552cb81c1cd88bb893791b7db09df84f"
+      "bytes": 2850,
+      "sha256": "4c13eea64f74d8e9b7a7e6a7fdd5dc18797a1750f5380017c242e40c4bba6c4c"
     },
     {
       "path": "tools/test_filter_state.py",
@@ -523,8 +558,8 @@
     },
     {
       "path": "tools/test_geographic_explorer.py",
-      "bytes": 4012,
-      "sha256": "93e3fbe6bfe1219b304948508fb242573e54076358a21616d6ab1ea76385e6c2"
+      "bytes": 3992,
+      "sha256": "fe66b88aff74180919ed79801f64603a24d82565faa822e196f0cbcb113ca3d2"
     },
     {
       "path": "tools/test_global_map_search_data.py",
@@ -558,13 +593,18 @@
     },
     {
       "path": "tools/test_map_coverage.py",
-      "bytes": 2073,
-      "sha256": "1549693ebcc6df845a86aeaf075e6aa86e10ecc798f7fb35c0a687a6fad6a566"
+      "bytes": 1913,
+      "sha256": "c4546a0f9eb23af0dcbe4afced1d36e2b42cc44816ad9dbb467b998f8809ab34"
     },
     {
       "path": "tools/test_mobile_contract.py",
       "bytes": 1530,
       "sha256": "7c60b487f952e416d7b8e6ca18482aea742d3fab5184196b101192064cf94643"
+    },
+    {
+      "path": "tools/test_museographic_gate.py",
+      "bytes": 2453,
+      "sha256": "86b78b6c0df29c9134af1549f6767d3acfefdfa402eaab226a9a6e3eb4f5f171"
     },
     {
       "path": "tools/test_narrative_editorial_depth.py",
@@ -573,8 +613,8 @@
     },
     {
       "path": "tools/test_narrative_museum_contract.py",
-      "bytes": 4156,
-      "sha256": "a77cbd286dc70bd1554e7d8f2a922fe68dd5defe26ddcbab3bc3309b4b7509b2"
+      "bytes": 4282,
+      "sha256": "ced7de0b3bf939e971ea709914bfc34ce6d5dedd36fbdc59de7c71075993366b"
     },
     {
       "path": "tools/test_navigation_algorithms.mjs",
@@ -595,6 +635,11 @@
       "path": "tools/test_primary_navigation_bindings.py",
       "bytes": 2185,
       "sha256": "96ee606b3a87308d8b5368267af329d92d287c31f7e4dea0977611a882afd046"
+    },
+    {
+      "path": "tools/test_product_contract_freeze.py",
+      "bytes": 1115,
+      "sha256": "38dcf161b7ff59e9530c4518c47e574b5fbedca5c50434e47c5b7a667bf9a3e6"
     },
     {
       "path": "tools/test_progressive_disclosure.py",
@@ -633,8 +678,8 @@
     },
     {
       "path": "tools/test_story_types.py",
-      "bytes": 2710,
-      "sha256": "e7c225b1a4ea702f0d843eae88a30976e79ac94a08acc07c2285c1d75de135b4"
+      "bytes": 2803,
+      "sha256": "e035402f3147620b87730229cf7726caf0babaa2dbf9019e8d02cb0941e4830a"
     },
     {
       "path": "tools/test_subject_history.py",
@@ -658,8 +703,8 @@
     },
     {
       "path": "tools/test_ui_contract.py",
-      "bytes": 2555,
-      "sha256": "f7eb4f408292abb6e8d326bb1dce510a58eb5278790fb734a1e46c6ae9bc6379"
+      "bytes": 2540,
+      "sha256": "48c4b152ab9fa34a7e395e22099bace747755b187757b7be1a0385fb96ab3292"
     },
     {
       "path": "tools/test_unified_timeline.py",
