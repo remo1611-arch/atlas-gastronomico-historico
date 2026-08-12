@@ -620,5 +620,100 @@
       "src_lindt_conching_history"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "yemen_coffee_region",
+    "name": "Yemen · ámbito histórico temprano del café",
+    "type": "historical_region",
+    "summary": "Ámbito regional para el consumo documentado de café en círculos sufíes yemeníes durante el siglo XV. No se fija un punto único porque la tradición y las fuentes abarcan redes y localidades diferentes.",
+    "sourceRefs": [
+      "src_coffee_yemen_brill_ei3"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "istanbul_turkiye",
+    "name": "Estambul (Türkiye)",
+    "type": "city",
+    "point": {
+      "lat": 41.0082,
+      "lon": 28.9784,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_coffee_unesco_turkish_ich",
+        "src_coffee_met_ottoman_exchange"
+      ],
+      "note": "Punto urbano de referencia para la cultura de coffeehouses; no identifica una primera cafetería concreta."
+    },
+    "summary": "Capital otomana donde las coffeehouses formaron parte de la vida urbana y la sociabilidad del café desde el siglo XVI.",
+    "sourceRefs": [
+      "src_coffee_unesco_turkish_ich",
+      "src_coffee_met_ottoman_exchange"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "oxford_england",
+    "name": "Oxford (Inglaterra)",
+    "type": "city",
+    "point": {
+      "lat": 51.752,
+      "lon": -1.2577,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_coffee_oxford_plants400",
+        "src_coffee_oxford_angus_1651"
+      ],
+      "note": "Punto urbano de referencia. Las fuentes institucionales consultadas difieren entre 1650 y 1651 para la coffee house del Angel Inn."
+    },
+    "summary": "Ciudad universitaria donde las coffee houses de la década de 1650 se asociaron con sociabilidad intelectual y experimental.",
+    "sourceRefs": [
+      "src_coffee_oxford_plants400",
+      "src_coffee_oxford_angus_1651",
+      "src_coffee_new_college_science"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "batavia_java_reference",
+    "name": "Batavia / actual Yakarta (Java, Indonesia)",
+    "type": "city_reference",
+    "point": {
+      "lat": -6.1754,
+      "lon": 106.8272,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_coffee_wcr_arabica_history"
+      ],
+      "note": "Punto de referencia de la actual Yakarta para Batavia. No representa una plantación ni un vivero histórico concreto."
+    },
+    "summary": "Destino colonial neerlandés de envíos de semilla de Arabica desde la costa de Malabar en 1696 y 1699, proceso clave para la dispersión posterior de Typica.",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_kew_arabica"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "milan_italy",
+    "name": "Milán (Italia)",
+    "type": "city",
+    "point": {
+      "lat": 45.4642,
+      "lon": 9.19,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_coffee_bezzera_patent_us726793",
+        "src_coffee_gaggia_history"
+      ],
+      "note": "Punto urbano de referencia para Bezzera y Gaggia; no identifica talleres o cafés históricos exactos."
+    },
+    "summary": "Ciudad central en varias generaciones de tecnología del espresso, desde las máquinas de Bezzera a los sistemas de alta presión de Gaggia.",
+    "sourceRefs": [
+      "src_coffee_bezzera_patent_us726793",
+      "src_coffee_gaggia_history",
+      "src_coffee_smithsonian_espresso_history"
+    ],
+    "status": "reviewed"
   }
 ]

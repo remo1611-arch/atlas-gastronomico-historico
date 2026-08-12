@@ -1,19 +1,19 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.28';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.29';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.28',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.28',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.28',
-  places:'./data/places.json?v=0.1.0-alpha.28',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.28',
-  events:'./data/events.json?v=0.1.0-alpha.28',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.28',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.28',
-  developments:'./data/developments.json?v=0.1.0-alpha.28',
-  sources:'./data/sources.json?v=0.1.0-alpha.28',
-  stories:'./data/stories.json?v=0.1.0-alpha.28',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.28',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.28'
+  config:'./data/config.json?v=0.1.0-alpha.29',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.29',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.29',
+  places:'./data/places.json?v=0.1.0-alpha.29',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.29',
+  events:'./data/events.json?v=0.1.0-alpha.29',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.29',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.29',
+  developments:'./data/developments.json?v=0.1.0-alpha.29',
+  sources:'./data/sources.json?v=0.1.0-alpha.29',
+  stories:'./data/stories.json?v=0.1.0-alpha.29',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.29',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.29'
 };
 
 const s={
@@ -152,6 +152,7 @@ const SOURCE_TYPE_LABELS={
   official_institution:'Institución oficial',
   official_document:'Documento oficial',
   scholarly_monograph:'Monografía académica',
+  scholarly_reference:'Referencia académica',
   monograph:'Monografía',
   primary_text:'Texto primario',
   primary_source:'Fuente primaria',

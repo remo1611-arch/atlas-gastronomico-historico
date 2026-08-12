@@ -369,5 +369,33 @@
       "src_met_maya_chocolate_cup_2014"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "coffee",
+    "name": "Café (Coffea arabica y bebida de café)",
+    "type": "food_beverage_subject",
+    "summary": "Coffea arabica y las bebidas preparadas a partir de sus semillas tostadas. El Atlas distingue el origen botánico africano de la especie, la documentación histórica del consumo yemení, la cultura de coffeehouse, la expansión colonial del cultivo y la evolución técnica de la extracción.",
+    "aliases": [
+      "café",
+      "coffee",
+      "Coffea arabica",
+      "arabica"
+    ],
+    "tags": [
+      "café",
+      "Arabica",
+      "cafeína",
+      "coffeehouse",
+      "Yemen",
+      "Etiopía",
+      "espresso"
+    ],
+    "sourceRefs": [
+      "src_coffee_arabica_nature_genetics_2024",
+      "src_coffee_oxford_plants400",
+      "src_coffee_yemen_brill_ei3",
+      "src_coffee_wcr_arabica_history"
+    ],
+    "status": "reviewed"
   }
 ]

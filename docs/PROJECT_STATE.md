@@ -1,55 +1,49 @@
 # Estado actual
 
 ## Versión
-0.1.0-alpha.28
+0.1.0-alpha.29
 
 ## Producto
 - **Historias = comprender.**
 - **Atlas = descubrir.**
 - **Evidencia = verificar.**
 
-Alpha.28 es la primera expansión editorial completa posterior al `Product Contract Freeze` de alpha.27. Integra **Historia del cacao y el chocolate** sin modificar los diez schemas congelados, la navegación ni el motor narrativo genérico.
+Alpha.29 integra **Historia del Café** como segunda expansión editorial posterior al Product Contract Freeze de alpha.27. No modifica ninguno de los diez schemas congelados, la navegación ni el motor narrativo genérico.
 
 ## Gates
 - G0/G1/G2/G3: CERRADOS.
-- Narrative Museum: CERRADO como experiencia pública.
-- Navigation Hardening: CERRADO.
-- Geographic Explorer: CERRADO.
-- Product Consolidation: CERRADO.
-- Story Types: CERRADO.
-- Primera transversal (Fermentación): CERRADA.
+- Narrative Museum / Navigation Hardening / Geographic Explorer / Product Consolidation / Story Types: CERRADOS.
 - Museographic Gate alpha.27: PASS.
 - **Product Contract Freeze alpha.27: ACTIVE.**
-- **E1 Cacao/chocolate alpha.28: QA automatizado PASS; aceptación móvil pendiente.**
+- E1 Cacao/chocolate alpha.28: QA automatizado PASS.
+- **E1 Café alpha.29: QA automatizado PASS; aceptación móvil pendiente.**
 - G4: NO INICIADO.
 
 ## Corpus
-14 subjects · 40 places · 37 occurrences · 1 event · 1 relationship · 7 contexts · 13 developments · 109 sources · 4 stories · 23 escenas · 23 términos de glosario.
+15 subjects · 45 places · 38 occurrences · 1 event · 1 relationship · 7 contexts · 18 developments · 121 sources · 5 stories · 28 escenas · 27 términos de glosario.
 
 ## Cobertura espacial
-- occurrences: 18 con punto / 19 sin punto;
-- contexts: 5 con punto cartografiable / 2 sin punto;
-- developments: 4 con punto cartografiable / 9 sin punto.
+- occurrences: 18 con punto / 20 sin punto;
+- contexts: 5 con punto / 2 sin punto;
+- developments: 9 con punto / 9 sin punto.
 
-La ampliación de Cacao mantiene sin punto Santa Ana-La Florida, Puerto Escondido, el ámbito maya regional y el proceso atlántico cuando la fuente usada no justifica una localización puntual única. Amsterdam, Vevey y Berna se usan únicamente como referencias urbanas para developments industriales documentados. No se persigue el 100 % de pines ni se crean centroides artificiales.
+Yemen temprano permanece sin punto único. Estambul, Oxford, Batavia/Jakarta y Milán son referencias urbanas documentadas como tales, no coordenadas exactas de una cafetería, plantación o máquina históricas.
 
 ## Contrato narrativo congelado
 - `storyType="subject"` → `primarySubjectRef` canónico + `relatedSubjectRefs`.
 - `storyType="transversal"` → `primarySubjectRef: null` + al menos 2 `relatedSubjectRefs`.
-- `relatedSubjectRefs` describe subjects efectivamente cubiertos por el recorrido.
 - No existe `story.subjectRef` legacy.
-- Navegación desde subject prioriza historia monográfica; una transversal solo se autoelige cuando no existe monográfica y es la única candidata.
-- Los diez schemas canónicos siguen fingerprinted exactamente desde alpha.27 en `docs/PRODUCT_CONTRACT_FINGERPRINT.json`.
+- Los diez schemas canónicos conservan el fingerprint de alpha.27 en `docs/PRODUCT_CONTRACT_FINGERPRINT.json`.
 
-## E1 · Cacao/chocolate
-La historia contiene 5 escenas:
-1. Santa Ana-La Florida: evidencia multiproxy de cacao en la alta Amazonía.
-2. Puerto Escondido: residuos de cacao y cautela sobre la hipótesis de fermentación de pulpa.
-3. Mundo maya clásico: vasos, escritura, iconografía y espuma con límites de representatividad.
-4. Circulación atlántica: adopción y reformulación, sin modelo lineal de «Europa corrige el chocolate».
-5. Industrialización 1828–1879: prensa de Van Houten, ensayos de Daniel Peter y conchado de Lindt, evitando falsos hitos de prioridad universal.
+## E1 · Café
+5 escenas:
+1. origen botánico africano vs bebida documentada en Yemen;
+2. coffeehouse otomana como institución social;
+3. Oxford 1650–1651 y redes de conversación/experimentación;
+4. traslado de Arabica a Batavia 1696–1699 dentro de redes coloniales;
+5. espresso como evolución Bezzera 1902–1903 → Gaggia 1938–1947.
 
-Reglas de conocimiento protegidas: **cacao ≠ chocolate**, evidencia antigua ≠ origen absoluto, prensa de 1828 ≠ dutching y no se canoniza una «primera tableta» dependiente de definición.
+Reglas protegidas: Kaldi no es evidencia; Etiopía ≠ fecha de invención de la bebida; no se canoniza una «primera cafetería» universal; Oxford conserva la discrepancia de fuentes; espresso no es alias botánico ni una invención puntual.
 
 ## Próximo paso
-Validar alpha.28 en móvil y, si no aparece una regresión real, continuar E1 con **Café → Azúcar → Patata → Especias/conservación**, manteniendo el contrato congelado y la proporción aproximada de trabajo orientada a investigación/redacción/curación.
+Validar alpha.29 en móvil. Si no aparece una regresión real, continuar E1 con **Azúcar → Patata → Especias/conservación** sin reabrir arquitectura salvo defecto demostrado.

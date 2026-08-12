@@ -979,5 +979,113 @@
     "sourceType": "corporate_archive",
     "accessed": "2026-08-12",
     "notes": "Historia corporativa del conchado de Rodolphe Lindt en Berna en 1879; se utiliza para el hito técnico, no para canonizar la anécdota del supuesto olvido de la máquina."
+  },
+  {
+    "id": "src_coffee_arabica_nature_genetics_2024",
+    "title": "The genome and population genomics of allopolyploid Coffea arabica reveal the diversification history of modern coffee cultivars",
+    "publisher": "Nature Genetics",
+    "url": "https://www.nature.com/articles/s41588-024-01695-w",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Estudio genómico de Coffea arabica. Se utiliza para separar la historia evolutiva de la especie de la historia humana de la bebida y para documentar la estrecha diversidad genética de los cultivares modernos."
+  },
+  {
+    "id": "src_coffee_oxford_plants400",
+    "title": "Coffea arabica L. (Rubiaceae) — Oxford University Plants 400",
+    "publisher": "University of Oxford Herbaria",
+    "url": "https://herbaria.plants.ox.ac.uk/bol/plants400/profiles/CD/Coffeaarabica",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Ficha botánica e histórica institucional. Sitúa la distribución natural de C. arabica en las montañas del sudoeste de Etiopía y registra una coffee house inglesa en Oxford en 1650."
+  },
+  {
+    "id": "src_coffee_yemen_brill_ei3",
+    "title": "Coffee and coffeehouses, Ottoman",
+    "publisher": "Encyclopaedia of Islam THREE · Brill",
+    "url": "https://referenceworks.brill.com/display/entries/EI3O/COM-24410.xml",
+    "sourceType": "scholarly_reference",
+    "accessed": "2026-08-12",
+    "notes": "Entrada académica de referencia sobre café y coffeehouses otomanas. Se usa para el consumo de café en círculos sufíes yemeníes durante el siglo XV y la expansión posterior."
+  },
+  {
+    "id": "src_coffee_unesco_turkish_ich",
+    "title": "Turkish coffee culture and tradition",
+    "publisher": "UNESCO Intangible Cultural Heritage",
+    "url": "https://ich.unesco.org/en/RL/turkish-coffee-culture-and-tradition-00645",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Expediente institucional sobre cultura y tradición del café turco. Se utiliza para la consolidación histórica de coffeehouses en Estambul y el papel social de la preparación y el consumo."
+  },
+  {
+    "id": "src_coffee_met_ottoman_exchange",
+    "title": "The Greater Ottoman Empire, 1600–1800",
+    "publisher": "The Metropolitan Museum of Art",
+    "url": "https://www.metmuseum.org/essays/the-greater-ottoman-empire-1600-1800",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis museística que identifica coffeehouses y hogares aristocráticos como centros de intercambio cultural en ciudades otomanas."
+  },
+  {
+    "id": "src_coffee_oxford_angus_1651",
+    "title": "Religion and Dissent in 17th-Century Oxford — Angel Inn Coffee Shop",
+    "publisher": "The Angus Library and Archive, Regent’s Park College, Oxford",
+    "url": "https://theangus.rpc.ox.ac.uk/?walking-tour=religion-and-dissent-in-17th-century-oxford",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-12",
+    "notes": "Recurso patrimonial que fecha en 1651 la coffee house del Angel Inn. Se conserva junto a la ficha Oxford Plants 400, que da 1650, para no ocultar una discrepancia menor de datación."
+  },
+  {
+    "id": "src_coffee_new_college_science",
+    "title": "The Savilian Professorships — A History",
+    "publisher": "New College, University of Oxford",
+    "url": "https://www.new.ox.ac.uk/geometry-and-astronomy/savilian-professorships-history",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Historia institucional que documenta reuniones de filósofos experimentales en coffee houses de Oxford en la década de 1650 y su relación con la comunidad científica que precedió a la Royal Society."
+  },
+  {
+    "id": "src_coffee_wcr_arabica_history",
+    "title": "History of Arabica",
+    "publisher": "World Coffee Research",
+    "url": "https://varieties.worldcoffeeresearch.org/arabica-2/history-of-arabica",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis genética e histórica de la dispersión de Arabica. Documenta el paso Etiopía→Yemen y envíos neerlandeses de semillas desde India a Batavia en 1696 y 1699, base de la rama Typica."
+  },
+  {
+    "id": "src_coffee_kew_arabica",
+    "title": "Coffea arabica L. — Plants of the World Online",
+    "publisher": "Royal Botanic Gardens, Kew",
+    "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:747038-1/general-information",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Fuente botánica institucional para distribución, cultivo y expansión de plantaciones. Se utiliza con cautela para la expansión europea/colonial, no para fijar una fecha temprana única de origen del consumo."
+  },
+  {
+    "id": "src_coffee_bezzera_patent_us726793",
+    "title": "US726793A — Coffee-making machine",
+    "publisher": "United States Patent Office · Google Patents facsimile",
+    "url": "https://patents.google.com/patent/US726793A/en",
+    "sourceType": "primary_source",
+    "accessed": "2026-08-12",
+    "notes": "Patente primaria de Luigi Bezzera: solicitud estadounidense de 10 de junio de 1902 y concesión de 28 de abril de 1903. El documento identifica a Bezzera en Milán y describe la máquina de café."
+  },
+  {
+    "id": "src_coffee_smithsonian_espresso_history",
+    "title": "The Long History of the Espresso Machine",
+    "publisher": "Smithsonian Magazine · Smithsonian Institution",
+    "url": "https://www.smithsonianmag.com/arts-culture/the-long-history-of-the-espresso-machine-126012814/",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis histórica institucional utilizada como contraste para la secuencia tecnológica Bezzera/Pavoni y Gaggia y, sobre todo, para no equiparar las primeras máquinas de vapor con el espresso contemporáneo de alta presión."
+  },
+  {
+    "id": "src_coffee_gaggia_history",
+    "title": "About Gaggia — Our History",
+    "publisher": "Gaggia Professional · Evoca Group",
+    "url": "https://gaggiaprofessional.evocagroup.com/en/about-gaggia",
+    "sourceType": "corporate_archive",
+    "accessed": "2026-08-12",
+    "notes": "Cronología corporativa para las patentes y desarrollos de Achille Gaggia: patente de 1938 y mecanismo de palanca de 1947 capaz de trabajar a 8–9 atmósferas. Se contrasta con Smithsonian para evitar depender solo de una fuente corporativa."
   }
 ]

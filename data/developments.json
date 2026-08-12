@@ -395,5 +395,165 @@
       "src_smithsonian_chocolate_technology_2009"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "coffeehouse_ottoman_sociability_1500_1600",
+    "name": "Consolidación de la coffeehouse como espacio urbano otomano",
+    "type": "social_institution",
+    "period": {
+      "start": 1500,
+      "end": 1600,
+      "precision": "century",
+      "display": "siglo XVI"
+    },
+    "placeRefs": [
+      "istanbul_turkiye"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "urban_sociability",
+      "hospitality",
+      "cultural_exchange"
+    ],
+    "summary": "Durante el siglo XVI la preparación y consumo de café se integraron en coffeehouses de Estambul y otras ciudades otomanas. Estos espacios funcionaron como lugares de sociabilidad, conversación, entretenimiento e intercambio cultural; no se reduce el proceso a una única “primera cafetería”.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_coffee_unesco_turkish_ich",
+      "src_coffee_met_ottoman_exchange"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "oxford_coffeehouse_1650_1651",
+    "name": "Coffeehouse en Oxford y sociabilidad intelectual",
+    "type": "social_institution",
+    "period": {
+      "start": 1650,
+      "end": 1651,
+      "precision": "range",
+      "display": "1650–1651"
+    },
+    "placeRefs": [
+      "oxford_england"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "urban_sociability",
+      "knowledge_exchange",
+      "scientific_networks"
+    ],
+    "summary": "Fuentes institucionales de Oxford sitúan la apertura temprana de una coffee house en 1650 o 1651. Durante la década, coffee houses de la ciudad acogieron reuniones de filósofos experimentales vinculados a la comunidad que precedió a la Royal Society. El Atlas conserva la discrepancia de un año en lugar de fabricar una exactitud inexistente.",
+    "certainty": "medium_high",
+    "sourceRefs": [
+      "src_coffee_oxford_plants400",
+      "src_coffee_oxford_angus_1651",
+      "src_coffee_new_college_science"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "arabica_batavia_1696_1699",
+    "name": "Transferencia de Arabica a Batavia y formación de la rama Typica",
+    "type": "crop_diffusion_colonial",
+    "period": {
+      "start": 1696,
+      "end": 1699,
+      "precision": "range",
+      "display": "1696–1699"
+    },
+    "placeRefs": [
+      "batavia_java_reference"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "crop_transfer",
+      "colonial_cultivation",
+      "global_diffusion"
+    ],
+    "summary": "World Coffee Research sitúa envíos neerlandeses de semillas desde la costa de Malabar a Batavia en 1696 y 1699. Esa transferencia contribuyó a separar la rama Typica y a una expansión posterior por jardines botánicos, colonias y plantaciones. El Atlas presenta este movimiento como parte de redes coloniales, no como una difusión neutral de una planta.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_kew_arabica"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "bezzera_coffee_machine_1902_1903",
+    "name": "Máquina de café de Luigi Bezzera: solicitud y patente estadounidense",
+    "type": "extraction_technology",
+    "period": {
+      "start": 1902,
+      "end": 1903,
+      "precision": "range",
+      "display": "1902–1903"
+    },
+    "placeRefs": [
+      "milan_italy"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "rapid_service",
+      "machine_brewing",
+      "single_portion_pathway"
+    ],
+    "summary": "La patente estadounidense de Luigi Bezzera fue solicitada el 10 de junio de 1902 y concedida el 28 de abril de 1903. Forma parte de la genealogía de máquinas que aceleraron la preparación de café, pero sus sistemas de vapor y presión no deben identificarse sin matices con el espresso contemporáneo de alta presión.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_coffee_bezzera_patent_us726793",
+      "src_coffee_smithsonian_espresso_history"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "primary_patent_plus_institutional_history",
+      "independentSourceRefs": [
+        "src_coffee_smithsonian_espresso_history"
+      ],
+      "note": "La fecha se toma de la patente primaria; Smithsonian se usa para situar su función y límites dentro de la evolución del espresso."
+    }
+  },
+  {
+    "id": "gaggia_high_pressure_espresso_1938_1947",
+    "name": "De la patente de Gaggia al espresso de palanca de alta presión",
+    "type": "extraction_technology",
+    "period": {
+      "start": 1938,
+      "end": 1947,
+      "precision": "range",
+      "display": "1938–1947"
+    },
+    "placeRefs": [
+      "milan_italy"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "coffee"
+    ],
+    "impactTypes": [
+      "hot_water_pressure",
+      "higher_pressure",
+      "crema",
+      "short_extraction"
+    ],
+    "summary": "Gaggia registra en 1938 un sistema sin vapor directo sobre el café y en 1947 adopta un mecanismo de palanca capaz de alcanzar aproximadamente 8–9 atmósferas. El aumento de presión cambia la extracción y hace característica la crema natural. El hito se presenta como una fase posterior a Bezzera, no como una invención aislada de todo el espresso.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_coffee_gaggia_history",
+      "src_coffee_smithsonian_espresso_history"
+    ],
+    "status": "reviewed"
   }
 ]

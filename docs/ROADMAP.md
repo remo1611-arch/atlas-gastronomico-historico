@@ -596,3 +596,26 @@ Primera demostración editorial posterior al Product Contract Freeze.
 5. si pasa, cerrar Cacao y continuar **Café → Azúcar → Patata → Especias/conservación**.
 
 La regla post-freeze se mantiene: una nueva historia se resuelve con el contrato existente; romper schema requiere ADR, migración y actualización explícita del fingerprint.
+
+
+## Alpha.29 — Café
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Segunda expansión editorial posterior al Product Contract Freeze.
+
+### Integrado
+- 5 escenas: Yemen, coffeehouse otomana, Oxford, Batavia y espresso;
+- 1 subject, 5 places, 1 occurrence, 5 developments, 12 sources y 4 términos de glosario;
+- ningún cambio en los diez schemas congelados ni lógica específica por historia.
+
+### Reglas epistemológicas
+- origen botánico ≠ origen documental de la bebida;
+- Kaldi queda fuera del canon factual;
+- Oxford conserva 1650/1651;
+- el traslado a Java se contextualiza como proceso colonial;
+- espresso se modela como evolución tecnológica multietapa.
+
+### Después
+1. aceptación móvil de Café y regresión de las cuatro historias previas;
+2. **Azúcar → Patata → Especias/conservación**;
+3. G4 continúa bloqueado hasta densidad y evidencia suficientes.

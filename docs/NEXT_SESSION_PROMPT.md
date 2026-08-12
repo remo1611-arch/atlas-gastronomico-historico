@@ -192,3 +192,16 @@ Estado de continuación alpha.28:
 - QA automatizado alpha.28: PASS; aceptación móvil pendiente.
 - Si pasa, siguiente dossier E1: Café; después Azúcar → Patata → Especias/conservación.
 - G4 sigue bloqueado hasta densidad de corpus suficiente.
+
+
+Estado de continuación alpha.29:
+- Product Contract Freeze alpha.27 permanece ACTIVE; no actualizar fingerprint salvo migración explícita.
+- Historia del Café integrada con 5 escenas.
+- Corpus: 15 subjects / 45 places / 38 occurrences / 121 sources / 5 stories / 28 scenes / 27 glossary.
+- Kaldi no es evidencia histórica canónica.
+- Separar origen botánico de Arabica y documentación histórica de la bebida.
+- Oxford conserva la discrepancia 1650/1651.
+- Batavia 1696–1699 se explica como transferencia colonial de material vegetal.
+- Bezzera 1902–1903 y Gaggia 1938–1947 son etapas distintas; no usar «1901 = espresso moderno».
+- Siguiente dossier E1: Azúcar; después Patata → Especias/conservación.
+- G4 sigue bloqueado hasta densidad de corpus suficiente.

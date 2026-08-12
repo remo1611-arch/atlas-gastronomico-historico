@@ -136,5 +136,29 @@
     "term": "conchado",
     "definition": "Etapa de elaboración del chocolate basada en trabajo mecánico prolongado de la masa, normalmente con mezcla, cizallamiento, aireación y control térmico, que modifica textura, humedad, compuestos volátiles y propiedades de flujo.",
     "status": "reviewed"
+  },
+  {
+    "id": "coffea_arabica",
+    "term": "Coffea arabica",
+    "definition": "Especie de cafeto tetraploide originaria de bosques montanos del África oriental, con su mayor diversidad genética en Etiopía. Su origen botánico no equivale a la fecha o lugar de invención de la bebida de café.",
+    "status": "reviewed"
+  },
+  {
+    "id": "coffeehouse",
+    "term": "coffeehouse / casa de café",
+    "definition": "Establecimiento urbano dedicado al consumo de café y a la sociabilidad. Según época y lugar podía funcionar como espacio de conversación, información, entretenimiento, negocios o intercambio intelectual.",
+    "status": "reviewed"
+  },
+  {
+    "id": "espresso",
+    "term": "espresso",
+    "definition": "Método de preparación de café basado en hacer pasar agua caliente a presión a través de café finamente molido y compactado. No es una especie de café ni un grado de tueste, y su forma contemporánea surgió por una secuencia de innovaciones técnicas.",
+    "status": "reviewed"
+  },
+  {
+    "id": "crema_espresso",
+    "term": "crema del espresso",
+    "definition": "Capa de espuma y emulsión que se forma sobre un espresso extraído a suficiente presión. Se asocia a gases, aceites y compuestos coloidales liberados durante la extracción y se volvió característica con las máquinas de alta presión del siglo XX.",
+    "status": "reviewed"
   }
 ]

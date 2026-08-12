@@ -1087,5 +1087,243 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_coffee",
+    "storyType": "subject",
+    "primarySubjectRef": "coffee",
+    "relatedSubjectRefs": [
+      "coffee"
+    ],
+    "title": "Historia del café",
+    "question": "¿Cómo pasó una planta africana a convertirse en bebida devocional, espacio de sociabilidad, mercancía colonial y método de extracción industrial?",
+    "teaser": "Del Yemen sufí a las coffeehouses, Java y la máquina de espresso: cinco escenas para separar planta, bebida, institución social, cultivo colonial y tecnología.",
+    "eyebrow": "Historia · Café",
+    "subtitle": "Una bebida global sin leyenda de origen única",
+    "estimatedMinutes": 11,
+    "endTitle": "El café nunca fue una sola cosa",
+    "endText": "La planta tiene una historia evolutiva; la bebida, una historia cultural; las coffeehouses, una historia social; las plantaciones, una historia económica y colonial; el espresso, una historia tecnológica. Confundirlas produce una cronología sencilla, pero falsa.",
+    "sourceRefs": [
+      "src_coffee_arabica_nature_genetics_2024",
+      "src_coffee_yemen_brill_ei3",
+      "src_coffee_unesco_turkish_ich",
+      "src_coffee_oxford_plants400",
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_bezzera_patent_us726793",
+      "src_coffee_gaggia_history",
+      "src_coffee_smithsonian_espresso_history",
+      "src_coffee_met_ottoman_exchange",
+      "src_coffee_oxford_angus_1651",
+      "src_coffee_new_college_science",
+      "src_coffee_kew_arabica"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "coffee_1_plant_beverage",
+        "sceneType": "origins",
+        "label": "01 · Etiopía ↔ Yemen · siglo XV",
+        "title": "La planta es africana; la primera historia documental de la bebida que usamos aquí es yemení",
+        "lead": "Separar botánica de historia cultural evita que una leyenda de descubrimiento sustituya a dos procesos distintos: la evolución de Coffea arabica y la adopción humana de sus semillas como bebida.",
+        "geography": {
+          "today": "Sudoeste de Etiopía y Yemen",
+          "region": "África oriental y Arabia meridional",
+          "orientation": "Coffea arabica tiene su centro de diversidad en los bosques montanos etíopes. La escena se desplaza después a Yemen, donde fuentes históricas permiten hablar del consumo de café como bebida en el siglo XV.",
+          "society": "Comunidades agrícolas y redes del mar Rojo/océano Índico; en Yemen, círculos sufíes que utilizaron una bebida estimulante durante vigilias y prácticas devocionales."
+        },
+        "narrative": [
+          "La historia del café suele empezar con un pastor llamado Kaldi y unas cabras excitadas. Es una buena leyenda, pero no funciona como evidencia histórica para un museo. Lo que sí podemos separar con fuentes actuales son dos preguntas: de dónde procede Coffea arabica como especie y dónde aparece documentado el consumo de café como bebida. La genética moderna muestra que Arabica es un híbrido antiguo con una historia evolutiva de cientos de miles de años; la botánica sitúa su distribución natural y principal diversidad en Etiopía. Nada de eso nos dice todavía quién tostó semillas o preparó una bebida.",
+          "Para la práctica alimentaria, la documentación histórica es mucho más reciente. La literatura académica sitúa el consumo de café entre círculos sufíes de Yemen durante el siglo XV, asociado a su efecto estimulante en vigilias y devociones nocturnas. Esta formulación es deliberadamente prudente: hablamos de documentación histórica del consumo, no de un “primer café” universal, y no convertimos una región compleja en un único punto exacto del mapa.",
+          "La distinción importa porque las historias de los alimentos mezclan con facilidad especie, domesticación, comercio y receta. Una planta puede ser nativa de una región y convertirse en cultivo o bebida significativa en otra; además, las rutas entre el sudoeste de Etiopía y Yemen formaban parte de conexiones mucho más amplias del mar Rojo y el océano Índico. La bebida no aparece en un vacío geográfico ni necesita un héroe fundador para resultar histórica.",
+          "También cambia la manera de interpretar el verbo “origen”. El origen evolutivo de Arabica no es el origen de una técnica culinaria; el primer texto conservado no garantiza la primera práctica real; y una tradición devocional no equivale todavía a consumo urbano generalizado. Esta escena establece esas capas antes de que la siguiente muestre qué ocurre cuando el café sale de círculos específicos y empieza a organizar espacios públicos."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_coffee_yemen_sufi_1400_1500"
+          }
+        ],
+        "sourceRefs": [
+          "src_coffee_arabica_nature_genetics_2024",
+          "src_coffee_oxford_plants400",
+          "src_coffee_yemen_brill_ei3",
+          "src_coffee_wcr_arabica_history"
+        ],
+        "method": {
+          "title": "Separar origen botánico de primera documentación cultural",
+          "body": "La genética y la botánica responden a preguntas sobre especie y población; los textos históricos responden a prácticas humanas. El Atlas no combina ambas líneas para fabricar una fecha única de “nacimiento del café”."
+        },
+        "limits": "No usamos la leyenda de Kaldi como evidencia. Tampoco afirmamos que el siglo XV marque el primer consumo humano real: es el marco documental suficientemente sólido seleccionado para este recorrido.",
+        "whyItMatters": "Obliga a distinguir especie, cultivo, ingrediente y bebida, una regla que también evita errores al estudiar cacao, trigo, vino o cualquier otro alimento.",
+        "nextQuestion": "¿Qué cambia cuando una bebida vinculada a prácticas concretas deja de ser solo una preparación y empieza a estructurar un lugar urbano de reunión?",
+        "glossaryRefs": [
+          "coffea_arabica"
+        ]
+      },
+      {
+        "id": "coffee_2_ottoman_coffeehouse",
+        "sceneType": "social_institution",
+        "label": "02 · Estambul · siglo XVI",
+        "title": "La coffeehouse convierte una bebida en una institución social",
+        "lead": "El gran cambio no es añadir un ingrediente: es crear un lugar repetible donde beber café significa también conversar, escuchar, negociar, entretenerse y observar a otros.",
+        "geography": {
+          "today": "Estambul · Türkiye, dentro de una red otomana más amplia",
+          "region": "Imperio otomano · Mediterráneo oriental y Oriente Próximo",
+          "orientation": "Estambul sirve como punto urbano de referencia, pero la cultura de coffeehouse se difundió por numerosas ciudades otomanas. El mapa no representa una supuesta “primera cafetería” como origen absoluto.",
+          "society": "Habitantes urbanos de distintos oficios y posiciones sociales, viajeros, comerciantes, artistas y otros públicos que utilizaron coffeehouses como espacios de convivencia y circulación cultural."
+        },
+        "narrative": [
+          "Durante el siglo XVI el café entra en una escala social distinta. La UNESCO sitúa la tradición del café turco y su servicio en coffeehouses de Estambul en ese siglo, mientras que la historiografía del mundo otomano muestra que estos establecimientos se convirtieron en centros de intercambio cultural. El cambio es crucial: el café ya no es solo una sustancia estimulante o una receta, sino una práctica anclada en un espacio comercial y social reconocible.",
+          "Una coffeehouse podía reunir conversación, juego, música, narración, noticias y observación pública. Eso no significa que todas fueran iguales ni que fueran espacios políticamente “libres” en sentido moderno. Sus funciones variaron según ciudad, momento, clientela y autoridad. Precisamente por ello el Atlas evita la fórmula fácil de convertir una cafetería concreta en origen absoluto: una fecha inaugural dice mucho menos que entender por qué un tipo de establecimiento se vuelve reproducible y socialmente significativo.",
+          "El café turco ofrece además un recordatorio técnico. El nombre no designa una especie botánica producida en Türkiye, sino una tradición de preparación y consumo: tostado, molienda muy fina, cocción en cezve y servicio con posos. Producto, método y cultura vuelven a separarse. Una misma especie de café puede generar sistemas culinarios distintos, del mismo modo que un sistema de servicio puede viajar sin que la planta crezca localmente.",
+          "La coffeehouse ayuda finalmente a entender la expansión posterior. Cuando una bebida dispone de lugares, utensilios, gestos y expectativas sociales, su difusión ya no consiste solo en mover semillas o sacos. También viajan maneras de preparar, vender, conversar y dedicar tiempo al consumo. Esa infraestructura cultural será decisiva cuando el café alcance nuevas ciudades europeas."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "coffeehouse_ottoman_sociability_1500_1600"
+          }
+        ],
+        "sourceRefs": [
+          "src_coffee_unesco_turkish_ich",
+          "src_coffee_met_ottoman_exchange"
+        ],
+        "method": {
+          "title": "Estudiar una bebida a través de una institución social",
+          "body": "La historia de la alimentación no se limita a residuos y recetas. Edificios, prácticas de servicio y usos sociales permiten observar cuándo consumir un producto empieza a organizar tiempo, espacio y relaciones."
+        },
+        "limits": "La escena no canoniza 1554 ni otra fecha popular como “primera coffeehouse”. La evidencia disponible permite afirmar la consolidación de la cultura de coffeehouse en el siglo XVI sin convertir una tradición urbana compleja en un instante único.",
+        "whyItMatters": "Explica por qué la historia gastronómica debe incluir lugares de consumo: restaurante, taberna, café o comedor pueden transformar tanto una práctica como un ingrediente.",
+        "nextQuestion": "Cuando esa institución llega a una ciudad universitaria inglesa, ¿se limita a copiar una moda o adopta funciones nuevas dentro de otra ecología urbana?",
+        "glossaryRefs": [
+          "coffeehouse"
+        ]
+      },
+      {
+        "id": "coffee_3_oxford",
+        "sceneType": "sociability",
+        "label": "03 · Oxford · década de 1650",
+        "title": "En Oxford una taza entra en las redes de conversación y ciencia",
+        "lead": "Dos fuentes locales discrepan incluso en un año —1650 o 1651— para la coffee house temprana de Oxford. El desacuerdo pequeño es útil: enseña a no convertir la precisión aparente en certeza.",
+        "geography": {
+          "today": "Oxford · Inglaterra, Reino Unido",
+          "region": "Inglaterra durante la Commonwealth y la Restauración temprana",
+          "orientation": "El punto representa Oxford como ciudad. Las referencias históricas al Angel Inn y a reuniones en coffee houses pertenecen a lugares concretos, pero esta escena estudia la red urbana, no reconstruye una única sala exacta.",
+          "society": "Estudiantes, comerciantes, viajeros, disidentes religiosos y miembros de una comunidad de filósofos experimentales que se reunía en distintos espacios de la ciudad."
+        },
+        "narrative": [
+          "La Universidad de Oxford fecha en 1650 el establecimiento de la primera coffee house inglesa; un recurso patrimonial del Angus Library and Archive da 1651 para el Angel Inn. En vez de elegir una fecha porque parece más limpia, el Atlas conserva el intervalo 1650–1651. La diferencia de un año no cambia la explicación histórica, pero sí revela algo importante sobre cómo se construyen cronologías a partir de fuentes posteriores y tradiciones locales.",
+          "Lo verdaderamente significativo aparece en la década completa. New College documenta que John Wallis y otros filósofos experimentales se reunían en coffee houses de Oxford y en Wadham College; esas redes precedieron a la fundación de la Royal Society en 1660. No debemos concluir que el café “causó” la ciencia moderna. La relación es espacial y social: un tipo de establecimiento ofrecía mesas, bebida estimulante y conversación en una ciudad donde ya existía una comunidad intelectual activa.",
+          "Este es un buen ejemplo de adopción cultural. La coffeehouse inglesa no es simplemente una copia de Estambul trasladada intacta. Cambia al insertarse en instituciones, conflictos religiosos, comercio impreso y formas locales de sociabilidad. El café puede ser el mismo producto importado, pero el significado del establecimiento depende del ecosistema urbano que lo recibe. Así se diferencia difusión material de adopción social.",
+          "También obliga a matizar uno de los tópicos del café: llamarlo “penny university” o afirmar que las coffeehouses democratizaron automáticamente el conocimiento puede ocultar exclusiones de género, clase y estatus. Para esta historia basta una afirmación más sólida: en Oxford las coffee houses formaron parte de espacios donde circulaban ideas y se encontraban algunos miembros de la comunidad científica de los años 1650."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "oxford_coffeehouse_1650_1651"
+          }
+        ],
+        "sourceRefs": [
+          "src_coffee_oxford_plants400",
+          "src_coffee_oxford_angus_1651",
+          "src_coffee_new_college_science"
+        ],
+        "method": {
+          "title": "Conservar desacuerdos pequeños en vez de resolverlos por estética",
+          "body": "Cuando dos fuentes institucionales dan 1650 y 1651, el rango es informativamente superior a escoger una. La incertidumbre cronológica no impide explicar la función social mejor documentada de la década."
+        },
+        "limits": "No afirmamos que las coffee houses causaran la Royal Society ni que fueran espacios universales o igualitarios. La conexión documentada es la participación de miembros de una comunidad experimental en reuniones celebradas allí.",
+        "whyItMatters": "Muestra cómo un alimento puede formar parte de infraestructuras de conocimiento sin necesidad de atribuirle una causalidad heroica o monocausal.",
+        "nextQuestion": "Mientras las ciudades europeas adoptaban el consumo, la planta también estaba cambiando de geografía: ¿qué hizo falta para que Arabica saliera del eje Etiopía–Yemen y se convirtiera en cultivo colonial global?",
+        "glossaryRefs": [
+          "coffeehouse"
+        ]
+      },
+      {
+        "id": "coffee_4_java",
+        "sceneType": "diffusion",
+        "label": "04 · India → Batavia/Java · 1696–1699",
+        "title": "Mover una semilla cambia la genética del cultivo y también la economía política",
+        "lead": "La expansión mundial de Arabica no fue una ruta romántica de viajeros amantes del café: estuvo integrada en redes comerciales y coloniales capaces de trasladar material vegetal, controlar tierra y organizar producción para mercados lejanos.",
+        "geography": {
+          "today": "Costa de Malabar (India) → Yakarta/Java (Indonesia)",
+          "region": "Océano Índico y redes coloniales neerlandesas",
+          "orientation": "El mapa usa Batavia/actual Yakarta como referencia del destino documentado de los envíos de 1696 y 1699. No coloca un pin sobre una plantación desconocida ni dibuja una flecha causal más precisa que las fuentes.",
+          "society": "Funcionarios y comerciantes de la VOC, cultivadores locales y comunidades sometidas a estructuras coloniales que convirtieron cultivos de exportación en parte de economías imperiales."
+        },
+        "narrative": [
+          "World Coffee Research, combinando historia y genética de variedades, sitúa envíos neerlandeses de semillas desde la costa de Malabar a Batavia en 1696 y 1699. El detalle importa porque corrige otra historia repetida: la rama Typica no parece derivar simplemente de un envío directo Yemen→Java, sino de material que ya había pasado por India. A partir de esta población, una cadena de traslados hacia Ámsterdam, América y otros territorios contribuyó a la enorme expansión de Arabica.",
+          "La genética añade aquí una dimensión museográfica nueva. Una transferencia histórica deja huella en el parentesco de cultivares modernos. Pero esa historia biológica no debe neutralizar la historia humana. Kew recuerda que la producción europea pasó a abastecerse de plantaciones neerlandesas en Ceilán y Java y, después, de explotaciones en América y el Caribe. Semillas, jardines botánicos, monopolios comerciales, trabajo y colonización formaban parte del mismo sistema de expansión.",
+          "Por eso esta escena no usa la palabra “difusión” como si todas las partes tuvieran la misma capacidad de decisión. El movimiento de una planta puede ser técnicamente fascinante y, al mismo tiempo, estar inserto en relaciones de poder. En el Atlas futuro, cuando representemos redes G4, una línea India→Batavia tendrá que distinguir traslado documentado de semilla, cultivo, adopción y producción a gran escala; no bastará con unir dos puntos porque ambos tengan café.",
+          "El resultado de estos cuellos de botella históricos también llega al presente. Arabica cultivada posee una diversidad genética estrecha, condición relevante para vulnerabilidad a enfermedades y cambio climático. Una decisión de transporte de finales del siglo XVII no explica por sí sola esa vulnerabilidad, pero forma parte de la historia de cómo un conjunto reducido de linajes se convirtió en base de grandes superficies cultivadas."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "arabica_batavia_1696_1699"
+          }
+        ],
+        "sourceRefs": [
+          "src_coffee_wcr_arabica_history",
+          "src_coffee_kew_arabica",
+          "src_coffee_arabica_nature_genetics_2024"
+        ],
+        "method": {
+          "title": "Cruzar documentos de movimiento con genética de variedades",
+          "body": "La historia de cultivos puede combinar rutas documentadas y parentesco genético. La coincidencia permite revisar relatos tradicionales sobre de dónde procedieron los linajes que luego se multiplicaron en otros continentes."
+        },
+        "limits": "No reconstruimos aquí las plantaciones concretas de Java ni cuantificamos trabajo coercitivo de periodos posteriores. La escena se limita a la transferencia documentada y a situarla explícitamente dentro de un marco colonial.",
+        "whyItMatters": "Introduce una regla esencial para futuras redes del Atlas: transportar germoplasma, cultivar, exportar y generalizar consumo son procesos distintos y deben representarse por separado.",
+        "nextQuestion": "Después de globalizarse la planta y el consumo, la siguiente transformación ocurre dentro de la taza: ¿qué cambia cuando una máquina intenta producir café cada vez más rápido y con mayor control de presión?",
+        "glossaryRefs": [
+          "coffea_arabica"
+        ]
+      },
+      {
+        "id": "coffee_5_espresso",
+        "sceneType": "technology",
+        "label": "05 · Milán · 1902–1947",
+        "title": "El espresso moderno no nace con una sola patente: presión, temperatura y servicio se van desacoplando",
+        "lead": "Bezzera acelera la preparación a comienzos del siglo XX; décadas después Gaggia cambia radicalmente la presión. Llamar “espresso” a toda esa genealogía es útil solo si vemos que el producto dentro de la taza también estaba cambiando.",
+        "geography": {
+          "today": "Milán · Italia",
+          "region": "Italia industrial del siglo XX",
+          "orientation": "Milán sirve como referencia urbana común a Bezzera y Gaggia. Los puntos no pretenden localizar el taller exacto ni afirmar que toda innovación del espresso ocurrió exclusivamente en esta ciudad.",
+          "society": "Cafés urbanos, fabricantes de maquinaria y baristas que respondían a una demanda de servicio rápido, repetible y visible ante el cliente."
+        },
+        "narrative": [
+          "La patente estadounidense de Luigi Bezzera conserva fechas inequívocas: solicitud el 10 de junio de 1902 y concesión el 28 de abril de 1903. Su máquina combina caldera, filtros y mecanismos de salida destinados a preparar café con rapidez. Smithsonian sitúa ese diseño dentro de una secuencia anterior y posterior de máquinas de vapor. El punto esencial es evitar una equivalencia: una máquina que acelera café a comienzos del siglo XX no produce necesariamente la misma extracción que hoy llamamos espresso moderno.",
+          "Las primeras máquinas trabajaban con vapor y presiones relativamente bajas, además de plantear problemas de temperatura y consistencia. La transformación decisiva continuó décadas después. Gaggia registra en 1938 un sistema que hace pasar agua caliente a presión sin aplicar vapor directamente al lecho de café; en 1947 su mecanismo de palanca alcanza aproximadamente 8–9 atmósferas. Con esa presión aparece de forma característica la crema natural y cambia la concentración, textura y volumen de la bebida.",
+          "La secuencia Bezzera→Gaggia demuestra por qué la historia tecnológica no debe organizarse como una competición por “quién inventó el espresso”. Cada sistema resuelve problemas diferentes: velocidad de servicio, control del agua, reducción del contacto con vapor, aumento de presión y repetibilidad. Incluso la palabra espresso cambia de significado práctico conforme cambia la máquina que lo produce. El método contemporáneo es resultado acumulativo, no un objeto que aparezca completo en 1901.",
+          "Esto tiene una consecuencia culinaria directa. Espresso no es una variedad de grano ni un tueste oscuro obligatorio: es un método de extracción. Tamaño de partícula, dosis, compactación, temperatura, presión, tiempo y relación bebida/café condicionan el resultado. La historia termina así donde la FP puede observarla físicamente: la evolución de una bebida se vuelve ciencia de procesos, y la máquina materializa decisiones que antes dependían de caldera, fuego y mano del operador."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "bezzera_coffee_machine_1902_1903"
+          },
+          {
+            "kind": "development",
+            "ref": "gaggia_high_pressure_espresso_1938_1947"
+          }
+        ],
+        "sourceRefs": [
+          "src_coffee_bezzera_patent_us726793",
+          "src_coffee_smithsonian_espresso_history",
+          "src_coffee_gaggia_history"
+        ],
+        "method": {
+          "title": "Leer patentes sin confundir patente con producto final",
+          "body": "Una patente prueba que cierto diseño fue descrito y protegido en una fecha; no demuestra que el resultado sensorial sea idéntico al estándar actual. Por eso se contrasta el documento técnico con historias institucionales de la evolución de presión y extracción."
+        },
+        "limits": "No usamos “1901” como fecha universal del espresso moderno ni tratamos la historia corporativa de Gaggia como fuente independiente única. La escena tampoco cubre aquí desarrollos posteriores como Faema E61.",
+        "whyItMatters": "Conecta historia, ingeniería y ciencia de alimentos: una modificación de presión o temperatura cambia físicamente lo extraído y, por tanto, cambia también el producto histórico que el consumidor reconoce.",
+        "nextQuestion": "Idea para llevarte: la historia del café se entiende mejor si preguntamos por separado por la planta, la bebida, el lugar social, el sistema productivo y el método de extracción.",
+        "glossaryRefs": [
+          "espresso",
+          "crema_espresso"
+        ]
+      }
+    ]
   }
 ]

@@ -927,5 +927,26 @@
       "src_met_maya_chocolate_cup_2014"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_coffee_yemen_sufi_1400_1500",
+    "subjectRef": "coffee",
+    "placeRef": "yemen_coffee_region",
+    "period": {
+      "start": 1400,
+      "end": 1500,
+      "precision": "century",
+      "display": "siglo XV"
+    },
+    "occurrenceType": "documented_beverage_use",
+    "evidenceType": "historical_textual_tradition",
+    "certainty": "high",
+    "summary": "Fuentes históricas sintetizadas por la investigación académica sitúan el consumo de café como bebida en círculos sufíes de Yemen durante el siglo XV, donde su efecto estimulante se vinculó a vigilias y prácticas devocionales.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_coffee_yemen_brill_ei3"
+    ],
+    "status": "reviewed"
   }
 ]

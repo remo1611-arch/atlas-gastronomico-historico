@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.0-alpha.29 — 2026-08-12
+
+### Expansión editorial E1 — Café
+- Nueva historia de 5 escenas: Yemen, coffeehouse otomana, Oxford, Batavia y evolución del espresso.
+- Añade 1 subject, 5 places, 1 occurrence, 5 developments, 12 sources y 4 términos de glosario.
+- Sin cambios en los 10 schemas congelados ni lógica específica de Café.
+- Separa origen botánico africano de la documentación yemení de la bebida.
+- Conserva el desacuerdo 1650/1651 para la primera coffeehouse de Oxford según las fuentes seleccionadas.
+- Contextualiza el traslado de Arabica a Batavia 1696–1699 como proceso colonial.
+- Espresso se explica como evolución Bezzera 1902–1903 → Gaggia 1938–1947; no se canoniza 1901 como invención del espresso moderno.
+- `espresso` no se usa como alias del subject Café.
+
+### QA alpha.29
+- Añade `test_coffee_story.py`.
+- Product Contract Freeze alpha.27 permanece intacto.
+- Python `test_*.py`: 57/57 PASS; Node `test_*.mjs`: 5/5 PASS.
+- Aceptación táctil/visual de alpha.29: pendiente.
+
 ## 0.1.0-alpha.28 — 2026-08-12
 
 ### Expansión editorial E1 — Cacao/chocolate
