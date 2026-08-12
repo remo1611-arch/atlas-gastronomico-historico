@@ -1,5 +1,27 @@
 # Changelog
 
+## 0.1.0-alpha.35 — 2026-08-12
+
+### G4 Pilot A · vínculos documentados
+- nuevo contrato aditivo `transfer` para vectores históricos direccionales entre lugares;
+- añade `data/transfers.json` y `schemas/transfer.schema.json` sin modificar los diez schemas congelados de alpha.27;
+- Patata: Gran Canaria → Amberes, noviembre de 1567, `trade`, verified/high;
+- Café: costa de Malabar → Batavia, 1696 y 1699, `plant_transfer`, reviewed/high;
+- ambos vectores enlazan a evidencia canónica ya existente; no duplican occurrences/developments;
+- 2 nuevos places semánticos sin puntos inventados: Amberes como destino documental y costa de Malabar como región de origen;
+- capa pública `Vínculos documentados · piloto G4` con estado cartográfico explícito;
+- `mapMode=none` en ambos casos: 0 líneas dibujadas porque ningún vector tiene dos extremos puntuales suficientemente sustentados;
+- `relationships.json` permanece con su semántica subject→subject y una única relación canónica;
+- G4 full network continúa bloqueado.
+
+### QA alpha.35
+- nuevo `test_g4_pilot_a.py`;
+- schema validation ampliada a 11 schemas sin alterar el fingerprint de los 10 congelados;
+- `validate_project.py` valida refs, fuentes, evidencia canónica y opt-in de geometría de transfers;
+- `PUBLIC STATE` y `VERIFIED GATE` incluyen la nueva colección;
+- Product Contract Freeze alpha.27 y G2 fingerprint intactos;
+- aceptación táctil/visual del piloto: pendiente.
+
 ## 0.1.0-alpha.34 — 2026-08-12
 
 ### Intercambio colombino · G4 readiness

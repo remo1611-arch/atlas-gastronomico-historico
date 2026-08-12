@@ -1,9 +1,9 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.34",
+    "version": "0.1.0-alpha.35",
     "gate": "G3_CLOSED",
-    "experience": "EDITORIAL_EXPANSION_G4_READINESS"
+    "experience": "G4_PILOT_A_DOCUMENTED_TRANSFERS"
   },
   "timeline": {
     "minYear": -12000,
@@ -18,7 +18,8 @@
       "gastronomy": true,
       "contexts": true,
       "developments": true,
-      "safety": true
+      "safety": true,
+      "transfers": true
     }
   }
 }

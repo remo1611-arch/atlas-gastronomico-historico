@@ -4268,3 +4268,30 @@ html[data-theme="light"] .story-map-frame .country{fill:#d7ddd8;stroke:#aeb9b3}
 .unmapped-record-list article span{color:var(--place);font-size:.58rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
 .unmapped-record-list article strong{margin-top:3px;font-family:Georgia,serif;font-size:.84rem}
 .unmapped-record-list article small{margin-top:3px;color:var(--muted);font-size:.6rem;line-height:1.35}
+
+
+/* alpha.35 · G4 Pilot A — documented transfers */
+.layer-swatch.transfers{background:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 16%,transparent)}
+.transfer-pilot{margin:10px 0 14px;padding:12px;border:1px solid color-mix(in srgb,var(--gold) 32%,var(--line));border-radius:14px;background:color-mix(in srgb,var(--surface-solid) 88%,transparent)}
+.transfer-pilot.hidden{display:none}
+.transfer-pilot-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.transfer-pilot-head>div span,.transfer-pilot-head>div strong{display:block}
+.transfer-pilot-head>div span{font-size:.58rem;font-weight:900;letter-spacing:.09em;color:var(--gold)}
+.transfer-pilot-head>div strong{margin-top:3px;font-family:Georgia,serif;font-size:.94rem}
+.transfer-pilot-head small{color:var(--muted);font-size:.61rem;text-align:right;line-height:1.4}
+.transfer-pilot-note{margin:8px 0 0;color:var(--muted);font-size:.62rem;line-height:1.5}
+.transfer-pilot-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.transfer-card{min-width:0;padding:10px;border:1px solid var(--line);border-radius:11px;background:color-mix(in srgb,var(--bg) 48%,transparent)}
+.transfer-card.active{border-color:color-mix(in srgb,var(--gold) 55%,var(--line));box-shadow:0 0 0 1px color-mix(in srgb,var(--gold) 12%,transparent)}
+.transfer-card-top{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.transfer-card-top span{font-size:.55rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--place)}
+.transfer-card-top b{font-size:.58rem;color:var(--muted)}
+.transfer-card-top em{font-style:normal;font-size:.5rem;font-weight:900;letter-spacing:.05em;color:var(--gold)}
+.transfer-card>strong{display:block;margin-top:6px;font-family:Georgia,serif;font-size:.82rem;line-height:1.35}
+.transfer-card p{margin:6px 0;color:var(--muted);font-size:.6rem;line-height:1.45}
+.transfer-card small{display:block;color:var(--accent);font-size:.56rem;line-height:1.4}
+.transfer-card button{margin-top:8px;padding:0;border:0;background:none;color:var(--accent);font:inherit;font-size:.59rem;font-weight:900;cursor:pointer}
+.transfer-card button:hover{text-decoration:underline}
+.transfer-vector-line{stroke:var(--gold);stroke-width:2;stroke-dasharray:7 5;opacity:.75;vector-effect:non-scaling-stroke}
+.transfer-vector.temporal-context{opacity:.35}.transfer-vector.temporal-current{opacity:1}
+@media(max-width:760px){.transfer-pilot-list{grid-template-columns:1fr}.transfer-pilot-head{flex-direction:column}.transfer-pilot-head small{text-align:left}}

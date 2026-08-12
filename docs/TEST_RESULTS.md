@@ -1,62 +1,53 @@
-# Resultados de validación — 0.1.0-alpha.34
+# Resultados de validación — 0.1.0-alpha.35
 
-## Estado
-
-**QA automatizado: PASS.** Aceptación táctil/visual en dispositivo real: pendiente.
+## Veredicto
+**QA automatizado: PASS · aceptación táctil/visual: pendiente**
 
 ## Corpus
+- 22 subjects;
+- 65 places;
+- 50 occurrences;
+- 1 event;
+- 1 relationship subject→subject;
+- 2 transfers G4 Pilot A;
+- 7 contexts;
+- 30 developments;
+- 163 sources;
+- 10 stories / 55 escenas;
+- 50 términos de glosario.
 
-- 22 subjects
-- 63 places
-- 50 occurrences
-- 1 event
-- 1 relationship
-- 7 contexts
-- 30 developments
-- 163 sources
-- 10 stories / 55 escenas
-- 50 términos de glosario
+## G4 Pilot A
+- Gran Canaria → Amberes · patata · 1567 · `trade` · verified/high;
+- costa de Malabar → Batavia · café · 1696/1699 · `plant_transfer` · reviewed/high;
+- transfers con `mapMode=endpoint_connection`: **0/2**;
+- líneas cartográficas G4: **0**;
+- ambos vínculos enlazan a evidencia canónica existente;
+- `relationships.json` no se reutiliza con semántica espacial.
+
+## Contratos
+- JSON Schema: PASS · 401 objetos / 11 schemas;
+- los 10 schemas congelados de alpha.27: PASS;
+- fingerprint G2: PASS;
+- `taxonomy.json`: sin modificación;
+- reglas canónicas: 169, únicas y consecutivas.
 
 ## Suite
+- Python `test_*.py`: **65/65 PASS**;
+- Node `test_*.mjs`: **5/5 PASS**;
+- `validate_project.py`: PASS;
+- `node --check js/app.js`: PASS;
+- `node --check js/core.js`: PASS;
+- `test_g4_pilot_a.py`: PASS;
+- `test_g4_readiness.py`: PASS;
+- `test_public_state.py`: PASS;
+- `test_verified_gate.py`: PASS;
+- `test_product_contract_freeze.py`: PASS;
+- `test_canonical_rule_numbering.py`: PASS;
+- `test_ui_contract.py`: PASS;
+- `test_mobile_contract.py`: PASS.
 
-- Python `test_*.py`: **64/64 PASS**
-- Node `test_*.mjs`: **5/5 PASS**
-- `validate_project.py`: **PASS**
-- `node --check js/app.js`: **PASS**
-- `node --check js/core.js`: **PASS**
-- `test_columbian_exchange_story.py`: **PASS**
-- `test_g4_readiness.py`: **PASS**
-- `test_taxonomy_runtime_alignment.py`: **PASS**
-- `test_narrative_editorial_depth.py`: **PASS**
-- `test_museographic_gate.py`: **PASS**
-- `test_product_contract_freeze.py`: **PASS**
-- `test_editorial_expansion_bread.py` (fingerprint G2): **PASS**
+## Criterio espacial
+Ningún centroide, puerto o trayecto se ha inventado para el piloto. La ausencia de geometría es un resultado explícito y verificable.
 
-## Contratos preservados
-
-- Los diez schemas congelados en alpha.27 conservan el fingerprint canónico.
-- `data/taxonomy.json` conserva el fingerprint G2 previo.
-- Los tipos específicos presentes en el corpus se incorporan a filtros y etiquetas desde runtime, sin mutar la taxonomía congelada.
-
-## Alpha.34
-
-- Nueva historia transversal `story_columbian_exchange_europe`: **6 escenas / 7 subjects relacionados**.
-- 5 occurrences nuevas elevan el corpus a **50 occurrences**.
-- Se distinguen explícitamente presencia, introducción, cultivo, adopción y generalización.
-- No se añade ninguna relationship ni vector geográfico nuevo.
-- G4 queda **PILOT-READY · FULL NETWORK: NO**.
-
-## Cobertura espacial
-
-- occurrences: **21 con punto / 29 sin punto**;
-- contexts: **5 con punto / 2 sin punto**;
-- developments: **13 con punto / 17 sin punto**.
-
-Los lugares regionales añadidos en alpha.34 permanecen sin centroides artificiales.
-
-## Artefacto
-
-- MANIFEST: **171/171 archivos verificados por tamaño y SHA-256**.
-- `build_manifest.py`: **idempotente** y preserva `G3_CLOSED / EDITORIAL_EXPANSION_G4_READINESS`.
-- doble construcción determinista del ZIP: **byte a byte idéntica**.
-- verificación interna del ZIP: **0 faltantes · 0 hashes incorrectos · 0 extras**.
+## Pendiente
+Prueba física en Xiaomi según `docs/MOBILE_ACCEPTANCE_ALPHA35.md`. El gate debe comprobar especialmente si `0 líneas` se entiende como cautela metodológica y no como error de render.

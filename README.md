@@ -1,19 +1,19 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.34
-**Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
+**Versión:** 0.1.0-alpha.35
+**Estado:** contrato de producto congelado · G4 Pilot A activo · red completa bloqueada
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
-## Alpha.34 — Cultivos americanos, cocinas europeas · G4 readiness
+## Alpha.35 — G4 Pilot A · vínculos documentados
 
-- Nueva historia transversal de 6 escenas sobre intercambio colombino, presencia, introducción, adopción y generalización.
-- Añade judía común, tomate y Capsicum como subjects canónicos.
-- Añade 5 occurrences cuidadosamente diferenciadas: introducción/cultivo de judía, atestiguación/adopción de tomate y adopción regional de Capsicum.
-- El corpus alcanza 50 occurrences públicas, referencia mínima fijada para evaluar G4.
-- G4 queda **PILOT-READY**, pero una red completa sigue bloqueada: solo se dibujarán vectores cuando una fuente sostenga la ruta.
-- `taxonomy.json` permanece congelado por G2; los filtros runtime incorporan también valores observados y los muestran con etiquetas públicas legibles.
-- El contrato de producto congelado en alpha.27 permanece intacto.
+- Abre G4 únicamente como **piloto**, no como red amplia.
+- Añade `data/transfers.json` y `schemas/transfer.schema.json` como contrato aditivo del piloto; los diez schemas congelados en alpha.27 permanecen bit a bit intactos.
+- Primeros vectores: **Gran Canaria → Amberes · patata · 1567** y **costa de Malabar → Batavia · café · 1696/1699**.
+- Ambos vectores tienen dirección histórica explícita, evidencia canónica y fuentes; **0/2 se dibujan como línea**, porque falta precisión puntual suficiente en al menos un extremo.
+- El Atlas incorpora una capa `Vínculos documentados · piloto G4` que muestra relación, fecha, tipo, certeza, limitación cartográfica y acceso a la evidencia original.
+- `relationships.json` continúa reservado a relaciones entre subjects; G4 no reutiliza ese contrato con semántica espacial incompatible.
+- Red completa: **BLOQUEADA** hasta disponer de más vectores independientes y geometría responsable.
 
 ## Propósito
 
@@ -56,7 +56,8 @@ La razón principal es que un ingrediente, una técnica o un plato no puede mode
 3. `event` — qué cambio ocurrió;
 4. `place` — dónde;
 5. `relationship` — cómo se relacionan sujetos;
-6. `source` — qué sustenta la afirmación.
+6. `transfer` — piloto G4: vector histórico direccional entre lugares, solo cuando una fuente lo sostiene explícitamente;
+7. `source` — qué sustenta la afirmación.
 
 
 ## Experiencia pública

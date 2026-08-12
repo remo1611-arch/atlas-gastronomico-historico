@@ -10,6 +10,7 @@ pairs=[
     ("occurrences.json","occurrence.schema.json"),
     ("events.json","event.schema.json"),
     ("relationships.json","relationship.schema.json"),
+    ("transfers.json","transfer.schema.json"),
     ("contexts.json","context.schema.json"),
     ("developments.json","development.schema.json"),
     ("sources.json","source.schema.json"),

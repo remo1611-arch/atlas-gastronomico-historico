@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GastronomicTransferPilot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "subjectRef",
+    "type",
+    "period",
+    "fromPlaceRef",
+    "toPlaceRef",
+    "certainty",
+    "summary",
+    "evidenceRef",
+    "sourceRefs",
+    "mapMode",
+    "mapNote",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "subjectRef": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "trade",
+        "plant_transfer",
+        "introduction",
+        "adoption",
+        "generalization"
+      ]
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end",
+        "precision"
+      ],
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        },
+        "precision": {
+          "type": "string"
+        },
+        "display": {
+          "type": "string"
+        }
+      }
+    },
+    "fromPlaceRef": {
+      "type": "string"
+    },
+    "toPlaceRef": {
+      "type": "string"
+    },
+    "certainty": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "disputed",
+        "unknown"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 40
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "ref"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "occurrence",
+            "event",
+            "development"
+          ]
+        },
+        "ref": {
+          "type": "string"
+        }
+      }
+    },
+    "sourceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "mapMode": {
+      "type": "string",
+      "enum": [
+        "none",
+        "endpoint_connection"
+      ]
+    },
+    "mapNote": {
+      "type": "string",
+      "minLength": 20
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "reviewed",
+        "verified",
+        "deprecated"
+      ]
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "verifiedOn",
+        "method",
+        "independentSourceRefs",
+        "note"
+      ],
+      "properties": {
+        "verifiedOn": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string"
+        },
+        "independentSourceRefs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

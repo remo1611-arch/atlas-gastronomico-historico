@@ -1,3 +1,11 @@
+# Continuación recomendada · alpha.35
+
+Estado actual: G4 Pilot A implementado y automatizado; full network bloqueada.
+
+Prioridad: validar en Xiaomi la capa de vínculos documentados. Comprobar que 0 líneas se perciba como decisión metodológica y no como fallo. Después auditar candidatos para Pilot B sin modificar los 10 schemas congelados ni inferir rutas.
+
+---
+
 # Prompt de continuidad
 
 Toma este ZIP como base canónica del **Atlas Gastronómico Histórico**. Es una reescritura desde cero del proyecto de atlas general anterior.

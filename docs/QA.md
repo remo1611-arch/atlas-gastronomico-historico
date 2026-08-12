@@ -363,3 +363,23 @@ python tools/test_global_map_search_data.py
 - [ ] autoencuadre dispone de reset `Mundo`;
 - [ ] los pines de otras fechas permanecen visualmente secundarios;
 - [ ] sin líneas de difusión inferidas.
+
+## Alpha.35 · G4 Pilot A
+
+```bash
+python tools/test_g4_pilot_a.py
+python tools/test_g4_readiness.py
+python tools/test_schema_validation.py
+python tools/test_product_contract_freeze.py
+```
+
+- [ ] `transfers.json` contiene exactamente los 2 vectores piloto;
+- [ ] cada transfer referencia subject, extremos, evidencia y fuentes existentes;
+- [ ] `relationships.json` conserva semántica subject→subject;
+- [ ] los 10 schemas de alpha.27 permanecen intactos;
+- [ ] `transfer.schema.json` valida el contrato aditivo;
+- [ ] `endpoint_connection` exige puntos sustentados en ambos extremos;
+- [ ] Pilot A mantiene 0 líneas cartográficas;
+- [ ] la capa puede ocultarse/mostrarse sin alterar el resto del Atlas;
+- [ ] `Abrir evidencia` reutiliza occurrence/development canónico;
+- [ ] aceptación Xiaomi según `MOBILE_ACCEPTANCE_ALPHA35.md`.

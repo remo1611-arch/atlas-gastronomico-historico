@@ -15,6 +15,7 @@ places=load("places.json")
 occ=load("occurrences.json")
 events=load("events.json")
 rels=load("relationships.json")
+transfers=load("transfers.json")
 contexts=load("contexts.json")
 developments=load("developments.json")
 sources=load("sources.json")
@@ -34,6 +35,7 @@ P=ids(places,"places")
 O=ids(occ,"occurrences")
 E=ids(events,"events")
 R=ids(rels,"relationships")
+T=ids(transfers,"transfers")
 C=ids(contexts,"contexts")
 D=ids(developments,"developments")
 SRC=ids(sources,"sources")
@@ -153,6 +155,22 @@ for r in rels:
     if r.get("supersededBy") and r.get("supersededBy") not in R:
         errors.append(f"{label}: supersededBy roto")
 
+for t in transfers:
+    label=f"transfer:{t.get('id')}"
+    period(t,label);source_refs(t,label)
+    if t.get("subjectRef") not in S: errors.append(f"{label}: subjectRef roto")
+    if t.get("fromPlaceRef") not in P: errors.append(f"{label}: fromPlaceRef roto")
+    if t.get("toPlaceRef") not in P: errors.append(f"{label}: toPlaceRef roto")
+    evidence=t.get("evidenceRef",{})
+    target={"occurrence":O,"event":E,"development":D}.get(evidence.get("kind"))
+    if target is None: errors.append(f"{label}: evidenceRef kind desconocido")
+    elif evidence.get("ref") not in target: errors.append(f"{label}: evidenceRef roto")
+    if t.get("mapMode")=="endpoint_connection":
+        pf=next((x for x in places if x.get("id")==t.get("fromPlaceRef")),None)
+        pt=next((x for x in places if x.get("id")==t.get("toPlaceRef")),None)
+        if not (pf or {}).get("point") or not (pt or {}).get("point"):
+            errors.append(f"{label}: endpoint_connection exige punto en ambos extremos")
+
 for c in contexts:
     label=f"context:{c.get('id')}"
     period(c,label);source_refs(c,label)
@@ -220,10 +238,10 @@ for src in sources:
 required=[
     "index.html",".nojekyll","css/app.css","js/core.js","js/app.js",
     "data/config.json","data/taxonomy.json","data/subjects.json","data/places.json",
-    "data/occurrences.json","data/events.json","data/relationships.json",
+    "data/occurrences.json","data/events.json","data/relationships.json","data/transfers.json",
     "data/contexts.json","data/developments.json","data/sources.json","data/stories.json","data/glossary.json",
     "data/basemap/world_110m.geojson","data/archive/demo_records_pre_g2.json",
-    "schemas/context.schema.json","schemas/development.schema.json","schemas/story.schema.json","schemas/glossary.schema.json",
+    "schemas/context.schema.json","schemas/development.schema.json","schemas/story.schema.json","schemas/glossary.schema.json","schemas/transfer.schema.json",
     "docs/PROJECT_STATE.md","docs/CANONICAL_RULES.md","docs/DATA_MODEL.md",
     "docs/ROADMAP.md","docs/G2_PILOT.md","docs/G2_FINAL_GATE.md","docs/SEED_ARCHIVE.md","docs/NARRATIVE_MUSEUM_INTEGRATION.md"
 ]
@@ -239,7 +257,7 @@ if version:
     if f"core.js?v={version}" not in app:errors.append("app: core.js sin cache busting de versión")
     for asset in [
         "config.json","taxonomy.json","subjects.json","places.json","occurrences.json",
-        "events.json","relationships.json","contexts.json","developments.json","sources.json","stories.json","glossary.json",
+        "events.json","relationships.json","transfers.json","contexts.json","developments.json","sources.json","stories.json","glossary.json",
         "world_110m.geojson"
     ]:
         if f"{asset}?v={version}" not in app:
@@ -272,6 +290,7 @@ print("Places:",len(places),"· reviewed/verified:",reviewed_counts["places"])
 print("Occurrences:",len(occ),"· reviewed/verified:",reviewed_counts["occurrences"])
 print("Events:",len(events))
 print("Relationships:",len(rels))
+print("Transfers G4 pilot:",len(transfers))
 print("Contexts:",len(contexts),"· reviewed/verified:",reviewed_counts["contexts"])
 print("Developments:",len(developments),"· reviewed/verified:",reviewed_counts["developments"])
 print("Sources:",len(sources))

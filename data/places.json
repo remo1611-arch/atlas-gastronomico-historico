@@ -968,5 +968,27 @@
     ],
     "status": "reviewed",
     "type": "macroregion"
+  },
+  {
+    "id": "antwerp_potato_1567_reference",
+    "name": "Amberes · destino documentado en 1567",
+    "type": "city_reference",
+    "point": null,
+    "summary": "Destino documentado del envío de barriles de patatas desde Gran Canaria en noviembre de 1567. El Atlas conserva la ciudad como extremo semántico del vector, pero no asigna un punto portuario histórico no sustentado por la fuente seleccionada.",
+    "sourceRefs": [
+      "src_potato_europe_hawkes_1993"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "malabar_coast_coffee_transfer_region",
+    "name": "Costa de Malabar · región de origen de los envíos de café",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Región de la costa sudoccidental de India desde la que World Coffee Research documenta envíos de semillas de café hacia Batavia en 1696 y 1699. No se reduce la costa a un puerto o centroide concreto.",
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -739,3 +739,23 @@ Primera historia transversal de segundo nivel construida principalmente mediante
 **PILOT-READY · FULL NETWORK: NO.**
 
 El siguiente paso, solo tras aceptación móvil, es un G4 Pilot A limitado a vectores directos sustentados por fuentes. La red amplia seguirá bloqueada hasta disponer de suficientes conexiones independientes para que la visualización no induzca inferencias.
+
+## Alpha.35 — G4 Pilot A · vínculos documentados
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+### Integrado
+- nuevo contrato aditivo `transfer`;
+- 2 vectores: Patata Gran Canaria→Amberes 1567 y Café Malabar→Batavia 1696/1699;
+- 2 places semánticos adicionales, ambos sin punto;
+- capa Atlas específica con lectura textual y acceso a evidencia canónica;
+- 0 conexiones cartográficas: ambos casos permanecen `mapMode=none`;
+- los diez schemas congelados de alpha.27 y el fingerprint G2 permanecen intactos.
+
+### Resultado del piloto
+G4 demuestra que puede representar dirección histórica sin fabricar geometría. El piloto no intenta parecer una red completa.
+
+### Siguiente gate
+1. aceptación táctil/visual de alpha.35;
+2. auditar candidatos para Pilot B;
+3. solo promover un transfer a `endpoint_connection` si ambos extremos y la representación visual superan revisión espacial;
+4. mantener **FULL NETWORK: BLOQUEADA** hasta disponer de suficientes vectores independientes.

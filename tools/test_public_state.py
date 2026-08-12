@@ -13,6 +13,7 @@ runtime={
     "occurrences":load("occurrences"),
     "events":load("events"),
     "relationships":load("relationships"),
+    "transfers":load("transfers"),
     "contexts":load("contexts"),
     "developments":load("developments"),
 }

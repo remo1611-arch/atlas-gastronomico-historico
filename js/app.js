@@ -1,27 +1,28 @@
-import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.34';
+import {toOrdinal,fromOrdinal,formatYear,active,distance,fromParts,parts,project,selectPreferredStoryForSubject} from './core.js?v=0.1.0-alpha.35';
 
 const P={
-  config:'./data/config.json?v=0.1.0-alpha.34',
-  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.34',
-  subjects:'./data/subjects.json?v=0.1.0-alpha.34',
-  places:'./data/places.json?v=0.1.0-alpha.34',
-  occurrences:'./data/occurrences.json?v=0.1.0-alpha.34',
-  events:'./data/events.json?v=0.1.0-alpha.34',
-  relationships:'./data/relationships.json?v=0.1.0-alpha.34',
-  contexts:'./data/contexts.json?v=0.1.0-alpha.34',
-  developments:'./data/developments.json?v=0.1.0-alpha.34',
-  sources:'./data/sources.json?v=0.1.0-alpha.34',
-  stories:'./data/stories.json?v=0.1.0-alpha.34',
-  glossary:'./data/glossary.json?v=0.1.0-alpha.34',
-  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.34'
+  config:'./data/config.json?v=0.1.0-alpha.35',
+  taxonomy:'./data/taxonomy.json?v=0.1.0-alpha.35',
+  subjects:'./data/subjects.json?v=0.1.0-alpha.35',
+  places:'./data/places.json?v=0.1.0-alpha.35',
+  occurrences:'./data/occurrences.json?v=0.1.0-alpha.35',
+  events:'./data/events.json?v=0.1.0-alpha.35',
+  relationships:'./data/relationships.json?v=0.1.0-alpha.35',
+  transfers:'./data/transfers.json?v=0.1.0-alpha.35',
+  contexts:'./data/contexts.json?v=0.1.0-alpha.35',
+  developments:'./data/developments.json?v=0.1.0-alpha.35',
+  sources:'./data/sources.json?v=0.1.0-alpha.35',
+  stories:'./data/stories.json?v=0.1.0-alpha.35',
+  glossary:'./data/glossary.json?v=0.1.0-alpha.35',
+  basemap:'./data/basemap/world_110m.geojson?v=0.1.0-alpha.35'
 };
 
 const s={
-  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],contexts:[],developments:[],sources:[],stories:[],glossary:[],basemap:null,
+  config:null,taxonomy:null,subjects:[],places:[],occurrences:[],events:[],relationships:[],transfers:[],contexts:[],developments:[],sources:[],stories:[],glossary:[],basemap:null,
   year:1500,view:'histories',search:'',evidence:'all',occurrenceType:'all',certainty:'all',precision:'all',spatial:'all',labelMode:'auto',
   selectedOccurrence:null,historySubject:null,activeStory:null,storyScene:0,temporalSelection:null,eventWindow:100,category:'all',
   mapView:{x:0,y:0,w:1000,h:500},mapViewMode:'world',
-  layers:{gastronomy:true,contexts:true,developments:true,safety:true}
+  layers:{gastronomy:true,contexts:true,developments:true,safety:true,transfers:true}
 };
 
 const $=q=>document.querySelector(q);
@@ -205,6 +206,14 @@ const EVENT_LABELS={
   other:'Proceso histórico'
 };
 
+const TRANSFER_TYPE_LABELS={
+  trade:'Comercio documentado',
+  plant_transfer:'Transferencia de material vegetal',
+  introduction:'Introducción documentada',
+  adoption:'Adopción documentada',
+  generalization:'Generalización documentada'
+};
+
 const CATEGORY_LABELS={
   food_species:'Cultivos y especies',
   beverage:'Bebidas',
@@ -222,8 +231,8 @@ async function j(url){
 
 async function load(){
   try{
-    const [config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,stories,glossary,basemap]=await Promise.all(Object.values(P).map(j));
-    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,contexts,developments,sources,stories,glossary,basemap});
+    const [config,taxonomy,subjects,places,occurrences,events,relationships,transfers,contexts,developments,sources,stories,glossary,basemap]=await Promise.all(Object.values(P).map(j));
+    Object.assign(s,{config,taxonomy,subjects,places,occurrences,events,relationships,transfers,contexts,developments,sources,stories,glossary,basemap});
     s.year=config.timeline.initialYear;
     s.eventWindow=config.timeline.eventWindowYears;
 
@@ -1676,6 +1685,8 @@ function render(){
 
   renderContextLayer();
   renderDevelopmentLayer();
+  renderTransferLayer();
+  renderTransferPilot();
   renderTransformationPreview();
   renderEvents();
   if(s.view==='histories') renderHistorySpotlight();
@@ -1960,6 +1971,115 @@ function renderDevelopmentLayer(){
     });
 }
 
+
+
+function transferPlace(ref){return s.places.find(x=>x.id===ref)||null}
+
+function transferMatchesSearch(t){
+  const q=s.search.trim();
+  if(!q) return true;
+  const subject=subj(t.subjectRef);
+  const from=transferPlace(t.fromPlaceRef);
+  const to=transferPlace(t.toPlaceRef);
+  return queryMatches([
+    subject?.name||'',...(subject?.aliases||[]),
+    from?.name||'',to?.name||'',t.summary||'',TRANSFER_TYPE_LABELS[t.type]||t.type
+  ].join(' '),q);
+}
+
+function visibleTransfers(){
+  return s.transfers
+    .filter(t=>isPublicStatus(t.status))
+    .filter(t=>s.certainty==='all'||t.certainty===s.certainty)
+    .filter(transferMatchesSearch)
+    .sort((a,b)=>a.period.start-b.period.start||a.id.localeCompare(b.id));
+}
+
+function transferProjectable(t){
+  if(t.mapMode!=='endpoint_connection') return false;
+  const from=transferPlace(t.fromPlaceRef);
+  const to=transferPlace(t.toPlaceRef);
+  return placeHasMapPoint(from)&&placeHasMapPoint(to);
+}
+
+function renderTransferLayer(){
+  const layer=$('#transferLayer');
+  if(!layer) return;
+  layer.innerHTML='';
+  if(!s.layers.transfers) return;
+
+  visibleTransfers().filter(transferProjectable).forEach(t=>{
+    const from=transferPlace(t.fromPlaceRef);
+    const to=transferPlace(t.toPlaceRef);
+    const [x1,y1]=project(from.point.lon,from.point.lat);
+    const [x2,y2]=project(to.point.lon,to.point.lat);
+    const current=active(t.period,s.year);
+    const g=svg('g',{class:`transfer-vector ${current?'temporal-current':'temporal-context'}`});
+    const line=svg('line',{x1:x1.toFixed(2),y1:y1.toFixed(2),x2:x2.toFixed(2),y2:y2.toFixed(2),class:'transfer-vector-line'});
+    const title=svg('title');
+    title.textContent=`${subj(t.subjectRef)?.name||t.subjectRef}: ${from.name} → ${to.name} · conexión entre extremos documentados, no trayecto`;
+    g.appendChild(title);
+    g.appendChild(line);
+    layer.appendChild(g);
+  });
+}
+
+function openTransferEvidence(t){
+  const ref=t?.evidenceRef;
+  if(!ref) return;
+  if(ref.kind==='occurrence'){
+    const o=s.occurrences.find(x=>x.id===ref.ref);
+    if(o){
+      setYear(active(o.period,s.year)?s.year:o.period.start);
+      selectOccurrence(o.id,true);
+      routeToAtlas({kind:'occurrence',ref:o.id});
+      return;
+    }
+  }
+  const entry=temporalEntryForRoute(ref.kind,ref.ref);
+  if(entry){
+    focusTemporalItem(entry,true);
+    routeToAtlas({kind:ref.kind,ref:ref.ref});
+    $('#temporalNavigator')?.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+
+function renderTransferPilot(){
+  const box=$('#transferPilotPanel');
+  if(!box) return;
+  if(!s.layers.transfers){box.classList.add('hidden');box.innerHTML='';return;}
+  const list=visibleTransfers();
+  box.classList.remove('hidden');
+  if(!list.length){
+    box.innerHTML='<div class="transfer-pilot-head"><div><span>G4 · PILOTO</span><strong>Vínculos documentados</strong></div><small>Sin vínculos para la búsqueda/filtro actual.</small></div>';
+    return;
+  }
+  const projectable=list.filter(transferProjectable).length;
+  box.innerHTML=`
+    <div class="transfer-pilot-head">
+      <div><span>G4 · PILOTO</span><strong>Vínculos documentados</strong></div>
+      <small>${list.length} ${list.length===1?'vínculo':'vínculos'} · ${projectable} ${projectable===1?'conexión cartografiable':'conexiones cartografiables'}</small>
+    </div>
+    <p class="transfer-pilot-note">Solo se muestran vectores que una fuente sostiene explícitamente. Una conexión histórica puede ser válida sin línea: el mapa no inventa puertos, centroides ni trayectos.</p>
+    <div class="transfer-pilot-list">${list.map(t=>{
+      const subject=subj(t.subjectRef);
+      const from=transferPlace(t.fromPlaceRef);
+      const to=transferPlace(t.toPlaceRef);
+      const current=active(t.period,s.year);
+      const mapState=transferProjectable(t)?'Conexión entre extremos documentados':'Sin geometría proyectable';
+      return `<article class="transfer-card ${current?'active':''}">
+        <div class="transfer-card-top"><span>${esc(TRANSFER_TYPE_LABELS[t.type]||t.type)}</span><b>${esc(t.period.display||formatYear(t.period.start))}</b>${current?'<em>EN ESTA FECHA</em>':''}</div>
+        <strong>${esc(subject?.name||t.subjectRef)} · ${esc(from?.name||t.fromPlaceRef)} → ${esc(to?.name||t.toPlaceRef)}</strong>
+        <p>${esc(t.summary)}</p>
+        <small>${esc(mapState)} · certeza ${esc((CERTAINTY_LABELS[t.certainty]||t.certainty).toLowerCase())}</small>
+        <button type="button" data-transfer-evidence="${esc(t.id)}">Abrir evidencia →</button>
+      </article>`;
+    }).join('')}</div>`;
+  $$('[data-transfer-evidence]').forEach(button=>button.addEventListener('click',()=>{
+    const t=s.transfers.find(x=>x.id===button.dataset.transferEvidence);
+    if(t) openTransferEvidence(t);
+  }));
+}
 
 function developmentTypeLabel(type){
   const labels={
@@ -2846,6 +2966,7 @@ function bind(){
   $('#layerContexts').addEventListener('change',e=>{s.layers.contexts=e.target.checked;render()});
   $('#layerDevelopments').addEventListener('change',e=>{s.layers.developments=e.target.checked;render()});
   $('#layerSafety').addEventListener('change',e=>{s.layers.safety=e.target.checked;render()});
+  $('#layerTransfers').addEventListener('change',e=>{s.layers.transfers=e.target.checked;render()});
 
   $('#filterBtn').addEventListener('click',openDrawer);
   $$('[data-close-drawer]').forEach(x=>x.addEventListener('click',closeDrawer));

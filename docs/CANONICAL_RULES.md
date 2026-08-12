@@ -185,3 +185,9 @@
 162. Los registros sin punto permanecen descubribles mediante búsqueda, cobertura y fichas; la ausencia de geometría no equivale a ausencia del corpus.
 163. El mapa no dibuja líneas entre lugares únicamente por compartir subject, historia o secuencia cronológica; una ruta futura requerirá evidencia específica y su propia semántica.
 
+164. `relationship` conserva semántica subject→subject; una relación espacial direccional no reutiliza ese contrato con IDs de lugares.
+165. Un `transfer` G4 exige evidencia explícita del vector entre origen y destino; compartir subject o secuencia cronológica no lo genera.
+166. Un transfer puede ser público y verificable con `mapMode=none`; ausencia de línea no equivale a ausencia de evidencia histórica.
+167. `mapMode=endpoint_connection` es un opt-in editorial y requiere puntos cartográficos sustentados en ambos extremos.
+168. Una conexión cartográfica entre extremos documentados no se presenta como trayecto real recorrido salvo que exista geometría histórica adicional que lo sustente.
+169. G4 no persigue densidad visual: si la evidencia solo permite dos vectores sin geometría, el Atlas muestra dos vectores sin geometría.

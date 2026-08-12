@@ -1,55 +1,48 @@
 # Estado actual
 
 ## Versión
-0.1.0-alpha.34
+0.1.0-alpha.35
 
 ## Producto
 - **Historias = comprender.**
 - **Atlas = descubrir.**
 - **Evidencia = verificar.**
 
-Alpha.34 integra **Cultivos americanos, cocinas europeas** como transversal orientada a preparar G4. Distingue presencia, introducción, cultivo, adopción y generalización sin dibujar rutas no demostradas.
+Alpha.35 abre **G4 Pilot A** de forma aditiva y limitada. Introduce vínculos históricos direccionales solo cuando la fuente documenta el vector; no convierte coincidencias de subject en rutas.
 
 ## Gates
 - G0/G1/G2/G3: CERRADOS.
 - Museographic Gate alpha.27: PASS.
 - **Product Contract Freeze alpha.27: ACTIVE.**
-- E1 Cacao alpha.28 / Café alpha.29 / Azúcar alpha.30 / Patata alpha.31 / Especias alpha.32: QA automatizado PASS.
-- Conservación alpha.33: QA automatizado PASS.
-- Intercambio colombino alpha.34: QA automatizado PASS; aceptación móvil pendiente.
-- **G4: PILOT-READY · FULL NETWORK NO INICIADA.**
+- Expansión editorial alpha.28–alpha.34: QA automatizado PASS.
+- **G4 Pilot A alpha.35: IMPLEMENTADO · QA automatizado PASS · aceptación móvil pendiente.**
+- **G4 Full Network: BLOQUEADO.**
 
 ## Corpus
-22 subjects · 63 places · 50 occurrences · 1 event · 1 relationship · 7 contexts · 30 developments · 163 sources · 10 stories · 55 escenas · 50 términos de glosario.
+22 subjects · 65 places · 50 occurrences · 1 event · 1 relationship · **2 transfers G4 pilot** · 7 contexts · 30 developments · 163 sources · 10 stories · 55 escenas · 50 términos de glosario.
 
-## Cobertura espacial
-- occurrences: 21 con punto / 29 sin punto;
-- contexts: 5 con punto / 2 sin punto;
-- developments: 13 con punto / 17 sin punto.
+## G4 Pilot A
+Vectores publicados:
+1. `transfer_potato_gran_canaria_antwerp_1567` — `trade` — Gran Canaria → Amberes — noviembre de 1567 — verified/high.
+2. `transfer_coffee_malabar_batavia_1696_1699` — `plant_transfer` — costa de Malabar → Batavia — 1696 y 1699 — reviewed/high.
 
-Alpha.34 no añade centroides. Sus cuatro lugares nuevos son regionales y permanecen sin punto.
+Ambos son direcciones históricas sustentadas por fuentes. **Ninguno se dibuja como línea**:
+- Gran Canaria se mantiene como referencia insular sin punto histórico de embarque;
+- Amberes se conserva como destino documental sin fingir un puerto exacto;
+- Malabar es una región histórica y no recibe centroide;
+- Batavia tiene referencia urbana, pero un único extremo cartografiable no basta.
 
-## Contrato narrativo congelado
-- `storyType="subject"` → `primarySubjectRef` canónico + `relatedSubjectRefs`.
-- `storyType="transversal"` → `primarySubjectRef: null` + al menos 2 `relatedSubjectRefs`.
-- No existe `story.subjectRef` legacy.
-- Los diez schemas canónicos conservan el fingerprint de alpha.27.
-- `data/taxonomy.json` conserva además el fingerprint G2; la cobertura de tipos específicos se resuelve en runtime sin mutar ese contrato.
+La ausencia de geometría no invalida el vínculo.
 
-## Historia de intercambio colombino
-6 escenas:
-1. historias americanas anteriores a 1492;
-2. judía común: introducción reconstruida + cultivo desde 1532;
-3. tomate: 1544 atestiguación ≠ adopción del siglo XVIII;
-4. Capsicum + maíz: adopciones regionales;
-5. patata: 1567 presencia/comercio → ensayo → generalización desigual;
-6. cacao + azúcar: consumo europeo, circulación y poder atlántico.
+## Contrato
+- Los diez schemas congelados de alpha.27 permanecen intactos.
+- `transfer.schema.json` es un contrato **aditivo de piloto G4** y no sustituye `relationship.schema.json`.
+- `relationship`: subject → subject.
+- `transfer`: lugar → lugar sobre un subject, con dirección histórica explícita.
+- `mapMode=endpoint_connection` requiere opt-in editorial y puntos sustentados en ambos extremos; `mapMode=none` mantiene el vínculo sin línea.
 
-## G4 readiness
-- 50 occurrences: umbral inferior de referencia alcanzado.
-- 2 `introduction`, 4 `adoption`, 2 `trade`.
-- 1 relationship canónica: insuficiente para una red extensa.
-- candidatos directos de vector: Gran Canaria→Amberes (patata 1567) y Malabar→Batavia (café 1696/1699).
+## Criterio para ampliar G4
+No abrir red extensa hasta disponer de más vectores independientes de calidad. La densidad se evaluará por variedad de subjects, periodos, regiones y tipos de transferencia, no por número de líneas.
 
 ## Próximo paso
-Validar alpha.34 en móvil. Si pasa, diseñar **G4 Pilot A** como extensión aditiva y extremadamente limitada a vectores documentados; no abrir una red completa hasta disponer de más conexiones independientes y evidencia de ruta suficiente.
+Validar alpha.35 en Xiaomi: capa G4, lectura sin líneas, acceso a evidencia y ausencia de confusión con rutas. Si pasa, auditar un **Pilot B** con más candidatos documentales antes de decidir cualquier visualización de red amplia.

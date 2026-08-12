@@ -10,6 +10,7 @@ collections=[
     ("occurrence",load("occurrences.json")),
     ("event",load("events.json")),
     ("relationship",load("relationships.json")),
+    ("transfer",load("transfers.json")),
     ("context",load("contexts.json")),
     ("development",load("developments.json")),
 ]

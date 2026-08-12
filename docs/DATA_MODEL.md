@@ -154,6 +154,29 @@ Tipos iniciales:
 
 Toda relación puede ser temporal y espacialmente limitada.
 
+### 5A. `transfer` · piloto G4 desde alpha.35
+
+`transfer` no sustituye `relationship`. Modela un **vector histórico direccional entre lugares** asociado a un subject, cuando una fuente sostiene explícitamente ese movimiento.
+
+Campos clave:
+- `subjectRef`;
+- `type`: `trade`, `plant_transfer`, `introduction`, `adoption`, `generalization`;
+- `fromPlaceRef` / `toPlaceRef`;
+- `period`;
+- `evidenceRef` a un registro canónico;
+- `sourceRefs`;
+- `mapMode`;
+- `mapNote`.
+
+Reglas:
+- compartir subject entre lugares no genera un transfer;
+- el vector debe estar documentado en la fuente;
+- `mapMode=none` conserva una relación válida sin línea;
+- `endpoint_connection` requiere puntos sustentados en ambos extremos y opt-in editorial explícito;
+- una línea entre extremos no se denomina “ruta” ni afirma el trayecto real salvo geometría histórica adicional.
+
+El schema `transfer.schema.json` es aditivo al piloto G4. Los diez schemas congelados en alpha.27 permanecen intactos.
+
 ---
 
 ## 6. source

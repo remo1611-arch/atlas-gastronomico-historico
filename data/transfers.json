@@ -1,0 +1,62 @@
+[
+  {
+    "id": "transfer_potato_gran_canaria_antwerp_1567",
+    "subjectRef": "potato",
+    "type": "trade",
+    "period": {
+      "start": 1567,
+      "end": 1567,
+      "precision": "year",
+      "display": "noviembre de 1567"
+    },
+    "fromPlaceRef": "gran_canaria_potato_1567",
+    "toPlaceRef": "antwerp_potato_1567_reference",
+    "certainty": "high",
+    "summary": "Un registro histórico documenta barriles de patatas exportados desde Gran Canaria a Amberes en noviembre de 1567. El vector sostiene comercio entre ambos extremos; no autoriza a reconstruir el puerto de salida, el puerto de llegada ni el trayecto marítimo exacto.",
+    "evidenceRef": {
+      "kind": "occurrence",
+      "ref": "occ_potato_gran_canaria_export_1567"
+    },
+    "sourceRefs": [
+      "src_potato_europe_hawkes_1993",
+      "src_potato_canary_rios_2024"
+    ],
+    "mapMode": "none",
+    "mapNote": "La fuente sostiene origen insular y destino urbano, pero no puntos históricos suficientemente precisos para dibujar una línea sin introducir geometría editorial.",
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "peer_reviewed_vector_crosscheck",
+      "independentSourceRefs": [
+        "src_potato_canary_rios_2024"
+      ],
+      "note": "El envío Gran Canaria→Amberes de 1567 se contrasta con una revisión reciente de la historia y diversidad de las variedades canarias; la geometría permanece deliberadamente ausente."
+    }
+  },
+  {
+    "id": "transfer_coffee_malabar_batavia_1696_1699",
+    "subjectRef": "coffee",
+    "type": "plant_transfer",
+    "period": {
+      "start": 1696,
+      "end": 1699,
+      "precision": "range",
+      "display": "1696 y 1699"
+    },
+    "fromPlaceRef": "malabar_coast_coffee_transfer_region",
+    "toPlaceRef": "batavia_java_reference",
+    "certainty": "high",
+    "summary": "World Coffee Research documenta envíos de semillas de café desde la costa de Malabar a Batavia en 1696 y 1699, base de la posterior rama Typica. El origen regional no permite seleccionar un puerto concreto ni convertir la conexión en un itinerario marítimo.",
+    "evidenceRef": {
+      "kind": "development",
+      "ref": "arabica_batavia_1696_1699"
+    },
+    "sourceRefs": [
+      "src_coffee_wcr_arabica_history",
+      "src_coffee_kew_arabica"
+    ],
+    "mapMode": "none",
+    "mapNote": "Batavia tiene una referencia cartográfica actual, pero el extremo Malabar es regional; no se dibuja una línea con un origen inventado.",
+    "status": "reviewed"
+  }
+]

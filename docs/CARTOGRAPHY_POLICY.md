@@ -27,3 +27,14 @@ El Atlas podrá mostrar:
 - la incertidumbre espacial debe ser visible;
 - una macroregión no se representará como un punto preciso salvo que se marque como referencia visual.
 
+
+
+## G4 · vínculos direccionales
+
+- una fuente debe sostener explícitamente el movimiento entre origen y destino;
+- coincidencia de subject, proximidad temporal o orden narrativo no constituyen un vector;
+- un transfer puede ser históricamente válido y permanecer sin geometría;
+- no se inventan puertos, nodos intermedios, centroides o trayectos para hacer visible una conexión;
+- `endpoint_connection` solo conecta extremos revisados y nunca se comunica como reconstrucción del itinerario real;
+- regiones como Malabar o islas sin punto histórico suficiente permanecen sin coordenadas;
+- el número de líneas no es un indicador de calidad del Atlas.
