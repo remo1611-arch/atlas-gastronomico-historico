@@ -1,7 +1,7 @@
 {
   "project": {
     "name": "Atlas Gastronómico Histórico",
-    "version": "0.1.0-alpha.31",
+    "version": "0.1.0-alpha.33",
     "gate": "G3_CLOSED",
     "experience": "EDITORIAL_EXPANSION_POST_FREEZE"
   },

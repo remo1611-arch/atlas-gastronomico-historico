@@ -226,3 +226,23 @@ Estado de continuación alpha.30:
 - QA automatizado alpha.31: 59/59 Python + 5/5 Node PASS; aceptación móvil pendiente.
 - Próxima expansión editorial preferente: **Especias/conservación**.
 - No romper schemas ni añadir rutas específicas salvo defecto demostrado y ADR explícita.
+
+
+## Estado de continuación alpha.32
+- Product Contract Freeze alpha.27 sigue intacto.
+- Historias públicas: Vino, Pan, Fermentación, Cacao/chocolate, Café, Azúcar, Patata y Especias.
+- Corpus: 19 subjects · 59 places · 45 occurrences · 30 developments · 155 sources · 8 stories / 43 escenas.
+- Especias es transversal: turmeric + black_pepper + nutmeg; no existe subject ficticio `spices`.
+- Megiddo = contacto de larga distancia, no ruta completa; Europa medieval sin centroide; Calicut = redes preexistentes; Banda producción y monopolio separados.
+- QA automatizado alpha.32: 60/60 Python + 5/5 Node PASS; aceptación móvil pendiente.
+- Próxima fase preferente: dossier **Cómo aprendimos a conservar los alimentos**, priorizando reutilización del corpus.
+- No romper schemas ni añadir rutas específicas salvo defecto demostrado y ADR explícita.
+
+
+## Estado de continuación alpha.33
+
+- primera transversal de segundo nivel integrada: `story_food_preservation`;
+- 6 escenas, reutilización de Jiahu, garum, Appert, refrigeración, Pasteur, HACCP y Codex;
+- Appert reforzado con USDA/NAL + Library of Congress;
+- schemas congelados alpha.27 sin cambios;
+- QA automatizado alpha.33: 61/61 Python + 5/5 Node PASS; aceptación móvil pendiente.

@@ -1,5 +1,42 @@
 # Changelog
 
+## 0.1.0-alpha.33 — 2026-08-12
+
+### Conservación · primera transversal de segundo nivel
+- nueva historia de 6 escenas construida principalmente mediante reutilización del corpus;
+- Jiahu + garum distinguen transformación, efecto conservador e intención histórica;
+- Appert reforzado con USDA/NAL y Library of Congress; pasa a verified/high;
+- refrigeración tratada como tecnología + infraestructura + adopción;
+- Pasteur reutilizado desde una pregunta distinta a Fermentación;
+- APPCC diferencia inocuidad y vida útil;
+- Codex mantiene 1961–1963 y se explica como referencia internacional, no ley mundial;
+- 6 términos nuevos de glosario;
+- contrato de producto alpha.27 intacto.
+
+### QA alpha.33
+- test específico `test_preservation_story.py`;
+- 61/61 tests Python + 5/5 Node PASS;
+- validador general y sintaxis JS PASS;
+- Product Contract Freeze alpha.27 PASS;
+- manifiesto y reproducibilidad verificados en cierre de artefacto.
+
+## 0.1.0-alpha.32 — 2026-08-12
+
+### Expansión editorial E1 — Especias
+- Nueva historia transversal de 5 escenas: Megiddo, Berenike, Europa medieval, Calicut y Banda.
+- Añade 2 subjects, 3 places, 2 occurrences, 3 developments, 9 sources y 4 términos de glosario.
+- Sin cambios en los 10 schemas congelados ni lógica específica de Especias.
+- Separa contacto de larga distancia de ruta demostrada.
+- Desmonta el tópico de las especias medievales como máscara principal para carne podrida.
+- Calicut 1498 se formula como intervención portuguesa en redes índicas preexistentes.
+- Banda separa producción de nuez moscada de monopolio/violencia colonial en 1621.
+
+### QA alpha.32
+- Añade `test_spice_story.py`.
+- Product Contract Freeze alpha.27 permanece intacto.
+- Python `test_*.py`: 60/60 PASS; Node `test_*.mjs`: 5/5 PASS.
+- Aceptación táctil/visual de alpha.32: pendiente.
+
 ## 0.1.0-alpha.31 — 2026-08-12
 
 ### Expansión editorial E1 — Patata

@@ -214,5 +214,65 @@
     "term": "adopción de un cultivo",
     "definition": "Proceso por el que una planta deja de ser una presencia ocasional o experimental y pasa a integrarse de forma significativa en sistemas agrarios, rotaciones, economía y dieta. Puede variar mucho entre regiones y grupos sociales.",
     "status": "reviewed"
+  },
+  {
+    "id": "calculo_dental_antiguo",
+    "term": "cálculo dental antiguo",
+    "definition": "Placa dental mineralizada que puede conservar microrestos y biomoléculas de alimentos u otros materiales. Su análisis informa sobre exposición o consumo, pero no siempre permite reconstruir dónde se consumió el producto ni una receta concreta.",
+    "status": "reviewed"
+  },
+  {
+    "id": "especia",
+    "term": "especia",
+    "definition": "Sustancia vegetal aromática utilizada para sazonar, perfumar o colorear alimentos y, históricamente, también en medicina y otros usos. La categoría cambia según época y cultura y no equivale a una única familia botánica.",
+    "status": "reviewed"
+  },
+  {
+    "id": "monopolio_comercial",
+    "term": "monopolio comercial",
+    "definition": "Control exclusivo o fuertemente restringido de la producción, compra, transporte o venta de una mercancía por un actor político o económico. Puede depender de privilegios jurídicos, fortificaciones, coerción y control territorial.",
+    "status": "reviewed"
+  },
+  {
+    "id": "voc",
+    "term": "VOC",
+    "definition": "Vereenigde Oostindische Compagnie o Compañía Neerlandesa de las Indias Orientales, fundada en 1602. Combinó actividad mercantil con poderes políticos y militares y trató de controlar de forma exclusiva varias redes y zonas productoras de especias asiáticas.",
+    "status": "reviewed"
+  },
+  {
+    "id": "conservacion_alimentos",
+    "term": "conservación de alimentos",
+    "definition": "Conjunto de intervenciones destinadas a retrasar alteraciones y prolongar la vida útil de un alimento. Puede actuar sobre agua disponible, temperatura, microorganismos, oxígeno, pH, envase u otros factores; conservar no equivale automáticamente a esterilizar ni a garantizar inocuidad.",
+    "status": "reviewed"
+  },
+  {
+    "id": "barrera_conservacion",
+    "term": "barrera de conservación",
+    "definition": "Factor que dificulta el crecimiento microbiano, las reacciones químicas o el deterioro de un alimento. Sal, acidez, reducción de agua disponible, frío, calor y atmósfera pueden combinarse; una barrera aislada no siempre basta para asegurar estabilidad o inocuidad.",
+    "status": "reviewed"
+  },
+  {
+    "id": "refrigeracion_mecanica",
+    "term": "refrigeración mecánica",
+    "definition": "Producción controlada de frío mediante una máquina que extrae calor de un espacio o producto. Su desarrollo industrial permitió independizar parte de la conservación del hielo natural, pero no inventó el uso alimentario del frío.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cadena_frio",
+    "term": "cadena de frío",
+    "definition": "Continuidad de condiciones térmicas controladas durante almacenamiento, transporte, distribución y uso de productos sensibles. Una máquina frigorífica aislada no constituye por sí sola una cadena de frío.",
+    "status": "reviewed"
+  },
+  {
+    "id": "haccp",
+    "term": "APPCC / HACCP",
+    "definition": "Sistema preventivo de análisis de peligros y puntos de control crítico. Identifica peligros significativos, determina dónde deben controlarse y establece límites, vigilancia y acciones correctoras; no es una simple inspección final del alimento.",
+    "status": "reviewed"
+  },
+  {
+    "id": "codex_alimentarius",
+    "term": "Codex Alimentarius",
+    "definition": "Programa internacional FAO/OMS que elabora normas, directrices y códigos de prácticas alimentarias. Sus textos sirven de referencia internacional, pero no constituyen por sí mismos una única ley mundial directamente aplicable en todos los países.",
+    "status": "reviewed"
   }
 ]

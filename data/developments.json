@@ -154,12 +154,23 @@
       "extends_shelf_life",
       "enables"
     ],
-    "summary": "Nicolas Appert fue premiado por un método de conservar alimentos mediante calentamiento y cierre de recipientes y publicó el procedimiento en 1810, antes de que existiese una explicación microbiológica del deterioro.",
-    "certainty": "medium",
+    "summary": "Nicolas Appert recibió en 1809 el premio francés por un método de conservación basado en calentar alimentos dentro de recipientes cerrados y publicó el procedimiento en 1810. El método funcionó antes de que existiera una teoría microbiana del deterioro; no equivale a la invención universal de conservar alimentos.",
+    "certainty": "high",
     "sourceRefs": [
-      "src_appert_ucanr_2026"
+      "src_appert_ucanr_2026",
+      "src_usda_nal_canning_history",
+      "src_appert_loc_1811_primary"
     ],
-    "status": "reviewed"
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "official_exhibit_plus_primary_text_crosscheck",
+      "independentSourceRefs": [
+        "src_usda_nal_canning_history",
+        "src_appert_loc_1811_primary"
+      ],
+      "note": "La síntesis institucional de UC ANR se contrastó con la exposición histórica de USDA/NAL y con una edición primaria de la obra de Appert conservada por Library of Congress."
+    }
   },
   {
     "id": "codex_alimentarius_commission_1963",
@@ -870,6 +881,115 @@
         "src_potato_famine_nmi"
       ],
       "note": "Se separa el agente biológico de los factores sociales, económicos y políticos de la crisis, apoyándose en genómica histórica y fuentes institucionales irlandesas."
+    }
+  },
+  {
+    "id": "medieval_europe_spice_demand_1000_1500",
+    "name": "Especias en la Europa medieval: sabor, medicina, prestigio y comercio",
+    "type": "culinary_demand_and_social_status",
+    "period": {
+      "start": 1000,
+      "end": 1500,
+      "precision": "range",
+      "display": "ca. siglos XI–XV"
+    },
+    "placeRefs": [],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "black_pepper",
+      "nutmeg"
+    ],
+    "impactTypes": [
+      "culinary_use",
+      "medicine",
+      "status",
+      "trade",
+      "luxury"
+    ],
+    "summary": "Las especias importadas fueron ingredientes culinarios, materias medicinales y signos de refinamiento y estatus. La explicación popular de que su función principal era ocultar carne podrida no concuerda con su alto coste ni con las prácticas ordinarias de conservación mediante salado, secado o ahumado. Su demanda contribuyó a sostener redes comerciales de larga distancia.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_spices_freedman_yaleglobal"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "portuguese_cape_route_calicut_1498",
+    "name": "1498: una nueva conexión portuguesa entra en redes índicas ya existentes",
+    "type": "maritime_trade_reconfiguration",
+    "period": {
+      "start": 1498,
+      "end": 1509,
+      "precision": "range",
+      "display": "1498–1509"
+    },
+    "placeRefs": [
+      "calicut_kozhikode_reference"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "black_pepper"
+    ],
+    "impactTypes": [
+      "trade_route",
+      "armed_commerce",
+      "monopoly_attempt",
+      "colonial_expansion"
+    ],
+    "summary": "La llegada de Vasco da Gama a Calicut en 1498 no creó el comercio de especias del océano Índico. Introdujo una nueva conexión portuguesa por el cabo de Buena Esperanza dentro de redes asiáticas, árabes y africanas preexistentes. En la década siguiente, el proyecto portugués evolucionó hacia control armado de rutas y búsqueda de monopolio sobre productos como la pimienta.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_spices_subrahmanyam_2007",
+      "src_spices_cambridge_portuguese_indian_ocean"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "peer_reviewed_global_history_plus_academic_synthesis",
+      "independentSourceRefs": [
+        "src_spices_cambridge_portuguese_indian_ocean"
+      ],
+      "note": "Se formula como reconfiguración e intervención en redes existentes, evitando el marco de 'descubrimiento' de un comercio que ya funcionaba."
+    }
+  },
+  {
+    "id": "banda_voc_nutmeg_monopoly_1621",
+    "name": "Banda 1621: monopolio de la nuez moscada mediante violencia colonial",
+    "type": "colonial_monopoly_and_mass_violence",
+    "period": {
+      "start": 1621,
+      "end": 1621,
+      "precision": "year",
+      "display": "1621"
+    },
+    "placeRefs": [
+      "banda_islands_nutmeg_region"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "nutmeg"
+    ],
+    "impactTypes": [
+      "monopoly",
+      "colonial_violence",
+      "forced_displacement",
+      "enslavement",
+      "plantation_system"
+    ],
+    "summary": "La VOC buscó imponer un monopolio sobre nuez moscada y macis en Banda. En 1621, la campaña dirigida por Jan Pieterszoon Coen culminó en matanzas, expulsiones y esclavización de población bandanesa, tras lo cual se consolidó un sistema colonial de producción controlada. La especia no se presenta como simple motor comercial: su precio y concentración geográfica fueron convertidos en instrumentos de coerción y poder.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_spices_nationaalarchief_banda_1621",
+      "src_spices_unesco_banda"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "national_archive_primary_document_context_plus_unesco_crosscheck",
+      "independentSourceRefs": [
+        "src_spices_unesco_banda"
+      ],
+      "note": "El Archivo Nacional neerlandés caracteriza explícitamente los hechos de 1621 como genocidio y aporta referencia al informe contemporáneo de Coen; UNESCO documenta el sistema de monopolio y plantación de Banda."
     }
   }
 ]

@@ -1,18 +1,19 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.31
+**Versión:** 0.1.0-alpha.33
 **Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
-## Alpha.31 — Patata, cuarta expansión editorial post-freeze
+## Alpha.33 — Conservación, primera transversal de segundo nivel
 
-- Nueva Historia de la Patata: 5 escenas, sin cambios de schema ni navegación.
-- Jiskairumoko se usa como evidencia arqueológica de uso andino, no como origen absoluto.
-- Gran Canaria 1567 se formula como primera presencia documental europea sólida del corpus, no como fecha exacta de llegada.
-- Herbón distingue ensayo temprano de adopción efectiva.
-- Galicia 1736–1850 muestra una expansión desigual, acelerada desde la crisis de 1769–1770 en áreas concretas.
-- La Gran Hambruna irlandesa separa agente biológico, dependencia alimentaria y vulnerabilidad social.
+- Nueva historia «Cómo aprendimos a conservar los alimentos»: 6 escenas, construida principalmente por reutilización de corpus.
+- No existe un subject ficticio de conservación y no se modifica ningún schema congelado.
+- Jiahu + garum abren la distinción transformación / efecto conservador / intención histórica.
+- Appert queda reforzado con USDA/NAL y una edición primaria conservada por Library of Congress.
+- Refrigeración se narra como máquina + infraestructura + adopción, no como fecha de invención del frío.
+- Pasteur se reutiliza desde una pregunta distinta a Fermentación.
+- APPCC separa vida útil e inocuidad; Codex separa normalización internacional de ley mundial.
 - El contrato congelado en alpha.27 permanece intacto.
 
 ## Propósito
@@ -114,9 +115,9 @@ python tools/serve.py
 
 Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Alpha.31 contiene **43 occurrences públicas**: 20 tienen punto y 23 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 27 `developments` (12 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+Alpha.33 contiene **45 occurrences públicas**: 21 tienen punto y 24 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 30 `developments` (13 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus completo queda en **17 subjects, 56 places, 146 sources, 7 stories, 38 escenas y 36 términos de glosario**. Patata es la cuarta expansión editorial completa realizada sobre el contrato congelado en alpha.27.
+El corpus completo queda en **19 subjects, 59 places, 157 sources, 9 stories, 49 escenas y 46 términos de glosario**. Conservación es la primera transversal de segundo nivel construida principalmente mediante reutilización del corpus sobre el contrato congelado en alpha.27.
 
 ## Capas históricas
 

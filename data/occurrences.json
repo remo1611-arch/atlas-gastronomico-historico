@@ -1074,5 +1074,67 @@
       "src_potato_galicia_usc_sobrado"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_turmeric_megiddo_1630_1550_bce",
+    "subjectRef": "turmeric",
+    "placeRef": "tel_megiddo_spice",
+    "period": {
+      "start": -1630,
+      "end": -1550,
+      "precision": "range",
+      "display": "ca. 1630–1550 a. C."
+    },
+    "occurrenceType": "consumption_or_exposure_evidence",
+    "evidenceType": "ancient_dental_calculus_proteomics",
+    "certainty": "medium",
+    "summary": "Proteínas atribuidas a cúrcuma y soja fueron identificadas en el cálculo dental del individuo MGD018 de Megiddo, fechado aproximadamente entre 1630 y 1550 a. C. El hallazgo apoya contactos alimentarios de larga distancia con Asia meridional, pero no determina si la persona consumió esos productos en Megiddo, durante un viaje o mediante una cadena comercial concreta.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_spices_scott_pnas_2021",
+      "src_spices_mpi_megiddo_2020"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "peer_reviewed_proteomics_plus_institutional_crosscheck",
+      "independentSourceRefs": [
+        "src_spices_mpi_megiddo_2020"
+      ],
+      "note": "La interpretación se limita a presencia proteómica compatible y conectividad de larga distancia; no se infiere una ruta exacta ni una preparación culinaria."
+    }
+  },
+  {
+    "id": "occ_nutmeg_banda_historic_production_1500_1621",
+    "subjectRef": "nutmeg",
+    "placeRef": "banda_islands_nutmeg_region",
+    "period": {
+      "start": 1500,
+      "end": 1621,
+      "precision": "range",
+      "display": "siglos XVI–inicios del XVII"
+    },
+    "occurrenceType": "regional_production",
+    "evidenceType": "historical_and_landscape_documentation",
+    "certainty": "high",
+    "summary": "Las islas Banda constituyeron el núcleo histórico de producción de nuez moscada y macis que atrajo a comerciantes asiáticos y europeos. El registro describe una región productora, no una plantación individual ni el inicio absoluto del uso humano de Myristica fragrans.",
+    "contextRefs": [],
+    "developmentRefs": [
+      "banda_voc_nutmeg_monopoly_1621"
+    ],
+    "sourceRefs": [
+      "src_spices_unesco_banda",
+      "src_spices_nationaalarchief_banda_1621"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "unesco_historical_landscape_plus_national_archive_crosscheck",
+      "independentSourceRefs": [
+        "src_spices_nationaalarchief_banda_1621"
+      ],
+      "note": "Se verifica la centralidad productiva de Banda para nuez moscada/macis en el periodo de expansión comercial europea; no se convierte en fecha de origen botánico o culinario."
+    }
   }
 ]

@@ -1,33 +1,45 @@
-# Resultados de validación — 0.1.0-alpha.31
+# Resultados de validación — 0.1.0-alpha.33
+
+## Estado
+
+**QA automatizado: PASS.** Aceptación táctil/visual en dispositivo real: pendiente.
 
 ## Corpus
-- 17 subjects
-- 56 places
-- 43 occurrences
+
+- 19 subjects
+- 59 places
+- 45 occurrences
 - 1 event
 - 1 relationship
 - 7 contexts
-- 27 developments
-- 146 sources
-- 7 stories / 38 escenas
-- 36 términos de glosario
+- 30 developments
+- 157 sources
+- 9 stories / 49 escenas
+- 46 términos de glosario
 
-## Gates
-- `validate_project.py`: PASS
-- Python `test_*.py`: **59/59 PASS**
-- Node `test_*.mjs`: **5/5 PASS**
-- `node --check js/app.js`: PASS
-- `node --check js/core.js`: PASS
-- `test_potato_story.py`: PASS
-- `test_narrative_editorial_depth.py`: PASS
-- `test_museographic_gate.py`: PASS
-- `test_product_contract_freeze.py`: PASS
-- `test_schema_validation.py`: PASS
-- `test_map_coverage.py`: PASS
-- `test_story_atlas_roundtrip.py`: PASS
+## Suite
+
+- Python `test_*.py`: **61/61 PASS**
+- Node: **5/5 PASS**
+- `validate_project.py`: **PASS**
+- `node --check js/app.js`: **PASS**
+- `node --check js/core.js`: **PASS**
+- `test_preservation_story.py`: **PASS**
+- `test_narrative_editorial_depth.py`: **PASS**
+- `test_museographic_gate.py`: **PASS**
+- `test_product_contract_freeze.py`: **PASS**
 
 ## Contrato
-Los 10 schemas congelados en alpha.27 conservan exactamente su fingerprint. Patata se integra sin migración de contrato ni lógica específica de renderer.
 
-## Gate pendiente
-**QA automatizado PASS.** Pendiente únicamente la aceptación táctil/visual de alpha.31 en dispositivo real.
+Los diez schemas congelados en alpha.27 permanecen sin modificación y conservan el fingerprint canónico. Alpha.33 añade una historia transversal de segundo nivel sin renderer, ruta ni excepción específica.
+
+## Cambios de conocimiento
+
+No se añaden subjects, places, occurrences ni developments. Se añaden dos fuentes para contrastar Appert y seis términos de glosario. `appert_preservation_1809_1810` pasa a `verified/high` tras contraste USDA/NAL + Library of Congress.
+
+## Artefacto
+
+- MANIFEST: **164/164 archivos verificados por tamaño y SHA-256**
+- `build_manifest.py`: **idempotente**
+- ZIP: **verificación interna PASS**
+- doble construcción determinista: **byte a byte idéntica**

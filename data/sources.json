@@ -1312,5 +1312,104 @@
     "sourceType": "dataset",
     "accessed": "2026-08-12",
     "notes": "Fuente cartográfica auxiliar para el punto actual de la parroquia de Herbón. El punto es referencia territorial contemporánea y no pretende localizar una parcela histórica del siglo XVI."
+  },
+  {
+    "id": "src_spices_scott_pnas_2021",
+    "title": "Exotic foods reveal contact between South Asia and the Near East during the second millennium BCE",
+    "publisher": "Proceedings of the National Academy of Sciences",
+    "url": "https://www.pnas.org/doi/10.1073/pnas.2014956117",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Análisis de cálculo dental antiguo. En el individuo MGD018 de Megiddo (ca. 1630–1550 a. C.) identifica proteínas de cúrcuma y soja; los autores lo interpretan como evidencia de contactos de larga distancia, sin reconstruir una ruta comercial única."
+  },
+  {
+    "id": "src_spices_mpi_megiddo_2020",
+    "title": "The Aroma of Distant Worlds",
+    "publisher": "Max Planck Institute for the Science of Human History",
+    "url": "https://www.shh.mpg.de/1930142/dental-calculus-asia",
+    "sourceType": "institutional_outreach",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis institucional del estudio de cálculo dental; destaca cúrcuma y soja en Megiddo y la implicación de contactos con Asia meridional."
+  },
+  {
+    "id": "src_spices_unesco_megiddo_coords",
+    "title": "Biblical Tels – Megiddo, Hazor, Beer Sheba — Maps",
+    "publisher": "UNESCO World Heritage Centre",
+    "url": "https://whc.unesco.org/en/list/1108/maps/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Fuente espacial: coordenadas oficiales publicadas para Tel Megiddo (N32 35 6, E35 11 3)."
+  },
+  {
+    "id": "src_spices_freedman_yaleglobal",
+    "title": "Search for Flavors Influenced Our World",
+    "publisher": "YaleGlobal Online · Yale University",
+    "url": "https://archive-yaleglobal.yale.edu/content/search-flavors-influenced-our-world",
+    "sourceType": "scholarly_reference",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis del historiador Paul Freedman sobre demanda medieval de especias: cocina, medicina, prestigio y comercio. Rechaza como explicación general el tópico de usar especias caras para ocultar carne estropeada."
+  },
+  {
+    "id": "src_spices_subrahmanyam_2007",
+    "title": "The birth-pangs of Portuguese Asia: revisiting the fateful 'long decade' 1498–1509",
+    "publisher": "Journal of Global History · Cambridge University Press",
+    "url": "https://doi.org/10.1017/S1740022807002288",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Estudia la llegada portuguesa como intervención en un océano Índico ya densamente conectado y la competencia política y comercial en torno, entre otros productos, al comercio de pimienta."
+  },
+  {
+    "id": "src_spices_cambridge_portuguese_indian_ocean",
+    "title": "The Portuguese in the Indian Ocean",
+    "publisher": "Cambridge University Press",
+    "url": "https://www.cambridge.org/core/books/worlds-of-the-indian-ocean/portuguese-in-the-indian-ocean/478AC3ACFBA6DE0F35F73C0A97A8D091",
+    "sourceType": "scholarly_reference",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis académica: llegada de Vasco da Gama a Calicut en mayo de 1498 y posterior proyecto portugués de capturar parte del lucrativo comercio de pimienta."
+  },
+  {
+    "id": "src_spices_kozhikode_wikidata",
+    "title": "Kozhikode — Wikidata Q28729",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q28729",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para la referencia urbana actual de Kozhikode/Calicut (11°14′52″N, 75°46′49″E). No localiza un muelle histórico concreto de 1498."
+  },
+  {
+    "id": "src_spices_nationaalarchief_banda_1621",
+    "title": "Genocide op Banda (1621)",
+    "publisher": "Nationaal Archief · Países Bajos",
+    "url": "https://www.nationaalarchief.nl/beleven/onderwijs/bronnenbox/hoe-ging-het-verder-op-banda",
+    "sourceType": "official_document",
+    "accessed": "2026-08-12",
+    "notes": "Archivo Nacional neerlandés. Documenta el intento de monopolio de nuez moscada de la VOC, la expedición de Coen en 1621 y sus consecuencias mortales, de expulsión y esclavización, con referencia al informe de Coen del 6 de mayo de 1621."
+  },
+  {
+    "id": "src_spices_unesco_banda",
+    "title": "The Historic and Marine Landscape of the Banda Islands",
+    "publisher": "UNESCO World Heritage Centre · Tentative List",
+    "url": "https://whc.unesco.org/en/tentativelists/6065",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Descripción patrimonial presentada por Indonesia: Banda fue el núcleo histórico de producción de nuez moscada y macis y escenario del sistema colonial neerlandés de plantación y monopolio."
+  },
+  {
+    "id": "src_usda_nal_canning_history",
+    "title": "How Did We Can? The Evolution of Home Canning Practices",
+    "publisher": "USDA National Agricultural Library",
+    "url": "https://www.nal.usda.gov/exhibits/ipd/canning/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "La exposición institucional distingue el enlatado/conserva de métodos más antiguos como secado, curado, encurtido, salado, frío y congelación; describe el proceso de Appert mediante calor y recipientes herméticos y sitúa el premio en 1809."
+  },
+  {
+    "id": "src_appert_loc_1811_primary",
+    "title": "The art of preserving all kinds of animal and vegetable substances for several years",
+    "publisher": "Library of Congress · edición inglesa de Nicolas Appert (1811)",
+    "url": "https://www.loc.gov/item/48039359/",
+    "sourceType": "primary_text",
+    "accessed": "2026-08-12",
+    "notes": "Ejemplar digital de la traducción inglesa de 1811 de la obra de Appert. Se usa como fuente primaria del procedimiento publicado, no para fijar por sí sola todos los detalles cronológicos de 1809–1810."
   }
 ]

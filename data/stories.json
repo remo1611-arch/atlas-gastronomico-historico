@@ -1823,5 +1823,555 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_spices",
+    "storyType": "transversal",
+    "primarySubjectRef": null,
+    "relatedSubjectRefs": [
+      "turmeric",
+      "black_pepper",
+      "nutmeg"
+    ],
+    "title": "Historia de las especias",
+    "question": "¿Cómo pudieron pequeñas cantidades de plantas aromáticas conectar cocinas distantes y, al mismo tiempo, convertirse en objetos de prestigio, navegación, monopolio y violencia?",
+    "teaser": "De una proteína de cúrcuma atrapada en un diente de la Edad del Bronce a la nuez moscada de Banda: cinco escenas para entender que no hubo una única Ruta de las Especias y que el deseo culinario puede reorganizar redes de poder.",
+    "eyebrow": "5 escenas · circulación, sabor y poder",
+    "subtitle": "No seguimos una flecha de Oriente a Occidente: seguimos evidencias de contacto, puertos, cocinas, proyectos imperiales y territorios productores.",
+    "estimatedMinutes": 11,
+    "endTitle": "Una especia nunca viaja sola",
+    "endText": "Cúrcuma en Megiddo, pimienta en Berenike, recetas medievales, Calicut y Banda muestran capas distintas de una misma historia. Las especias viajaron con personas, saberes, capital, creencias y violencia. Ni su circulación empezó con los europeos ni su valor puede explicarse solo por conservar alimentos.",
+    "sourceRefs": [
+      "src_spices_scott_pnas_2021",
+      "src_spices_mpi_megiddo_2020",
+      "src_cappers_2006_berenike_foodprints",
+      "src_sidebotham_2011_berenike_trade",
+      "src_spices_freedman_yaleglobal",
+      "src_spices_subrahmanyam_2007",
+      "src_spices_cambridge_portuguese_indian_ocean",
+      "src_spices_nationaalarchief_banda_1621",
+      "src_spices_unesco_banda",
+      "src_spices_unesco_megiddo_coords",
+      "src_spices_kozhikode_wikidata"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "spices_1_megiddo",
+        "sceneType": "evidence",
+        "label": "01 · Megiddo · ca. 1630–1550 a. C.",
+        "title": "Una especia puede dejar una huella microscópica donde no esperamos encontrarla",
+        "lead": "Mucho antes de las flotas portuguesas, un diente del Levante conservó una señal compatible con cúrcuma, planta asociada al sur de Asia.",
+        "geography": {
+          "today": "Tel Megiddo · valle de Jezreel · actual Israel",
+          "region": "Levante meridional · Mediterráneo oriental",
+          "orientation": "Tel Megiddo domina un paso estratégico entre la llanura costera y el valle de Jezreel. La coordenada del Atlas corresponde al yacimiento UNESCO; la muestra procede de un individuo funerario del sitio, no de un punto independiente.",
+          "society": "Megiddo era un centro urbano del Bronce Medio/Tardío integrado en redes políticas y comerciales del Levante, Egipto y regiones más lejanas."
+        },
+        "narrative": [
+          "La historia de las especias no comienza con una carabela ni con un mercader europeo. En el cálculo dental mineralizado del individuo MGD018 de Megiddo, fechado aproximadamente entre 1630 y 1550 a. C., un estudio proteómico identificó proteínas atribuidas a cúrcuma y soja. Ambos productos remiten a Asia meridional o a redes que conectaban con ella. La evidencia es diminuta, pero obliga a pensar en movimientos de alimentos y personas a distancias enormes durante la Edad del Bronce.",
+          "El hallazgo no permite dibujar una línea continua desde una plantación concreta hasta Megiddo. Una persona podía haber viajado, un ingrediente podía cambiar de manos muchas veces o una preparación haber sido consumida en otro lugar antes de que el cálculo dental registrase la proteína. Por eso el Atlas representa el lugar donde se recuperó la evidencia, no una supuesta ruta completa. La diferencia entre presencia y ruta demostrada es esencial.",
+          "También conviene evitar otra simplificación: encontrar cúrcuma no significa conocer su función culinaria exacta. Pudo emplearse como condimento, colorante, componente medicinal o formar parte de una preparación que no podemos reconstruir. La arqueoproteómica identifica biomoléculas; la receta y el significado social requieren otras clases de fuente que aquí no se conservan.",
+          "Lo importante es la escala histórica. Hace más de tres mil quinientos años, objetos, alimentos y saberes podían atravesar redes que conectaban espacios del Mediterráneo oriental con regiones mucho más lejanas. Las especias no esperaron a la llamada Era de los Descubrimientos para convertirse en mercancías móviles. Lo que cambiará después será la densidad, organización y violencia con que distintos poderes intenten controlar esas circulaciones.",
+          "Esta primera escena nos enseña a desconfiar de los mapas demasiado limpios. Una molécula puede demostrar contacto sin revelar el itinerario. Para ver una red comercial de manera más tangible necesitamos un lugar donde el propio registro arqueológico acumule mercancías importadas: un puerto del mar Rojo."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_turmeric_megiddo_1630_1550_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_spices_scott_pnas_2021",
+          "src_spices_mpi_megiddo_2020",
+          "src_spices_unesco_megiddo_coords"
+        ],
+        "method": {
+          "title": "Qué puede demostrar el cálculo dental",
+          "body": "La proteómica de cálculo dental identifica proteínas preservadas y las compara con referencias modernas. Es una evidencia de exposición o consumo compatible con determinados taxones; su fuerza aumenta cuando controles, contexto arqueológico y otras señales descartan contaminación, pero no reconstruye automáticamente una ruta comercial."
+        },
+        "limits": "La identificación molecular no establece una receta, el lugar exacto donde se consumió el ingrediente ni la cadena de intermediarios que lo llevó hasta la persona analizada.",
+        "whyItMatters": "Demuestra que las conexiones alimentarias de larga distancia preceden por milenios a la expansión marítima europea y obliga a separar evidencia de contacto de relato de ruta.",
+        "nextQuestion": "Si una proteína aislada sugiere contactos lejanos, ¿qué ocurre cuando un puerto conserva grandes cantidades de una especia importada?",
+        "glossaryRefs": [
+          "calculo_dental_antiguo",
+          "especia"
+        ]
+      },
+      {
+        "id": "spices_2_berenike",
+        "sceneType": "trade",
+        "label": "02 · Berenike · siglos I–III d. C.",
+        "title": "En un puerto romano, la pimienta deja de ser una señal aislada y aparece como mercancía",
+        "lead": "Berenike conecta el mar Rojo con el océano Índico y conserva una escala de comercio que un solo residuo dental no puede mostrar.",
+        "geography": {
+          "today": "Berenike · costa egipcia del mar Rojo",
+          "region": "Desierto Oriental de Egipto · interfaz Mediterráneo–océano Índico",
+          "orientation": "Berenike fue un puerto fundado en la costa occidental del mar Rojo. Su posición permitía recibir mercancías marítimas del océano Índico y trasladarlas por rutas terrestres hacia el valle del Nilo y el Mediterráneo.",
+          "society": "Soldados, marineros, comerciantes, artesanos y trabajadores convivieron en un puerto cosmopolita integrado en circuitos romanos, africanos, árabes e índicos."
+        },
+        "narrative": [
+          "Las excavaciones de Berenike ofrecen un tipo de evidencia distinto. Entre semillas, frutos y otros restos vegetales aparecieron grandes cantidades de pimienta negra, Piper nigrum, planta originaria del sur de Asia. Una concentración excepcional dentro de un recipiente de almacenamiento hace difícil explicar el hallazgo como una especia ocasional en la cocina de un individuo: estamos ante una mercancía que circulaba por redes marítimas de gran alcance.",
+          "El puerto ayuda a corregir una imagen centrada exclusivamente en Roma. La pimienta no saltaba de India a la mesa imperial mediante una única ruta. Productores, puertos del subcontinente, navegantes que aprovechaban los monzones, nodos del mar Rojo, caravanas del desierto y distribuidores mediterráneos formaban cadenas complejas. Berenike es un punto arqueológico dentro de esa red, no su centro universal.",
+          "La materialidad también cambia nuestra seguridad. En Megiddo una proteína sugiere consumo o exposición. En Berenike hay granos identificables en contextos arqueológicos del propio puerto y cantidades compatibles con almacenamiento y redistribución. Las dos evidencias hablan de movilidad, pero responden a preguntas diferentes. El Atlas no debería convertirlas en símbolos equivalentes solo porque ambas aparezcan como puntos en un mapa.",
+          "La pimienta era valiosa precisamente porque combinaba propiedades sensoriales, demanda y una geografía de producción distante respecto al Mediterráneo. Esa distancia generaba costes e intermediaciones, pero no hacía del comercio una anomalía. El océano Índico llevaba siglos funcionando como espacio de conexión. El mundo romano se insertó en redes que no había creado y dependía de conocimientos náuticos y comerciales desarrollados en otros lugares.",
+          "La siguiente transformación no es geográfica sino social. Cuando las especias aparecen en los recetarios y cuentas de la Europa medieval, su valor ya no se explica solo por cuántos kilómetros han viajado: también sirven para construir gusto, medicina y prestigio. Ahí nace uno de los mitos más persistentes sobre la cocina histórica."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_black_pepper_berenike_roman"
+          }
+        ],
+        "sourceRefs": [
+          "src_cappers_2006_berenike_foodprints",
+          "src_sidebotham_2011_berenike_trade"
+        ],
+        "method": {
+          "title": "Del resto vegetal al comercio",
+          "body": "La arqueobotánica identifica semillas y frutos por morfología y contexto. Cantidad, asociación con recipientes y procedencia botánica permiten discutir almacenamiento e importación, aunque un depósito arqueológico nunca reproduce por sí solo todo el volumen comercial de un puerto."
+        },
+        "limits": "Berenike demuestra importación y almacenamiento de pimienta, pero no permite extrapolar automáticamente cuánto consumía cada grupo social romano ni reconstruir todo el precio a lo largo de la cadena.",
+        "whyItMatters": "Hace visible que el comercio de especias del océano Índico era una red material y organizada mucho antes de las rutas marítimas portuguesas de finales del siglo XV.",
+        "nextQuestion": "Cuando una mercancía tan distante llega a las cocinas europeas, ¿se usa de verdad para conservar o disimular carne en mal estado?",
+        "glossaryRefs": [
+          "especia"
+        ]
+      },
+      {
+        "id": "spices_3_medieval",
+        "sceneType": "myth",
+        "label": "03 · Europa · ca. siglos XI–XV",
+        "title": "Las especias medievales no eran un desodorante para carne podrida",
+        "lead": "El tópico parece lógico desde un frigorífico moderno, pero los precios, los recetarios y las técnicas de conservación cuentan otra historia.",
+        "geography": {
+          "today": "Europa occidental y mediterránea · referencia suprarregional",
+          "region": "Mercados, cortes y ciudades conectadas con circuitos mediterráneos y asiáticos",
+          "orientation": "La escena es deliberadamente regional. La demanda de especias variaba entre territorios y grupos sociales; un centroide europeo fingiría una uniformidad que las fuentes no sostienen.",
+          "society": "Cocinas cortesanas, hogares acomodados, comerciantes, boticarios y profesionales de alimentación compartían una cultura en la que sabor, medicina humoral, prestigio y cosmopolitismo podían solaparse."
+        },
+        "narrative": [
+          "Una explicación repetida afirma que los europeos medievales cargaban la carne de pimienta, canela o clavo para ocultar el sabor de alimentos podridos. El problema es económico y tecnológico. Las especias importadas podían costar más que la carne que supuestamente debían disimular, mientras que salado, secado y ahumado eran métodos mucho más directos y baratos para conservar excedentes. Si una carne estaba realmente descompuesta, perfumarla tampoco eliminaba el riesgo biológico.",
+          "Los recetarios y cuentas muestran otro mundo. Las especias podían combinarse en cantidades que hoy asociaríamos con una estética culinaria específica: color, aroma, complejidad y exhibición. Paul Freedman señala además la continuidad entre cocina y medicina. Pimienta, canela, jengibre y otras sustancias aparecían en boticas y prescripciones porque la teoría humoral atribuía cualidades a los ingredientes y los integraba en una idea de alimentación saludable.",
+          "Esto no significa que ninguna especia tenga propiedades antimicrobianas ni que jamás ayudara a conservar. Significa algo más preciso: la conservación no explica por sí sola la enorme demanda medieval ni autoriza a convertir el consumo de lujo en respuesta a carne sistemáticamente podrida. Confundir una propiedad química posible con la función histórica dominante es exactamente el tipo de salto causal que este museo intenta evitar.",
+          "El prestigio también importa. Una sustancia rara, cara y lejana permitía exhibir acceso a redes comerciales y conocimiento de sabores asociados a lugares remotos. La misma cucharada podía intervenir a la vez en gusto, medicina, identidad social y representación de riqueza. La historia culinaria pierde casi toda esa complejidad cuando reduce las especias a una tecnología de conservación de emergencia.",
+          "A finales del periodo medieval, esa demanda europea por productos asiáticos contribuía a financiar proyectos que buscaban reducir intermediaciones y acceder más directamente a mercados productores. Pero esos proyectos no navegaron hacia un vacío: al llegar al Índico encontraron comerciantes, ciudades y rutas en pleno funcionamiento."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "medieval_europe_spice_demand_1000_1500"
+          }
+        ],
+        "sourceRefs": [
+          "src_spices_freedman_yaleglobal"
+        ],
+        "method": {
+          "title": "Cómo se desmonta un mito histórico",
+          "body": "No basta con demostrar que una especia posee actividad antimicrobiana. Hay que contrastar precios relativos, técnicas de conservación disponibles, recetarios, cuentas de compra y discursos médicos. La función histórica de un ingrediente se reconstruye con contexto social, no solo con propiedades de laboratorio."
+        },
+        "limits": "Las prácticas medievales fueron muy diversas y las fuentes conservadas sobrerrepresentan élites y cocinas alfabetizadas. Rechazar el mito de la carne podrida no significa negar usos conservadores puntuales.",
+        "whyItMatters": "Separa conservación, sabor y prestigio y evita proyectar una explicación moderna única sobre cientos de años de prácticas culinarias muy diferentes.",
+        "nextQuestion": "Si las especias eran caras y deseadas, ¿qué cambió cuando Portugal consiguió llegar por mar directamente al litoral de India en 1498?",
+        "glossaryRefs": [
+          "especia",
+          "monopolio_comercial"
+        ]
+      },
+      {
+        "id": "spices_4_calicut",
+        "sceneType": "networks",
+        "label": "04 · Calicut · 1498–1509",
+        "title": "1498 no abre el océano Índico: introduce un nuevo competidor armado",
+        "lead": "Vasco da Gama llega a un mercado que ya conectaba Asia, Arabia y África. La novedad está en el proyecto portugués de intervenir y controlar esas redes.",
+        "geography": {
+          "today": "Kozhikode / Calicut · Kerala · India",
+          "region": "Costa de Malabar · océano Índico occidental",
+          "orientation": "El punto del Atlas es una referencia de la ciudad actual de Kozhikode. No pretende fijar el fondeadero exacto de mayo de 1498 ni representar todo el litoral productor de pimienta.",
+          "society": "Calicut era un gran nodo mercantil gobernado por el Zamorín y frecuentado por comerciantes de diversas procedencias. La flota portuguesa entró en una economía marítima preexistente, no en un espacio comercial vacío."
+        },
+        "narrative": [
+          "En mayo de 1498, Vasco da Gama llegó a Calicut después de rodear el cabo de Buena Esperanza y cruzar desde la costa oriental africana con ayuda de conocimientos náuticos del propio océano Índico. Presentarlo como el momento en que Europa “descubre la ruta de las especias” borra dos hechos: las especias circulaban hacia el Mediterráneo desde hacía siglos y Calicut ya formaba parte de redes comerciales densas antes de ver una vela portuguesa.",
+          "La novedad fue otra: la Corona portuguesa consiguió establecer una conexión marítima directa entre sus bases atlánticas y la costa india y trató de transformar esa ventaja en control comercial. Los primeros encuentros no demostraron una superioridad económica automática. Las mercancías europeas llevadas por la expedición resultaron poco impresionantes para los mercados locales y los portugueses dependían de información, pilotos, intérpretes y socios asiáticos y africanos.",
+          "Durante la década siguiente, la competencia se militarizó. Fortalezas, flotas, licencias y ataques al tráfico formaron parte de un intento de capturar rentas del comercio de pimienta y otros productos. La historiografía de Sanjay Subrahmanyam insiste precisamente en interpretar 1498–1509 como una etapa de conflicto y adaptación entre múltiples poderes, no como sustitución instantánea de una ruta antigua por una nueva.",
+          "Esto cambia el mapa mental de la expansión europea. El cabo no conecta por primera vez dos mundos separados: añade una ruta y un actor con capacidad creciente de violencia naval a un sistema ya globalizado a su manera. Las redes del mar Rojo, golfo Pérsico, costa suajili, India y Sudeste Asiático continuaron funcionando y reaccionaron a esa presión.",
+          "El deseo europeo de reducir intermediarios no terminó con Portugal. En el siglo XVII otras compañías intentarán no solo comprar especias sino controlar territorios de producción. En ningún lugar esa lógica se ve con tanta crudeza como en las islas Banda, donde la concentración geográfica de la nuez moscada convirtió una mercancía aromática en objetivo de conquista."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "portuguese_cape_route_calicut_1498"
+          }
+        ],
+        "sourceRefs": [
+          "src_spices_subrahmanyam_2007",
+          "src_spices_cambridge_portuguese_indian_ocean",
+          "src_spices_kozhikode_wikidata"
+        ],
+        "method": {
+          "title": "Evitar el vocabulario de «descubrimiento»",
+          "body": "La historia global compara documentación portuguesa con fuentes y estudios del propio océano Índico. Que una expedición europea complete una ruta no significa que descubra los mercados a los que llega. La formulación debe distinguir conexión nueva, conocimiento previo y proyectos posteriores de control."
+        },
+        "limits": "La escena resume una década extremadamente compleja y no representa todas las rutas ni todos los actores del Índico. El punto de Kozhikode es urbano y no localiza un muelle histórico preciso.",
+        "whyItMatters": "Permite entender la expansión marítima europea como intervención en redes existentes y prepara la transición desde comercio competitivo hacia proyectos de monopolio territorial.",
+        "nextQuestion": "¿Qué ocurre cuando una compañía deja de querer comprar una especia y decide controlar por la fuerza el único territorio que la produce?",
+        "glossaryRefs": [
+          "monopolio_comercial"
+        ]
+      },
+      {
+        "id": "spices_5_banda",
+        "sceneType": "power",
+        "label": "05 · Islas Banda · 1621",
+        "title": "La nuez moscada muestra hasta dónde puede llegar la lógica del monopolio",
+        "lead": "En Banda, la geografía limitada de una especia extremadamente valiosa se convierte en una estrategia colonial de control territorial y humano.",
+        "geography": {
+          "today": "Islas Banda · Maluku · Indonesia",
+          "region": "Archipiélago de las Molucas · Sudeste Asiático insular",
+          "orientation": "La escena utiliza Banda como región histórica y no un pin único. Producción, aldeas, fortificaciones, expulsiones y plantaciones afectaron a varias islas; reducir todo a Banda Neira sería cartográficamente engañoso.",
+          "society": "Comunidades bandanesas productoras y comerciantes negociaban con redes regionales y distintos compradores europeos. La VOC buscó sustituir ese comercio plural por un monopolio controlado desde una compañía con poderes militares y políticos."
+        },
+        "narrative": [
+          "Durante el auge del comercio moderno temprano, las islas Banda ocuparon una posición excepcional porque eran el núcleo histórico de producción de nuez moscada y macis. La concentración geográfica de un producto muy valioso podía generar enormes márgenes, pero solo si quien compraba conseguía limitar la competencia. Para la VOC, negociar no era suficiente: el objetivo era imponer condiciones exclusivas a productores que ya mantenían relaciones con comerciantes ingleses, portugueses y asiáticos.",
+          "El Archivo Nacional de los Países Bajos presenta los acontecimientos de 1621 sin el eufemismo tradicional de “expedición punitiva”: los caracteriza como genocidio. Bajo Jan Pieterszoon Coen, la campaña buscó quebrar la resistencia bandanesa y asegurar el monopolio de nuez moscada y macis. El propio archivo conserva y referencia la correspondencia de Coen sobre la operación, de modo que no estamos ante una leyenda posterior desconectada de documentación contemporánea.",
+          "Las consecuencias fueron demográficas y económicas. Gran parte de la población murió, huyó o fue esclavizada; después se consolidó un sistema colonial de plantaciones y fortificaciones orientado a controlar producción y comercio. UNESCO describe el paisaje histórico de Banda precisamente como un sistema donde plantaciones, fuertes, puertos y administración colonial formaban una unidad destinada a proteger el monopolio.",
+          "Esta escena impide terminar la historia de las especias con una celebración de navegación y descubrimiento. La misma demanda que alimentó cocinas y farmacias podía incentivar proyectos de coerción extrema cuando una compañía tenía capacidad militar y un producto estaba concentrado geográficamente. El valor culinario no causa por sí solo la violencia, pero entra en sistemas políticos y comerciales que pueden convertirlo en instrumento de dominación.",
+          "La lección final conecta con todo el recorrido. Una proteína de cúrcuma, un almacén de pimienta, un recetario medieval, una flota portuguesa y una plantación colonial no son versiones del mismo fenómeno. Son escalas diferentes de la relación entre alimentos, distancia y poder. El Atlas debe mantenerlas conectadas sin convertir esa conexión en una flecha causal automática."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_nutmeg_banda_historic_production_1500_1621"
+          },
+          {
+            "kind": "development",
+            "ref": "banda_voc_nutmeg_monopoly_1621"
+          }
+        ],
+        "sourceRefs": [
+          "src_spices_nationaalarchief_banda_1621",
+          "src_spices_unesco_banda"
+        ],
+        "method": {
+          "title": "Combinar archivo y paisaje histórico",
+          "body": "La escena cruza documentación archivística neerlandesa —incluida correspondencia contemporánea— con la descripción patrimonial del sistema productivo de Banda. Esta combinación permite relacionar decisiones políticas, violencia y reorganización territorial sin depender de una sola narración retrospectiva."
+        },
+        "limits": "Las cifras demográficas de episodios de violencia colonial pueden variar según reconstrucciones; por eso la historia se centra en la naturaleza documentada de matanzas, expulsión, esclavización y monopolio, no en convertir una cifra puntual en el único argumento.",
+        "whyItMatters": "Muestra que la historia alimentaria también es historia del trabajo, la coerción y el poder empresarial y estatal; una especia no puede explicarse únicamente por sus propiedades sensoriales.",
+        "nextQuestion": "Después de seguir cómo circulaban y se controlaban las especias, queda una pregunta transversal distinta: ¿qué técnicas permitieron conservar alimentos antes y después del frío moderno?",
+        "glossaryRefs": [
+          "especia",
+          "monopolio_comercial",
+          "voc"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "story_food_preservation",
+    "storyType": "transversal",
+    "primarySubjectRef": null,
+    "relatedSubjectRefs": [
+      "mixed_fermented_beverage",
+      "garum"
+    ],
+    "title": "Cómo aprendimos a conservar los alimentos",
+    "question": "¿Cómo pasamos de transformar alimentos por experiencia a diseñar sistemas que controlan deterioro, temperatura y peligros de forma preventiva?",
+    "teaser": "De una bebida fermentada neolítica y una salsa romana salada a Appert, la refrigeración, Pasteur, APPCC y Codex: conservar dejó de ser una sola técnica para convertirse en una combinación de mecanismos, infraestructura, microbiología y control.",
+    "eyebrow": "6 escenas · de la práctica empírica al sistema preventivo",
+    "subtitle": "No buscamos quién «inventó» la conservación. Seguimos cómo cambió la capacidad de ganar tiempo: transformar el alimento, cerrar y calentar, producir frío, explicar el deterioro, prevenir peligros y compartir criterios.",
+    "estimatedMinutes": 11,
+    "endTitle": "Conservar no es una técnica: es controlar condiciones distintas",
+    "endText": "La historia no conduce de un método primitivo a otro perfecto. Sal, fermentación, calor, cierre, frío y prevención actúan sobre problemas diferentes. Appert consiguió estabilidad sin teoría microbiana; Pasteur conectó alteración y microorganismos; la refrigeración convirtió el frío en infraestructura; APPCC desplazó la atención hacia el proceso; Codex ayudó a compartir criterios. Conservar, hacer seguro y estandarizar se relacionan, pero no son sinónimos.",
+    "sourceRefs": [
+      "src_usda_nal_canning_history",
+      "src_jiahu_fermented_beverage_pnas_2004",
+      "src_pompeii_antiquarium_garum",
+      "src_carannante_garum_2019",
+      "src_garum_composition_2010",
+      "src_appert_ucanr_2026",
+      "src_appert_loc_1811_primary",
+      "src_ashrae_refrigeration_timeline",
+      "src_smithsonian_perkins_1834",
+      "src_smithsonian_electric_refrigeration",
+      "src_uchicago_monitor_top",
+      "src_pasteur_legacy",
+      "src_pasteur_middle_years",
+      "src_science_history_pasteur",
+      "src_pasteur_letter_1866",
+      "src_usda_haccp_2010",
+      "src_nasa_haccp_2024",
+      "src_national_academies_haccp",
+      "src_codex_fao",
+      "src_codex_fao_who_home",
+      "src_codex_history_1961_1963",
+      "src_codex_first_session_1963"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "preservation_1_empirical_barriers",
+        "sceneType": "orientation",
+        "label": "01 · Neolítico–Roma · antes de una teoría microbiana",
+        "title": "Antes de explicar el deterioro, ya sabíamos cambiar las condiciones del alimento",
+        "lead": "Fermentar o salar podía transformar un alimento y también modificar cuánto tiempo seguía siendo utilizable, aunque eso no demuestra que todas esas prácticas nacieran con una intención explícita de conservación.",
+        "geography": {
+          "today": "Jiahu, Henan · China / Pompeya · Italia",
+          "region": "Asia oriental neolítica y Mediterráneo romano",
+          "orientation": "La escena une dos casos muy separados en tiempo y espacio para comparar mecanismos, no para proponer contacto entre ellos: una bebida fermentada en Jiahu y una salsa de pescado salada/fermentada en Pompeya.",
+          "society": "Comunidades neolíticas de agricultores en Jiahu y una ciudad romana integrada en redes mediterráneas de producción y consumo."
+        },
+        "narrative": [
+          "Mucho antes de conocer bacterias, levaduras o actividad de agua, las comunidades humanas ya modificaban alimentos mediante combinaciones de tiempo, sal, fermentación, secado, humo, acidez o frío ambiental. La National Agricultural Library recuerda precisamente que el enlatado es reciente frente a prácticas como secado, curado, encurtido, salado y almacenamiento en frío. Pero una lista de técnicas no demuestra que todas nacieran con la misma finalidad ni que quienes las practicaban formularan una teoría común de la conservación.",
+          "Jiahu ofrece un buen límite epistemológico. Los residuos químicos de recipientes del VII milenio a. C. son compatibles con una bebida fermentada de arroz, miel y fruta. La fermentación transforma el sustrato y puede generar condiciones menos favorables para determinados organismos, pero de ese residuo no podemos leer la intención de sus productores. “Fermentado” no significa automáticamente “inventado para conservar” ni “seguro durante meses”.",
+          "Pompeya aporta otro mecanismo. Los restos de garum documentan una salsa de pescado obtenida mediante un proceso salado y fermentativo. La presencia de sal modifica profundamente el medio y selecciona qué transformaciones pueden ocurrir. A diferencia de una pieza fresca, el producto resultante podía almacenarse, transportarse y utilizarse como condimento, pero su historia gastronómica no se reduce a ser una respuesta al deterioro: también tenía sabor, valor comercial y usos culinarios propios.",
+          "La primera lección es por tanto incómoda pero útil: el efecto conservador, la transformación culinaria y la intención histórica no son la misma cosa. Podemos describir mecanismos y consecuencias cuando la evidencia lo permite, pero no proyectar categorías modernas sobre cada práctica antigua. Este recorrido empieza ahí porque conservar alimentos no nace de un “invento”; surge de muchas maneras de alterar las condiciones en las que un alimento cambia."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_fermented_beverage_jiahu_7th_millennium_bce"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_garum_pompeii_first_century"
+          }
+        ],
+        "sourceRefs": [
+          "src_usda_nal_canning_history",
+          "src_jiahu_fermented_beverage_pnas_2004",
+          "src_pompeii_antiquarium_garum",
+          "src_carannante_garum_2019",
+          "src_garum_composition_2010"
+        ],
+        "method": {
+          "title": "Distinguir mecanismo de intención",
+          "body": "La escena compara evidencia química y arqueológica de productos transformados con una síntesis histórica de métodos de conservación. La inferencia se limita a lo observable: proceso, composición y contexto; no se atribuye una finalidad psicológica que las fuentes no documenten."
+        },
+        "limits": "Fermentación ≠ intención demostrada de conservar. Sal ≠ prueba automática de una técnica de salazón concreta. Dos ejemplos separados por milenios no forman una línea evolutiva ni una ruta de transmisión.",
+        "whyItMatters": "Obliga a separar tres preguntas que suelen confundirse: qué le ocurre físicamente al alimento, para qué pudo utilizarse y qué intención podemos demostrar históricamente.",
+        "nextQuestion": "Si muchas prácticas funcionaban antes de conocer sus causas, ¿qué cambia cuando alguien combina calor y recipiente cerrado en un método reproducible y publicable?",
+        "glossaryRefs": [
+          "conservacion_alimentos",
+          "barrera_conservacion",
+          "fermentacion"
+        ]
+      },
+      {
+        "id": "preservation_2_appert",
+        "sceneType": "turning_point",
+        "label": "02 · Francia · 1809–1810",
+        "title": "Appert: conservar con calor y cierre antes de saber por qué funciona",
+        "lead": "El salto no consiste en “inventar la conserva” desde cero, sino en sistematizar un procedimiento de calentamiento y cierre que puede repetirse y describirse sin una teoría microbiana del deterioro.",
+        "geography": {
+          "today": "Francia napoleónica · referencia nacional",
+          "region": "Francia y abastecimiento militar de comienzos del siglo XIX",
+          "orientation": "El development se mantiene sin pin puntual porque la historia del método abarca experimentación, premio y publicación y no necesita fingir un único lugar exacto para representar el proceso.",
+          "society": "Administración napoleónica, manufactura alimentaria y una sociedad que buscaba transportar y almacenar alimentos durante más tiempo sin disponer todavía de microbiología moderna."
+        },
+        "narrative": [
+          "A finales del siglo XVIII y comienzos del XIX, el problema de abastecer ejércitos y poblaciones a distancia hizo especialmente valiosa cualquier técnica que redujera el deterioro. Nicolas Appert desarrolló un procedimiento empírico basado en colocar alimentos en recipientes, cerrarlos y someterlos a calentamiento. La National Agricultural Library sitúa el premio francés en 1809 y la tradición editorial del método conduce a su publicación en 1810; la Library of Congress conserva una edición inglesa de 1811 que permite leer el procedimiento en una fuente primaria cercana.",
+          "Lo decisivo es que el método funcionaba antes de que existiera una explicación microbiana aceptada. Appert podía observar qué combinaciones de preparación, cierre y calentamiento producían alimentos más estables, comparar resultados y convertir esa experiencia en instrucciones. El conocimiento tecnológico podía adelantarse al conocimiento causal: saber hacer no exigía todavía saber qué microorganismos participaban en el deterioro.",
+          "Tampoco conviene resumirlo como “Appert inventó conservar alimentos”. Secar, salar, fermentar, encurtir o emplear frío son mucho más antiguos. Lo nuevo en esta escena es otra arquitectura del control: un producto en recipiente cerrado, sometido a tratamiento térmico y pensado para conservarse durante periodos largos. Más tarde cambiarían los materiales del envase, los cierres, las temperaturas y los criterios de seguridad.",
+          "Esa distinción importa también hoy. Un método puede prolongar la vida útil y, sin embargo, aplicarse de forma insegura si no controla tiempo, temperatura, acidez, presión o contaminación posterior. La historia de la conserva no termina con encontrar una combinación que parece funcionar; empieza un problema técnico más exigente: definir condiciones reproducibles y comprender sus límites."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "appert_preservation_1809_1810"
+          }
+        ],
+        "sourceRefs": [
+          "src_appert_ucanr_2026",
+          "src_usda_nal_canning_history",
+          "src_appert_loc_1811_primary"
+        ],
+        "method": {
+          "title": "Contrastar síntesis institucional y texto primario",
+          "body": "La cronología se apoya en exposiciones institucionales y se contrasta con una edición histórica digitalizada por Library of Congress. El texto primario documenta el procedimiento publicado; no se utiliza para inventar una fecha más precisa de lo que permiten las fuentes."
+        },
+        "limits": "Appert ≠ origen universal de la conservación ni explicación microbiológica del método. “Recipiente cerrado + calor” tampoco equivale automáticamente a los procesos modernos de esterilización comercial o conserva doméstica segura.",
+        "whyItMatters": "Muestra que la tecnología puede hacerse reproducible antes de comprender completamente su mecanismo y abre la historia moderna del control combinado de tratamiento térmico y envase.",
+        "nextQuestion": "El calor permite estabilizar alimentos cerrados. ¿Qué ocurre cuando el problema se aborda por la vía opuesta y se aprende a producir frío de manera mecánica?",
+        "glossaryRefs": [
+          "conservacion_alimentos",
+          "barrera_conservacion"
+        ]
+      },
+      {
+        "id": "preservation_3_cold_chain",
+        "sceneType": "technology",
+        "label": "03 · 1834–1927 · del frío natural al frío producido",
+        "title": "Refrigerar deja de depender solo del invierno, el hielo y el lugar",
+        "lead": "La refrigeración mecánica no inventó el uso alimentario del frío; cambió la capacidad de producirlo, transportarlo y convertirlo gradualmente en infraestructura.",
+        "geography": {
+          "today": "Europa y Estados Unidos · referencias tecnológicas transnacionales",
+          "region": "Industrialización del frío durante los siglos XIX y XX",
+          "orientation": "Perkins y Monitor Top se conservan sin puntos inventados porque los registros describen desarrollos tecnológicos y difusión, no un único lugar histórico que explique todo el proceso.",
+          "society": "Ingenieros, industria del hielo y del transporte, comercios y hogares que fueron incorporando progresivamente sistemas artificiales de refrigeración."
+        },
+        "narrative": [
+          "El frío ya conservaba alimentos mucho antes de las máquinas frigoríficas. Nieve, hielo, sótanos, bodegas y estaciones frías podían reducir la velocidad de muchas transformaciones, aunque su disponibilidad dependía del clima, de infraestructuras de almacenamiento y de redes comerciales. Por eso 1834 no puede narrarse como “la invención de conservar con frío”. ASHRAE registra ese año la patente de Jacob Perkins para una máquina de refrigeración mecánica: el hito pertenece a la producción técnica de frío.",
+          "Una máquina capaz de extraer calor abre posibilidades nuevas, pero tampoco crea instantáneamente una cadena de frío. Durante el siglo XIX hicieron falta instalaciones comerciales, fábricas de hielo, aislamiento, transporte refrigerado y sistemas de distribución. La cronología de refrigeración muestra precisamente esa acumulación de soluciones. La conservación depende de que la temperatura se mantenga en diferentes etapas, no de poseer un aparato aislado.",
+          "La escena salta a 1927 porque el General Electric Monitor Top permite observar otra transición. Smithsonian lo identifica como un refrigerador que alcanzó amplia popularidad en hogares estadounidenses. El cambio doméstico reorganiza compra, almacenamiento, sobras y frecuencia de aprovisionamiento, pero no fue universal ni simultáneo: disponer de electricidad, poder adquisitivo y redes industriales condicionó la adopción.",
+          "El frío modifica el ritmo de crecimiento microbiano y muchas reacciones químicas, pero no convierte un alimento en eterno ni elimina todos los peligros. Una interrupción térmica, una contaminación inicial elevada o un patógeno capaz de crecer a baja temperatura pueden seguir siendo relevantes. La historia de la refrigeración es por eso una historia de infraestructura y continuidad, no de una temperatura mágica."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "perkins_mechanical_refrigeration_1834"
+          },
+          {
+            "kind": "development",
+            "ref": "monitor_top_refrigerator_1927"
+          }
+        ],
+        "sourceRefs": [
+          "src_ashrae_refrigeration_timeline",
+          "src_smithsonian_perkins_1834",
+          "src_smithsonian_electric_refrigeration",
+          "src_uchicago_monitor_top"
+        ],
+        "method": {
+          "title": "No confundir patente, adopción y sistema",
+          "body": "Se comparan una cronología técnica profesional, un objeto museístico y documentación institucional sobre refrigeración doméstica. Cada fuente responde a una escala distinta: principio tecnológico, objeto histórico y adopción social."
+        },
+        "limits": "Refrigeración mecánica ≠ nacimiento del uso del frío. Monitor Top ≠ refrigeración doméstica universal en 1927. Y refrigerar ≠ esterilizar: el frío ralentiza muchos procesos, pero no elimina por definición todos los microorganismos o reacciones.",
+        "whyItMatters": "La conservación deja de depender solo de transformar el alimento: también puede depender de mantener un entorno físico controlado durante almacenamiento y distribución.",
+        "nextQuestion": "Producir calor o frío permite intervenir sobre el alimento. ¿Qué cambia cuando la ciencia identifica organismos concretos detrás de determinadas alteraciones?",
+        "glossaryRefs": [
+          "refrigeracion_mecanica",
+          "cadena_frio",
+          "conservacion_alimentos"
+        ]
+      },
+      {
+        "id": "preservation_4_pasteur",
+        "sceneType": "science",
+        "label": "04 · Francia · 1863–1865",
+        "title": "Pasteur: del método que funciona a una explicación del deterioro",
+        "lead": "La misma pasteurización que en la Historia de la Fermentación sirve para hablar de control microbiano aquí responde a otra pregunta: ¿qué cambia en conservación cuando podemos relacionar una alteración con seres vivos?",
+        "geography": {
+          "today": "Arbois y otros centros de trabajo de Pasteur · Francia",
+          "region": "Francia del Segundo Imperio y economía del vino",
+          "orientation": "Arbois funciona como referencia cartográfica de un programa de investigación distribuido. El punto no representa todos los experimentos ni toda la industria vitivinícola francesa.",
+          "society": "Productores y comerciantes de vino, administración imperial y laboratorios que empezaban a conectar microbiología, alteración de alimentos y problemas industriales."
+        },
+        "narrative": [
+          "Appert había demostrado que un procedimiento podía conservar sin explicar el mecanismo. Pasteur permite observar el movimiento contrario: una explicación experimental empieza a orientar la intervención. Desde 1863 estudió enfermedades de los vinos por encargo de Napoleón III y relacionó determinadas alteraciones con microorganismos. En 1865 patentó un procedimiento de calentamiento moderado del vino orientado a mejorar su conservación.",
+          "En la Historia de la Fermentación este mismo episodio mostraba cómo distinguir microorganismos deseados e indeseados dentro de una bebida transformada. Aquí la pregunta es distinta. Si el deterioro puede vincularse a agentes vivos y a condiciones concretas, entonces tiempo, temperatura, oxígeno, higiene y momento de aplicación dejan de ser solo reglas empíricas: pueden relacionarse con una hipótesis causal que se prueba experimentalmente.",
+          "Eso tampoco convierte a Pasteur en inventor del tratamiento térmico. Cocinar, hervir y calentar alimentos son prácticas antiquísimas y Appert había utilizado calor décadas antes. La novedad está en conectar un problema de alteración con microorganismos y diseñar un tratamiento a partir de esa relación. La tecnología y la ciencia se retroalimentan en lugar de aparecer en una secuencia simple de “ignorancia” seguida de “descubrimiento”.",
+          "La escena muestra también por qué conservar y esterilizar no son equivalentes. La pasteurización busca reducir poblaciones microbianas relevantes mediante un tratamiento definido, no eliminar toda forma de vida del producto. El objetivo depende del alimento, del proceso y de qué alteraciones o peligros se quieren controlar."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "pasteurization_wine_1863_1865"
+          }
+        ],
+        "sourceRefs": [
+          "src_pasteur_legacy",
+          "src_pasteur_middle_years",
+          "src_science_history_pasteur",
+          "src_pasteur_letter_1866"
+        ],
+        "method": {
+          "title": "Reutilizar un hito sin repetir una historia",
+          "body": "El mismo development se lee desde otra pregunta museográfica. Fermentación estudia el control de procesos microbianos; Conservación estudia cómo una explicación causal modifica la forma de diseñar tratamientos contra el deterioro. La reutilización es explícita y trazable."
+        },
+        "limits": "Pasteur ≠ descubridor de todos los microorganismos ni origen de toda conservación térmica. Pasteurización ≠ esterilización y su eficacia depende de condiciones concretas de proceso y del objetivo microbiológico.",
+        "whyItMatters": "Marca el paso de conservar por resultado observado a diseñar parte del proceso con una explicación microbiológica del deterioro.",
+        "nextQuestion": "Controlar alteración y vida útil sigue sin responder a todo. ¿Cómo cambia la seguridad alimentaria cuando el objetivo pasa de comprobar el producto final a prevenir fallos durante el proceso?",
+        "glossaryRefs": [
+          "pasteurizacion",
+          "conservacion_alimentos"
+        ]
+      },
+      {
+        "id": "preservation_5_haccp",
+        "sceneType": "system",
+        "label": "05 · Estados Unidos · década de 1960",
+        "title": "APPCC: conservar no basta; hay que prevenir peligros durante el proceso",
+        "lead": "La vida útil y la inocuidad se relacionan, pero no son la misma variable. HACCP/APPCC introduce otra forma de pensar: identificar peligros y controlar el proceso antes de que el fallo llegue al producto final.",
+        "geography": {
+          "today": "Programa espacial estadounidense · desarrollo NASA–Pillsbury",
+          "region": "Estados Unidos · industria alimentaria y vuelos espaciales tripulados",
+          "orientation": "El development permanece sin pin puntual porque el sistema surgió de colaboración entre organizaciones y centros de trabajo; reducirlo a una coordenada daría una precisión falsa.",
+          "society": "Ingenieros, tecnólogos de alimentos y programas espaciales enfrentados a una exigencia extrema: minimizar riesgos alimentarios en misiones donde un fallo podía tener consecuencias graves."
+        },
+        "narrative": [
+          "Durante la preparación de alimentos para los vuelos espaciales tripulados, inspeccionar y analizar productos terminados resultaba insuficiente como estrategia principal. NASA y Pillsbury desarrollaron en la década de 1960 un enfoque que trasladaba la pregunta hacia el proceso: ¿qué peligros pueden aparecer, en qué etapas pueden controlarse y cómo sabemos que esos controles están funcionando? Esa lógica es la base de HACCP, APPCC en español.",
+          "El cambio respecto a las escenas anteriores es profundo. Appert controla una combinación de calor y cierre; la refrigeración controla temperatura; Pasteur conecta alteración y microorganismos. APPCC no es otra técnica de conservación añadida a la lista. Es un sistema preventivo que puede incluir tratamientos térmicos, frío, higiene, formulación, detección u otras medidas según el peligro y el alimento.",
+          "Eso obliga a separar vida útil de inocuidad. Un alimento puede perder calidad sin ser peligroso y puede albergar un peligro relevante sin mostrar signos sensoriales evidentes de deterioro. Por eso “parece bien conservado” no basta como criterio de seguridad. El proceso necesita peligros definidos, puntos de control, límites, vigilancia y respuesta ante desviaciones.",
+          "La historia de la conservación entra así en una escala organizativa. Ya no se trata solo de qué hacemos al alimento, sino de cómo diseñamos y verificamos un sistema completo. El éxito depende de decisiones antes, durante y después del tratamiento, y de registros que permitan saber si el control ocurrió realmente."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "haccp_development_1960s"
+          }
+        ],
+        "sourceRefs": [
+          "src_usda_haccp_2010",
+          "src_nasa_haccp_2024",
+          "src_national_academies_haccp"
+        ],
+        "method": {
+          "title": "Distinguir conservación de inocuidad",
+          "body": "La escena usa fuentes gubernamentales y académicas sobre el origen de HACCP para evitar una equivalencia falsa entre prolongar vida útil y controlar peligros. El sistema se presenta como prevención de proceso, no como una tecnología de frío o calor."
+        },
+        "limits": "APPCC ≠ inspección final del producto, ≠ una receta universal y ≠ una garantía automática de inocuidad. Requiere identificar peligros significativos, definir controles adecuados y verificar que el sistema funciona en el contexto concreto.",
+        "whyItMatters": "Amplía el concepto de control alimentario: la pregunta deja de ser únicamente “¿cómo hacemos que dure?” y pasa también a “¿cómo impedimos que un peligro llegue sin detectar al consumidor?”.",
+        "nextQuestion": "Cuando empresas y países diseñan controles distintos aparece una nueva necesidad: ¿cómo compartir criterios y referencias internacionales sin convertirlos en una única ley mundial?",
+        "glossaryRefs": [
+          "haccp",
+          "conservacion_alimentos"
+        ]
+      },
+      {
+        "id": "preservation_6_codex",
+        "sceneType": "institution",
+        "label": "06 · 1961–1963 · FAO/OMS",
+        "title": "Codex: del control de un proceso a referencias compartidas entre países",
+        "lead": "La última transformación no es una máquina ni un tratamiento. Es institucional: construir normas, directrices y códigos que permitan discutir seguridad, composición y prácticas sobre una base internacional común.",
+        "geography": {
+          "today": "FAO/OMS · dimensión internacional",
+          "region": "Sistema multilateral de normas alimentarias",
+          "orientation": "La Comisión se constituyó mediante una secuencia institucional entre 1961 y 1963 y celebró su primera sesión en Roma. El development permanece sin pin único porque el significado histórico es internacional, no local.",
+          "society": "Gobiernos, organismos internacionales, científicos, industria y consumidores dentro de un comercio alimentario cada vez más interdependiente."
+        },
+        "narrative": [
+          "A mediados del siglo XX, controlar un alimento o una fábrica ya no resolvía por sí solo los problemas de un mercado internacional. Países distintos podían utilizar definiciones, límites, métodos y exigencias diferentes. La Comisión del Codex Alimentarius se constituyó mediante una secuencia institucional: la Conferencia de FAO aprobó su establecimiento en 1961, la Asamblea Mundial de la Salud respaldó en 1963 el programa conjunto FAO/OMS y la primera sesión de la Comisión se celebró en Roma entre junio y julio de 1963.",
+          "Codex no añade una nueva barrera física al alimento. Su función pertenece a otra capa: producir normas, directrices y códigos de prácticas que sirvan como referencias internacionales. Eso permite discutir higiene, contaminantes, aditivos, etiquetado, métodos de análisis u otros asuntos utilizando marcos compartidos y revisables.",
+          "Por eso tampoco debe describirse como “la ley mundial de los alimentos”. Los textos Codex no sustituyen automáticamente las legislaciones nacionales. Su influencia depende de cómo se adopten, utilicen y relacionen con sistemas regulatorios y comerciales. La escena cierra la visita precisamente porque muestra que conservar y hacer seguro un alimento acaba implicando instituciones, vocabulario común y procedimientos de consenso además de técnicas físicas o microbiológicas.",
+          "Mirando atrás, la historia deja de parecer una línea ascendente. Jiahu y garum muestran transformaciones empíricas; Appert combina calor y cierre; la refrigeración crea infraestructura térmica; Pasteur conecta alteración y microorganismos; APPCC organiza la prevención; Codex ayuda a compartir criterios. Cada capa resuelve una pregunta distinta y ninguna vuelve inútiles a las anteriores."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "codex_alimentarius_commission_1963"
+          }
+        ],
+        "sourceRefs": [
+          "src_codex_fao",
+          "src_codex_fao_who_home",
+          "src_codex_history_1961_1963",
+          "src_codex_first_session_1963"
+        ],
+        "method": {
+          "title": "Tratar una institución como proceso, no como fecha milagrosa",
+          "body": "Se conserva el rango 1961–1963 ya auditado en K1: resolución de FAO, aprobación del programa conjunto por la Asamblea Mundial de la Salud y primera sesión. Las fuentes son institucionales y el informe de sesión documenta directamente el arranque operativo."
+        },
+        "limits": "Codex ≠ una ley mundial única ni una autoridad que aplique directamente todos sus textos en cada país. Institucionalización internacional ≠ uniformidad inmediata de prácticas, riesgos o regulaciones.",
+        "whyItMatters": "La conservación moderna no termina en una técnica eficaz: exige definir qué se controla, cómo se verifica y qué referencias permiten comunicar esos criterios entre sistemas alimentarios distintos.",
+        "nextQuestion": "Idea para llevarte: conservar, hacer seguro y estandarizar son capas relacionadas, pero ninguna puede sustituir automáticamente a las otras.",
+        "glossaryRefs": [
+          "codex_alimentarius",
+          "haccp",
+          "cadena_frio",
+          "conservacion_alimentos"
+        ]
+      }
+    ]
   }
 ]

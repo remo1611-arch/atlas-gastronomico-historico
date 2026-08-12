@@ -666,3 +666,28 @@ Cuarta expansión editorial posterior al Product Contract Freeze.
 1. aceptación móvil de Patata y regresión de las seis historias previas;
 2. **Especias/conservación**;
 3. revisar densidad global del corpus y preparar historias transversales de segundo nivel antes de G4.
+
+
+## Alpha.32 — Especias
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Quinta expansión editorial posterior al Product Contract Freeze y segunda historia transversal real.
+
+### Integrado
+- 5 escenas: Megiddo, Berenike, Europa medieval, Calicut y Banda;
+- 2 subjects nuevos, 3 places, 2 occurrences, 3 developments, 9 sources y 4 términos de glosario;
+- ningún cambio en los diez schemas congelados ni lógica específica por historia.
+
+### Reglas epistemológicas
+- evidencia de cúrcuma en Megiddo ≠ ruta comercial completa;
+- Berenike ≠ origen del comercio índico de pimienta;
+- propiedades antimicrobianas de especias ≠ explicación del consumo medieval;
+- 1498 ≠ descubrimiento de un océano Índico desconectado;
+- Banda productora ≠ violencia colonial: occurrence y development se modelan por separado;
+- no se dibujan centroides para Europa medieval ni Banda.
+
+### Después
+1. aceptación móvil de Especias y regresión de las siete historias previas;
+2. dossier transversal **Cómo aprendimos a conservar los alimentos**;
+3. reutilizar occurrences/developments existentes antes de añadir hitos nuevos;
+4. seguir aumentando densidad del corpus y evaluar cuándo G4 aporta valor real.

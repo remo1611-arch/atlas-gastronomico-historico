@@ -452,5 +452,54 @@
       "src_potato_famine_elife_2013"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "turmeric",
+    "name": "Cúrcuma (Curcuma longa)",
+    "type": "spice_subject",
+    "summary": "Rizoma aromático utilizado como especia y colorante. El registro del Atlas se limita por ahora a su detección proteómica en cálculo dental de Megiddo como evidencia de circulación alimentaria de larga distancia.",
+    "aliases": [
+      "cúrcuma",
+      "curcuma",
+      "turmeric",
+      "Curcuma longa"
+    ],
+    "tags": [
+      "especia",
+      "rizoma",
+      "Asia meridional",
+      "comercio",
+      "arqueoproteómica"
+    ],
+    "sourceRefs": [
+      "src_spices_scott_pnas_2021",
+      "src_spices_mpi_megiddo_2020"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "nutmeg",
+    "name": "Nuez moscada (Myristica fragrans)",
+    "type": "spice_subject",
+    "summary": "Semilla aromática de Myristica fragrans; el macis procede del arilo de la misma fruta. Banda fue su núcleo histórico de producción y un objetivo central de monopolio colonial en el siglo XVII.",
+    "aliases": [
+      "nuez moscada",
+      "nutmeg",
+      "Myristica fragrans",
+      "macis",
+      "mace"
+    ],
+    "tags": [
+      "especia",
+      "Banda",
+      "VOC",
+      "monopolio",
+      "colonialismo"
+    ],
+    "sourceRefs": [
+      "src_spices_unesco_banda",
+      "src_spices_nationaalarchief_banda_1621"
+    ],
+    "status": "reviewed"
   }
 ]

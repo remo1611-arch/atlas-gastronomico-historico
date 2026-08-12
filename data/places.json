@@ -873,5 +873,58 @@
       "src_potato_famine_elife_2013"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "tel_megiddo_spice",
+    "name": "Tel Megiddo",
+    "type": "archaeological_site",
+    "point": {
+      "lat": 32.585,
+      "lon": 35.1841666667,
+      "precision": "official_world_heritage_coordinate",
+      "sourceRefs": [
+        "src_spices_unesco_megiddo_coords"
+      ],
+      "note": "Coordenada oficial del componente Tel Megiddo del sitio Patrimonio Mundial UNESCO; representa el yacimiento, no una tumba individual."
+    },
+    "summary": "Tell arqueológico del Levante meridional. El cálculo dental de un individuo de un contexto funerario de ca. 1630–1550 a. C. conservó proteínas atribuidas a cúrcuma y soja.",
+    "sourceRefs": [
+      "src_spices_scott_pnas_2021",
+      "src_spices_unesco_megiddo_coords"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "calicut_kozhikode_reference",
+    "name": "Calicut / actual Kozhikode (referencia urbana)",
+    "type": "city_reference",
+    "point": {
+      "lat": 11.2477777778,
+      "lon": 75.7802777778,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_spices_kozhikode_wikidata"
+      ],
+      "note": "Punto de referencia de la ciudad actual de Kozhikode. No identifica el fondeadero exacto de la flota de 1498."
+    },
+    "summary": "Centro mercantil de la costa de Malabar integrado en redes del océano Índico mucho antes de la llegada portuguesa. Vasco da Gama arribó a su entorno en mayo de 1498.",
+    "sourceRefs": [
+      "src_spices_subrahmanyam_2007",
+      "src_spices_cambridge_portuguese_indian_ocean",
+      "src_spices_kozhikode_wikidata"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "banda_islands_nutmeg_region",
+    "name": "Islas Banda · región histórica de la nuez moscada",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Archipiélago de Maluku asociado históricamente a la producción de nuez moscada y macis. No se reduce a un punto porque la historia de producción, resistencia y violencia colonial afecta al sistema insular.",
+    "sourceRefs": [
+      "src_spices_unesco_banda",
+      "src_spices_nationaalarchief_banda_1621"
+    ],
+    "status": "reviewed"
   }
 ]
