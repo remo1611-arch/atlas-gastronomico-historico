@@ -715,5 +715,95 @@
       "src_coffee_smithsonian_espresso_history"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "new_guinea_sugarcane_region",
+    "name": "Nueva Guinea e islas próximas (región de domesticación de la caña)",
+    "type": "biogeographic_region",
+    "point": null,
+    "summary": "Región de Melanesia en la que la evidencia genómica reciente sitúa la domesticación de Saccharum officinarum a partir de S. robustum. Se mantiene sin centroide para no convertir una región de domesticación en un punto ficticio.",
+    "sourceRefs": [
+      "src_sugar_cell_domestication_2025",
+      "src_sugar_cirad_domestication_2025",
+      "src_sugar_kew_officinarum"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "south_asia_sugar_history_regional",
+    "name": "Asia meridional / India (referencia histórica regional)",
+    "type": "historical_region",
+    "point": null,
+    "summary": "Referencia regional para la historiografía sobre cristalización temprana del azúcar de caña. La cronología exacta varía entre síntesis y no se representa mediante un punto único.",
+    "sourceRefs": [
+      "src_sugar_fems_sucrose_history_2016",
+      "src_sugar_bosma_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "funchal_madeira_reference",
+    "name": "Funchal (Madeira, referencia urbana)",
+    "type": "city_reference",
+    "point": {
+      "lat": 32.65,
+      "lon": -16.917,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_sugar_funchal_wikidata"
+      ],
+      "note": "Punto urbano de referencia para el ciclo azucarero de Madeira. No identifica un ingenio, plantación o almacén histórico concreto."
+    },
+    "summary": "Referencia urbana de Madeira para una economía insular cuya producción de azúcar alcanzó gran escala en los siglos XV-XVI y se articuló con mercados europeos.",
+    "sourceRefs": [
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_visitmadeira_city_2026"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "atlantic_sugar_plantation_regional",
+    "name": "Caribe y América azucarera atlántica (referencia regional)",
+    "type": "macroregion",
+    "point": null,
+    "summary": "Macroregión para el sistema de plantaciones de caña que se expandió por el Caribe y partes de Sudamérica. No se representa por un centroide porque integra múltiples islas, colonias, puertos y zonas productivas.",
+    "sourceRefs": [
+      "src_sugar_smithsonian_trade",
+      "src_sugar_slavevoyages_maps_2025",
+      "src_sugar_technikmuseum_berlin"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "berlin_germany",
+    "name": "Berlín (Alemania)",
+    "type": "city",
+    "point": {
+      "lat": 52.52,
+      "lon": 13.405,
+      "precision": "reference",
+      "sourceRefs": [
+        "src_sugar_berlin_wikidata"
+      ],
+      "note": "Punto urbano de referencia para el trabajo berlinés de Marggraf y Achard; no identifica un laboratorio histórico exacto."
+    },
+    "summary": "Ciudad asociada a los trabajos químicos de Marggraf y Achard que demostraron y desarrollaron la obtención de sacarosa desde remolacha.",
+    "sourceRefs": [
+      "src_sugar_technikmuseum_berlin",
+      "src_sugar_bruhns_marggraf_1997"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "cunern_silesia_regional",
+    "name": "Cunern / actual Konary, Silesia (referencia histórica)",
+    "type": "historical_locality",
+    "point": null,
+    "summary": "Localidad histórica de Silesia donde Franz Carl Achard estableció en 1801 la fábrica de azúcar de remolacha citada por la historiografía técnica. Se mantiene sin coordenada hasta cerrar una georreferencia cartográfica específica.",
+    "sourceRefs": [
+      "src_sugar_suedzucker_history",
+      "src_sugar_technikmuseum_berlin"
+    ],
+    "status": "reviewed"
   }
 ]

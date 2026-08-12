@@ -555,5 +555,174 @@
       "src_coffee_smithsonian_espresso_history"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "sugar_crystallization_south_asia_ca_350_ce",
+    "name": "Cristalización del azúcar de caña en Asia meridional: cronología aproximada",
+    "type": "processing_technology",
+    "period": {
+      "start": 300,
+      "end": 500,
+      "precision": "circa",
+      "display": "ca. siglos IV–V d. C."
+    },
+    "placeRefs": [
+      "south_asia_sugar_history_regional"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "sugar"
+    ],
+    "impactTypes": [
+      "crystallization",
+      "storage",
+      "transport",
+      "ingredient_standardization"
+    ],
+    "summary": "Una cronología muy citada en la literatura científica sitúa hacia 350 d. C. en India el desarrollo de técnicas de cristalización del azúcar de caña. El Atlas conserva un intervalo amplio porque esa fecha es una reconstrucción historiográfica, no un acontecimiento fechado por una fuente primaria única. El cambio material fue decisivo: concentrar y cristalizar el jugo facilitó conservar, dosificar y transportar sacarosa como ingrediente sólido.",
+    "certainty": "medium",
+    "sourceRefs": [
+      "src_sugar_fems_sucrose_history_2016",
+      "src_sugar_bosma_2013"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "mediterranean_to_madeira_sugar_700_1500",
+    "name": "Desplazamiento occidental de la producción azucarera: Mediterráneo → Madeira",
+    "type": "production_diffusion",
+    "period": {
+      "start": 700,
+      "end": 1500,
+      "precision": "range",
+      "display": "siglos VIII–XV"
+    },
+    "placeRefs": [
+      "funchal_madeira_reference"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "sugar"
+    ],
+    "impactTypes": [
+      "crop_transfer",
+      "refining",
+      "irrigation",
+      "trade",
+      "scale_up"
+    ],
+    "summary": "La producción y tecnología azucareras se desplazaron gradualmente hacia el oeste por el Mediterráneo: Levante, Sicilia y la península ibérica. En el siglo XV Valencia y Granada abastecían mercados del norte europeo; Madeira permitió después un salto de escala dentro del Atlántico. El desarrollo representa una secuencia de transferencia y reorganización productiva, no una ruta lineal dibujada entre puntos aislados.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_bosma_2013",
+      "src_sugar_visitmadeira_city_2026"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "atlantic_sugar_plantation_slavery_1490_1750",
+    "name": "Azúcar atlántico, plantación y trabajo esclavizado",
+    "type": "labor_and_production_system",
+    "period": {
+      "start": 1490,
+      "end": 1750,
+      "precision": "range",
+      "display": "década de 1490–mediados del siglo XVIII"
+    },
+    "placeRefs": [
+      "atlantic_sugar_plantation_regional"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "sugar"
+    ],
+    "impactTypes": [
+      "plantation",
+      "forced_labor",
+      "slavery",
+      "atlantic_trade",
+      "mass_production"
+    ],
+    "summary": "Tras la introducción europea de la caña en América desde la década de 1490, las plantaciones se expandieron por el Caribe y Sudamérica. El crecimiento de la oferta y de los beneficios estuvo íntimamente ligado al desplazamiento forzado y al trabajo de millones de personas esclavizadas. Hacia 1750 plantaciones británicas y francesas dominaban gran parte de la producción mundial de azúcar y derivados. El Atlas no presenta el abaratamiento del azúcar como un simple éxito tecnológico separado de ese sistema humano y económico.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_sugar_smithsonian_trade",
+      "src_sugar_slavevoyages_maps_2025",
+      "src_sugar_technikmuseum_berlin"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "marggraf_beet_sucrose_1747",
+    "name": "Marggraf demuestra sacarosa en remolacha",
+    "type": "food_chemistry_discovery",
+    "period": {
+      "start": 1747,
+      "end": 1747,
+      "precision": "year",
+      "display": "1747"
+    },
+    "placeRefs": [
+      "berlin_germany"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "sugar"
+    ],
+    "impactTypes": [
+      "chemical_identification",
+      "alternative_raw_material",
+      "temperate_crop"
+    ],
+    "summary": "El 17 de noviembre de 1747 Andreas Sigismund Marggraf comunicó a la Academia de Berlín experimentos que demostraban azúcar cristalizable en remolacha y otras plantas locales. El resultado no creó inmediatamente una industria, pero separó químicamente la sacarosa de la idea de que solo podía proceder de caña tropical.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_sugar_bruhns_marggraf_1997",
+      "src_sugar_fems_sucrose_history_2016",
+      "src_sugar_technikmuseum_berlin"
+    ],
+    "status": "verified",
+    "verification": {
+      "verifiedOn": "2026-08-12",
+      "method": "historical_technical_article_plus_academic_and_museum_crosscheck",
+      "independentSourceRefs": [
+        "src_sugar_fems_sucrose_history_2016",
+        "src_sugar_technikmuseum_berlin"
+      ],
+      "note": "La fecha del informe académico se contrasta con una revisión científica y una institución museística técnica."
+    }
+  },
+  {
+    "id": "achard_beet_sugar_factory_1801",
+    "name": "Achard lleva el azúcar de remolacha a producción fabril en Silesia",
+    "type": "industrial_processing",
+    "period": {
+      "start": 1801,
+      "end": 1801,
+      "precision": "year",
+      "display": "1801"
+    },
+    "placeRefs": [
+      "cunern_silesia_regional"
+    ],
+    "contextRefs": [],
+    "impactSubjectRefs": [
+      "sugar"
+    ],
+    "impactTypes": [
+      "beet_sugar",
+      "industrialization",
+      "temperate_production",
+      "supply_diversification"
+    ],
+    "summary": "Franz Carl Achard convirtió la línea de investigación sobre remolacha en producción a escala fabril en Cunern/Silesia en 1801. El desarrollo abrió una vía europea de producción de sacarosa desde un cultivo templado; las guerras y bloqueos napoleónicos acelerarían después su expansión, pero no son la causa de la demostración química original de 1747.",
+    "certainty": "high",
+    "sourceRefs": [
+      "src_sugar_suedzucker_history",
+      "src_sugar_technikmuseum_berlin",
+      "src_sugar_fems_sucrose_history_2016"
+    ],
+    "status": "reviewed"
   }
 ]

@@ -619,3 +619,26 @@ Segunda expansión editorial posterior al Product Contract Freeze.
 1. aceptación móvil de Café y regresión de las cuatro historias previas;
 2. **Azúcar → Patata → Especias/conservación**;
 3. G4 continúa bloqueado hasta densidad y evidencia suficientes.
+
+## Alpha.30 — Azúcar
+**Estado: IMPLEMENTADA · QA automatizado PASS · aceptación móvil pendiente**
+
+Tercera expansión editorial posterior al Product Contract Freeze.
+
+### Integrado
+- 5 escenas: Nueva Guinea, cristalización en Asia meridional, Mediterráneo/Madeira, sistema atlántico y remolacha europea;
+- 1 subject, 6 places, 2 occurrences, 5 developments, 14 sources y 5 términos de glosario;
+- ningún cambio en los diez schemas congelados ni lógica específica por historia.
+
+### Reglas epistemológicas
+- domesticación de caña ≠ fabricación de azúcar cristalizado;
+- ca. 350 d. C. se trata como estimación historiográfica, no como fecha de invención;
+- no se dibuja una ruta lineal de difusión no demostrada;
+- plantación y esclavitud forman parte estructural de la expansión atlántica;
+- Marggraf 1747 y Achard 1801 son hitos diferentes;
+- remolacha no se presenta como sustitución inmediata de la caña.
+
+### Después
+1. aceptación móvil de Azúcar y regresión de las cinco historias previas;
+2. **Patata → Especias/conservación**;
+3. seguir aumentando densidad de corpus antes de G4.

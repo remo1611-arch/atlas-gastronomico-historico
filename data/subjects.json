@@ -397,5 +397,32 @@
       "src_coffee_wcr_arabica_history"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "sugar",
+    "name": "Azúcar (sacarosa alimentaria y sus fuentes históricas)",
+    "type": "food_ingredient_subject",
+    "summary": "Historia de la sacarosa como ingrediente: desde la domesticación de cañas ricas en azúcar y la cristalización del jugo hasta los sistemas atlánticos de plantación y la producción de remolacha en climas templados.",
+    "aliases": [
+      "azúcar",
+      "sugar",
+      "sacarosa",
+      "sucrose"
+    ],
+    "tags": [
+      "sweetener",
+      "sucrose",
+      "sugarcane",
+      "sugar_beet",
+      "plantation",
+      "confectionery"
+    ],
+    "status": "reviewed",
+    "sourceRefs": [
+      "src_sugar_cell_domestication_2025",
+      "src_sugar_fems_sucrose_history_2016",
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_technikmuseum_berlin"
+    ]
   }
 ]

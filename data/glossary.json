@@ -160,5 +160,35 @@
     "term": "crema del espresso",
     "definition": "Capa de espuma y emulsión que se forma sobre un espresso extraído a suficiente presión. Se asocia a gases, aceites y compuestos coloidales liberados durante la extracción y se volvió característica con las máquinas de alta presión del siglo XX.",
     "status": "reviewed"
+  },
+  {
+    "id": "sacarosa",
+    "term": "sacarosa",
+    "definition": "Disacárido formado por glucosa y fructosa. En el uso cotidiano suele corresponder al azúcar de mesa; químicamente es la misma molécula tanto si procede de caña como de remolacha.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cana_azucar",
+    "term": "caña de azúcar / Saccharum officinarum",
+    "definition": "Gramínea tropical domesticada en la región de Nueva Guinea a partir de linajes de S. robustum y seleccionada por tallos ricos en sacarosa. Las variedades modernas son genéticamente más complejas que una única especie pura.",
+    "status": "reviewed"
+  },
+  {
+    "id": "cristalizacion_azucar",
+    "term": "cristalización del azúcar",
+    "definition": "Operación en la que una disolución concentrada de sacarosa forma cristales sólidos. Históricamente permitió transformar jugos y jarabes perecederos en un producto más estable, dosificable y transportable.",
+    "status": "reviewed"
+  },
+  {
+    "id": "plantacion_azucarera",
+    "term": "plantación azucarera",
+    "definition": "Sistema agrario orientado a producir caña a gran escala y conectado con molienda, cocción/refinado y comercio. En el Atlántico moderno estuvo profundamente ligado a colonización, apropiación de tierras y trabajo esclavizado o coercitivo.",
+    "status": "reviewed"
+  },
+  {
+    "id": "remolacha_azucarera",
+    "term": "remolacha azucarera",
+    "definition": "Cultivo de Beta vulgaris seleccionado por alta concentración de sacarosa en la raíz. Desde finales del siglo XVIII y el XIX permitió producir azúcar en regiones templadas donde la caña tropical no era viable.",
+    "status": "reviewed"
   }
 ]

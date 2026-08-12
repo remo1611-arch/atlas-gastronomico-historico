@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.0-alpha.30 — 2026-08-12
+
+### Expansión editorial E1 — Azúcar
+- Nueva historia de 5 escenas: domesticación de la caña en Nueva Guinea, cristalización en Asia meridional, desplazamiento productivo Mediterráneo/Madeira, sistema atlántico de plantación/esclavitud y remolacha europea.
+- Añade 1 subject, 6 places, 2 occurrences, 5 developments, 14 sources y 5 términos de glosario.
+- Sin cambios en los 10 schemas congelados ni lógica específica de Azúcar.
+- Separa explícitamente domesticar caña de fabricar azúcar cristalizado.
+- La cronología ca. 350 d. C. se conserva como reconstrucción historiográfica aproximada, no como fecha de invención.
+- El tramo atlántico integra coerción, esclavitud y escala humana y permanece sin centroide artificial.
+- Marggraf 1747 y Achard 1801 se modelan como hitos distintos: descubrimiento químico y producción fabril.
+
+### QA alpha.30
+- Añade `test_sugar_story.py` y corrige su lógica para permitir refutaciones explícitas de mitos sin confundirlas con afirmaciones canónicas.
+- Product Contract Freeze alpha.27 permanece intacto.
+- Python `test_*.py`: 58/58 PASS; Node `test_*.mjs`: 5/5 PASS.
+- Aceptación táctil/visual de alpha.30: pendiente.
+
 ## 0.1.0-alpha.29 — 2026-08-12
 
 ### Expansión editorial E1 — Café

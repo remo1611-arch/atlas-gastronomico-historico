@@ -1325,5 +1325,258 @@
         ]
       }
     ]
+  },
+  {
+    "id": "story_sugar",
+    "storyType": "subject",
+    "primarySubjectRef": "sugar",
+    "relatedSubjectRefs": [
+      "sugar"
+    ],
+    "title": "Historia del azúcar",
+    "question": "¿Cómo pasó la sacarosa de ser dulzor contenido en una planta a convertirse en un ingrediente global, barato y producido desde materias primas distintas?",
+    "teaser": "De la domesticación de la caña en Nueva Guinea a la remolacha europea: cinco escenas para entender cristalización, comercio, plantación, esclavitud e industrialización sin confundir expansión con progreso neutral.",
+    "eyebrow": "5 escenas · planta, cristal, poder y fábrica",
+    "subtitle": "No buscamos quién «inventó el azúcar». Seguimos transformaciones distintas: domesticar una caña dulce, cristalizar sacarosa, desplazar centros productivos, construir un sistema atlántico de plantaciones y obtener la misma molécula desde remolacha.",
+    "estimatedMinutes": 10,
+    "endTitle": "La misma molécula puede contar historias sociales muy diferentes",
+    "endText": "La sacarosa de caña y la de remolacha es químicamente la misma. Lo que cambia históricamente son las plantas, paisajes, técnicas, relaciones laborales, redes comerciales y escalas que la hacen disponible. Comprender el azúcar exige mirar a la vez química, agricultura, trabajo y poder.",
+    "sourceRefs": [
+      "src_sugar_cell_domestication_2025",
+      "src_sugar_cirad_domestication_2025",
+      "src_sugar_kew_officinarum",
+      "src_sugar_fems_sucrose_history_2016",
+      "src_sugar_bosma_2013",
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_visitmadeira_city_2026",
+      "src_sugar_smithsonian_trade",
+      "src_sugar_slavevoyages_maps_2025",
+      "src_sugar_technikmuseum_berlin",
+      "src_sugar_bruhns_marggraf_1997",
+      "src_sugar_suedzucker_history"
+    ],
+    "status": "reviewed",
+    "scenes": [
+      {
+        "id": "sugar_1_new_guinea",
+        "sceneType": "orientation",
+        "label": "01 · Nueva Guinea · ca. 6000 a. C.",
+        "title": "Antes del azúcar había una planta que los humanos estaban transformando",
+        "lead": "El origen de la historia no es un cristal blanco. Es una gramínea seleccionada durante generaciones por personas que no estaban creando todavía una industria azucarera global.",
+        "geography": {
+          "today": "Nueva Guinea e islas próximas · Melanesia",
+          "region": "Pacífico occidental tropical",
+          "orientation": "La evidencia genómica sitúa el núcleo de domesticación de Saccharum officinarum en la región de Nueva Guinea y áreas insulares cercanas. El Atlas mantiene el área sin un punto único porque una región de domesticación no equivale a un yacimiento o población concreta.",
+          "society": "Comunidades de horticultores de Melanesia seleccionaron y propagaron plantas útiles dentro de sistemas agrícolas locales mucho antes de que existiera el comercio mundial de azúcar."
+        },
+        "narrative": [
+          "La caña de azúcar moderna no apareció como una materia prima industrial lista para ser refinada. Un estudio genómico publicado en 2025, basado en cientos de accesiones de Saccharum, confirma que S. officinarum fue domesticada a partir de poblaciones de S. robustum en la región de Nueva Guinea. La datación propuesta ronda los ocho mil años antes del presente, aproximadamente el sexto milenio a. C.",
+          "Esta primera escena obliga a separar dos historias que a menudo se mezclan. Una es la domesticación de una planta: selección humana, propagación vegetativa, adaptación a paisajes y preferencia por tallos cada vez más útiles. Otra, mucho posterior, es la fabricación de sacarosa cristalizada. Tener una caña rica en azúcares no significa disponer ya de azúcar de mesa.",
+          "La genética reciente también complica el relato de una especie aislada que viaja intacta por el mundo. Los linajes de caña se diversificaron, hibridaron y recibieron aportes de otras poblaciones silvestres. Las variedades modernas son el resultado de una historia larga de selección y cruzamiento. El museo, por tanto, no dibuja una flecha simple desde un supuesto punto de origen hacia todos los cultivos posteriores.",
+          "La palabra «azúcar» puede hacernos mirar hacia el producto final y olvidar el trabajo agrícola que lo precede. Pero la concentración de sacarosa en un tallo es una propiedad biológica que los seres humanos aprovecharon y modificaron antes de desarrollar técnicas para separar, concentrar y cristalizar esa molécula.",
+          "La idea para llevarse es sencilla: domesticar caña y fabricar azúcar son procesos históricos diferentes. La primera transformación crea una materia vegetal especialmente dulce; las siguientes convertirán ese dulzor en un ingrediente separable, almacenable y comerciable."
+        ],
+        "itemRefs": [
+          {
+            "kind": "occurrence",
+            "ref": "occ_sugarcane_domestication_new_guinea_ca_6000_bce"
+          }
+        ],
+        "sourceRefs": [
+          "src_sugar_cell_domestication_2025",
+          "src_sugar_cirad_domestication_2025",
+          "src_sugar_kew_officinarum"
+        ],
+        "method": {
+          "title": "Cómo se reconstruye una domesticación sin una fecha escrita",
+          "body": "La inferencia combina diversidad genómica de variedades cultivadas y parientes silvestres con modelos de parentesco y biogeografía. La fecha es aproximada y describe un proceso poblacional, no un día de domesticación."
+        },
+        "limits": "La genética puede localizar y ordenar procesos de domesticación, pero no indica qué preparación culinaria concreta se hacía con cada tallo ni cuándo apareció por primera vez azúcar cristalizado.",
+        "whyItMatters": "Separar planta y producto evita atribuir a la prehistoria de Nueva Guinea una tecnología de refinado que pertenece a etapas posteriores y permite entender de qué materia prima partieron esas innovaciones.",
+        "nextQuestion": "Si el dulzor estaba atrapado dentro del tallo, ¿qué transformación permitió convertirlo en una sustancia sólida que podía guardarse y circular lejos del campo?",
+        "glossaryRefs": [
+          "cana_azucar",
+          "sacarosa"
+        ]
+      },
+      {
+        "id": "sugar_2_crystallization",
+        "sceneType": "technology",
+        "label": "02 · Asia meridional · ca. siglos IV–V d. C.",
+        "title": "Cristalizar cambia el problema: del jugo perecedero al ingrediente transportable",
+        "lead": "Extraer jugo dulce y fabricar cristales no son lo mismo. La cristalización convierte una materia vegetal local en un producto que puede almacenarse, dosificarse y comerciarse de otra manera.",
+        "geography": {
+          "today": "India / Asia meridional · referencia regional",
+          "region": "Subcontinente indio",
+          "orientation": "Las síntesis históricas sitúan en Asia meridional el desarrollo temprano de técnicas de azúcar cristalizado, pero no permiten reducir ese proceso a una ciudad ni a un taller concreto; por eso esta escena permanece deliberadamente sin pin puntual.",
+          "society": "Sociedades con agricultura de caña, tradiciones médicas y culinarias, artesanos especializados y redes comerciales capaces de mover productos de alto valor a distancias crecientes."
+        },
+        "narrative": [
+          "La literatura científica moderna repite con frecuencia una fecha aproximada: hacia 350 d. C. en India se habrían desarrollado procedimientos para cristalizar azúcar de caña. El Atlas no convierte esa cifra en un momento inaugural. La referencia procede de reconstrucciones historiográficas posteriores y otras historias de la industria sitúan antecedentes de producción en rangos diferentes. Por eso usamos un intervalo amplio y una certeza media para la cronología concreta.",
+          "Lo históricamente decisivo no depende de ganar una competición por el primer cristal. Concentrar el jugo, controlar sobresaturación, enfriamiento y formación de cristales produce una materia físicamente distinta de la caña o del jarabe. El azúcar sólido resiste mejor el transporte, puede fraccionarse y dosificarse y se integra con mayor facilidad en circuitos comerciales y usos farmacológicos o culinarios.",
+          "Ese cambio también separa la molécula de su planta. A partir de aquí, una persona puede manipular sacarosa sin ver nunca la caña que la produjo. Esa abstracción material será fundamental siglos más tarde cuando Europa consiga obtener la misma sacarosa de una raíz de clima templado.",
+          "La historia del azúcar suele encadenarse como si cada civilización entregara una receta terminada a la siguiente. La evidencia disponible aconseja otra imagen: familias de técnicas de extracción, clarificación, concentración y cristalización que se perfeccionan y circulan durante largos periodos. Los términos antiguos tampoco equivalen automáticamente a nuestros grados comerciales de azúcar blanco, moreno o refinado.",
+          "Esta escena introduce por tanto una segunda distinción: una planta dulce puede ser local; un cristal estable puede convertirse en mercancía. El cambio de estado físico modifica la geografía posible del alimento mucho antes de la industrialización moderna."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "sugar_crystallization_south_asia_ca_350_ce"
+          }
+        ],
+        "sourceRefs": [
+          "src_sugar_fems_sucrose_history_2016",
+          "src_sugar_bosma_2013"
+        ],
+        "method": {
+          "title": "Por qué no publicamos «350 = invención del azúcar»",
+          "body": "La fecha aparece en revisiones modernas que sintetizan bibliografía histórica, no en una única evidencia primaria fechada con precisión. Se conserva como orientación cronológica amplia y se separa del cambio técnico, mucho mejor establecido."
+        },
+        "limits": "No conocemos un primer taller universal de cristalización ni podemos equiparar cualquier producto sólido antiguo con azúcar blanco refinado moderno. La cronología exacta sigue siendo menos robusta que la existencia del proceso histórico.",
+        "whyItMatters": "La cristalización explica por qué la sacarosa puede abandonar el paisaje donde crece la caña y convertirse en ingrediente almacenable, medible y comerciable; es una transformación material, no solo culinaria.",
+        "nextQuestion": "Cuando el azúcar puede viajar, ¿cómo cambian los lugares que lo producen y qué ocurre cuando comerciantes y poderes políticos intentan acercar esa producción a sus propios mercados?",
+        "glossaryRefs": [
+          "sacarosa",
+          "cristalizacion_azucar"
+        ]
+      },
+      {
+        "id": "sugar_3_mediterranean_madeira",
+        "sceneType": "diffusion",
+        "label": "03 · Mediterráneo → Madeira · siglos VIII–XV",
+        "title": "El azúcar se desplaza hacia el oeste y Madeira cambia la escala",
+        "lead": "La expansión no fue una sola ruta ni una entrega lineal de conocimientos. Fue una sucesión de paisajes irrigados, talleres, comerciantes, capitales y mercados que reorganizaron dónde resultaba rentable producir.",
+        "geography": {
+          "today": "Mediterráneo occidental y Madeira · referencia en Funchal",
+          "region": "Levante · Sicilia · península ibérica · Atlántico oriental",
+          "orientation": "La historiografía documenta un desplazamiento gradual de la producción desde el Mediterráneo oriental hacia Sicilia y la península ibérica. Funchal aparece en el mapa solo como referencia urbana de Madeira, no como ubicación de una única plantación que represente toda la isla.",
+          "society": "Productores agrícolas, trabajadores de ingenios, mercaderes mediterráneos y atlánticos, poderes islámicos y cristianos y redes financieras que conectaban zonas productoras con consumidores de alto poder adquisitivo."
+        },
+        "narrative": [
+          "En la Edad Media la producción azucarera fue desplazándose hacia el oeste por el Mediterráneo. David Abulafia resume una secuencia que pasa del Levante a Sicilia y después a zonas de la península ibérica. No se trató simplemente de transportar esquejes: cultivar caña exige agua y clima adecuados, y producir azúcar exige molinos, combustible, recipientes, conocimientos de cocción y acceso a mercados capaces de pagar un producto todavía caro.",
+          "En el siglo XV Valencia y Granada llegaron a abastecer mercados del norte europeo. El azúcar seguía siendo un bien de lujo y su comercio podía movilizar capital mercantil considerable. Esto recuerda que la expansión de un ingrediente no es lo mismo que su consumo generalizado: que una mercancía llegue a muchas ciudades no significa que sea cotidiana en todas las mesas.",
+          "Madeira introdujo otra escala. La isla atlántica ofreció a los portugueses condiciones para desarrollar una producción mucho mayor orientada de nuevo hacia mercados europeos. La memoria material de ese ciclo sobrevive en Funchal y otros puntos de la isla, pero el Atlas evita reducir un sistema insular completo a las coordenadas de un museo o un ingenio conservado.",
+          "El paso Mediterráneo–Atlántico también importa porque algunas formas de organización productiva, inversión y trabajo que habían acompañado al azúcar en ámbitos mediterráneos encontraron nuevos territorios y posibilidades de expansión. No existe una copia mecánica de un modelo único, pero sí continuidades técnicas y económicas que ayudan a comprender la siguiente fase.",
+          "La escena termina antes de celebrar el aumento de producción como un éxito neutral. Hacer más azúcar y llevarlo más lejos planteó una pregunta central: ¿qué tipo de sistema laboral y colonial permitiría multiplicar todavía más la oferta y reducir costes? La respuesta atlántica tuvo consecuencias humanas enormes."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "mediterranean_to_madeira_sugar_700_1500"
+          },
+          {
+            "kind": "occurrence",
+            "ref": "occ_sugar_madeira_cycle_1400_1600"
+          }
+        ],
+        "sourceRefs": [
+          "src_sugar_abulafia_spain_2008",
+          "src_sugar_bosma_2013",
+          "src_sugar_visitmadeira_city_2026"
+        ],
+        "method": {
+          "title": "Cómo representar una difusión sin dibujar flechas inventadas",
+          "body": "Las fuentes permiten documentar centros productivos y cambios de escala, pero no una ruta única entre todos ellos. Por eso la escena narra una secuencia historiográfica y el mapa solo muestra referencias sustentadas, sin convertirlas en una flecha causal."
+        },
+        "limits": "Funchal es una referencia urbana para Madeira. No representa toda la producción insular ni prueba por sí mismo cómo circularon técnicas concretas entre Levante, Sicilia, Iberia y Atlántico.",
+        "whyItMatters": "Esta fase explica que la expansión del azúcar fue también una reorganización de territorio, capital y trabajo. Prepara el salto hacia la plantación atlántica sin presentarlo como inevitable.",
+        "nextQuestion": "¿Qué hizo posible que un producto todavía caro pasara a producirse en volúmenes mucho mayores y por qué esa abundancia no puede separarse de la historia de la esclavitud atlántica?",
+        "glossaryRefs": [
+          "cana_azucar",
+          "plantacion_azucarera"
+        ]
+      },
+      {
+        "id": "sugar_4_atlantic_slavery",
+        "sceneType": "human_system",
+        "label": "04 · Atlántico · décadas de 1490–1750",
+        "title": "El azúcar se abarata, pero el coste no desaparece: cambia de lugar y de persona",
+        "lead": "Más disponibilidad europea no fue solo resultado de mejores molinos. La plantación azucarera atlántica estuvo sostenida por colonización, apropiación de tierra, trata y trabajo esclavizado a gran escala.",
+        "geography": {
+          "today": "Caribe y zonas azucareras de Sudamérica · macroregión",
+          "region": "Mundo atlántico colonial",
+          "orientation": "La escena reúne múltiples islas, costas, puertos y regiones productoras. No utiliza un centroide porque el sistema de plantación y la trata atlántica fueron redes extensas, no un acontecimiento puntual.",
+          "society": "Personas africanas capturadas y esclavizadas, comunidades indígenas desplazadas, plantadores, capataces, artesanos, marineros, comerciantes, refinadores y consumidores conectados por imperios y mercados atlánticos."
+        },
+        "narrative": [
+          "El National Museum of American History resume el cambio con claridad: europeos introdujeron caña en el Nuevo Mundo desde la década de 1490 y las plantaciones se extendieron pronto por el Caribe y Sudamérica. El crecimiento generó enormes beneficios para propietarios y comerciantes y transformó el azúcar de una mercancía limitada en un producto cada vez más accesible para consumidores europeos.",
+          "Pero esa curva de oferta no puede leerse sin la curva de coerción. El Smithsonian sitúa en el corazón del sistema el trabajo de millones de personas esclavizadas trasladadas por el Atlántico. SlaveVoyages muestra hasta qué punto las zonas azucareras concentraron el tráfico de personas cautivas. El molino, la caldera y el barco mercante son tecnologías históricas; también lo son las instituciones legales y violentas que convirtieron seres humanos en fuerza de trabajo explotable.",
+          "Hacia 1750, plantaciones británicas y francesas producían una parte dominante del azúcar mundial y de derivados como melaza y ron. Esa escala ayuda a explicar el cambio de precio y disponibilidad, pero no significa que el consumo se democratizara de forma uniforme ni que los beneficios estuvieran distribuidos. El mismo producto podía representar placer cotidiano en una mesa y trabajo mortal en otra parte de la red.",
+          "La representación visual de la historia del azúcar ha tendido muchas veces a destacar máquinas e ingenios y a relegar a las personas que los hacían funcionar. El propio Deutsches Technikmuseum subraya hoy que el cultivo colonial de caña estuvo estrechamente conectado con explotación y esclavitud. El museo digital debe evitar repetir el sesgo de mostrar tecnología sin sistema laboral.",
+          "Por eso esta escena no concluye que la esclavitud fue un detalle oscuro de una historia de progreso. Fue una condición estructural de gran parte de la expansión atlántica del azúcar. La siguiente transformación —producir sacarosa desde remolacha— cambiará la geografía agrícola, pero tampoco borrará automáticamente las economías de caña ni sus herencias."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "atlantic_sugar_plantation_slavery_1490_1750"
+          }
+        ],
+        "sourceRefs": [
+          "src_sugar_smithsonian_trade",
+          "src_sugar_slavevoyages_maps_2025",
+          "src_sugar_technikmuseum_berlin",
+          "src_sugar_abulafia_spain_2008"
+        ],
+        "method": {
+          "title": "Cómo contar abundancia sin invisibilizar su coste humano",
+          "body": "La escena cruza historia económica, museística y bases de datos de la trata. No usa una cifra aislada como explicación total: vincula producción, trabajo forzado, comercio y consumo y mantiene el sistema como fenómeno multiterritorial."
+        },
+        "limits": "El Atlántico azucarero no fue homogéneo: cambiaron legislaciones, regímenes laborales, cronologías y relaciones entre colonias. Esta escena resume una estructura de larga duración y no sustituye historias locales de cada plantación o comunidad.",
+        "whyItMatters": "Sin esta capa humana, la historia del azúcar se convertiría en una falsa secuencia de innovaciones que explica precios pero no quién soportó el coste de producir enormes volúmenes para otros mercados.",
+        "nextQuestion": "Si la sacarosa parecía depender de una planta tropical y de redes coloniales, ¿qué ocurre cuando la química demuestra que la misma molécula puede obtenerse de una raíz cultivable en Europa?",
+        "glossaryRefs": [
+          "plantacion_azucarera",
+          "sacarosa"
+        ]
+      },
+      {
+        "id": "sugar_5_beet",
+        "sceneType": "science_industry",
+        "label": "05 · Berlín / Silesia · 1747–1801",
+        "title": "La misma sacarosa aparece en otra planta y cambia la geografía posible de producir azúcar",
+        "lead": "La remolacha no inventa una molécula nueva. Cambia algo distinto: dónde puede producirse y qué agricultura puede alimentar una industria azucarera.",
+        "geography": {
+          "today": "Berlín (Alemania) y Cunern/Konary (actual Polonia)",
+          "region": "Europa central · Prusia/Silesia histórica",
+          "orientation": "Berlín se muestra como referencia urbana para el trabajo químico de Marggraf. Cunern se conserva sin punto hasta disponer de una georreferencia histórica específica; el mapa de la escena debe indicar por ello cobertura parcial.",
+          "society": "Academias científicas, químicos, propietarios agrícolas, Estados europeos y empresarios que buscaban materias primas locales en un contexto de azúcar colonial caro, guerras y restricciones comerciales."
+        },
+        "narrative": [
+          "En 1747 Andreas Sigismund Marggraf comunicó en Berlín experimentos que mostraban que una remolacha contenía el mismo tipo de azúcar cristalizable que la caña. La importancia conceptual es enorme: la sacarosa deja de estar ligada, incluso en teoría productiva, a una única planta tropical. La molécula es la misma aunque cambie la materia prima y el paisaje agrícola.",
+          "Sin embargo, un descubrimiento químico no equivale a una industria. Extraer unos cristales en condiciones experimentales no resuelve selección varietal, rendimiento agrícola, trituración, purificación, evaporación, cristalización a escala, costes ni organización de una fábrica. Esa distancia entre demostración y producción explica por qué Marggraf 1747 y Achard 1801 deben aparecer como hitos separados.",
+          "Franz Carl Achard continuó el trabajo con remolacha, selección de plantas y procedimientos de producción. En 1801 estableció en Cunern, Silesia, la fábrica que las historias técnicas identifican como la primera dedicada a azúcar de remolacha. Las dificultades económicas fueron reales, pero el principio industrial ya había cambiado: un clima templado podía entrar en la geografía del azúcar.",
+          "El bloqueo continental napoleónico y otras tensiones comerciales posteriores dieron impulso a la remolacha europea, pero no deben retroproyectarse como causa de la investigación de 1747. Distinguir descubrimiento, desarrollo fabril y expansión política evita otra narrativa demasiado limpia en la que una guerra «inventa» de repente una industria.",
+          "Durante el siglo XIX la competencia entre caña y remolacha, junto con maquinaria y mejoras industriales, contribuyó a una fuerte caída de precios y a la conversión del azúcar en un producto de consumo mucho más masivo. Para pastelería y confitería esto no fue un detalle: un ingrediente antes costoso pudo incorporarse con otra frecuencia, cantidad y regularidad. La historia culinaria cambia cuando cambia la economía material del ingrediente."
+        ],
+        "itemRefs": [
+          {
+            "kind": "development",
+            "ref": "marggraf_beet_sucrose_1747"
+          },
+          {
+            "kind": "development",
+            "ref": "achard_beet_sugar_factory_1801"
+          }
+        ],
+        "sourceRefs": [
+          "src_sugar_bruhns_marggraf_1997",
+          "src_sugar_fems_sucrose_history_2016",
+          "src_sugar_technikmuseum_berlin",
+          "src_sugar_suedzucker_history"
+        ],
+        "method": {
+          "title": "Descubrimiento químico, fábrica y expansión no son el mismo hito",
+          "body": "La escena separa tres escalas causales: identificar sacarosa en remolacha, construir un proceso fabril y expandir una industria bajo condiciones económicas y políticas posteriores. Cada afirmación conserva fuentes y fechas distintas."
+        },
+        "limits": "La remolacha no sustituyó de inmediato a la caña ni terminó con las plantaciones esclavistas. La coexistencia de ambas materias primas y la evolución del trabajo azucarero requieren historias regionales adicionales.",
+        "whyItMatters": "La química demuestra aquí que la identidad de un ingrediente no depende de una única especie. Cambiar la fuente de sacarosa reordena agricultura, industria, comercio y, a largo plazo, disponibilidad culinaria.",
+        "nextQuestion": "Idea para llevarte: cuando comemos azúcar vemos una molécula; la historia, en cambio, debe preguntar de qué planta, qué territorio, qué técnica y qué relaciones de trabajo la hicieron llegar hasta nosotros.",
+        "glossaryRefs": [
+          "sacarosa",
+          "remolacha_azucarera",
+          "cristalizacion_azucar"
+        ]
+      }
+    ]
   }
 ]

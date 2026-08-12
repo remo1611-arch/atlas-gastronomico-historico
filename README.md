@@ -1,16 +1,17 @@
 # Atlas Gastronómico Histórico
 
-**Versión:** 0.1.0-alpha.29
+**Versión:** 0.1.0-alpha.30
 **Estado:** contrato de producto congelado · gate museográfico superado · expansión editorial activa
 **Distribución principal:** GitHub Pages  
 **Idioma inicial:** español
 
-## Alpha.29 — Café, segunda expansión editorial post-freeze
+## Alpha.30 — Azúcar, tercera expansión editorial post-freeze
 
-- Nueva Historia del Café: 5 escenas, sin cambios de schema ni navegación.
-- Se separan origen botánico africano y documentación yemení de la bebida.
-- Coffeehouse otomana, Oxford 1650–1651 y traslado colonial a Batavia estructuran la dimensión social y global.
-- Espresso se explica como evolución multietapa: Bezzera 1902–1903 y Gaggia 1938–1947; no como «invención en 1901».
+- Nueva Historia del Azúcar: 5 escenas, sin cambios de schema ni navegación.
+- Se separan domesticación de la caña y cristalización de sacarosa.
+- Mediterráneo/Madeira se presenta como desplazamiento productivo documentado, no como flecha de difusión simplificada.
+- El sistema atlántico integra plantación, esclavitud y escala humana como parte estructural del cambio de disponibilidad.
+- Marggraf 1747 y Achard 1801 se distinguen como descubrimiento químico y producción fabril desde remolacha.
 - El contrato congelado en alpha.27 permanece intacto.
 
 ## Propósito
@@ -112,9 +113,9 @@ python tools/serve.py
 
 Desde G2 CLOSED, el runtime histórico contiene únicamente registros `reviewed` o `verified`. Los antiguos seeds y demos están archivados fuera del runtime para trazabilidad.
 
-Alpha.29 contiene **38 occurrences públicas**: 18 tienen punto y 20 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 18 `developments` (9 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
+Alpha.30 contiene **40 occurrences públicas**: 19 tienen punto y 21 permanecen sin punto por decisión explícita. Las capas secundarias contienen 7 `contexts` (5 cartografiables) y 23 `developments` (11 cartografiables). El diagnóstico multicapas informa de los registros no puntuales sin inventar centroides.
 
-El corpus completo queda en **15 subjects, 45 places, 121 sources, 5 stories, 28 escenas y 27 términos de glosario**. Café es la segunda expansión editorial completa realizada sobre el contrato congelado en alpha.27.
+El corpus completo queda en **16 subjects, 51 places, 135 sources, 6 stories, 33 escenas y 32 términos de glosario**. Azúcar es la tercera expansión editorial completa realizada sobre el contrato congelado en alpha.27.
 
 ## Capas históricas
 

@@ -205,3 +205,15 @@ Estado de continuación alpha.29:
 - Bezzera 1902–1903 y Gaggia 1938–1947 son etapas distintas; no usar «1901 = espresso moderno».
 - Siguiente dossier E1: Azúcar; después Patata → Especias/conservación.
 - G4 sigue bloqueado hasta densidad de corpus suficiente.
+
+Estado de continuación alpha.30:
+- Product Contract Freeze alpha.27 permanece ACTIVE; no actualizar fingerprint salvo migración explícita.
+- Historia del Azúcar integrada con 5 escenas.
+- Corpus: 16 subjects / 51 places / 40 occurrences / 135 sources / 6 stories / 33 scenes / 32 glossary.
+- Caña domesticada ≠ azúcar cristalizado; ca. 350 d. C. es cronología historiográfica aproximada.
+- Madeira usa Funchal como referencia urbana; sistema atlántico sin centroide.
+- Plantación/esclavitud se modela como parte estructural de la expansión atlántica.
+- Marggraf 1747 y Achard 1801 son etapas separadas.
+- QA automatizado alpha.30: 58/58 Python + 5/5 Node PASS; aceptación móvil pendiente.
+- Siguiente dossier E1: Patata; después Especias/conservación.
+- G4 sigue bloqueado hasta densidad de corpus suficiente.

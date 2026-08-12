@@ -1,6 +1,6 @@
 {
   "project": "Atlas Gastronómico Histórico",
-  "version": "0.1.0-alpha.29",
+  "version": "0.1.0-alpha.30",
   "gate": "G3_CLOSED",
   "phase": "EDITORIAL_EXPANSION_POST_FREEZE",
   "generated": "2026-08-12",
@@ -13,8 +13,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 23233,
-      "sha256": "324b97398d03f708e4d5adc0901cff17b51a2a82d9d297d44fc584a2e9942b5b"
+      "bytes": 24457,
+      "sha256": "2cb6f7233664f600f167737e768e2b066c724b53f15bc707f550742f3a34372c"
     },
     {
       "path": "PUBLICAR_EN_GITHUB.txt",
@@ -23,8 +23,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 11804,
-      "sha256": "6673bf94d1cfaaf224783b8c1b3bf24f0703b0cf28a5b6317331fe84c3db31c3"
+      "bytes": 11923,
+      "sha256": "1a39157ce04f1bd69bbe45baed94e9ef3fc7adadbf6a3e850d24998d1c45a3a6"
     },
     {
       "path": "START_MAC_LINUX.sh",
@@ -54,7 +54,7 @@
     {
       "path": "data/config.json",
       "bytes": 495,
-      "sha256": "da6573a15fb995f3ac47849e0bb53da5dd1b079061e934e5b88e1c8b8b6f24ff"
+      "sha256": "6c4adf2d05ddbd4ec244638d8171b82923262ea9706581b76293b114f044d7c5"
     },
     {
       "path": "data/contexts.json",
@@ -63,8 +63,8 @@
     },
     {
       "path": "data/developments.json",
-      "bytes": 18992,
-      "sha256": "6d061a1e760e96f7a7b0b7b1b0bcedc2dfaca1e531ea21607efdddd8539a4fc8"
+      "bytes": 25367,
+      "sha256": "a73ce797deb99cc7c87dae5dbe519298b17669f2bf68420721b063f7b3556a86"
     },
     {
       "path": "data/events.json",
@@ -73,18 +73,18 @@
     },
     {
       "path": "data/glossary.json",
-      "bytes": 8166,
-      "sha256": "0c5bce2d75a0ae4aafa781ae4a3455d88ab6f5fc82e2b52c1d8927ae54f7d13c"
+      "bytes": 9865,
+      "sha256": "ac3257aaf7bb1f2ac9a8084dba31477871ec0f62393047492155d1d3027f3a33"
     },
     {
       "path": "data/occurrences.json",
-      "bytes": 36938,
-      "sha256": "2341060f82d87a658c81f147eb483908e568de081ecfa57994102b7e30057cec"
+      "bytes": 38757,
+      "sha256": "1870a6377553414823d200bb77741ca15b25b8a69c4371e17cb6247ef5f710d5"
     },
     {
       "path": "data/places.json",
-      "bytes": 24559,
-      "sha256": "0170b667fa884a46d2b131bf7e1650eff71f5389410b575ce36d204a84b717df"
+      "bytes": 28260,
+      "sha256": "0559a91cbfe8f0c2ae3c8c77bb38d1c81f903b509b01006a14c00809d0baf77d"
     },
     {
       "path": "data/relationships.json",
@@ -93,18 +93,18 @@
     },
     {
       "path": "data/sources.json",
-      "bytes": 58707,
-      "sha256": "21e6c7150f9cbf51b27cd765e8ae1c51aa03b4682ccead90494fb16c0ed59d0a"
+      "bytes": 66105,
+      "sha256": "182bc3740b7769137eab79e038792cf1e0e80f984f30bff7ac378fe3c6e46b8b"
     },
     {
       "path": "data/stories.json",
-      "bytes": 118246,
-      "sha256": "d82cfc03d6a22512c1da275a1b115ae9d61d8c6e9cdae30ab1769c32fc06ff94"
+      "bytes": 143719,
+      "sha256": "e523c436936022099260893fb0cb4f9ad80c6598db2529852386b246c247b157"
     },
     {
       "path": "data/subjects.json",
-      "bytes": 12854,
-      "sha256": "adadbe1b8b37a343fbbf04180cd757777f9ba83b6965a518934d56d4734efbdd"
+      "bytes": 13677,
+      "sha256": "dce0047a03bc664d6519bad2a0e38fcb2eb71de6443c691cf6c209c0bbc0357f"
     },
     {
       "path": "data/taxonomy.json",
@@ -132,6 +132,11 @@
       "sha256": "6b877fb41d0c21ce16566ccdf97eaed7d3e825c73e02a53c7038cc0adba212fb"
     },
     {
+      "path": "docs/DOSSIER_AZUCAR_ALPHA30.md",
+      "bytes": 4344,
+      "sha256": "56347e475c933f2e2fba85e0f1aaec46622bb3c8f5d375e6318fdb3157f68ba1"
+    },
+    {
       "path": "docs/DOSSIER_CACAO_CHOCOLATE_ALPHA28.md",
       "bytes": 1883,
       "sha256": "062f87443f7112c56ef4fb9ceb2da9c70e7f4fe58c9d97f7583543b759016f64"
@@ -155,6 +160,11 @@
       "path": "docs/EDITORIAL_GATE_COFFEE_ALPHA29.md",
       "bytes": 1168,
       "sha256": "2050b7baf50a6453dd0aa7ff33b8c6941b1c4dacd8ef5a246de12454e83c4fa3"
+    },
+    {
+      "path": "docs/EDITORIAL_GATE_SUGAR_ALPHA30.md",
+      "bytes": 1221,
+      "sha256": "37307dd55d882d30e7ef86a3d2a651eb023093c8139f84db9a2fe1db0c10127a"
     },
     {
       "path": "docs/FERMENTATION_STORY_ALPHA26.md",
@@ -277,6 +287,11 @@
       "sha256": "5a3f02642920be10a6cabb9d2a53fc22421512b7bbe0021fd13cf49ad71f27df"
     },
     {
+      "path": "docs/MOBILE_ACCEPTANCE_ALPHA30.md",
+      "bytes": 1428,
+      "sha256": "7efaa5420f677453d95ba82fdc185b5d56c36c08fa34ece7fbd3a04d504a5d8c"
+    },
+    {
       "path": "docs/MUSEOGRAPHIC_GATE_ALPHA27.md",
       "bytes": 3331,
       "sha256": "7f66ba2e533519f6024a80da6e8abb28d70a6e68204b8b30e53650ed30e8eab0"
@@ -293,8 +308,8 @@
     },
     {
       "path": "docs/NEXT_SESSION_PROMPT.md",
-      "bytes": 9671,
-      "sha256": "795c2274ad13423f0894e7a7f72034c2004d08d03bff4be2d208e6791827bdbc"
+      "bytes": 10500,
+      "sha256": "abedf74b122dd3151267fb4de06ac49e1236c390db3fb27acec5a9ffdcfb45e7"
     },
     {
       "path": "docs/PRODUCT_CONTRACT_FINGERPRINT.json",
@@ -313,8 +328,8 @@
     },
     {
       "path": "docs/PROJECT_STATE.md",
-      "bytes": 2447,
-      "sha256": "9d68ff897df8cea48f3eee82b4eb465d1bc9f4f6a59705973a7ef447763bd9bd"
+      "bytes": 2662,
+      "sha256": "b1bdd481452597cdc5aaf36603ce68ac37afefd3fa5fabc09531f3d8e6883555"
     },
     {
       "path": "docs/QA.md",
@@ -323,8 +338,8 @@
     },
     {
       "path": "docs/ROADMAP.md",
-      "bytes": 18966,
-      "sha256": "15b139acc69944838fb81fb3807289c0d72d755eb172b0284c3ee63589bd7923"
+      "bytes": 20091,
+      "sha256": "667f3480c39f080ee5c5d097fe702a8cf434e1fb2c4ab73cb7077ea363aa2a0f"
     },
     {
       "path": "docs/SEED_ARCHIVE.md",
@@ -343,8 +358,8 @@
     },
     {
       "path": "docs/TEST_RESULTS.md",
-      "bytes": 2504,
-      "sha256": "fdfd5bde083d43506fb09f62859dcce7f65f646441b18fe1b661c1da302058f1"
+      "bytes": 2522,
+      "sha256": "ce3d27b0e8a5150a1392b6a682b7aa5c3461ea7b8b810703107664ec2d3573d1"
     },
     {
       "path": "docs/VISUAL_QA_ALPHA18.md",
@@ -354,12 +369,12 @@
     {
       "path": "index.html",
       "bytes": 23119,
-      "sha256": "0f232c5570c593ea5618e98fae3c730167a9d7f5f9cd2a0f77675ac59f2c0c1e"
+      "sha256": "572ec6588030229992ada971d4a94a4c165b01f1eebf40f3a8b2c0345b10385b"
     },
     {
       "path": "js/app.js",
       "bytes": 115508,
-      "sha256": "ee0433d825f7b518b3863097e43cbf7013f0a3a6cdd03fcda61a7b4bbee82182"
+      "sha256": "b5b0e8110c546db59b1b88873ae46995769b62f87e07c0ce3b88ad145ba98bf9"
     },
     {
       "path": "js/core.js",
@@ -705,6 +720,11 @@
       "path": "tools/test_subject_history.py",
       "bytes": 3649,
       "sha256": "11056ab070d0fac3f4efe8a37c5401eb6b39e97f853d2167ac7c35efc5b0f4b3"
+    },
+    {
+      "path": "tools/test_sugar_story.py",
+      "bytes": 5873,
+      "sha256": "6a13fc4d21e2e6a72cb9c2e1941d24d584540032b9e2ed962a54924cade3a1ba"
     },
     {
       "path": "tools/test_technique_history.py",

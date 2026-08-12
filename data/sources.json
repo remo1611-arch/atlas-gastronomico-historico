@@ -1087,5 +1087,131 @@
     "sourceType": "corporate_archive",
     "accessed": "2026-08-12",
     "notes": "Cronología corporativa para las patentes y desarrollos de Achille Gaggia: patente de 1938 y mecanismo de palanca de 1947 capaz de trabajar a 8–9 atmósferas. Se contrasta con Smithsonian para evitar depender solo de una fuente corporativa."
+  },
+  {
+    "id": "src_sugar_cell_domestication_2025",
+    "title": "The genomic footprints of wild Saccharum species trace domestication, diversification, and modern breeding of sugarcane",
+    "publisher": "Cell",
+    "url": "https://doi.org/10.1016/j.cell.2025.09.017",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Estudio genómico de 390 accesiones representativas que sitúa la domesticación de Saccharum officinarum a partir de S. robustum en la región de Nueva Guinea. Se usa para el origen/domesticación de la caña, no para datar la aparición del azúcar cristalizado."
+  },
+  {
+    "id": "src_sugar_cirad_domestication_2025",
+    "title": "The origin of sugarcane revealed",
+    "publisher": "CIRAD",
+    "url": "https://www.cirad.fr/en/press-area/press-releases/2025/origin-of-sugarcane-revealed",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis institucional del estudio de Cell 2025: confirma domesticación de S. officinarum desde S. robustum alrededor de 8.000 años atrás en Nueva Guinea e islas próximas."
+  },
+  {
+    "id": "src_sugar_kew_officinarum",
+    "title": "Saccharum officinarum L. — Plants of the World Online",
+    "publisher": "Royal Botanic Gardens, Kew",
+    "url": "https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:419977-1",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Referencia botánica institucional: rango nativo de S. officinarum en Nueva Guinea. Se usa como contraste biogeográfico, no como cronología arqueológica."
+  },
+  {
+    "id": "src_sugar_fems_sucrose_history_2016",
+    "title": "Sucrose and Saccharomyces cerevisiae: a relationship most sweet",
+    "publisher": "FEMS Yeast Research · Oxford University Press",
+    "url": "https://academic.oup.com/femsyr/article/16/1/fov107/2467713",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Revisión científica que resume la cronología historiográfica de la sacarosa: sitúa convencionalmente el inicio de la cristalización del azúcar hacia 350 d. C. en India, y recoge 1747 para Marggraf. La datación antigua se conserva como aproximada, no como un primer absoluto."
+  },
+  {
+    "id": "src_sugar_bosma_2013",
+    "title": "Producing Sugar for the World",
+    "publisher": "Cambridge University Press · The Sugar Plantation in India and Indonesia",
+    "url": "https://doi.org/10.1017/CBO9781139626323.002",
+    "sourceType": "scholarly_monograph",
+    "accessed": "2026-08-12",
+    "notes": "Historia económica de larga duración de producción azucarera. Se utiliza para contextualizar la antigüedad de la fabricación en Asia y la continuidad entre manufacturas mediterráneas y sistemas de plantación posteriores, evitando una cronología de invenciones puntuales."
+  },
+  {
+    "id": "src_sugar_abulafia_spain_2008",
+    "title": "Sugar in Spain",
+    "publisher": "European Review · Cambridge University Press",
+    "url": "https://doi.org/10.1017/S1062798708000148",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis académica sobre el desplazamiento occidental de la tecnología azucarera desde el Levante a Sicilia y la península ibérica, el papel de Valencia/Granada en el siglo XV y el salto de escala en Madeira."
+  },
+  {
+    "id": "src_sugar_visitmadeira_city_2026",
+    "title": "A Cidade do Açúcar Museum",
+    "publisher": "Visit Madeira · Madeira Promotion Bureau",
+    "url": "https://visitmadeira.com/en/what-to-do/culture-passionates/heritage/museums/a-cidade-do-acucar-museum/",
+    "sourceType": "official_institution",
+    "accessed": "2026-08-12",
+    "notes": "Fuente institucional regional sobre el ciclo azucarero de Madeira en los siglos XV-XVI y su memoria material en Funchal."
+  },
+  {
+    "id": "src_sugar_smithsonian_trade",
+    "title": "The Sugar Trade",
+    "publisher": "National Museum of American History · Smithsonian Institution",
+    "url": "https://americanhistory.si.edu/explore/exhibitions/on-the-water/online/living-atlantic-world/new-tastes-new-trades/sugar-trade",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Síntesis museística del traslado de la caña al Nuevo Mundo desde la década de 1490, expansión de plantaciones en Caribe y Sudamérica y centralidad del trabajo de millones de personas esclavizadas."
+  },
+  {
+    "id": "src_sugar_slavevoyages_maps_2025",
+    "title": "Introductory Maps to the Transatlantic Slave Trade",
+    "publisher": "SlaveVoyages",
+    "url": "https://www.slavevoyages.org/blog/introductory-maps-to-the-transatlantic-slave-trade/150",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Recurso del proyecto SlaveVoyages para contextualizar geográficamente la trata transatlántica y la concentración de personas cautivas en áreas productoras de azúcar. Se usa para escala y estructura, no para asignar un punto único al sistema atlántico."
+  },
+  {
+    "id": "src_sugar_technikmuseum_berlin",
+    "title": "Sugar — We Are What We Eat",
+    "publisher": "Stiftung Deutsches Technikmuseum Berlin",
+    "url": "https://technikmuseum.berlin/en/exhibitions/permanent-exhibition/sugar/",
+    "sourceType": "museum_institution",
+    "accessed": "2026-08-12",
+    "notes": "Exposición institucional sobre azúcar como antiguo bien de lujo, conexión entre caña colonial, explotación y esclavitud y posterior desarrollo de la remolacha azucarera en Berlín."
+  },
+  {
+    "id": "src_sugar_bruhns_marggraf_1997",
+    "title": "250 years ago, Marggraf discovered sugar in beet",
+    "publisher": "Sugar Industry / Zuckerindustrie 122(10), 771–775",
+    "url": "https://sugarindustry.info/paper/20774/",
+    "sourceType": "peer_reviewed_article",
+    "accessed": "2026-08-12",
+    "notes": "Artículo histórico-técnico que fecha el informe de Marggraf ante la Academia de Berlín el 17 de noviembre de 1747 y contextualiza el azúcar como producto caro y colonial."
+  },
+  {
+    "id": "src_sugar_suedzucker_history",
+    "title": "History of sugar — sugar cane and sugar beet",
+    "publisher": "Südzucker Group",
+    "url": "https://www.suedzuckergroup.com/en/company/history/history-of-sugar",
+    "sourceType": "corporate_archive",
+    "accessed": "2026-08-12",
+    "notes": "Cronología corporativa especializada utilizada como apoyo para Achard: fábrica de azúcar de remolacha de Cunern/Silesia en 1801 y expansión industrial posterior. Se contrasta con fuentes académicas e institucionales."
+  },
+  {
+    "id": "src_sugar_funchal_wikidata",
+    "title": "Funchal — Wikidata Q25444",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q25444",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para un punto urbano de referencia de Funchal. No sustenta por sí sola ninguna afirmación histórica sobre producción azucarera."
+  },
+  {
+    "id": "src_sugar_berlin_wikidata",
+    "title": "Berlin — Wikidata Q64",
+    "publisher": "Wikidata",
+    "url": "https://www.wikidata.org/wiki/Q64",
+    "sourceType": "dataset",
+    "accessed": "2026-08-12",
+    "notes": "Fuente cartográfica auxiliar para un punto urbano de referencia de Berlín. No sustenta por sí sola la cronología de Marggraf o Achard."
   }
 ]

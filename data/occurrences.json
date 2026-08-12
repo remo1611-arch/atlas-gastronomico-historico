@@ -948,5 +948,52 @@
       "src_coffee_yemen_brill_ei3"
     ],
     "status": "reviewed"
+  },
+  {
+    "id": "occ_sugarcane_domestication_new_guinea_ca_6000_bce",
+    "subjectRef": "sugar",
+    "placeRef": "new_guinea_sugarcane_region",
+    "period": {
+      "start": -6000,
+      "end": -6000,
+      "precision": "circa",
+      "display": "ca. 6000 a. C. (aprox. 8.000 años atrás)"
+    },
+    "occurrenceType": "crop_domestication_inference",
+    "evidenceType": "population_genomics_and_biogeography",
+    "certainty": "high",
+    "summary": "El análisis genómico de 390 accesiones sitúa la domesticación de Saccharum officinarum desde S. robustum alrededor de 8.000 años atrás en Nueva Guinea e islas cercanas. Esto documenta la historia de la caña, no la existencia de azúcar cristalizado en esa fecha.",
+    "contextRefs": [],
+    "developmentRefs": [],
+    "sourceRefs": [
+      "src_sugar_cell_domestication_2025",
+      "src_sugar_cirad_domestication_2025",
+      "src_sugar_kew_officinarum"
+    ],
+    "status": "reviewed"
+  },
+  {
+    "id": "occ_sugar_madeira_cycle_1400_1600",
+    "subjectRef": "sugar",
+    "placeRef": "funchal_madeira_reference",
+    "period": {
+      "start": 1400,
+      "end": 1600,
+      "precision": "range",
+      "display": "siglos XV–XVI"
+    },
+    "occurrenceType": "regional_sugar_production",
+    "evidenceType": "historical_material_and_documentary_record",
+    "certainty": "high",
+    "summary": "Madeira se convirtió en los siglos XV-XVI en un centro atlántico de producción azucarera de gran escala orientado a mercados europeos. Funchal se usa solo como referencia urbana para un proceso insular distribuido.",
+    "contextRefs": [],
+    "developmentRefs": [
+      "mediterranean_to_madeira_sugar_700_1500"
+    ],
+    "sourceRefs": [
+      "src_sugar_abulafia_spain_2008",
+      "src_sugar_visitmadeira_city_2026"
+    ],
+    "status": "reviewed"
   }
 ]
